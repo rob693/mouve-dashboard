@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-11T14:30:00Z",
+  "generated_at": "2026-01-11T23:45:00Z",
   "generated_by": "SYS-DASHBOARD v1",
   "version": "1.0",
 
@@ -7,7 +7,8 @@
     "complete": 25,
     "in_progress": 5,
     "waiting": 3,
-    "blocked": 1
+    "blocked": 1,
+    "planned": 1
   },
 
   "projects": [
@@ -336,6 +337,54 @@
             {"name": "Drift detection + alerts", "status": "pending"}
           ],
           "blocker": null
+        }
+      ]
+    },
+    {
+      "name": "Staff Portal (Softr)",
+      "status": "planned",
+      "status_label": "Phase 1 Ready",
+      "phases": [
+        {
+          "name": "Phase 1: Foundation",
+          "status": "planned",
+          "detail": "Softr setup, Airtable connect, auth, user groups",
+          "sub_phases": [
+            {"name": "Sign up for Softr Basic ($49/mo)", "status": "pending"},
+            {"name": "Connect Airtable base", "status": "pending"},
+            {"name": "Configure email authentication", "status": "pending"},
+            {"name": "Create Staff + Admin user groups", "status": "pending"},
+            {"name": "Import 17 staff users", "status": "pending"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 2: Timesheets Portal",
+          "status": "planned",
+          "detail": "Submit, view own, approval queue",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 3: Staff Reports Portal",
+          "status": "planned",
+          "detail": "Class report submission and review",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 4: Rollout & Training",
+          "status": "planned",
+          "detail": "Training video, parallel run, deprecate Forms",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 5: Onboarding Portal (Conditional)",
+          "status": "planned",
+          "detail": "Only if approval gate confirmed",
+          "sub_phases": [],
+          "blocker": "Conditional: Decision needed on approval gate"
         }
       ]
     },
