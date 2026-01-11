@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-11T11:05:00Z",
+  "generated_at": "2026-01-11T11:30:00Z",
   "generated_by": "SYS-DASHBOARD v1",
   "version": "1.0",
 
@@ -300,17 +300,17 @@
     {
       "name": "Data Integrity System",
       "status": "in_progress",
-      "status_label": "Phase 1 Ready",
+      "status_label": "Phase 1 Complete",
       "phases": [
         {
           "name": "Phase 1: Schema & Documentation",
-          "status": "in_progress",
-          "detail": "Add external ID fields to CONTACTS, write ADR-009",
+          "status": "complete",
+          "detail": "External ID fields + ADR-009 + schema docs",
           "sub_phases": [
-            {"name": "ghl_contact_id field", "status": "pending"},
-            {"name": "teamup_customer_id field", "status": "pending"},
-            {"name": "dsp_student_id field (future)", "status": "pending"},
-            {"name": "identity_verified + notes fields", "status": "pending"}
+            {"name": "ghl_contact_id field", "status": "complete"},
+            {"name": "teamup_customer_id field", "status": "complete"},
+            {"name": "identity_verified + notes fields", "status": "complete"},
+            {"name": "ADR-009 committed", "status": "complete"}
           ],
           "blocker": null
         },
