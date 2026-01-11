@@ -342,39 +342,41 @@
     {
       "name": "Student Progress Reports",
       "status": "in_progress",
-      "status_label": "Phase 1 Ready",
+      "status_label": "Phase 3 Ready (Phrase Bank Complete)",
       "phases": [
         {
           "name": "Phase 1: Foundation",
-          "status": "planned",
-          "detail": "Create PROGRESS_ASSESSMENTS + PHRASE_BANK tables",
+          "status": "complete",
+          "detail": "PROGRESS_ASSESSMENTS + PHRASE_BANK tables created",
           "sub_phases": [
-            {"name": "PROGRESS_ASSESSMENTS table (Student, Engagement, Social, Skill, Focus Area)", "status": "pending"},
-            {"name": "PHRASE_BANK table (Category, Level, Phrase, Age Group, Variant)", "status": "pending"},
-            {"name": "Link to CONTACTS + ENROLLMENTS", "status": "pending"}
+            {"name": "PROGRESS_ASSESSMENTS table", "status": "complete"},
+            {"name": "PHRASE_BANK table (282 phrases)", "status": "complete"},
+            {"name": "Links to CONTACTS + ENROLLMENTS", "status": "complete"}
           ],
           "blocker": null
         },
         {
           "name": "Phase 2: Phrase Bank",
-          "status": "planned",
-          "detail": "4 categories × 4 levels × 3 variants = 60+ phrases",
+          "status": "complete",
+          "detail": "282 phrases: 132 generic + 75 Ballet + 75 Gymnastics",
           "sub_phases": [
-            {"name": "Engagement phrases (4 levels × 3 variants)", "status": "pending"},
-            {"name": "Social phrases (4 levels × 3 variants)", "status": "pending"},
-            {"name": "Skill phrases (4 levels × 3 variants)", "status": "pending"},
-            {"name": "Highlight phrases (6 focus areas × 3 variants)", "status": "pending"}
+            {"name": "Engagement phrases (12)", "status": "complete"},
+            {"name": "Social phrases (12)", "status": "complete"},
+            {"name": "Skill phrases (12)", "status": "complete"},
+            {"name": "Highlight phrases (192: 72 generic + 60 Ballet + 60 Gym)", "status": "complete"},
+            {"name": "Next Steps phrases (48: 18 generic + 15 Ballet + 15 Gym)", "status": "complete"},
+            {"name": "Belonging phrases (6)", "status": "complete"}
           ],
           "blocker": null
         },
         {
           "name": "Phase 3: Teacher Input",
           "status": "planned",
-          "detail": "Airtable form with 5 dropdowns, 60s per child",
+          "detail": "Airtable form with 5 dropdowns, <60s per child",
           "sub_phases": [
             {"name": "Assessment form design", "status": "pending"},
             {"name": "Sibling variant auto-assignment (A/B/C)", "status": "pending"},
-            {"name": "Teacher progress view", "status": "pending"}
+            {"name": "Teacher briefing document", "status": "pending"}
           ],
           "blocker": null
         },
@@ -392,7 +394,7 @@
         {
           "name": "Phase 5: Unified Delivery",
           "status": "planned",
-          "detail": "All reports sent 28 Mar 2026 at 5pm",
+          "detail": "All reports sent Week 9 of term",
           "sub_phases": [
             {"name": "Admin QA dashboard (read-only)", "status": "pending"},
             {"name": "Batch email with PDF attachment", "status": "pending"},
