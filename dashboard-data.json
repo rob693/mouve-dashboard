@@ -1,0 +1,473 @@
+{
+  "generated_at": "2026-01-11T11:30:00Z",
+  "generated_by": "SYS-DASHBOARD v1",
+  "version": "1.0",
+
+  "health_summary": {
+    "complete": 24,
+    "in_progress": 4,
+    "waiting": 3,
+    "blocked": 1
+  },
+
+  "projects": [
+    {
+      "name": "Ladies Fitness Funnel",
+      "status": "in_progress",
+      "status_label": "In Progress",
+      "phases": [
+        {
+          "name": "Phase 1: Foundation",
+          "status": "complete",
+          "detail": "LF_MEMBERSHIPS table, lf_state field, TeamUp sync",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 2A: Lead Response",
+          "status": "complete",
+          "detail": "Instant SMS + Email, team alerts, Airtable logging",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 2B: Lead Nurture",
+          "status": "in_progress",
+          "detail": "Google Tasks + Calendar + Enhanced Email",
+          "sub_phases": [
+            {"name": "n8n v6 workflow ready", "status": "complete"},
+            {"name": "Google credentials needed", "status": "pending"},
+            {"name": "GHL nurture workflow (manual)", "status": "pending"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 2C: Calendar Sync",
+          "status": "in_progress",
+          "detail": "TeamUp classes → Google Calendar",
+          "sub_phases": [
+            {"name": "LF-10 workflow designed", "status": "complete"},
+            {"name": "Create LF Classes calendar", "status": "pending"},
+            {"name": "Configure credentials", "status": "pending"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 3: Trial & Attendance",
+          "status": "complete",
+          "detail": "10 workflows active, per-membership tracking",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 4: Member Engagement",
+          "status": "planned",
+          "detail": "Weekly scans, at-risk alerts, onboarding sequence",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 5: Retention & Growth",
+          "status": "planned",
+          "detail": "Win-back, referrals, 5-day challenge",
+          "sub_phases": [],
+          "blocker": null
+        }
+      ]
+    },
+    {
+      "name": "Children's Dance Onboarding",
+      "status": "waiting",
+      "status_label": "Phase 3 Blocked",
+      "phases": [
+        {
+          "name": "Phase 1: Foundation",
+          "status": "complete",
+          "detail": "Tables, schema, AC tag taxonomy (18 tags)",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 2: Enrollment Automation",
+          "status": "complete",
+          "detail": "Handler v2, receipts, AC sync, tested",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 3: Onboarding Sequences",
+          "status": "waiting",
+          "detail": "10-email journey × 3 age tracks",
+          "sub_phases": [
+            {"name": "Emails 1-3 drafted (all tracks)", "status": "complete"},
+            {"name": "Emails 4-10 pending", "status": "pending"},
+            {"name": "AC automations not built", "status": "pending"}
+          ],
+          "blocker": "Blocked: Waiting on Louise email review"
+        },
+        {
+          "name": "Phase 4: Staff Rollout",
+          "status": "waiting",
+          "detail": "Training, SOP, go-live",
+          "sub_phases": [],
+          "blocker": "Blocked by Phase 3"
+        },
+        {
+          "name": "Phase 5: DSP Integration",
+          "status": "planned",
+          "detail": "Auto-sync enrollments from Dance Studio Pro",
+          "sub_phases": [],
+          "blocker": "API access requested 20 Dec (parallel track)"
+        }
+      ]
+    },
+    {
+      "name": "Back Office: Staff Costs",
+      "status": "waiting",
+      "status_label": "Phase 4 Blocked",
+      "phases": [
+        {
+          "name": "Phase 1: Table Setup",
+          "status": "complete",
+          "detail": "6 Airtable tables created",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 2: Staff Data",
+          "status": "complete",
+          "detail": "17 staff, bank details, 12/17 rates",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 3: Data Entry",
+          "status": "complete",
+          "detail": "Timesheet form + Venue field for Xero",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 4: Statement Generation",
+          "status": "waiting",
+          "detail": "n8n workflow to aggregate by venue",
+          "sub_phases": [
+            {"name": "5 staff rates missing (Louise)", "status": "pending"},
+            {"name": "Xero format confirmed", "status": "complete"},
+            {"name": "Build n8n workflow", "status": "pending"}
+          ],
+          "blocker": "Blocked: Waiting for Louise to confirm exact rates"
+        },
+        {
+          "name": "Phase 5: Approval & Delivery",
+          "status": "planned",
+          "detail": "Louise approval → PDF → Email",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 6: Validation",
+          "status": "planned",
+          "detail": "Jan 2026 vs manual process",
+          "sub_phases": [],
+          "blocker": null
+        }
+      ]
+    },
+    {
+      "name": "Back Office: Amex Recon",
+      "status": "waiting",
+      "status_label": "Phase 5 Validation",
+      "phases": [
+        {
+          "name": "Phase 1: Infrastructure",
+          "status": "complete",
+          "detail": "receipts@ inbox, Drive structure, Ledger",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 2: Forwarding Rules",
+          "status": "complete",
+          "detail": "O365, Gmail filters configured",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 3: Invoice Ingestion",
+          "status": "complete",
+          "detail": "Weekly capture → Ledger + Hubdoc",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 4: Reconciliation",
+          "status": "complete",
+          "detail": "XLSX parse + matching (tested Dec)",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 5: Validation",
+          "status": "waiting",
+          "detail": "Run January full reconciliation",
+          "sub_phases": [],
+          "blocker": "Waiting: Jan statement (~5 Feb)"
+        },
+        {
+          "name": "Phase 6: Handoff",
+          "status": "planned",
+          "detail": "SOP + Louise training",
+          "sub_phases": [],
+          "blocker": null
+        }
+      ]
+    },
+    {
+      "name": "MOUVE Ops Library",
+      "status": "in_progress",
+      "status_label": "Phase 3B Complete",
+      "phases": [
+        {
+          "name": "Phase 1: Structure Design",
+          "status": "complete",
+          "detail": "Folder hierarchy, naming, colour scheme",
+          "sub_phases": [
+            {"name": "Drive audit complete: 41 drives, ~11,665 files", "status": "complete"},
+            {"name": "Architect review: structure revised post-audit", "status": "complete"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 2: Content Creation",
+          "status": "complete",
+          "detail": "Playbooks + SOPs in Notion",
+          "sub_phases": [
+            {"name": "4 Playbooks created (PB-001 to PB-004)", "status": "complete"},
+            {"name": "12 SOPs created with content", "status": "complete"},
+            {"name": "28 Drive folders created", "status": "complete"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 3A: Drive Archival",
+          "status": "complete",
+          "detail": "Clean up legacy drives",
+          "sub_phases": [
+            {"name": "10 old drives archived (zz_Archive prefix)", "status": "complete"},
+            {"name": "Media Archive organized by year (24 folders)", "status": "complete"},
+            {"name": "Staff Working 2026 drive created", "status": "complete"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 3B: Export to Google Docs",
+          "status": "complete",
+          "detail": "Notion → Google Docs via Apps Script",
+          "sub_phases": [
+            {"name": "37 docs exported (4 PBs + 12 SOPs + 1 Index)", "status": "complete"},
+            {"name": "Duplicate check added to prevent re-exports", "status": "complete"},
+            {"name": "\"Trial to Enrollment\" folder organized", "status": "complete"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 4: Content Migration",
+          "status": "in_progress",
+          "detail": "Move key docs to Ops Library folders",
+          "sub_phases": [
+            {"name": "Move 13 key operational docs", "status": "pending"},
+            {"name": "Update Ops Index with links", "status": "pending"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 5: Staff Access",
+          "status": "planned",
+          "detail": "Share with 5 admin, Chrome bookmark",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 6: Governance",
+          "status": "planned",
+          "detail": "Update process, quarterly review",
+          "sub_phases": [],
+          "blocker": null
+        }
+      ]
+    },
+    {
+      "name": "Data Integrity System",
+      "status": "in_progress",
+      "status_label": "Phase 1 Ready",
+      "phases": [
+        {
+          "name": "Phase 1: Schema & Documentation",
+          "status": "in_progress",
+          "detail": "Add external ID fields to CONTACTS, write ADR-009",
+          "sub_phases": [
+            {"name": "ghl_contact_id field", "status": "pending"},
+            {"name": "teamup_customer_id field", "status": "pending"},
+            {"name": "dsp_student_id field (future)", "status": "pending"},
+            {"name": "identity_verified + notes fields", "status": "pending"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 2: Workflow Updates",
+          "status": "planned",
+          "detail": "LF-00, LF-01, LF-02 to capture external IDs + backfill",
+          "sub_phases": [
+            {"name": "Update LF-00 TeamUp sync", "status": "pending"},
+            {"name": "Update LF-01/LF-02 for GHL ID", "status": "pending"},
+            {"name": "Backfill existing records", "status": "pending"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 3: Data Quality System",
+          "status": "planned",
+          "detail": "Weekly reconciliation + alerting",
+          "sub_phases": [
+            {"name": "DATA_HEALTH table", "status": "pending"},
+            {"name": "SYS-01 reconciliation workflow", "status": "pending"},
+            {"name": "Drift detection + alerts", "status": "pending"}
+          ],
+          "blocker": null
+        }
+      ]
+    }
+  ],
+
+  "completed_projects": {
+    "multi_phase": [
+      {"name": "Ops Priority Engine", "result": "Complete"},
+      {"name": "Term Renewal Engine", "result": "Complete"},
+      {"name": "Teacher Culture Programme", "result": "12 campaigns live"}
+    ],
+    "simple": [
+      {"name": "Ops Library Notion → Docs Export", "result": "37 docs exported"},
+      {"name": "Ops Library Drive (Phase 2B)", "result": "28 folders created"},
+      {"name": "Drive Archive (Phase 3)", "result": "10 drives archived"},
+      {"name": "Media Archive Organization", "result": "24 folders by year"},
+      {"name": "February Camp 2026 Import", "result": "18 kids + 15 AC contacts"},
+      {"name": "SOP-CL-001 School Clubs", "result": "Unregistered attendee SOP"},
+      {"name": "MOUVE RAG Agent", "result": "Complete"},
+      {"name": "Per-Teacher Trial Emails", "result": "Complete"},
+      {"name": "Staff Communication System", "result": "Complete"},
+      {"name": "TeamUp API Access", "result": "Complete"},
+      {"name": "Spring Term 2026 Welcome", "result": "Complete"},
+      {"name": "Trials Tracker System", "result": "Complete"},
+      {"name": "LF Trial Email Clarity Fix", "result": "3 workflows deployed"},
+      {"name": "School Clubs Migration", "result": "Closed (not viable)", "closed": true}
+    ],
+    "active_campaigns": [
+      {"name": "Lapsed Parent Win-Back", "status": "Active (4 emails)"},
+      {"name": "Ladies Fitness Win-Back", "status": "Active (4 campaigns)"},
+      {"name": "Teacher Culture Tuesdays", "status": "Week 2 of 12"},
+      {"name": "February Camp 2026", "status": "18 enrolled (16-20 Feb)"}
+    ]
+  },
+
+  "dependencies": {
+    "lead_capture": [
+      {"name": "Facebook Ads", "status": "active"},
+      {"name": "Website Forms", "status": "active"},
+      {"name": "TeamUp Trials", "status": "active"}
+    ],
+    "crm_leads": [
+      {"name": "GHL StudioHub", "status": "active"},
+      {"name": "GHL Workflows", "status": "partial"}
+    ],
+    "automation": [
+      {"name": "n8n (25 workflows)", "status": "active"},
+      {"name": "Webhooks", "status": "active"}
+    ],
+    "data_email": [
+      {"name": "Airtable", "status": "active"},
+      {"name": "ActiveCampaign", "status": "active"},
+      {"name": "M365 Email", "status": "active"}
+    ],
+    "booking_systems": [
+      {"name": "TeamUp (LF)", "status": "active"},
+      {"name": "DSP (Dance)", "status": "blocked"}
+    ]
+  },
+
+  "data_flows": [
+    {
+      "name": "Facebook Lead Flow",
+      "steps": ["Facebook Lead", "GHL Pipeline", "n8n LF-02", "SMS + Email + Airtable"],
+      "active": true
+    },
+    {
+      "name": "TeamUp Trial Flow",
+      "steps": ["TeamUp Trial", "n8n LF-01", "GHL Contact", "Welcome SMS + Email"],
+      "active": true
+    },
+    {
+      "name": "Attendance Flow",
+      "steps": ["TeamUp Attendance", "n8n LF-04 (hourly)", "Airtable LF_MEMBERSHIPS"],
+      "active": true
+    },
+    {
+      "name": "Calendar Sync Flow",
+      "steps": ["TeamUp Events", "n8n LF-10 (planned)", "Google Calendar"],
+      "active": false
+    }
+  ],
+
+  "workflows": [
+    {"id": "LF-00", "name": "TeamUp → Airtable Sync v8.8", "trigger": "Daily 6am", "status": "active"},
+    {"id": "LF-01", "name": "Self-Serve Trial Capture v1.8", "trigger": "Every 5 min", "status": "active"},
+    {"id": "LF-02", "name": "Instant Lead Response v5", "trigger": "Webhook", "status": "active"},
+    {"id": "LF-02", "name": "Instant Lead Response v6 (Google Workspace)", "trigger": "Webhook", "status": "ready"},
+    {"id": "LF-03", "name": "Trial Welcome Email v2", "trigger": "On trigger", "status": "active"},
+    {"id": "LF-04", "name": "Attendance Tracker v9", "trigger": "Hourly", "status": "active"},
+    {"id": "LF-05", "name": "Post-Attendance Thank You v2", "trigger": "Daily 10am", "status": "active"},
+    {"id": "LF-06", "name": "Pass Expiry Reminder v1", "trigger": "Mon/Thu 10am", "status": "active"},
+    {"id": "LF-07", "name": "Trial Expiry Reminder v2", "trigger": "Daily", "status": "active"},
+    {"id": "LF-08", "name": "Trial Expiry Handler v1", "trigger": "Daily", "status": "active"},
+    {"id": "LF-09", "name": "Daily Trial Alert v1", "trigger": "Daily 8am", "status": "active"},
+    {"id": "LF-10", "name": "TeamUp Calendar Sync v1", "trigger": "Daily 5am", "status": "ready"}
+  ],
+
+  "priority_actions": [
+    {
+      "category": "LF",
+      "action": "Configure Google Workspace credentials in n8n",
+      "detail": "Google Calendar + Google Tasks OAuth for v6 and LF-10"
+    },
+    {
+      "category": "LF",
+      "action": "Create \"Ladies Fitness Classes\" Google Calendar",
+      "detail": "Share with LF staff for unified class view"
+    },
+    {
+      "category": "GHL",
+      "action": "Create \"LF Lead Nurture\" workflow in StudioHub",
+      "detail": "Day 1/3/7 SMS follow-up sequence"
+    },
+    {
+      "category": "CHASE",
+      "action": "Louise: Onboarding email sequence review",
+      "detail": "Blocking children's staff rollout"
+    },
+    {
+      "category": "CHASE",
+      "action": "Louise: 5 staff rates (Racheli, Sari, Chloe, Lily, Sivana)",
+      "detail": "Blocking Staff Costs statement generation - email sent"
+    },
+    {
+      "category": "OPS",
+      "action": "Phase 4: Move key docs to Ops Library folders",
+      "detail": "37 docs exported! Next: migrate 13 key operational docs"
+    },
+    {
+      "category": "P0",
+      "action": "Data Integrity: Add external ID fields to CONTACTS",
+      "detail": "ghl_contact_id, teamup_customer_id, dsp_student_id — enables cross-system identity"
+    }
+  ]
+}
