@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-01-11T16:30:00Z",
+  "generated_at": "2026-01-11T14:30:00Z",
   "generated_by": "SYS-DASHBOARD v1",
   "version": "1.0",
 
   "health_summary": {
     "complete": 25,
-    "in_progress": 4,
+    "in_progress": 5,
     "waiting": 3,
     "blocked": 1
   },
@@ -338,6 +338,69 @@
           "blocker": null
         }
       ]
+    },
+    {
+      "name": "Student Progress Reports",
+      "status": "in_progress",
+      "status_label": "Phase 1 Ready",
+      "phases": [
+        {
+          "name": "Phase 1: Foundation",
+          "status": "planned",
+          "detail": "Create PROGRESS_ASSESSMENTS + PHRASE_BANK tables",
+          "sub_phases": [
+            {"name": "PROGRESS_ASSESSMENTS table (Student, Engagement, Social, Skill, Focus Area)", "status": "pending"},
+            {"name": "PHRASE_BANK table (Category, Level, Phrase, Age Group, Variant)", "status": "pending"},
+            {"name": "Link to CONTACTS + ENROLLMENTS", "status": "pending"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 2: Phrase Bank",
+          "status": "planned",
+          "detail": "4 categories × 4 levels × 3 variants = 60+ phrases",
+          "sub_phases": [
+            {"name": "Engagement phrases (4 levels × 3 variants)", "status": "pending"},
+            {"name": "Social phrases (4 levels × 3 variants)", "status": "pending"},
+            {"name": "Skill phrases (4 levels × 3 variants)", "status": "pending"},
+            {"name": "Highlight phrases (6 focus areas × 3 variants)", "status": "pending"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 3: Teacher Input",
+          "status": "planned",
+          "detail": "Airtable form with 5 dropdowns, 60s per child",
+          "sub_phases": [
+            {"name": "Assessment form design", "status": "pending"},
+            {"name": "Sibling variant auto-assignment (A/B/C)", "status": "pending"},
+            {"name": "Teacher progress view", "status": "pending"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 4: Report Generation",
+          "status": "planned",
+          "detail": "n8n workflow + PDF templating",
+          "sub_phases": [
+            {"name": "PDF template design (MOUVE branded)", "status": "pending"},
+            {"name": "Sibling differentiation logic", "status": "pending"},
+            {"name": "Batch PDF generation workflow", "status": "pending"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 5: Unified Delivery",
+          "status": "planned",
+          "detail": "All reports sent 28 Mar 2026 at 5pm",
+          "sub_phases": [
+            {"name": "Admin QA dashboard (read-only)", "status": "pending"},
+            {"name": "Batch email with PDF attachment", "status": "pending"},
+            {"name": "Delivery tracking + logging", "status": "pending"}
+          ],
+          "blocker": null
+        }
+      ]
     }
   ],
 
@@ -436,6 +499,11 @@
   ],
 
   "priority_actions": [
+    {
+      "category": "PROGRESS",
+      "action": "Student Progress Reports: Phase 1 - Create tables",
+      "detail": "PROGRESS_ASSESSMENTS + PHRASE_BANK tables - Spring 2026 deadline"
+    },
     {
       "category": "LF",
       "action": "Configure Google Workspace credentials in n8n",
