@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-11T11:30:00Z",
+  "generated_at": "2026-01-11T12:15:00Z",
   "generated_by": "SYS-DASHBOARD v1",
   "version": "1.0",
 
@@ -300,7 +300,7 @@
     {
       "name": "Data Integrity System",
       "status": "in_progress",
-      "status_label": "Phase 1 Complete",
+      "status_label": "Phase 2 In Progress",
       "phases": [
         {
           "name": "Phase 1: Schema & Documentation",
@@ -316,12 +316,14 @@
         },
         {
           "name": "Phase 2: Workflow Updates",
-          "status": "planned",
+          "status": "in_progress",
           "detail": "LF-00, LF-01, LF-02 to capture external IDs + backfill",
           "sub_phases": [
-            {"name": "Update LF-00 TeamUp sync", "status": "pending"},
-            {"name": "Update LF-01/LF-02 for GHL ID", "status": "pending"},
-            {"name": "Backfill existing records", "status": "pending"}
+            {"name": "LF-00 already writes TeamUp_Customer_ID", "status": "complete"},
+            {"name": "LF-01 v1.9 saves ghl_contact_id to Airtable", "status": "complete"},
+            {"name": "LF-02 v6 includes ghl_contact_id on create", "status": "complete"},
+            {"name": "Backfill workflow created", "status": "complete"},
+            {"name": "Deploy workflows + run backfill", "status": "pending"}
           ],
           "blocker": null
         },
@@ -466,9 +468,9 @@
       "detail": "37 docs exported! Next: migrate 13 key operational docs"
     },
     {
-      "category": "P0",
-      "action": "Data Integrity: Add external ID fields to CONTACTS",
-      "detail": "ghl_contact_id, teamup_customer_id, dsp_student_id — enables cross-system identity"
+      "category": "P1",
+      "action": "Data Integrity: Deploy v1.9/v6 workflows + run backfill",
+      "detail": "LF-01 v1.9, LF-02 v6, lf-identity-backfill-v1 ready to deploy"
     }
   ]
 }
