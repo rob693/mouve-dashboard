@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-01-11T23:45:00Z",
+  "generated_at": "2026-01-12T11:15:00Z",
   "generated_by": "SYS-DASHBOARD v1",
   "version": "1.0",
 
   "health_summary": {
-    "complete": 25,
-    "in_progress": 5,
+    "complete": 26,
+    "in_progress": 4,
     "waiting": 3,
     "blocked": 1,
     "planned": 1
@@ -33,12 +33,12 @@
         },
         {
           "name": "Phase 2B: Lead Nurture",
-          "status": "in_progress",
-          "detail": "Google Tasks + Calendar + Enhanced Email",
+          "status": "complete",
+          "detail": "v7 deployed: Google Calendar + GHL Day 1/3/7 SMS + Team Alerts",
           "sub_phases": [
-            {"name": "n8n v6 workflow ready", "status": "complete"},
-            {"name": "Google credentials needed", "status": "pending"},
-            {"name": "GHL nurture workflow (manual)", "status": "pending"}
+            {"name": "n8n v7 workflow deployed", "status": "complete"},
+            {"name": "Google Calendar configured", "status": "complete"},
+            {"name": "GHL nurture workflow active", "status": "complete"}
           ],
           "blocker": null
         },
@@ -547,8 +547,7 @@
   "workflows": [
     {"id": "LF-00", "name": "TeamUp → Airtable Sync v8.8", "trigger": "Daily 6am", "status": "active"},
     {"id": "LF-01", "name": "Self-Serve Trial Capture v1.8", "trigger": "Every 5 min", "status": "active"},
-    {"id": "LF-02", "name": "Instant Lead Response v5", "trigger": "Webhook", "status": "active"},
-    {"id": "LF-02", "name": "Instant Lead Response v6 (Google Workspace)", "trigger": "Webhook", "status": "ready"},
+    {"id": "LF-02", "name": "Instant Lead Response v7 (Nurture)", "trigger": "Webhook", "status": "active"},
     {"id": "LF-03", "name": "Trial Welcome Email v2", "trigger": "On trigger", "status": "active"},
     {"id": "LF-04", "name": "Attendance Tracker v9", "trigger": "Hourly", "status": "active"},
     {"id": "LF-05", "name": "Post-Attendance Thank You v2", "trigger": "Daily 10am", "status": "active"},
@@ -567,18 +566,18 @@
     },
     {
       "category": "LF",
-      "action": "Configure Google Workspace credentials in n8n",
-      "detail": "Google Calendar + Google Tasks OAuth for v6 and LF-10"
+      "action": "Phase 2C: Create \"Ladies Fitness Classes\" Google Calendar",
+      "detail": "Share with LF staff for unified class view (Phase 2B complete!)"
     },
     {
       "category": "LF",
-      "action": "Create \"Ladies Fitness Classes\" Google Calendar",
-      "detail": "Share with LF staff for unified class view"
+      "action": "Phase 2C: Build LF-10 calendar sync workflow",
+      "detail": "Daily 5am sync of TeamUp classes to Google Calendar"
     },
     {
-      "category": "GHL",
-      "action": "Create \"LF Lead Nurture\" workflow in StudioHub",
-      "detail": "Day 1/3/7 SMS follow-up sequence"
+      "category": "LF",
+      "action": "Phase 2C: Update LF-01 to add trial calendar events",
+      "detail": "Add trial bookings to staff calendar at class times"
     },
     {
       "category": "CHASE",
