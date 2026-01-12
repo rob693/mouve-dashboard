@@ -343,7 +343,7 @@
     {
       "name": "Staff Portal (Softr)",
       "status": "planned",
-      "status_label": "Phase 1 Ready",
+      "status_label": "Phase 1 Ready | v2.0 Schema Documented",
       "phases": [
         {
           "name": "Phase 1: Foundation",
@@ -361,8 +361,13 @@
         {
           "name": "Phase 2: Timesheets Portal",
           "status": "planned",
-          "detail": "Submit, view own, approval queue",
-          "sub_phases": [],
+          "detail": "Submit, view own, approval queue (schema documented)",
+          "sub_phases": [
+            {"name": "Form schema: 8 fields documented", "status": "complete"},
+            {"name": "Status workflow: Draft→Submitted→Approved→Processed", "status": "complete"},
+            {"name": "n8n integration: Xero statement trigger", "status": "complete"},
+            {"name": "Build Softr forms", "status": "pending"}
+          ],
           "blocker": null
         },
         {
@@ -382,8 +387,13 @@
         {
           "name": "Phase 5: Onboarding Portal (Conditional)",
           "status": "planned",
-          "detail": "Only if approval gate confirmed",
-          "sub_phases": [],
+          "detail": "Only if approval gate confirmed (schema documented)",
+          "sub_phases": [
+            {"name": "Form schema: 14 fields documented", "status": "complete"},
+            {"name": "Status workflow: Pending→Processed/Error", "status": "complete"},
+            {"name": "n8n integration: Enrollment Handler v2", "status": "complete"},
+            {"name": "Decision: approval gate needed?", "status": "pending"}
+          ],
           "blocker": "Conditional: Decision needed on approval gate"
         }
       ]
