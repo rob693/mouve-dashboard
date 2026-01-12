@@ -14,7 +14,7 @@
     {
       "name": "Ladies Fitness Funnel",
       "status": "in_progress",
-      "status_label": "In Progress",
+      "status_label": "Phase 3 Complete (5/7 phases)",
       "phases": [
         {
           "name": "Phase 1: Foundation",
@@ -32,12 +32,13 @@
         },
         {
           "name": "Phase 2B: Lead Nurture",
-          "status": "in_progress",
-          "detail": "Google Tasks + Calendar + Enhanced Email",
+          "status": "complete",
+          "detail": "LF-02 v7 + GHL nurture + Calendar integration",
           "sub_phases": [
-            {"name": "n8n v6 workflow ready", "status": "complete"},
-            {"name": "Google credentials needed", "status": "pending"},
-            {"name": "GHL nurture workflow (manual)", "status": "pending"}
+            {"name": "LF-02 v7 workflow deployed", "status": "complete"},
+            {"name": "GHL \"LF Lead Nurture\" workflow (Day 1/3/7 SMS)", "status": "complete"},
+            {"name": "Google Calendar integration (15-min call blocks)", "status": "complete"},
+            {"name": "Enhanced email with talking points", "status": "complete"}
           ],
           "blocker": null
         },
@@ -316,8 +317,7 @@
     {"id": "SYS-01", "name": "Data Quality Reconciliation", "trigger": "Weekly", "status": "active"},
     {"id": "LF-00", "name": "TeamUp → Airtable Sync v8.8", "trigger": "Daily 6am", "status": "active"},
     {"id": "LF-01", "name": "Self-Serve Trial Capture v1.8", "trigger": "Every 5 min", "status": "active"},
-    {"id": "LF-02", "name": "Instant Lead Response v5", "trigger": "Webhook", "status": "active"},
-    {"id": "LF-02", "name": "Instant Lead Response v6 (Google Workspace)", "trigger": "Webhook", "status": "ready"},
+    {"id": "LF-02", "name": "Instant Lead Response v7 (Nurture + Calendar)", "trigger": "Webhook", "status": "active"},
     {"id": "LF-03", "name": "Trial Welcome Email v2", "trigger": "On trigger", "status": "active"},
     {"id": "LF-04", "name": "Attendance Tracker v9", "trigger": "Hourly", "status": "active"},
     {"id": "LF-05", "name": "Post-Attendance Thank You v2", "trigger": "Daily 10am", "status": "active"},
@@ -330,16 +330,6 @@
   ],
 
   "priority_actions": [
-    {
-      "category": "LF",
-      "action": "Configure Google Workspace credentials in n8n",
-      "detail": "Google Tasks OAuth for LF-02 v6 lead response workflow"
-    },
-    {
-      "category": "GHL",
-      "action": "Create \"LF Lead Nurture\" workflow in StudioHub",
-      "detail": "Day 1/3/7 SMS follow-up sequence"
-    },
     {
       "category": "CHASE",
       "action": "Louise: Onboarding email sequence review",
