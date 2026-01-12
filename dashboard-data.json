@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-12T15:30:00Z",
+  "generated_at": "2026-01-12T15:45:00Z",
   "generated_by": "SYS-DASHBOARD v1",
   "version": "1.0",
 
@@ -222,6 +222,48 @@
           "detail": "SOP + Louise training",
           "sub_phases": [],
           "blocker": null
+        }
+      ]
+    },
+    {
+      "name": "Staff Portal (Softr)",
+      "status": "planned",
+      "status_label": "Phase 1 Ready to Start",
+      "phases": [
+        {
+          "name": "Phase 1: Foundation",
+          "status": "planned",
+          "detail": "Softr setup, Airtable connect, user auth, groups",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 2: Timesheets Portal",
+          "status": "planned",
+          "detail": "Submit timesheet, view submissions, admin approval",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 3: Staff Reports Portal",
+          "status": "planned",
+          "detail": "Class report submission and review interface",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 4: Rollout & Training",
+          "status": "planned",
+          "detail": "Staff training, parallel period, deprecate Airtable Forms",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 5: Onboarding Portal",
+          "status": "planned",
+          "detail": "Children's intake with approval gate (conditional)",
+          "sub_phases": [],
+          "blocker": "Conditional: Only if approval gate confirmed"
         }
       ]
     }
