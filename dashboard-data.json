@@ -5,7 +5,7 @@
 
   "health_summary": {
     "complete": 27,
-    "in_progress": 2,
+    "in_progress": 3,
     "waiting": 3,
     "blocked": 1
   },
@@ -264,6 +264,34 @@
           "detail": "Children's intake with approval gate (conditional)",
           "sub_phases": [],
           "blocker": "Conditional: Only if approval gate confirmed"
+        }
+      ]
+    },
+    {
+      "name": "Operational Dashboard",
+      "status": "in_progress",
+      "status_label": "Phase 1 Foundation (0/3 phases)",
+      "phases": [
+        {
+          "name": "Phase 1: Foundation",
+          "status": "in_progress",
+          "detail": "Google Sheets, GitHub repo, Vercel project setup",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 2: Data Pipeline",
+          "status": "planned",
+          "detail": "n8n OPS-DASHBOARD-V1 workflow (GHL + Airtable aggregation)",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 3: Frontend + Rollout",
+          "status": "planned",
+          "detail": "Dashboard UI, password protection, Louise/Georgia rollout",
+          "sub_phases": [],
+          "blocker": null
         }
       ]
     }
