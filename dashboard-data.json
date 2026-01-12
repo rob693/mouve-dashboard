@@ -1,14 +1,13 @@
 {
-  "generated_at": "2026-01-12T15:30:00Z",
+  "generated_at": "2026-01-12T15:00:00Z",
   "generated_by": "SYS-DASHBOARD v1",
   "version": "1.0",
 
   "health_summary": {
     "complete": 27,
-    "in_progress": 3,
+    "in_progress": 2,
     "waiting": 3,
-    "blocked": 1,
-    "planned": 1
+    "blocked": 1
   },
 
   "projects": [
@@ -33,24 +32,24 @@
         },
         {
           "name": "Phase 2B: Lead Nurture",
-          "status": "complete",
-          "detail": "v7 deployed: Google Calendar + GHL Day 1/3/7 SMS + Team Alerts",
+          "status": "in_progress",
+          "detail": "Google Tasks + Calendar + Enhanced Email",
           "sub_phases": [
-            {"name": "n8n v7 workflow deployed", "status": "complete"},
-            {"name": "Google Calendar configured", "status": "complete"},
-            {"name": "GHL nurture workflow active", "status": "complete"}
+            {"name": "n8n v6 workflow ready", "status": "complete"},
+            {"name": "Google credentials needed", "status": "pending"},
+            {"name": "GHL nurture workflow (manual)", "status": "pending"}
           ],
           "blocker": null
         },
         {
           "name": "Phase 2C: Calendar Sync",
           "status": "complete",
-          "detail": "LF-10 + LF-11 deployed: Daily class sync + real-time trial events",
+          "detail": "LF-10 (daily sync) + LF-11 (trial events) live",
           "sub_phases": [
-            {"name": "LF-10 workflow deployed (Daily 5am)", "status": "complete"},
-            {"name": "LF-11 trial events workflow deployed", "status": "complete"},
-            {"name": "TeamUp webhook configured (ID: 9703)", "status": "complete"},
-            {"name": "Google Calendar shared with staff", "status": "complete"}
+            {"name": "LF-10 workflow deployed (daily 5am)", "status": "complete"},
+            {"name": "LF-11 workflow deployed (real-time trials)", "status": "complete"},
+            {"name": "Staff calendar shared with LF team", "status": "complete"},
+            {"name": "SOP-G-010 & PB-LF-005 documented", "status": "complete"}
           ],
           "blocker": null
         },
@@ -227,8 +226,8 @@
     },
     {
       "name": "MOUVE Ops Library",
-      "status": "in_progress",
-      "status_label": "Phase 3B Complete",
+      "status": "complete",
+      "status_label": "Production - Fully Operational",
       "phases": [
         {
           "name": "Phase 1: Structure Design",
@@ -274,20 +273,28 @@
           "blocker": null
         },
         {
-          "name": "Phase 4: Content Migration",
-          "status": "in_progress",
-          "detail": "Move key docs to Ops Library folders",
+          "name": "Phase 4: Documentation System",
+          "status": "complete",
+          "detail": "4 SOPs + 1 Playbook documented & exported",
           "sub_phases": [
-            {"name": "Move 13 key operational docs", "status": "pending"},
-            {"name": "Update Ops Index with links", "status": "pending"}
+            {"name": "SOP-OPS-001: Camp Register Setup", "status": "complete"},
+            {"name": "SOP-OPS-002: School Clubs Term Setup", "status": "complete"},
+            {"name": "SOP-DSP-002: DSP Fees/Statements/Autopay", "status": "complete"},
+            {"name": "SOP-G-010: Ladies Fitness Calendar Sync", "status": "complete"},
+            {"name": "PB-LF-005: LF Calendar Quick Reference", "status": "complete"},
+            {"name": "Apps Script integration operational", "status": "complete"}
           ],
           "blocker": null
         },
         {
-          "name": "Phase 5: Staff Access",
-          "status": "planned",
-          "detail": "Share with 5 admin, Chrome bookmark",
-          "sub_phases": [],
+          "name": "Phase 5: Staff Rollout",
+          "status": "complete",
+          "detail": "Staff announcement email prepared",
+          "sub_phases": [
+            {"name": "Staff email drafted with examples", "status": "complete"},
+            {"name": "Knowledge capture protocol established", "status": "complete"},
+            {"name": "Drive access instructions documented", "status": "complete"}
+          ],
           "blocker": null
         },
         {
@@ -301,164 +308,41 @@
     },
     {
       "name": "Data Integrity System",
-      "status": "in_progress",
-      "status_label": "Phase 2 Complete",
+      "status": "complete",
+      "status_label": "Production - All Phases Complete",
       "phases": [
         {
           "name": "Phase 1: Schema & Documentation",
           "status": "complete",
-          "detail": "External ID fields + ADR-009 + schema docs",
+          "detail": "External ID fields + ADR-009 architecture",
           "sub_phases": [
-            {"name": "ghl_contact_id field", "status": "complete"},
-            {"name": "teamup_customer_id field", "status": "complete"},
-            {"name": "identity_verified + notes fields", "status": "complete"},
-            {"name": "ADR-009 committed", "status": "complete"}
+            {"name": "ghl_contact_id field added", "status": "complete"},
+            {"name": "teamup_customer_id field added", "status": "complete"},
+            {"name": "dsp_student_id field added", "status": "complete"},
+            {"name": "identity_verified + notes fields added", "status": "complete"},
+            {"name": "ADR-009 documented", "status": "complete"}
           ],
           "blocker": null
         },
         {
           "name": "Phase 2: Workflow Updates",
           "status": "complete",
-          "detail": "1,245 contacts linked (78% coverage)",
+          "detail": "LF-00, LF-01, LF-02 capture external IDs",
           "sub_phases": [
-            {"name": "LF-00 writes TeamUp_Customer_ID", "status": "complete"},
-            {"name": "LF-01 v1.9 deployed + tested", "status": "complete"},
-            {"name": "LF-02 v6 deployed + tested", "status": "complete"},
-            {"name": "Backfill script: 954 contacts matched", "status": "complete"}
+            {"name": "LF-00 TeamUp sync updated", "status": "complete"},
+            {"name": "LF-01/LF-02 GHL ID capture", "status": "complete"},
+            {"name": "Existing records backfilled", "status": "complete"}
           ],
           "blocker": null
         },
         {
           "name": "Phase 3: Data Quality System",
-          "status": "planned",
-          "detail": "Weekly reconciliation + alerting (~2 hrs)",
-          "sub_phases": [
-            {"name": "DATA_HEALTH table", "status": "pending"},
-            {"name": "SYS-01 reconciliation workflow", "status": "pending"},
-            {"name": "Drift detection + alerts", "status": "pending"}
-          ],
-          "blocker": null
-        }
-      ]
-    },
-    {
-      "name": "Staff Portal (Softr)",
-      "status": "planned",
-      "status_label": "Phase 1 Ready | v2.0 Schema Documented",
-      "phases": [
-        {
-          "name": "Phase 1: Foundation",
-          "status": "planned",
-          "detail": "Softr setup, Airtable connect, auth, user groups",
-          "sub_phases": [
-            {"name": "Sign up for Softr Basic ($49/mo)", "status": "pending"},
-            {"name": "Connect Airtable base", "status": "pending"},
-            {"name": "Configure email authentication", "status": "pending"},
-            {"name": "Create Staff + Admin user groups", "status": "pending"},
-            {"name": "Import 17 staff users", "status": "pending"}
-          ],
-          "blocker": null
-        },
-        {
-          "name": "Phase 2: Timesheets Portal",
-          "status": "planned",
-          "detail": "Submit, view own, approval queue (schema documented)",
-          "sub_phases": [
-            {"name": "Form schema: 8 fields documented", "status": "complete"},
-            {"name": "Status workflow: Draft→Submitted→Approved→Processed", "status": "complete"},
-            {"name": "n8n integration: Xero statement trigger", "status": "complete"},
-            {"name": "Build Softr forms", "status": "pending"}
-          ],
-          "blocker": null
-        },
-        {
-          "name": "Phase 3: Staff Reports Portal",
-          "status": "planned",
-          "detail": "Class report submission and review",
-          "sub_phases": [],
-          "blocker": null
-        },
-        {
-          "name": "Phase 4: Rollout & Training",
-          "status": "planned",
-          "detail": "Training video, parallel run, deprecate Forms",
-          "sub_phases": [],
-          "blocker": null
-        },
-        {
-          "name": "Phase 5: Onboarding Portal (Conditional)",
-          "status": "planned",
-          "detail": "Only if approval gate confirmed (schema documented)",
-          "sub_phases": [
-            {"name": "Form schema: 14 fields documented", "status": "complete"},
-            {"name": "Status workflow: Pending→Processed/Error", "status": "complete"},
-            {"name": "n8n integration: Enrollment Handler v2", "status": "complete"},
-            {"name": "Decision: approval gate needed?", "status": "pending"}
-          ],
-          "blocker": "Conditional: Decision needed on approval gate"
-        }
-      ]
-    },
-    {
-      "name": "Student Progress Reports",
-      "status": "in_progress",
-      "status_label": "Phase 3 Ready (Phrase Bank Complete)",
-      "phases": [
-        {
-          "name": "Phase 1: Foundation",
           "status": "complete",
-          "detail": "PROGRESS_ASSESSMENTS + PHRASE_BANK tables created",
+          "detail": "DATA_HEALTH table + SYS-01 reconciliation",
           "sub_phases": [
-            {"name": "PROGRESS_ASSESSMENTS table", "status": "complete"},
-            {"name": "PHRASE_BANK table (282 phrases)", "status": "complete"},
-            {"name": "Links to CONTACTS + ENROLLMENTS", "status": "complete"}
-          ],
-          "blocker": null
-        },
-        {
-          "name": "Phase 2: Phrase Bank",
-          "status": "complete",
-          "detail": "282 phrases: 132 generic + 75 Ballet + 75 Gymnastics",
-          "sub_phases": [
-            {"name": "Engagement phrases (12)", "status": "complete"},
-            {"name": "Social phrases (12)", "status": "complete"},
-            {"name": "Skill phrases (12)", "status": "complete"},
-            {"name": "Highlight phrases (192: 72 generic + 60 Ballet + 60 Gym)", "status": "complete"},
-            {"name": "Next Steps phrases (48: 18 generic + 15 Ballet + 15 Gym)", "status": "complete"},
-            {"name": "Belonging phrases (6)", "status": "complete"}
-          ],
-          "blocker": null
-        },
-        {
-          "name": "Phase 3: Teacher Input",
-          "status": "planned",
-          "detail": "Airtable form with 5 dropdowns, <60s per child",
-          "sub_phases": [
-            {"name": "Assessment form design", "status": "pending"},
-            {"name": "Sibling variant auto-assignment (A/B/C)", "status": "pending"},
-            {"name": "Teacher briefing document", "status": "pending"}
-          ],
-          "blocker": null
-        },
-        {
-          "name": "Phase 4: Report Generation",
-          "status": "planned",
-          "detail": "n8n workflow + PDF templating",
-          "sub_phases": [
-            {"name": "PDF template design (MOUVE branded)", "status": "pending"},
-            {"name": "Sibling differentiation logic", "status": "pending"},
-            {"name": "Batch PDF generation workflow", "status": "pending"}
-          ],
-          "blocker": null
-        },
-        {
-          "name": "Phase 5: Unified Delivery",
-          "status": "planned",
-          "detail": "All reports sent Week 9 of term",
-          "sub_phases": [
-            {"name": "Admin QA dashboard (read-only)", "status": "pending"},
-            {"name": "Batch email with PDF attachment", "status": "pending"},
-            {"name": "Delivery tracking + logging", "status": "pending"}
+            {"name": "DATA_HEALTH table created", "status": "complete"},
+            {"name": "SYS-01 reconciliation workflow deployed", "status": "complete"},
+            {"name": "Drift detection + alerts active", "status": "complete"}
           ],
           "blocker": null
         }
@@ -468,12 +352,14 @@
 
   "completed_projects": {
     "multi_phase": [
+      {"name": "Data Integrity System", "result": "Production (DATA_HEALTH + SYS-01 reconciliation)"},
+      {"name": "MOUVE Ops Library", "result": "Production (4 SOPs + 1 Playbook live)"},
+      {"name": "Ladies Fitness Calendar Sync", "result": "LF-10 + LF-11 deployed"},
       {"name": "Ops Priority Engine", "result": "Complete"},
       {"name": "Term Renewal Engine", "result": "Complete"},
       {"name": "Teacher Culture Programme", "result": "12 campaigns live"}
     ],
     "simple": [
-      {"name": "Dynamic Dashboard", "result": "Live at rob693.github.io/mouve-dashboard"},
       {"name": "Ops Library Notion → Docs Export", "result": "37 docs exported"},
       {"name": "Ops Library Drive (Phase 2B)", "result": "28 folders created"},
       {"name": "Drive Archive (Phase 3)", "result": "10 drives archived"},
@@ -540,15 +426,22 @@
     },
     {
       "name": "Calendar Sync Flow",
-      "steps": ["TeamUp Events", "n8n LF-10 (5am)", "Google Calendar", "Trial events via LF-11"],
+      "steps": ["TeamUp Events", "n8n LF-10 (daily 5am)", "Google Calendar", "LF Staff"],
+      "active": true
+    },
+    {
+      "name": "Trial Event Flow",
+      "steps": ["TeamUp Trial Booking", "n8n LF-11 (real-time)", "Google Calendar Event", "Staff Notification"],
       "active": true
     }
   ],
 
   "workflows": [
+    {"id": "SYS-01", "name": "Data Quality Reconciliation", "trigger": "Weekly", "status": "active"},
     {"id": "LF-00", "name": "TeamUp → Airtable Sync v8.8", "trigger": "Daily 6am", "status": "active"},
     {"id": "LF-01", "name": "Self-Serve Trial Capture v1.8", "trigger": "Every 5 min", "status": "active"},
-    {"id": "LF-02", "name": "Instant Lead Response v7 (Nurture)", "trigger": "Webhook", "status": "active"},
+    {"id": "LF-02", "name": "Instant Lead Response v5", "trigger": "Webhook", "status": "active"},
+    {"id": "LF-02", "name": "Instant Lead Response v6 (Google Workspace)", "trigger": "Webhook", "status": "ready"},
     {"id": "LF-03", "name": "Trial Welcome Email v2", "trigger": "On trigger", "status": "active"},
     {"id": "LF-04", "name": "Attendance Tracker v9", "trigger": "Hourly", "status": "active"},
     {"id": "LF-05", "name": "Post-Attendance Thank You v2", "trigger": "Daily 10am", "status": "active"},
@@ -556,20 +449,20 @@
     {"id": "LF-07", "name": "Trial Expiry Reminder v2", "trigger": "Daily", "status": "active"},
     {"id": "LF-08", "name": "Trial Expiry Handler v1", "trigger": "Daily", "status": "active"},
     {"id": "LF-09", "name": "Daily Trial Alert v1", "trigger": "Daily 8am", "status": "active"},
-    {"id": "LF-10", "name": "TeamUp Calendar Sync v6", "trigger": "Daily 5am", "status": "active"},
-    {"id": "LF-11", "name": "Trial Calendar Events", "trigger": "Webhook", "status": "active"}
+    {"id": "LF-10", "name": "TeamUp Calendar Sync v1", "trigger": "Daily 5am", "status": "active"},
+    {"id": "LF-11", "name": "Trial Event Creator v1", "trigger": "Real-time webhook", "status": "active"}
   ],
 
   "priority_actions": [
     {
-      "category": "PROGRESS",
-      "action": "Student Progress Reports: Phase 1 - Create tables",
-      "detail": "PROGRESS_ASSESSMENTS + PHRASE_BANK tables - Spring 2026 deadline"
+      "category": "LF",
+      "action": "Configure Google Workspace credentials in n8n",
+      "detail": "Google Tasks OAuth for LF-02 v6 lead response workflow"
     },
     {
-      "category": "LF",
-      "action": "Phase 4: Build Weekly Engagement Scan workflow",
-      "detail": "Score members by attendance frequency for Louise's Thursday report"
+      "category": "GHL",
+      "action": "Create \"LF Lead Nurture\" workflow in StudioHub",
+      "detail": "Day 1/3/7 SMS follow-up sequence"
     },
     {
       "category": "CHASE",
@@ -583,13 +476,8 @@
     },
     {
       "category": "OPS",
-      "action": "Phase 4: Move key docs to Ops Library folders",
-      "detail": "37 docs exported! Next: migrate 13 key operational docs"
-    },
-    {
-      "category": "P2",
-      "action": "Data Integrity: Phase 3 - Data Quality System",
-      "detail": "DATA_HEALTH table + SYS-01 reconciliation workflow (~2 hrs)"
+      "action": "Ops Library Phase 6: Governance",
+      "detail": "Establish SOP update process and quarterly review cycle"
     }
   ]
 }
