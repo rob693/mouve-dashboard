@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-01-12T11:15:00Z",
+  "generated_at": "2026-01-12T15:30:00Z",
   "generated_by": "SYS-DASHBOARD v1",
   "version": "1.0",
 
   "health_summary": {
-    "complete": 26,
-    "in_progress": 4,
+    "complete": 27,
+    "in_progress": 3,
     "waiting": 3,
     "blocked": 1,
     "planned": 1
@@ -44,12 +44,13 @@
         },
         {
           "name": "Phase 2C: Calendar Sync",
-          "status": "in_progress",
-          "detail": "TeamUp classes → Google Calendar",
+          "status": "complete",
+          "detail": "LF-10 + LF-11 deployed: Daily class sync + real-time trial events",
           "sub_phases": [
-            {"name": "LF-10 workflow designed", "status": "complete"},
-            {"name": "Create LF Classes calendar", "status": "pending"},
-            {"name": "Configure credentials", "status": "pending"}
+            {"name": "LF-10 workflow deployed (Daily 5am)", "status": "complete"},
+            {"name": "LF-11 trial events workflow deployed", "status": "complete"},
+            {"name": "TeamUp webhook configured (ID: 9703)", "status": "complete"},
+            {"name": "Google Calendar shared with staff", "status": "complete"}
           ],
           "blocker": null
         },
@@ -539,8 +540,8 @@
     },
     {
       "name": "Calendar Sync Flow",
-      "steps": ["TeamUp Events", "n8n LF-10 (planned)", "Google Calendar"],
-      "active": false
+      "steps": ["TeamUp Events", "n8n LF-10 (5am)", "Google Calendar", "Trial events via LF-11"],
+      "active": true
     }
   ],
 
@@ -555,7 +556,8 @@
     {"id": "LF-07", "name": "Trial Expiry Reminder v2", "trigger": "Daily", "status": "active"},
     {"id": "LF-08", "name": "Trial Expiry Handler v1", "trigger": "Daily", "status": "active"},
     {"id": "LF-09", "name": "Daily Trial Alert v1", "trigger": "Daily 8am", "status": "active"},
-    {"id": "LF-10", "name": "TeamUp Calendar Sync v1", "trigger": "Daily 5am", "status": "ready"}
+    {"id": "LF-10", "name": "TeamUp Calendar Sync v6", "trigger": "Daily 5am", "status": "active"},
+    {"id": "LF-11", "name": "Trial Calendar Events", "trigger": "Webhook", "status": "active"}
   ],
 
   "priority_actions": [
@@ -566,18 +568,8 @@
     },
     {
       "category": "LF",
-      "action": "Phase 2C: Create \"Ladies Fitness Classes\" Google Calendar",
-      "detail": "Share with LF staff for unified class view (Phase 2B complete!)"
-    },
-    {
-      "category": "LF",
-      "action": "Phase 2C: Build LF-10 calendar sync workflow",
-      "detail": "Daily 5am sync of TeamUp classes to Google Calendar"
-    },
-    {
-      "category": "LF",
-      "action": "Phase 2C: Update LF-01 to add trial calendar events",
-      "detail": "Add trial bookings to staff calendar at class times"
+      "action": "Phase 4: Build Weekly Engagement Scan workflow",
+      "detail": "Score members by attendance frequency for Louise's Thursday report"
     },
     {
       "category": "CHASE",
