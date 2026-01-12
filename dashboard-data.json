@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-12T19:30:00Z",
+  "generated_at": "2026-01-12T20:00:00Z",
   "generated_by": "SYS-DASHBOARD v1",
   "version": "1.0",
 
@@ -92,8 +92,13 @@
         {
           "name": "Phase 2: Enrollment Automation",
           "status": "complete",
-          "detail": "Handler v2, receipts, AC sync, tested",
-          "sub_phases": [],
+          "detail": "Handler v2, receipts, AC sync, tested (v1.1: duplicate prevention pending)",
+          "sub_phases": [
+            {"name": "Enrollment Handler v2 workflow", "status": "complete"},
+            {"name": "Receipt email + AC sync", "status": "complete"},
+            {"name": "Age/category tagging", "status": "complete"},
+            {"name": "Duplicate onboarding prevention logic", "status": "pending"}
+          ],
           "blocker": null
         },
         {
@@ -228,7 +233,7 @@
     {
       "name": "Staff Portal (Softr)",
       "status": "planned",
-      "status_label": "Phase 1 Ready to Start",
+      "status_label": "Phase 1 Ready to Start (v2.1)",
       "phases": [
         {
           "name": "Phase 1: Foundation",
@@ -261,8 +266,12 @@
         {
           "name": "Phase 5: Onboarding Portal",
           "status": "planned",
-          "detail": "Children's intake with approval gate (conditional)",
-          "sub_phases": [],
+          "detail": "Children's intake with approval gate + existing family detection UI",
+          "sub_phases": [
+            {"name": "Intake form with approval gate", "status": "planned"},
+            {"name": "Existing family detection badge", "status": "planned"},
+            {"name": "Duplicate onboarding prevention test", "status": "planned"}
+          ],
           "blocker": "Conditional: Only if approval gate confirmed"
         }
       ]
