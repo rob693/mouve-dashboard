@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-01-12T16:00:00Z",
+  "generated_at": "2026-01-12T19:30:00Z",
   "generated_by": "SYS-DASHBOARD v1",
   "version": "1.0",
 
   "health_summary": {
     "complete": 27,
-    "in_progress": 3,
+    "in_progress": 2,
     "waiting": 3,
     "blocked": 1
   },
@@ -266,34 +266,6 @@
           "blocker": "Conditional: Only if approval gate confirmed"
         }
       ]
-    },
-    {
-      "name": "Operational Dashboard",
-      "status": "in_progress",
-      "status_label": "Phase 1 Foundation (0/3 phases)",
-      "phases": [
-        {
-          "name": "Phase 1: Foundation",
-          "status": "in_progress",
-          "detail": "Google Sheets, GitHub repo, Vercel project setup",
-          "sub_phases": [],
-          "blocker": null
-        },
-        {
-          "name": "Phase 2: Data Pipeline",
-          "status": "planned",
-          "detail": "n8n OPS-DASHBOARD-V1 workflow (GHL + Airtable aggregation)",
-          "sub_phases": [],
-          "blocker": null
-        },
-        {
-          "name": "Phase 3: Frontend + Rollout",
-          "status": "planned",
-          "detail": "Dashboard UI, password protection, Louise/Georgia rollout",
-          "sub_phases": [],
-          "blocker": null
-        }
-      ]
     }
   ],
 
@@ -386,7 +358,7 @@
   "workflows": [
     {"id": "SYS-01", "name": "Data Quality Reconciliation", "trigger": "Weekly", "status": "active"},
     {"id": "LF-00", "name": "TeamUp → Airtable Sync v8.8", "trigger": "Daily 6am", "status": "active"},
-    {"id": "LF-01", "name": "Self-Serve Trial Capture v1.8", "trigger": "Every 5 min", "status": "active"},
+    {"id": "LF-01", "name": "Self-Serve Trial Capture v1.9", "trigger": "Every 5 min", "status": "active"},
     {"id": "LF-02", "name": "Instant Lead Response v7 (Nurture + Calendar)", "trigger": "Webhook", "status": "active"},
     {"id": "LF-03", "name": "Trial Welcome Email v2", "trigger": "On trigger", "status": "active"},
     {"id": "LF-04", "name": "Attendance Tracker v9", "trigger": "Hourly", "status": "active"},
