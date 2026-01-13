@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-13T23:30:00Z",
+  "generated_at": "2026-01-13T15:00:00Z",
   "generated_by": "SYS-DASHBOARD v1",
   "version": "1.0",
 
@@ -301,13 +301,15 @@
       {"name": "Spring Term 2026 Welcome", "result": "Complete"},
       {"name": "Trials Tracker System", "result": "Complete"},
       {"name": "LF Trial Email Clarity Fix", "result": "3 workflows deployed"},
+      {"name": "Historical Camp Data Migration", "result": "1,301 contacts + 11-tag taxonomy imported to AC"},
       {"name": "School Clubs Migration", "result": "Closed (not viable)", "closed": true}
     ],
     "active_campaigns": [
       {"name": "Lapsed Parent Win-Back", "status": "Active (4 emails)"},
       {"name": "Ladies Fitness Win-Back", "status": "Active (4 campaigns)"},
       {"name": "Teacher Culture Tuesdays", "status": "Week 2 of 12"},
-      {"name": "February Camp 2026", "status": "18 enrolled (16-20 Feb)"}
+      {"name": "February Camp 2026", "status": "18 enrolled (16-20 Feb)"},
+      {"name": "February WICKED Camp Email Campaign", "status": "Scheduled (7 emails, 1,726 recipients, launches 15 Jan)"}
     ]
   },
 
