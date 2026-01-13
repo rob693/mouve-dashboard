@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-13T22:15:00Z",
+  "generated_at": "2026-01-13T23:45:00Z",
   "generated_by": "SYS-DASHBOARD v1",
   "version": "1.0",
 
@@ -119,7 +119,14 @@
           "detail": "Convert to HTML, import to AC, test automations",
           "sub_phases": [
             {"name": "HTML conversion (MOUVE Design System v2.0)", "status": "complete"},
-            {"name": "ActiveCampaign automation setup", "status": "pending"},
+            {"name": "AC custom fields created (5 new fields)", "status": "complete"},
+            {"name": "Conditional content testing (Liquid, %IF%)", "status": "complete"},
+            {"name": "Email 1 split into 3 age versions", "status": "complete"},
+            {"name": "Create AC campaigns for Email 1 (3 versions)", "status": "pending"},
+            {"name": "Create Email 5 (3 age versions)", "status": "pending"},
+            {"name": "Upload simple emails 2,3,6-10 to AC", "status": "pending"},
+            {"name": "Handle Email 4 class conditionals in AC UI", "status": "pending"},
+            {"name": "Create 3 automation sequences (Tots/Children/Teens)", "status": "pending"},
             {"name": "Testing and deployment", "status": "pending"}
           ],
           "blocker": null
