@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-01-13T15:00:00Z",
+  "generated_at": "2026-01-13T21:30:00Z",
   "generated_by": "SYS-DASHBOARD v1",
   "version": "1.0",
 
   "health_summary": {
     "complete": 27,
-    "in_progress": 2,
-    "waiting": 3,
+    "in_progress": 3,
+    "waiting": 2,
     "blocked": 1
   },
 
@@ -79,8 +79,8 @@
     },
     {
       "name": "Children's Dance Onboarding",
-      "status": "waiting",
-      "status_label": "Phase 3 Blocked",
+      "status": "in_progress",
+      "status_label": "Phase 3 Complete (3/6 phases)",
       "phases": [
         {
           "name": "Phase 1: Foundation",
@@ -103,24 +103,36 @@
         },
         {
           "name": "Phase 3: Onboarding Sequences",
-          "status": "waiting",
-          "detail": "10-email journey × 3 age tracks",
+          "status": "complete",
+          "detail": "10-email journey × 3 age tracks - all refined",
           "sub_phases": [
-            {"name": "Emails 1-3 drafted (all tracks)", "status": "complete"},
-            {"name": "Emails 4-10 pending", "status": "pending"},
-            {"name": "AC automations not built", "status": "pending"}
+            {"name": "Emails 1-3 refined & committed", "status": "complete"},
+            {"name": "Emails 4-8 refined & committed", "status": "complete"},
+            {"name": "Emails 9-10 refined & committed", "status": "complete"},
+            {"name": "All pass Email Deliverability Checklist v1.1", "status": "complete"}
           ],
-          "blocker": "Blocked: Waiting on Louise email review"
+          "blocker": null
         },
         {
-          "name": "Phase 4: Staff Rollout",
-          "status": "waiting",
+          "name": "Phase 4: HTML Conversion & AC Setup",
+          "status": "planned",
+          "detail": "Convert to HTML, import to AC, test automations",
+          "sub_phases": [
+            {"name": "HTML conversion (MOUVE Design System v2.0)", "status": "pending"},
+            {"name": "ActiveCampaign automation setup", "status": "pending"},
+            {"name": "Testing and deployment", "status": "pending"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 5: Staff Rollout",
+          "status": "planned",
           "detail": "Training, SOP, go-live",
           "sub_phases": [],
-          "blocker": "Blocked by Phase 3"
+          "blocker": null
         },
         {
-          "name": "Phase 5: DSP Integration",
+          "name": "Phase 6: DSP Integration",
           "status": "planned",
           "detail": "Auto-sync enrollments from Dance Studio Pro",
           "sub_phases": [],
@@ -288,6 +300,7 @@
       {"name": "Teacher Culture Programme", "result": "12 campaigns live"}
     ],
     "simple": [
+      {"name": "Children's Onboarding Email Refinement", "result": "10 emails × 3 age tracks, all pass Email Deliverability Checklist v1.1"},
       {"name": "Ops Library Notion → Docs Export", "result": "37 docs exported"},
       {"name": "Ops Library Drive (Phase 2B)", "result": "28 folders created"},
       {"name": "Drive Archive (Phase 3)", "result": "10 drives archived"},
@@ -385,9 +398,9 @@
 
   "priority_actions": [
     {
-      "category": "CHASE",
-      "action": "Louise: Onboarding email sequence review",
-      "detail": "Blocking children's staff rollout"
+      "category": "BUILD",
+      "action": "Children's Onboarding: HTML conversion & AC setup",
+      "detail": "Phase 4 - Convert 10 refined emails to HTML, import to ActiveCampaign"
     },
     {
       "category": "CHASE",
