@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-12T20:00:00Z",
+  "generated_at": "2026-01-13T23:30:00Z",
   "generated_by": "SYS-DASHBOARD v1",
   "version": "1.0",
 
@@ -328,7 +328,8 @@
     "data_email": [
       {"name": "Airtable", "status": "active"},
       {"name": "ActiveCampaign", "status": "active"},
-      {"name": "M365 Email", "status": "active"}
+      {"name": "M365 Email", "status": "active"},
+      {"name": "📋 Email Deliverability Checklist v1.1", "status": "reference", "note": "UK Primary Inbox optimization - mandatory pre-send check"}
     ],
     "booking_systems": [
       {"name": "TeamUp (LF)", "status": "active"},
