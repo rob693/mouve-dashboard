@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-13T21:30:00Z",
+  "generated_at": "2026-01-13T22:15:00Z",
   "generated_by": "SYS-DASHBOARD v1",
   "version": "1.0",
 
@@ -80,7 +80,7 @@
     {
       "name": "Children's Dance Onboarding",
       "status": "in_progress",
-      "status_label": "Phase 3 Complete (3/6 phases)",
+      "status_label": "Phase 4 Complete (4/6 phases)",
       "phases": [
         {
           "name": "Phase 1: Foundation",
@@ -115,10 +115,10 @@
         },
         {
           "name": "Phase 4: HTML Conversion & AC Setup",
-          "status": "planned",
+          "status": "in_progress",
           "detail": "Convert to HTML, import to AC, test automations",
           "sub_phases": [
-            {"name": "HTML conversion (MOUVE Design System v2.0)", "status": "pending"},
+            {"name": "HTML conversion (MOUVE Design System v2.0)", "status": "complete"},
             {"name": "ActiveCampaign automation setup", "status": "pending"},
             {"name": "Testing and deployment", "status": "pending"}
           ],
@@ -399,8 +399,8 @@
   "priority_actions": [
     {
       "category": "BUILD",
-      "action": "Children's Onboarding: HTML conversion & AC setup",
-      "detail": "Phase 4 - Convert 10 refined emails to HTML, import to ActiveCampaign"
+      "action": "Children's Onboarding: ActiveCampaign setup",
+      "detail": "Phase 4 - Import 10 HTML emails to ActiveCampaign, configure automation sequences"
     },
     {
       "category": "CHASE",
