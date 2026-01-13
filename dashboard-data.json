@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-13T23:45:00Z",
+  "generated_at": "2026-01-13T23:30:00Z",
   "generated_by": "SYS-DASHBOARD v1",
   "version": "1.0",
 
@@ -162,7 +162,7 @@
         {
           "name": "Phase 2: Staff Data",
           "status": "complete",
-          "detail": "17 staff, bank details, 12/17 rates",
+          "detail": "22 staff, 15/22 rates (68% complete)",
           "sub_phases": [],
           "blocker": null
         },
@@ -176,13 +176,16 @@
         {
           "name": "Phase 4: Statement Generation",
           "status": "waiting",
-          "detail": "n8n workflow to aggregate by venue",
+          "detail": "Template sent to Louise - awaiting 7 staff schedules",
           "sub_phases": [
-            {"name": "5 staff rates missing (Louise)", "status": "pending"},
+            {"name": "Comprehensive analysis complete", "status": "complete"},
+            {"name": "Template v3 created with 9 tabs", "status": "complete"},
+            {"name": "15/22 staff rates complete (68%)", "status": "complete"},
+            {"name": "Louise completing 7 remaining staff", "status": "pending"},
             {"name": "Xero format confirmed", "status": "complete"},
             {"name": "Build n8n workflow", "status": "pending"}
           ],
-          "blocker": "Blocked: Waiting for Louise to confirm exact rates"
+          "blocker": "Blocked: 7 staff need schedules + rates (Amanda, Sherry, Sivana, Maja, Tehila, Georgia, Odel)"
         },
         {
           "name": "Phase 5: Approval & Delivery",
