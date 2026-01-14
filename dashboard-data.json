@@ -5,9 +5,9 @@
 
   "health_summary": {
     "complete": 27,
-    "in_progress": 2,
+    "in_progress": 3,
     "waiting": 2,
-    "blocked": 1
+    "blocked": 0
   },
 
   "projects": [
@@ -79,20 +79,22 @@
     },
     {
       "name": "Children's Dance Onboarding",
-      "status": "planned",
-      "status_label": "v3.1 Architect Reviewed - Critical Bugs Fixed (6.25h estimate)",
+      "status": "in_progress",
+      "status_label": "Phase 1 Complete ✅ - Phase 2 Ready (5.75h remaining)",
       "phases": [
         {
           "name": "Phase 1: Schema Foundation",
-          "status": "ready",
-          "detail": "Add 5 fields (was 4): onboarding_status + ac_contact_id added",
+          "status": "complete",
+          "detail": "✅ 6 fields created (5 ENROLLMENTS, 1 CONTACTS) in 25 min",
           "sub_phases": [
-            {"name": "ENROLLMENTS: onboarding_stage (Single Select)", "status": "ready"},
-            {"name": "ENROLLMENTS: onboarding_started_at (Date)", "status": "ready"},
-            {"name": "ENROLLMENTS: onboarding_log (Long Text)", "status": "ready"},
-            {"name": "ENROLLMENTS: onboarding_status (Single Select) [NEW]", "status": "ready"},
-            {"name": "ENROLLMENTS: ac_contact_id (Number) [NEW]", "status": "ready"},
-            {"name": "CONTACTS: last_onboarding_email_sent_at (Date with time)", "status": "ready"}
+            {"name": "ENROLLMENTS: onboarding_stage (fld3ycbTKHntVWtVf)", "status": "complete"},
+            {"name": "ENROLLMENTS: onboarding_started_at (fldmnk5Z06EM1SNqm)", "status": "complete"},
+            {"name": "ENROLLMENTS: onboarding_log (fldJKkFIOVgD2hSjw)", "status": "complete"},
+            {"name": "ENROLLMENTS: onboarding_status (fldvNOa3jQb6utYtx)", "status": "complete"},
+            {"name": "ENROLLMENTS: ac_contact_id (fldwqR0uvjD9wPrx4)", "status": "complete"},
+            {"name": "CONTACTS: last_onboarding_email_sent_at (fldb1syLkrIJkUPCC)", "status": "complete"},
+            {"name": "Field IDs documented in ACTIVECAMPAIGN_REFERENCE.md", "status": "complete"},
+            {"name": "Data integrity verified (no corruption)", "status": "complete"}
           ],
           "blocker": null
         },
