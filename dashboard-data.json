@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-01-14T00:15:00Z",
+  "generated_at": "2026-01-15T02:30:00Z",
   "generated_by": "SYS-DASHBOARD v1",
   "version": "1.0",
 
   "health_summary": {
     "complete": 27,
-    "in_progress": 3,
-    "waiting": 2,
+    "in_progress": 2,
+    "waiting": 3,
     "blocked": 1
   },
 
@@ -79,8 +79,8 @@
     },
     {
       "name": "Children's Dance Onboarding",
-      "status": "in_progress",
-      "status_label": "Phase 4 Complete (4/6 phases)",
+      "status": "waiting",
+      "status_label": "Phase 3A/3B Complete - Awaiting Louise (4/6 phases)",
       "phases": [
         {
           "name": "Phase 1: Foundation",
@@ -114,32 +114,57 @@
           "blocker": null
         },
         {
-          "name": "Phase 4: HTML Conversion & AC Setup",
-          "status": "in_progress",
-          "detail": "Convert to HTML, import to AC, test automations",
+          "name": "Phase 3A: HTML Template Creation",
+          "status": "complete",
+          "detail": "All 8 Email 2 class-specific versions created (15 Jan)",
           "sub_phases": [
-            {"name": "HTML conversion (MOUVE Design System v2.0)", "status": "complete"},
-            {"name": "AC custom fields created (5 new fields)", "status": "complete"},
-            {"name": "Conditional content testing (Liquid, %IF%)", "status": "complete"},
-            {"name": "Email 1 split into 3 age versions", "status": "complete"},
-            {"name": "Create AC campaigns for Email 1 (3 versions)", "status": "pending"},
-            {"name": "Create Email 5 (3 age versions)", "status": "pending"},
-            {"name": "Upload simple emails 2,3,6-10 to AC", "status": "pending"},
-            {"name": "Handle Email 4 class conditionals in AC UI", "status": "pending"},
-            {"name": "Create 3 automation sequences (Tots/Children/Teens)", "status": "pending"},
-            {"name": "Testing and deployment", "status": "pending"}
+            {"name": "Email 2: Ballet HTML", "status": "complete"},
+            {"name": "Email 2: Hip Hop HTML", "status": "complete"},
+            {"name": "Email 2: Tap HTML", "status": "complete"},
+            {"name": "Email 2: Jazz HTML", "status": "complete"},
+            {"name": "Email 2: Broadway HTML", "status": "complete"},
+            {"name": "Email 2: Drama HTML", "status": "complete"},
+            {"name": "Email 2: Gymnastics HTML", "status": "complete"},
+            {"name": "Email 2: First Mouves HTML", "status": "complete"}
           ],
           "blocker": null
         },
         {
-          "name": "Phase 5: Staff Rollout",
+          "name": "Phase 3B: AC Automation Build Guide",
+          "status": "complete",
+          "detail": "400+ line step-by-step guide for Louise (15 Jan)",
+          "sub_phases": [
+            {"name": "Part 1: Build 8 Email 2 Campaigns", "status": "complete"},
+            {"name": "Part 2-4: Build 3 Automations (Tots/Children/Teens)", "status": "complete"},
+            {"name": "Part 5: Testing checklist", "status": "complete"},
+            {"name": "Part 6: n8n integration explanation", "status": "complete"},
+            {"name": "Part 7: Troubleshooting scenarios", "status": "complete"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 3C: AC UI Build & Testing",
+          "status": "waiting",
+          "detail": "Louise builds 8 campaigns + 3 automations in AC UI",
+          "sub_phases": [
+            {"name": "Louise imports 8 Email 2 HTML files to AC campaigns", "status": "pending"},
+            {"name": "Louise builds Onboarding: Tots automation", "status": "pending"},
+            {"name": "Louise builds Onboarding: Children automation", "status": "pending"},
+            {"name": "Louise builds Onboarding: Teens automation", "status": "pending"},
+            {"name": "Test with 3 dummy contacts (one per age group)", "status": "pending"},
+            {"name": "Validate Email 2 conditional logic working", "status": "pending"}
+          ],
+          "blocker": "Blocked: Awaiting Louise to build automations using AC-AUTOMATION-BUILD-GUIDE.md"
+        },
+        {
+          "name": "Phase 4: Staff Rollout",
           "status": "planned",
           "detail": "Training, SOP, go-live",
           "sub_phases": [],
           "blocker": null
         },
         {
-          "name": "Phase 6: DSP Integration",
+          "name": "Phase 5: DSP Integration",
           "status": "planned",
           "detail": "Auto-sync enrollments from Dance Studio Pro",
           "sub_phases": [],
@@ -411,9 +436,9 @@
 
   "priority_actions": [
     {
-      "category": "BUILD",
-      "action": "Children's Onboarding: ActiveCampaign setup",
-      "detail": "Phase 4 - Import 10 HTML emails to ActiveCampaign, configure automation sequences"
+      "category": "CHASE",
+      "action": "Louise: Build AC automations for Children's Onboarding",
+      "detail": "Phase 3C - Use AC-AUTOMATION-BUILD-GUIDE.md to build 8 Email 2 campaigns + 3 automations (Tots/Children/Teens)"
     },
     {
       "category": "CHASE",
