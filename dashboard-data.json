@@ -6,8 +6,8 @@
   "health_summary": {
     "complete": 27,
     "in_progress": 2,
-    "waiting": 3,
-    "blocked": 1
+    "waiting": 2,
+    "blocked": 2
   },
 
   "projects": [
@@ -79,8 +79,8 @@
     },
     {
       "name": "Children's Dance Onboarding",
-      "status": "waiting",
-      "status_label": "Phase 3A/3B Complete - Awaiting Louise (4/6 phases)",
+      "status": "blocked",
+      "status_label": "Phase 3C Blocked - AC Draft campaign limitation (4/6 phases)",
       "phases": [
         {
           "name": "Phase 1: Foundation",
@@ -144,17 +144,17 @@
         },
         {
           "name": "Phase 3C: AC UI Build & Testing",
-          "status": "waiting",
-          "detail": "Louise builds 8 campaigns + 3 automations in AC UI",
+          "status": "blocked",
+          "detail": "Campaign 119 stuck in Draft - AC requires initial send before automation can use it",
           "sub_phases": [
-            {"name": "Louise imports 8 Email 2 HTML files to AC campaigns", "status": "pending"},
-            {"name": "Louise builds Onboarding: Tots automation", "status": "pending"},
-            {"name": "Louise builds Onboarding: Children automation", "status": "pending"},
-            {"name": "Louise builds Onboarding: Teens automation", "status": "pending"},
-            {"name": "Test with 3 dummy contacts (one per age group)", "status": "pending"},
-            {"name": "Validate Email 2 conditional logic working", "status": "pending"}
+            {"name": "Master Email 2 campaign with 8 conditional blocks", "status": "complete"},
+            {"name": "8 test contacts created in AC", "status": "complete"},
+            {"name": "Test automation created (TEST: Email 2 Conditionals)", "status": "complete"},
+            {"name": "Send Campaign 119 to 1 contact to change Draft status", "status": "blocked"},
+            {"name": "Validate Email 2 conditional logic working", "status": "blocked"},
+            {"name": "Build 3 production automations (Tots/Children/Teens)", "status": "pending"}
           ],
-          "blocker": "Blocked: Awaiting Louise to build automations using AC-AUTOMATION-BUILD-GUIDE.md"
+          "blocker": "AC Draft Campaign Limitation: Campaign 119 must be sent to at least 1 contact before automation can use it. Requires List + Address + initial send to change status from Draft → Sent. 2 hours lost debugging (15 Jan evening)."
         },
         {
           "name": "Phase 4: Staff Rollout",
