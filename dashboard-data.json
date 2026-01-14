@@ -80,16 +80,18 @@
     {
       "name": "Children's Dance Onboarding",
       "status": "planned",
-      "status_label": "v3.0 Architecture Complete - Phase 1 Ready to Build",
+      "status_label": "v3.1 Architect Reviewed - Critical Bugs Fixed (6.25h estimate)",
       "phases": [
         {
           "name": "Phase 1: Schema Foundation",
           "status": "ready",
-          "detail": "Add 4 fields to Airtable (ENROLLMENTS + CONTACTS)",
+          "detail": "Add 5 fields (was 4): onboarding_status + ac_contact_id added",
           "sub_phases": [
             {"name": "ENROLLMENTS: onboarding_stage (Single Select)", "status": "ready"},
             {"name": "ENROLLMENTS: onboarding_started_at (Date)", "status": "ready"},
             {"name": "ENROLLMENTS: onboarding_log (Long Text)", "status": "ready"},
+            {"name": "ENROLLMENTS: onboarding_status (Single Select) [NEW]", "status": "ready"},
+            {"name": "ENROLLMENTS: ac_contact_id (Number) [NEW]", "status": "ready"},
             {"name": "CONTACTS: last_onboarding_email_sent_at (Date with time)", "status": "ready"}
           ],
           "blocker": null
@@ -97,38 +99,40 @@
         {
           "name": "Phase 2: n8n Enrollment Handler Update",
           "status": "planned",
-          "detail": "Initialize onboarding_stage on new enrollments",
+          "detail": "Initialize state + traffic control + ac_contact_id (60 min)",
           "sub_phases": [
             {"name": "Add onboarding_stage initialization", "status": "planned"},
-            {"name": "Add log entry", "status": "planned"},
-            {"name": "Test with new enrollment", "status": "planned"}
+            {"name": "Store ac_contact_id from AC response [NEW]", "status": "planned"},
+            {"name": "Add 24h traffic control check [CRITICAL FIX]", "status": "planned"},
+            {"name": "Trigger Email 1 (if traffic control passes)", "status": "planned"},
+            {"name": "Test with sibling enrollment (same day)", "status": "planned"}
           ],
           "blocker": null
         },
         {
           "name": "Phase 3: n8n Progression Engine",
           "status": "planned",
-          "detail": "State machine, timing logic, traffic control, validation",
+          "detail": "State machine + error state handling (90 min)",
           "sub_phases": [
             {"name": "State machine logic (12 stages)", "status": "planned"},
             {"name": "Email timing calculator (Day 0/2/5/14/21/...)", "status": "planned"},
             {"name": "24-hour parent traffic control", "status": "planned"},
-            {"name": "Pre-send validation (required fields)", "status": "planned"},
+            {"name": "Pre-send validation (includes ac_contact_id)", "status": "planned"},
+            {"name": "Error state handling [CRITICAL FIX]", "status": "planned"},
             {"name": "AC tag application", "status": "planned"},
-            {"name": "Audit logging", "status": "planned"},
-            {"name": "Error handling + DAILY_PRIORITIES", "status": "planned"}
+            {"name": "Audit logging", "status": "planned"}
           ],
           "blocker": null
         },
         {
           "name": "Phase 4: ActiveCampaign Micro-Automations",
           "status": "planned",
-          "detail": "10 simple tag-triggered automations (3-4 actions each)",
+          "detail": "10 automations (2 actions each, NO WAIT STEPS) (50 min)",
           "sub_phases": [
-            {"name": "Email 1 automation (start_onboarding_email_1)", "status": "planned"},
-            {"name": "Email 2 automation (Wait 2 days)", "status": "planned"},
-            {"name": "Email 3 automation (Wait 5 days)", "status": "planned"},
-            {"name": "Emails 4-10 automations", "status": "planned"}
+            {"name": "Email 1 automation (instant send)", "status": "planned"},
+            {"name": "Email 2 automation (instant send) [FIXED - no wait]", "status": "planned"},
+            {"name": "Emails 3-10 automations (instant send)", "status": "planned"},
+            {"name": "Clarify confirmation tags = reporting only", "status": "planned"}
           ],
           "blocker": null
         },
@@ -146,14 +150,15 @@
         {
           "name": "Phase 6: Testing & Validation",
           "status": "planned",
-          "detail": "6 test scenarios (single child, siblings same day, sequential, etc.)",
+          "detail": "6 test scenarios (twins, error states, full sequence) (60 min)",
           "sub_phases": [
             {"name": "Test 1: Single child enrollment", "status": "planned"},
-            {"name": "Test 2: Siblings enrolled same day (traffic control)", "status": "planned"},
+            {"name": "Test 2: Siblings same day (traffic control)", "status": "planned"},
             {"name": "Test 3: Sequential sibling enrollment", "status": "planned"},
-            {"name": "Test 4: Missing data (validation)", "status": "planned"},
-            {"name": "Test 5: Full 10-email sequence (1 enrollment)", "status": "planned"},
-            {"name": "Test 6: Rollback (global pause)", "status": "planned"}
+            {"name": "Test 4: Missing data (error state handling)", "status": "planned"},
+            {"name": "Test 5: Error state recovery (staff fixes data)", "status": "planned"},
+            {"name": "Test 6: Full 10-email sequence", "status": "planned"},
+            {"name": "Test 7: Rollback (global pause)", "status": "planned"}
           ],
           "blocker": null
         },
@@ -435,8 +440,8 @@
   "priority_actions": [
     {
       "category": "BUILD",
-      "action": "Children's Onboarding v3.0 - Phase 1 Ready",
-      "detail": "Simplified architecture approved. Add 4 Airtable fields, then build n8n Progression Engine. Estimate: 5.5 hours total."
+      "action": "Children's Onboarding v3.1 - Phase 1 Ready (CRITICAL BUGS FIXED)",
+      "detail": "Architect review complete. Fixed: double-wait bug, twin paradox, error state handling. Add 5 Airtable fields (not 4), then build. Estimate: 6.25 hours (90% confidence)."
     },
     {
       "category": "CHASE",
