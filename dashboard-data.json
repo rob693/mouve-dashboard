@@ -92,7 +92,7 @@
     {
       "name": "Children's Dance Onboarding",
       "status": "in_progress",
-      "status_label": "Phase 1 Complete ✅ - Phase 2 Ready (6.0h remaining) | Plan: v5.0 (protocol governance)",
+      "status_label": "Phase 2 Complete ✅ (v4.8 Final - 8 bugs fixed) | Plan: v5.9 | Phase 3 Ready 📋",
       "phases": [
         {
           "name": "Phase 1: Schema Foundation",
@@ -112,14 +112,21 @@
         },
         {
           "name": "Phase 2: n8n Enrollment Handler Update",
-          "status": "planned",
-          "detail": "Initialize state + traffic control + ac_contact_id (60 min)",
+          "status": "complete",
+          "detail": "✅ v4.8 Final deployed - Traffic control + parent upsert + 8 bugs fixed",
           "sub_phases": [
-            {"name": "Add onboarding_stage initialization", "status": "planned"},
-            {"name": "Store ac_contact_id from AC response [NEW]", "status": "planned"},
-            {"name": "Add 24h traffic control check [CRITICAL FIX]", "status": "planned"},
-            {"name": "Trigger Email 1 (if traffic control passes)", "status": "planned"},
-            {"name": "Test with sibling enrollment (same day)", "status": "planned"}
+            {"name": "Add onboarding_stage initialization", "status": "complete"},
+            {"name": "Store ac_contact_id from AC response", "status": "complete"},
+            {"name": "Add 24h traffic control check", "status": "complete"},
+            {"name": "Trigger Email 1 (if traffic control passes)", "status": "complete"},
+            {"name": "Upsert parent CONTACTS record", "status": "complete"},
+            {"name": "Fix Bug #4: ac_contact_id number type", "status": "complete"},
+            {"name": "Fix Bug #5: Data flow after HTTP nodes", "status": "complete"},
+            {"name": "Fix Bug #6: Wrong node reference", "status": "complete"},
+            {"name": "Fix Bug #7: Simplify parent upsert (remove IF)", "status": "complete"},
+            {"name": "Fix Bug #8: fetch() not available (use helpers)", "status": "complete"},
+            {"name": "Test with sibling enrollment (TEST-Emma TestChild3)", "status": "complete"},
+            {"name": "Workflow cleanup (removed orphaned nodes)", "status": "complete"}
           ],
           "blocker": null
         },
