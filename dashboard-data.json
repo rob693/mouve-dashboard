@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-15T04:45:00Z",
+  "generated_at": "2026-01-16T00:15:00Z",
   "generated_by": "SYS-DASHBOARD v1",
   "version": "1.0",
 
@@ -237,47 +237,53 @@
       ]
     },
     {
-      "name": "Back Office: Amex Recon",
+      "name": "Back Office: Amex Recon vNext",
       "status": "waiting",
-      "status_label": "Phase 5 Validation",
+      "status_label": "v2.0 Architectural Review Complete - Start Feb 2026",
       "phases": [
         {
-          "name": "Phase 1: Infrastructure",
+          "name": "Phase 0: Architectural Review (v2.0)",
           "status": "complete",
-          "detail": "receipts@ inbox, Drive structure, Ledger",
+          "detail": "vNext plan complete - single-sink model, verification contract defined",
+          "sub_phases": [
+            {"name": "Retire multi-inbox vendor searching", "status": "complete"},
+            {"name": "Design two-tier routing (allowlist + keyword gate)", "status": "complete"},
+            {"name": "Define 9-test verification contract", "status": "complete"},
+            {"name": "Attachment explosion + HTML receipt handling", "status": "complete"},
+            {"name": "Deterministic file picker + run logging", "status": "complete"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 1: Routing Configuration",
+          "status": "planned",
+          "detail": "Rob Gmail + M365 + Louise Gmail filters (45 min)",
           "sub_phases": [],
           "blocker": null
         },
         {
-          "name": "Phase 2: Forwarding Rules",
-          "status": "complete",
-          "detail": "O365, Gmail filters configured",
+          "name": "Phase 2: Invoice Ingestion v3",
+          "status": "planned",
+          "detail": "Attachment explosion + HTML handling + run log (3h)",
           "sub_phases": [],
           "blocker": null
         },
         {
-          "name": "Phase 3: Invoice Ingestion",
-          "status": "complete",
-          "detail": "Weekly capture → Ledger + Hubdoc",
+          "name": "Phase 3: Statement Reconciliation v3",
+          "status": "planned",
+          "detail": "Deterministic file picker + validation guardrails (3h)",
           "sub_phases": [],
           "blocker": null
         },
         {
-          "name": "Phase 4: Reconciliation",
-          "status": "complete",
-          "detail": "XLSX parse + matching (tested Dec)",
+          "name": "Phase 4: Validation",
+          "status": "planned",
+          "detail": "Run 9-test verification contract",
           "sub_phases": [],
           "blocker": null
         },
         {
-          "name": "Phase 5: Validation",
-          "status": "waiting",
-          "detail": "Run January full reconciliation",
-          "sub_phases": [],
-          "blocker": "Waiting: Jan statement (~5 Feb)"
-        },
-        {
-          "name": "Phase 6: Handoff",
+          "name": "Phase 5: Handoff",
           "status": "planned",
           "detail": "SOP + Louise training",
           "sub_phases": [],
