@@ -348,6 +348,51 @@
           "blocker": "Conditional: Only if approval gate confirmed"
         }
       ]
+    },
+    {
+      "name": "Operational Dashboard",
+      "status": "planned",
+      "status_label": "Ready to Start - Business metrics for Louise/Georgia",
+      "phases": [
+        {
+          "name": "Phase 1: Foundation",
+          "status": "planned",
+          "detail": "Google Sheets, GitHub repo, Vercel setup (Days 1-3)",
+          "sub_phases": [
+            {"name": "Create Google Sheets 'MOUVE Operations Data'", "status": "planned"},
+            {"name": "Create GitHub repo 'mouve-operations-dashboard'", "status": "planned"},
+            {"name": "Create Vercel project + password protection", "status": "planned"},
+            {"name": "Configure environment variables", "status": "planned"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 2: Data Pipeline",
+          "status": "planned",
+          "detail": "n8n OPS-DASHBOARD-V1 workflow (Days 4-7)",
+          "sub_phases": [
+            {"name": "Query GHL for conversions (week/month)", "status": "planned"},
+            {"name": "Query Airtable for student counts (LF + Children)", "status": "planned"},
+            {"name": "Calculate trial conversion rate", "status": "planned"},
+            {"name": "Write to Google Sheets (historical)", "status": "planned"},
+            {"name": "Generate operations-data.json", "status": "planned"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 3: Frontend + Rollout",
+          "status": "planned",
+          "detail": "HTML dashboard with Chart.js (Days 8-14)",
+          "sub_phases": [
+            {"name": "Build KPI cards (4 metrics)", "status": "planned"},
+            {"name": "Build trend chart (conversions)", "status": "planned"},
+            {"name": "Deploy and test with Rob", "status": "planned"},
+            {"name": "Share with Louise for feedback", "status": "planned"},
+            {"name": "Roll out to Georgia", "status": "planned"}
+          ],
+          "blocker": null
+        }
+      ]
     }
   ],
 
