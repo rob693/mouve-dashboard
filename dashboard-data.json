@@ -14,7 +14,19 @@
     {
       "name": "Ladies Fitness Funnel",
       "status": "in_progress",
-      "status_label": "Phase 3 Complete (5/7 phases)",
+      "status_label": "Phase 3 Complete (5/7 phases) | Health Check: ✅ EXCELLENT (16 Jan 07:43)",
+      "health_check": {
+        "timestamp": "2026-01-16T07:43:00Z",
+        "status": "excellent",
+        "last_sync": "2026-01-15T06:00:22Z",
+        "webhooks": {
+          "lf-new-lead": "HTTP 200 OK",
+          "teamup-registration": "HTTP 200 OK"
+        },
+        "workflows_active": "12/12",
+        "data_flow": "Operational - 1 active trial tracked correctly",
+        "findings": "All systems healthy. Pipeline operational. No immediate action required."
+      },
       "phases": [
         {
           "name": "Phase 1: Foundation",
