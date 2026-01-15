@@ -92,7 +92,7 @@
     {
       "name": "Children's Dance Onboarding",
       "status": "in_progress",
-      "status_label": "Phase 2 Complete ✅ (v4.8 Final - 8 bugs fixed) | Plan: v5.9 | Phase 3 Ready 📋",
+      "status_label": "Phase 2 Complete ✅ (v4.8 Final - 8 bugs fixed) | Plan: v6.0 (Atomic Task List) | Phase 3 Ready 📋",
       "phases": [
         {
           "name": "Phase 1: Schema Foundation",
