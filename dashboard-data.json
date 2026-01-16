@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-16T23:45:00Z",
+  "generated_at": "2026-01-17T01:15:00Z",
   "generated_by": "SYS-DASHBOARD v1",
   "version": "1.0",
 
@@ -7,6 +7,7 @@
     "complete": 27,
     "in_progress": 3,
     "waiting": 1,
+    "planned": 1,
     "blocked": 0
   },
 
@@ -424,6 +425,95 @@
           "blocker": null
         }
       ]
+    },
+    {
+      "name": "Weekly Auto-Blog System",
+      "implementation_plan": "WEEKLY-AUTO-BLOG-IMPLEMENTATION-PLAN-JAN2026.md",
+      "status": "planned",
+      "status_label": "v1.0 Planning Complete - Phase 1 Ready 📋 (Target: 31 Jan 2026)",
+      "phases": [
+        {
+          "name": "Phase 1: Airtable Schema & Data Dictionary",
+          "status": "planned",
+          "detail": "BLOG_POSTS table (17 fields) + Data Dictionary update",
+          "sub_phases": [
+            {"name": "Create BLOG_POSTS table with 17 fields", "status": "pending"},
+            {"name": "Add sample record (manual)", "status": "pending"},
+            {"name": "Update AIRTABLE-DATA-DICTIONARY.md", "status": "pending"},
+            {"name": "Commit to git", "status": "pending"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 2: JSON Cluster Template",
+          "status": "planned",
+          "detail": "Deterministic JSON structure for camp content clusters",
+          "sub_phases": [
+            {"name": "Create /workflows/blog-clusters/ directory", "status": "pending"},
+            {"name": "Write feb-2026-wicked.json example", "status": "pending"},
+            {"name": "Document JSON schema in plan", "status": "pending"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 3: n8n Workflow Build",
+          "status": "planned",
+          "detail": "11-node workflow (generation + deduplication + WordPress posting)",
+          "sub_phases": [
+            {"name": "Schedule Trigger (Monday 06:00)", "status": "pending"},
+            {"name": "Read JSON Cluster Files", "status": "pending"},
+            {"name": "Filter Active Clusters", "status": "pending"},
+            {"name": "Determine This Week's Post", "status": "pending"},
+            {"name": "Check BLOG_POSTS Deduplication", "status": "pending"},
+            {"name": "Hard Stop Check (IF node)", "status": "pending"},
+            {"name": "Generate Content (OpenAI GPT-4o)", "status": "pending"},
+            {"name": "WordPress Category Check/Create", "status": "pending"},
+            {"name": "Create WordPress Post", "status": "pending"},
+            {"name": "Log to Airtable BLOG_POSTS", "status": "pending"},
+            {"name": "Send Notification Email", "status": "pending"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 4: LLM Integration & Prompt Engineering",
+          "status": "planned",
+          "detail": "GPT-4o system prompt (long-tail keywords + GEO optimization)",
+          "sub_phases": [
+            {"name": "Write system prompt with guardrails", "status": "pending"},
+            {"name": "Test with sample JSON post", "status": "pending"},
+            {"name": "Validate GEO features present", "status": "pending"},
+            {"name": "Validate long-tail keywords used", "status": "pending"},
+            {"name": "Integrate prompt into n8n node", "status": "pending"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 5: End-to-End Testing",
+          "status": "planned",
+          "detail": "Validate all 5 verification tests",
+          "sub_phases": [
+            {"name": "Test 1: End-to-End Generation", "status": "pending"},
+            {"name": "Test 2: Duplicate Prevention", "status": "pending"},
+            {"name": "Test 3: GEO Optimization", "status": "pending"},
+            {"name": "Test 4: Keyword Differentiation", "status": "pending"},
+            {"name": "Test 5: Error Handling", "status": "pending"},
+            {"name": "Manual quality review", "status": "pending"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 6: Documentation & SOP Update",
+          "status": "planned",
+          "detail": "Update SOP-A-006, N8N_WORKFLOW_INDEX.md, CLAUDE.md",
+          "sub_phases": [
+            {"name": "Update SOP-A-006 (Content Engine Operations)", "status": "pending"},
+            {"name": "Add workflow to N8N_WORKFLOW_INDEX.md", "status": "pending"},
+            {"name": "Create /workflows/blog-clusters/README.md", "status": "pending"},
+            {"name": "Update CLAUDE.md with blog automation reference", "status": "pending"}
+          ],
+          "blocker": null
+        }
+      ]
     }
   ],
 
@@ -547,6 +637,11 @@
   ],
 
   "priority_actions": [
+    {
+      "category": "BUILD",
+      "action": "Weekly Auto-Blog System - Phase 1 Ready",
+      "detail": "Automated camp blog generation (GPT-4o + n8n + WordPress). Create BLOG_POSTS table, JSON clusters, 11-node workflow. Replaces manual content workflow. Target: 31 Jan 2026 for Feb camp. Estimate: 8-10 hours."
+    },
     {
       "category": "BUILD",
       "action": "Children's Onboarding v3.1 - Phase 1 Ready (CRITICAL BUGS FIXED)",
