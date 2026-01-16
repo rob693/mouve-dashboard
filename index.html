@@ -179,6 +179,13 @@
             font-size: 1rem;
         }
 
+        .implementation-plan-file {
+            font-size: 0.75rem;
+            color: var(--gray);
+            font-family: 'Monaco', 'Courier New', monospace;
+            margin-top: 0.25rem;
+        }
+
         .project-status {
             font-size: 0.75rem;
             padding: 0.25rem 0.75rem;
@@ -585,14 +592,6 @@
                 </div>
                 <div class="doc-box-meta">Applies to: ALL projects with 3+ phases</div>
             </div>
-            <div class="doc-box">
-                <div class="doc-box-title">📄 Implementation Plans</div>
-                <div class="doc-box-file">docs/projects/{PROJECT}-IMPLEMENTATION-PLAN-{PERIOD}.md</div>
-                <div class="doc-box-desc">
-                    Living state documents for WHAT to build (project-specific). Each plan contains phases, decision log, discovery log, and verification contract.
-                </div>
-                <div class="doc-box-meta">Example: CHILDRENS-ONBOARDING-IMPLEMENTATION-PLAN-JAN2026-UPDATE.md</div>
-            </div>
         </div>
 
         <div class="projects-grid" id="projects-grid">
@@ -700,7 +699,10 @@
             grid.innerHTML = projects.map(project => `
                 <div class="project-card">
                     <div class="project-header">
-                        <span class="project-title">${project.name}</span>
+                        <div>
+                            <div class="project-title">${project.name}</div>
+                            ${project.implementation_plan ? `<div class="implementation-plan-file">${project.implementation_plan}</div>` : ''}
+                        </div>
                         <span class="project-status status-${project.status.replace('_', '-')}">${project.status_label}</span>
                     </div>
                     <div class="project-body">

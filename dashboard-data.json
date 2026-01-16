@@ -13,6 +13,7 @@
   "projects": [
     {
       "name": "Ladies Fitness Funnel",
+      "implementation_plan": "LADIES-FITNESS-IMPLEMENTATION-PLAN-JAN2026.md",
       "status": "in_progress",
       "status_label": "Phase 3 Complete (5/7 phases) | Health Check: ✅ EXCELLENT (16 Jan 07:43)",
       "health_check": {
@@ -91,6 +92,7 @@
     },
     {
       "name": "Children's Dance Onboarding",
+      "implementation_plan": "CHILDRENS-ONBOARDING-IMPLEMENTATION-PLAN-JAN2026-UPDATE.md",
       "status": "in_progress",
       "status_label": "Phase 2 Complete ✅ (v4.8 Final - 8 bugs fixed) | Plan: v6.0 (Atomic Task List) | Phase 3 Ready 📋",
       "phases": [
@@ -198,6 +200,7 @@
     },
     {
       "name": "Back Office: Staff Costs",
+      "implementation_plan": "STAFF-ADMIN-COSTS-IMPLEMENTATION-PLAN-JAN2026.md",
       "status": "planned",
       "status_label": "Phase 4.5 Ready 📋 - v2.2 (Adoption & Training - scope gap addressed)",
       "phases": [
@@ -275,6 +278,7 @@
     },
     {
       "name": "Back Office: Amex Recon vNext",
+      "implementation_plan": "AMEX-RECONCILIATION-IMPLEMENTATION-PLAN-JAN2026-VNEXT.md",
       "status": "waiting",
       "status_label": "v2.0 Architectural Review Complete - Start Feb 2026",
       "phases": [
@@ -330,6 +334,7 @@
     },
     {
       "name": "Staff Portal (Softr)",
+      "implementation_plan": "STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
       "status": "planned",
       "status_label": "Phase 1 Ready to Start (v2.1)",
       "phases": [
@@ -376,6 +381,7 @@
     },
     {
       "name": "Operational Dashboard",
+      "implementation_plan": "OPERATIONAL-DASHBOARD-IMPLEMENTATION-PLAN-JAN2026.md",
       "status": "planned",
       "status_label": "v2.0 Plan Complete (Protocol v1.6 Compliant) - Phase 1 Ready 📋",
       "phases": [
