@@ -199,7 +199,7 @@
     {
       "name": "Back Office: Staff Costs",
       "status": "planned",
-      "status_label": "Phase 4 Ready 📋 - All 20 staff rates complete (100%)",
+      "status_label": "Phase 4.5 Ready 📋 - All 20 staff rates complete (100%)",
       "phases": [
         {
           "name": "Phase 1: Table Setup",
@@ -209,33 +209,38 @@
           "blocker": null
         },
         {
-          "name": "Phase 2: Staff Data",
+          "name": "Phase 2: Staff Data Collection",
           "status": "complete",
           "detail": "20 permanent staff, all rates complete (100%)",
           "sub_phases": [],
           "blocker": null
         },
         {
-          "name": "Phase 3: Data Entry",
+          "name": "Phase 3: Data Entry Forms",
           "status": "complete",
           "detail": "Timesheet form + Venue field for Xero",
           "sub_phases": [],
           "blocker": null
         },
         {
-          "name": "Phase 4: Statement Generation",
-          "status": "planned",
-          "detail": "✅ All prerequisites complete - Ready to build n8n workflows",
+          "name": "Phase 4: Data & Schema Prep",
+          "status": "complete",
+          "detail": "✅ Xero format confirmed, Venue field added",
           "sub_phases": [
-            {"name": "Comprehensive analysis complete", "status": "complete"},
-            {"name": "Template v3 created with 9 tabs", "status": "complete"},
-            {"name": "20/20 permanent staff rates complete (100%)", "status": "complete"},
-            {"name": "🔥 Xero OAuth2 integration (BREAKTHROUGH)", "status": "complete"},
-            {"name": "Xero tenant connected (Radar Dance Ltd)", "status": "complete"},
-            {"name": "n8n credential configured & tested", "status": "complete"},
-            {"name": "Louise completed all staff data (16 Jan 2026)", "status": "complete"},
-            {"name": "Create 20 staff contacts in Xero", "status": "pending"},
-            {"name": "Build n8n Statement Generator workflow", "status": "pending"}
+            {"name": "Xero format confirmed (9 Jan 2026)", "status": "complete"},
+            {"name": "Venue field added (12 options)", "status": "complete"},
+            {"name": "All 20 staff rates complete (16 Jan 2026)", "status": "complete"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 4.5: Workflow Build & Test",
+          "status": "planned",
+          "detail": "✅ Ready to build n8n workflows (Statement Generator + Approval)",
+          "sub_phases": [
+            {"name": "Build Statement Generator workflow", "status": "pending"},
+            {"name": "Build Approval + PDF workflow", "status": "pending"},
+            {"name": "Test with January 2026 data", "status": "pending"}
           ],
           "blocker": null
         },
