@@ -199,7 +199,7 @@
     {
       "name": "Back Office: Staff Costs",
       "status": "planned",
-      "status_label": "Phase 4.5 Ready 📋 - v2.1 (3 architectural improvements applied)",
+      "status_label": "Phase 4.5 Ready 📋 - v2.2 (Adoption & Training - scope gap addressed)",
       "phases": [
         {
           "name": "Phase 1: Table Setup",
@@ -256,6 +256,19 @@
           "status": "planned",
           "detail": "Jan 2026 vs manual process",
           "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 7: Adoption & Rollout",
+          "status": "planned",
+          "detail": "Training materials, parallel run, self-review, compliance workflows",
+          "sub_phases": [
+            {"name": "Phase 7A: Training Materials & Portal Access", "status": "pending"},
+            {"name": "Phase 7B: Parallel Run & Validation (1 month)", "status": "pending"},
+            {"name": "Phase 7C: Staff Self-Review Workflow", "status": "pending"},
+            {"name": "Phase 7D: Compliance & Grace Period (3 months)", "status": "pending"},
+            {"name": "Phase 7E: Cutover & Strict Mode", "status": "pending"}
+          ],
           "blocker": null
         }
       ]
