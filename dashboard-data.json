@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-01-16T00:15:00Z",
+  "generated_at": "2026-01-16T23:45:00Z",
   "generated_by": "SYS-DASHBOARD v1",
   "version": "1.0",
 
   "health_summary": {
     "complete": 27,
     "in_progress": 3,
-    "waiting": 2,
+    "waiting": 1,
     "blocked": 0
   },
 
@@ -198,8 +198,8 @@
     },
     {
       "name": "Back Office: Staff Costs",
-      "status": "waiting",
-      "status_label": "Phase 4 Blocked",
+      "status": "planned",
+      "status_label": "Phase 4 Ready 📋 - All 20 staff rates complete (100%)",
       "phases": [
         {
           "name": "Phase 1: Table Setup",
@@ -211,7 +211,7 @@
         {
           "name": "Phase 2: Staff Data",
           "status": "complete",
-          "detail": "22 staff, 15/22 rates (68% complete)",
+          "detail": "20 permanent staff, all rates complete (100%)",
           "sub_phases": [],
           "blocker": null
         },
@@ -224,20 +224,20 @@
         },
         {
           "name": "Phase 4: Statement Generation",
-          "status": "waiting",
-          "detail": "🎉 Xero API connected! Awaiting 7 staff schedules to build workflow",
+          "status": "planned",
+          "detail": "✅ All prerequisites complete - Ready to build n8n workflows",
           "sub_phases": [
             {"name": "Comprehensive analysis complete", "status": "complete"},
             {"name": "Template v3 created with 9 tabs", "status": "complete"},
-            {"name": "15/22 staff rates complete (68%)", "status": "complete"},
+            {"name": "20/20 permanent staff rates complete (100%)", "status": "complete"},
             {"name": "🔥 Xero OAuth2 integration (BREAKTHROUGH)", "status": "complete"},
             {"name": "Xero tenant connected (Radar Dance Ltd)", "status": "complete"},
             {"name": "n8n credential configured & tested", "status": "complete"},
-            {"name": "Louise completing 7 remaining staff", "status": "pending"},
-            {"name": "Create 22 staff contacts in Xero", "status": "pending"},
+            {"name": "Louise completed all staff data (16 Jan 2026)", "status": "complete"},
+            {"name": "Create 20 staff contacts in Xero", "status": "pending"},
             {"name": "Build n8n Statement Generator workflow", "status": "pending"}
           ],
-          "blocker": "Blocked: 7 staff need schedules + rates. Xero ready when data complete."
+          "blocker": null
         },
         {
           "name": "Phase 5: Approval & Delivery",
