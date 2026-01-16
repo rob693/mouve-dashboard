@@ -484,6 +484,68 @@
             text-align: right;
         }
 
+        /* Weekly Tasks */
+        .weekly-tasks-list {
+            list-style: none;
+        }
+
+        .weekly-task-item {
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            background: #f9fafb;
+        }
+
+        .weekly-task-item:hover {
+            background: #f3f4f6;
+            border-color: var(--blue);
+        }
+
+        .weekly-task-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .weekly-task-name {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text);
+        }
+
+        .weekly-task-frequency {
+            font-size: 0.75rem;
+            color: var(--amber);
+            font-weight: 500;
+        }
+
+        .weekly-task-command {
+            font-family: 'Monaco', 'Courier New', monospace;
+            background: #fff;
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--blue);
+            margin: 0.5rem 0;
+            border: 1px solid #e5e7eb;
+        }
+
+        .weekly-task-description {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-top: 0.5rem;
+        }
+
+        .weekly-task-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.75rem;
+            color: var(--gray);
+            margin-top: 0.5rem;
+        }
+
         /* Priority Actions */
         .actions-list {
             list-style: none;
@@ -636,6 +698,14 @@
             </table>
         </div>
 
+        <!-- Weekly Tasks -->
+        <h2 class="section-header">📋 Weekly Tasks</h2>
+        <div style="background: white; border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <ul class="weekly-tasks-list" id="weekly-tasks-list">
+                <!-- Populated by JS -->
+            </ul>
+        </div>
+
         <!-- Priority Actions -->
         <h2 class="section-header">Priority Actions</h2>
         <div style="background: white; border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
@@ -689,6 +759,9 @@
 
             // Workflows
             renderWorkflows(data.workflows);
+
+            // Weekly Tasks
+            renderWeeklyTasks(data.weekly_tasks);
 
             // Priority Actions
             renderActions(data.priority_actions);
@@ -899,6 +972,30 @@
                     </tr>
                 `;
             }).join('');
+        }
+
+        function renderWeeklyTasks(tasks) {
+            const list = document.getElementById('weekly-tasks-list');
+            if (!tasks || tasks.length === 0) {
+                list.innerHTML = '<li style="padding: 1rem; color: var(--gray);">No weekly tasks configured</li>';
+                return;
+            }
+
+            list.innerHTML = tasks.map(task => `
+                <li class="weekly-task-item">
+                    <div class="weekly-task-header">
+                        <span class="weekly-task-name">${task.name}</span>
+                        <span class="weekly-task-frequency">${task.frequency}</span>
+                    </div>
+                    <div class="weekly-task-command">${task.command}</div>
+                    <div class="weekly-task-description">${task.description}</div>
+                    <div class="weekly-task-meta">
+                        <span>📁 ${task.location}</span>
+                        <span>⏱️ ${task.time}</span>
+                        <span>📖 <a href="https://github.com/rob693/MOUVE-Customer-Engine/blob/main/${task.sop}" target="_blank" style="color: var(--blue);">SOP</a></span>
+                    </div>
+                </li>
+            `).join('');
         }
 
         function renderActions(actions) {

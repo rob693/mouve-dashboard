@@ -533,6 +533,19 @@
     {"id": "LF-11", "name": "Trial Event Creator v1", "trigger": "Real-time webhook", "status": "active"}
   ],
 
+  "weekly_tasks": [
+    {
+      "name": "Prepare Sunday's Trial List",
+      "frequency": "Weekly (before Sunday)",
+      "command": "python3 scripts/weekly-trials-generator.py",
+      "location": "MOUVE-Customer-Engine repo",
+      "description": "Generate trials spreadsheet from GHL appointments with teachers, rooms, and existing customer checks",
+      "sop": "docs/sops/SOP-A-020-WEEKLY-TRIALS-SPREADSHEET.md",
+      "output": "~/Downloads/Trials Sunday [Date] 2026.xlsx",
+      "time": "2 minutes"
+    }
+  ],
+
   "priority_actions": [
     {
       "category": "BUILD",
