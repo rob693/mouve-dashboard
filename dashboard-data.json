@@ -7,7 +7,7 @@
     "complete": 27,
     "in_progress": 4,
     "waiting": 1,
-    "planned": 3,
+    "planned": 4,
     "blocked": 0
   },
 
@@ -194,6 +194,17 @@
       "status_label": "v1.0 Planning Complete",
       "target_date": "31 Jan 2026",
       "next_action": "Phase 1: Create BLOG_POSTS table + update Data Dictionary"
+    },
+    {
+      "name": "Attendance Tracker (Children's Dance)",
+      "phase_current": 0,
+      "phase_total": 6,
+      "implementation_plan": "ATTENDANCE-TRACKER-IMPLEMENTATION-PLAN-JAN2026.md",
+      "purpose": "Digital attendance marking via Softr PWA — replace paper registers, enable retention monitoring",
+      "status": "planned",
+      "status_label": "v1.0 Plan Approved • Integrated with Staff Portal (Phase 6)",
+      "target_date": "31 Jan 2026",
+      "next_action": "Phase 1: Create ATTENDANCE + TEACHERS tables, add retention fields to CONTACTS"
     }
   ],
 
