@@ -306,6 +306,11 @@
   "priority_actions": [
     {
       "category": "BUILD",
+      "action": "Staff Costs - Phase 4.5 Ready (blocker cleared!)",
+      "detail": "Build n8n Statement Generator + Approval workflows. All 20 staff rates complete. Estimate: 3.5 hours (13 atomic tasks)."
+    },
+    {
+      "category": "BUILD",
       "action": "Weekly Auto-Blog System - Phase 1 Ready",
       "detail": "Automated camp blog generation (GPT-4o + n8n + WordPress). Create BLOG_POSTS table, JSON clusters, 11-node workflow. Replaces manual content workflow. Target: 31 Jan 2026 for Feb camp. Estimate: 8-10 hours."
     },
@@ -313,11 +318,6 @@
       "category": "BUILD",
       "action": "Children's Onboarding - Phase 3 Ready",
       "detail": "Build n8n Progression Engine (state machine + error handling). Fixed: double-wait bug, twin paradox, error state handling. Estimate: 90 minutes."
-    },
-    {
-      "category": "CHASE",
-      "action": "Louise: 5 staff rates (Racheli, Sari, Chloe, Lily, Sivana)",
-      "detail": "Blocking Staff Costs statement generation - email sent"
     },
     {
       "category": "OPS",
