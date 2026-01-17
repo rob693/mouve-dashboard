@@ -98,8 +98,7 @@
       "implementation_plan": "STAFF-ADMIN-COSTS-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Automate monthly staff statements (replace inconsistent invoices, save 3-4 hours/month)",
       "status": "planned",
-      "status_label": "Phase 4.5/7 Ready 📋 (v2.2 - Adoption & Training)",
-      "blocker": "5 staff rates needed (Racheli, Sari, Chloe, Lily, Sivana)",
+      "status_label": "Phase 4.5/7 Ready 📋 (v2.2 - All staff rates complete ✅)",
       "completed_phases": [
         {"name": "Phase 1: Table Setup", "summary": "6 Airtable tables created"},
         {"name": "Phase 2: Staff Data Collection", "summary": "20 permanent staff, all rates complete (100%)"},
