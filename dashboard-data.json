@@ -128,14 +128,14 @@
       "implementation_plan": "STUDENT-PROGRESS-REPORTS-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Structured phrase-bank reports (<60s per student, zero admin editing, sibling differentiation)",
       "status": "in_progress",
-      "status_label": "Phase 2/5 Complete ✅ (282 phrases imported)",
+      "status_label": "v1.4 | Phase 2/5 Complete ✅ | NO DEPENDENCY on Staff Portal",
       "completed_phases": [
         {"name": "Phase 1: Foundation", "summary": "PROGRESS_ASSESSMENTS + PHRASE_BANK tables created"},
         {"name": "Phase 2: Phrase Bank", "summary": "282 phrases imported (132 generic + 75 Ballet + 75 Gymnastics)"}
       ],
       "next_phase": {
         "name": "Phase 3: Teacher Input Form",
-        "detail": "Airtable form (5 inputs, <60s per student) • Links to: Softr Staff Portal Phase 3",
+        "detail": "Airtable Forms (native) • Optional Softr migration documented for future (3-6 months post Staff Portal Phase 4)",
         "status": "planned",
         "tasks": [
           "Create Airtable form for PROGRESS_ASSESSMENTS",
@@ -171,7 +171,7 @@
       "implementation_plan": "STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Authenticated portal for staff timesheets, reports, submissions (replaces Airtable Forms)",
       "status": "planned",
-      "status_label": "Phase 1 Ready to Start (v2.1) • £49/month",
+      "status_label": "v2.2 | Phase 1 Ready to Start • £49/month",
       "next_action": "Phase 1: Softr setup + Airtable connect + user auth"
     },
     {
