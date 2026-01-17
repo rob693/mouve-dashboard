@@ -1,519 +1,200 @@
 {
-  "generated_at": "2026-01-17T15:10:00Z",
-  "generated_by": "SYS-DASHBOARD v1",
-  "version": "1.0",
+  "generated_at": "2026-01-17T16:00:00Z",
+  "generated_by": "SYS-DASHBOARD v2",
+  "version": "2.0",
 
   "health_summary": {
     "complete": 27,
-    "in_progress": 3,
+    "in_progress": 4,
     "waiting": 1,
-    "planned": 1,
+    "planned": 3,
     "blocked": 0
   },
 
-  "projects": [
+  "weekly_tasks": [
+    {
+      "name": "Prepare Sunday's Trial List",
+      "frequency": "Weekly (before Sunday)",
+      "command": "python3 scripts/weekly-trials-generator.py",
+      "location": "MOUVE-Customer-Engine repo",
+      "description": "Generate trials spreadsheet from GHL appointments with teachers, rooms, and existing customer checks",
+      "sop": "docs/sops/SOP-A-020-WEEKLY-TRIALS-SPREADSHEET.md",
+      "output": "~/Downloads/Trials Sunday [Date] 2026.xlsx",
+      "time": "2 minutes"
+    }
+  ],
+
+  "primary_projects": [
     {
       "name": "Ladies Fitness Funnel",
+      "phase_current": 3,
+      "phase_total": 7,
       "implementation_plan": "LADIES-FITNESS-IMPLEMENTATION-PLAN-JAN2026.md",
+      "purpose": "Automate lead-to-member journey (lead capture, instant response, trials, attendance, retention)",
       "status": "in_progress",
-      "status_label": "Phase 3 Complete (5/7 phases) | Health Check: ✅ EXCELLENT (16 Jan 07:43)",
+      "status_label": "Phase 3/7 Complete ✅ | Health Check: EXCELLENT (16 Jan)",
       "health_check": {
         "timestamp": "2026-01-16T07:43:00Z",
-        "status": "excellent",
-        "last_sync": "2026-01-15T06:00:22Z",
-        "webhooks": {
-          "lf-new-lead": "HTTP 200 OK",
-          "teamup-registration": "HTTP 200 OK"
-        },
-        "workflows_active": "12/12",
-        "data_flow": "Operational - 1 active trial tracked correctly",
-        "findings": "All systems healthy. Pipeline operational. No immediate action required."
+        "status": "excellent"
       },
-      "phases": [
-        {
-          "name": "Phase 1: Foundation",
-          "status": "complete",
-          "detail": "LF_MEMBERSHIPS table, lf_state field, TeamUp sync",
-          "sub_phases": [],
-          "blocker": null
-        },
-        {
-          "name": "Phase 2A: Lead Response",
-          "status": "complete",
-          "detail": "Instant SMS + Email, team alerts, Airtable logging",
-          "sub_phases": [],
-          "blocker": null
-        },
-        {
-          "name": "Phase 2B: Lead Nurture",
-          "status": "complete",
-          "detail": "LF-02 v7 + GHL nurture + Calendar integration",
-          "sub_phases": [
-            {"name": "LF-02 v7 workflow deployed", "status": "complete"},
-            {"name": "GHL \"LF Lead Nurture\" workflow (Day 1/3/7 SMS)", "status": "complete"},
-            {"name": "Google Calendar integration (15-min call blocks)", "status": "complete"},
-            {"name": "Enhanced email with talking points", "status": "complete"}
-          ],
-          "blocker": null
-        },
-        {
-          "name": "Phase 2C: Calendar Sync",
-          "status": "complete",
-          "detail": "LF-10 (daily sync) + LF-11 (trial events) live",
-          "sub_phases": [
-            {"name": "LF-10 workflow deployed (daily 5am)", "status": "complete"},
-            {"name": "LF-11 workflow deployed (real-time trials)", "status": "complete"},
-            {"name": "Staff calendar shared with LF team", "status": "complete"},
-            {"name": "SOP-G-010 & PB-LF-005 documented", "status": "complete"}
-          ],
-          "blocker": null
-        },
-        {
-          "name": "Phase 3: Trial & Attendance",
-          "status": "complete",
-          "detail": "10 workflows active, per-membership tracking",
-          "sub_phases": [],
-          "blocker": null
-        },
-        {
-          "name": "Phase 4: Member Engagement",
-          "status": "planned",
-          "detail": "Weekly scans, at-risk alerts, onboarding sequence",
-          "sub_phases": [],
-          "blocker": null
-        },
-        {
-          "name": "Phase 5: Retention & Growth",
-          "status": "planned",
-          "detail": "Win-back, referrals, 5-day challenge",
-          "sub_phases": [],
-          "blocker": null
-        }
+      "completed_phases": [
+        {"name": "Phase 1: Foundation", "summary": "LF_MEMBERSHIPS table, lf_state field, TeamUp sync"},
+        {"name": "Phase 2A: Lead Response", "summary": "Instant SMS + Email, team alerts, Airtable logging"},
+        {"name": "Phase 2B: Lead Nurture", "summary": "LF-02 v7 + GHL nurture + Calendar integration"},
+        {"name": "Phase 2C: Calendar Sync", "summary": "LF-10 (daily sync) + LF-11 (trial events) live"},
+        {"name": "Phase 3: Trial & Attendance", "summary": "10 workflows active, per-membership tracking"}
+      ],
+      "next_phase": {
+        "name": "Phase 4: Member Engagement",
+        "detail": "Weekly scans, at-risk alerts, onboarding sequence",
+        "status": "planned",
+        "tasks": [
+          "Weekly member scan automation",
+          "At-risk member detection",
+          "Onboarding email sequence"
+        ]
+      },
+      "remaining_phases": [
+        "Phase 5: Retention & Growth",
+        "Phase 6-7: Advanced Features"
       ]
     },
     {
       "name": "Children's Dance Onboarding",
+      "phase_current": 2,
+      "phase_total": 7,
       "implementation_plan": "CHILDRENS-ONBOARDING-IMPLEMENTATION-PLAN-JAN2026-UPDATE.md",
+      "purpose": "Automated 10-email onboarding sequence — reduces anxious parents, stops repetitive staff questions",
       "status": "in_progress",
-      "status_label": "Phase 2 Complete ✅ (v4.8 Final - 8 bugs fixed) | Plan: v6.0 (Atomic Task List) | Phase 3 Ready 📋",
-      "phases": [
-        {
-          "name": "Phase 1: Schema Foundation",
-          "status": "complete",
-          "detail": "✅ 6 fields created (5 ENROLLMENTS, 1 CONTACTS) in 25 min",
-          "sub_phases": [
-            {"name": "ENROLLMENTS: onboarding_stage (fld3ycbTKHntVWtVf)", "status": "complete"},
-            {"name": "ENROLLMENTS: onboarding_started_at (fldmnk5Z06EM1SNqm)", "status": "complete"},
-            {"name": "ENROLLMENTS: onboarding_log (fldJKkFIOVgD2hSjw)", "status": "complete"},
-            {"name": "ENROLLMENTS: onboarding_status (fldvNOa3jQb6utYtx)", "status": "complete"},
-            {"name": "ENROLLMENTS: ac_contact_id (fldwqR0uvjD9wPrx4)", "status": "complete"},
-            {"name": "CONTACTS: last_onboarding_email_sent_at (fldb1syLkrIJkUPCC)", "status": "complete"},
-            {"name": "Field IDs documented in ACTIVECAMPAIGN_REFERENCE.md", "status": "complete"},
-            {"name": "Data integrity verified (no corruption)", "status": "complete"}
-          ],
-          "blocker": null
-        },
-        {
-          "name": "Phase 2: n8n Enrollment Handler Update",
-          "status": "complete",
-          "detail": "✅ v4.8 Final deployed - Traffic control + parent upsert + 8 bugs fixed",
-          "sub_phases": [
-            {"name": "Add onboarding_stage initialization", "status": "complete"},
-            {"name": "Store ac_contact_id from AC response", "status": "complete"},
-            {"name": "Add 24h traffic control check", "status": "complete"},
-            {"name": "Trigger Email 1 (if traffic control passes)", "status": "complete"},
-            {"name": "Upsert parent CONTACTS record", "status": "complete"},
-            {"name": "Fix Bug #4: ac_contact_id number type", "status": "complete"},
-            {"name": "Fix Bug #5: Data flow after HTTP nodes", "status": "complete"},
-            {"name": "Fix Bug #6: Wrong node reference", "status": "complete"},
-            {"name": "Fix Bug #7: Simplify parent upsert (remove IF)", "status": "complete"},
-            {"name": "Fix Bug #8: fetch() not available (use helpers)", "status": "complete"},
-            {"name": "Test with sibling enrollment (TEST-Emma TestChild3)", "status": "complete"},
-            {"name": "Workflow cleanup (removed orphaned nodes)", "status": "complete"}
-          ],
-          "blocker": null
-        },
-        {
-          "name": "Phase 3: n8n Progression Engine",
-          "status": "planned",
-          "detail": "State machine + error state handling (90 min)",
-          "sub_phases": [
-            {"name": "State machine logic (12 stages)", "status": "planned"},
-            {"name": "Email timing calculator (Day 0/2/5/14/21/...)", "status": "planned"},
-            {"name": "24-hour parent traffic control", "status": "planned"},
-            {"name": "Pre-send validation (includes ac_contact_id)", "status": "planned"},
-            {"name": "Error state handling [CRITICAL FIX]", "status": "planned"},
-            {"name": "AC tag application", "status": "planned"},
-            {"name": "Audit logging", "status": "planned"}
-          ],
-          "blocker": null
-        },
-        {
-          "name": "Phase 4: ActiveCampaign Micro-Automations",
-          "status": "planned",
-          "detail": "10 automations (2 actions each, NO WAIT STEPS) (50 min)",
-          "sub_phases": [
-            {"name": "Email 1 automation (instant send)", "status": "planned"},
-            {"name": "Email 2 automation (instant send) [FIXED - no wait]", "status": "planned"},
-            {"name": "Emails 3-10 automations (instant send)", "status": "planned"},
-            {"name": "Clarify confirmation tags = reporting only", "status": "planned"}
-          ],
-          "blocker": null
-        },
-        {
-          "name": "Phase 5: Email Content Finalization",
-          "status": "planned",
-          "detail": "Age-based conditional content, remove class conditionals",
-          "sub_phases": [
-            {"name": "Simplify Email 2 (remove class conditionals)", "status": "planned"},
-            {"name": "Upload HTML to AC", "status": "planned"},
-            {"name": "Test conditional rendering", "status": "planned"}
-          ],
-          "blocker": null
-        },
-        {
-          "name": "Phase 6: Testing & Validation",
-          "status": "planned",
-          "detail": "6 test scenarios (twins, error states, full sequence) (60 min)",
-          "sub_phases": [
-            {"name": "Test 1: Single child enrollment", "status": "planned"},
-            {"name": "Test 2: Siblings same day (traffic control)", "status": "planned"},
-            {"name": "Test 3: Sequential sibling enrollment", "status": "planned"},
-            {"name": "Test 4: Missing data (error state handling)", "status": "planned"},
-            {"name": "Test 5: Error state recovery (staff fixes data)", "status": "planned"},
-            {"name": "Test 6: Full 10-email sequence", "status": "planned"},
-            {"name": "Test 7: Rollback (global pause)", "status": "planned"}
-          ],
-          "blocker": null
-        },
-        {
-          "name": "Phase 7: Soft Launch & Rollout",
-          "status": "planned",
-          "detail": "Enable for new enrollments, monitor logs, staff training",
-          "sub_phases": [
-            {"name": "Enable n8n Progression workflow", "status": "planned"},
-            {"name": "Monitor first 10 enrollments", "status": "planned"},
-            {"name": "Staff announcement + SOP", "status": "planned"}
-          ],
-          "blocker": null
-        }
+      "status_label": "Phase 2/7 Complete ✅ (v6.0 - 8 bugs fixed)",
+      "completed_phases": [
+        {"name": "Phase 1: Schema Foundation", "summary": "6 fields created (5 ENROLLMENTS, 1 CONTACTS) in 25 min"},
+        {"name": "Phase 2: n8n Enrollment Handler Update", "summary": "v4.8 Final - Traffic control + parent upsert + 8 bugs fixed"}
+      ],
+      "next_phase": {
+        "name": "Phase 3: n8n Progression Engine",
+        "detail": "State machine + error handling • Est: 90 min",
+        "status": "planned",
+        "tasks": [
+          "State machine logic (12 stages)",
+          "Email timing calculator (Day 0/2/5/14/21/...)",
+          "24-hour parent traffic control",
+          "Error state handling [CRITICAL FIX]",
+          "AC tag application",
+          "Audit logging"
+        ]
+      },
+      "remaining_phases": [
+        "Phase 4: ActiveCampaign Micro-Automations",
+        "Phase 5: Email Content Finalization",
+        "Phase 6: Testing & Validation",
+        "Phase 7: Soft Launch & Rollout"
       ]
     },
     {
       "name": "Back Office: Staff Costs",
+      "phase_current": 4.5,
+      "phase_total": 7,
       "implementation_plan": "STAFF-ADMIN-COSTS-IMPLEMENTATION-PLAN-JAN2026.md",
+      "purpose": "Automate monthly staff statements (replace inconsistent invoices, save 3-4 hours/month)",
       "status": "planned",
-      "status_label": "Phase 4.5 Ready 📋 - v2.2 (Adoption & Training - scope gap addressed)",
-      "phases": [
-        {
-          "name": "Phase 1: Table Setup",
-          "status": "complete",
-          "detail": "6 Airtable tables created",
-          "sub_phases": [],
-          "blocker": null
-        },
-        {
-          "name": "Phase 2: Staff Data Collection",
-          "status": "complete",
-          "detail": "20 permanent staff, all rates complete (100%)",
-          "sub_phases": [],
-          "blocker": null
-        },
-        {
-          "name": "Phase 3: Data Entry Forms",
-          "status": "complete",
-          "detail": "Timesheet form + Venue field for Xero",
-          "sub_phases": [],
-          "blocker": null
-        },
-        {
-          "name": "Phase 4: Data & Schema Prep",
-          "status": "complete",
-          "detail": "✅ Xero format confirmed, Venue field added",
-          "sub_phases": [
-            {"name": "Xero format confirmed (9 Jan 2026)", "status": "complete"},
-            {"name": "Venue field added (12 options)", "status": "complete"},
-            {"name": "All 20 staff rates complete (16 Jan 2026)", "status": "complete"}
-          ],
-          "blocker": null
-        },
-        {
-          "name": "Phase 4.5: Workflow Build & Test",
-          "status": "planned",
-          "detail": "✅ Ready to build n8n workflows (Statement Generator + Approval)",
-          "sub_phases": [
-            {"name": "Build Statement Generator workflow", "status": "pending"},
-            {"name": "Build Approval + PDF workflow", "status": "pending"},
-            {"name": "Test with January 2026 data", "status": "pending"}
-          ],
-          "blocker": null
-        },
-        {
-          "name": "Phase 5: Approval & Delivery",
-          "status": "planned",
-          "detail": "Louise approval → PDF → Email",
-          "sub_phases": [],
-          "blocker": null
-        },
-        {
-          "name": "Phase 6: Validation",
-          "status": "planned",
-          "detail": "Jan 2026 vs manual process",
-          "sub_phases": [],
-          "blocker": null
-        },
-        {
-          "name": "Phase 7: Adoption & Rollout",
-          "status": "planned",
-          "detail": "Training materials, parallel run, self-review, compliance workflows",
-          "sub_phases": [
-            {"name": "Phase 7A: Training Materials & Portal Access", "status": "pending"},
-            {"name": "Phase 7B: Parallel Run & Validation (1 month)", "status": "pending"},
-            {"name": "Phase 7C: Staff Self-Review Workflow", "status": "pending"},
-            {"name": "Phase 7D: Compliance & Grace Period (3 months)", "status": "pending"},
-            {"name": "Phase 7E: Cutover & Strict Mode", "status": "pending"}
-          ],
-          "blocker": null
-        }
+      "status_label": "Phase 4.5/7 Ready 📋 (v2.2 - Adoption & Training)",
+      "blocker": "5 staff rates needed (Racheli, Sari, Chloe, Lily, Sivana)",
+      "completed_phases": [
+        {"name": "Phase 1: Table Setup", "summary": "6 Airtable tables created"},
+        {"name": "Phase 2: Staff Data Collection", "summary": "20 permanent staff, all rates complete (100%)"},
+        {"name": "Phase 3: Data Entry Forms", "summary": "Timesheet form + Venue field for Xero"},
+        {"name": "Phase 4: Data & Schema Prep", "summary": "Xero format confirmed, Venue field added"}
+      ],
+      "next_phase": {
+        "name": "Phase 4.5: Workflow Build & Test",
+        "detail": "n8n Statement Generator + Approval • Est: 3.5 hours",
+        "status": "planned",
+        "tasks": [
+          "Build Statement Generator workflow",
+          "Build Approval + PDF workflow",
+          "Test with January 2026 data"
+        ]
+      },
+      "remaining_phases": [
+        "Phase 5: Approval & Delivery",
+        "Phase 6: Validation",
+        "Phase 7: Adoption & Rollout (training materials, parallel run, compliance)"
       ]
     },
     {
-      "name": "Back Office: Amex Recon vNext",
-      "implementation_plan": "AMEX-RECONCILIATION-IMPLEMENTATION-PLAN-JAN2026-VNEXT.md",
-      "status": "waiting",
-      "status_label": "v2.0 Architectural Review Complete - Start Feb 2026",
-      "phases": [
-        {
-          "name": "Phase 0: Architectural Review (v2.0)",
-          "status": "complete",
-          "detail": "vNext plan complete - single-sink model, verification contract defined",
-          "sub_phases": [
-            {"name": "Retire multi-inbox vendor searching", "status": "complete"},
-            {"name": "Design two-tier routing (allowlist + keyword gate)", "status": "complete"},
-            {"name": "Define 9-test verification contract", "status": "complete"},
-            {"name": "Attachment explosion + HTML receipt handling", "status": "complete"},
-            {"name": "Deterministic file picker + run logging", "status": "complete"}
-          ],
-          "blocker": null
-        },
-        {
-          "name": "Phase 1: Routing Configuration",
-          "status": "planned",
-          "detail": "Rob Gmail + M365 + Louise Gmail filters (45 min)",
-          "sub_phases": [],
-          "blocker": null
-        },
-        {
-          "name": "Phase 2: Invoice Ingestion v3",
-          "status": "planned",
-          "detail": "Attachment explosion + HTML handling + run log (3h)",
-          "sub_phases": [],
-          "blocker": null
-        },
-        {
-          "name": "Phase 3: Statement Reconciliation v3",
-          "status": "planned",
-          "detail": "Deterministic file picker + validation guardrails (3h)",
-          "sub_phases": [],
-          "blocker": null
-        },
-        {
-          "name": "Phase 4: Validation",
-          "status": "planned",
-          "detail": "Run 9-test verification contract",
-          "sub_phases": [],
-          "blocker": null
-        },
-        {
-          "name": "Phase 5: Handoff",
-          "status": "planned",
-          "detail": "SOP + Louise training",
-          "sub_phases": [],
-          "blocker": null
-        }
+      "name": "Student Progress Reports",
+      "phase_current": 2,
+      "phase_total": 5,
+      "implementation_plan": "STUDENT-PROGRESS-REPORTS-IMPLEMENTATION-PLAN-JAN2026.md",
+      "purpose": "Structured phrase-bank reports (<60s per student, zero admin editing, sibling differentiation)",
+      "status": "in_progress",
+      "status_label": "Phase 2/5 Complete ✅ (282 phrases imported)",
+      "completed_phases": [
+        {"name": "Phase 1: Foundation", "summary": "PROGRESS_ASSESSMENTS + PHRASE_BANK tables created"},
+        {"name": "Phase 2: Phrase Bank", "summary": "282 phrases imported (132 generic + 75 Ballet + 75 Gymnastics)"}
+      ],
+      "next_phase": {
+        "name": "Phase 3: Teacher Input Form",
+        "detail": "Airtable form (5 inputs, <60s per student) • Links to: Softr Staff Portal Phase 3",
+        "status": "planned",
+        "tasks": [
+          "Create Airtable form for PROGRESS_ASSESSMENTS",
+          "Pre-populate Student/Class/Term via URL parameters",
+          "Configure dropdown constraints",
+          "Create teacher briefing document",
+          "Test with sample teacher"
+        ]
+      },
+      "remaining_phases": [
+        "Phase 4: Report Generation (n8n + PDF)",
+        "Phase 5: Unified Delivery"
       ]
+    }
+  ],
+
+  "secondary_projects": [
+    {
+      "name": "Back Office: Amex Recon vNext",
+      "phase_current": 0,
+      "phase_total": 5,
+      "implementation_plan": "AMEX-RECONCILIATION-IMPLEMENTATION-PLAN-JAN2026-VNEXT.md",
+      "purpose": "Automate receipt routing + monthly reconciliation (reduce 3 hours → 30 minutes)",
+      "status": "waiting",
+      "status_label": "v2.0 Architectural Review Complete",
+      "start_date": "February 2026",
+      "next_action": "Phase 1: Routing Configuration (Rob Gmail + M365 + Louise Gmail filters)"
     },
     {
       "name": "Staff Portal (Softr)",
+      "phase_current": 0,
+      "phase_total": 5,
       "implementation_plan": "STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
+      "purpose": "Authenticated portal for staff timesheets, reports, submissions (replaces Airtable Forms)",
       "status": "planned",
-      "status_label": "Phase 1 Ready to Start (v2.1)",
-      "phases": [
-        {
-          "name": "Phase 1: Foundation",
-          "status": "planned",
-          "detail": "Softr setup, Airtable connect, user auth, groups",
-          "sub_phases": [],
-          "blocker": null
-        },
-        {
-          "name": "Phase 2: Timesheets Portal",
-          "status": "planned",
-          "detail": "Submit timesheet, view submissions, admin approval",
-          "sub_phases": [],
-          "blocker": null
-        },
-        {
-          "name": "Phase 3: Staff Reports Portal",
-          "status": "planned",
-          "detail": "Class report submission and review interface",
-          "sub_phases": [],
-          "blocker": null
-        },
-        {
-          "name": "Phase 4: Rollout & Training",
-          "status": "planned",
-          "detail": "Staff training, parallel period, deprecate Airtable Forms",
-          "sub_phases": [],
-          "blocker": null
-        },
-        {
-          "name": "Phase 5: Onboarding Portal",
-          "status": "planned",
-          "detail": "Children's intake with approval gate + existing family detection UI",
-          "sub_phases": [
-            {"name": "Intake form with approval gate", "status": "planned"},
-            {"name": "Existing family detection badge", "status": "planned"},
-            {"name": "Duplicate onboarding prevention test", "status": "planned"}
-          ],
-          "blocker": "Conditional: Only if approval gate confirmed"
-        }
-      ]
+      "status_label": "Phase 1 Ready to Start (v2.1) • £49/month",
+      "next_action": "Phase 1: Softr setup + Airtable connect + user auth"
     },
     {
       "name": "Operational Dashboard",
+      "phase_current": 0,
+      "phase_total": 3,
       "implementation_plan": "OPERATIONAL-DASHBOARD-IMPLEMENTATION-PLAN-JAN2026.md",
+      "purpose": "Business metrics dashboard (conversions, students, trial rates) for Louise/Georgia",
       "status": "planned",
-      "status_label": "v2.0 Plan Complete (Protocol v1.6 Compliant) - Phase 1 Ready 📋",
-      "phases": [
-        {
-          "name": "Phase 1: Foundation",
-          "status": "planned",
-          "detail": "Google Sheets, GitHub repo, Vercel setup (Days 1-3)",
-          "sub_phases": [
-            {"name": "Create Google Sheets 'MOUVE Operations Data'", "status": "planned"},
-            {"name": "Create GitHub repo 'mouve-operations-dashboard'", "status": "planned"},
-            {"name": "Create Vercel project + password protection", "status": "planned"},
-            {"name": "Configure environment variables", "status": "planned"}
-          ],
-          "blocker": null
-        },
-        {
-          "name": "Phase 2: Data Pipeline",
-          "status": "planned",
-          "detail": "n8n OPS-DASHBOARD-V1 workflow (Days 4-7)",
-          "sub_phases": [
-            {"name": "Query GHL for conversions (week/month)", "status": "planned"},
-            {"name": "Query Airtable for student counts (LF + Children)", "status": "planned"},
-            {"name": "Calculate trial conversion rate", "status": "planned"},
-            {"name": "Write to Google Sheets (historical)", "status": "planned"},
-            {"name": "Generate operations-data.json", "status": "planned"}
-          ],
-          "blocker": null
-        },
-        {
-          "name": "Phase 3: Frontend + Rollout",
-          "status": "planned",
-          "detail": "HTML dashboard with Chart.js (Days 8-14)",
-          "sub_phases": [
-            {"name": "Build KPI cards (4 metrics)", "status": "planned"},
-            {"name": "Build trend chart (conversions)", "status": "planned"},
-            {"name": "Deploy and test with Rob", "status": "planned"},
-            {"name": "Share with Louise for feedback", "status": "planned"},
-            {"name": "Roll out to Georgia", "status": "planned"}
-          ],
-          "blocker": null
-        }
-      ]
+      "status_label": "v2.0 Plan Complete (Protocol v1.6 Compliant)",
+      "next_action": "Phase 1: Google Sheets + GitHub repo + Vercel + password protection"
     },
     {
       "name": "Weekly Auto-Blog System",
+      "phase_current": 0,
+      "phase_total": 6,
       "implementation_plan": "WEEKLY-AUTO-BLOG-IMPLEMENTATION-PLAN-JAN2026.md",
+      "purpose": "Auto-generate 4-5 weekly camp blogs with GPT-4o (long-tail SEO, saves 8-10h/month)",
       "status": "planned",
-      "status_label": "v1.0 Planning Complete - Phase 1 Ready 📋 (Target: 31 Jan 2026)",
-      "phases": [
-        {
-          "name": "Phase 1: Airtable Schema & Data Dictionary",
-          "status": "planned",
-          "detail": "BLOG_POSTS table (17 fields) + Data Dictionary update",
-          "sub_phases": [
-            {"name": "Create BLOG_POSTS table with 17 fields", "status": "pending"},
-            {"name": "Add sample record (manual)", "status": "pending"},
-            {"name": "Update AIRTABLE-DATA-DICTIONARY.md", "status": "pending"},
-            {"name": "Commit to git", "status": "pending"}
-          ],
-          "blocker": null
-        },
-        {
-          "name": "Phase 2: JSON Cluster Template",
-          "status": "planned",
-          "detail": "Deterministic JSON structure for camp content clusters",
-          "sub_phases": [
-            {"name": "Create /workflows/blog-clusters/ directory", "status": "pending"},
-            {"name": "Write feb-2026-wicked.json example", "status": "pending"},
-            {"name": "Document JSON schema in plan", "status": "pending"}
-          ],
-          "blocker": null
-        },
-        {
-          "name": "Phase 3: n8n Workflow Build",
-          "status": "planned",
-          "detail": "11-node workflow (generation + deduplication + WordPress posting)",
-          "sub_phases": [
-            {"name": "Schedule Trigger (Monday 06:00)", "status": "pending"},
-            {"name": "Read JSON Cluster Files", "status": "pending"},
-            {"name": "Filter Active Clusters", "status": "pending"},
-            {"name": "Determine This Week's Post", "status": "pending"},
-            {"name": "Check BLOG_POSTS Deduplication", "status": "pending"},
-            {"name": "Hard Stop Check (IF node)", "status": "pending"},
-            {"name": "Generate Content (OpenAI GPT-4o)", "status": "pending"},
-            {"name": "WordPress Category Check/Create", "status": "pending"},
-            {"name": "Create WordPress Post", "status": "pending"},
-            {"name": "Log to Airtable BLOG_POSTS", "status": "pending"},
-            {"name": "Send Notification Email", "status": "pending"}
-          ],
-          "blocker": null
-        },
-        {
-          "name": "Phase 4: LLM Integration & Prompt Engineering",
-          "status": "planned",
-          "detail": "GPT-4o system prompt (long-tail keywords + GEO optimization)",
-          "sub_phases": [
-            {"name": "Write system prompt with guardrails", "status": "pending"},
-            {"name": "Test with sample JSON post", "status": "pending"},
-            {"name": "Validate GEO features present", "status": "pending"},
-            {"name": "Validate long-tail keywords used", "status": "pending"},
-            {"name": "Integrate prompt into n8n node", "status": "pending"}
-          ],
-          "blocker": null
-        },
-        {
-          "name": "Phase 5: End-to-End Testing",
-          "status": "planned",
-          "detail": "Validate all 5 verification tests",
-          "sub_phases": [
-            {"name": "Test 1: End-to-End Generation", "status": "pending"},
-            {"name": "Test 2: Duplicate Prevention", "status": "pending"},
-            {"name": "Test 3: GEO Optimization", "status": "pending"},
-            {"name": "Test 4: Keyword Differentiation", "status": "pending"},
-            {"name": "Test 5: Error Handling", "status": "pending"},
-            {"name": "Manual quality review", "status": "pending"}
-          ],
-          "blocker": null
-        },
-        {
-          "name": "Phase 6: Documentation & SOP Update",
-          "status": "planned",
-          "detail": "Update SOP-A-006, N8N_WORKFLOW_INDEX.md, CLAUDE.md",
-          "sub_phases": [
-            {"name": "Update SOP-A-006 (Content Engine Operations)", "status": "pending"},
-            {"name": "Add workflow to N8N_WORKFLOW_INDEX.md", "status": "pending"},
-            {"name": "Create /workflows/blog-clusters/README.md", "status": "pending"},
-            {"name": "Update CLAUDE.md with blog automation reference", "status": "pending"}
-          ],
-          "blocker": null
-        }
-      ]
+      "status_label": "v1.0 Planning Complete",
+      "target_date": "31 Jan 2026",
+      "next_action": "Phase 1: Create BLOG_POSTS table + update Data Dictionary"
     }
   ],
 
@@ -623,19 +304,6 @@
     {"id": "LF-11", "name": "Trial Event Creator v1", "trigger": "Real-time webhook", "status": "active"}
   ],
 
-  "weekly_tasks": [
-    {
-      "name": "Prepare Sunday's Trial List",
-      "frequency": "Weekly (before Sunday)",
-      "command": "python3 scripts/weekly-trials-generator.py",
-      "location": "MOUVE-Customer-Engine repo",
-      "description": "Generate trials spreadsheet from GHL appointments with teachers, rooms, and existing customer checks",
-      "sop": "docs/sops/SOP-A-020-WEEKLY-TRIALS-SPREADSHEET.md",
-      "output": "~/Downloads/Trials Sunday [Date] 2026.xlsx",
-      "time": "2 minutes"
-    }
-  ],
-
   "priority_actions": [
     {
       "category": "BUILD",
@@ -644,8 +312,8 @@
     },
     {
       "category": "BUILD",
-      "action": "Children's Onboarding v3.1 - Phase 1 Ready (CRITICAL BUGS FIXED)",
-      "detail": "Architect review complete. Fixed: double-wait bug, twin paradox, error state handling. Add 5 Airtable fields (not 4), then build. Estimate: 6.25 hours (90% confidence)."
+      "action": "Children's Onboarding - Phase 3 Ready",
+      "detail": "Build n8n Progression Engine (state machine + error handling). Fixed: double-wait bug, twin paradox, error state handling. Estimate: 90 minutes."
     },
     {
       "category": "CHASE",

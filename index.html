@@ -546,6 +546,20 @@
             margin-top: 0.5rem;
         }
 
+        /* Secondary Projects */
+        .secondary-project-item {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .secondary-project-item:last-child {
+            border-bottom: none;
+        }
+
+        .secondary-project-item:hover {
+            background: #f9fafb;
+        }
+
         /* Priority Actions */
         .actions-list {
             list-style: none;
@@ -641,8 +655,16 @@
             </div>
         </div>
 
-        <!-- Projects -->
-        <h2 class="section-header">Projects & Phases</h2>
+        <!-- Weekly Tasks (Top Priority) -->
+        <h2 class="section-header">📋 Weekly Tasks</h2>
+        <div style="background: white; border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+            <ul class="weekly-tasks-list" id="weekly-tasks-list">
+                <!-- Populated by JS -->
+            </ul>
+        </div>
+
+        <!-- Primary Projects -->
+        <h2 class="section-header">🎯 Primary Projects</h2>
 
         <!-- Documentation Reference Boxes -->
         <div class="doc-reference-boxes">
@@ -656,7 +678,13 @@
             </div>
         </div>
 
-        <div class="projects-grid" id="projects-grid">
+        <div class="projects-grid" id="primary-projects-grid">
+            <!-- Populated by JS -->
+        </div>
+
+        <!-- Secondary Projects -->
+        <h2 class="section-header">📌 Secondary Projects</h2>
+        <div style="background: white; border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 2rem;" id="secondary-projects-container">
             <!-- Populated by JS -->
         </div>
 
@@ -698,14 +726,6 @@
             </table>
         </div>
 
-        <!-- Weekly Tasks -->
-        <h2 class="section-header">📋 Weekly Tasks</h2>
-        <div style="background: white; border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-            <ul class="weekly-tasks-list" id="weekly-tasks-list">
-                <!-- Populated by JS -->
-            </ul>
-        </div>
-
         <!-- Priority Actions -->
         <h2 class="section-header">Priority Actions</h2>
         <div style="background: white; border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
@@ -745,8 +765,9 @@
             document.getElementById('health-waiting').textContent = data.health_summary.waiting;
             document.getElementById('health-blocked').textContent = data.health_summary.blocked;
 
-            // Projects
-            renderProjects(data.projects);
+            // Projects (Primary and Secondary)
+            renderPrimaryProjects(data.primary_projects);
+            renderSecondaryProjects(data.secondary_projects);
 
             // Completed Projects
             renderCompletedProjects(data.completed_projects);
@@ -767,24 +788,121 @@
             renderActions(data.priority_actions);
         }
 
-        function renderProjects(projects) {
-            const grid = document.getElementById('projects-grid');
-            grid.innerHTML = projects.map(project => `
-                <div class="project-card">
-                    <div class="project-header">
-                        <div>
-                            <div class="project-title">${project.name}</div>
-                            ${project.implementation_plan ? `<div class="implementation-plan-file">${project.implementation_plan}</div>` : ''}
+        function renderPrimaryProjects(projects) {
+            const grid = document.getElementById('primary-projects-grid');
+            grid.innerHTML = projects.map(project => {
+                // Build completed phases summary
+                let completedPhasesHtml = '';
+                if (project.completed_phases && project.completed_phases.length > 0) {
+                    completedPhasesHtml = `
+                        <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #f3f4f6;">
+                            ${project.completed_phases.map(p => `
+                                <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0; font-size: 0.8rem;">
+                                    <span style="color: var(--green);">✓</span>
+                                    <span style="font-weight: 500;">${p.name}</span>
+                                    <span style="color: var(--gray);">— ${p.summary}</span>
+                                </div>
+                            `).join('')}
                         </div>
-                        <span class="project-status status-${project.status.replace('_', '-')}">${project.status_label}</span>
-                    </div>
-                    <div class="project-body">
-                        <ul class="phase-list">
-                            ${project.phases.map(phase => renderPhase(phase)).join('')}
+                    `;
+                }
+
+                // Build next phase detail
+                let nextPhaseHtml = '';
+                if (project.next_phase) {
+                    const tasks = project.next_phase.tasks ? `
+                        <ul style="margin: 0.5rem 0 0 1.5rem; font-size: 0.75rem; color: var(--gray);">
+                            ${project.next_phase.tasks.map(t => `<li style="margin: 0.25rem 0;">${t}</li>`).join('')}
                         </ul>
+                    ` : '';
+
+                    nextPhaseHtml = `
+                        <div style="background: var(--blue-bg); padding: 0.75rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <div style="font-weight: 600; font-size: 0.875rem; color: var(--blue); margin-bottom: 0.25rem;">
+                                ▶ NEXT: ${project.next_phase.name}
+                            </div>
+                            <div style="font-size: 0.75rem; color: var(--gray);">
+                                ${project.next_phase.detail}
+                            </div>
+                            ${tasks}
+                        </div>
+                    `;
+                }
+
+                // Build remaining phases
+                let remainingPhasesHtml = '';
+                if (project.remaining_phases && project.remaining_phases.length > 0) {
+                    remainingPhasesHtml = `
+                        <div style="font-size: 0.75rem; color: var(--gray); font-style: italic;">
+                            ${project.remaining_phases.join(', ')}: [collapsed]
+                        </div>
+                    `;
+                }
+
+                // Blocker warning
+                let blockerHtml = '';
+                if (project.blocker) {
+                    blockerHtml = `
+                        <div style="background: var(--red-bg); color: var(--red); padding: 0.5rem; border-radius: 6px; font-size: 0.75rem; margin-bottom: 1rem;">
+                            ⚠️ BLOCKED: ${project.blocker}
+                        </div>
+                    `;
+                }
+
+                return `
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">${project.name} (Phase ${project.phase_current}/${project.phase_total})</div>
+                                <div class="implementation-plan-file">${project.implementation_plan}</div>
+                                <div style="font-size: 0.8rem; color: var(--gray); margin-top: 0.25rem; font-style: italic;">
+                                    ${project.purpose}
+                                </div>
+                            </div>
+                            <span class="project-status status-${project.status.replace('_', '-')}">${project.status_label}</span>
+                        </div>
+                        <div class="project-body">
+                            ${blockerHtml}
+                            ${completedPhasesHtml}
+                            ${nextPhaseHtml}
+                            ${remainingPhasesHtml}
+                        </div>
                     </div>
-                </div>
-            `).join('');
+                `;
+            }).join('');
+        }
+
+        function renderSecondaryProjects(projects) {
+            const container = document.getElementById('secondary-projects-container');
+            container.innerHTML = projects.map(project => {
+                const dateInfo = project.start_date ? `Start: ${project.start_date}` :
+                                 project.target_date ? `Target: ${project.target_date}` : '';
+
+                return `
+                    <div class="secondary-project-item">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                            <div style="flex: 1;">
+                                <div style="font-weight: 600; font-size: 0.95rem;">
+                                    ${project.name} (Phase ${project.phase_current}/${project.phase_total})
+                                </div>
+                                <div style="font-size: 0.75rem; color: var(--gray); font-family: 'Monaco', monospace; margin-top: 0.25rem;">
+                                    ${project.implementation_plan}
+                                </div>
+                            </div>
+                            <span class="project-status status-${project.status.replace('_', '-')}" style="margin-left: 1rem;">
+                                ${project.status_label}
+                            </span>
+                        </div>
+                        <div style="font-size: 0.8rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">
+                            ${project.purpose}
+                        </div>
+                        <div style="font-size: 0.75rem; color: var(--dark);">
+                            <strong>Next:</strong> ${project.next_action}
+                        </div>
+                        ${dateInfo ? `<div style="font-size: 0.75rem; color: var(--amber); margin-top: 0.25rem;">${dateInfo}</div>` : ''}
+                    </div>
+                `;
+            }).join('');
         }
 
         function renderPhase(phase) {
