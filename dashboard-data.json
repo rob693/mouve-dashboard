@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-18T08:45:00Z",
+  "generated_at": "2026-01-18T12:15:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "2.0",
 
@@ -61,29 +61,31 @@
     },
     {
       "name": "Children's Dance Onboarding",
-      "phase_current": 3,
+      "phase_current": 4,
       "phase_total": 7,
       "implementation_plan": "CHILDRENS-ONBOARDING-IMPLEMENTATION-PLAN-JAN2026-UPDATE.md",
       "purpose": "Automated 10-email onboarding sequence — reduces anxious parents, stops repetitive staff questions",
       "status": "in_progress",
-      "status_label": "Phase 3/7 Complete ✅ (v6.1 - Progression Engine live)",
+      "status_label": "Phase 4/7 Ready 📋 (v6.3 - Emails v2.0 Final)",
       "completed_phases": [
         {"name": "Phase 1: Schema Foundation", "summary": "6 fields created (5 ENROLLMENTS, 1 CONTACTS) in 25 min"},
         {"name": "Phase 2: n8n Enrollment Handler Update", "summary": "v4.8 Final - Traffic control + parent upsert + 8 bugs fixed"},
-        {"name": "Phase 3: n8n Progression Engine", "summary": "30-min schedule, timing logic, traffic control, AC tags 82-90, error handling"}
+        {"name": "Phase 3: n8n Progression Engine", "summary": "30-min schedule, timing logic, traffic control, AC tags 122-130, error handling"},
+        {"name": "Phase 5 (Partial): Email Content", "summary": "25 HTML files tone-amended (E1-E10 × 3 age variants) — 18 Jan 2026"}
       ],
       "next_phase": {
         "name": "Phase 4: ActiveCampaign Micro-Automations",
-        "detail": "10 simple automations (tag → send email) • Est: 50 min",
+        "detail": "10 simple automations (tag → send email) + upload 25 email HTMLs • Est: 60 min",
         "status": "planned",
+        "key_reference": "docs/email-templates/onboarding-sequence-v2-final-18jan2026/",
         "tasks": [
+          "Upload 25 email HTMLs from onboarding-sequence-v2-final-18jan2026/",
           "Create 20 tags (10 trigger + 10 confirmation)",
           "Create 10 automations (Email 1-10)",
           "Test each automation with test contact"
         ]
       },
       "remaining_phases": [
-        "Phase 5: Email Content Finalization",
         "Phase 6: Testing & Validation",
         "Phase 7: Soft Launch & Rollout"
       ]
@@ -324,8 +326,8 @@
     },
     {
       "category": "BUILD",
-      "action": "Children's Onboarding - Phase 4 Ready",
-      "detail": "Create 10 ActiveCampaign micro-automations (tag → send email). Phase 3 Progression Engine complete. Estimate: 50 minutes."
+      "action": "Children's Onboarding - Phase 4 Ready (Emails v2.0 Final)",
+      "detail": "Upload 25 email HTMLs from onboarding-sequence-v2-final-18jan2026/ + create 10 AC automations. All tone amendments complete. Estimate: 60 minutes."
     },
     {
       "category": "OPS",
