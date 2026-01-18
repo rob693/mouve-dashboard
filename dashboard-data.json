@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-17T16:00:00Z",
+  "generated_at": "2026-01-18T08:45:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "2.0",
 
@@ -61,31 +61,28 @@
     },
     {
       "name": "Children's Dance Onboarding",
-      "phase_current": 2,
+      "phase_current": 3,
       "phase_total": 7,
       "implementation_plan": "CHILDRENS-ONBOARDING-IMPLEMENTATION-PLAN-JAN2026-UPDATE.md",
       "purpose": "Automated 10-email onboarding sequence — reduces anxious parents, stops repetitive staff questions",
       "status": "in_progress",
-      "status_label": "Phase 2/7 Complete ✅ (v6.0 - 8 bugs fixed)",
+      "status_label": "Phase 3/7 Complete ✅ (v6.1 - Progression Engine live)",
       "completed_phases": [
         {"name": "Phase 1: Schema Foundation", "summary": "6 fields created (5 ENROLLMENTS, 1 CONTACTS) in 25 min"},
-        {"name": "Phase 2: n8n Enrollment Handler Update", "summary": "v4.8 Final - Traffic control + parent upsert + 8 bugs fixed"}
+        {"name": "Phase 2: n8n Enrollment Handler Update", "summary": "v4.8 Final - Traffic control + parent upsert + 8 bugs fixed"},
+        {"name": "Phase 3: n8n Progression Engine", "summary": "30-min schedule, timing logic, traffic control, AC tags 82-90, error handling"}
       ],
       "next_phase": {
-        "name": "Phase 3: n8n Progression Engine",
-        "detail": "State machine + error handling • Est: 90 min",
+        "name": "Phase 4: ActiveCampaign Micro-Automations",
+        "detail": "10 simple automations (tag → send email) • Est: 50 min",
         "status": "planned",
         "tasks": [
-          "State machine logic (12 stages)",
-          "Email timing calculator (Day 0/2/5/14/21/...)",
-          "24-hour parent traffic control",
-          "Error state handling [CRITICAL FIX]",
-          "AC tag application",
-          "Audit logging"
+          "Create 20 tags (10 trigger + 10 confirmation)",
+          "Create 10 automations (Email 1-10)",
+          "Test each automation with test contact"
         ]
       },
       "remaining_phases": [
-        "Phase 4: ActiveCampaign Micro-Automations",
         "Phase 5: Email Content Finalization",
         "Phase 6: Testing & Validation",
         "Phase 7: Soft Launch & Rollout"
@@ -327,8 +324,8 @@
     },
     {
       "category": "BUILD",
-      "action": "Children's Onboarding - Phase 3 Ready",
-      "detail": "Build n8n Progression Engine (state machine + error handling). Fixed: double-wait bug, twin paradox, error state handling. Estimate: 90 minutes."
+      "action": "Children's Onboarding - Phase 4 Ready",
+      "detail": "Create 10 ActiveCampaign micro-automations (tag → send email). Phase 3 Progression Engine complete. Estimate: 50 minutes."
     },
     {
       "category": "OPS",

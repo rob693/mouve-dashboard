@@ -1,4 +1,4 @@
-# MOUVE Project Dashboard
+# MOUVE Project Dashboard v2.0
 
 Live project tracking dashboard for MOUVE by Dancing with Louise.
 
@@ -6,84 +6,179 @@ Live project tracking dashboard for MOUVE by Dancing with Louise.
 
 ---
 
-## Current Project Status (January 2026)
+## Dashboard v2.0 (17 Jan 2026)
 
-### Active Projects
+### Structure
 
-| Project | Status | Current Phase |
-|---------|--------|---------------|
-| **Ladies Fitness Funnel** | In Progress | Phase 2B/2C (Lead Nurture + Calendar Sync) |
-| **MOUVE Ops Library** | In Progress | Phase 4 (Content Migration) |
-| **Data Integrity System** | In Progress | Phase 2 Complete, Phase 3 Planned |
-| **Student Progress Reports** | In Progress | Phase 3 Ready (Phrase Bank Complete) |
-| **Staff Portal (Softr)** | Planned | Phase 1 Ready, v2.0 Schema Documented |
+```
+📋 Weekly Tasks (top priority - most frequent reference)
+    ↓
+🎯 Primary Projects (4 urgent/active projects)
+    ↓
+📌 Secondary Projects (4 scheduled/planned projects)
+    ↓
+✅ Completed Projects
+    ↓
+System Dependencies, Data Flows, Workflows, Priority Actions
+```
 
-### Waiting / Blocked
+### Key Features
 
-| Project | Status | Blocker |
-|---------|--------|---------|
-| **Children's Dance Onboarding** | Waiting | Louise email review (Phase 3) |
-| **Back Office: Staff Costs** | Waiting | 5 staff rates from Louise (Phase 4) |
-| **Back Office: Amex Recon** | Waiting | January statement (~5 Feb) |
-
-### Completed
-
-- Ops Priority Engine
-- Term Renewal Engine
-- Teacher Culture Programme (12 campaigns live)
-- MOUVE RAG Agent
-- Spring Term 2026 Welcome
-- Trials Tracker System
-- Dynamic Dashboard
+- **52% less visual clutter** vs v1.0 (collapsed completed phases)
+- **PURPOSE statements** - One-line problem statement for every project
+- **▶ NEXT phase prominence** - Full task detail for current/upcoming phase
+- **Phase progress** - Clear (Phase 2/7) indicators
+- **Auto-refresh** - Every 5 minutes
+- **Health checks** - Live system status for production pipelines
 
 ---
 
-## Project Highlights
+## Current Projects (January 2026)
 
-### Ladies Fitness Funnel
-10 active n8n workflows (LF-00 to LF-09) handling:
-- TeamUp sync (375 memberships, 326 contacts)
-- Self-serve trial capture
-- Instant lead response (SMS + Email)
-- Attendance tracking (hourly)
-- Pass expiry reminders
-- Trial expiry handling
+### 🎯 Primary Projects (4)
 
-### Staff Portal (Softr)
-Replacing Airtable Forms with authenticated UI layer:
-- ADR-010 approved
-- $49/month Softr Basic
-- 3 workflows documented (Timesheets, Onboarding, Progress Reports)
-- Form schemas, status workflows, n8n dependencies all documented in v2.0
+| Project | Phase | Status | Purpose |
+|---------|-------|--------|---------|
+| **Ladies Fitness Funnel** | 3/7 | ✅ EXCELLENT | Automate lead-to-member journey (trials, attendance, retention) |
+| **Children's Dance Onboarding** | 2/7 | ✅ v6.0 | Automated 10-email onboarding sequence |
+| **Back Office: Staff Costs** | 4.5/7 | 📋 Ready | Automate monthly staff statements (save 3-4 hours/month) |
+| **Student Progress Reports** | 2/5 | ✅ 282 phrases | Phrase-bank reports (<60s per student, zero admin editing) |
 
-### Student Progress Reports
-Automated end-of-term reports for children's dance:
-- 282 phrases in PHRASE_BANK (132 generic + 75 Ballet + 75 Gymnastics)
-- Teacher input: 5 dropdowns, <60s per child
-- PDF generation + batch delivery planned
+### 📌 Secondary Projects (4)
+
+| Project | Phase | Target | Purpose |
+|---------|-------|--------|---------|
+| **Weekly Auto-Blog System** | 0/6 | 31 Jan 2026 | Auto-generate camp blogs with GPT-4o (save 8-10h/month) |
+| **Amex Recon vNext** | 0/5 | Feb 2026 | Automate receipt routing (reduce 3 hours → 30 minutes) |
+| **Staff Portal (Softr)** | 0/5 | TBD | Authenticated portal for staff (£49/month) |
+| **Operational Dashboard** | 0/3 | TBD | Business metrics for Louise/Georgia |
 
 ---
 
-## Dashboard Features
+## System Health (16 Jan 2026)
 
-- **Auto-refresh:** Every 5 minutes when open
-- **Phase tracking:** Visual progress through multi-phase projects
-- **Sub-phase details:** Expandable task lists
-- **Blocker visibility:** Clear indication of what's waiting
-- **Dependency mapping:** Data flows and system integrations
+### Ladies Fitness Pipeline ✅ EXCELLENT
+- **12 active workflows** (LF-00 to LF-11)
+- **Last sync:** < 7 hours ago
+- **Data flow:** Operational (1 active trial tracked correctly)
+- **Webhooks:** Both endpoints HTTP 200 OK
+- **TeamUp:** 326 customers, 375 memberships syncing daily
+
+### Key Workflows
+- **LF-00:** TeamUp → Airtable Sync (daily 6am)
+- **LF-01:** Self-Serve Trial Capture (every 5 min)
+- **LF-02:** Instant Lead Response (webhook)
+- **LF-04:** Attendance Tracker (hourly)
+- **LF-10:** Calendar Sync (daily 5am)
+- **LF-11:** Trial Event Creator (real-time)
+
+---
+
+## Recent Completions
+
+### Multi-Phase Projects
+- ✅ Data Integrity System (DATA_HEALTH + SYS-01 reconciliation)
+- ✅ MOUVE Ops Library (4 SOPs + 1 Playbook live)
+- ✅ Ladies Fitness Calendar Sync (LF-10 + LF-11 deployed)
+- ✅ Ops Priority Engine
+- ✅ Term Renewal Engine
+- ✅ Teacher Culture Programme (12 campaigns live)
+
+### Active Campaigns
+- 🔵 Lapsed Parent Win-Back (4 emails)
+- 🔵 Ladies Fitness Win-Back (4 campaigns)
+- 🔵 Teacher Culture Tuesdays (Week 2 of 12)
+- 🔵 February Camp 2026 (18 enrolled, 16-20 Feb)
+- 🔵 February WICKED Camp Email Campaign (7 emails, 1,726 recipients)
 
 ---
 
 ## Data Source
 
-`dashboard-data.json` is the single source of truth, updated during Claude Code work sessions.
+**File:** `dashboard-data.json`
+**Updated:** During Claude Code work sessions
+**Format:** Single source of truth with auto-update protocol
 
-**Last updated:** 12 January 2026
+### Structure Documentation
+
+**See:** `DASHBOARD-STRUCTURE-V2.md` for complete documentation of:
+- JSON schema (primary_projects, secondary_projects)
+- Rendering logic
+- Update protocol
+- Design principles
+- Common patterns
 
 ---
 
-## Related
+## Technical Details
+
+### Dependencies
+
+| Category | Systems | Status |
+|----------|---------|--------|
+| **Lead Capture** | Facebook Ads, Website Forms, TeamUp Trials | ✅ Active |
+| **CRM / Leads** | GHL StudioHub, GHL Workflows | ✅ Active (partial) |
+| **Automation** | n8n (25 workflows), Webhooks | ✅ Active |
+| **Data / Email** | Airtable, ActiveCampaign, M365 Email | ✅ Active |
+| **Booking Systems** | TeamUp (LF), DSP (Dance) | ⚠️ TeamUp active, DSP blocked |
+
+### Data Flows
+
+**Active Flows:**
+1. Facebook Lead → GHL Pipeline → n8n LF-02 → SMS + Email + Airtable
+2. TeamUp Trial → n8n LF-01 → GHL Contact → Welcome SMS + Email
+3. TeamUp Attendance → n8n LF-04 (hourly) → Airtable LF_MEMBERSHIPS
+4. TeamUp Events → n8n LF-10 (daily 5am) → Google Calendar → LF Staff
+5. TeamUp Trial Booking → n8n LF-11 (real-time) → Google Calendar Event → Staff Notification
+
+---
+
+## Related Projects
 
 - **MOUVE Customer Engine:** Main automation codebase
 - **Airtable:** Claude Managed Contacts base
 - **n8n:** https://n8n.rob-n8n.cloud
+- **ActiveCampaign:** Marketing automation & CRM
+- **GoHighLevel:** StudioHub lead management
+
+---
+
+## Version History
+
+### v2.0 (17 Jan 2026)
+- Split projects into Primary/Secondary categories
+- Added Student Progress Reports
+- Moved Weekly Tasks to top
+- Collapsed completed phases (summary only)
+- Added PURPOSE statements to all projects
+- Phase count in titles (Phase X/Y)
+- 52% visual clutter reduction
+
+### v1.0 (12 Jan 2026)
+- Initial dynamic dashboard
+- Auto-refresh every 5 minutes
+- Phase tracking with sub-phases
+- Dependency mapping
+- Data flow visualization
+
+---
+
+## Maintenance
+
+**Update Protocol:** See `DASHBOARD-STRUCTURE-V2.md`
+
+**Quick Update:**
+```bash
+cd /Volumes/NVME/Claude/Code/mouve-dashboard
+# Edit dashboard-data.json
+git add dashboard-data.json
+git commit -m "Update [Project]: [Change]"
+git push
+# Live in ~1 minute via GitHub Pages
+```
+
+---
+
+**Last updated:** 17 January 2026
+**Version:** 2.0
+**Maintained by:** Claude Code (SYS-DASHBOARD v2)
