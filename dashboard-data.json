@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-01-20T14:30:00Z",
+  "generated_at": "2026-01-20T21:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "2.0",
 
   "health_summary": {
     "complete": 28,
-    "in_progress": 4,
+    "in_progress": 3,
     "waiting": 1,
     "planned": 4,
-    "blocked": 0
+    "blocked": 1
   },
 
   "weekly_tasks": [
@@ -92,35 +92,36 @@
     },
     {
       "name": "Back Office: Staff Costs",
-      "phase_current": 6,
+      "phase_current": 3,
       "phase_total": 7,
       "implementation_plan": "STAFF-ADMIN-COSTS-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Automate monthly staff statements (replace inconsistent invoices, save 3-4 hours/month)",
-      "status": "in_progress",
-      "status_label": "Phase 5.5/7 Complete ✅ (v2.6 - All 3 workflows operational, 48h batch ready)",
+      "status": "blocked",
+      "status_label": "⚠️ BLOCKED: Form Design Fix Required (v2.8)",
+      "blocker": "Form allows multi-select Class with single Duration — creates unmappable data. Must fix BEFORE Yael pilot.",
       "completed_phases": [
         {"name": "Phase 1: Table Setup", "summary": "6 Airtable tables created"},
         {"name": "Phase 2: Staff Data Collection", "summary": "20 permanent staff, all rates complete (100%)"},
-        {"name": "Phase 3: Data Entry Forms", "summary": "Timesheet form + Venue field for Xero"},
         {"name": "Phase 4: Data & Schema Prep", "summary": "Xero format confirmed, Venue field added"},
         {"name": "Phase 4.5: Workflow Build & Test", "summary": "Statement Generator + Approval/PDF workflows built, tested, operational"},
         {"name": "Phase 5: Approval & Delivery", "summary": "Full approval flow tested, PDF/email delivery, idempotency, bookkeeper summary"},
-        {"name": "Phase 5.5: Bookkeeper 48h Batch", "summary": "Scheduled dispatch workflow, 48h dispute window, Sent to Staff At timestamp fix (20 Jan 2026)"}
+        {"name": "Phase 5.5: Bookkeeper 48h Batch", "summary": "Scheduled dispatch workflow, 48h dispute window"}
       ],
       "next_phase": {
-        "name": "Phase 6: Validation",
-        "detail": "Compare automated system to Louise's manual January 2026 records (parallel run)",
-        "status": "ready",
+        "name": "Phase 3 Critical Update: Form Design Fix",
+        "detail": "ONE SUBMISSION = ONE SESSION (mandatory). Fix multi-select Class issue discovered during Yael pilot prep.",
+        "status": "blocked",
         "tasks": [
-          "Run full January 2026 process (all 20 staff)",
-          "Compare totals to Louise's manual records (±£5 variance)",
-          "Document any exceptions/discrepancies",
-          "Test camp staff edge case (daily rates)",
-          "Train Louise on approval flow (15-min walkthrough)"
+          "Change DELIVERED_SESSIONS.Class to single-select (prefersSingleRecordLink: true)",
+          "Create 'Yael's Classes' filtered view (Instructor='Yael')",
+          "Create Yael-specific form using filtered view",
+          "Verify Duration/Venue lookups auto-fill correctly",
+          "Update pilot email with Yael's personal form URL"
         ]
       },
       "remaining_phases": [
-        "Phase 7: Adoption & Rollout (5 sub-phases: Training, Parallel Run, Self-Review, Compliance, Cutover)"
+        "Phase 6: Validation (Yael Pilot)",
+        "Phase 7: Adoption & Rollout (5 sub-phases)"
       ]
     },
     {
@@ -318,9 +319,9 @@
 
   "priority_actions": [
     {
-      "category": "VALIDATE",
-      "action": "Staff Costs - Phase 6 Ready (All Workflows Complete ✅)",
-      "detail": "3 workflows operational (Statement Generator, Approval PDF, Bookkeeper Batch). Run January 2026 validation: generate 20 statements, compare to manual records (±£5), train Louise. Estimate: 45 min + Louise time."
+      "category": "BLOCKED",
+      "action": "Staff Costs - Form Design Fix Required ⚠️",
+      "detail": "ONE SUBMISSION = ONE SESSION. Fix multi-select Class field (prefersSingleRecordLink: true), create Yael-specific filtered view + form. Must complete BEFORE Yael pilot. Estimate: 30-45 min."
     },
     {
       "category": "BUILD",
