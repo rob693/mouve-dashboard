@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-21T01:15:00Z",
+  "generated_at": "2026-01-21T01:30:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "2.0",
 
@@ -97,7 +97,7 @@
       "implementation_plan": "STAFF-ADMIN-COSTS-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Automate monthly staff statements (replace inconsistent invoices, save 3-4 hours/month)",
       "status": "in_progress",
-      "status_label": "Phase 6A Ready 📋 | Softr Portal Live (v2.9)",
+      "status_label": "Phase 6A In Progress 🔧 | Yael Pilot Active (v2.9)",
       "completed_phases": [
         {"name": "Phase 1: Table Setup", "summary": "6 Airtable tables created"},
         {"name": "Phase 2: Staff Data Collection", "summary": "20 permanent staff, all rates complete (100%)"},
@@ -171,8 +171,8 @@
       "implementation_plan": "STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Authenticated portal for staff timesheets, reports, submissions (replaces Airtable Forms)",
       "status": "in_progress",
-      "status_label": "v2.4 | Phase 1 Complete ✅ | Live at staff-mouve.softr.app",
-      "next_action": "Test portal as Yael, then send pilot invitation email"
+      "status_label": "v2.5 | Phase 1 Complete ✅ | Yael Pilot Invitation Sent",
+      "next_action": "Awaiting Yael to log January sessions via Softr"
     },
     {
       "name": "Operational Dashboard",
@@ -316,9 +316,9 @@
 
   "priority_actions": [
     {
-      "category": "PILOT",
-      "action": "Yael Pilot — Send Invitation Email (Softr Portal Ready)",
-      "detail": "Portal live at staff-mouve.softr.app. Send pilot invitation email to Yael (yaelpinnick@gmail.com). Template ready: docs/email-templates/staff-pilot-invitation-yael.html — UPDATE URL to Softr."
+      "category": "WAITING",
+      "action": "Yael Pilot — Awaiting Session Logs",
+      "detail": "Pilot invitation sent 21 Jan 2026. Yael to log January sessions at staff-mouve.softr.app then submit normal invoice for comparison."
     },
     {
       "category": "BUILD",
