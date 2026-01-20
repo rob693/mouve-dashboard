@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-20T23:30:00Z",
+  "generated_at": "2026-01-21T01:15:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "2.0",
 
@@ -96,9 +96,8 @@
       "phase_total": 7,
       "implementation_plan": "STAFF-ADMIN-COSTS-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Automate monthly staff statements (replace inconsistent invoices, save 3-4 hours/month)",
-      "status": "waiting",
-      "status_label": "⏳ Waiting on Softr Setup (v2.9)",
-      "blocker": "Yael pilot requires Softr portal (decision: test actual target platform, not Airtable Forms). Depends on Staff Portal Phase 1-2.",
+      "status": "in_progress",
+      "status_label": "Phase 6A Ready 📋 | Softr Portal Live (v2.9)",
       "completed_phases": [
         {"name": "Phase 1: Table Setup", "summary": "6 Airtable tables created"},
         {"name": "Phase 2: Staff Data Collection", "summary": "20 permanent staff, all rates complete (100%)"},
@@ -109,15 +108,13 @@
       ],
       "next_phase": {
         "name": "Phase 6A: Pilot Validation (via Softr)",
-        "detail": "Yael pilot using Softr portal. Decision (20 Jan): Test actual target platform instead of throwaway Airtable Forms.",
-        "status": "waiting",
-        "dependency": "Staff Portal Phase 1-2",
+        "detail": "Softr portal live at staff-mouve.softr.app. Ready for Yael pilot.",
+        "status": "in_progress",
         "tasks": [
-          "Complete Staff Portal Phase 1: Foundation (Softr setup)",
-          "Complete Staff Portal Phase 2: Timesheets Portal",
-          "Change DELIVERED_SESSIONS.Class to single-select",
           "Send Yael pilot invitation with Softr URL",
-          "Compare system total vs invoice total"
+          "Yael logs January sessions via Softr",
+          "Compare system total vs Yael's manual invoice",
+          "Iterate based on feedback"
         ]
       },
       "remaining_phases": [
@@ -174,8 +171,8 @@
       "implementation_plan": "STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Authenticated portal for staff timesheets, reports, submissions (replaces Airtable Forms)",
       "status": "in_progress",
-      "status_label": "v2.3 | ACCELERATED — Yael Pilot Driver • £49/month",
-      "next_action": "Phase 1: Softr setup + Airtable connect + user auth → unblocks Staff Costs pilot"
+      "status_label": "v2.4 | Phase 1 Complete ✅ | Live at staff-mouve.softr.app",
+      "next_action": "Test portal as Yael, then send pilot invitation email"
     },
     {
       "name": "Operational Dashboard",
@@ -319,9 +316,9 @@
 
   "priority_actions": [
     {
-      "category": "BUILD",
-      "action": "Staff Portal Phase 1-2 (Softr) — Unblocks Staff Costs Pilot",
-      "detail": "ACCELERATED: Yael pilot now depends on Softr setup. Sign up ($49/mo), connect Airtable, configure auth, build Timesheets form with single-select Class. Estimate: 2-3 hours."
+      "category": "PILOT",
+      "action": "Yael Pilot — Send Invitation Email (Softr Portal Ready)",
+      "detail": "Portal live at staff-mouve.softr.app. Send pilot invitation email to Yael (yaelpinnick@gmail.com). Template ready: docs/email-templates/staff-pilot-invitation-yael.html — UPDATE URL to Softr."
     },
     {
       "category": "BUILD",
