@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-18T22:45:00Z",
+  "generated_at": "2026-01-20T14:30:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "2.0",
 
@@ -92,35 +92,35 @@
     },
     {
       "name": "Back Office: Staff Costs",
-      "phase_current": 5.5,
+      "phase_current": 6,
       "phase_total": 7,
       "implementation_plan": "STAFF-ADMIN-COSTS-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Automate monthly staff statements (replace inconsistent invoices, save 3-4 hours/month)",
       "status": "in_progress",
-      "status_label": "Phase 5/7 Complete ✅ (v2.5 - Approval + PDF + Email + Bookkeeper Summary)",
+      "status_label": "Phase 5.5/7 Complete ✅ (v2.6 - All 3 workflows operational, 48h batch ready)",
       "completed_phases": [
         {"name": "Phase 1: Table Setup", "summary": "6 Airtable tables created"},
         {"name": "Phase 2: Staff Data Collection", "summary": "20 permanent staff, all rates complete (100%)"},
         {"name": "Phase 3: Data Entry Forms", "summary": "Timesheet form + Venue field for Xero"},
         {"name": "Phase 4: Data & Schema Prep", "summary": "Xero format confirmed, Venue field added"},
         {"name": "Phase 4.5: Workflow Build & Test", "summary": "Statement Generator + Approval/PDF workflows built, tested, operational"},
-        {"name": "Phase 5: Approval & Delivery", "summary": "Full approval flow tested, PDF/email delivery, idempotency, bookkeeper summary (18 Jan 2026)"}
+        {"name": "Phase 5: Approval & Delivery", "summary": "Full approval flow tested, PDF/email delivery, idempotency, bookkeeper summary"},
+        {"name": "Phase 5.5: Bookkeeper 48h Batch", "summary": "Scheduled dispatch workflow, 48h dispute window, Sent to Staff At timestamp fix (20 Jan 2026)"}
       ],
       "next_phase": {
-        "name": "Phase 5.5: Bookkeeper 48h Batch Dispatch",
-        "detail": "Scheduled workflow sends PDFs to bookkeeper 48h after staff approval (dispute window)",
-        "status": "planned",
+        "name": "Phase 6: Validation",
+        "detail": "Compare automated system to Louise's manual January 2026 records (parallel run)",
+        "status": "ready",
         "tasks": [
-          "Add 3 Airtable fields (Sent to Staff At, Sent to Bookkeeper, Sent to Bookkeeper At)",
-          "Create scheduled n8n workflow (daily 6am)",
-          "Query statements 48h+ old, not yet sent to bookkeeper",
-          "Regenerate PDFs and send batch email",
-          "Mark as sent with timestamp"
+          "Run full January 2026 process (all 20 staff)",
+          "Compare totals to Louise's manual records (±£5 variance)",
+          "Document any exceptions/discrepancies",
+          "Test camp staff edge case (daily rates)",
+          "Train Louise on approval flow (15-min walkthrough)"
         ]
       },
       "remaining_phases": [
-        "Phase 6: Validation",
-        "Phase 7: Adoption & Rollout (training materials, parallel run, compliance)"
+        "Phase 7: Adoption & Rollout (5 sub-phases: Training, Parallel Run, Self-Review, Compliance, Cutover)"
       ]
     },
     {
@@ -318,9 +318,9 @@
 
   "priority_actions": [
     {
-      "category": "BUILD",
-      "action": "Staff Costs - Phase 5.5 Ready (Phase 5 Complete ✅)",
-      "detail": "Approval + PDF + Email + Bookkeeper Summary all working. Next: Build 48h batch dispatch for bookkeeper. Estimate: 60 min."
+      "category": "VALIDATE",
+      "action": "Staff Costs - Phase 6 Ready (All Workflows Complete ✅)",
+      "detail": "3 workflows operational (Statement Generator, Approval PDF, Bookkeeper Batch). Run January 2026 validation: generate 20 statements, compare to manual records (±£5), train Louise. Estimate: 45 min + Louise time."
     },
     {
       "category": "BUILD",
