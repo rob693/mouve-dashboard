@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-21T01:30:00Z",
+  "generated_at": "2026-01-21T02:15:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "2.0",
 
@@ -128,21 +128,22 @@
       "implementation_plan": "STUDENT-PROGRESS-REPORTS-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Structured phrase-bank reports (<60s per student, zero admin editing, sibling differentiation)",
       "status": "in_progress",
-      "status_label": "v1.4 | Phase 2/5 Complete ✅ | NO DEPENDENCY on Staff Portal",
+      "status_label": "v1.5 | Phase 2/5 Complete ✅ | Phase 3 → Softr (approved)",
       "completed_phases": [
         {"name": "Phase 1: Foundation", "summary": "PROGRESS_ASSESSMENTS + PHRASE_BANK tables created"},
         {"name": "Phase 2: Phrase Bank", "summary": "282 phrases imported (132 generic + 75 Ballet + 75 Gymnastics)"}
       ],
       "next_phase": {
-        "name": "Phase 3: Teacher Input Form",
-        "detail": "Airtable Forms (native) • Optional Softr migration documented for future (3-6 months post Staff Portal Phase 4)",
+        "name": "Phase 3: Teacher Input Form (Softr)",
+        "detail": "Build /assess page on staff-mouve.softr.app with 'My Students to Assess' dashboard + completion tracking",
         "status": "planned",
         "tasks": [
-          "Create Airtable form for PROGRESS_ASSESSMENTS",
-          "Pre-populate Student/Class/Term via URL parameters",
-          "Configure dropdown constraints",
-          "Create teacher briefing document",
-          "Test with sample teacher"
+          "Create /assess page on staff-mouve.softr.app",
+          "Create 'My Students to Assess' list view (filtered by teacher)",
+          "Create assessment form with 5 dropdown inputs",
+          "Configure completion tracking indicators",
+          "Add Airtable notification automation",
+          "Create teacher briefing document"
         ]
       },
       "remaining_phases": [
