@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-01-21T02:15:00Z",
+  "generated_at": "2026-01-21T12:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "2.0",
 
   "health_summary": {
     "complete": 28,
-    "in_progress": 4,
+    "in_progress": 3,
     "waiting": 2,
     "planned": 3,
-    "blocked": 0
+    "blocked": 1
   },
 
   "weekly_tasks": [
@@ -123,25 +123,25 @@
     },
     {
       "name": "Student Progress Reports",
-      "phase_current": 2,
+      "phase_current": 3,
       "phase_total": 5,
       "implementation_plan": "STUDENT-PROGRESS-REPORTS-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Structured phrase-bank reports (<60s per student, zero admin editing, sibling differentiation)",
-      "status": "in_progress",
-      "status_label": "v1.5 | Phase 2/5 Complete ✅ | Phase 3 → Softr (approved)",
+      "status": "blocked",
+      "status_label": "v1.7 | Phase 3 BLOCKED 🔴 | Softr filtering not working",
+      "blocker": "Softr cannot filter by logged-in user when users synced from custom STAFF table. Filter shows all 250 records instead of teacher's assigned students.",
       "completed_phases": [
         {"name": "Phase 1: Foundation", "summary": "PROGRESS_ASSESSMENTS + PHRASE_BANK tables created"},
-        {"name": "Phase 2: Phrase Bank", "summary": "282 phrases imported (132 generic + 75 Ballet + 75 Gymnastics)"}
+        {"name": "Phase 2: Phrase Bank", "summary": "282 phrases imported (132 generic + 75 Ballet + 75 Gymnastics)"},
+        {"name": "Phase 3 (Partial): Data Prep", "summary": "250 assessment records pre-created (154 with Staff, 96 Tue/Wed need instructor)"}
       ],
       "next_phase": {
         "name": "Phase 3: Teacher Input Form (Softr)",
-        "detail": "Build /assess page on staff-mouve.softr.app with 'My Students to Assess' dashboard + completion tracking",
-        "status": "planned",
+        "detail": "BLOCKED: Softr user-specific filtering not working. ChatGPT prompt prepared for external debugging.",
+        "status": "blocked",
         "tasks": [
-          "Create /assess page on staff-mouve.softr.app",
-          "Create 'My Students to Assess' list view (filtered by teacher)",
-          "Create assessment form with 5 dropdown inputs",
-          "Configure completion tracking indicators",
+          "Resolve Softr filtering issue (email/record ID matching)",
+          "Configure /assess page once filtering works",
           "Add Airtable notification automation",
           "Create teacher briefing document"
         ]
@@ -316,6 +316,11 @@
   ],
 
   "priority_actions": [
+    {
+      "category": "BLOCKED",
+      "action": "Student Progress Reports — Softr Filtering Issue",
+      "detail": "Phase 3 blocked. Filter `staff_email_text IS Logged-in User → Email` not applying. Softr cannot resolve user identity from custom STAFF table. ChatGPT prompt prepared for debugging."
+    },
     {
       "category": "WAITING",
       "action": "Yael Pilot — Awaiting Session Logs",
