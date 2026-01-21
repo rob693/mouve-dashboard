@@ -171,8 +171,8 @@
       "implementation_plan": "STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Authenticated portal for staff timesheets, reports, submissions (replaces Airtable Forms)",
       "status": "in_progress",
-      "status_label": "v2.5 | Phase 1 Complete ✅ | Yael Pilot Invitation Sent",
-      "next_action": "Awaiting Yael to log January sessions via Softr"
+      "status_label": "v2.6 | Phase 1 Complete ✅ | Yael Pilot Active | Notifications On",
+      "next_action": "Awaiting Yael session logs (email notification configured)"
     },
     {
       "name": "Operational Dashboard",
