@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-01-21T18:00:00Z",
+  "generated_at": "2026-01-21T22:30:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "2.0",
 
   "health_summary": {
     "complete": 28,
     "in_progress": 3,
-    "waiting": 3,
+    "waiting": 2,
     "planned": 3,
-    "blocked": 0
+    "blocked": 1
   },
 
   "weekly_tasks": [
@@ -127,22 +127,22 @@
       "phase_total": 5,
       "implementation_plan": "STUDENT-PROGRESS-REPORTS-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Structured phrase-bank reports (<60s per student, zero admin editing, sibling differentiation)",
-      "status": "waiting",
-      "status_label": "v1.7 | Phase 3 SOLUTION READY 🟡 | User action needed",
+      "status": "blocked",
+      "status_label": "v1.10 | Phase 3 BLOCKED 🔴 | Softr details-page context issue",
       "completed_phases": [
         {"name": "Phase 1: Foundation", "summary": "PROGRESS_ASSESSMENTS + PHRASE_BANK tables created"},
         {"name": "Phase 2: Phrase Bank", "summary": "282 phrases imported (132 generic + 75 Ballet + 75 Gymnastics)"},
-        {"name": "Phase 3 (Partial): Data Prep", "summary": "250 assessment records pre-created, staff_email_plain field created"}
+        {"name": "Phase 3 (Partial): Form Build", "summary": "3 phrase fields created, two-step filtering configured, phrase text displaying correctly"}
       ],
       "next_phase": {
         "name": "Phase 3: Teacher Input Form (Softr)",
-        "detail": "SOLUTION READY: Plain text email field + automation. User to implement 4 steps (~10 min).",
-        "status": "waiting",
+        "detail": "BLOCKER: Details-page form shows empty Student/Class fields. Record context not passing from list → form.",
+        "status": "blocked",
         "tasks": [
-          "Copy-paste backfill staff_email_plain (30 sec)",
-          "Create single Airtable automation (5 min)",
-          "Update Softr filter to staff_email_plain (2 min)",
-          "Test with Yael login"
+          "Configure Softr list → details data binding",
+          "Ensure form receives record ID from list selection",
+          "Test form pre-population with Student/Class",
+          "Complete end-to-end submission test"
         ]
       },
       "remaining_phases": [
@@ -316,9 +316,9 @@
 
   "priority_actions": [
     {
-      "category": "WAITING",
-      "action": "Student Progress Reports — User Implementation Needed",
-      "detail": "SOLUTION FOUND: Plain text email field + automation bypasses Softr's lookup/formula limitation. Setup guide ready. User to: 1) Copy-paste backfill, 2) Create automation, 3) Update Softr filter (~10 min total)."
+      "category": "BLOCKED",
+      "action": "Student Progress Reports — Softr Details-Page Issue",
+      "detail": "Form configured correctly (two-step filtering, phrase text displaying). BLOCKER: Details-page form shows empty Student/Class fields — record context not passing from list. Need to configure Softr list→details data binding."
     },
     {
       "category": "WAITING",
