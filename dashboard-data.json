@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-21T22:30:00Z",
+  "generated_at": "2026-01-23T15:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "2.0",
 
@@ -7,8 +7,8 @@
     "complete": 28,
     "in_progress": 3,
     "waiting": 2,
-    "planned": 3,
-    "blocked": 1
+    "planned": 4,
+    "blocked": 0
   },
 
   "weekly_tasks": [
@@ -97,7 +97,7 @@
       "implementation_plan": "STAFF-ADMIN-COSTS-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Automate monthly staff statements (replace inconsistent invoices, save 3-4 hours/month)",
       "status": "in_progress",
-      "status_label": "Phase 6A In Progress 🔧 | Yael Pilot Active (v2.9)",
+      "status_label": "Phase 6A Ready ⏳ | Custom Portal Required (v3.0)",
       "completed_phases": [
         {"name": "Phase 1: Table Setup", "summary": "6 Airtable tables created"},
         {"name": "Phase 2: Staff Data Collection", "summary": "20 permanent staff, all rates complete (100%)"},
@@ -107,14 +107,14 @@
         {"name": "Phase 5.5: Bookkeeper 48h Batch", "summary": "Scheduled dispatch workflow, 48h dispute window"}
       ],
       "next_phase": {
-        "name": "Phase 6A: Pilot Validation (via Softr)",
-        "detail": "Softr portal live at staff-mouve.softr.app. Ready for Yael pilot.",
-        "status": "in_progress",
+        "name": "Phase 6A: Pilot Validation (via Custom Portal)",
+        "detail": "Waiting for Custom Staff Portal timesheet form (Phase 4). Then Yael pilot.",
+        "status": "waiting",
         "tasks": [
-          "Send Yael pilot invitation with Softr URL",
-          "Yael logs January sessions via Softr",
-          "Compare system total vs Yael's manual invoice",
-          "Iterate based on feedback"
+          "Complete Custom Portal Phase 4 (Timesheet form)",
+          "Send Yael redirect email with new portal URL",
+          "Yael logs January sessions via custom portal",
+          "Compare system total vs Yael's manual invoice"
         ]
       },
       "remaining_phases": [
@@ -127,21 +127,21 @@
       "phase_total": 5,
       "implementation_plan": "STUDENT-PROGRESS-REPORTS-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Structured phrase-bank reports (<60s per student, zero admin editing, sibling differentiation)",
-      "status": "blocked",
-      "status_label": "v1.10 | Phase 3 BLOCKED 🔴 | Softr details-page context issue",
+      "status": "in_progress",
+      "status_label": "v1.15 | Phase 3 IN PROGRESS 🔧 | Migrating to Custom Portal",
       "completed_phases": [
         {"name": "Phase 1: Foundation", "summary": "PROGRESS_ASSESSMENTS + PHRASE_BANK tables created"},
         {"name": "Phase 2: Phrase Bank", "summary": "282 phrases imported (132 generic + 75 Ballet + 75 Gymnastics)"},
         {"name": "Phase 3 (Partial): Form Build", "summary": "3 phrase fields created, two-step filtering configured, phrase text displaying correctly"}
       ],
       "next_phase": {
-        "name": "Phase 3: Teacher Input Form (Softr)",
-        "detail": "BLOCKER: Details-page form shows empty Student/Class fields. Record context not passing from list → form.",
-        "status": "blocked",
+        "name": "Phase 3: Teacher Input Form (Custom Portal)",
+        "detail": "Softr replaced by custom Next.js portal (cascading dropdown limitation). Assessment form with Level → Phrase filtering.",
+        "status": "in_progress",
         "tasks": [
-          "Configure Softr list → details data binding",
-          "Ensure form receives record ID from list selection",
-          "Test form pre-population with Student/Class",
+          "Build Custom Staff Portal (Phases 1-3)",
+          "Implement cascading dropdowns (Level → Phrase)",
+          "Test teacher isolation (server-side filtering)",
           "Complete end-to-end submission test"
         ]
       },
@@ -165,14 +165,14 @@
       "next_action": "Phase 1: Routing Configuration (Rob Gmail + M365 + Louise Gmail filters)"
     },
     {
-      "name": "Staff Portal (Softr)",
-      "phase_current": 1,
-      "phase_total": 5,
-      "implementation_plan": "STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Authenticated portal for staff timesheets, reports, submissions (replaces Airtable Forms)",
-      "status": "in_progress",
-      "status_label": "v2.6 | Phase 1 Complete ✅ | Yael Pilot Active | Notifications On",
-      "next_action": "Awaiting Yael session logs (email notification configured)"
+      "name": "Custom Staff Portal (Next.js)",
+      "phase_current": 0,
+      "phase_total": 6,
+      "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
+      "purpose": "Custom Next.js portal — timesheets + assessments with cascading dropdowns (replaces Softr)",
+      "status": "planned",
+      "status_label": "v1.0 | Plan Complete 📋 | Replaces Softr (cascading dropdown limitation)",
+      "next_action": "Phase 1: Create Next.js project + deploy to Vercel"
     },
     {
       "name": "Operational Dashboard",
@@ -200,9 +200,9 @@
       "phase_current": 0,
       "phase_total": 6,
       "implementation_plan": "ATTENDANCE-TRACKER-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Digital attendance marking via Softr PWA — replace paper registers, enable retention monitoring",
+      "purpose": "Digital attendance marking via Custom Staff Portal — replace paper registers, enable retention monitoring",
       "status": "planned",
-      "status_label": "v1.0 Plan Approved • Integrated with Staff Portal (Phase 6)",
+      "status_label": "v1.1 Plan Approved • Integrated with Custom Staff Portal",
       "target_date": "31 Jan 2026",
       "next_action": "Phase 1: Create ATTENDANCE + TEACHERS tables, add retention fields to CONTACTS"
     }
@@ -316,14 +316,14 @@
 
   "priority_actions": [
     {
-      "category": "BLOCKED",
-      "action": "Student Progress Reports — Softr Details-Page Issue",
-      "detail": "Form configured correctly (two-step filtering, phrase text displaying). BLOCKER: Details-page form shows empty Student/Class fields — record context not passing from list. Need to configure Softr list→details data binding."
+      "category": "BUILD",
+      "action": "Custom Staff Portal — Phase 1-4 Build",
+      "detail": "Next.js portal replacing Softr (cascading dropdown limitation). Unblocks Student Progress Reports (Phase 3) AND Staff Costs (Phase 6A Yael pilot). Target: end Jan 2026."
     },
     {
       "category": "WAITING",
-      "action": "Yael Pilot — Awaiting Session Logs",
-      "detail": "Pilot invitation sent 21 Jan 2026. Yael to log January sessions at staff-mouve.softr.app then submit normal invoice for comparison."
+      "action": "Staff Costs Yael Pilot — Pending Custom Portal",
+      "detail": "Custom Portal Phase 4 (timesheet form) must be built before Yael can log sessions. n8n workflows unaffected (read Airtable directly)."
     },
     {
       "category": "BUILD",
