@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-01-23T15:00:00Z",
+  "generated_at": "2026-01-23T22:30:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "2.0",
 
   "health_summary": {
     "complete": 28,
-    "in_progress": 3,
+    "in_progress": 4,
     "waiting": 2,
-    "planned": 4,
+    "planned": 3,
     "blocked": 0
   },
 
@@ -166,13 +166,13 @@
     },
     {
       "name": "Custom Staff Portal (Next.js)",
-      "phase_current": 0,
+      "phase_current": 1,
       "phase_total": 6,
       "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Custom Next.js portal — timesheets + assessments with cascading dropdowns (replaces Softr)",
-      "status": "planned",
-      "status_label": "v1.0 | Plan Complete 📋 | Replaces Softr (cascading dropdown limitation)",
-      "next_action": "Phase 1: Create Next.js project + deploy to Vercel"
+      "status": "in_progress",
+      "status_label": "v1.2 | Phase 1 ✅ Complete | Phase 2: Authentication 📋",
+      "next_action": "Phase 2: Resend signup + DNS records + magic link auth"
     },
     {
       "name": "Operational Dashboard",
@@ -317,8 +317,8 @@
   "priority_actions": [
     {
       "category": "BUILD",
-      "action": "Custom Staff Portal — Phase 1-4 Build",
-      "detail": "Next.js portal replacing Softr (cascading dropdown limitation). Unblocks Student Progress Reports (Phase 3) AND Staff Costs (Phase 6A Yael pilot). Target: end Jan 2026."
+      "action": "Custom Staff Portal — Phase 2-4 Build",
+      "detail": "Phase 1 scaffolded + deployed (mouve-staff-portal.vercel.app). Next: auth (Resend magic link), assessment form (cascading dropdowns), timesheet form. Unblocks Student Progress Reports + Staff Costs."
     },
     {
       "category": "WAITING",
