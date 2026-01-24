@@ -166,13 +166,13 @@
     },
     {
       "name": "Custom Staff Portal (Next.js)",
-      "phase_current": 1,
+      "phase_current": 2,
       "phase_total": 6,
       "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Custom Next.js portal — timesheets + assessments with cascading dropdowns (replaces Softr)",
       "status": "in_progress",
-      "status_label": "v1.2 | Phase 1 ✅ Complete | Phase 2: Authentication 📋",
-      "next_action": "Phase 2: Resend signup + DNS records + magic link auth"
+      "status_label": "v1.3 | Phase 2 ✅ Auth Complete | Phase 3: Assessment Form 📋",
+      "next_action": "Phase 3: Cascading dropdown form (Level → Phrase filtering)"
     },
     {
       "name": "Operational Dashboard",
@@ -317,8 +317,8 @@
   "priority_actions": [
     {
       "category": "BUILD",
-      "action": "Custom Staff Portal — Phase 2-4 Build",
-      "detail": "Phase 1 scaffolded + deployed (mouve-staff-portal.vercel.app). Next: auth (Resend magic link), assessment form (cascading dropdowns), timesheet form. Unblocks Student Progress Reports + Staff Costs."
+      "action": "Custom Staff Portal — Phase 3-4 Build",
+      "detail": "Phase 1-2 complete (scaffold + magic link auth live). Next: assessment form (cascading dropdowns), then timesheet form. Unblocks Student Progress Reports + Staff Costs."
     },
     {
       "category": "WAITING",
