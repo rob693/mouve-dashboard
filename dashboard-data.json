@@ -91,34 +91,32 @@
       ]
     },
     {
-      "name": "Back Office: Staff Costs",
-      "phase_current": 6,
-      "phase_total": 7,
-      "implementation_plan": "STAFF-ADMIN-COSTS-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Automate monthly staff statements (replace inconsistent invoices, save 3-4 hours/month)",
+      "name": "Custom Staff Portal (Next.js)",
+      "phase_current": 2,
+      "phase_total": 6,
+      "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
+      "purpose": "Custom Next.js portal — timesheets + assessments with cascading dropdowns (replaces Softr)",
       "status": "in_progress",
-      "status_label": "Phase 6A Ready ⏳ | Custom Portal Required (v3.0)",
+      "status_label": "v1.3 | Phase 2 ✅ Auth Complete | Phase 3: Assessment Form 📋",
       "completed_phases": [
-        {"name": "Phase 1: Table Setup", "summary": "6 Airtable tables created"},
-        {"name": "Phase 2: Staff Data Collection", "summary": "20 permanent staff, all rates complete (100%)"},
-        {"name": "Phase 4: Data & Schema Prep", "summary": "Xero format confirmed, Venue field added"},
-        {"name": "Phase 4.5: Workflow Build & Test", "summary": "Statement Generator + Approval/PDF workflows built, tested, operational"},
-        {"name": "Phase 5: Approval & Delivery", "summary": "Full approval flow tested, PDF/email delivery, idempotency, bookkeeper summary"},
-        {"name": "Phase 5.5: Bookkeeper 48h Batch", "summary": "Scheduled dispatch workflow, 48h dispute window"}
+        {"name": "Phase 1: Project Scaffolding", "summary": "Next.js 16 + Tailwind + Vercel deploy"},
+        {"name": "Phase 2: Authentication", "summary": "Magic link via Resend, JWT sessions, middleware"}
       ],
       "next_phase": {
-        "name": "Phase 6A: Pilot Validation (via Custom Portal)",
-        "detail": "Waiting for Custom Staff Portal timesheet form (Phase 4). Then Yael pilot.",
-        "status": "waiting",
+        "name": "Phase 3: Assessment Form (Cascading Dropdowns)",
+        "detail": "Load 282 phrases, filter client-side by Level. Unblocks Student Progress Reports.",
+        "status": "planned",
         "tasks": [
-          "Complete Custom Portal Phase 4 (Timesheet form)",
-          "Send Yael redirect email with new portal URL",
-          "Yael logs January sessions via custom portal",
-          "Compare system total vs Yael's manual invoice"
+          "Fetch student list filtered by teacher",
+          "Build cascading Level → Phrase dropdowns",
+          "POST to PROGRESS_ASSESSMENTS table",
+          "Mobile layout testing (375px)"
         ]
       },
       "remaining_phases": [
-        "Phase 7: Adoption & Rollout (5 sub-phases)"
+        "Phase 4: Timesheet Form",
+        "Phase 5: Testing & QA",
+        "Phase 6: Yael Pilot & Rollout"
       ]
     },
     {
@@ -165,14 +163,14 @@
       "next_action": "Phase 1: Routing Configuration (Rob Gmail + M365 + Louise Gmail filters)"
     },
     {
-      "name": "Custom Staff Portal (Next.js)",
-      "phase_current": 2,
-      "phase_total": 6,
-      "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Custom Next.js portal — timesheets + assessments with cascading dropdowns (replaces Softr)",
-      "status": "in_progress",
-      "status_label": "v1.3 | Phase 2 ✅ Auth Complete | Phase 3: Assessment Form 📋",
-      "next_action": "Phase 3: Cascading dropdown form (Level → Phrase filtering)"
+      "name": "Back Office: Staff Costs",
+      "phase_current": 6,
+      "phase_total": 7,
+      "implementation_plan": "STAFF-ADMIN-COSTS-IMPLEMENTATION-PLAN-JAN2026.md",
+      "purpose": "Automate monthly staff statements (replace inconsistent invoices, save 3-4 hours/month)",
+      "status": "waiting",
+      "status_label": "Phase 6A ⏳ Waiting for Custom Portal timesheet form",
+      "next_action": "Custom Portal Phase 4 (timesheet form) → Yael pilot"
     },
     {
       "name": "Operational Dashboard",
