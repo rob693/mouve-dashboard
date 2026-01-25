@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-25T23:50:00Z",
+  "generated_at": "2026-01-26T00:30:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "2.0",
 
@@ -164,6 +164,38 @@
   ],
 
   "secondary_projects": [
+    {
+      "name": "Dance Studio SaaS (New Product)",
+      "phase_current": 0,
+      "phase_total": 9,
+      "implementation_plan": "~/.claude/plans/zippy-snacking-plum.md",
+      "purpose": "Multi-tenant dance studio management platform — replaces DSP + ClassForKids + Pembee. Sellable SaaS product.",
+      "status": "planned",
+      "status_label": "PARKED — Start Feb/March 2026",
+      "start_date": "February/March 2026",
+      "target_completion": "June 2027 (15 months)",
+      "systems_replaced": ["Dance Studio Pro", "ClassForKids", "Pembee"],
+      "monthly_savings": "~£90/month + 30-50% payment fees",
+      "tech_stack": ["Next.js 15", "Supabase/Postgres", "GoCardless", "Stripe", "Vercel"],
+      "phases": [
+        "Phase 0: Foundation (auth, multi-tenant)",
+        "Phase 1-2: Core Data + Enrollment",
+        "Phase 3: Payments (GoCardless + Stripe)",
+        "Phase 4: Parent Portal",
+        "Phase 5: Reporting",
+        "Phase 6: GHL Integration",
+        "Phase 7: Email Communication",
+        "Phase 8: School Clubs + Camps",
+        "Phase 9: API + Polish"
+      ],
+      "pre_start_actions": [
+        "Louise: Decide product name",
+        "Rob: Research GoCardless API",
+        "Both: Identify 2-3 beta studios",
+        "Rob: Document DSP features used daily"
+      ],
+      "next_action": "PARKED until Q1 2026 stabilises. When ready: 'Start Dance Studio SaaS project - Phase 0'"
+    },
     {
       "name": "Back Office: Amex Recon vNext",
       "phase_current": 0,
