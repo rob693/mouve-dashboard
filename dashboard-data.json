@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-26T09:30:00Z",
+  "generated_at": "2026-01-27T00:15:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "2.0",
 
@@ -97,12 +97,13 @@
       "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Custom Next.js portal — timesheets + assessments with cascading dropdowns (replaces Softr)",
       "status": "in_progress",
-      "status_label": "v1.6 | Phase 4 ✅ Timesheet Form Complete | Phase 5: Testing & QA 📋",
+      "status_label": "v1.7 | Phase 4+ Complete ✅ with Bonus Features | Phase 5: Testing & QA 📋",
       "completed_phases": [
         {"name": "Phase 1: Project Scaffolding", "summary": "Next.js 16 + Tailwind + Vercel deploy"},
         {"name": "Phase 2: Authentication", "summary": "Magic link via Resend, JWT sessions, middleware"},
         {"name": "Phase 3: Assessment Form", "summary": "5 cascading dropdown pairs, 18 Next Steps phrases added, tested working"},
-        {"name": "Phase 4: Timesheet Form", "summary": "Date/Class/Venue form + My Sessions view, deployed to Vercel (26 Jan)"}
+        {"name": "Phase 4: Timesheet Form", "summary": "Date/Class/Venue form + My Sessions view + Status='Logged'"},
+        {"name": "Phase 4+ Bonus Features", "summary": "Teacher name display, class filtering by instructor, auto-refresh after submit, /term-dates page from Airtable"}
       ],
       "next_phase": {
         "name": "Phase 5: Testing & QA",
@@ -315,7 +316,7 @@
     {
       "category": "BUILD",
       "action": "Custom Staff Portal — Phase 5 Testing",
-      "detail": "Phase 1-4 complete (scaffold + auth + assessment + timesheet). Next: run 5 verification tests, mobile device testing, n8n compatibility check."
+      "detail": "Phase 1-4+ complete with bonus features (term dates, class filtering, auto-refresh). 4/5 verification tests passing. Next: Test V5 (Yael pilot), mobile device testing."
     },
     {
       "category": "BUILD",
