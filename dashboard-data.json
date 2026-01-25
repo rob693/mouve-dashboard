@@ -117,7 +117,19 @@
           "All-staff rollout announcement"
         ]
       },
-      "remaining_phases": []
+      "remaining_phases": [],
+      "feature_backlog": {
+        "file": "STAFF-PORTAL-FEATURE-BACKLOG.md",
+        "total_ideas": 12,
+        "queue": [
+          {"name": "My Classes", "status": "next", "complexity": "low", "target": "26 Jan 2026"},
+          {"name": "Incident Reports", "status": "planned", "complexity": "medium"},
+          {"name": "My Pay Summary", "status": "backlog", "complexity": "low"},
+          {"name": "Student Notes", "status": "backlog", "complexity": "medium"},
+          {"name": "Sub Request", "status": "backlog", "complexity": "medium"},
+          {"name": "Announcements", "status": "backlog", "complexity": "low"}
+        ]
+      }
     },
     {
       "name": "Student Progress Reports",

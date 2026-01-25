@@ -839,6 +839,36 @@
                     `;
                 }
 
+                // Feature backlog (for projects with future feature ideas)
+                let backlogHtml = '';
+                if (project.feature_backlog && project.feature_backlog.queue) {
+                    const statusColors = {
+                        'next': 'var(--green)',
+                        'planned': 'var(--blue)',
+                        'backlog': 'var(--gray)'
+                    };
+                    backlogHtml = `
+                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #f3f4f6;">
+                            <div style="font-weight: 600; font-size: 0.8rem; color: var(--purple); margin-bottom: 0.5rem;">
+                                📋 Feature Backlog (${project.feature_backlog.total_ideas} ideas)
+                            </div>
+                            ${project.feature_backlog.queue.map(f => `
+                                <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0; font-size: 0.75rem;">
+                                    <span style="color: ${statusColors[f.status] || 'var(--gray)'}; font-weight: 600;">
+                                        ${f.status === 'next' ? '▶' : f.status === 'planned' ? '◆' : '○'}
+                                    </span>
+                                    <span style="font-weight: ${f.status === 'next' ? '600' : '400'};">${f.name}</span>
+                                    <span style="color: var(--gray);">(${f.complexity})</span>
+                                    ${f.target ? `<span style="color: var(--green); font-size: 0.7rem;">→ ${f.target}</span>` : ''}
+                                </div>
+                            `).join('')}
+                            <div style="font-size: 0.65rem; color: var(--gray); margin-top: 0.5rem; font-family: monospace;">
+                                ${project.feature_backlog.file}
+                            </div>
+                        </div>
+                    `;
+                }
+
                 // Blocker warning
                 let blockerHtml = '';
                 if (project.blocker) {
@@ -866,6 +896,7 @@
                             ${completedPhasesHtml}
                             ${nextPhaseHtml}
                             ${remainingPhasesHtml}
+                            ${backlogHtml}
                         </div>
                     </div>
                 `;
