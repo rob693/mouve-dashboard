@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-23T22:30:00Z",
+  "generated_at": "2026-01-25T04:50:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "2.0",
 
@@ -92,29 +92,29 @@
     },
     {
       "name": "Custom Staff Portal (Next.js)",
-      "phase_current": 2,
+      "phase_current": 3,
       "phase_total": 6,
       "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Custom Next.js portal — timesheets + assessments with cascading dropdowns (replaces Softr)",
       "status": "in_progress",
-      "status_label": "v1.3 | Phase 2 ✅ Auth Complete | Phase 3: Assessment Form 📋",
+      "status_label": "v1.5 | Phase 3 ✅ Assessment Form Complete | Phase 4: Timesheet Form 📋",
       "completed_phases": [
         {"name": "Phase 1: Project Scaffolding", "summary": "Next.js 16 + Tailwind + Vercel deploy"},
-        {"name": "Phase 2: Authentication", "summary": "Magic link via Resend, JWT sessions, middleware"}
+        {"name": "Phase 2: Authentication", "summary": "Magic link via Resend, JWT sessions, middleware"},
+        {"name": "Phase 3: Assessment Form", "summary": "5 cascading dropdown pairs, 18 Next Steps phrases added, tested working"}
       ],
       "next_phase": {
-        "name": "Phase 3: Assessment Form (Cascading Dropdowns)",
-        "detail": "Load 282 phrases, filter client-side by Level. Unblocks Student Progress Reports.",
+        "name": "Phase 4: Timesheet Form",
+        "detail": "6 fields (Date, Class, Venue, Teacher, Hours, Notes). Unblocks Staff Costs Yael pilot.",
         "status": "planned",
         "tasks": [
-          "Fetch student list filtered by teacher",
-          "Build cascading Level → Phrase dropdowns",
-          "POST to PROGRESS_ASSESSMENTS table",
-          "Mobile layout testing (375px)"
+          "Create /timesheet page",
+          "Fetch CLASSES + VENUES for dropdowns",
+          "POST to DELIVERED_SESSIONS table",
+          "Mobile layout testing"
         ]
       },
       "remaining_phases": [
-        "Phase 4: Timesheet Form",
         "Phase 5: Testing & QA",
         "Phase 6: Yael Pilot & Rollout"
       ]
@@ -126,25 +126,24 @@
       "implementation_plan": "STUDENT-PROGRESS-REPORTS-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Structured phrase-bank reports (<60s per student, zero admin editing, sibling differentiation)",
       "status": "in_progress",
-      "status_label": "v1.15 | Phase 3 IN PROGRESS 🔧 | Migrating to Custom Portal",
+      "status_label": "v1.16 | Phase 3 ✅ Complete | Phase 4: Report Generation 📋",
       "completed_phases": [
         {"name": "Phase 1: Foundation", "summary": "PROGRESS_ASSESSMENTS + PHRASE_BANK tables created"},
         {"name": "Phase 2: Phrase Bank", "summary": "282 phrases imported (132 generic + 75 Ballet + 75 Gymnastics)"},
-        {"name": "Phase 3 (Partial): Form Build", "summary": "3 phrase fields created, two-step filtering configured, phrase text displaying correctly"}
+        {"name": "Phase 3: Teacher Input Form", "summary": "Custom Portal assessment form with 5 cascading dropdown pairs — fully working"}
       ],
       "next_phase": {
-        "name": "Phase 3: Teacher Input Form (Custom Portal)",
-        "detail": "Softr replaced by custom Next.js portal (cascading dropdown limitation). Assessment form with Level → Phrase filtering.",
-        "status": "in_progress",
+        "name": "Phase 4: Report Generation (n8n + PDF)",
+        "detail": "n8n workflow to fetch completed assessments, substitute phrases, generate parent-facing PDF reports",
+        "status": "planned",
         "tasks": [
-          "Build Custom Staff Portal (Phases 1-3)",
-          "Implement cascading dropdowns (Level → Phrase)",
-          "Test teacher isolation (server-side filtering)",
-          "Complete end-to-end submission test"
+          "Design n8n workflow PR-01",
+          "Build PDF template with [Name] substitution",
+          "Batch generation for all Ready assessments",
+          "Parent email delivery integration"
         ]
       },
       "remaining_phases": [
-        "Phase 4: Report Generation (n8n + PDF)",
         "Phase 5: Unified Delivery"
       ]
     }
@@ -315,8 +314,8 @@
   "priority_actions": [
     {
       "category": "BUILD",
-      "action": "Custom Staff Portal — Phase 3-4 Build",
-      "detail": "Phase 1-2 complete (scaffold + magic link auth live). Next: assessment form (cascading dropdowns), then timesheet form. Unblocks Student Progress Reports + Staff Costs."
+      "action": "Custom Staff Portal — Phase 4 Build",
+      "detail": "Phase 1-3 complete (scaffold + auth + assessment form). Next: timesheet form (6 fields, writes to DELIVERED_SESSIONS). Unblocks Staff Costs Yael pilot."
     },
     {
       "category": "WAITING",
