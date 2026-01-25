@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-25T23:30:00Z",
+  "generated_at": "2026-01-25T23:50:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "2.0",
 
@@ -92,12 +92,12 @@
     },
     {
       "name": "Custom Staff Portal (Next.js)",
-      "phase_current": 7,
-      "phase_total": 7,
+      "phase_current": 8,
+      "phase_total": 8,
       "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Custom Next.js portal — timesheets + assessments + attendance + my classes (replaces Softr + paper registers)",
+      "purpose": "Custom Next.js portal — 6 features: timesheets, assessments, attendance, my classes, term dates, my details (replaces Softr + paper registers)",
       "status": "in_progress",
-      "status_label": "v2.0 | 5 Features Complete ✅ (Attendance, My Classes, Timesheets, Reports, Term Dates)",
+      "status_label": "v2.0 | 6 Features Complete ✅ | Ready for Staff Rollout",
       "completed_phases": [
         {"name": "Phase 1: Project Scaffolding", "summary": "Next.js 16 + Tailwind + Vercel deploy"},
         {"name": "Phase 2: Authentication", "summary": "Magic link via Resend, JWT sessions, middleware"},
@@ -105,7 +105,8 @@
         {"name": "Phase 4: Timesheet Form", "summary": "Date/Class/Venue form + My Sessions view + Status='Logged'"},
         {"name": "Phase 4+ Bonus Features", "summary": "Teacher name display, class filtering by instructor, auto-refresh after submit, /term-dates page"},
         {"name": "Phase 7: Attendance Tracker", "summary": "/attendance page shows today's classes, tap to mark Present/Absent per student, bulk save to Airtable"},
-        {"name": "My Classes Feature", "summary": "/my-classes shows all assigned classes grouped by day, today's classes link to attendance (25 Jan)"}
+        {"name": "My Classes Feature", "summary": "/my-classes shows all assigned classes grouped by day, today's classes link to attendance"},
+        {"name": "Phase 8: My Details", "summary": "View/edit personal info + masked bank details with confirmation modal (25 Jan)"}
       ],
       "next_phase": {
         "name": "Phase 5-6: Testing & Rollout",
@@ -122,7 +123,7 @@
       "feature_backlog": {
         "file": "STAFF-PORTAL-FEATURE-BACKLOG.md",
         "total_ideas": 12,
-        "completed_features": ["Attendance", "My Classes", "Timesheets", "Student Termly Reports", "Term Dates"],
+        "completed_features": ["Attendance", "My Classes", "Timesheets", "Student Termly Reports", "Term Dates", "My Details"],
         "queue": [
           {"name": "Incident Reports", "status": "next", "complexity": "medium"},
           {"name": "My Pay Summary", "status": "backlog", "complexity": "low"},
@@ -327,7 +328,7 @@
     {
       "category": "ROLLOUT",
       "action": "Custom Staff Portal — Ready for Staff Rollout",
-      "detail": "All 4 features tested and working (25 Jan): Assessments, Timesheets, Term Dates, Attendance. Next: Yael pilot (1 week), then announce to all 17 teachers."
+      "detail": "All 6 features complete (25 Jan): Assessments, Timesheets, Term Dates, Attendance, My Classes, My Details. Ready for Yael pilot (1 week), then announce to all 21 staff."
     },
     {
       "category": "BUILD",
