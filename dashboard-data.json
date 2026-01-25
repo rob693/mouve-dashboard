@@ -168,7 +168,7 @@
       "name": "Dance Studio SaaS (New Product)",
       "phase_current": 0,
       "phase_total": 9,
-      "implementation_plan": "~/.claude/plans/zippy-snacking-plum.md",
+      "implementation_plan": "DANCE-STUDIO-SAAS-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Multi-tenant dance studio management platform — replaces DSP + ClassForKids + Pembee. Sellable SaaS product.",
       "status": "planned",
       "status_label": "PARKED — Start Feb/March 2026",
