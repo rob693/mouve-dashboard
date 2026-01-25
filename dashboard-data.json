@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-01-24T23:30:00Z",
+  "generated_at": "2026-01-25T14:30:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "2.0",
 
   "health_summary": {
-    "complete": 28,
+    "complete": 29,
     "in_progress": 5,
     "waiting": 1,
-    "planned": 3,
+    "planned": 2,
     "blocked": 0
   },
 
@@ -92,33 +92,32 @@
     },
     {
       "name": "Custom Staff Portal (Next.js)",
-      "phase_current": 4,
-      "phase_total": 6,
+      "phase_current": 7,
+      "phase_total": 7,
       "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Custom Next.js portal — timesheets + assessments with cascading dropdowns (replaces Softr)",
+      "purpose": "Custom Next.js portal — timesheets + assessments + attendance (replaces Softr + paper registers)",
       "status": "in_progress",
-      "status_label": "v1.7 | Phase 4+ Complete ✅ with Bonus Features | Phase 5: Testing & QA 📋",
+      "status_label": "v1.8 | Phase 7 🔧 Attendance Tracker Built | Ready for testing",
       "completed_phases": [
         {"name": "Phase 1: Project Scaffolding", "summary": "Next.js 16 + Tailwind + Vercel deploy"},
         {"name": "Phase 2: Authentication", "summary": "Magic link via Resend, JWT sessions, middleware"},
         {"name": "Phase 3: Assessment Form", "summary": "5 cascading dropdown pairs, 18 Next Steps phrases added, tested working"},
         {"name": "Phase 4: Timesheet Form", "summary": "Date/Class/Venue form + My Sessions view + Status='Logged'"},
-        {"name": "Phase 4+ Bonus Features", "summary": "Teacher name display, class filtering by instructor, auto-refresh after submit, /term-dates page from Airtable"}
+        {"name": "Phase 4+ Bonus Features", "summary": "Teacher name display, class filtering by instructor, auto-refresh after submit, /term-dates page"},
+        {"name": "Phase 7: Attendance Tracker", "summary": "/attendance page shows today's classes, tap to mark Present/Absent per student, bulk save to Airtable"}
       ],
       "next_phase": {
-        "name": "Phase 5: Testing & QA",
-        "detail": "End-to-end testing, mobile device testing, edge cases, performance verification",
+        "name": "Phase 5-6: Testing & Rollout",
+        "detail": "End-to-end testing, mobile device testing, Yael pilot, staff rollout",
         "status": "planned",
         "tasks": [
-          "Run all 5 verification tests",
+          "Test attendance on real Sunday classes",
           "Test on iOS Safari + Android Chrome",
-          "Verify n8n workflow compatibility",
-          "Load testing with multiple users"
+          "Yael pilot for timesheet + attendance",
+          "All-staff rollout announcement"
         ]
       },
-      "remaining_phases": [
-        "Phase 6: Yael Pilot & Rollout"
-      ]
+      "remaining_phases": []
     },
     {
       "name": "Student Progress Reports",
@@ -195,14 +194,13 @@
     },
     {
       "name": "Attendance Tracker (Children's Dance)",
-      "phase_current": 0,
-      "phase_total": 6,
-      "implementation_plan": "ATTENDANCE-TRACKER-IMPLEMENTATION-PLAN-JAN2026.md",
+      "phase_current": 1,
+      "phase_total": 1,
+      "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Digital attendance marking via Custom Staff Portal — replace paper registers, enable retention monitoring",
-      "status": "planned",
-      "status_label": "v1.1 Plan Approved • Integrated with Custom Staff Portal",
-      "target_date": "31 Jan 2026",
-      "next_action": "Phase 1: Create ATTENDANCE + TEACHERS tables, add retention fields to CONTACTS"
+      "status": "complete",
+      "status_label": "✅ Built as Phase 7 of Custom Staff Portal (25 Jan 2026)",
+      "next_action": "Test on real Sunday classes"
     }
   ],
 
@@ -315,8 +313,8 @@
   "priority_actions": [
     {
       "category": "BUILD",
-      "action": "Custom Staff Portal — Phase 5 Testing",
-      "detail": "Phase 1-4+ complete with bonus features (term dates, class filtering, auto-refresh). 4/5 verification tests passing. Next: Test V5 (Yael pilot), mobile device testing."
+      "action": "Custom Staff Portal — Attendance Tracker Testing",
+      "detail": "Phase 7 (Attendance) built (25 Jan): /attendance shows today's classes filtered by teacher, tap to mark Present/Absent, bulk save. Next: Test on real Sunday classes, then Yael pilot for all features."
     },
     {
       "category": "BUILD",
