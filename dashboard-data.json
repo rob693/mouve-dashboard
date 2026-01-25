@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-25T14:30:00Z",
+  "generated_at": "2026-01-25T21:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "2.0",
 
@@ -97,7 +97,7 @@
       "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Custom Next.js portal — timesheets + assessments + attendance (replaces Softr + paper registers)",
       "status": "in_progress",
-      "status_label": "v1.8 | Phase 7 🔧 Attendance Tracker Built | Ready for testing",
+      "status_label": "v1.9 | Phase 7 ✅ Attendance Tracker Tested | All features working",
       "completed_phases": [
         {"name": "Phase 1: Project Scaffolding", "summary": "Next.js 16 + Tailwind + Vercel deploy"},
         {"name": "Phase 2: Authentication", "summary": "Magic link via Resend, JWT sessions, middleware"},
@@ -199,8 +199,8 @@
       "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Digital attendance marking via Custom Staff Portal — replace paper registers, enable retention monitoring",
       "status": "complete",
-      "status_label": "✅ Built as Phase 7 of Custom Staff Portal (25 Jan 2026)",
-      "next_action": "Test on real Sunday classes"
+      "status_label": "✅ Built & Tested (25 Jan 2026)",
+      "next_action": "Roll out to all teachers"
     }
   ],
 
@@ -312,9 +312,9 @@
 
   "priority_actions": [
     {
-      "category": "BUILD",
-      "action": "Custom Staff Portal — Attendance Tracker Testing",
-      "detail": "Phase 7 (Attendance) built (25 Jan): /attendance shows today's classes filtered by teacher, tap to mark Present/Absent, bulk save. Next: Test on real Sunday classes, then Yael pilot for all features."
+      "category": "ROLLOUT",
+      "action": "Custom Staff Portal — Ready for Staff Rollout",
+      "detail": "All 4 features tested and working (25 Jan): Assessments, Timesheets, Term Dates, Attendance. Next: Yael pilot (1 week), then announce to all 17 teachers."
     },
     {
       "category": "BUILD",
