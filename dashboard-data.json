@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-01-25T04:50:00Z",
+  "generated_at": "2026-01-26T09:30:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "2.0",
 
   "health_summary": {
     "complete": 28,
-    "in_progress": 4,
-    "waiting": 2,
+    "in_progress": 5,
+    "waiting": 1,
     "planned": 3,
     "blocked": 0
   },
@@ -92,30 +92,30 @@
     },
     {
       "name": "Custom Staff Portal (Next.js)",
-      "phase_current": 3,
+      "phase_current": 4,
       "phase_total": 6,
       "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Custom Next.js portal — timesheets + assessments with cascading dropdowns (replaces Softr)",
       "status": "in_progress",
-      "status_label": "v1.5 | Phase 3 ✅ Assessment Form Complete | Phase 4: Timesheet Form 📋",
+      "status_label": "v1.6 | Phase 4 ✅ Timesheet Form Complete | Phase 5: Testing & QA 📋",
       "completed_phases": [
         {"name": "Phase 1: Project Scaffolding", "summary": "Next.js 16 + Tailwind + Vercel deploy"},
         {"name": "Phase 2: Authentication", "summary": "Magic link via Resend, JWT sessions, middleware"},
-        {"name": "Phase 3: Assessment Form", "summary": "5 cascading dropdown pairs, 18 Next Steps phrases added, tested working"}
+        {"name": "Phase 3: Assessment Form", "summary": "5 cascading dropdown pairs, 18 Next Steps phrases added, tested working"},
+        {"name": "Phase 4: Timesheet Form", "summary": "Date/Class/Venue form + My Sessions view, deployed to Vercel (26 Jan)"}
       ],
       "next_phase": {
-        "name": "Phase 4: Timesheet Form",
-        "detail": "6 fields (Date, Class, Venue, Teacher, Hours, Notes). Unblocks Staff Costs Yael pilot.",
+        "name": "Phase 5: Testing & QA",
+        "detail": "End-to-end testing, mobile device testing, edge cases, performance verification",
         "status": "planned",
         "tasks": [
-          "Create /timesheet page",
-          "Fetch CLASSES + VENUES for dropdowns",
-          "POST to DELIVERED_SESSIONS table",
-          "Mobile layout testing"
+          "Run all 5 verification tests",
+          "Test on iOS Safari + Android Chrome",
+          "Verify n8n workflow compatibility",
+          "Load testing with multiple users"
         ]
       },
       "remaining_phases": [
-        "Phase 5: Testing & QA",
         "Phase 6: Yael Pilot & Rollout"
       ]
     },
@@ -167,9 +167,9 @@
       "phase_total": 7,
       "implementation_plan": "STAFF-ADMIN-COSTS-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Automate monthly staff statements (replace inconsistent invoices, save 3-4 hours/month)",
-      "status": "waiting",
-      "status_label": "Phase 6A ⏳ Waiting for Custom Portal timesheet form",
-      "next_action": "Custom Portal Phase 4 (timesheet form) → Yael pilot"
+      "status": "in_progress",
+      "status_label": "Phase 6A 🔧 Unblocked — Ready for Yael pilot",
+      "next_action": "Yael pilot: log 1 week of sessions via Custom Portal → verify n8n statement generation"
     },
     {
       "name": "Operational Dashboard",
@@ -314,13 +314,13 @@
   "priority_actions": [
     {
       "category": "BUILD",
-      "action": "Custom Staff Portal — Phase 4 Build",
-      "detail": "Phase 1-3 complete (scaffold + auth + assessment form). Next: timesheet form (6 fields, writes to DELIVERED_SESSIONS). Unblocks Staff Costs Yael pilot."
+      "action": "Custom Staff Portal — Phase 5 Testing",
+      "detail": "Phase 1-4 complete (scaffold + auth + assessment + timesheet). Next: run 5 verification tests, mobile device testing, n8n compatibility check."
     },
     {
-      "category": "WAITING",
-      "action": "Staff Costs Yael Pilot — Pending Custom Portal",
-      "detail": "Custom Portal Phase 4 (timesheet form) must be built before Yael can log sessions. n8n workflows unaffected (read Airtable directly)."
+      "category": "BUILD",
+      "action": "Staff Costs Yael Pilot — UNBLOCKED",
+      "detail": "Custom Portal timesheet form deployed (26 Jan). Ready for Yael to log 1 week of sessions and verify n8n statement generation works with portal-created records."
     },
     {
       "category": "BUILD",
