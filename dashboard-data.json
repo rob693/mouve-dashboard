@@ -6,7 +6,7 @@
   "health_summary": {
     "complete": 29,
     "in_progress": 6,
-    "waiting": 1,
+    "waiting": 2,
     "planned": 2,
     "blocked": 0
   },
@@ -185,6 +185,36 @@
         ]
       },
       "remaining_phases": []
+    },
+    {
+      "name": "Financial Intelligence System",
+      "phase_current": 0,
+      "phase_total": 7,
+      "implementation_plan": "FINANCIAL-INTELLIGENCE-IMPLEMENTATION-PLAN-JAN2026.md",
+      "purpose": "Unified financial reporting — reads Xero (P&L, balance sheet, bank) + enriches with Airtable ops data. Dashboard + Google Sheet + email digests.",
+      "status": "waiting",
+      "status_label": "Phase 0/7 — Waiting on Rob (Xero OAuth in n8n)",
+      "completed_phases": [],
+      "next_phase": {
+        "name": "Phase 0: Xero n8n Credential Setup",
+        "detail": "Rob must configure Xero OAuth2 credential in n8n UI (browser-based flow, ~5 min)",
+        "status": "waiting",
+        "tasks": [
+          "Add 'Xero OAuth2 API' credential in n8n",
+          "Enter Client ID + Secret",
+          "Authorise via Xero popup (select 'MOUVE by Dancing with Louise')",
+          "Test: GET /Reports/ProfitAndLoss returns Dec 2025 data"
+        ]
+      },
+      "remaining_phases": [
+        "Phase 1: Weekly Financial Snapshot Workflow (FIN-01)",
+        "Phase 2: Financial Dashboard (Vercel)",
+        "Phase 3: Google Sheet (5 tabs)",
+        "Phase 4: Email Digests (weekly + monthly)",
+        "Phase 5: Historical Snapshots + Trends",
+        "Phase 6: Class Profitability + Revenue-at-Risk",
+        "Phase 7: 13-Week Cash Flow Forecast"
+      ]
     }
   ],
 
@@ -405,6 +435,11 @@
       "category": "BUILD",
       "action": "Children's Onboarding - Phase 4 Ready (Emails v2.0 Final)",
       "detail": "Upload 25 email HTMLs from onboarding-sequence-v2-final-18jan2026/ + create 10 AC automations. All tone amendments complete. Estimate: 60 minutes."
+    },
+    {
+      "category": "PREREQUISITE",
+      "action": "Financial Intelligence — Rob: Xero OAuth Setup (5 min)",
+      "detail": "Configure Xero OAuth2 credential in n8n UI. Add credential > enter Client ID 9A5737E2D115479D8846A22355B01D36 + Secret > click 'Connect my account' > authorise in Xero popup > test P&L endpoint. Blocks all 7 phases of financial reporting."
     },
     {
       "category": "OPS",
