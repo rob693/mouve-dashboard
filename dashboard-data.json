@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-01-25T23:45:00Z",
+  "generated_at": "2026-01-27T01:30:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "2.0",
 
   "health_summary": {
     "complete": 29,
-    "in_progress": 5,
+    "in_progress": 6,
     "waiting": 1,
     "planned": 2,
     "blocked": 0
@@ -160,6 +160,31 @@
       "remaining_phases": [
         "Phase 5: Unified Delivery"
       ]
+    },
+    {
+      "name": "GHL SMS Audit & Cleanup",
+      "phase_current": 1,
+      "phase_total": 1,
+      "implementation_plan": "UNIT-ECONOMICS-REFERENCE.md (Section 13)",
+      "purpose": "Reduce wasteful outbound SMS by fixing follow-up workflow logic, cleaning up dormant workflows (~360 SMS/month = ~£365/year savings)",
+      "status": "in_progress",
+      "status_label": "Investigation Complete | 5 Manual GHL Tasks",
+      "completed_phases": [
+        {"name": "Investigation", "summary": "Examined 20+ conversations via API. Follow-up ignores replies/lost contacts. Campaigns are email-only. No duplicate appointment reminders. SMS volume breakdown estimated."}
+      ],
+      "next_phase": {
+        "name": "Execute 5 Cleanup Tasks (Manual GHL UI)",
+        "detail": "All tasks require manual work in GHL UI — API does not expose workflow internals",
+        "status": "planned",
+        "tasks": [
+          "Fix follow-up workflow reply detection (~200 SMS/month saved)",
+          "Move Rob's lead notifications to email (~60 SMS/month saved)",
+          "Combine appointment companion messages (~100 SMS/month saved)",
+          "Move 10 dormant campaign workflows to draft (housekeeping)",
+          "Add lost/abandoned opportunity check to follow-up"
+        ]
+      },
+      "remaining_phases": []
     }
   ],
 
@@ -380,6 +405,11 @@
       "category": "BUILD",
       "action": "Children's Onboarding - Phase 4 Ready (Emails v2.0 Final)",
       "detail": "Upload 25 email HTMLs from onboarding-sequence-v2-final-18jan2026/ + create 10 AC automations. All tone amendments complete. Estimate: 60 minutes."
+    },
+    {
+      "category": "OPS",
+      "action": "GHL SMS Audit — 5 Cleanup Tasks",
+      "detail": "Investigation complete. 5 manual GHL UI changes needed to save ~360 SMS/month (~£365/year). Fix follow-up reply detection, move Rob notifications to email, combine appointment SMS, draft 10 dormant workflows, add lost-opp check. See UNIT-ECONOMICS-REFERENCE.md Section 13."
     },
     {
       "category": "OPS",
