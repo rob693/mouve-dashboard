@@ -11,6 +11,45 @@
     "blocked": 0
   },
 
+  "tasks": [
+    {
+      "title": "Ask StudioHub support to add opportunity_abandoned tag to Abandoned workflow",
+      "due": "2026-01-31",
+      "status": "pending",
+      "context": "GHL SMS Cleanup — workflow locked at user entry level"
+    },
+    {
+      "title": "Add opportunity_abandoned tag check to Follow Ups workflow",
+      "due": "2026-02-07",
+      "status": "blocked",
+      "context": "Blocked until StudioHub adds the tag"
+    },
+    {
+      "title": "Check GHL SMS numbers vs January baseline (2,668)",
+      "due": "2026-03-01",
+      "status": "pending",
+      "context": "Target ~2,250 after cleanup. See UNIT-ECONOMICS-REFERENCE.md Section 14"
+    },
+    {
+      "title": "Test ops dashboard on 3 devices (desktop, tablet, mobile)",
+      "due": "2026-02-01",
+      "status": "pending",
+      "context": "Operational Dashboard Phase B rollout"
+    },
+    {
+      "title": "Share ops dashboard with Louise",
+      "due": "2026-02-01",
+      "status": "pending",
+      "context": "After device testing complete"
+    },
+    {
+      "title": "Validate £600/term average revenue from Pembee",
+      "due": "2026-02-14",
+      "status": "pending",
+      "context": "Unit Economics — needed for financial model"
+    }
+  ],
+
   "weekly_tasks": [
     {
       "name": "Prepare Sunday's Trial List",

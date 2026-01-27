@@ -546,6 +546,82 @@
             margin-top: 0.5rem;
         }
 
+        /* Tasks To-Do */
+        .tasks-list {
+            list-style: none;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .task-item:last-child {
+            border-bottom: none;
+        }
+
+        .task-checkbox {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            margin-top: 2px;
+        }
+
+        .task-checkbox.pending {
+            border: 2px solid #d1d5db;
+            background: white;
+        }
+
+        .task-checkbox.done {
+            background: var(--green);
+            color: white;
+        }
+
+        .task-checkbox.blocked {
+            background: var(--red);
+            color: white;
+        }
+
+        .task-content {
+            flex: 1;
+        }
+
+        .task-title {
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        .task-title.done {
+            text-decoration: line-through;
+            color: var(--gray);
+        }
+
+        .task-meta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.25rem;
+            font-size: 0.75rem;
+            color: var(--gray);
+        }
+
+        .task-due.overdue {
+            color: var(--red);
+            font-weight: 600;
+        }
+
+        .task-due.soon {
+            color: var(--amber);
+            font-weight: 600;
+        }
+
         /* Secondary Projects */
         .secondary-project-item {
             padding: 1rem;
@@ -659,6 +735,14 @@
         <h2 class="section-header">📋 Weekly Tasks</h2>
         <div style="background: white; border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 2rem;">
             <ul class="weekly-tasks-list" id="weekly-tasks-list">
+                <!-- Populated by JS -->
+            </ul>
+        </div>
+
+        <!-- Tasks To-Do -->
+        <h2 class="section-header">Tasks</h2>
+        <div style="background: white; border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+            <ul class="tasks-list" id="tasks-list">
                 <!-- Populated by JS -->
             </ul>
         </div>
@@ -783,6 +867,9 @@
 
             // Weekly Tasks
             renderWeeklyTasks(data.weekly_tasks);
+
+            // Tasks To-Do
+            renderTasks(data.tasks);
 
             // Priority Actions
             renderActions(data.priority_actions);
@@ -1145,6 +1232,47 @@
                     </div>
                 </li>
             `).join('');
+        }
+
+        function renderTasks(tasks) {
+            const list = document.getElementById('tasks-list');
+            if (!tasks || tasks.length === 0) {
+                list.innerHTML = '<li style="padding: 1rem; color: var(--gray);">No tasks</li>';
+                return;
+            }
+
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            list.innerHTML = tasks.map(task => {
+                const dueParts = task.due.split('-');
+                const dueDate = new Date(dueParts[0], dueParts[1] - 1, dueParts[2]);
+                const daysUntil = Math.ceil((dueDate - today) / (1000 * 60 * 60 * 24));
+
+                let dueClass = '';
+                if (task.status !== 'done') {
+                    if (daysUntil < 0) dueClass = 'overdue';
+                    else if (daysUntil <= 7) dueClass = 'soon';
+                }
+
+                const dueDateStr = dueDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+
+                const icon = task.status === 'done' ? '&#10003;' : task.status === 'blocked' ? '!' : '';
+                const titleClass = task.status === 'done' ? ' done' : '';
+
+                return `
+                    <li class="task-item">
+                        <div class="task-checkbox ${task.status}">${icon}</div>
+                        <div class="task-content">
+                            <div class="task-title${titleClass}">${task.title}</div>
+                            <div class="task-meta">
+                                <span class="task-due ${dueClass}">Due: ${dueDateStr}</span>
+                                ${task.context ? `<span>${task.context}</span>` : ''}
+                            </div>
+                        </div>
+                    </li>
+                `;
+            }).join('');
         }
 
         function renderActions(actions) {
