@@ -287,34 +287,6 @@
       "next_action": "Yael pilot: log 1 week of sessions via Custom Portal → verify n8n statement generation"
     },
     {
-      "name": "GHL SMS Audit & Cleanup",
-      "phase_current": 1,
-      "phase_total": 1,
-      "implementation_plan": "UNIT-ECONOMICS-REFERENCE.md (Section 13-14)",
-      "purpose": "Reduce wasteful outbound SMS — fixed follow-up logic, cleaned dormant workflows (~410 SMS/month = ~£415/year savings)",
-      "status": "complete",
-      "status_label": "4/5 Tasks Done ✅ | 1 Awaiting StudioHub Support",
-      "next_action": "Ask StudioHub to add opportunity_abandoned tag. Then add to Follow Ups. Measure SMS on 1 Mar vs 2,668 baseline.",
-      "completed_phases": [
-        {"name": "Investigation", "summary": "20+ conversations examined via API"},
-        {"name": "Execution (27 Jan 2026)", "summary": "4 Go To redirects fixed, lead notifications moved to email, appointment messages combined, 10 dormant workflows drafted, lost opp check added"}
-      ]
-    },
-    {
-      "name": "Operational Dashboard",
-      "phase_current": 2,
-      "phase_total": 2,
-      "implementation_plan": "OPERATIONAL-DASHBOARD-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Business metrics dashboard (conversions, students, trial rates) for Louise/Georgia",
-      "status": "complete",
-      "status_label": "✅ Complete (27 Jan 2026)",
-      "next_action": "Share with Louise.",
-      "completed_phases": [
-        {"name": "Phase A: Infrastructure + Data Pipeline", "summary": "GitHub repo + Vercel + 12-node n8n workflow + 7 validated metrics (26 Jan 2026)"},
-        {"name": "Phase B: Frontend + Rollout", "summary": "7 KPI cards + Chart.js + SHA-256 password gate + responsive CSS + stale warning. Deployed to Vercel (25 Jan 2026)"}
-      ]
-    },
-    {
       "name": "Weekly Auto-Blog System",
       "phase_current": 0,
       "phase_total": 6,
@@ -325,16 +297,6 @@
       "target_date": "31 Jan 2026",
       "next_action": "Phase 1: Create BLOG_POSTS table + update Data Dictionary"
     },
-    {
-      "name": "Attendance Tracker (Children's Dance)",
-      "phase_current": 1,
-      "phase_total": 1,
-      "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Digital attendance marking via Custom Staff Portal — replace paper registers, enable retention monitoring",
-      "status": "complete",
-      "status_label": "✅ Built & Tested (25 Jan 2026)",
-      "next_action": "Roll out to all teachers"
-    }
   ],
 
   "completed_projects": {
@@ -344,7 +306,9 @@
       {"name": "Ladies Fitness Calendar Sync", "result": "LF-10 + LF-11 deployed"},
       {"name": "Ops Priority Engine", "result": "Complete"},
       {"name": "Term Renewal Engine", "result": "Complete"},
-      {"name": "Teacher Culture Programme", "result": "12 campaigns live"}
+      {"name": "Teacher Culture Programme", "result": "12 campaigns live"},
+      {"name": "Operational Dashboard", "result": "Vercel + n8n pipeline + 7 KPI cards (27 Jan 2026)"},
+      {"name": "GHL SMS Audit & Cleanup", "result": "4/5 tasks done, ~410 SMS/month saved (27 Jan 2026)"}
     ],
     "simple": [
       {"name": "Children's Onboarding Email Refinement", "result": "10 emails × 3 age tracks, all pass Email Deliverability Checklist v1.1"},
@@ -362,7 +326,8 @@
       {"name": "Trials Tracker System", "result": "Complete"},
       {"name": "LF Trial Email Clarity Fix", "result": "3 workflows deployed"},
       {"name": "Historical Camp Data Migration", "result": "1,301 contacts + 11-tag taxonomy imported to AC"},
-      {"name": "School Clubs Migration", "result": "Closed (not viable)", "closed": true}
+      {"name": "School Clubs Migration", "result": "Closed (not viable)", "closed": true},
+      {"name": "Attendance Tracker (Children's Dance)", "result": "Staff Portal /attendance page (25 Jan 2026)"}
     ],
     "active_campaigns": [
       {"name": "Lapsed Parent Win-Back", "status": "Active (4 emails)"},
