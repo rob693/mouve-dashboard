@@ -546,6 +546,14 @@
             margin-top: 0.5rem;
         }
 
+        /* Tasks Row (side by side) */
+        .tasks-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
         /* Tasks To-Do */
         .tasks-list {
             list-style: none;
@@ -692,6 +700,12 @@
             border-radius: 50%;
         }
 
+        @media (max-width: 768px) {
+            .tasks-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Print styles */
         @media print {
             body { padding: 1rem; }
@@ -731,20 +745,24 @@
             </div>
         </div>
 
-        <!-- Weekly Tasks (Top Priority) -->
-        <h2 class="section-header">📋 Weekly Tasks</h2>
-        <div style="background: white; border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 2rem;">
-            <ul class="weekly-tasks-list" id="weekly-tasks-list">
-                <!-- Populated by JS -->
-            </ul>
-        </div>
-
-        <!-- Tasks To-Do -->
-        <h2 class="section-header">Tasks</h2>
-        <div style="background: white; border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 2rem;">
-            <ul class="tasks-list" id="tasks-list">
-                <!-- Populated by JS -->
-            </ul>
+        <!-- Tasks (side by side) -->
+        <div class="tasks-row">
+            <div class="tasks-col">
+                <h2 class="section-header" style="margin-top: 0;">Tasks To Do</h2>
+                <div style="background: white; border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                    <ul class="tasks-list" id="tasks-list">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+            </div>
+            <div class="tasks-col">
+                <h2 class="section-header" style="margin-top: 0;">Weekly Tasks</h2>
+                <div style="background: white; border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                    <ul class="weekly-tasks-list" id="weekly-tasks-list">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <!-- Primary Projects -->
