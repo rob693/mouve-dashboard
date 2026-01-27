@@ -4,8 +4,8 @@
   "version": "2.0",
 
   "health_summary": {
-    "complete": 29,
-    "in_progress": 6,
+    "complete": 30,
+    "in_progress": 5,
     "waiting": 2,
     "planned": 2,
     "blocked": 0
@@ -204,23 +204,22 @@
       "name": "GHL SMS Audit & Cleanup",
       "phase_current": 1,
       "phase_total": 1,
-      "implementation_plan": "UNIT-ECONOMICS-REFERENCE.md (Section 13)",
-      "purpose": "Reduce wasteful outbound SMS by fixing follow-up workflow logic, cleaning up dormant workflows (~360 SMS/month = ~£365/year savings)",
-      "status": "in_progress",
-      "status_label": "Investigation Complete | 5 Manual GHL Tasks",
+      "implementation_plan": "UNIT-ECONOMICS-REFERENCE.md (Section 13-14)",
+      "purpose": "Reduce wasteful outbound SMS by fixing follow-up workflow logic, cleaning up dormant workflows (~410 SMS/month = ~£415/year savings)",
+      "status": "complete",
+      "status_label": "4/5 Tasks Done ✅ | 1 Awaiting StudioHub Support",
       "completed_phases": [
-        {"name": "Investigation", "summary": "Examined 20+ conversations via API. Follow-up ignores replies/lost contacts. Campaigns are email-only. No duplicate appointment reminders. SMS volume breakdown estimated."}
+        {"name": "Investigation", "summary": "Examined 20+ conversations via API. Follow-up ignores replies/lost contacts. Campaigns are email-only. No duplicate appointment reminders. SMS volume breakdown estimated."},
+        {"name": "Execution (27 Jan 2026)", "summary": "Fixed follow-up reply detection (4 Go To redirects), moved lead notifications to email, combined appointment messages, drafted 10 dormant workflows, added lost opportunity check. Est. ~410 SMS/month saved."}
       ],
       "next_phase": {
-        "name": "Execute 5 Cleanup Tasks (Manual GHL UI)",
-        "detail": "All tasks require manual work in GHL UI — API does not expose workflow internals",
-        "status": "planned",
+        "name": "Outstanding: opportunity_abandoned tag",
+        "detail": "StudioHub support must add tag to locked Abandoned workflow, then add to Follow Ups If/Else condition",
+        "status": "waiting",
         "tasks": [
-          "Fix follow-up workflow reply detection (~200 SMS/month saved)",
-          "Move Rob's lead notifications to email (~60 SMS/month saved)",
-          "Combine appointment companion messages (~100 SMS/month saved)",
-          "Move 10 dormant campaign workflows to draft (housekeeping)",
-          "Add lost/abandoned opportunity check to follow-up"
+          "Ask StudioHub to add opportunity_abandoned tag (due 31 Jan)",
+          "Add tag check to Follow Ups workflow (due 7 Feb)",
+          "Check SMS numbers vs 2,668 baseline (due 1 Mar)"
         ]
       },
       "remaining_phases": []
@@ -482,8 +481,8 @@
     },
     {
       "category": "OPS",
-      "action": "GHL SMS Audit — 5 Cleanup Tasks",
-      "detail": "Investigation complete. 5 manual GHL UI changes needed to save ~360 SMS/month (~£365/year). Fix follow-up reply detection, move Rob notifications to email, combine appointment SMS, draft 10 dormant workflows, add lost-opp check. See UNIT-ECONOMICS-REFERENCE.md Section 13."
+      "action": "GHL SMS Audit — Awaiting StudioHub Support",
+      "detail": "4/5 cleanup tasks done (27 Jan). Outstanding: ask StudioHub to add opportunity_abandoned tag to locked Abandoned workflow. Then add tag check to Follow Ups. Measure SMS on 1 Mar vs 2,668 baseline (target ~2,250). See Section 14."
     },
     {
       "category": "OPS",
