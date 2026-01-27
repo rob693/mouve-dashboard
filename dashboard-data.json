@@ -201,30 +201,6 @@
       ]
     },
     {
-      "name": "GHL SMS Audit & Cleanup",
-      "phase_current": 1,
-      "phase_total": 1,
-      "implementation_plan": "UNIT-ECONOMICS-REFERENCE.md (Section 13-14)",
-      "purpose": "Reduce wasteful outbound SMS by fixing follow-up workflow logic, cleaning up dormant workflows (~410 SMS/month = ~£415/year savings)",
-      "status": "complete",
-      "status_label": "4/5 Tasks Done ✅ | 1 Awaiting StudioHub Support",
-      "completed_phases": [
-        {"name": "Investigation", "summary": "Examined 20+ conversations via API. Follow-up ignores replies/lost contacts. Campaigns are email-only. No duplicate appointment reminders. SMS volume breakdown estimated."},
-        {"name": "Execution (27 Jan 2026)", "summary": "Fixed follow-up reply detection (4 Go To redirects), moved lead notifications to email, combined appointment messages, drafted 10 dormant workflows, added lost opportunity check. Est. ~410 SMS/month saved."}
-      ],
-      "next_phase": {
-        "name": "Outstanding: opportunity_abandoned tag",
-        "detail": "StudioHub support must add tag to locked Abandoned workflow, then add to Follow Ups If/Else condition",
-        "status": "waiting",
-        "tasks": [
-          "Ask StudioHub to add opportunity_abandoned tag (due 31 Jan)",
-          "Add tag check to Follow Ups workflow (due 7 Feb)",
-          "Check SMS numbers vs 2,668 baseline (due 1 Mar)"
-        ]
-      },
-      "remaining_phases": []
-    },
-    {
       "name": "Financial Intelligence System",
       "phase_current": 0,
       "phase_total": 7,
@@ -309,6 +285,20 @@
       "status": "in_progress",
       "status_label": "Phase 6A 🔧 Unblocked — Ready for Yael pilot",
       "next_action": "Yael pilot: log 1 week of sessions via Custom Portal → verify n8n statement generation"
+    },
+    {
+      "name": "GHL SMS Audit & Cleanup",
+      "phase_current": 1,
+      "phase_total": 1,
+      "implementation_plan": "UNIT-ECONOMICS-REFERENCE.md (Section 13-14)",
+      "purpose": "Reduce wasteful outbound SMS — fixed follow-up logic, cleaned dormant workflows (~410 SMS/month = ~£415/year savings)",
+      "status": "complete",
+      "status_label": "4/5 Tasks Done ✅ | 1 Awaiting StudioHub Support",
+      "next_action": "Ask StudioHub to add opportunity_abandoned tag. Then add to Follow Ups. Measure SMS on 1 Mar vs 2,668 baseline.",
+      "completed_phases": [
+        {"name": "Investigation", "summary": "20+ conversations examined via API"},
+        {"name": "Execution (27 Jan 2026)", "summary": "4 Go To redirects fixed, lead notifications moved to email, appointment messages combined, 10 dormant workflows drafted, lost opp check added"}
+      ]
     },
     {
       "name": "Operational Dashboard",
