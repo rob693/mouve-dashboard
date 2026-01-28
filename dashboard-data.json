@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-29T02:15:00Z",
+  "generated_at": "2026-01-28T11:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "2.1",
 
@@ -8,7 +8,7 @@
     "in_progress": 7,
     "waiting": 1,
     "planned": 2,
-    "blocked": 1
+    "blocked": 0
   },
 
   "tasks": [
@@ -43,10 +43,10 @@
       "context": "After device testing complete"
     },
     {
-      "title": "Validate £600/term average revenue from Pembee",
-      "due": "2026-02-14",
+      "title": "Review 12-Month Budget spreadsheet (6 tabs) — flag any errors",
+      "due": "2026-01-31",
       "status": "pending",
-      "context": "Unit Economics — needed for financial model"
+      "context": "12-Month Budget — Phase 3. Spreadsheet in Downloads folder."
     },
     {
       "title": "Send bookkeeper 9-question email (reconciliation, tracking categories, recategorisation)",
@@ -73,10 +73,10 @@
       "context": "Blocked until bookkeeper email sent"
     },
     {
-      "title": "Rob: Answer 8 budget input questions (time horizon, opening cash, autopay dates, directors' pay, hires, prices, clubs, camps)",
-      "due": "2026-01-29",
+      "title": "Write 1-page budget summary (achievable? fragile? what breaks first?)",
+      "due": "2026-02-07",
       "status": "pending",
-      "context": "12-Month Budget — Phase 1 blocker. Questions in implementation plan."
+      "context": "12-Month Budget — Phase 4. After Rob reviews spreadsheet."
     }
   ],
 
@@ -302,32 +302,32 @@
     },
     {
       "name": "12-Month Operational Budget",
-      "phase_current": 1,
+      "phase_current": 3,
       "phase_total": 5,
       "implementation_plan": "12-MONTH-BUDGET-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Decision-grade budget testing feasibility of £750K annual revenue — units-based, seasonal, autopay-aware cash flow, growth bridge",
       "status": "in_progress",
-      "status_label": "v1.0 | Phase 1: Spec Complete ✅ | Blocked: Rob inputs needed 🔴",
+      "status_label": "v2.0 | Spreadsheet Built ✅ | Phase 3: Rob Review 🔧",
       "completed_phases": [
-        {"name": "Phase 1 (Partial): Specification", "summary": "Rob drafted budget instructions. Virtual CFO critiqued (10 issues: missing Dance School, no seasonality, wrong timeframe). Revised spec produced with 6 tabs, seasonal model, autopay cash flow."}
+        {"name": "Phase 1: Specification & Inputs", "summary": "Virtual CFO critique (10 issues). Revised spec. Rob answered all 8 questions with Xero screenshots + DSP class data."},
+        {"name": "Phase 2: Spreadsheet Build", "summary": "6-tab spreadsheet built: Revenue (£418,996), Direct Costs, Marketing, Overheads (£141,696), Cash Flow (min £116K Sep), Growth Bridge (corrected with DSP pricing £196.40 avg)."}
       ],
       "next_phase": {
-        "name": "Phase 1 (Complete): Rob answers 8 input questions",
-        "detail": "Time horizon, opening cash, autopay dates, directors' pay, planned hires, price increases, school club expansion, camp expansion",
-        "status": "blocked",
+        "name": "Phase 3: Review & Refine",
+        "detail": "Rob reviews spreadsheet. Correct any errors. Create standalone assumptions register.",
+        "status": "in_progress",
         "tasks": [
-          "Rob answers 8 input questions",
-          "Build 6-tab spreadsheet structure",
-          "Populate with Financial Health Check data"
+          "Rob reviews 6-tab spreadsheet (in Downloads)",
+          "Correct any pricing/revenue errors flagged",
+          "Create standalone assumptions register",
+          "Reconcile DSP theoretical vs actual revenue"
         ]
       },
       "remaining_phases": [
-        "Phase 2: Spreadsheet Build (6 tabs)",
-        "Phase 3: Data Population & Assumptions",
-        "Phase 4: Written Summary & Review",
+        "Phase 4: Written Summary",
         "Phase 5: Finalise & Deliver"
       ],
-      "key_finding": "£750K = 1.85x current run rate (~£407K). Gap: £343K-£412K. May need only 15 net additional students if revenue per student holds. Autopay seasonality is critical — 2 events = 55% of class revenue."
+      "key_finding": "Budget FY2025/26: £418,996 revenue, £180,612 net profit (43.1%). Gap to £750K: £331,004. DSP data: weighted avg class fee £196.40/term (44 classes, 512 enrollments). Revenue per student: £723/yr."
     }
   ],
 
@@ -541,8 +541,8 @@
     },
     {
       "category": "ACTION",
-      "action": "Rob: Answer 8 budget input questions — BLOCKS spreadsheet build",
-      "detail": "12-Month Budget project blocked on Rob's inputs: (1) time horizon, (2) opening cash balance, (3) summer autopay date/amount, (4) directors' remuneration target, (5) planned hires, (6) price increases, (7) school club expansion, (8) camp expansion. Once answered, Claude builds the 6-tab spreadsheet."
+      "action": "Rob: Review 12-Month Budget spreadsheet (6 tabs)",
+      "detail": "Budget v1 built with DSP-corrected pricing. 6 tabs: Revenue (£418,996), Direct Costs, Marketing, Overheads (£141,696), Cash Flow (min £116K Sep, 5.5mo runway), Growth Bridge (£331K gap to £750K, 8 levers + price increase explorer). Key correction: weighted avg class fee = £196.40/term (not £600). File in Downloads folder."
     },
     {
       "category": "OPS",
