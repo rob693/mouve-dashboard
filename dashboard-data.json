@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-28T11:00:00Z",
+  "generated_at": "2026-01-28T14:30:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "2.1",
 
@@ -77,6 +77,18 @@
       "due": "2026-02-07",
       "status": "pending",
       "context": "12-Month Budget — Phase 4. After Rob reviews spreadsheet."
+    },
+    {
+      "title": "Party Landing Page — Fix critical images (Sydney map, stock photos)",
+      "due": "2026-02-03",
+      "status": "pending",
+      "context": "Party Landing Page — Phase 1. Map shows Sydney, all images show adults not kids."
+    },
+    {
+      "title": "Party Landing Page — Source real MOUVE party photos from Louise",
+      "due": "2026-02-07",
+      "status": "pending",
+      "context": "Party Landing Page — need kids dancing, party activities, happy parents."
     }
   ],
 
@@ -332,6 +344,31 @@
   ],
 
   "secondary_projects": [
+    {
+      "name": "Party Booking Landing Page",
+      "phase_current": 1,
+      "phase_total": 3,
+      "implementation_plan": "PARTY-LANDING-PAGE-IMPLEMENTATION-PLAN-JAN2026.md",
+      "purpose": "High-converting SEO landing page for MOUVE children's birthday parties. Relume → Webflow → parties.makeamouve.com",
+      "status": "in_progress",
+      "status_label": "v1.0 | Phase 1: Section Review 🔧 (15 tasks created)",
+      "target_url": "parties.makeamouve.com",
+      "next_phase": {
+        "name": "Phase 1: Section Review",
+        "detail": "Review each section for wording, images, colours. Fix critical issues (Sydney map, stock photos of adults)",
+        "status": "in_progress",
+        "tasks": [
+          "Fix critical images (Sydney map → NW London)",
+          "Update global colours in Style Guide",
+          "Work through 12 sections top to bottom",
+          "Source real MOUVE party photos from Louise"
+        ]
+      },
+      "remaining_phases": [
+        "Phase 2: Export to Webflow + Form Backend",
+        "Phase 3: DNS Setup + Go Live"
+      ]
+    },
     {
       "name": "Dance Studio SaaS (New Product)",
       "phase_current": 0,
