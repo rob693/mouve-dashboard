@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-01-27T01:30:00Z",
+  "generated_at": "2026-01-28T22:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
-  "version": "2.0",
+  "version": "2.1",
 
   "health_summary": {
     "complete": 31,
-    "in_progress": 4,
-    "waiting": 2,
+    "in_progress": 5,
+    "waiting": 1,
     "planned": 2,
     "blocked": 0
   },
@@ -202,33 +202,39 @@
     },
     {
       "name": "Financial Intelligence System",
-      "phase_current": 0,
-      "phase_total": 7,
+      "phase_current": 1,
+      "phase_total": 10,
       "implementation_plan": "FINANCIAL-INTELLIGENCE-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Unified financial reporting — reads Xero (P&L, balance sheet, bank) + enriches with Airtable ops data. Dashboard + Google Sheet + email digests.",
-      "status": "waiting",
-      "status_label": "Phase 0/7 — Waiting on Rob (Xero OAuth in n8n)",
-      "completed_phases": [],
+      "purpose": "Unified financial reporting — reads Xero (P&L, balance sheet, bank) + Stripe (4 payment accounts, real-time revenue truth) + enriches with Airtable ops data. Dashboard + Google Sheet + email digests.",
+      "status": "in_progress",
+      "status_label": "v2.0 | Phase 1 Core Complete (FIN-01 live, 16 nodes) | Airtable + GitHub push pending",
+      "completed_phases": [
+        {"name": "Phase 0: Xero Credential Setup", "summary": "Built-in + generic OAuth2 credential (reports scope fix). Organisation: Radar Dance Ltd."},
+        {"name": "Phase 0.5b: Stripe Credentials", "summary": "4 read-only Header Auth credentials (Class4Kids, DSP, Pembee, TeamUp)"}
+      ],
       "next_phase": {
-        "name": "Phase 0: Xero n8n Credential Setup",
-        "detail": "Rob must configure Xero OAuth2 credential in n8n UI (browser-based flow, ~5 min)",
-        "status": "waiting",
+        "name": "Phase 1 Remaining + Phase 2: Dashboard",
+        "detail": "Complete FIN-01 (Airtable queries + GitHub push), then build financial dashboard on GitHub Pages with MVP 10 numbers",
+        "status": "in_progress",
         "tasks": [
-          "Add 'Xero OAuth2 API' credential in n8n",
-          "Enter Client ID + Secret",
-          "Authorise via Xero popup (select 'MOUVE by Dancing with Louise')",
-          "Test: GET /Reports/ProfitAndLoss returns Dec 2025 data"
+          "Add Airtable queries (ENROLLMENTS, CLASSES, CONTACTS) to FIN-01",
+          "Add GitHub push node to FIN-01",
+          "Build financial dashboard HTML (MVP 10 numbers)",
+          "Add Data Confidence badge + dual-bar revenue chart (Xero vs enriched)"
         ]
       },
       "remaining_phases": [
-        "Phase 1: Weekly Financial Snapshot Workflow (FIN-01)",
-        "Phase 2: Financial Dashboard (Vercel)",
-        "Phase 3: Google Sheet (5 tabs)",
-        "Phase 4: Email Digests (weekly + monthly)",
+        "Phase 2: Financial Dashboard (GitHub Pages)",
+        "Phase 3: Google Sheet (8 tabs + Reconciliation)",
+        "Phase 4: Email Digests (weekly + monthly + recon alerts)",
         "Phase 5: Historical Snapshots + Trends",
-        "Phase 6: Class Profitability + Revenue-at-Risk",
-        "Phase 7: 13-Week Cash Flow Forecast"
-      ]
+        "Phase 6: Class Profitability + Capacity",
+        "Phase 7: 13-Week Cash Flow Forecast",
+        "Phase 8: Retention Intelligence",
+        "Phase 9: Pricing & Payment Health",
+        "Phase 10: Marketing Funnel Quality"
+      ],
+      "key_finding": "Xero understates revenue by ~20% (£28.9K gap, Sep-Jan). Stripe enrichment provides real-time truth. Bookkeeper questions prepared."
     }
   ],
 
@@ -405,7 +411,8 @@
     {"id": "LF-08", "name": "Trial Expiry Handler v1", "trigger": "Daily", "status": "active"},
     {"id": "LF-09", "name": "Daily Trial Alert v1", "trigger": "Daily 8am", "status": "active"},
     {"id": "LF-10", "name": "TeamUp Calendar Sync v1", "trigger": "Daily 5am", "status": "active"},
-    {"id": "LF-11", "name": "Trial Event Creator v1", "trigger": "Real-time webhook", "status": "active"}
+    {"id": "LF-11", "name": "Trial Event Creator v1", "trigger": "Real-time webhook", "status": "active"},
+    {"id": "FIN-01", "name": "Weekly Financial Snapshot v2.1", "trigger": "Sat 07:00 + Manual", "status": "active"}
   ],
 
   "priority_actions": [
@@ -430,9 +437,14 @@
       "detail": "Upload 25 email HTMLs from onboarding-sequence-v2-final-18jan2026/ + create 10 AC automations. All tone amendments complete. Estimate: 60 minutes."
     },
     {
-      "category": "PREREQUISITE",
-      "action": "Financial Intelligence — Rob: Xero OAuth Setup (5 min)",
-      "detail": "Configure Xero OAuth2 credential in n8n UI. Add credential > enter Client ID 9A5737E2D115479D8846A22355B01D36 + Secret > click 'Connect my account' > authorise in Xero popup > test P&L endpoint. Blocks all 7 phases of financial reporting."
+      "category": "BUILD",
+      "action": "Financial Intelligence — FIN-01 Core Live, Phase 2 Next",
+      "detail": "FIN-01 workflow live (16 nodes, Sat 07:00). Xero P&L + Bank Health + 4 Stripe accounts + Reconciliation Engine + Cash Health. Found: Xero understates revenue by ~20%. Next: Add Airtable queries, GitHub push, then build financial dashboard (MVP 10 numbers)."
+    },
+    {
+      "category": "ACTION",
+      "action": "Rob: Send bookkeeper reconciliation questions",
+      "detail": "Prepared in docs/financial/BOOKKEEPER-RECONCILIATION-QUESTIONS.md. Covers: reconciliation schedule, bank feeds, revenue recognition, per-stream gaps (Ladies Fitness 59%, School Clubs 38%), tracking category allocation, expense recategorisation."
     },
     {
       "category": "OPS",
