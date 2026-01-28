@@ -13,16 +13,10 @@
 
   "tasks": [
     {
-      "title": "Ask StudioHub support to add opportunity_abandoned tag to Abandoned workflow",
-      "due": "2026-01-31",
-      "status": "pending",
-      "context": "GHL SMS Cleanup — workflow locked at user entry level"
-    },
-    {
       "title": "Add opportunity_abandoned tag check to Follow Ups workflow",
       "due": "2026-02-07",
       "status": "blocked",
-      "context": "Blocked until StudioHub adds the tag"
+      "context": "Blocked until StudioHub actioning Freshdesk #25983 (raised 28 Jan 2026)"
     },
     {
       "title": "Check GHL SMS numbers vs January baseline (2,668)",
@@ -584,7 +578,7 @@
     {
       "category": "OPS",
       "action": "GHL SMS Audit — Awaiting StudioHub Support",
-      "detail": "4/5 cleanup tasks done (27 Jan). Outstanding: ask StudioHub to add opportunity_abandoned tag to locked Abandoned workflow. Then add tag check to Follow Ups. Measure SMS on 1 Mar vs 2,668 baseline (target ~2,250). See Section 14."
+      "detail": "4/5 cleanup tasks done (27 Jan). Freshdesk #25983 raised (28 Jan) for StudioHub to add opportunity_abandoned tag to locked Abandoned workflow. Once actioned: add tag check to Follow Ups. Measure SMS on 1 Mar vs 2,668 baseline (target ~2,250). See Section 14."
     },
     {
       "category": "OPS",
