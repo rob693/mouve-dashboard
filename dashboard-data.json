@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-01-28T22:00:00Z",
+  "generated_at": "2026-01-28T23:30:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "2.1",
 
   "health_summary": {
     "complete": 31,
-    "in_progress": 5,
+    "in_progress": 6,
     "waiting": 1,
     "planned": 2,
     "blocked": 0
@@ -47,6 +47,30 @@
       "due": "2026-02-14",
       "status": "pending",
       "context": "Unit Economics — needed for financial model"
+    },
+    {
+      "title": "Send bookkeeper 9-question email (reconciliation, tracking categories, recategorisation)",
+      "due": "2026-01-31",
+      "status": "pending",
+      "context": "Financial Health Check — Phase 4. Doc: BOOKKEEPER-RECONCILIATION-QUESTIONS.md"
+    },
+    {
+      "title": "Upload Financial Health Check spreadsheet + analysis doc to Google Drive",
+      "due": "2026-01-31",
+      "status": "pending",
+      "context": "Financial Health Check — Phase 4. Files in docs/financial/"
+    },
+    {
+      "title": "Chase failed LF payments (Jho Delos Reyes — monthly failures since Jul 2025)",
+      "due": "2026-02-07",
+      "status": "pending",
+      "context": "Financial Health Check — £1,240 uncollected from 31 failed payments"
+    },
+    {
+      "title": "Follow up with bookkeeper if no response within 7 days",
+      "due": "2026-02-07",
+      "status": "blocked",
+      "context": "Blocked until bookkeeper email sent"
     }
   ],
 
@@ -234,7 +258,41 @@
         "Phase 9: Pricing & Payment Health",
         "Phase 10: Marketing Funnel Quality"
       ],
-      "key_finding": "Xero understates revenue by ~20% (£28.9K gap, Sep-Jan). Stripe enrichment provides real-time truth. Bookkeeper questions prepared."
+      "key_finding": "Xero understates revenue by ~12% (~£18K gap, revised from £29K after TeamUp correction). Stripe enrichment provides real-time truth. Bookkeeper questions prepared."
+    },
+    {
+      "name": "Financial Health Check",
+      "phase_current": 4,
+      "phase_total": 6,
+      "implementation_plan": "FINANCIAL-HEALTH-CHECK-IMPLEMENTATION-PLAN-JAN2026.md",
+      "purpose": "One-time diagnostic deep dive: stream profitability, class economics, marketing analysis, revenue reconciliation, bookkeeper questions",
+      "status": "in_progress",
+      "status_label": "v1.0 | Phases 1-3 Complete ✅ | Phase 4: Bookkeeper Communication 🔧",
+      "completed_phases": [
+        {"name": "Phase 1: Data Collection & Analysis", "summary": "Xero P&L, Stripe data, Airtable staff/class data, school/camp tracking categories, 4-year comparison"},
+        {"name": "Phase 2: Revenue Reconciliation", "summary": "~£18K gap (revised from £29K). Ladies Fitness verified via TeamUp at 70-75% margin."},
+        {"name": "Phase 3: Marketing & Cost Deep Dive", "summary": "Marketing down 23% YoY after correcting £6,230 miscategorised items (Outsourced Doers + Upwork)"}
+      ],
+      "next_phase": {
+        "name": "Phase 4: Bookkeeper Communication",
+        "detail": "Rob to send 9-question email to bookkeeper. Upload spreadsheet + analysis doc to Google Drive.",
+        "status": "in_progress",
+        "tasks": [
+          "Rob sends bookkeeper email (9 questions)",
+          "Upload spreadsheet + analysis doc to Google Drive",
+          "Chase failed LF payments (£1,240 uncollected)"
+        ]
+      },
+      "remaining_phases": [
+        "Phase 5: Bookkeeper Response & Data Fixes",
+        "Phase 6: Final Analysis & Close-Out (hands off to Financial Intelligence)"
+      ],
+      "key_outputs": [
+        "MOUVE-Financial-Health-Check-Jan2026.xlsx (7-tab spreadsheet)",
+        "CLASS-PROFITABILITY-ANALYSIS-JAN2026.md (comprehensive analysis)",
+        "BOOKKEEPER-RECONCILIATION-QUESTIONS.md (9 questions)"
+      ],
+      "key_finding": "All streams profitable. Revenue gap ~£18K (12%). Marketing well-controlled (down 23% YoY). Ladies Fitness: 161 customers, £24K annualised, 70-75% margin."
     }
   ],
 
@@ -443,8 +501,8 @@
     },
     {
       "category": "ACTION",
-      "action": "Rob: Send bookkeeper reconciliation questions",
-      "detail": "Prepared in docs/financial/BOOKKEEPER-RECONCILIATION-QUESTIONS.md. Covers: reconciliation schedule, bank feeds, revenue recognition, per-stream gaps (Ladies Fitness 59%, School Clubs 38%), tracking category allocation, expense recategorisation."
+      "action": "Rob: Send bookkeeper 9-question email",
+      "detail": "Prepared in docs/financial/BOOKKEEPER-RECONCILIATION-QUESTIONS.md. 9 questions covering: reconciliation schedule, bank feeds, revenue recognition, per-stream gaps (Ladies Fitness 31%, School Clubs 38%), monthly management accounts, Stripe visibility, tracking category allocation, expense recategorisation (Outsourced Doers refund + Upwork reclassification). Financial Health Check Phase 4."
     },
     {
       "category": "OPS",
