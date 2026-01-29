@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-01-29T02:30:00Z",
+  "generated_at": "2026-01-29T22:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
-  "version": "2.2",
+  "version": "2.3",
 
   "health_summary": {
     "complete": 31,
     "in_progress": 8,
     "waiting": 1,
-    "planned": 2,
+    "planned": 3,
     "blocked": 0
   },
 
@@ -304,7 +304,7 @@
         "CLASS-PROFITABILITY-ANALYSIS-JAN2026.md (comprehensive analysis)",
         "BOOKKEEPER-RECONCILIATION-QUESTIONS.md (9 questions)"
       ],
-      "key_finding": "All streams profitable. Revenue gap ~£18K (12%). Marketing well-controlled (down 23% YoY). Ladies Fitness: 161 customers, £24K annualised, 70-75% margin."
+      "key_finding": "All streams profitable. Revenue gap ~£15.5K (11%). Marketing well-controlled (down 23% YoY). Ladies Fitness: 161 customers, £24K annualised, 70-75% margin. DSP LTV supplement added (29 Jan): Economic LTV £2,692, 16.6 months avg retention."
     },
     {
       "name": "12-Month Operational Budget",
@@ -370,6 +370,40 @@
         "no_email": 72,
         "no_phone": 82,
         "ghl_external_ids": 2706
+      }
+    },
+    {
+      "name": "Business Diagnostic & Scale Readiness",
+      "phase_current": 1,
+      "phase_total": 5,
+      "implementation_plan": "BUSINESS-DIAGNOSTIC-SCALE-READINESS-IMPLEMENTATION-PLAN-FEB2026.md",
+      "purpose": "Strategic diagnostic consolidating 6 months of financial/operational data. Evaluates readiness for three growth paths: second location, franchise, or Dance School in a Box coaching product.",
+      "status": "planned",
+      "status_label": "v1.0 | Phase 1: Data Consolidation 📋",
+      "completed_phases": [],
+      "next_phase": {
+        "name": "Phase 1: Data Consolidation",
+        "detail": "Consolidate all existing metrics from Health Check, DSP Unit Economics, Budget, Supabase, Cross-Sell into single diagnostic data sheet.",
+        "status": "planned",
+        "tasks": [
+          "Extract revenue, cost, LTV, retention from existing docs",
+          "Reconcile LTV figures (£4,110 projected vs £2,692 observed)",
+          "Create Diagnostic Data Sheet with source attribution",
+          "Flag data gaps with owner and priority"
+        ]
+      },
+      "remaining_phases": [
+        "Phase 2: Operational Assessment (Rob/Louise questionnaire)",
+        "Phase 3: Growth Path Modelling (scale, franchise, DSIAB)",
+        "Phase 4: IP & Systems Inventory",
+        "Phase 5: Decision Framework & Final Document"
+      ],
+      "key_data": {
+        "growth_paths": ["Second Location", "Franchise", "Dance School in a Box (DSIAB)"],
+        "economic_ltv": "£2,692 (observed) / £4,110 (projected)",
+        "avg_retention": "16.6 months",
+        "cac_ltv_ratio": "1:22 (fully loaded)",
+        "data_sources_consolidated": 8
       }
     }
   ],
@@ -616,6 +650,11 @@
       "category": "OPS",
       "action": "GHL SMS Audit — Awaiting StudioHub Support",
       "detail": "4/5 cleanup tasks done (27 Jan). Freshdesk #25983 raised (28 Jan) for StudioHub to add opportunity_abandoned tag to locked Abandoned workflow. Once actioned: add tag check to Follow Ups. Measure SMS on 1 Mar vs 2,668 baseline (target ~2,250). See Section 14."
+    },
+    {
+      "category": "BUILD",
+      "action": "Business Diagnostic — Phase 1 Ready (Data Consolidation)",
+      "detail": "New strategic project: consolidate all existing financial/operational data into single diagnostic, then evaluate 3 growth paths (scale, franchise, DSIAB). Phase 1 is Claude-led (no Rob input needed). Phase 2 needs Rob/Louise questionnaire (~60-90 min). DSP Unit Economics reference doc created (29 Jan)."
     },
     {
       "category": "OPS",
