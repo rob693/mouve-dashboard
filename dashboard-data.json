@@ -25,18 +25,6 @@
       "context": "Target ~2,250 after cleanup. See UNIT-ECONOMICS-REFERENCE.md Section 14"
     },
     {
-      "title": "Test ops dashboard on 3 devices (desktop, tablet, mobile)",
-      "due": "2026-02-01",
-      "status": "pending",
-      "context": "Operational Dashboard Phase B rollout"
-    },
-    {
-      "title": "Share ops dashboard with Louise",
-      "due": "2026-02-01",
-      "status": "pending",
-      "context": "After device testing complete"
-    },
-    {
       "title": "Review 12-Month Budget spreadsheet (6 tabs) — flag any errors",
       "due": "2026-01-31",
       "status": "pending",
@@ -53,12 +41,6 @@
       "due": "2026-01-31",
       "status": "pending",
       "context": "Financial Health Check — Phase 4. Files in docs/financial/"
-    },
-    {
-      "title": "Chase failed LF payments (Jho Delos Reyes — monthly failures since Jul 2025)",
-      "due": "2026-02-07",
-      "status": "pending",
-      "context": "Financial Health Check — £1,240 uncollected from 31 failed payments"
     },
     {
       "title": "Follow up with bookkeeper if no response within 7 days",
