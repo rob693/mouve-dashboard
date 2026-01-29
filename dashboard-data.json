@@ -640,6 +640,33 @@
     "data_quality": { "status": "healthy", "contacts": 2972, "orphans": 18 }
   },
 
+  "governing_documents": [
+    {
+      "name": "Compaction Recovery Protocol",
+      "path": "docs/protocols/COMPACTION-RECOVERY-PROTOCOL.md",
+      "description": "Meta instructions + template for implementation plans. Defines verification workflow, Claude rules, and n8n patterns.",
+      "applies_to": "All projects with 3+ phases"
+    },
+    {
+      "name": "Dashboard Schema & Update Instructions",
+      "path": "mouve-dashboard/DASHBOARD-STRUCTURE-V2.md",
+      "description": "Complete JSON schema for all 16 dashboard sections. Update patterns, session wrap-up checklist, do/don't rules.",
+      "applies_to": "All dashboard updates"
+    },
+    {
+      "name": "Project MODE System",
+      "path": "~/.claude/CLAUDE.md",
+      "description": "BUILD / REVIEW / SUMMARISE / IDLE mode governance. Post-compaction rules. Controlled execution over helpful autonomy.",
+      "applies_to": "All Claude Code sessions"
+    },
+    {
+      "name": "Implementation Plan Protocol",
+      "path": "CLAUDE.md (Implementation Plan Protocol section)",
+      "description": "Required format, phase status icons, mandatory sections. Every project with 3+ phases must have an implementation plan.",
+      "applies_to": "All multi-phase projects"
+    }
+  ],
+
   "priority_actions": [
     {
       "category": "COMPLETE",

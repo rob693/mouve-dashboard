@@ -536,6 +536,49 @@
             width: 100%;
         }
 
+        /* ── Governing Documents ── */
+        .gov-register {
+            margin-bottom: 1.25rem;
+        }
+        .gov-register-title {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #9ca3af;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .gov-doc {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .gov-doc:last-child { border-bottom: none; }
+        .gov-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #374151;
+        }
+        .gov-path {
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.65rem;
+            color: #9ca3af;
+            margin-top: 0.1rem;
+        }
+        .gov-desc {
+            font-size: 0.73rem;
+            color: #6b7280;
+            margin-top: 0.2rem;
+            line-height: 1.45;
+        }
+        .gov-applies {
+            font-size: 0.65rem;
+            color: #9ca3af;
+            margin-top: 0.15rem;
+        }
+        .gov-applies strong {
+            color: #6b7280;
+        }
+
         /* ── Collapsible Details ── */
         details.collapsible {
             background: var(--surface);
@@ -729,7 +772,10 @@
         <div class="section-head">Priority Actions <span class="count" id="actions-count">0</span></div>
         <div class="actions-container" id="actions-container"></div>
 
-        <!-- 9. Collapsed Sections -->
+        <!-- 9. Governing Documents -->
+        <div class="gov-register" id="gov-register"></div>
+
+        <!-- 10. Collapsed Sections -->
         <div class="section-head">More</div>
 
         <details class="collapsible" id="secondary-details">
@@ -843,6 +889,9 @@
 
         // Priority Actions
         renderActions(d.priority_actions || []);
+
+        // Governing Documents
+        renderGoverning(d.governing_documents || []);
 
         // Collapsed
         renderSecondary(d.secondary_projects || []);
@@ -1118,6 +1167,22 @@
                 </div>
             `;
         }).join('');
+    }
+
+    function renderGoverning(docs) {
+        const el = document.getElementById('gov-register');
+        if (!docs || !docs.length) return;
+        el.innerHTML = `
+            <div class="gov-register-title">Governing Documents</div>
+            ${docs.map(d => `
+                <div class="gov-doc">
+                    <div class="gov-title">${d.name}</div>
+                    <div class="gov-path">${d.path}</div>
+                    <div class="gov-desc">${d.description}</div>
+                    <div class="gov-applies">Applies to: <strong>${d.applies_to}</strong></div>
+                </div>
+            `).join('')}
+        `;
     }
 
     function renderSecondary(projects) {
