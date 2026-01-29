@@ -4,8 +4,8 @@
   "version": "2.4",
 
   "health_summary": {
-    "complete": 32,
-    "in_progress": 8,
+    "complete": 33,
+    "in_progress": 7,
     "waiting": 1,
     "planned": 3,
     "blocked": 0
@@ -153,8 +153,8 @@
       "phase_total": 8,
       "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Custom Next.js portal — 6 features: timesheets, assessments, attendance, my classes, term dates, my details (replaces Softr + paper registers)",
-      "status": "in_progress",
-      "status_label": "v2.2 | 6 Features Complete ✅ | LIVE — All Staff 29 Jan | Post-launch: 34 class records + 3 evening fixes (Sherry/Yael)",
+      "status": "complete",
+      "status_label": "v2.3 | COMPLETE ✅ | 8/8 Phases Done | LIVE — All 22 Staff (29 Jan) | Post-launch: data audit clean, monitoring",
       "completed_phases": [
         {"name": "Phase 1: Project Scaffolding", "summary": "Next.js 16 + Tailwind + Vercel deploy"},
         {"name": "Phase 2: Authentication", "summary": "Magic link via Resend, JWT sessions, middleware"},
@@ -163,20 +163,27 @@
         {"name": "Phase 4+ Bonus Features", "summary": "Teacher name display, class filtering by instructor, auto-refresh after submit, /term-dates page"},
         {"name": "Phase 7: Attendance Tracker", "summary": "/attendance page shows today's classes, tap to mark Present/Absent per student, bulk save to Airtable"},
         {"name": "My Classes Feature", "summary": "/my-classes shows all assigned classes grouped by day, today's classes link to attendance"},
-        {"name": "Phase 8: My Details", "summary": "View/edit personal info + masked bank details with confirmation modal (25 Jan)"}
+        {"name": "Phase 8: My Details", "summary": "View/edit personal info + masked bank details with confirmation modal (25 Jan)"},
+        {"name": "Rollout + Post-Launch", "summary": "All 22 staff live (29 Jan). Post-launch: 34 instructor name fixes, 3 class data fixes (Sherry/Yael), full 72-class audit, 28 records corrected, 5 TEST records cleaned up."}
       ],
-      "next_phase": {
-        "name": "Phase 5-6: Testing & Rollout",
-        "detail": "End-to-end testing, mobile device testing, Yael pilot, staff rollout",
-        "status": "planned",
-        "tasks": [
-          "Test attendance on real Sunday classes",
-          "Test on iOS Safari + Android Chrome",
-          "Yael pilot for timesheet + attendance",
-          "All-staff rollout announcement"
+      "next_phase": null,
+      "remaining_phases": [],
+      "post_launch": {
+        "status": "monitoring",
+        "go_live_date": "2026-01-29",
+        "staff_count": 22,
+        "post_launch_fixes": [
+          "34 Instructor name mismatches (first-name only → full name)",
+          "Sherry: added missing MOUVEit Wed class + aligned Fitness category",
+          "Yael: added Teen Leadership day/times/term dates",
+          "Full audit: 28 records corrected, 5 TEST records cancelled",
+          "Total Sessions bulk-filled for 19 classes using Spring 2026 term dates"
+        ],
+        "known_gaps": [
+          "Feb Camp x2 — no instructor yet (camp 16-20 Feb, staff TBC)",
+          "Ladies Fitness Cover — ad-hoc placeholder, no fixed times"
         ]
       },
-      "remaining_phases": [],
       "feature_backlog": {
         "file": "STAFF-PORTAL-FEATURE-BACKLOG.md",
         "total_ideas": 12,
@@ -596,9 +603,9 @@
 
   "priority_actions": [
     {
-      "category": "LIVE",
-      "action": "Custom Staff Portal — LIVE (Post-Launch Fixes Applied)",
-      "detail": "22 staff live (29 Jan). Post-launch: 34 Instructor name fixes + evening session: added Sherry's MOUVEit Wed class, aligned both MOUVEit classes to Fitness category, added Yael's Teen Leadership day/times. Monitor for further staff feedback."
+      "category": "COMPLETE",
+      "action": "Custom Staff Portal — COMPLETE ✅ (Post-Launch Monitoring)",
+      "detail": "All 8 phases done, 6 features live, 22 staff onboarded (29 Jan). Full data audit completed: 28 class records corrected, 5 TEST records cleaned up. Remaining: monitor staff feedback, Feb Camp instructor assignment when staffed."
     },
     {
       "category": "BUILD",
