@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-01-29T15:00:00Z",
+  "generated_at": "2026-01-29T19:50:00Z",
   "generated_by": "SYS-DASHBOARD v2",
-  "version": "2.4",
+  "version": "2.5",
 
   "health_summary": {
     "complete": 33,
@@ -276,41 +276,45 @@
     },
     {
       "name": "Supabase Shadow Database",
-      "phase_current": 3,
-      "phase_total": 5,
+      "phase_current": 4,
+      "phase_total": 6,
       "implementation_plan": "SUPABASE-SHADOW-DATABASE-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Clean relational database (27 tables, 7 schemas) replacing 42+ Airtable tables. Shadow sync first, then new features write directly to Supabase.",
       "status": "in_progress",
-      "status_label": "v1.4 | Phase 3 Complete ✅ + Backfill ✅ | Stripe Load Abandoned (no emails) | Phase 4: n8n Sync 📋",
+      "status_label": "v1.4 | Phase 3 Complete ✅ (5 tables synced) | Phase 4: Verify + Reconcile 📋",
       "completed_phases": [
         {"name": "Phase 1: Schema Design", "summary": "27 tables across 7 Postgres schemas (core, programme, enrollment, finance, staff, crm, ops). DDL, triggers, RLS, 5 views."},
-        {"name": "Phase 2: Deploy & Seed", "summary": "Schema deployed to Supabase Pro. 5 programmes, 4 venues, 2 terms, 2 term breaks seeded."},
-        {"name": "Phase 3: Initial Data Load", "summary": "3,003 contacts loaded + multi-source enrichment (DSP, CFK, GHL). Airtable backfill: 310 emails, 1,930 phones, 1,300 DOBs, 1,515 external IDs, 55 households, 98 member links. 32 duplicates merged. Post-cleanup: 2,972 contacts in both systems."}
+        {"name": "Phase 2: Deploy & Seed", "summary": "Schema deployed to Supabase Pro. 5 programmes, 17 venues, 10 terms seeded."},
+        {"name": "Phase 3: Shadow Sync", "summary": "5 tables synced: contacts (2,972), classes (91), staff (19), enrollments (1,399), delivered_sessions (5). Multi-source enrichment + Airtable backfill complete. 0 FK orphans. Idempotent Python sync script ready."}
       ],
       "next_phase": {
-        "name": "Phase 4: n8n Nightly Sync",
-        "detail": "Build n8n workflow for one-way Airtable → Supabase nightly sync. Upsert by airtable_record_id.",
+        "name": "Phase 4: Verify + Reconcile",
+        "detail": "Build n8n nightly sync, verify views, run reconciliation for 3 consecutive days.",
         "status": "planned",
         "tasks": [
-          "~~Load payments from Stripe~~ — ABANDONED (90% unattributable)",
-          "Build n8n sync workflow (contacts, households, classes, enrollments, payments)",
-          "Configure schedule trigger (nightly)",
-          "Add sync logging to ops.system_health"
+          "Build n8n nightly sync workflow (calls Python script)",
+          "Verify 5 views return accurate data",
+          "Record count reconciliation (Airtable vs Supabase)",
+          "3 consecutive successful nightly syncs",
+          "Document operational runbook"
         ]
       },
       "remaining_phases": [
-        "Phase 5: New Features on Supabase (camps, parties write directly)"
+        "Phase 5: New Features on Supabase (camps, parties write directly)",
+        "Phase 6: Dashboard Migration"
       ],
       "data_quality": {
         "contacts": 2972,
+        "classes": 91,
+        "staff": 19,
+        "enrollments": 1399,
+        "delivered_sessions": 5,
         "households": 609,
         "household_members": 1367,
-        "enrollments": 4735,
         "orphans_remaining": 18,
+        "fk_orphans": 0,
         "airtable_backfill": "complete",
-        "no_email": 72,
-        "no_phone": 82,
-        "ghl_external_ids": 2706
+        "sync_script": "scripts/sync-airtable-to-supabase.py"
       }
     },
     {
