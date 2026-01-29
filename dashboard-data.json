@@ -252,18 +252,21 @@
       "implementation_plan": "12-MONTH-BUDGET-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Decision-grade budget testing feasibility of £750K annual revenue — units-based, seasonal, autopay-aware cash flow, growth bridge",
       "status": "in_progress",
-      "status_label": "v2.0 | Spreadsheet Built ✅ | Phase 3: Rob Review 🔧",
+      "status_label": "v2.1 | Phase 3: Review 🔧 | Venue rental understated — SMSJ invoices analysed, budget needs rebuild",
       "completed_phases": [
         {"name": "Phase 1: Specification & Inputs", "summary": "Virtual CFO critique (10 issues). Revised spec. Rob answered all 8 questions with Xero screenshots + DSP class data."},
         {"name": "Phase 2: Spreadsheet Build", "summary": "6-tab spreadsheet built: Revenue (£418,996), Direct Costs, Marketing, Overheads (£141,696), Cash Flow (min £116K Sep), Growth Bridge (corrected with DSP pricing £196.40 avg)."}
       ],
       "next_phase": {
         "name": "Phase 3: Review & Refine",
-        "detail": "Rob reviews spreadsheet. Correct any errors. Create standalone assumptions register.",
+        "detail": "Venue rental deep dive started. SMSJ invoices found — budget understated by £5-10K. Need remaining venue invoices to complete rebuild.",
         "status": "in_progress",
         "tasks": [
-          "Rob reviews 6-tab spreadsheet (in Downloads)",
-          "Correct any pricing/revenue errors flagged",
+          "Get Spring 2026 SMSJ invoices (Louise's Gmail)",
+          "Get school club venue invoices (Kerem, HJPS, Sinai, MMK, Etz Chaim, IJDS, Hampstead Garden)",
+          "Rebuild Tab 2 venue costs with invoice-based data",
+          "Fix Tab 5 cash flow timing (termly lumps not monthly)",
+          "Sukkahmart £1,227 — recategorise in Xero (not venue rental)",
           "Create standalone assumptions register",
           "Reconcile DSP theoretical vs actual revenue"
         ]
@@ -272,7 +275,7 @@
         "Phase 4: Written Summary",
         "Phase 5: Finalise & Deliver"
       ],
-      "key_finding": "Budget FY2025/26: £418,996 revenue, £180,612 net profit (43.1%). Gap to £750K: £331,004. DSP data: weighted avg class fee £196.40/term (44 classes, 512 enrollments). Revenue per student: £723/yr."
+      "key_finding": "VENUE FINDING (29 Jan): SMSJ invoices show per-session rates — Sun £306.25, Wed £180.45, Tue £137.50, Camp £248.06. SMSJ alone ~£26.6K/yr annualised. Budget had ~£23K for ALL venues. Sukkahmart £1,227 miscategorised. Budget spreadsheet now on Google Sheets."
     },
     {
       "name": "Supabase Shadow Database",
@@ -599,8 +602,8 @@
     },
     {
       "category": "ACTION",
-      "action": "Rob: Review 12-Month Budget spreadsheet (6 tabs)",
-      "detail": "Budget v1 built with DSP-corrected pricing. 6 tabs: Revenue (£418,996), Direct Costs, Marketing, Overheads (£141,696), Cash Flow (min £116K Sep, 5.5mo runway), Growth Bridge (£331K gap to £750K, 8 levers + price increase explorer). Key correction: weighted avg class fee = £196.40/term (not £600). File in Downloads folder."
+      "action": "12-Month Budget — Venue Rental Rebuild Needed",
+      "detail": "Review started 29 Jan. SMSJ invoices analysed: SMSJ alone ~£26.6K/yr (Sun £306.25/session, Wed £180.45, Tue £137.50). Budget had £23K for ALL venues — understated by £5-10K. Sukkahmart £1,227 miscategorised. Need: Spring 2026 SMSJ invoices + school club venue invoices from Louise's Gmail. Spreadsheet now on Google Sheets."
     },
     {
       "category": "OPS",
