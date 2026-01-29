@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-29T14:00:00Z",
+  "generated_at": "2026-01-29T15:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "2.4",
 
@@ -324,7 +324,7 @@
       "implementation_plan": "SUPABASE-SHADOW-DATABASE-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Clean relational database (27 tables, 7 schemas) replacing 42+ Airtable tables. Shadow sync first, then new features write directly to Supabase.",
       "status": "in_progress",
-      "status_label": "v1.3 | Phase 3 Complete ✅ + Airtable Backfill ✅ | Phase 4: n8n Sync 📋",
+      "status_label": "v1.4 | Phase 3 Complete ✅ + Backfill ✅ | Stripe Load Abandoned (no emails) | Phase 4: n8n Sync 📋",
       "completed_phases": [
         {"name": "Phase 1: Schema Design", "summary": "27 tables across 7 Postgres schemas (core, programme, enrollment, finance, staff, crm, ops). DDL, triggers, RLS, 5 views."},
         {"name": "Phase 2: Deploy & Seed", "summary": "Schema deployed to Supabase Pro. 5 programmes, 4 venues, 2 terms, 2 term breaks seeded."},
@@ -335,7 +335,7 @@
         "detail": "Build n8n workflow for one-way Airtable → Supabase nightly sync. Upsert by airtable_record_id.",
         "status": "planned",
         "tasks": [
-          "Load payments from Airtable (Phase 3 remaining)",
+          "~~Load payments from Stripe~~ — ABANDONED (90% unattributable)",
           "Build n8n sync workflow (contacts, households, classes, enrollments, payments)",
           "Configure schedule trigger (nightly)",
           "Add sync logging to ops.system_health"
