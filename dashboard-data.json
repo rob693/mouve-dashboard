@@ -154,7 +154,7 @@
       "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Custom Next.js portal — 6 features: timesheets, assessments, attendance, my classes, term dates, my details (replaces Softr + paper registers)",
       "status": "in_progress",
-      "status_label": "v2.0 | 6 Features Complete ✅ | LIVE — Sent to All Staff 29 Jan",
+      "status_label": "v2.2 | 6 Features Complete ✅ | LIVE — All Staff 29 Jan | Post-launch fix: 34 class records corrected",
       "completed_phases": [
         {"name": "Phase 1: Project Scaffolding", "summary": "Next.js 16 + Tailwind + Vercel deploy"},
         {"name": "Phase 2: Authentication", "summary": "Magic link via Resend, JWT sessions, middleware"},
@@ -597,8 +597,8 @@
   "priority_actions": [
     {
       "category": "LIVE",
-      "action": "Custom Staff Portal — LIVE to All Staff",
-      "detail": "Announcement email sent to 22 staff on 29 Jan 2026. Portal: mouve-staff-portal.vercel.app. 6 features: Assessments, Timesheets, Attendance, My Classes, Term Dates, My Details. Monitor for login issues and feedback."
+      "action": "Custom Staff Portal — LIVE (Post-Launch Fix Applied)",
+      "detail": "Announcement sent to 22 staff on 29 Jan. Post-launch bug: 34/69 class records had first-name-only Instructor fields (e.g. 'Yael' not 'Yael Pinnick') — portal FIND() couldn't match. Fixed all 34 records. Full audit: all 69 active classes now correct. Lianna Goldman reported the issue (could only see 1 of 4 classes). Monitor for further feedback."
     },
     {
       "category": "BUILD",
