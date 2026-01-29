@@ -1107,6 +1107,7 @@
                     <div class="pc-next"><strong>Next:</strong> ${nextText}</div>
                     <button class="pc-expand" onclick="var d=document.getElementById('${id}');d.classList.toggle('open');this.textContent=d.classList.contains('open')?'\u25B4 Hide details':'\u25BE Show details';">\u25BE Show details</button>
                     <div class="pc-details" id="${id}">
+                        <div style="font-family:'Monaco','Courier New',monospace;font-size:0.7rem;color:var(--gray);margin-bottom:0.5rem;">${p.implementation_plan || ''}</div>
                         ${completedHtml}
                         ${nextDetailHtml}
                         ${remainingHtml}
