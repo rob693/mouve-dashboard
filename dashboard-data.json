@@ -154,7 +154,7 @@
       "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Custom Next.js portal — 6 features: timesheets, assessments, attendance, my classes, term dates, my details (replaces Softr + paper registers)",
       "status": "in_progress",
-      "status_label": "v2.0 | 6 Features Complete ✅ | Ready for Staff Rollout",
+      "status_label": "v2.0 | 6 Features Complete ✅ | LIVE — Sent to All Staff 29 Jan",
       "completed_phases": [
         {"name": "Phase 1: Project Scaffolding", "summary": "Next.js 16 + Tailwind + Vercel deploy"},
         {"name": "Phase 2: Authentication", "summary": "Magic link via Resend, JWT sessions, middleware"},
@@ -596,14 +596,14 @@
 
   "priority_actions": [
     {
-      "category": "ROLLOUT",
-      "action": "Custom Staff Portal — Ready for Staff Rollout",
-      "detail": "All 6 features complete (25 Jan): Assessments, Timesheets, Term Dates, Attendance, My Classes, My Details. Ready for Yael pilot (1 week), then announce to all 21 staff."
+      "category": "LIVE",
+      "action": "Custom Staff Portal — LIVE to All Staff",
+      "detail": "Announcement email sent to 22 staff on 29 Jan 2026. Portal: mouve-staff-portal.vercel.app. 6 features: Assessments, Timesheets, Attendance, My Classes, Term Dates, My Details. Monitor for login issues and feedback."
     },
     {
       "category": "BUILD",
-      "action": "Staff Costs Yael Pilot — UNBLOCKED",
-      "detail": "Custom Portal timesheet form deployed (26 Jan). Ready for Yael to log 1 week of sessions and verify n8n statement generation works with portal-created records."
+      "action": "Staff Costs — Monitor Timesheet Usage via Portal",
+      "detail": "Portal live to all staff (29 Jan). Monitor that staff log sessions via portal timesheet form, then verify n8n statement generation works with portal-created records."
     },
     {
       "category": "BUILD",
