@@ -49,6 +49,12 @@
       "context": "Email sent 29 Jan 2026. Follow up if no response by 5 Feb."
     },
     {
+      "title": "Tell bookkeeper to recategorise Sukkahmart £1,227 in Xero (not venue rental)",
+      "due": "2026-02-05",
+      "status": "pending",
+      "context": "Oct 2025 Sukkahmart payment miscategorised as Venue Rental (Account 301). It's a Sukkot purchase. Mention when bookkeeper responds to 9-question email."
+    },
+    {
       "title": "Write 1-page budget summary (achievable? fragile? what breaks first?)",
       "due": "2026-02-07",
       "status": "pending",
