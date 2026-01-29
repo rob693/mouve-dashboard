@@ -4,7 +4,7 @@
   "version": "2.3",
 
   "health_summary": {
-    "complete": 31,
+    "complete": 32,
     "in_progress": 8,
     "waiting": 1,
     "planned": 3,
@@ -45,8 +45,8 @@
     {
       "title": "Send bookkeeper 9-question email (reconciliation, tracking categories, recategorisation)",
       "due": "2026-01-31",
-      "status": "pending",
-      "context": "Financial Health Check — Phase 4. Doc: BOOKKEEPER-RECONCILIATION-QUESTIONS.md"
+      "status": "done",
+      "context": "Financial Health Check — Phase 4. Sent 29 Jan 2026."
     },
     {
       "title": "Upload Financial Health Check spreadsheet + analysis doc to Google Drive",
@@ -62,9 +62,9 @@
     },
     {
       "title": "Follow up with bookkeeper if no response within 7 days",
-      "due": "2026-02-07",
-      "status": "blocked",
-      "context": "Blocked until bookkeeper email sent"
+      "due": "2026-02-05",
+      "status": "pending",
+      "context": "Email sent 29 Jan 2026. Follow up if no response by 5 Feb."
     },
     {
       "title": "Write 1-page budget summary (achievable? fragile? what breaks first?)",
@@ -638,8 +638,8 @@
     },
     {
       "category": "ACTION",
-      "action": "Rob: Send bookkeeper 9-question email",
-      "detail": "Prepared in docs/financial/BOOKKEEPER-RECONCILIATION-QUESTIONS.md. 9 questions covering: reconciliation schedule, bank feeds, revenue recognition, per-stream gaps (Ladies Fitness 31%, School Clubs 38%), monthly management accounts, Stripe visibility, tracking category allocation, expense recategorisation (Outsourced Doers refund + Upwork reclassification). Financial Health Check Phase 4."
+      "action": "Follow up with bookkeeper Mel if no response by 5 Feb",
+      "detail": "9-question email sent 29 Jan 2026. Covers: reconciliation schedule, bank feeds, revenue recognition, per-stream gaps, monthly management accounts, Stripe visibility, tracking category allocation, expense recategorisation. Financial Health Check Phase 4."
     },
     {
       "category": "ACTION",
