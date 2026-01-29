@@ -148,56 +148,6 @@
       ]
     },
     {
-      "name": "Custom Staff Portal (Next.js)",
-      "phase_current": 8,
-      "phase_total": 8,
-      "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Custom Next.js portal — 6 features: timesheets, assessments, attendance, my classes, term dates, my details (replaces Softr + paper registers)",
-      "status": "complete",
-      "status_label": "v2.3 | COMPLETE ✅ | 8/8 Phases Done | LIVE — All 22 Staff (29 Jan) | Post-launch: data audit clean, monitoring",
-      "completed_phases": [
-        {"name": "Phase 1: Project Scaffolding", "summary": "Next.js 16 + Tailwind + Vercel deploy"},
-        {"name": "Phase 2: Authentication", "summary": "Magic link via Resend, JWT sessions, middleware"},
-        {"name": "Phase 3: Assessment Form", "summary": "5 cascading dropdown pairs, 18 Next Steps phrases added, tested working"},
-        {"name": "Phase 4: Timesheet Form", "summary": "Date/Class/Venue form + My Sessions view + Status='Logged'"},
-        {"name": "Phase 4+ Bonus Features", "summary": "Teacher name display, class filtering by instructor, auto-refresh after submit, /term-dates page"},
-        {"name": "Phase 7: Attendance Tracker", "summary": "/attendance page shows today's classes, tap to mark Present/Absent per student, bulk save to Airtable"},
-        {"name": "My Classes Feature", "summary": "/my-classes shows all assigned classes grouped by day, today's classes link to attendance"},
-        {"name": "Phase 8: My Details", "summary": "View/edit personal info + masked bank details with confirmation modal (25 Jan)"},
-        {"name": "Rollout + Post-Launch", "summary": "All 22 staff live (29 Jan). Post-launch: 34 instructor name fixes, 3 class data fixes (Sherry/Yael), full 72-class audit, 28 records corrected, 5 TEST records cleaned up."}
-      ],
-      "next_phase": null,
-      "remaining_phases": [],
-      "post_launch": {
-        "status": "monitoring",
-        "go_live_date": "2026-01-29",
-        "staff_count": 22,
-        "post_launch_fixes": [
-          "34 Instructor name mismatches (first-name only → full name)",
-          "Sherry: added missing MOUVEit Wed class + aligned Fitness category",
-          "Yael: added Teen Leadership day/times/term dates",
-          "Full audit: 28 records corrected, 5 TEST records cancelled",
-          "Total Sessions bulk-filled for 19 classes using Spring 2026 term dates"
-        ],
-        "known_gaps": [
-          "Feb Camp x2 — no instructor yet (camp 16-20 Feb, staff TBC)",
-          "Ladies Fitness Cover — ad-hoc placeholder, no fixed times"
-        ]
-      },
-      "feature_backlog": {
-        "file": "STAFF-PORTAL-FEATURE-BACKLOG.md",
-        "total_ideas": 12,
-        "completed_features": ["Attendance", "My Classes", "Timesheets", "Student Termly Reports", "Term Dates", "My Details"],
-        "queue": [
-          {"name": "Incident Reports", "status": "next", "complexity": "medium"},
-          {"name": "My Pay Summary", "status": "backlog", "complexity": "low"},
-          {"name": "Student Notes", "status": "backlog", "complexity": "medium"},
-          {"name": "Sub Request", "status": "backlog", "complexity": "medium"},
-          {"name": "Announcements", "status": "backlog", "complexity": "low"}
-        ]
-      }
-    },
-    {
       "name": "Student Progress Reports",
       "phase_current": 3,
       "phase_total": 5,
@@ -479,6 +429,16 @@
       "next_action": "Yael pilot: log 1 week of sessions via Custom Portal → verify n8n statement generation"
     },
     {
+      "name": "Staff Portal: Monitoring & Feature Backlog",
+      "phase_current": 0,
+      "phase_total": 0,
+      "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
+      "purpose": "Post-launch monitoring + feature backlog (Incident Reports, My Pay Summary, Student Notes, Sub Request, Announcements)",
+      "status": "in_progress",
+      "status_label": "LIVE ✅ | Monitoring staff feedback | 5 features in backlog",
+      "next_action": "Monitor staff usage, assign Feb Camp instructors when staffed, pick next backlog feature"
+    },
+    {
       "name": "Weekly Auto-Blog System",
       "phase_current": 0,
       "phase_total": 6,
@@ -500,7 +460,8 @@
       {"name": "Term Renewal Engine", "result": "Complete"},
       {"name": "Teacher Culture Programme", "result": "12 campaigns live"},
       {"name": "Operational Dashboard", "result": "Vercel + n8n pipeline + 7 KPI cards (27 Jan 2026)"},
-      {"name": "GHL SMS Audit & Cleanup", "result": "5/5 tasks done, ~410 SMS/month saved. All complete 29 Jan 2026"}
+      {"name": "GHL SMS Audit & Cleanup", "result": "5/5 tasks done, ~410 SMS/month saved. All complete 29 Jan 2026"},
+      {"name": "Custom Staff Portal (Next.js)", "result": "8/8 phases, 6 features, 22 staff live (29 Jan 2026). Post-launch data audit: 28 records fixed."}
     ],
     "simple": [
       {"name": "Children's Onboarding Email Refinement", "result": "10 emails × 3 age tracks, all pass Email Deliverability Checklist v1.1"},
