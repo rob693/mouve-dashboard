@@ -15,8 +15,8 @@
     {
       "title": "Add opportunity_abandoned tag check to Follow Ups workflow",
       "due": "2026-02-07",
-      "status": "blocked",
-      "context": "Blocked until StudioHub actioning Freshdesk #25983 (raised 28 Jan 2026)"
+      "status": "done",
+      "context": "StudioHub granted edit access 29 Jan. Rob added tag + Follow Ups If/Else. All 5/5 SMS cleanup tasks complete."
     },
     {
       "title": "Check GHL SMS numbers vs January baseline (2,668)",
@@ -493,7 +493,7 @@
       {"name": "Term Renewal Engine", "result": "Complete"},
       {"name": "Teacher Culture Programme", "result": "12 campaigns live"},
       {"name": "Operational Dashboard", "result": "Vercel + n8n pipeline + 7 KPI cards (27 Jan 2026)"},
-      {"name": "GHL SMS Audit & Cleanup", "result": "4/5 tasks done, ~410 SMS/month saved (27 Jan 2026)"}
+      {"name": "GHL SMS Audit & Cleanup", "result": "5/5 tasks done, ~410 SMS/month saved. All complete 29 Jan 2026"}
     ],
     "simple": [
       {"name": "Children's Onboarding Email Refinement", "result": "10 emails × 3 age tracks, all pass Email Deliverability Checklist v1.1"},
@@ -632,8 +632,8 @@
     },
     {
       "category": "OPS",
-      "action": "GHL SMS Audit — Awaiting StudioHub Support",
-      "detail": "4/5 cleanup tasks done (27 Jan). Freshdesk #25983 raised (28 Jan) for StudioHub to add opportunity_abandoned tag to locked Abandoned workflow. Once actioned: add tag check to Follow Ups. Measure SMS on 1 Mar vs 2,668 baseline (target ~2,250). See Section 14."
+      "action": "GHL SMS Audit — Complete ✅ (Measure 1 Mar)",
+      "detail": "5/5 cleanup tasks done. opportunity_abandoned tag added to Abandoned workflow + Follow Ups If/Else updated (29 Jan). Measure SMS on 1 Mar vs 2,668 baseline (target ~2,250). See UNIT-ECONOMICS-REFERENCE.md Section 14."
     },
     {
       "category": "BUILD",
