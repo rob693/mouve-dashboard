@@ -65,6 +65,18 @@
       "due": "2026-02-07",
       "status": "pending",
       "context": "Party Landing Page — need kids dancing, party activities, happy parents."
+    },
+    {
+      "title": "Supabase nightly sync — check ops.system_health for 02:00 sync entry",
+      "due": "2026-01-30",
+      "status": "pending",
+      "context": "Phase 4 verification: SELECT * FROM ops.system_health WHERE check_name='airtable_sync' ORDER BY checked_at DESC LIMIT 10; — should show entries from ~02:00 today."
+    },
+    {
+      "title": "Supabase nightly sync — verify 3 consecutive status='pass' entries",
+      "due": "2026-02-01",
+      "status": "pending",
+      "context": "Phase 4 final verification: 3 consecutive nights of successful syncs. Query: SELECT checked_at, status, details->>'table' FROM ops.system_health WHERE check_name='airtable_sync' AND check_type='sync' ORDER BY checked_at DESC LIMIT 15;"
     }
   ],
 
@@ -282,22 +294,22 @@
       "implementation_plan": "SUPABASE-SHADOW-DATABASE-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Clean relational database (27 tables, 7 schemas) replacing 42+ Airtable tables. Shadow sync first, then new features write directly to Supabase.",
       "status": "in_progress",
-      "status_label": "v1.4 | Phase 3 Complete ✅ (5 tables synced) | Phase 4: Verify + Reconcile 📋",
+      "status_label": "v1.5 | Phase 4 Complete ✅ (nightly sync + monitoring live) | Phase 5: New Features 📋",
       "completed_phases": [
         {"name": "Phase 1: Schema Design", "summary": "27 tables across 7 Postgres schemas (core, programme, enrollment, finance, staff, crm, ops). DDL, triggers, RLS, 5 views."},
         {"name": "Phase 2: Deploy & Seed", "summary": "Schema deployed to Supabase Pro. 5 programmes, 17 venues, 10 terms seeded."},
-        {"name": "Phase 3: Shadow Sync", "summary": "5 tables synced: contacts (2,972), classes (91), staff (19), enrollments (1,399), delivered_sessions (5). Multi-source enrichment + Airtable backfill complete. 0 FK orphans. Idempotent Python sync script ready."}
+        {"name": "Phase 3: Shadow Sync", "summary": "5 tables synced: contacts (2,972), classes (91), staff (19), enrollments (1,399), delivered_sessions (9). Multi-source enrichment + Airtable backfill complete. 0 FK orphans."},
+        {"name": "Phase 4: Verify + Reconcile", "summary": "Views verified (4/5 returning data). Record counts within tolerance. Nightly launchd sync at 02:00 + n8n monitor at 07:00 + ops.system_health logging + reconciliation + operational runbook."}
       ],
       "next_phase": {
-        "name": "Phase 4: Verify + Reconcile",
-        "detail": "Build n8n nightly sync, verify views, run reconciliation for 3 consecutive days.",
+        "name": "Phase 5: New Features Direct",
+        "detail": "Start writing new data directly to Supabase (camps, parties, financial snapshots).",
         "status": "planned",
         "tasks": [
-          "Build n8n nightly sync workflow (calls Python script)",
-          "Verify 5 views return accurate data",
-          "Record count reconciliation (Airtable vs Supabase)",
-          "3 consecutive successful nightly syncs",
-          "Document operational runbook"
+          "Camp registers write to Supabase",
+          "Party bookings write to Supabase",
+          "Staff Portal v2 reads from Supabase",
+          "FIN-01 writes to finance.financial_snapshots"
         ]
       },
       "remaining_phases": [
@@ -309,13 +321,15 @@
         "classes": 91,
         "staff": 19,
         "enrollments": 1399,
-        "delivered_sessions": 5,
+        "delivered_sessions": 9,
         "households": 609,
         "household_members": 1367,
         "orphans_remaining": 18,
         "fk_orphans": 0,
         "airtable_backfill": "complete",
-        "sync_script": "scripts/sync-airtable-to-supabase.py"
+        "sync_script": "scripts/sync-airtable-to-supabase.py",
+        "nightly_sync": "launchd 02:00 GMT",
+        "monitoring": "n8n NMTobx1NCtluuOtG2kgrp (07:00 GMT)"
       }
     },
     {
