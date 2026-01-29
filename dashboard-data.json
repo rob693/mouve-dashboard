@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-01-29T22:00:00Z",
+  "generated_at": "2026-01-29T14:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
-  "version": "2.3",
+  "version": "2.4",
 
   "health_summary": {
     "complete": 32,
@@ -324,11 +324,11 @@
       "implementation_plan": "SUPABASE-SHADOW-DATABASE-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Clean relational database (27 tables, 7 schemas) replacing 42+ Airtable tables. Shadow sync first, then new features write directly to Supabase.",
       "status": "in_progress",
-      "status_label": "v1.3 | Phase 3 Complete ✅ (multi-source enrichment) | Phase 4: n8n Sync 📋",
+      "status_label": "v1.3 | Phase 3 Complete ✅ + Airtable Backfill ✅ | Phase 4: n8n Sync 📋",
       "completed_phases": [
         {"name": "Phase 1: Schema Design", "summary": "27 tables across 7 Postgres schemas (core, programme, enrollment, finance, staff, crm, ops). DDL, triggers, RLS, 5 views."},
         {"name": "Phase 2: Deploy & Seed", "summary": "Schema deployed to Supabase Pro. 5 programmes, 4 venues, 2 terms, 2 term breaks seeded."},
-        {"name": "Phase 3: Initial Data Load", "summary": "2,849 contacts, 1,166 households, 3,193 members, 44 classes, 4,735 enrollments loaded from Airtable. Multi-source enrichment: DSP (inactive+active), ClassForKids (active+inactive), GHL API (7,298 contacts). 192 email fills, 880 phone fills, 2,706 GHL external IDs, 1,272 DOB fills. 18 orphans remaining."}
+        {"name": "Phase 3: Initial Data Load", "summary": "3,003 contacts loaded + multi-source enrichment (DSP, CFK, GHL). Airtable backfill: 310 emails, 1,930 phones, 1,300 DOBs, 1,515 external IDs, 55 households, 98 member links. 32 duplicates merged. Post-cleanup: 2,972 contacts in both systems."}
       ],
       "next_phase": {
         "name": "Phase 4: n8n Nightly Sync",
@@ -345,10 +345,12 @@
         "Phase 5: New Features on Supabase (camps, parties write directly)"
       ],
       "data_quality": {
-        "contacts": 2849,
-        "households": 1166,
+        "contacts": 2972,
+        "households": 609,
+        "household_members": 1367,
         "enrollments": 4735,
         "orphans_remaining": 18,
+        "airtable_backfill": "complete",
         "no_email": 72,
         "no_phone": 82,
         "ghl_external_ids": 2706
