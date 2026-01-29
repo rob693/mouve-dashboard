@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOUVE Customer Engine - Project Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --green: #10b981;
+            --green-bg: #d1fae5;
+            --amber: #f59e0b;
+            --amber-bg: #fef3c7;
+            --red: #ef4444;
+            --red-bg: #fee2e2;
+            --blue: #3b82f6;
+            --blue-bg: #dbeafe;
+            --gray: #6b7280;
+            --gray-bg: #f3f4f6;
+            --dark: #1f2937;
+            --purple: #8b5cf6;
+            --purple-bg: #ede9fe;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: var(--dark);
+            line-height: 1.5;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .last-updated {
+            color: var(--gray);
+            font-size: 0.875rem;
+        }
+
+        /* Health Summary */
+        .health-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .health-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.25rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .health-card .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .health-card .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--gray);
+            margin-top: 0.5rem;
+        }
+
+        .health-card.green .number { color: var(--green); }
+        .health-card.amber .number { color: var(--amber); }
+        .health-card.red .number { color: var(--red); }
+        .health-card.blue .number { color: var(--blue); }
+
+        /* Section Headers */
+        .section-header {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Documentation Reference Boxes */
+        .doc-reference-boxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .doc-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            padding: 1.25rem;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .doc-box-title {
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .doc-box-file {
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.8rem;
+            background: rgba(255,255,255,0.2);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            margin-bottom: 0.75rem;
+            display: inline-block;
+        }
+
+        .doc-box-desc {
+            font-size: 0.8rem;
+            line-height: 1.5;
+            opacity: 0.95;
+        }
+
+        .doc-box-meta {
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        /* Project Cards */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .project-header {
+            padding: 1rem 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .project-title {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .implementation-plan-file {
+            font-size: 0.75rem;
+            color: var(--gray);
+            font-family: 'Monaco', 'Courier New', monospace;
+            margin-top: 0.25rem;
+        }
+
+        .project-status {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: 500;
+        }
+
+        .status-complete { background: var(--green-bg); color: var(--green); }
+        .status-in-progress { background: var(--blue-bg); color: var(--blue); }
+        .status-blocked { background: var(--red-bg); color: var(--red); }
+        .status-waiting { background: var(--amber-bg); color: var(--amber); }
+        .status-planned { background: var(--gray-bg); color: var(--gray); }
+
+        .project-body {
+            padding: 1rem 1.25rem;
+        }
+
+        .phase-list {
+            list-style: none;
+        }
+
+        .phase-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .phase-item:last-child {
+            border-bottom: none;
+        }
+
+        .phase-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            margin-top: 2px;
+        }
+
+        .phase-indicator.complete { background: var(--green); color: white; }
+        .phase-indicator.in-progress { background: var(--blue); color: white; }
+        .phase-indicator.blocked { background: var(--red); color: white; }
+        .phase-indicator.waiting { background: var(--amber); color: white; }
+        .phase-indicator.planned { background: #d1d5db; color: white; }
+
+        .phase-content {
+            flex: 1;
+        }
+
+        .phase-name {
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        .phase-detail {
+            font-size: 0.75rem;
+            color: var(--gray);
+            margin-top: 0.125rem;
+        }
+
+        .phase-blocker {
+            font-size: 0.75rem;
+            color: var(--red);
+            margin-top: 0.25rem;
+            font-style: italic;
+        }
+
+        /* Sub-phases */
+        .sub-phases {
+            margin-top: 0.5rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e5e7eb;
+        }
+
+        .sub-phase {
+            font-size: 0.75rem;
+            padding: 0.25rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sub-phase-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .sub-phase-dot.complete { background: var(--green); }
+        .sub-phase-dot.in-progress { background: var(--blue); }
+        .sub-phase-dot.pending { background: #d1d5db; }
+
+        /* Dependency Map */
+        .dependency-map {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+        }
+
+        .dep-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .dep-column {
+            text-align: center;
+        }
+
+        .dep-column-header {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--gray);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .dep-node {
+            background: #f8fafc;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 0.75rem 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .dep-node.active {
+            border-color: var(--green);
+            background: var(--green-bg);
+        }
+
+        .dep-node.partial {
+            border-color: var(--amber);
+            background: var(--amber-bg);
+        }
+
+        .dep-node.blocked {
+            border-color: var(--red);
+            background: var(--red-bg);
+        }
+
+        .dep-node .status-dot {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .dep-node .status-dot.green { background: var(--green); }
+        .dep-node .status-dot.amber { background: var(--amber); }
+        .dep-node .status-dot.red { background: var(--red); }
+
+        /* Flow arrows */
+        .flow-section {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .flow-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .flow-node {
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .flow-node.source { background: var(--purple-bg); color: var(--purple); }
+        .flow-node.process { background: var(--blue-bg); color: var(--blue); }
+        .flow-node.destination { background: var(--green-bg); color: var(--green); }
+
+        .flow-arrow {
+            color: #d1d5db;
+            font-size: 1.25rem;
+        }
+
+        /* Workflows Table */
+        .workflows-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .workflows-table th {
+            text-align: left;
+            padding: 0.75rem;
+            background: #f8fafc;
+            font-weight: 600;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .workflows-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .workflows-table tr:hover {
+            background: #f8fafc;
+        }
+
+        .workflows-table tr.ready-row {
+            background: var(--blue-bg);
+        }
+
+        .wf-status {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+
+        .wf-status.active { background: var(--green); }
+        .wf-status.ready { background: var(--blue); }
+        .wf-status.draft { background: var(--gray); }
+
+        /* Completed Projects */
+        .completed-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .completed-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .completed-header {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .completed-header.green { background: var(--green-bg); }
+        .completed-header.blue { background: var(--blue-bg); }
+
+        .completed-header h3 {
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .completed-header.green h3 { color: var(--green); }
+        .completed-header.blue h3 { color: var(--blue); }
+
+        .completed-body {
+            padding: 1rem 1.25rem;
+        }
+
+        .completed-table {
+            width: 100%;
+            font-size: 0.8rem;
+        }
+
+        .completed-table tr {
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .completed-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .completed-table td {
+            padding: 0.5rem 0;
+        }
+
+        .completed-table td:last-child {
+            text-align: right;
+        }
+
+        /* Weekly Tasks */
+        .weekly-tasks-list {
+            list-style: none;
+        }
+
+        .weekly-task-item {
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            background: #f9fafb;
+        }
+
+        .weekly-task-item:hover {
+            background: #f3f4f6;
+            border-color: var(--blue);
+        }
+
+        .weekly-task-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .weekly-task-name {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text);
+        }
+
+        .weekly-task-frequency {
+            font-size: 0.75rem;
+            color: var(--amber);
+            font-weight: 500;
+        }
+
+        .weekly-task-command {
+            font-family: 'Monaco', 'Courier New', monospace;
+            background: #fff;
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--blue);
+            margin: 0.5rem 0;
+            border: 1px solid #e5e7eb;
+        }
+
+        .weekly-task-description {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-top: 0.5rem;
+        }
+
+        .weekly-task-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.75rem;
+            color: var(--gray);
+            margin-top: 0.5rem;
+        }
+
+        /* Tasks Row (side by side) */
+        .tasks-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Tasks To-Do */
+        .tasks-list {
+            list-style: none;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .task-item:last-child {
+            border-bottom: none;
+        }
+
+        .task-checkbox {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            margin-top: 2px;
+        }
+
+        .task-checkbox.pending {
+            border: 2px solid #d1d5db;
+            background: white;
+        }
+
+        .task-checkbox.done {
+            background: var(--green);
+            color: white;
+        }
+
+        .task-checkbox.blocked {
+            background: var(--red);
+            color: white;
+        }
+
+        .task-content {
+            flex: 1;
+        }
+
+        .task-title {
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        .task-title.done {
+            text-decoration: line-through;
+            color: var(--gray);
+        }
+
+        .task-meta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.25rem;
+            font-size: 0.75rem;
+            color: var(--gray);
+        }
+
+        .task-due.overdue {
+            color: var(--red);
+            font-weight: 600;
+        }
+
+        .task-due.soon {
+            color: var(--amber);
+            font-weight: 600;
+        }
+
+        /* Secondary Projects */
+        .secondary-project-item {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .secondary-project-item:last-child {
+            border-bottom: none;
+        }
+
+        .secondary-project-item:hover {
+            background: #f9fafb;
+        }
+
+        /* Priority Actions */
+        .actions-list {
+            list-style: none;
+        }
+
+        .action-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f3f4f6;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .action-item:last-child {
+            border-bottom: none;
+        }
+
+        .action-badge {
+            font-size: 0.7rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            color: white;
+            white-space: nowrap;
+        }
+
+        .action-badge.lf { background: var(--blue); }
+        .action-badge.ghl { background: var(--purple); }
+        .action-badge.chase { background: var(--amber); }
+        .action-badge.ops { background: var(--green); }
+        .action-badge.p0 { background: var(--red); }
+
+        /* Legend */
+        .legend {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--gray);
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        @media (max-width: 768px) {
+            .tasks-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            body { padding: 1rem; }
+            .project-card, .dependency-map, .flow-section { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <h1>MOUVE Customer Engine</h1>
+                <p style="color: var(--gray); font-size: 0.875rem;">Project Status Dashboard (Dynamic)</p>
+            </div>
+            <div class="last-updated" id="last-updated">
+                Loading...
+            </div>
+        </header>
+
+        <!-- Health Summary -->
+        <div class="health-summary" id="health-summary">
+            <div class="health-card green">
+                <div class="number" id="health-complete">--</div>
+                <div class="label">Complete</div>
+            </div>
+            <div class="health-card blue">
+                <div class="number" id="health-progress">--</div>
+                <div class="label">In Progress</div>
+            </div>
+            <div class="health-card amber">
+                <div class="number" id="health-waiting">--</div>
+                <div class="label">Waiting</div>
+            </div>
+            <div class="health-card red">
+                <div class="number" id="health-blocked">--</div>
+                <div class="label">Blocked</div>
+            </div>
+        </div>
+
+        <!-- Tasks (side by side) -->
+        <div class="tasks-row">
+            <div class="tasks-col">
+                <h2 class="section-header" style="margin-top: 0;">Tasks To Do</h2>
+                <div style="background: white; border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                    <ul class="tasks-list" id="tasks-list">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+            </div>
+            <div class="tasks-col">
+                <h2 class="section-header" style="margin-top: 0;">Weekly Tasks</h2>
+                <div style="background: white; border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                    <ul class="weekly-tasks-list" id="weekly-tasks-list">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Primary Projects -->
+        <h2 class="section-header">🎯 Primary Projects</h2>
+
+        <!-- Documentation Reference Boxes -->
+        <div class="doc-reference-boxes">
+            <div class="doc-box">
+                <div class="doc-box-title">📋 Compaction Recovery Protocol</div>
+                <div class="doc-box-file">docs/protocols/COMPACTION-RECOVERY-PROTOCOL.md</div>
+                <div class="doc-box-desc">
+                    Meta instructions + template for HOW to create implementation plans. Contains Claude's rules, verification workflow, and n8n patterns reference.
+                </div>
+                <div class="doc-box-meta">Applies to: ALL projects with 3+ phases</div>
+            </div>
+        </div>
+
+        <div class="projects-grid" id="primary-projects-grid">
+            <!-- Populated by JS -->
+        </div>
+
+        <!-- Secondary Projects -->
+        <h2 class="section-header">📌 Secondary Projects</h2>
+        <div style="background: white; border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 2rem;" id="secondary-projects-container">
+            <!-- Populated by JS -->
+        </div>
+
+        <!-- Completed Projects -->
+        <h2 class="section-header">Completed Projects</h2>
+        <div class="completed-grid" id="completed-grid">
+            <!-- Populated by JS -->
+        </div>
+
+        <!-- System Dependencies -->
+        <h2 class="section-header">System Dependencies</h2>
+        <div class="dependency-map" id="dependency-map">
+            <!-- Populated by JS -->
+        </div>
+
+        <!-- Data Flow -->
+        <div class="flow-section" id="flow-section">
+            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 1rem;">Ladies Fitness Data Flow</h3>
+            <div id="data-flows">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- Active Workflows -->
+        <h2 class="section-header">Ladies Fitness Workflows</h2>
+        <div style="background: white; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); overflow: hidden;">
+            <table class="workflows-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Workflow</th>
+                        <th>Trigger</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="workflows-body">
+                    <!-- Populated by JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Priority Actions -->
+        <h2 class="section-header">Priority Actions</h2>
+        <div style="background: white; border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <ul class="actions-list" id="actions-list">
+                <!-- Populated by JS -->
+            </ul>
+        </div>
+
+        <footer style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e5e7eb; text-align: center; color: var(--gray); font-size: 0.75rem;">
+            MOUVE Customer Engine &bull; Dashboard v2.0 (Dynamic) &bull; Data from dashboard-data.json
+        </footer>
+    </div>
+
+    <script>
+        // Load dashboard data from JSON
+        async function loadDashboardData() {
+            try {
+                const response = await fetch('dashboard-data.json');
+                if (!response.ok) throw new Error('Failed to load data');
+                const data = await response.json();
+                renderDashboard(data);
+            } catch (error) {
+                console.error('Dashboard load error:', error);
+                document.getElementById('last-updated').textContent = 'Failed to load data - check console';
+            }
+        }
+
+        function renderDashboard(data) {
+            // Update timestamp
+            const generatedAt = new Date(data.generated_at);
+            document.getElementById('last-updated').textContent =
+                `Last updated: ${generatedAt.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}, ${generatedAt.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}`;
+
+            // Health Summary
+            document.getElementById('health-complete').textContent = data.health_summary.complete;
+            document.getElementById('health-progress').textContent = data.health_summary.in_progress;
+            document.getElementById('health-waiting').textContent = data.health_summary.waiting;
+            document.getElementById('health-blocked').textContent = data.health_summary.blocked;
+
+            // Projects (Primary and Secondary)
+            renderPrimaryProjects(data.primary_projects);
+            renderSecondaryProjects(data.secondary_projects);
+
+            // Completed Projects
+            renderCompletedProjects(data.completed_projects);
+
+            // Dependencies
+            renderDependencies(data.dependencies);
+
+            // Data Flows
+            renderDataFlows(data.data_flows);
+
+            // Workflows
+            renderWorkflows(data.workflows);
+
+            // Weekly Tasks
+            renderWeeklyTasks(data.weekly_tasks);
+
+            // Tasks To-Do
+            renderTasks(data.tasks);
+
+            // Priority Actions
+            renderActions(data.priority_actions);
+        }
+
+        function renderPrimaryProjects(projects) {
+            const grid = document.getElementById('primary-projects-grid');
+            grid.innerHTML = projects.map(project => {
+                // Build completed phases summary
+                let completedPhasesHtml = '';
+                if (project.completed_phases && project.completed_phases.length > 0) {
+                    completedPhasesHtml = `
+                        <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #f3f4f6;">
+                            ${project.completed_phases.map(p => `
+                                <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0; font-size: 0.8rem;">
+                                    <span style="color: var(--green);">✓</span>
+                                    <span style="font-weight: 500;">${p.name}</span>
+                                    <span style="color: var(--gray);">— ${p.summary}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                }
+
+                // Build next phase detail
+                let nextPhaseHtml = '';
+                if (project.next_phase) {
+                    const tasks = project.next_phase.tasks ? `
+                        <ul style="margin: 0.5rem 0 0 1.5rem; font-size: 0.75rem; color: var(--gray);">
+                            ${project.next_phase.tasks.map(t => `<li style="margin: 0.25rem 0;">${t}</li>`).join('')}
+                        </ul>
+                    ` : '';
+
+                    nextPhaseHtml = `
+                        <div style="background: var(--blue-bg); padding: 0.75rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <div style="font-weight: 600; font-size: 0.875rem; color: var(--blue); margin-bottom: 0.25rem;">
+                                ▶ NEXT: ${project.next_phase.name}
+                            </div>
+                            <div style="font-size: 0.75rem; color: var(--gray);">
+                                ${project.next_phase.detail}
+                            </div>
+                            ${tasks}
+                        </div>
+                    `;
+                }
+
+                // Build remaining phases
+                let remainingPhasesHtml = '';
+                if (project.remaining_phases && project.remaining_phases.length > 0) {
+                    remainingPhasesHtml = `
+                        <div style="font-size: 0.75rem; color: var(--gray); font-style: italic;">
+                            ${project.remaining_phases.join(', ')}: [collapsed]
+                        </div>
+                    `;
+                }
+
+                // Feature backlog (for projects with future feature ideas)
+                let backlogHtml = '';
+                if (project.feature_backlog && project.feature_backlog.queue) {
+                    const statusColors = {
+                        'next': 'var(--green)',
+                        'planned': 'var(--blue)',
+                        'backlog': 'var(--gray)'
+                    };
+                    backlogHtml = `
+                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #f3f4f6;">
+                            <div style="font-weight: 600; font-size: 0.8rem; color: var(--purple); margin-bottom: 0.5rem;">
+                                📋 Feature Backlog (${project.feature_backlog.total_ideas} ideas)
+                            </div>
+                            ${project.feature_backlog.queue.map(f => `
+                                <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0; font-size: 0.75rem;">
+                                    <span style="color: ${statusColors[f.status] || 'var(--gray)'}; font-weight: 600;">
+                                        ${f.status === 'next' ? '▶' : f.status === 'planned' ? '◆' : '○'}
+                                    </span>
+                                    <span style="font-weight: ${f.status === 'next' ? '600' : '400'};">${f.name}</span>
+                                    <span style="color: var(--gray);">(${f.complexity})</span>
+                                    ${f.target ? `<span style="color: var(--green); font-size: 0.7rem;">→ ${f.target}</span>` : ''}
+                                </div>
+                            `).join('')}
+                            <div style="font-size: 0.65rem; color: var(--gray); margin-top: 0.5rem; font-family: monospace;">
+                                ${project.feature_backlog.file}
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // Blocker warning
+                let blockerHtml = '';
+                if (project.blocker) {
+                    blockerHtml = `
+                        <div style="background: var(--red-bg); color: var(--red); padding: 0.5rem; border-radius: 6px; font-size: 0.75rem; margin-bottom: 1rem;">
+                            ⚠️ BLOCKED: ${project.blocker}
+                        </div>
+                    `;
+                }
+
+                return `
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-title">${project.name} (Phase ${project.phase_current}/${project.phase_total})</div>
+                                <div class="implementation-plan-file">${project.implementation_plan}</div>
+                                <div style="font-size: 0.8rem; color: var(--gray); margin-top: 0.25rem; font-style: italic;">
+                                    ${project.purpose}
+                                </div>
+                            </div>
+                            <span class="project-status status-${project.status.replace('_', '-')}">${project.status_label}</span>
+                        </div>
+                        <div class="project-body">
+                            ${blockerHtml}
+                            ${completedPhasesHtml}
+                            ${nextPhaseHtml}
+                            ${remainingPhasesHtml}
+                            ${backlogHtml}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function renderSecondaryProjects(projects) {
+            const container = document.getElementById('secondary-projects-container');
+            container.innerHTML = projects.map(project => {
+                const dateInfo = project.start_date ? `Start: ${project.start_date}` :
+                                 project.target_date ? `Target: ${project.target_date}` : '';
+
+                return `
+                    <div class="secondary-project-item">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                            <div style="flex: 1;">
+                                <div style="font-weight: 600; font-size: 0.95rem;">
+                                    ${project.name} (Phase ${project.phase_current}/${project.phase_total})
+                                </div>
+                                <div style="font-size: 0.75rem; color: var(--gray); font-family: 'Monaco', monospace; margin-top: 0.25rem;">
+                                    ${project.implementation_plan}
+                                </div>
+                            </div>
+                            <span class="project-status status-${project.status.replace('_', '-')}" style="margin-left: 1rem;">
+                                ${project.status_label}
+                            </span>
+                        </div>
+                        <div style="font-size: 0.8rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">
+                            ${project.purpose}
+                        </div>
+                        <div style="font-size: 0.75rem; color: var(--dark);">
+                            <strong>Next:</strong> ${project.next_action}
+                        </div>
+                        ${dateInfo ? `<div style="font-size: 0.75rem; color: var(--amber); margin-top: 0.25rem;">${dateInfo}</div>` : ''}
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function renderPhase(phase) {
+            const icon = {
+                'complete': '&#10003;',
+                'in_progress': '&#8226;',
+                'in-progress': '&#8226;',
+                'waiting': '!',
+                'blocked': '!',
+                'planned': '&#8226;'
+            }[phase.status] || '&#8226;';
+
+            const statusClass = phase.status.replace('_', '-');
+
+            let subPhasesHtml = '';
+            if (phase.sub_phases && phase.sub_phases.length > 0) {
+                subPhasesHtml = `
+                    <div class="sub-phases">
+                        ${phase.sub_phases.map(sp => `
+                            <div class="sub-phase">
+                                <span class="sub-phase-dot ${sp.status}"></span>
+                                ${sp.name}
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            }
+
+            let blockerHtml = '';
+            if (phase.blocker) {
+                blockerHtml = `<div class="phase-blocker">${phase.blocker}</div>`;
+            }
+
+            return `
+                <li class="phase-item">
+                    <div class="phase-indicator ${statusClass}">${icon}</div>
+                    <div class="phase-content">
+                        <div class="phase-name">${phase.name}</div>
+                        <div class="phase-detail">${phase.detail}</div>
+                        ${subPhasesHtml}
+                        ${blockerHtml}
+                    </div>
+                </li>
+            `;
+        }
+
+        function renderCompletedProjects(completed) {
+            const grid = document.getElementById('completed-grid');
+            grid.innerHTML = `
+                <!-- Multi-phase projects -->
+                <div class="completed-card">
+                    <div class="completed-header green">
+                        <h3>Multi-Phase (with Specs)</h3>
+                    </div>
+                    <div class="completed-body">
+                        <table class="completed-table">
+                            ${completed.multi_phase.map(p => `
+                                <tr>
+                                    <td>${p.name}</td>
+                                    <td style="color: var(--green);">&#10003; ${p.result}</td>
+                                </tr>
+                            `).join('')}
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Simple Projects -->
+                <div class="completed-card">
+                    <div class="completed-header green">
+                        <h3>Simple Projects (No Plan Needed)</h3>
+                    </div>
+                    <div class="completed-body">
+                        <table class="completed-table">
+                            ${completed.simple.map(p => `
+                                <tr>
+                                    <td>${p.name}</td>
+                                    <td style="color: ${p.closed ? 'var(--gray)' : 'var(--green)'};">${p.closed ? '&#10007;' : '&#10003;'} ${p.result}</td>
+                                </tr>
+                            `).join('')}
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Active Campaigns -->
+                <div class="completed-card">
+                    <div class="completed-header blue">
+                        <h3>Active Campaigns (Not Multi-Phase)</h3>
+                    </div>
+                    <div class="completed-body">
+                        <table class="completed-table">
+                            ${completed.active_campaigns.map(c => `
+                                <tr>
+                                    <td>${c.name}</td>
+                                    <td style="color: var(--blue);">&#9679; ${c.status}</td>
+                                </tr>
+                            `).join('')}
+                        </table>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderDependencies(deps) {
+            const map = document.getElementById('dependency-map');
+
+            const columns = [
+                { key: 'lead_capture', label: 'Lead Capture' },
+                { key: 'crm_leads', label: 'CRM / Leads' },
+                { key: 'automation', label: 'Automation' },
+                { key: 'data_email', label: 'Data / Email' },
+                { key: 'booking_systems', label: 'Booking Systems' }
+            ];
+
+            const statusDot = (status) => {
+                const colors = { active: 'green', partial: 'amber', blocked: 'red' };
+                return colors[status] || 'gray';
+            };
+
+            const nodeClass = (status) => {
+                const classes = { active: 'active', partial: 'partial', blocked: 'blocked' };
+                return classes[status] || '';
+            };
+
+            map.innerHTML = `
+                <div class="dep-grid">
+                    ${columns.map(col => `
+                        <div class="dep-column">
+                            <div class="dep-column-header">${col.label}</div>
+                            ${deps[col.key].map(node => `
+                                <div class="dep-node ${nodeClass(node.status)}">
+                                    ${node.name}
+                                    <span class="status-dot ${statusDot(node.status)}"></span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `).join('')}
+                </div>
+                <div class="legend">
+                    <div class="legend-item">
+                        <span class="legend-dot" style="background: var(--green)"></span>
+                        Full API Access
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot" style="background: var(--amber)"></span>
+                        Partial / Manual
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot" style="background: var(--red)"></span>
+                        Blocked / No Access
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderDataFlows(flows) {
+            const container = document.getElementById('data-flows');
+            container.innerHTML = flows.map(flow => {
+                const opacity = flow.active ? '1' : '0.5';
+                return `
+                    <div class="flow-row" style="opacity: ${opacity};">
+                        ${flow.steps.map((step, i) => {
+                            let nodeClass = 'process';
+                            if (i === 0) nodeClass = 'source';
+                            if (i === flow.steps.length - 1) nodeClass = 'destination';
+
+                            const arrow = i < flow.steps.length - 1 ? '<span class="flow-arrow">→</span>' : '';
+                            return `<span class="flow-node ${nodeClass}">${step}</span>${arrow}`;
+                        }).join('')}
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function renderWorkflows(workflows) {
+            const tbody = document.getElementById('workflows-body');
+            tbody.innerHTML = workflows.map(w => {
+                const rowClass = w.status === 'ready' ? 'ready-row' : '';
+                const statusLabel = w.status.charAt(0).toUpperCase() + w.status.slice(1);
+                return `
+                    <tr class="${rowClass}">
+                        <td>${w.id}</td>
+                        <td>${w.name}</td>
+                        <td>${w.trigger}</td>
+                        <td><span class="wf-status ${w.status}"></span>${statusLabel}</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function renderWeeklyTasks(tasks) {
+            const list = document.getElementById('weekly-tasks-list');
+            if (!tasks || tasks.length === 0) {
+                list.innerHTML = '<li style="padding: 1rem; color: var(--gray);">No weekly tasks configured</li>';
+                return;
+            }
+
+            list.innerHTML = tasks.map(task => `
+                <li class="weekly-task-item">
+                    <div class="weekly-task-header">
+                        <span class="weekly-task-name">${task.name}</span>
+                        <span class="weekly-task-frequency">${task.frequency}</span>
+                    </div>
+                    <div class="weekly-task-command">${task.command}</div>
+                    <div class="weekly-task-description">${task.description}</div>
+                    <div class="weekly-task-meta">
+                        <span>📁 ${task.location}</span>
+                        <span>⏱️ ${task.time}</span>
+                        <span>📖 <a href="https://github.com/rob693/MOUVE-Customer-Engine/blob/main/${task.sop}" target="_blank" style="color: var(--blue);">SOP</a></span>
+                    </div>
+                </li>
+            `).join('');
+        }
+
+        function renderTasks(tasks) {
+            const list = document.getElementById('tasks-list');
+            if (!tasks || tasks.length === 0) {
+                list.innerHTML = '<li style="padding: 1rem; color: var(--gray);">No tasks</li>';
+                return;
+            }
+
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            list.innerHTML = tasks.map(task => {
+                const dueParts = task.due.split('-');
+                const dueDate = new Date(dueParts[0], dueParts[1] - 1, dueParts[2]);
+                const daysUntil = Math.ceil((dueDate - today) / (1000 * 60 * 60 * 24));
+
+                let dueClass = '';
+                if (task.status !== 'done') {
+                    if (daysUntil < 0) dueClass = 'overdue';
+                    else if (daysUntil <= 7) dueClass = 'soon';
+                }
+
+                const dueDateStr = dueDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+
+                const icon = task.status === 'done' ? '&#10003;' : task.status === 'blocked' ? '!' : '';
+                const titleClass = task.status === 'done' ? ' done' : '';
+
+                return `
+                    <li class="task-item">
+                        <div class="task-checkbox ${task.status}">${icon}</div>
+                        <div class="task-content">
+                            <div class="task-title${titleClass}">${task.title}</div>
+                            <div class="task-meta">
+                                <span class="task-due ${dueClass}">Due: ${dueDateStr}</span>
+                                ${task.context ? `<span>${task.context}</span>` : ''}
+                            </div>
+                        </div>
+                    </li>
+                `;
+            }).join('');
+        }
+
+        function renderActions(actions) {
+            const list = document.getElementById('actions-list');
+            list.innerHTML = actions.map(a => {
+                const badgeClass = a.category.toLowerCase();
+                return `
+                    <li class="action-item">
+                        <span class="action-badge ${badgeClass}">${a.category}</span>
+                        <div>
+                            <strong>${a.action}</strong>
+                            <div style="font-size: 0.8rem; color: var(--gray);">${a.detail}</div>
+                        </div>
+                    </li>
+                `;
+            }).join('');
+        }
+
+        // Load on page load
+        loadDashboardData();
+
+        // Auto-refresh every 5 minutes
+        setInterval(loadDashboardData, 5 * 60 * 1000);
+    </script>
+</body>
+</html>
