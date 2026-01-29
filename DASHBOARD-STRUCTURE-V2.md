@@ -1,109 +1,311 @@
-# Dashboard v2.0 Structure Guide
+# Dashboard v2 — Schema & Update Instructions
 
-**Version:** 2.0
-**Updated:** 17 January 2026
-**Purpose:** Documentation for maintaining dashboard consistency across updates
-
----
-
-## Overview
-
-The MOUVE Project Dashboard displays 8 active projects split into **Primary** (urgent/active) and **Secondary** (scheduled/planned) categories, with a focus on reducing visual clutter while maximizing actionable information.
-
-**Live URL:** https://rob693.github.io/mouve-dashboard/
+**Version:** 3.0
+**Updated:** 29 January 2026
+**File:** `/Volumes/NVME/Claude/Code/mouve-dashboard/dashboard-data.json`
+**Live (v1):** https://rob693.github.io/mouve-dashboard/
+**Preview (v2):** https://rob693.github.io/mouve-dashboard/index-v2.html
 
 ---
 
-## Design Principles (v2.0)
+## How This Works
 
-### 1. Information Hierarchy
-```
-📋 Weekly Tasks (most frequent)
-    ↓
-🎯 Primary Projects (urgent/active work)
-    ↓
-📌 Secondary Projects (scheduled/planned)
-    ↓
-✅ Completed Projects
-    ↓
-System Dependencies, Workflows, Priority Actions
+`dashboard-data.json` is the single source of truth. Both `index.html` (v1) and `index-v2.html` (v2) read from the same file. The v2 layout adds new optional sections — v1 ignores them gracefully.
+
+**After ANY change:** commit + push to GitHub. Dashboard updates in ~1 minute.
+
+```bash
+cd /Volumes/NVME/Claude/Code/mouve-dashboard
+git add dashboard-data.json
+git commit -m "Dashboard: [what changed]"
+git push
 ```
 
-### 2. Visual Clarity Rules
-- **Completed phases:** Summary only (1 line)
-- **Current/Next phase:** Full detail with tasks
-- **Remaining phases:** Collapsed (shows count only)
-- **PURPOSE:** Every project shows one-line problem statement
-- **Phase count:** Always show (Phase 2/7) in title
+---
 
-### 3. Content Density
-- **Primary projects:** Full detail (completed summary + NEXT phase + remaining)
-- **Secondary projects:** Minimal (3-4 lines: purpose + next action + date)
-- **Result:** 52% less visual clutter vs v1.0
+## Complete JSON Schema
+
+```
+dashboard-data.json
+├── generated_at          (ISO 8601 timestamp)
+├── generated_by          ("SYS-DASHBOARD v2")
+├── version               ("2.7")
+├── health_summary        (project status counts)
+├── tasks                 (pending + done to-do items)
+├── weekly_tasks           (recurring ops tasks)
+├── weekly_review          ★ NEW v2 — weekly ops/leadership summary
+├── recent_decisions       ★ NEW v2 — settled decisions log
+├── financial_summary      ★ NEW v2 — budget snapshot
+├── system_health          ★ NEW v2 — infra status
+├── primary_projects       (active projects with full detail)
+├── secondary_projects     (scheduled/planned projects)
+├── completed_projects     (multi_phase, simple, active_campaigns)
+├── dependencies           (system integrations map)
+├── data_flows             (data pipeline diagrams)
+├── workflows              (n8n workflow table)
+└── priority_actions       (categorised action items)
+```
 
 ---
 
-## JSON Structure
+## Section-by-Section Reference
 
-### File: `dashboard-data.json`
+### 1. `health_summary`
 
-#### Top-Level Structure
+Aggregate counts displayed as KPI cards.
+
 ```json
-{
-  "generated_at": "ISO 8601 timestamp",
-  "generated_by": "SYS-DASHBOARD v2",
-  "version": "2.0",
-  "health_summary": { ... },
-  "weekly_tasks": [ ... ],
-  "primary_projects": [ ... ],      // NEW in v2.0
-  "secondary_projects": [ ... ],    // NEW in v2.0
-  "completed_projects": { ... },
-  "dependencies": { ... },
-  "data_flows": [ ... ],
-  "workflows": [ ... ],
-  "priority_actions": [ ... ]
+"health_summary": {
+  "complete": 33,
+  "in_progress": 7,
+  "waiting": 1,
+  "planned": 3,
+  "blocked": 0
 }
 ```
 
-### Primary Project Schema
+**When to update:** Whenever a project changes status (new, completed, blocked).
+**How to count:** Sum all projects across primary, secondary, and completed.
+
+---
+
+### 2. `weekly_review` ★ NEW
+
+Four-column leadership summary. Bridges ops work and strategic thinking.
 
 ```json
-{
-  "name": "Project Name",
-  "phase_current": 2,                    // Current phase number
-  "phase_total": 7,                      // Total phases
-  "implementation_plan": "FILENAME.md",  // Implementation plan filename
-  "purpose": "One-line problem statement (what problem this solves)",
-  "status": "in_progress",               // in_progress | planned | waiting
-  "status_label": "Phase 2/7 Complete ✅ (version info)",
-  "blocker": "Optional blocker text",    // Omit if no blocker
-  "health_check": {                      // Optional - only for active systems
-    "timestamp": "ISO 8601",
-    "status": "excellent"
-  },
-  "completed_phases": [                  // Array of completed phases
-    {
-      "name": "Phase 1: Foundation",
-      "summary": "Brief 1-line summary"  // What was built
-    }
+"weekly_review": {
+  "week_commencing": "27 January 2026",
+  "built": [
+    "Staff Portal live to all 22 staff",
+    "Supabase nightly sync + monitoring"
   ],
-  "next_phase": {                        // Current or next phase (full detail)
-    "name": "Phase 3: Engine Build",
-    "detail": "Brief description • Est: 90 min",
-    "status": "planned",
-    "tasks": [                           // Array of tasks for this phase
-      "Task 1 description",
-      "Task 2 description"
-    ]
-  },
-  "remaining_phases": [                  // Array of future phase names
-    "Phase 4: Testing & Validation",
-    "Phase 5-7: Rollout & Training"
+  "improved": [
+    "SMS costs: ~410/month saved",
+    "Venue rental accuracy: +40% correction"
+  ],
+  "decisions": [
+    "Venue rental correction accepted (£23K→£32K)",
+    "Stripe load abandoned (90% unattributable)"
+  ],
+  "risks": [
+    "Bookkeeper response (9 questions, sent 29 Jan)",
+    "AC onboarding upload (25 HTMLs pending)"
   ]
 }
 ```
 
-### Secondary Project Schema
+**When to update:** At session wrap-up, or weekly on Monday.
+**Where to get data:**
+- `built` — completed phases or deployments from this week's sessions
+- `improved` — measurable improvements (cost savings, accuracy gains, fixes)
+- `decisions` — choices locked this week (check CLAUDE.md RESUME HERE section)
+- `risks` — items due next week that could slip (check `tasks` with upcoming due dates)
+
+**Rules:**
+- 2-4 items per column (keep it scannable)
+- Use numbers where possible ("~410/month saved" not "reduced SMS costs")
+- Replace entire section each week (not cumulative)
+
+---
+
+### 3. `recent_decisions` ★ NEW
+
+Rolling log of settled decisions (last ~14 days). Prevents re-litigation.
+
+```json
+"recent_decisions": [
+  "Accepted corrected venue rental (+£9,230)",
+  "Locked Supabase as future write source",
+  "Deferred Dance Studio SaaS to Q2",
+  "Staff Portal: custom Next.js over Softr"
+]
+```
+
+**When to update:** Whenever a significant decision is made during a session.
+**Where to get data:**
+- CLAUDE.md RESUME HERE section (look for "decisions", "accepted", "locked", "chose", "abandoned", "deferred")
+- Implementation plan status changes
+- Architecture choices
+
+**Rules:**
+- Keep 4-8 items max (trim oldest when adding new)
+- Start with a verb: "Accepted", "Locked", "Deferred", "Chose", "Abandoned"
+- Include the key number or trade-off in parentheses where relevant
+- No timestamps needed — the rolling 14-day window is implicit
+- Remove items older than ~14 days during wrap-up
+
+---
+
+### 4. `financial_summary` ★ NEW
+
+Budget snapshot from the 12-Month Budget spreadsheet.
+
+```json
+"financial_summary": {
+  "revenue": 418996,
+  "direct_costs": 90589,
+  "contribution_margin_pct": 78.4,
+  "overheads": 124709,
+  "marketing": 32316,
+  "net_profit": 171382,
+  "closing_cash_aug": 268992,
+  "cash_runway_months": 5.0,
+  "lowest_cash_month": "Sep (£111K)",
+  "venue_corrected": true,
+  "source": "12-Month Budget v2.1 (29 Jan 2026)"
+}
+```
+
+**When to update:** When the budget spreadsheet changes (new actuals, corrections, re-forecasts).
+**Where to get data:** `12-MONTH-BUDGET-IMPLEMENTATION-PLAN-JAN2026.md` or the Google Sheets budget.
+
+**All values are integers (pence/pounds, no decimals) except:**
+- `contribution_margin_pct` — float percentage
+- `cash_runway_months` — float months
+- `lowest_cash_month` — string description
+- `source` — string attribution
+
+---
+
+### 5. `system_health` ★ NEW
+
+Infrastructure status for the three key systems.
+
+```json
+"system_health": {
+  "supabase_sync": {
+    "status": "healthy",
+    "last_run": "2026-01-30T02:00:00Z",
+    "records": 4486
+  },
+  "n8n_workflows": {
+    "status": "healthy",
+    "active": 14,
+    "failed_24h": 0
+  },
+  "data_quality": {
+    "status": "healthy",
+    "contacts": 2972,
+    "orphans": 18
+  }
+}
+```
+
+**When to update:**
+- `supabase_sync` — after verifying nightly sync (check `ops.system_health` table)
+- `n8n_workflows` — after workflow changes (add/remove/fix)
+- `data_quality` — after sync runs or data cleanup
+
+**Status values:** `"healthy"` | `"warning"` | `"critical"`
+- `healthy` = green dot — everything working
+- `warning` = amber dot — degraded but functional
+- `critical` = red dot — broken, needs attention
+
+**Where to get data:**
+- Supabase: `SELECT * FROM ops.system_health WHERE check_name='airtable_sync' ORDER BY checked_at DESC LIMIT 1;`
+- n8n: `n8n MCP search_workflows` tool → count active, check execution history for failures
+- Data quality: Supabase contacts count + orphan check from reconciliation
+
+---
+
+### 6. `tasks`
+
+To-do items with due dates and status.
+
+```json
+{
+  "title": "Task description",
+  "due": "2026-02-07",
+  "status": "pending",
+  "context": "Which project this relates to"
+}
+```
+
+**Status values:** `"pending"` | `"done"` | `"blocked"`
+**When to update:** When tasks are completed, added, or due dates change.
+**Rules:**
+- Keep done items for ~1 week (provides completion visibility), then remove
+- `due` format is always `YYYY-MM-DD`
+- `context` should reference the project or phase
+
+---
+
+### 7. `weekly_tasks`
+
+Recurring operational tasks (scripts, checks).
+
+```json
+{
+  "name": "Prepare Sunday's Trial List",
+  "frequency": "Weekly (before Sunday)",
+  "command": "python3 scripts/weekly-trials-generator.py",
+  "location": "MOUVE-Customer-Engine repo",
+  "description": "Generate trials spreadsheet from GHL appointments",
+  "sop": "docs/sops/SOP-A-020-WEEKLY-TRIALS-SPREADSHEET.md",
+  "output": "~/Downloads/Trials Sunday [Date] 2026.xlsx",
+  "time": "2 minutes"
+}
+```
+
+**When to update:** When adding/removing recurring tasks or SOPs.
+
+---
+
+### 8. `primary_projects`
+
+Active projects with full phase detail. Shown as condensed cards + timeline bars.
+
+```json
+{
+  "name": "Project Name",
+  "phase_current": 3,
+  "phase_total": 7,
+  "implementation_plan": "FILENAME.md",
+  "purpose": "One-line problem statement",
+  "status": "in_progress",
+  "status_label": "v1.5 | Phase 3 Complete ✅",
+  "blocker": "Optional — omit if none",
+  "completed_phases": [
+    { "name": "Phase 1: Foundation", "summary": "Brief 1-line summary" }
+  ],
+  "next_phase": {
+    "name": "Phase 4: Engine Build",
+    "detail": "Description of what this phase does",
+    "status": "planned",
+    "tasks": ["Task 1", "Task 2"]
+  },
+  "remaining_phases": [
+    "Phase 5: Testing",
+    "Phase 6-7: Rollout"
+  ]
+}
+```
+
+**Status values:** `"in_progress"` | `"planned"` | `"waiting"` | `"blocked"`
+**When to update:** After completing a phase, starting a phase, or blocker changes.
+
+**Update pattern — completing a phase:**
+1. Increment `phase_current`
+2. Move `next_phase` content into `completed_phases` array (name + summary)
+3. Set new `next_phase` from first item in `remaining_phases`
+4. Remove that item from `remaining_phases`
+5. Update `status_label` with new version + phase info
+
+**Update pattern — adding a blocker:**
+1. Add `"blocker": "Description of what's blocking"`
+2. Change `status` to `"blocked"` or `"waiting"`
+3. Update `status_label`
+
+**Update pattern — clearing a blocker:**
+1. Remove the `blocker` field entirely (don't set to null)
+2. Change `status` back to `"in_progress"` or `"planned"`
+
+---
+
+### 9. `secondary_projects`
+
+Planned/scheduled projects. Minimal detail.
 
 ```json
 {
@@ -112,301 +314,173 @@ System Dependencies, Workflows, Priority Actions
   "phase_total": 5,
   "implementation_plan": "FILENAME.md",
   "purpose": "One-line problem statement",
-  "status": "waiting",                   // waiting | planned
-  "status_label": "v2.0 Plan Complete",
-  "start_date": "February 2026",         // OR target_date
-  "next_action": "Phase 1: First step description"
+  "status": "planned",
+  "status_label": "v1.0 Planning Complete",
+  "start_date": "February 2026",
+  "next_action": "Phase 1: First step"
+}
+```
+
+**Moving secondary → primary:** When work starts, move the object from `secondary_projects` to `primary_projects`, add `completed_phases: []`, `next_phase`, and `remaining_phases`.
+
+---
+
+### 10. `completed_projects`
+
+Three sub-arrays:
+
+```json
+"completed_projects": {
+  "multi_phase": [
+    { "name": "Project Name", "result": "Production (what shipped)" }
+  ],
+  "simple": [
+    { "name": "Task Name", "result": "What was delivered", "closed": false }
+  ],
+  "active_campaigns": [
+    { "name": "Campaign Name", "status": "Active (4 emails)" }
+  ]
+}
+```
+
+**When to update:** When a project completes, move from primary/secondary into the appropriate sub-array.
+
+---
+
+### 11. `priority_actions`
+
+Categorised action items.
+
+```json
+{
+  "category": "BUILD",
+  "action": "Short action title",
+  "detail": "Longer explanation with context"
+}
+```
+
+**Category values:** `"BUILD"` | `"ACTION"` | `"OPS"` | `"COMPLETE"` | `"P0"`
+**When to update:** When priorities shift, actions complete, or new work is identified.
+
+---
+
+### 12. `dependencies`
+
+System integration status map. Five categories:
+
+```json
+"dependencies": {
+  "lead_capture": [{ "name": "Facebook Ads", "status": "active" }],
+  "crm_leads": [{ "name": "GHL StudioHub", "status": "active" }],
+  "automation": [{ "name": "n8n (25 workflows)", "status": "active" }],
+  "data_email": [{ "name": "Airtable", "status": "active" }],
+  "booking_systems": [{ "name": "TeamUp (LF)", "status": "active" }]
+}
+```
+
+**Status values:** `"active"` | `"partial"` | `"blocked"` | `"reference"`
+
+---
+
+### 13. `data_flows`
+
+Visual data pipeline descriptions.
+
+```json
+{
+  "name": "Facebook Lead Flow",
+  "steps": ["Facebook Lead", "GHL Pipeline", "n8n LF-02", "SMS + Email + Airtable"],
+  "active": true
 }
 ```
 
 ---
 
-## Categorization Rules
+### 14. `workflows`
 
-### Primary Projects (4 max recommended)
-**Criteria:**
-- Currently being worked on (in_progress)
-- Urgent business need
-- Has active phases or ready to start
-- Requires regular attention
+n8n workflow registry.
 
-**Current Primary Projects:**
-1. Ladies Fitness Funnel
-2. Children's Dance Onboarding
-3. Back Office: Staff Costs
-4. Student Progress Reports
+```json
+{
+  "id": "LF-01",
+  "name": "Self-Serve Trial Capture v1.9",
+  "trigger": "Every 5 min",
+  "status": "active"
+}
+```
 
-### Secondary Projects (4 max recommended)
-**Criteria:**
-- Scheduled for future (waiting)
-- Nice-to-have but not urgent (planned)
-- Has clear start date or target date
-- All in Phase 0 (planning complete, not started)
-
-**Current Secondary Projects:**
-1. Back Office: Amex Recon vNext
-2. Staff Portal (Softr)
-3. Operational Dashboard
-4. Weekly Auto-Blog System
+**When to update:** When workflows are added, renamed, or deactivated.
 
 ---
 
-## Rendering Logic (index.html)
+## Session Wrap-Up Checklist
 
-### Primary Projects (`renderPrimaryProjects()`)
+When Claude is asked to update the dashboard (or during session wrap-up), follow this checklist:
 
-**Structure:**
-```html
-<div class="project-card">
-  <header>
-    [Name] (Phase X/Y)
-    [Implementation Plan Filename]
-    [Purpose - italic, gray]
-    [Status Badge]
-  </header>
-  <body>
-    [Blocker Warning - if present]
-    [Completed Phases Summary]
-    [▶ NEXT Phase with Full Detail]
-    [Remaining Phases: [collapsed]]
-  </body>
-</div>
+### 1. Gather data from the session
+
+| What changed? | Update which section? |
+|---|---|
+| Phase completed | `primary_projects` (phase_current, completed_phases, next_phase) |
+| New project started | `primary_projects` or `secondary_projects` |
+| Project completed | Move to `completed_projects` |
+| Task completed | `tasks` (status → "done") |
+| New task identified | `tasks` (add with due date) |
+| Decision made | `recent_decisions` (append) |
+| Workflow added/changed | `workflows` + `system_health.n8n_workflows` |
+| Data synced/cleaned | `system_health.data_quality` |
+| Budget updated | `financial_summary` |
+| Blocker added/cleared | Project's `blocker` field + `status` |
+
+### 2. Update `weekly_review` (if Monday or significant progress)
+
+Pull from CLAUDE.md RESUME HERE:
+- **built** — things shipped/deployed
+- **improved** — measurable gains
+- **decisions** — choices locked (also add to `recent_decisions`)
+- **risks** — things due soon that could slip
+
+### 3. Update metadata
+
+```json
+"generated_at": "2026-01-29T21:30:00Z",  ← current timestamp
+"version": "2.7",                          ← increment
 ```
 
-**Completed Phases Format:**
-```
-✓ Phase 1: Foundation — Brief summary
-✓ Phase 2: Data Collection — Brief summary
-```
+### 4. Update `health_summary` counts
 
-**NEXT Phase Format:**
-```
-▶ NEXT: Phase 3: Engine Build
-State machine + error handling • Est: 90 min
-• Task 1 description
-• Task 2 description
-• Task 3 description
-```
+Recount across all project arrays:
+- `complete` = completed_projects.multi_phase.length + completed_projects.simple.length
+- `in_progress` = projects with status "in_progress"
+- `waiting` = projects with status "waiting"
+- `planned` = projects with status "planned"
+- `blocked` = projects with status "blocked"
 
-**Remaining Phases Format:**
-```
-Phases 4-7: [collapsed]
-```
-
-### Secondary Projects (`renderSecondaryProjects()`)
-
-**Structure:**
-```html
-<div class="secondary-project-item">
-  [Name] (Phase X/Y)
-  [Implementation Plan Filename - monospace, gray]
-  [Purpose - italic, gray]
-  Next: [Next Action]
-  [Start/Target Date - amber]
-</div>
-```
-
-**3-4 lines max** - no phase details shown
-
----
-
-## Update Protocol
-
-### When to Update Dashboard
-
-1. **After completing a phase** - Move to completed_phases, update next_phase
-2. **After starting a phase** - Update phase_current, update status_label
-3. **When blocker changes** - Add/remove blocker field
-4. **When adding new project** - Add to primary_projects or secondary_projects
-5. **When project completes** - Move to completed_projects, remove from primary/secondary
-
-### How to Update
-
-#### Step 1: Update JSON (`dashboard-data.json`)
+### 5. Commit + push
 
 ```bash
 cd /Volumes/NVME/Claude/Code/mouve-dashboard
-# Edit dashboard-data.json
-```
-
-**Example: Mark Phase Complete**
-```json
-// Before
-"phase_current": 2,
-"completed_phases": [
-  {"name": "Phase 1: Foundation", "summary": "6 tables created"}
-],
-"next_phase": {
-  "name": "Phase 2: Data Collection",
-  ...
-}
-
-// After
-"phase_current": 3,
-"completed_phases": [
-  {"name": "Phase 1: Foundation", "summary": "6 tables created"},
-  {"name": "Phase 2: Data Collection", "summary": "20 staff rates collected"}
-],
-"next_phase": {
-  "name": "Phase 3: Workflow Build",
-  ...
-}
-```
-
-#### Step 2: Commit and Push
-
-```bash
 git add dashboard-data.json
-git commit -m "Update [Project Name]: Phase X complete"
+git commit -m "Dashboard v[X.Y]: [summary of changes]"
 git push
 ```
 
-Dashboard updates live in ~1 minute via GitHub Pages.
-
-#### Step 3: Update CLAUDE.md
-
-Update the Current Implementation Plans table in `/Volumes/NVME/Claude/Code/MOUVE-Customer-Engine/CLAUDE.md`:
-
-```markdown
-| Project | File | Status |
-|---------|------|--------|
-| Project Name | `FILENAME.md` | v2.0 - Phase 3/7 Ready 📋 |
-```
-
 ---
 
-## Common Patterns
-
-### Pattern 1: Move Project from Secondary to Primary
-
-**When:** Project starts active work (leaves Phase 0)
-
-```json
-// Remove from secondary_projects array
-// Add to primary_projects array with full structure:
-{
-  "name": "...",
-  "phase_current": 1,  // Changed from 0
-  "completed_phases": [],
-  "next_phase": { ... },
-  "remaining_phases": [ ... ]
-}
-```
-
-### Pattern 2: Add Blocker
-
-```json
-{
-  "name": "...",
-  "status": "planned",  // or "waiting"
-  "status_label": "Phase 4/7 Blocked",
-  "blocker": "5 staff rates needed (Names...)"
-}
-```
-
-### Pattern 3: Clear Blocker
-
-```json
-{
-  "name": "...",
-  "status": "planned",
-  "status_label": "Phase 4/7 Ready 📋 (All prerequisites complete ✅)"
-  // Remove "blocker" field entirely
-}
-```
-
-### Pattern 4: Complete Phase
-
-1. Move current next_phase to completed_phases
-2. Update next_phase with new phase
-3. Increment phase_current
-4. Update status_label
-
----
-
-## Health Check Data (Optional)
-
-For active production systems (e.g., Ladies Fitness Funnel):
-
-```json
-{
-  "health_check": {
-    "timestamp": "2026-01-16T07:43:00Z",
-    "status": "excellent",  // excellent | good | degraded | down
-    "last_sync": "2026-01-15T06:00:22Z",
-    "webhooks": {
-      "endpoint1": "HTTP 200 OK",
-      "endpoint2": "HTTP 200 OK"
-    },
-    "workflows_active": "12/12",
-    "data_flow": "Operational - brief status",
-    "findings": "Summary of health check results"
-  }
-}
-```
-
----
-
-## Version History
-
-### v2.0 (17 Jan 2026)
-- Split projects into Primary/Secondary categories
-- Added Student Progress Reports as Primary Project
-- Moved Weekly Tasks to top
-- Collapsed completed phases (summary only)
-- Added PURPOSE statement to all projects
-- Added phase count to titles (Phase X/Y)
-- Added ▶ NEXT phase prominence
-- 52% visual clutter reduction vs v1.0
-
-### v1.0 (12 Jan 2026)
-- Initial dynamic dashboard
-- Single projects array
-- Full phase detail for all phases
-- Implementation plan filenames shown
-
----
-
-## File Locations
-
-| File | Location | Purpose |
-|------|----------|---------|
-| `dashboard-data.json` | `/mouve-dashboard/` | Single source of truth |
-| `index.html` | `/mouve-dashboard/` | Rendering logic |
-| `README.md` | `/mouve-dashboard/` | Project overview |
-| `DASHBOARD-STRUCTURE-V2.md` | `/mouve-dashboard/` | This file (structure guide) |
-
----
-
-## Related Documentation
-
-- **Implementation Plan Protocol:** `MOUVE-Customer-Engine/docs/protocols/COMPACTION-RECOVERY-PROTOCOL.md`
-- **Session Wrap-Up Protocol:** `~/.claude/CLAUDE.md` (Dashboard Auto-Update section)
-- **Current Projects:** `MOUVE-Customer-Engine/CLAUDE.md` (Current Implementation Plans table)
-
----
-
-## Maintenance Notes
+## Do / Don't
 
 ### DO
-✅ Update dashboard after every phase change
-✅ Keep PURPOSE statements to 1-2 lines max
-✅ Use atomic, descriptive task names in next_phase.tasks
-✅ Update health_check timestamp when running checks
-✅ Remove blocker field entirely when cleared (don't set to null)
+- Update dashboard after every phase change
+- Keep `purpose` to 1 line max
+- Use numbers in `improved` and `financial_summary`
+- Start `recent_decisions` items with a verb
+- Remove done tasks after ~1 week
+- Trim `recent_decisions` to last ~14 days
 
 ### DON'T
-❌ Don't expand completed phases (summary only)
-❌ Don't add projects without implementation plans
-❌ Don't mix Primary/Secondary criteria (urgent vs scheduled)
-❌ Don't exceed 4 projects per category (readability threshold)
-❌ Don't include sub-phase detail in completed_phases
-
----
-
-## Support
-
-**Questions?** Check:
-1. This file (`DASHBOARD-STRUCTURE-V2.md`)
-2. Implementation Plan Protocol (`COMPACTION-RECOVERY-PROTOCOL.md`)
-3. Session logs in `MOUVE-Customer-Engine/CLAUDE.md`
+- Don't set blocker to null — remove the field entirely
+- Don't expand completed phases beyond 1-line summaries
+- Don't add projects without implementation plans
+- Don't leave stale `weekly_review` data (update or remove)
+- Don't put timestamps in `recent_decisions`
+- Don't exceed 8 items in `recent_decisions`

@@ -587,6 +587,59 @@
     {"id": "FIN-01", "name": "Weekly Financial Snapshot v2.1", "trigger": "Sat 07:00 + Manual", "status": "active"}
   ],
 
+  "weekly_review": {
+    "week_commencing": "27 January 2026",
+    "built": [
+      "Staff Portal live to all 22 staff",
+      "Supabase nightly sync + monitoring",
+      "FIN-01 weekly financial snapshot"
+    ],
+    "improved": [
+      "SMS costs: ~410/month saved (5 cleanup tasks)",
+      "Venue rental accuracy: +40% correction applied",
+      "Staff Portal data: 34 class records fixed"
+    ],
+    "decisions": [
+      "Venue rental correction accepted (£23K\u2192£32K)",
+      "Stripe load abandoned (90% unattributable)",
+      "Budget cash runway revised to 5.0 months"
+    ],
+    "risks": [
+      "Bookkeeper response (9 questions, sent 29 Jan)",
+      "AC onboarding upload (25 HTMLs pending)",
+      "Budget spreadsheet upload to Google Sheets"
+    ]
+  },
+
+  "recent_decisions": [
+    "Accepted corrected venue rental (+£9,230)",
+    "Locked Supabase as future write source",
+    "Deferred Dance Studio SaaS to Q2",
+    "Stripe load abandoned (90% unattributable)",
+    "Budget cash runway revised to 5.0 months",
+    "Staff Portal: custom Next.js over Softr"
+  ],
+
+  "financial_summary": {
+    "revenue": 418996,
+    "direct_costs": 90589,
+    "contribution_margin_pct": 78.4,
+    "overheads": 124709,
+    "marketing": 32316,
+    "net_profit": 171382,
+    "closing_cash_aug": 268992,
+    "cash_runway_months": 5.0,
+    "lowest_cash_month": "Sep (£111K)",
+    "venue_corrected": true,
+    "source": "12-Month Budget v2.1 (29 Jan 2026)"
+  },
+
+  "system_health": {
+    "supabase_sync": { "status": "healthy", "last_run": "2026-01-30T02:00:00Z", "records": 4486 },
+    "n8n_workflows": { "status": "healthy", "active": 14, "failed_24h": 0 },
+    "data_quality": { "status": "healthy", "contacts": 2972, "orphans": 18 }
+  },
+
   "priority_actions": [
     {
       "category": "COMPLETE",

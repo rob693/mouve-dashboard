@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOUVE Customer Engine - Dashboard v2</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --green: #10b981;
+            --green-bg: #d1fae5;
+            --amber: #f59e0b;
+            --amber-bg: #fef3c7;
+            --red: #ef4444;
+            --red-bg: #fee2e2;
+            --blue: #3b82f6;
+            --blue-bg: #dbeafe;
+            --gray: #6b7280;
+            --gray-bg: #f3f4f6;
+            --dark: #1f2937;
+            --purple: #8b5cf6;
+            --purple-bg: #ede9fe;
+            --surface: #ffffff;
+            --border: #e5e7eb;
+            --bg: #f8fafc;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--dark);
+            line-height: 1.5;
+        }
+
+        /* ── Header ── */
+        .header-bar {
+            background: var(--dark);
+            color: white;
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-bar h1 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+        .header-bar .meta {
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+
+        /* ── KPI Cards Row ── */
+        .kpi-row {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        .kpi-card {
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            text-align: center;
+        }
+        .kpi-card .value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+        .kpi-card .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--gray);
+            margin-top: 0.35rem;
+        }
+        .kpi-card .sub {
+            font-size: 0.7rem;
+            color: var(--gray);
+            margin-top: 0.15rem;
+        }
+
+        /* ── System Health Strip ── */
+        .health-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+        .health-indicator {
+            background: var(--surface);
+            border-radius: 8px;
+            padding: 0.6rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            font-size: 0.8rem;
+        }
+        .health-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .health-dot.healthy { background: var(--green); }
+        .health-dot.warning { background: var(--amber); }
+        .health-dot.critical { background: var(--red); }
+        .health-indicator .detail {
+            color: var(--gray);
+            font-size: 0.75rem;
+        }
+
+        /* ── Financial Snapshot ── */
+        .fin-snapshot {
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            margin-bottom: 1.25rem;
+        }
+        .fin-snapshot .fin-title {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--gray);
+            margin-bottom: 0.6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .fin-snapshot .fin-title .source {
+            font-size: 0.65rem;
+            font-weight: 400;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+        .fin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.5rem;
+        }
+        .fin-item {
+            text-align: center;
+            padding: 0.5rem;
+            border-radius: 6px;
+            background: var(--bg);
+        }
+        .fin-item .fin-value {
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+        .fin-item .fin-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            color: var(--gray);
+            letter-spacing: 0.03em;
+        }
+        .fin-item.revenue .fin-value { color: var(--green); }
+        .fin-item.costs .fin-value { color: var(--red); }
+        .fin-item.profit .fin-value { color: var(--blue); }
+        .fin-item.cash .fin-value { color: var(--purple); }
+        .fin-item.neutral .fin-value { color: var(--dark); }
+
+        /* ── Weekly Review ── */
+        .weekly-review {
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            margin-bottom: 1.25rem;
+        }
+        .wr-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+        .wr-header .wr-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .wr-header .wr-week {
+            font-size: 0.7rem;
+            color: var(--gray);
+        }
+        .wr-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+        }
+        .wr-col {
+            padding: 0.6rem;
+            border-radius: 8px;
+            background: var(--bg);
+        }
+        .wr-col-head {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+        .wr-col.built .wr-col-head { color: var(--green); }
+        .wr-col.improved .wr-col-head { color: var(--blue); }
+        .wr-col.decisions .wr-col-head { color: var(--purple); }
+        .wr-col.risks .wr-col-head { color: var(--amber); }
+        .wr-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .wr-col li {
+            font-size: 0.75rem;
+            padding: 0.2rem 0;
+            color: var(--dark);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.35rem;
+        }
+        .wr-col li::before {
+            content: '\2022';
+            flex-shrink: 0;
+            margin-top: -1px;
+        }
+        .wr-col.built li::before { color: var(--green); }
+        .wr-col.improved li::before { color: var(--blue); }
+        .wr-col.decisions li::before { color: var(--purple); }
+        .wr-col.risks li::before { color: var(--amber); }
+
+        /* ── Recent Decisions ── */
+        .recent-decisions {
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 0.75rem 1.25rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            margin-bottom: 1.25rem;
+            border-left: 3px solid var(--purple);
+        }
+        .rd-title {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-weight: 700;
+            color: var(--purple);
+            margin-bottom: 0.35rem;
+        }
+        .rd-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem 1.25rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .rd-list li {
+            font-size: 0.75rem;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .rd-list li::before {
+            content: '\2022';
+            color: var(--purple);
+        }
+
+        /* ── Section Headers ── */
+        .section-head {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--gray);
+            margin: 1.5rem 0 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .section-head .count {
+            background: var(--gray-bg);
+            padding: 0.15rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.7rem;
+        }
+
+        /* ── Project Timeline ── */
+        .timeline-container {
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            margin-bottom: 1.25rem;
+        }
+        .timeline-row {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .timeline-row:last-child { border-bottom: none; }
+        .timeline-name {
+            font-size: 0.8rem;
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .timeline-bar-wrapper {
+            display: flex;
+            gap: 2px;
+            height: 22px;
+            align-items: stretch;
+        }
+        .timeline-segment {
+            flex: 1;
+            border-radius: 3px;
+            position: relative;
+            min-width: 0;
+        }
+        .timeline-segment.done { background: var(--green); }
+        .timeline-segment.current { background: var(--blue); }
+        .timeline-segment.remaining { background: #e5e7eb; }
+        .timeline-segment .seg-label {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: white;
+            overflow: hidden;
+        }
+        .timeline-segment.remaining .seg-label { color: var(--gray); }
+        .timeline-phase-text {
+            font-size: 0.65rem;
+            color: var(--gray);
+            margin-left: 0.5rem;
+            white-space: nowrap;
+        }
+
+        /* ── Condensed Project Cards ── */
+        .projects-compact {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+        .project-compact {
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .project-compact .pc-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .project-compact .pc-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .phase-badge {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.55rem;
+            border-radius: 6px;
+            font-weight: 600;
+            background: var(--blue-bg);
+            color: var(--blue);
+            white-space: nowrap;
+        }
+        .status-pill {
+            font-size: 0.65rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+        }
+        .pill-in_progress, .pill-in-progress { background: var(--blue-bg); color: var(--blue); }
+        .pill-planned { background: var(--gray-bg); color: var(--gray); }
+        .pill-waiting { background: var(--amber-bg); color: var(--amber); }
+        .pill-blocked { background: var(--red-bg); color: var(--red); }
+        .pill-complete { background: var(--green-bg); color: var(--green); }
+        .pc-next {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        .pc-next strong {
+            color: var(--dark);
+        }
+        .pc-expand {
+            border: none;
+            background: none;
+            font-size: 0.7rem;
+            color: var(--blue);
+            cursor: pointer;
+            padding: 0.2rem 0;
+            text-align: left;
+        }
+        .pc-expand:hover { text-decoration: underline; }
+        .pc-details {
+            display: none;
+            padding-top: 0.5rem;
+            border-top: 1px solid var(--border);
+            margin-top: 0.4rem;
+        }
+        .pc-details.open { display: block; }
+        .pc-phase-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            padding: 0.25rem 0;
+            font-size: 0.75rem;
+        }
+        .pc-phase-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+        .pc-phase-dot.done { background: var(--green); }
+        .pc-phase-dot.current { background: var(--blue); }
+        .pc-phase-dot.remaining { background: #d1d5db; }
+        .pc-phase-name { font-weight: 500; }
+        .pc-phase-summary { color: var(--gray); }
+        .pc-next-detail {
+            background: var(--blue-bg);
+            border-radius: 6px;
+            padding: 0.5rem 0.75rem;
+            margin-top: 0.4rem;
+            font-size: 0.75rem;
+        }
+        .pc-next-detail .nd-title { font-weight: 600; color: var(--blue); margin-bottom: 0.25rem; }
+        .pc-next-detail ul { margin: 0.25rem 0 0 1.25rem; color: var(--gray); }
+        .pc-next-detail li { margin: 0.15rem 0; }
+
+        /* ── Tasks ── */
+        .tasks-container {
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            margin-bottom: 1.25rem;
+        }
+        .task-row {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--bg);
+            font-size: 0.8rem;
+        }
+        .task-row:last-child { border-bottom: none; }
+        .task-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .task-dot.pending { background: var(--amber); }
+        .task-dot.done { background: var(--green); }
+        .task-dot.blocked { background: var(--red); }
+        .task-text { flex: 1; }
+        .task-text.done { text-decoration: line-through; color: var(--gray); }
+        .task-due {
+            font-size: 0.7rem;
+            color: var(--gray);
+            white-space: nowrap;
+        }
+        .task-due.overdue { color: var(--red); font-weight: 600; }
+        .task-due.soon { color: var(--amber); font-weight: 600; }
+
+        /* ── Priority Actions ── */
+        .actions-container {
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            margin-bottom: 1.25rem;
+        }
+        .action-row {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--bg);
+            font-size: 0.8rem;
+        }
+        .action-row:last-child { border-bottom: none; }
+        .action-tag {
+            font-size: 0.6rem;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        .tag-build { background: var(--blue); }
+        .tag-action { background: var(--amber); }
+        .tag-ops { background: var(--green); }
+        .tag-complete { background: var(--green); }
+        .tag-p0 { background: var(--red); }
+        .action-title { flex: 1; }
+        .action-detail {
+            font-size: 0.75rem;
+            color: var(--gray);
+            display: none;
+        }
+        .action-row:hover .action-detail {
+            display: block;
+        }
+        .action-row-expandable {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .action-top {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            width: 100%;
+        }
+
+        /* ── Collapsible Details ── */
+        details.collapsible {
+            background: var(--surface);
+            border-radius: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            margin-bottom: 0.75rem;
+        }
+        details.collapsible > summary {
+            padding: 0.75rem 1.25rem;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--dark);
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            user-select: none;
+        }
+        details.collapsible > summary::-webkit-details-marker { display: none; }
+        details.collapsible > summary::before {
+            content: '\25B6';
+            font-size: 0.6rem;
+            color: var(--gray);
+            transition: transform 0.2s;
+        }
+        details.collapsible[open] > summary::before {
+            transform: rotate(90deg);
+        }
+        details.collapsible .detail-body {
+            padding: 0 1.25rem 1rem;
+        }
+
+        /* ── Secondary Project Row ── */
+        .secondary-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--bg);
+            font-size: 0.8rem;
+        }
+        .secondary-row:last-child { border-bottom: none; }
+        .secondary-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* ── Completed compact ── */
+        .completed-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.3rem 0;
+            border-bottom: 1px solid var(--bg);
+            font-size: 0.75rem;
+        }
+        .completed-row:last-child { border-bottom: none; }
+        .completed-row .cr-name { font-weight: 500; }
+        .completed-row .cr-result { color: var(--green); }
+
+        /* ── Workflows table (inside details) ── */
+        .wf-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.75rem;
+        }
+        .wf-table th {
+            text-align: left;
+            padding: 0.5rem;
+            background: var(--bg);
+            font-weight: 600;
+            border-bottom: 2px solid var(--border);
+        }
+        .wf-table td { padding: 0.5rem; border-bottom: 1px solid var(--bg); }
+        .wf-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 0.4rem; }
+        .wf-dot.active { background: var(--green); }
+
+        /* ── Dep grid (inside details) ── */
+        .dep-grid-v2 {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.75rem;
+        }
+        .dep-col-head {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--gray);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .dep-chip {
+            background: var(--bg);
+            border: 1.5px solid var(--border);
+            border-radius: 6px;
+            padding: 0.4rem;
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 0.35rem;
+        }
+        .dep-chip.active { border-color: var(--green); background: var(--green-bg); }
+        .dep-chip.partial { border-color: var(--amber); background: var(--amber-bg); }
+        .dep-chip.blocked { border-color: var(--red); background: var(--red-bg); }
+
+        /* ── Data flow compact ── */
+        .flow-row-v2 {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.4rem 0;
+            flex-wrap: wrap;
+            font-size: 0.75rem;
+        }
+        .flow-chip { padding: 0.2rem 0.5rem; border-radius: 5px; font-weight: 500; }
+        .flow-chip.src { background: var(--purple-bg); color: var(--purple); }
+        .flow-chip.proc { background: var(--blue-bg); color: var(--blue); }
+        .flow-chip.dest { background: var(--green-bg); color: var(--green); }
+        .flow-arrow-v2 { color: #ccc; font-size: 0.9rem; }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.7rem;
+            padding: 1rem 0 2rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .kpi-row { grid-template-columns: repeat(3, 1fr); }
+            .health-strip { grid-template-columns: 1fr; }
+            .fin-grid { grid-template-columns: repeat(3, 1fr); }
+            .projects-compact { grid-template-columns: 1fr; }
+            .timeline-row { grid-template-columns: 120px 1fr; }
+            .timeline-name { font-size: 0.7rem; }
+            .wr-grid { grid-template-columns: repeat(2, 1fr); }
+            .dep-grid-v2 { grid-template-columns: repeat(2, 1fr); }
+            .header-bar { padding: 0.75rem 1rem; }
+        }
+
+        @media print {
+            .header-bar { background: white; color: var(--dark); border-bottom: 2px solid var(--dark); }
+            details.collapsible { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Header Bar -->
+    <div class="header-bar">
+        <h1>MOUVE Customer Engine</h1>
+        <span class="meta" id="header-meta">Loading...</span>
+    </div>
+
+    <div class="container">
+
+        <!-- 2. KPI Cards -->
+        <div class="kpi-row" id="kpi-row"></div>
+
+        <!-- 3. System Health Strip -->
+        <div class="health-strip" id="health-strip"></div>
+
+        <!-- 4. Financial Snapshot -->
+        <div class="fin-snapshot" id="fin-snapshot"></div>
+
+        <!-- 5. Weekly Review -->
+        <div class="weekly-review" id="weekly-review" style="display:none;"></div>
+
+        <!-- 5b. Recent Decisions -->
+        <div class="recent-decisions" id="recent-decisions" style="display:none;"></div>
+
+        <!-- 6. Project Timeline -->
+        <div class="section-head">Project Timeline <span class="count" id="timeline-count">0</span></div>
+        <div class="timeline-container" id="timeline-container"></div>
+
+        <!-- 6. Active Projects (condensed) -->
+        <div class="section-head">Active Projects <span class="count" id="projects-count">0</span></div>
+        <div class="projects-compact" id="projects-compact"></div>
+
+        <!-- 7. Tasks -->
+        <div class="section-head">Pending Tasks <span class="count" id="tasks-count">0</span></div>
+        <div class="tasks-container" id="tasks-container"></div>
+
+        <!-- 8. Priority Actions -->
+        <div class="section-head">Priority Actions <span class="count" id="actions-count">0</span></div>
+        <div class="actions-container" id="actions-container"></div>
+
+        <!-- 9. Collapsed Sections -->
+        <div class="section-head">More</div>
+
+        <details class="collapsible" id="secondary-details">
+            <summary>Secondary Projects <span class="count" id="secondary-count">0</span></summary>
+            <div class="detail-body" id="secondary-body"></div>
+        </details>
+
+        <details class="collapsible" id="completed-details">
+            <summary>Completed Projects <span class="count" id="completed-count">0</span></summary>
+            <div class="detail-body" id="completed-body"></div>
+        </details>
+
+        <details class="collapsible">
+            <summary>System Dependencies</summary>
+            <div class="detail-body" id="deps-body"></div>
+        </details>
+
+        <details class="collapsible">
+            <summary>Data Flows</summary>
+            <div class="detail-body" id="flows-body"></div>
+        </details>
+
+        <details class="collapsible">
+            <summary>Workflows</summary>
+            <div class="detail-body" id="workflows-body"></div>
+        </details>
+
+        <footer>
+            MOUVE Customer Engine &bull; Dashboard v2.0 &bull; Data from dashboard-data.json
+        </footer>
+    </div>
+
+    <script>
+    async function loadDashboard() {
+        try {
+            const r = await fetch('dashboard-data.json');
+            if (!r.ok) throw new Error('Failed to load');
+            render(await r.json());
+        } catch (e) {
+            document.getElementById('header-meta').textContent = 'Failed to load data';
+            console.error(e);
+        }
+    }
+
+    function fmt(n) {
+        if (n >= 1000) return '\u00A3' + Math.round(n / 1000) + 'K';
+        return '\u00A3' + n.toLocaleString();
+    }
+
+    function render(d) {
+        // Header
+        const gen = new Date(d.generated_at);
+        document.getElementById('header-meta').textContent =
+            `v${d.version} \u2022 Updated ${gen.toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'})} ${gen.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'})}`;
+
+        // Count active projects
+        const allProjects = [...(d.primary_projects||[]), ...(d.secondary_projects||[])];
+        const activeCount = allProjects.filter(p => p.status === 'in_progress').length;
+        const studentCount = d.primary_projects?.find(p => p.data_quality)?.data_quality?.contacts || '?';
+
+        // KPI row
+        const fin = d.financial_summary || {};
+        const sh = d.system_health || {};
+        const overallHealth = [sh.supabase_sync, sh.n8n_workflows, sh.data_quality]
+            .every(s => s && s.status === 'healthy') ? 'healthy' : 'warning';
+        const healthColor = overallHealth === 'healthy' ? 'var(--green)' : 'var(--amber)';
+
+        document.getElementById('kpi-row').innerHTML = `
+            <div class="kpi-card">
+                <div class="value" style="color:var(--blue);">${activeCount}</div>
+                <div class="label">Active Projects</div>
+            </div>
+            <div class="kpi-card">
+                <div class="value" style="color:var(--dark);">${studentCount}</div>
+                <div class="label">Students</div>
+            </div>
+            <div class="kpi-card">
+                <div class="value" style="color:var(--green);">${fmt(fin.revenue || 0)}</div>
+                <div class="label">Revenue</div>
+            </div>
+            <div class="kpi-card">
+                <div class="value" style="color:var(--dark);">${fin.contribution_margin_pct || 0}%</div>
+                <div class="label">Margin</div>
+            </div>
+            <div class="kpi-card">
+                <div class="value" style="color:var(--purple);">${fin.cash_runway_months || 0}mo</div>
+                <div class="label">Cash Runway</div>
+            </div>
+            <div class="kpi-card">
+                <div class="value"><span style="display:inline-block;width:14px;height:14px;border-radius:50%;background:${healthColor};vertical-align:middle;"></span></div>
+                <div class="label">System Health</div>
+            </div>
+        `;
+
+        // System Health Strip
+        renderHealthStrip(sh);
+
+        // Financial Snapshot
+        renderFinancial(fin);
+
+        // Weekly Review + Recent Decisions
+        renderWeeklyReview(d.weekly_review);
+        renderRecentDecisions(d.recent_decisions);
+
+        // Timeline + Projects (primary)
+        renderTimeline(d.primary_projects || []);
+        renderProjects(d.primary_projects || []);
+
+        // Tasks
+        renderTasks(d.tasks || []);
+
+        // Priority Actions
+        renderActions(d.priority_actions || []);
+
+        // Collapsed
+        renderSecondary(d.secondary_projects || []);
+        renderCompleted(d.completed_projects || {});
+        renderDeps(d.dependencies || {});
+        renderFlows(d.data_flows || []);
+        renderWorkflows(d.workflows || []);
+    }
+
+    function renderWeeklyReview(wr) {
+        const el = document.getElementById('weekly-review');
+        if (!wr) return;
+        el.style.display = 'block';
+
+        const renderList = items => (items||[]).map(i => `<li>${i}</li>`).join('');
+
+        el.innerHTML = `
+            <div class="wr-header">
+                <span class="wr-title">Weekly Review</span>
+                <span class="wr-week">w/c ${wr.week_commencing || ''}</span>
+            </div>
+            <div class="wr-grid">
+                <div class="wr-col built">
+                    <div class="wr-col-head">Built</div>
+                    <ul>${renderList(wr.built)}</ul>
+                </div>
+                <div class="wr-col improved">
+                    <div class="wr-col-head">Improved</div>
+                    <ul>${renderList(wr.improved)}</ul>
+                </div>
+                <div class="wr-col decisions">
+                    <div class="wr-col-head">Decisions Made</div>
+                    <ul>${renderList(wr.decisions)}</ul>
+                </div>
+                <div class="wr-col risks">
+                    <div class="wr-col-head">Next Week Risks</div>
+                    <ul>${renderList(wr.risks)}</ul>
+                </div>
+            </div>
+        `;
+    }
+
+    function renderRecentDecisions(decisions) {
+        const el = document.getElementById('recent-decisions');
+        if (!decisions || !decisions.length) return;
+        el.style.display = 'block';
+        el.innerHTML = `
+            <div class="rd-title">Recent Decisions</div>
+            <ul class="rd-list">${decisions.map(d => `<li>${d}</li>`).join('')}</ul>
+        `;
+    }
+
+    function renderHealthStrip(sh) {
+        const el = document.getElementById('health-strip');
+        if (!sh || (!sh.supabase_sync && !sh.n8n_workflows && !sh.data_quality)) {
+            el.style.display = 'none';
+            return;
+        }
+
+        const sb = sh.supabase_sync || {};
+        const n8n = sh.n8n_workflows || {};
+        const dq = sh.data_quality || {};
+
+        const syncTime = sb.last_run ? new Date(sb.last_run).toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'}) : '?';
+
+        el.innerHTML = `
+            <div class="health-indicator">
+                <span class="health-dot ${sb.status || 'healthy'}"></span>
+                <span><strong>n8n</strong></span>
+                <span class="detail">${n8n.active || 0} active, ${n8n.failed_24h || 0} failed</span>
+            </div>
+            <div class="health-indicator">
+                <span class="health-dot ${sb.status || 'healthy'}"></span>
+                <span><strong>Supabase</strong></span>
+                <span class="detail">Synced ${syncTime} \u2022 ${(sb.records||0).toLocaleString()} records</span>
+            </div>
+            <div class="health-indicator">
+                <span class="health-dot ${dq.status || 'healthy'}"></span>
+                <span><strong>Data</strong></span>
+                <span class="detail">${(dq.contacts||0).toLocaleString()} contacts, ${dq.orphans||0} orphans</span>
+            </div>
+        `;
+    }
+
+    function renderFinancial(fin) {
+        const el = document.getElementById('fin-snapshot');
+        if (!fin || !fin.revenue) {
+            el.style.display = 'none';
+            return;
+        }
+        el.innerHTML = `
+            <div class="fin-title">
+                <span>Financial Snapshot</span>
+                <span class="source">${fin.source || ''}</span>
+            </div>
+            <div class="fin-grid">
+                <div class="fin-item revenue">
+                    <div class="fin-value">${fmt(fin.revenue)}</div>
+                    <div class="fin-label">Revenue</div>
+                </div>
+                <div class="fin-item costs">
+                    <div class="fin-value">${fmt(fin.direct_costs)}</div>
+                    <div class="fin-label">Direct Costs</div>
+                </div>
+                <div class="fin-item costs">
+                    <div class="fin-value">${fmt(fin.marketing)}</div>
+                    <div class="fin-label">Marketing</div>
+                </div>
+                <div class="fin-item costs">
+                    <div class="fin-value">${fmt(fin.overheads)}</div>
+                    <div class="fin-label">Overheads</div>
+                </div>
+                <div class="fin-item profit">
+                    <div class="fin-value">${fmt(fin.net_profit)}</div>
+                    <div class="fin-label">Net Profit</div>
+                </div>
+                <div class="fin-item cash">
+                    <div class="fin-value">${fmt(fin.closing_cash_aug)}</div>
+                    <div class="fin-label">Cash Aug</div>
+                </div>
+                <div class="fin-item neutral">
+                    <div class="fin-value">${fin.cash_runway_months}mo</div>
+                    <div class="fin-label">Runway</div>
+                </div>
+                <div class="fin-item neutral">
+                    <div class="fin-value" style="font-size:0.9rem;">${fin.lowest_cash_month}</div>
+                    <div class="fin-label">Lowest</div>
+                </div>
+            </div>
+        `;
+    }
+
+    function renderTimeline(projects) {
+        const el = document.getElementById('timeline-container');
+        document.getElementById('timeline-count').textContent = projects.length;
+        el.innerHTML = projects.map(p => {
+            const total = p.phase_total;
+            const current = p.phase_current;
+            let segments = '';
+            for (let i = 1; i <= total; i++) {
+                let cls = 'remaining';
+                if (i < current) cls = 'done';
+                else if (i === current) cls = 'current';
+                segments += `<div class="timeline-segment ${cls}"><span class="seg-label">${i}</span></div>`;
+            }
+            return `
+                <div class="timeline-row">
+                    <div class="timeline-name" title="${p.name}">${p.name}</div>
+                    <div style="display:flex;align-items:center;">
+                        <div class="timeline-bar-wrapper" style="flex:1;">${segments}</div>
+                        <span class="timeline-phase-text">${current}/${total}</span>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    function renderProjects(projects) {
+        const el = document.getElementById('projects-compact');
+        document.getElementById('projects-count').textContent = projects.length;
+        el.innerHTML = projects.map((p, idx) => {
+            const pillClass = 'pill-' + (p.status || 'planned').replace('_','-');
+            const statusShort = {
+                'in_progress': 'In Progress',
+                'planned': 'Planned',
+                'waiting': 'Waiting',
+                'blocked': 'Blocked',
+                'complete': 'Complete'
+            }[p.status] || p.status;
+
+            const nextText = p.next_phase ? p.next_phase.name : '';
+
+            // Completed phases
+            let completedHtml = '';
+            if (p.completed_phases && p.completed_phases.length) {
+                completedHtml = p.completed_phases.map(cp =>
+                    `<div class="pc-phase-row"><span class="pc-phase-dot done"></span><span class="pc-phase-name">${cp.name}</span> <span class="pc-phase-summary">\u2014 ${cp.summary}</span></div>`
+                ).join('');
+            }
+
+            // Next phase detail
+            let nextDetailHtml = '';
+            if (p.next_phase) {
+                const tasks = p.next_phase.tasks ? `<ul>${p.next_phase.tasks.map(t => `<li>${t}</li>`).join('')}</ul>` : '';
+                nextDetailHtml = `
+                    <div class="pc-next-detail">
+                        <div class="nd-title">\u25B6 ${p.next_phase.name}</div>
+                        <div style="color:var(--gray);">${p.next_phase.detail || ''}</div>
+                        ${tasks}
+                    </div>
+                `;
+            }
+
+            // Remaining phases
+            let remainingHtml = '';
+            if (p.remaining_phases && p.remaining_phases.length) {
+                remainingHtml = p.remaining_phases.map(rp =>
+                    `<div class="pc-phase-row"><span class="pc-phase-dot remaining"></span><span style="color:var(--gray);">${rp}</span></div>`
+                ).join('');
+            }
+
+            const id = 'proj-detail-' + idx;
+
+            return `
+                <div class="project-compact">
+                    <div class="pc-top">
+                        <span class="pc-name">${p.name}</span>
+                        <div style="display:flex;gap:0.4rem;align-items:center;">
+                            <span class="phase-badge">${p.phase_current}/${p.phase_total}</span>
+                            <span class="status-pill ${pillClass}">${statusShort}</span>
+                        </div>
+                    </div>
+                    <div class="pc-next"><strong>Next:</strong> ${nextText}</div>
+                    <button class="pc-expand" onclick="var d=document.getElementById('${id}');d.classList.toggle('open');this.textContent=d.classList.contains('open')?'\u25B4 Hide details':'\u25BE Show details';">\u25BE Show details</button>
+                    <div class="pc-details" id="${id}">
+                        ${completedHtml}
+                        ${nextDetailHtml}
+                        ${remainingHtml}
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    function renderTasks(tasks) {
+        const pending = tasks.filter(t => t.status !== 'done');
+        document.getElementById('tasks-count').textContent = pending.length;
+        const el = document.getElementById('tasks-container');
+
+        if (pending.length === 0) {
+            el.innerHTML = '<div style="padding:0.5rem;color:var(--gray);font-size:0.8rem;">No pending tasks</div>';
+            return;
+        }
+
+        const today = new Date(); today.setHours(0,0,0,0);
+
+        el.innerHTML = pending.map(t => {
+            const parts = t.due.split('-');
+            const due = new Date(parts[0], parts[1]-1, parts[2]);
+            const days = Math.ceil((due - today)/(86400000));
+            let dueClass = '';
+            if (days < 0) dueClass = 'overdue';
+            else if (days <= 7) dueClass = 'soon';
+            const dueStr = due.toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+
+            return `
+                <div class="task-row">
+                    <span class="task-dot ${t.status}"></span>
+                    <span class="task-text">${t.title}</span>
+                    <span class="task-due ${dueClass}">${dueStr}</span>
+                </div>
+            `;
+        }).join('');
+    }
+
+    function renderActions(actions) {
+        document.getElementById('actions-count').textContent = actions.length;
+        const el = document.getElementById('actions-container');
+        const tagMap = {
+            'BUILD': 'tag-build', 'ACTION': 'tag-action', 'OPS': 'tag-ops',
+            'COMPLETE': 'tag-complete', 'P0': 'tag-p0'
+        };
+
+        el.innerHTML = actions.map(a => {
+            const tagCls = tagMap[a.category] || 'tag-ops';
+            return `
+                <div class="action-row action-row-expandable">
+                    <div class="action-top">
+                        <span class="action-tag ${tagCls}">${a.category}</span>
+                        <span class="action-title">${a.action}</span>
+                    </div>
+                    <div class="action-detail">${a.detail}</div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    function renderSecondary(projects) {
+        document.getElementById('secondary-count').textContent = projects.length;
+        const el = document.getElementById('secondary-body');
+        el.innerHTML = projects.map(p => {
+            const pillClass = 'pill-' + (p.status || 'planned').replace('_','-');
+            const statusShort = {
+                'in_progress': 'In Progress', 'planned': 'Planned',
+                'waiting': 'Waiting', 'blocked': 'Blocked'
+            }[p.status] || p.status;
+
+            return `
+                <div class="secondary-row">
+                    <div class="secondary-info">
+                        <span style="font-weight:500;">${p.name}</span>
+                        <span class="status-pill ${pillClass}">${statusShort}</span>
+                    </div>
+                    <span style="font-size:0.75rem;color:var(--gray);">${p.next_action || ''}</span>
+                </div>
+            `;
+        }).join('');
+    }
+
+    function renderCompleted(c) {
+        if (!c) return;
+        const mp = c.multi_phase || [];
+        const sp = c.simple || [];
+        const ac = c.active_campaigns || [];
+        const total = mp.length + sp.length + ac.length;
+        document.getElementById('completed-count').textContent = total;
+
+        const el = document.getElementById('completed-body');
+        let html = '';
+
+        if (mp.length) {
+            html += '<div style="font-size:0.7rem;text-transform:uppercase;color:var(--gray);font-weight:600;margin-bottom:0.3rem;margin-top:0.5rem;">Multi-Phase</div>';
+            html += mp.map(p => `<div class="completed-row"><span class="cr-name">${p.name}</span><span class="cr-result">${p.result}</span></div>`).join('');
+        }
+        if (sp.length) {
+            html += '<div style="font-size:0.7rem;text-transform:uppercase;color:var(--gray);font-weight:600;margin-bottom:0.3rem;margin-top:0.75rem;">Simple</div>';
+            html += sp.map(p => `<div class="completed-row"><span class="cr-name">${p.name}</span><span class="cr-result" style="color:${p.closed ? 'var(--gray)' : 'var(--green)'}">${p.result}</span></div>`).join('');
+        }
+        if (ac.length) {
+            html += '<div style="font-size:0.7rem;text-transform:uppercase;color:var(--gray);font-weight:600;margin-bottom:0.3rem;margin-top:0.75rem;">Active Campaigns</div>';
+            html += ac.map(p => `<div class="completed-row"><span class="cr-name">${p.name}</span><span class="cr-result" style="color:var(--blue)">${p.status}</span></div>`).join('');
+        }
+
+        el.innerHTML = html;
+    }
+
+    function renderDeps(deps) {
+        const el = document.getElementById('deps-body');
+        const cols = [
+            {key:'lead_capture', label:'Lead Capture'},
+            {key:'crm_leads', label:'CRM'},
+            {key:'automation', label:'Automation'},
+            {key:'data_email', label:'Data/Email'},
+            {key:'booking_systems', label:'Booking'}
+        ];
+
+        el.innerHTML = `
+            <div class="dep-grid-v2">
+                ${cols.map(c => `
+                    <div>
+                        <div class="dep-col-head">${c.label}</div>
+                        ${(deps[c.key]||[]).map(n => {
+                            const cls = {active:'active',partial:'partial',blocked:'blocked'}[n.status]||'';
+                            return `<div class="dep-chip ${cls}">${n.name}</div>`;
+                        }).join('')}
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    }
+
+    function renderFlows(flows) {
+        const el = document.getElementById('flows-body');
+        el.innerHTML = flows.map(f => {
+            return `
+                <div class="flow-row-v2" style="opacity:${f.active?1:0.5}">
+                    ${f.steps.map((s,i) => {
+                        let cls = 'proc';
+                        if (i===0) cls = 'src';
+                        if (i===f.steps.length-1) cls = 'dest';
+                        const arrow = i < f.steps.length-1 ? '<span class="flow-arrow-v2">\u2192</span>' : '';
+                        return `<span class="flow-chip ${cls}">${s}</span>${arrow}`;
+                    }).join('')}
+                </div>
+            `;
+        }).join('');
+    }
+
+    function renderWorkflows(wfs) {
+        const el = document.getElementById('workflows-body');
+        el.innerHTML = `
+            <table class="wf-table">
+                <thead><tr><th>ID</th><th>Workflow</th><th>Trigger</th><th>Status</th></tr></thead>
+                <tbody>
+                    ${wfs.map(w => `
+                        <tr>
+                            <td>${w.id}</td>
+                            <td>${w.name}</td>
+                            <td>${w.trigger}</td>
+                            <td><span class="wf-dot ${w.status}"></span>${w.status}</td>
+                        </tr>
+                    `).join('')}
+                </tbody>
+            </table>
+        `;
+    }
+
+    loadDashboard();
+    setInterval(loadDashboard, 5 * 60 * 1000);
+    </script>
+</body>
+</html>
