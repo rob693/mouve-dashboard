@@ -43,6 +43,7 @@ dashboard-data.json
 ├── dependencies           (system integrations map)
 ├── data_flows             (data pipeline diagrams)
 ├── workflows              (n8n workflow table)
+├── governing_documents    ★ NEW v2 — policy register
 └── priority_actions       (categorised action items)
 ```
 
@@ -413,6 +414,37 @@ n8n workflow registry.
 
 ---
 
+### 15. `governing_documents` ★ NEW
+
+Policy register of authoritative operating documents. Rendered as a neutral, minimal list above the collapsed sections. No cards, no colour — reads like law, not UI.
+
+```json
+"governing_documents": [
+  {
+    "name": "Compaction Recovery Protocol",
+    "path": "docs/protocols/COMPACTION-RECOVERY-PROTOCOL.md",
+    "description": "Meta instructions + template for implementation plans. Defines verification workflow, Claude rules, and n8n patterns.",
+    "applies_to": "All projects with 3+ phases"
+  }
+]
+```
+
+**Fields:**
+- `name` — document title (plain text, no emoji)
+- `path` — file path relative to project root (displayed in monospace)
+- `description` — 1-2 sentence summary of what the document governs
+- `applies_to` — scope statement (rendered as bold text)
+
+**When to update:** When a new governing document is created, or an existing one is superseded or retired.
+
+**Rules:**
+- Keep to 4-6 documents max (these are foundational, not a general docs index)
+- Only include documents that define process rules, not reference data
+- Description should answer "what does this control?" not "what does it contain?"
+- `applies_to` should be a clear scope boundary ("All multi-phase projects", "All dashboard updates")
+
+---
+
 ## Session Wrap-Up Checklist
 
 When Claude is asked to update the dashboard (or during session wrap-up), follow this checklist:
@@ -431,6 +463,7 @@ When Claude is asked to update the dashboard (or during session wrap-up), follow
 | Data synced/cleaned | `system_health.data_quality` |
 | Budget updated | `financial_summary` |
 | Blocker added/cleared | Project's `blocker` field + `status` |
+| New governing doc created | `governing_documents` (append) |
 
 ### 2. Update `weekly_review` (if Monday or significant progress)
 
