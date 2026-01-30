@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-29T23:45:00Z",
+  "generated_at": "2026-01-30T14:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "3.0",
 
@@ -449,8 +449,8 @@
       "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Post-launch monitoring + feature backlog (Incident Reports, My Pay Summary, Student Notes, Sub Request, Announcements)",
       "status": "in_progress",
-      "status_label": "LIVE ✅ | Monitoring staff feedback | 5 features in backlog",
-      "next_action": "Monitor staff usage, assign Feb Camp instructors when staffed, pick next backlog feature"
+      "status_label": "LIVE ✅ | Bug fix: 16 venue options added (30 Jan) | 5 features in backlog",
+      "next_action": "Consider adding typecast:true to API route; flip Hasmo back to Cancelled after Yael logs"
     },
     {
       "name": "Weekly Auto-Blog System",
@@ -475,7 +475,7 @@
       {"name": "Teacher Culture Programme", "result": "12 campaigns live"},
       {"name": "Operational Dashboard", "result": "Vercel + n8n pipeline + 7 KPI cards (27 Jan 2026)"},
       {"name": "GHL SMS Audit & Cleanup", "result": "5/5 tasks done, ~410 SMS/month saved. All complete 29 Jan 2026"},
-      {"name": "Custom Staff Portal (Next.js)", "result": "8/8 phases, 6 features, 22 staff live (29 Jan 2026). Post-launch data audit: 28 records fixed."}
+      {"name": "Custom Staff Portal (Next.js)", "result": "8/8 phases, 6 features, 22 staff live (29 Jan 2026). Post-launch: 28 records fixed, 16 venue options added (30 Jan)."}
     ],
     "simple": [
       {"name": "Children's Onboarding Email Refinement", "result": "10 emails × 3 age tracks, all pass Email Deliverability Checklist v1.1"},
@@ -587,7 +587,7 @@
     "improved": [
       "SMS costs: ~410/month saved (5 cleanup tasks)",
       "Venue rental accuracy: +40% correction applied",
-      "Staff Portal data: 34 class records fixed"
+      "Staff Portal: 16 venue options added, timesheet bug fixed (30 Jan)"
     ],
     "decisions": [
       "Venue rental correction accepted (£23K\u2192£32K)",
