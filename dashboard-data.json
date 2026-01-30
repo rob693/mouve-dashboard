@@ -4,9 +4,9 @@
   "version": "3.0",
 
   "health_summary": {
-    "complete": 33,
+    "complete": 34,
     "in_progress": 7,
-    "waiting": 1,
+    "waiting": 0,
     "planned": 3,
     "blocked": 0
   },
@@ -433,17 +433,6 @@
       "next_action": "PARKED until Q1 2026 stabilises. When ready: 'Start Dance Studio SaaS project - Phase 0'"
     },
     {
-      "name": "Back Office: Amex Recon vNext",
-      "phase_current": 0,
-      "phase_total": 5,
-      "implementation_plan": "AMEX-RECONCILIATION-IMPLEMENTATION-PLAN-JAN2026-VNEXT.md",
-      "purpose": "Automate receipt routing + monthly reconciliation (reduce 3 hours → 30 minutes)",
-      "status": "waiting",
-      "status_label": "v2.0 Architectural Review Complete",
-      "start_date": "February 2026",
-      "next_action": "Phase 1: Routing Configuration (Rob Gmail + M365 + Louise Gmail filters)"
-    },
-    {
       "name": "Back Office: Staff Costs",
       "phase_current": 6,
       "phase_total": 7,
@@ -505,6 +494,7 @@
       {"name": "LF Trial Email Clarity Fix", "result": "3 workflows deployed"},
       {"name": "Historical Camp Data Migration", "result": "1,301 contacts + 11-tag taxonomy imported to AC"},
       {"name": "School Clubs Migration", "result": "Closed (not viable)", "closed": true},
+      {"name": "Amex Recon", "result": "Retired (30 Jan 2026) — M365 filters causing staff invoice loss, manual process sufficient", "closed": true},
       {"name": "Attendance Tracker (Children's Dance)", "result": "Staff Portal /attendance page (25 Jan 2026)"}
     ],
     "active_campaigns": [
