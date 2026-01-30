@@ -83,6 +83,12 @@
       "due": "2026-02-01",
       "status": "pending",
       "context": "Phase 4 final verification: 3 consecutive nights of successful syncs. Query: SELECT checked_at, status, details->>'table' FROM ops.system_health WHERE check_name='airtable_sync' AND check_type='sync' ORDER BY checked_at DESC LIMIT 15;"
+    },
+    {
+      "title": "Chase DSP (Pamela Means) if no reply to API access email",
+      "due": "2026-02-06",
+      "status": "pending",
+      "context": "Email sent 30 Jan 2026 to pmeans@gostudiopro.com. Met Pamela at DSOA Scottsdale. Previous requests: Dec 2025 (viaSocket), Jan 2026 (Amanda F.) — no dev team response yet."
     }
   ],
 
