@@ -471,6 +471,16 @@
       "next_action": "Consider adding typecast:true to API route; monitor staff usage"
     },
     {
+      "name": "Pocket Assistant (OpenClaw)",
+      "phase_current": 3,
+      "phase_total": 5,
+      "implementation_plan": "POCKET-ASSISTANT-IMPLEMENTATION-PLAN-FEB2026.md",
+      "purpose": "Personal AI assistant via Telegram (@OpenClaw_Rob_bot) with MOUVE read-only context, web search, cron briefings",
+      "status": "in_progress",
+      "status_label": "v2.0 | Phase 3/5 ✅ LIVE on Telegram (31 Jan) | Phase 4: Refinement 📋",
+      "next_action": "Use for 1 week, tune SOUL.md, add skills based on real usage"
+    },
+    {
       "name": "Weekly Auto-Blog System",
       "phase_current": 0,
       "phase_total": 6,
