@@ -43,16 +43,28 @@
       "context": "Financial Health Check — Phase 4. Uploaded 29 Jan 2026."
     },
     {
-      "title": "Follow up with bookkeeper if no response within 7 days",
-      "due": "2026-02-05",
+      "title": "URGENT: Gather 8 bank statements + previous accountant working papers for year-end",
+      "due": "2026-02-03",
       "status": "pending",
-      "context": "Email sent 29 Jan 2026. Follow up if no response by 5 Feb."
+      "context": "Financial Health Check — Phase 5. Year-end 31 Aug 2025 blocked 6+ weeks. Mel needs these to complete. Also split £43.9K international travel (business vs personal) with Louise."
     },
     {
-      "title": "Tell bookkeeper to recategorise Sukkahmart £1,227 in Xero (not venue rental)",
-      "due": "2026-02-05",
+      "title": "URGENT: December queries — resend Ildiko invoices to Ivanka, chase Hasmonean",
+      "due": "2026-02-03",
       "status": "pending",
-      "context": "Oct 2025 Sukkahmart payment miscategorised as Venue Rental (Account 301). It's a Sukkot purchase. Mention when bookkeeper responds to 9-question email."
+      "context": "Financial Health Check — Phase 5. 16 uncategorised transactions (£6,935.56) blocking December management accounts. Google Sheet: 1KgC-rT2SeKjJs5XaZmMYGq6q-rZK63GHgJHHxb2bmt4"
+    },
+    {
+      "title": "Investigate Pembee £6.8K platform-to-Xero mismatch",
+      "due": "2026-02-03",
+      "status": "pending",
+      "context": "Financial Health Check — Phase 5. Mel confirmed all other revenue gaps are VAT (gross vs net). Pembee is the only real unresolved discrepancy."
+    },
+    {
+      "title": "Reply to Mel — acknowledge both emails + Sukkahmart £1,227 recategorisation",
+      "due": "2026-02-03",
+      "status": "pending",
+      "context": "Financial Health Check — Phase 5. Mel replied 30 Jan with reconciliation answers + year-end blockers. Also mention Sukkahmart Oct 2025 miscategorised as Venue Rental (Account 301)."
     },
     {
       "title": "Write 1-page budget summary (achievable? fragile? what breaks first?)",
@@ -691,8 +703,8 @@
     },
     {
       "category": "ACTION",
-      "action": "Follow up with bookkeeper Mel if no response by 5 Feb",
-      "detail": "9-question email sent 29 Jan 2026. Covers: reconciliation schedule, bank feeds, revenue recognition, per-stream gaps, monthly management accounts, Stripe visibility, tracking category allocation, expense recategorisation. Financial Health Check Phase 4."
+      "action": "Bookkeeper Monday actions — year-end blockers, December queries, Pembee £6.8K",
+      "detail": "Mel replied 30 Jan. URGENT: 8 bank statements + accountant papers for year-end (blocked 6+ wks). Split £43.9K travel with Louise. Resend Ildiko invoices, chase Hasmonean. Investigate Pembee £6.8K. Reply acknowledging both emails + Sukkahmart recategorisation."
     },
     {
       "category": "ACTION",
