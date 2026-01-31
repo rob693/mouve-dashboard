@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-30T15:15:00Z",
+  "generated_at": "2026-01-31T15:15:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "3.0",
 
@@ -242,7 +242,7 @@
       "implementation_plan": "FINANCIAL-HEALTH-CHECK-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "One-time diagnostic deep dive: stream profitability, class economics, marketing analysis, revenue reconciliation, bookkeeper questions",
       "status": "in_progress",
-      "status_label": "v1.0 | Phases 1-3 Complete ✅ | Phase 4: Bookkeeper Communication 🔧",
+      "status_label": "Phase 5 🔧 — Mel replied 30 Jan. VAT explains gaps. Monday: year-end blockers (6 wks overdue), Dec queries, Pembee £6.8K.",
       "completed_phases": [
         {"name": "Phase 1: Data Collection & Analysis", "summary": "Xero P&L, Stripe data, Airtable staff/class data, school/camp tracking categories, 4-year comparison"},
         {"name": "Phase 2: Revenue Reconciliation", "summary": "~£18K gap (revised from £29K). Ladies Fitness verified via TeamUp at 70-75% margin."},
@@ -455,7 +455,7 @@
       "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Post-launch monitoring + feature backlog (Incident Reports, My Pay Summary, Student Notes, Sub Request, Announcements)",
       "status": "in_progress",
-      "status_label": "LIVE ✅ | Bug fix: venues + monthly view deployed (30 Jan) | 5 features in backlog",
+      "status_label": "LIVE — All 8 phases. Post-launch: Faye data fix, Dance Gym class added, Admin work type, Rachel Permutt email fixed. 14 staff reminder for 1 Feb.",
       "next_action": "Consider adding typecast:true to API route; monitor staff usage"
     },
     {
