@@ -462,13 +462,16 @@
     },
     {
       "name": "Staff Portal: Monitoring & Feature Backlog",
-      "phase_current": 0,
-      "phase_total": 0,
+      "phase_current": 9,
+      "phase_total": 9,
       "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Post-launch monitoring + feature backlog (Incident Reports, My Pay Summary, Student Notes, Sub Request, Announcements)",
       "status": "in_progress",
-      "status_label": "LIVE — All 8 phases. Post-launch: Faye data fix, Dance Gym class added, Admin work type, Rachel Permutt email fixed. 14 staff reminder for 1 Feb.",
-      "next_action": "Consider adding typecast:true to API route; monitor staff usage"
+      "status_label": "Phase 9/9 — Per-Class Session Rates",
+      "updated": "2026-02-01",
+      "summary": "v3.0 — LIVE to all 22 staff. Phase 9: Per-class session rates system built. 35 STAFF_CLASS_RATES records, 77 sessions backfilled. Yael verified £1,355. Blocked: Alexandra (£0) + Evie (£0) need rates from Louise.",
+      "blocker": "Missing rate info for Alexandra Gibbons + Evie Wong",
+      "next_action": "Get rates from Louise for Alexandra Gibbons + Evie Wong; then verify all staff pay calculations"
     },
     {
       "name": "Pocket Assistant (OpenClaw)",
