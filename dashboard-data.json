@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-01T19:00:00Z",
+  "generated_at": "2026-02-01T21:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "3.0",
 
@@ -107,6 +107,12 @@
       "due": "2026-02-06",
       "status": "pending",
       "context": "Email sent 30 Jan 2026 to pmeans@gostudiopro.com. Met Pamela at DSOA Scottsdale. Previous requests: Dec 2025 (viaSocket), Jan 2026 (Amanda F.) — no dev team response yet."
+    },
+    {
+      "title": "Louise: Review staff rates spreadsheet (MOUVE-Staff-Rates-Final-Review.xlsx)",
+      "due": "2026-02-07",
+      "status": "pending",
+      "context": "22-tab Excel workbook cross-referencing 4 sources (Louise's v2+v3 spreadsheets, invoices, Airtable). Each teacher tab has yellow column for Louise to tick or correct. URGENT: Alexandra (21 sessions £0) + Evie (6 sessions £0). Once returned, create STAFF_CLASS_RATES records for all confirmed rates."
     }
   ],
 
@@ -507,11 +513,11 @@
       "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Post-launch monitoring + feature backlog (Incident Reports, My Pay Summary, Student Notes, Sub Request, Announcements)",
       "status": "in_progress",
-      "status_label": "Phase 9/9 — Per-Class Session Rates",
+      "status_label": "Phase 9/9 — Rate Review Spreadsheet sent to Louise",
       "updated": "2026-02-01",
-      "summary": "v3.0 — LIVE to all 22 staff. Phase 9: Per-class session rates system built. 35 STAFF_CLASS_RATES records, 77 sessions backfilled. Yael verified £1,355. Blocked: Alexandra (£0) + Evie (£0) need rates from Louise.",
-      "blocker": "Missing rate info for Alexandra Gibbons + Evie Wong",
-      "next_action": "Get rates from Louise for Alexandra Gibbons + Evie Wong; then verify all staff pay calculations"
+      "summary": "v3.0 — LIVE to all 22 staff. Phase 9: Per-class rates system built (35 STAFF_CLASS_RATES, 77 sessions backfilled). Full 22-tab rate review spreadsheet cross-referencing 4 sources sent to Louise for tick/correct.",
+      "blocker": "Louise reviewing MOUVE-Staff-Rates-Final-Review.xlsx (21 teachers). Alexandra (£0) + Evie (£0) URGENT.",
+      "next_action": "Louise reviews spreadsheet and ticks/corrects rates. Then create STAFF_CLASS_RATES records for all confirmed rates."
     },
     {
       "name": "Pocket Assistant (OpenClaw)",
@@ -652,23 +658,29 @@
     "week_commencing": "27 January 2026",
     "built": [
       "Staff Portal live to all 22 staff",
-      "Supabase nightly sync + monitoring",
-      "FIN-01 weekly financial snapshot"
+      "Per-class session rates system (STAFF_CLASS_RATES table, 35 records, 77 sessions backfilled)",
+      "22-tab staff rates review spreadsheet cross-referencing 4 data sources",
+      "FIN-01 weekly financial snapshot",
+      "Newsletter template for ActiveCampaign"
     ],
     "improved": [
       "SMS costs: ~410/month saved (5 cleanup tasks)",
       "Venue rental accuracy: +40% correction applied",
-      "Staff Portal: 16 venue options added, timesheet bug fixed (30 Jan)"
+      "Staff Portal: 16 venue options added, timesheet bug fixed (30 Jan)",
+      "Google Ads tracking fixed (UTM + last-touch attribution), Facebook Campaign 1 paused",
+      "£14,540 missing Stripe revenue identified and reconciliation sent to bookkeeper"
     ],
     "decisions": [
       "Venue rental correction accepted (£23K\u2192£32K)",
       "Stripe load abandoned (90% unattributable)",
-      "Budget cash runway revised to 5.0 months"
+      "Budget PAUSED until Xero data quality improved",
+      "Georgia rate changes accepted as pay increases (Tinies Ballet, Sinai Drama)"
     ],
     "risks": [
-      "Bookkeeper response (9 questions, sent 29 Jan)",
+      "Bookkeeper: £14,540 Stripe reconciliation (target 7 Feb)",
+      "Louise: Staff rates review spreadsheet (21 teachers, Alexandra + Evie URGENT)",
       "AC onboarding upload (25 HTMLs pending)",
-      "Budget spreadsheet upload to Google Sheets"
+      "Year-end 31 Aug 2025 blocked 6+ weeks (bank statements needed)"
     ]
   },
 
