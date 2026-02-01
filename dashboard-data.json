@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-01-31T15:15:00Z",
+  "generated_at": "2026-02-01T11:30:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "3.0",
 
   "health_summary": {
     "complete": 34,
     "in_progress": 7,
-    "waiting": 0,
+    "waiting": 1,
     "planned": 3,
     "blocked": 0
   },
@@ -388,6 +388,36 @@
         "avg_retention": "16.6 months",
         "cac_ltv_ratio": "1:22 (fully loaded)",
         "data_sources_consolidated": 8
+      }
+    },
+    {
+      "name": "Lead Scoring & Attribution Tracking",
+      "phase_current": 1,
+      "phase_total": 2,
+      "implementation_plan": "LEAD-SCORING-IMPLEMENTATION-PLAN-FEB2026.md",
+      "purpose": "Automated lead cost tracking and quality scoring for Google Ads vs Meta campaigns. Calculate true cost per acquisition and optimize ad spend allocation.",
+      "status": "waiting",
+      "status_label": "Phase 1 Complete ✅ | Waiting 7-14 days for Google conversion data",
+      "completed_phases": [
+        {"name": "Phase 1: Tracking Infrastructure", "summary": "Fixed Google Ads UTM tracking, updated n8n workflow (last-touch attribution), paused expensive Facebook campaign (£17.59/lead). Saved £299/month."}
+      ],
+      "next_phase": {
+        "name": "Phase 2: ML Lead Scoring (Optional)",
+        "detail": "Predictive enrollment likelihood using XGBoost (75-85% accuracy vs 65% rule-based). Only pursue if Phase 1 proves valuable.",
+        "status": "planned",
+        "tasks": [
+          "Monitor Google Ads leads for 7-14 days",
+          "Calculate true Google CPA (Cost Per Acquisition)",
+          "Compare Google vs Facebook performance",
+          "Decide: optimize further or add ML scoring"
+        ]
+      },
+      "key_data": {
+        "google_ads": "£493/month, £12.65/conversion (needs verification)",
+        "facebook_ads": "£666/month (was £965), £71.25/enrollment",
+        "website_organic": "22% conversion rate (best)",
+        "monthly_savings": "£299 (Facebook optimization)",
+        "tracking_status": "Fixed (1 Feb 2026)"
       }
     }
   ],
