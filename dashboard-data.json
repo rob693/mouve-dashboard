@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-02-01T14:45:00Z",
+  "generated_at": "2026-02-01T16:30:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "3.0",
 
   "health_summary": {
     "complete": 34,
-    "in_progress": 7,
+    "in_progress": 6,
     "waiting": 1,
     "planned": 3,
-    "blocked": 0
+    "blocked": 1
   },
 
   "tasks": [
@@ -25,10 +25,10 @@
       "context": "Target ~2,250 after cleanup. See UNIT-ECONOMICS-REFERENCE.md Section 14"
     },
     {
-      "title": "Review corrected 12-Month Budget on Google Sheets (venue rental £32,227)",
-      "due": "2026-02-03",
-      "status": "pending",
-      "context": "12-Month Budget — Phase 3. Corrected spreadsheet uploaded 1 Feb. Review all 6 tabs, then create assumptions register + 1-page summary."
+      "title": "12-Month Budget PAUSED — Fix Xero data quality first",
+      "due": "2026-03-01",
+      "status": "blocked",
+      "context": "Budget project paused 1 Feb. Data quality issues: Xero understated ~12%, admin costs unrealistic, bookkeeper queries outstanding. Resume after: Dec/Jan mgmt accounts complete, revenue reconciliation fixed, monthly close cycle established."
     },
     {
       "title": "Send bookkeeper 9-question email (reconciliation, tracking categories, recategorisation)",
@@ -289,28 +289,28 @@
       "phase_total": 5,
       "implementation_plan": "12-MONTH-BUDGET-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Decision-grade budget testing feasibility of £750K annual revenue — units-based, seasonal, autopay-aware cash flow, growth bridge",
-      "status": "in_progress",
-      "status_label": "v2.2 | Phase 3: Review 🔧 | Corrected spreadsheet uploaded to Google Sheets (1 Feb)",
+      "status": "paused",
+      "status_label": "v2.3 | ⏸️ PAUSED — Data Quality Issues | Pending Xero Reconciliation",
       "completed_phases": [
         {"name": "Phase 1: Specification & Inputs", "summary": "Virtual CFO critique (10 issues). Revised spec. Rob answered all 8 questions with Xero screenshots + DSP class data."},
         {"name": "Phase 2: Spreadsheet Build", "summary": "6-tab spreadsheet built: Revenue (£418,996), Direct Costs, Marketing, Overheads (£141,696), Cash Flow (min £116K Sep), Growth Bridge (corrected with DSP pricing £196.40 avg)."}
       ],
       "next_phase": {
         "name": "Phase 3: Review & Refine",
-        "detail": "Venue rental corrected (£22,997→£32,227). Corrected .xlsx uploaded to Google Sheets 1 Feb. Remaining: Rob review, assumptions register, 1-page summary.",
-        "status": "in_progress",
+        "detail": "PROJECT PAUSED (1 Feb). Xero upload revealed data quality issues: revenue understated ~12%, admin costs 47% over budget (£183K pace vs £125K budget). Need clean Xero data before budgeting is useful.",
+        "status": "paused",
         "tasks": [
-          "Rob reviews corrected spreadsheet (venue rental £32,227)",
-          "Create standalone assumptions register",
-          "Reconcile DSP theoretical vs actual revenue",
-          "Write 1-page summary"
+          "BLOCKED: Answer Dec/Jan bookkeeper queries (16 uncategorised transactions)",
+          "BLOCKED: Complete year-end 31 Aug 2025 (8 bank statements, 6+ weeks overdue)",
+          "BLOCKED: Revenue reconciliation (£15.5K gap)",
+          "BLOCKED: Establish monthly Xero close cycle"
         ]
       },
       "remaining_phases": [
         "Phase 4: Written Summary",
         "Phase 5: Finalise & Deliver"
       ],
-      "key_finding": "VENUE CORRECTED (29 Jan): Rebuilt from SMSJ invoices + price increase letter. Venue Rental £22,997→£32,227 (+40%). Contribution Margin 80.6%→78.4%. Cash Runway 5.5→5.0 months. Corrected spreadsheet uploaded to Google Sheets 1 Feb."
+      "key_finding": "PAUSED: Budget built on unreliable Xero data. Sep-Jan revenue tracking perfectly (£141K actual vs £141K budget), but admin costs 47% over. Decision: Fix Xero data quality first (bookkeeper queries, reconciliation), THEN rebuild budget from clean data."
     },
     {
       "name": "Supabase Shadow Database",
