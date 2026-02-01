@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-01T14:15:00Z",
+  "generated_at": "2026-02-01T14:45:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "3.0",
 
@@ -25,10 +25,10 @@
       "context": "Target ~2,250 after cleanup. See UNIT-ECONOMICS-REFERENCE.md Section 14"
     },
     {
-      "title": "Review corrected 12-Month Budget on Google Sheets (venue rental rebuilt)",
+      "title": "Review corrected 12-Month Budget on Google Sheets (venue rental £32,227)",
       "due": "2026-02-03",
       "status": "pending",
-      "context": "12-Month Budget — Phase 3. Venue rental corrected £22,997→£32,227 (+40%). Upload corrected .xlsx to Google Sheets."
+      "context": "12-Month Budget — Phase 3. Corrected spreadsheet uploaded 1 Feb. Review all 6 tabs, then create assumptions register + 1-page summary."
     },
     {
       "title": "Send bookkeeper 9-question email (reconciliation, tracking categories, recategorisation)",
@@ -290,28 +290,27 @@
       "implementation_plan": "12-MONTH-BUDGET-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Decision-grade budget testing feasibility of £750K annual revenue — units-based, seasonal, autopay-aware cash flow, growth bridge",
       "status": "in_progress",
-      "status_label": "v2.1 | Phase 3: Review 🔧 | Venue rental CORRECTED (£23K→£32K) | Upload to Google Sheets pending",
+      "status_label": "v2.2 | Phase 3: Review 🔧 | Corrected spreadsheet uploaded to Google Sheets (1 Feb)",
       "completed_phases": [
         {"name": "Phase 1: Specification & Inputs", "summary": "Virtual CFO critique (10 issues). Revised spec. Rob answered all 8 questions with Xero screenshots + DSP class data."},
         {"name": "Phase 2: Spreadsheet Build", "summary": "6-tab spreadsheet built: Revenue (£418,996), Direct Costs, Marketing, Overheads (£141,696), Cash Flow (min £116K Sep), Growth Bridge (corrected with DSP pricing £196.40 avg)."}
       ],
       "next_phase": {
         "name": "Phase 3: Review & Refine",
-        "detail": "Venue rental corrected from SMSJ invoices + price increase letter. Tab 2 (accrual) and Tab 5 (cash flow timing) rebuilt. Remaining: upload to Google Sheets, create assumptions register, write summary.",
+        "detail": "Venue rental corrected (£22,997→£32,227). Corrected .xlsx uploaded to Google Sheets 1 Feb. Remaining: Rob review, assumptions register, 1-page summary.",
         "status": "in_progress",
         "tasks": [
-          "Upload corrected .xlsx to Google Sheets (replace current version)",
+          "Rob reviews corrected spreadsheet (venue rental £32,227)",
           "Create standalone assumptions register",
           "Reconcile DSP theoretical vs actual revenue",
-          "Write 1-page summary",
-          "Sukkahmart £1,227 — recategorise in Xero (bookkeeper task)"
+          "Write 1-page summary"
         ]
       },
       "remaining_phases": [
         "Phase 4: Written Summary",
         "Phase 5: Finalise & Deliver"
       ],
-      "key_finding": "VENUE CORRECTED (29 Jan): Rebuilt from SMSJ invoices + price increase letter. Venue Rental £22,997 to £32,227 (+40%). Tab 2 accrual basis, Tab 5 termly cash flow lumps. Contribution Margin 80.6% to 78.4%. Cash Runway 5.5 to 5.0 months. Closing Cash £278K to £269K."
+      "key_finding": "VENUE CORRECTED (29 Jan): Rebuilt from SMSJ invoices + price increase letter. Venue Rental £22,997→£32,227 (+40%). Contribution Margin 80.6%→78.4%. Cash Runway 5.5→5.0 months. Corrected spreadsheet uploaded to Google Sheets 1 Feb."
     },
     {
       "name": "Supabase Shadow Database",
