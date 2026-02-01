@@ -121,6 +121,47 @@
             font-size: 0.75rem;
         }
 
+        /* ── Quick Reference Bar ── */
+        .quick-ref {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 3px solid var(--blue);
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            margin-bottom: 1.25rem;
+            font-size: 0.7rem;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .quick-ref .qr-label {
+            font-weight: 600;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-size: 0.65rem;
+        }
+        .quick-ref .qr-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .quick-ref .qr-cmd {
+            background: rgba(255,255,255,0.7);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+            font-size: 0.68rem;
+            font-weight: 500;
+            color: var(--dark);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        .quick-ref .qr-sep {
+            color: var(--gray);
+            opacity: 0.5;
+        }
+
         /* ── Financial Snapshot ── */
         .fin-snapshot {
             background: var(--surface);
@@ -746,6 +787,26 @@
 
         <!-- 3. System Health Strip -->
         <div class="health-strip" id="health-strip"></div>
+
+        <!-- 3b. Quick Reference Bar -->
+        <div class="quick-ref">
+            <span class="qr-label">Quick Commands</span>
+            <div class="qr-group">
+                <code class="qr-cmd">catch me up</code>
+                <span class="qr-sep">•</span>
+                <code class="qr-cmd">quick save</code>
+                <span class="qr-sep">•</span>
+                <code class="qr-cmd">wrap up</code>
+            </div>
+            <span class="qr-sep">|</span>
+            <div class="qr-group">
+                <code class="qr-cmd">/auto-capture</code>
+                <span class="qr-sep">•</span>
+                <code class="qr-cmd">/architect</code>
+                <span class="qr-sep">•</span>
+                <code class="qr-cmd">/project-status</code>
+            </div>
+        </div>
 
         <!-- 4. Financial Snapshot -->
         <div class="fin-snapshot" id="fin-snapshot"></div>
