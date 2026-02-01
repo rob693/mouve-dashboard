@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-01T16:30:00Z",
+  "generated_at": "2026-02-01T19:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "3.0",
 
@@ -12,6 +12,12 @@
   },
 
   "tasks": [
+    {
+      "title": "URGENT: £14,540 Stripe reconciliation — Verify School Clubs +£8K, Camps +£3.4K, Ladies Fitness +£3.1K",
+      "due": "2026-02-07",
+      "status": "pending",
+      "context": "Financial Health Check — CRITICAL. Revenue analysis (1 Feb) found £14,540 missing revenue. Bank reconciliation incomplete: Stripe deposits not allocated to revenue accounts. Bookkeeper briefing sent. Target: Xero Total Income £140,713 → £155,253 after reconciliation."
+    },
     {
       "title": "Add opportunity_abandoned tag check to Follow Ups workflow",
       "due": "2026-02-07",
@@ -254,18 +260,19 @@
       "implementation_plan": "FINANCIAL-HEALTH-CHECK-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "One-time diagnostic deep dive: stream profitability, class economics, marketing analysis, revenue reconciliation, bookkeeper questions",
       "status": "in_progress",
-      "status_label": "v1.1 | Phase 5/6 🔧 — Mel replied 30 Jan. VAT (gross vs net) explains £15.5K gap. Monday: year-end blockers (6 wks overdue), Dec queries, Pembee £6.8K.",
+      "status_label": "v1.2 | Phase 5/6 🔧 — URGENT: £14,540 Stripe reconciliation (target 7 Feb). Bank deposits not allocated to revenue accounts. Also: year-end blockers, Dec queries, Pembee £6.8K.",
       "completed_phases": [
         {"name": "Phase 1: Data Collection & Analysis", "summary": "Xero P&L, Stripe data, Airtable staff/class data, school/camp tracking categories, 4-year comparison"},
-        {"name": "Phase 2: Revenue Reconciliation", "summary": "~£15.5K gap (revised from £29K → £18K → £15.5K). Ladies Fitness verified via TeamUp at 70-75% margin."},
+        {"name": "Phase 2: Revenue Reconciliation", "summary": "CRITICAL: £14,540 missing (1 Feb analysis). Stripe £63,982 vs Xero £49,442. School Clubs -£8K, Camps -£3.4K, Ladies Fitness -£3.1K. 6-part reconciliation checklist sent to bookkeeper."},
         {"name": "Phase 3: Marketing & Cost Deep Dive", "summary": "Marketing down 23% YoY after correcting £6,230 miscategorised items (Outsourced Doers + Upwork)"},
         {"name": "Phase 4: Bookkeeper Communication", "summary": "Email sent 29 Jan. Mel replied 30 Jan with answers to all 9 questions."}
       ],
       "next_phase": {
         "name": "Phase 5: Bookkeeper Response & Fixes",
-        "detail": "VAT + timing explains most gaps. Urgent Monday actions: year-end blockers (8 bank statements + accountant papers), December queries (£6,935 uncategorised), Pembee £6.8K investigation.",
+        "detail": "URGENT (7 Feb): £14,540 Stripe reconciliation. Stripe deposits sitting unallocated in bank accounts. Expected: Xero Total Income £140,713 → £155,253 after reconciliation. Also: year-end blockers, December queries, Pembee £6.8K.",
         "status": "in_progress",
         "tasks": [
+          "URGENT: £14,540 Stripe reconciliation — School Clubs +£8K, Camps +£3.4K, Ladies Fitness +£3.1K (target 7 Feb)",
           "Year-end blockers (6+ wks overdue) — 8 bank statements, accountant papers, £43.9K travel split",
           "December queries — resend Ildiko invoices, chase Hasmonean, categorise 16 transactions",
           "Investigate Pembee £6.8K platform-to-Xero mismatch",
@@ -279,9 +286,11 @@
       "key_outputs": [
         "MOUVE-Financial-Health-Check-Jan2026.xlsx (7-tab spreadsheet)",
         "CLASS-PROFITABILITY-ANALYSIS-JAN2026.md (comprehensive analysis)",
-        "BOOKKEEPER-RECONCILIATION-QUESTIONS.md (9 questions answered)"
+        "BOOKKEEPER-RECONCILIATION-QUESTIONS.md (9 questions answered)",
+        "XERO-STRIPE-RECONCILIATION-CHECKLIST.md (6-part guide, 1 Feb 2026)",
+        "BOOKKEEPER-BRIEFING-STRIPE-RECONCILIATION.md (executive summary, 1 Feb 2026)"
       ],
-      "key_finding": "VAT (gross vs net) explains revenue gap. All streams profitable. Marketing well-controlled (down 23% YoY). Ladies Fitness: 161 customers, £24K annualised, 70-75% margin. URGENT: Year-end 31 Aug 2025 blocked 6+ weeks, £43.9K international travel HMRC risk."
+      "key_finding": "CRITICAL: £14,540 missing revenue identified (1 Feb). Stripe £63,982 vs Xero £49,442 (24% understatement). Root cause: Bank reconciliation incomplete - Stripe payout deposits not allocated to revenue accounts. Updated FY2025-26 forecast: £401,349 (+11.0% vs last year). All streams profitable. URGENT: Year-end 31 Aug 2025 blocked 6+ weeks, £43.9K international travel HMRC risk."
     },
     {
       "name": "12-Month Operational Budget",
