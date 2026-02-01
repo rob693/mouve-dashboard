@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-01T11:30:00Z",
+  "generated_at": "2026-02-01T14:15:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "3.0",
 
@@ -249,37 +249,39 @@
     },
     {
       "name": "Financial Health Check",
-      "phase_current": 4,
+      "phase_current": 5,
       "phase_total": 6,
       "implementation_plan": "FINANCIAL-HEALTH-CHECK-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "One-time diagnostic deep dive: stream profitability, class economics, marketing analysis, revenue reconciliation, bookkeeper questions",
       "status": "in_progress",
-      "status_label": "Phase 5 🔧 — Mel replied 30 Jan. VAT explains gaps. Monday: year-end blockers (6 wks overdue), Dec queries, Pembee £6.8K.",
+      "status_label": "v1.1 | Phase 5/6 🔧 — Mel replied 30 Jan. VAT (gross vs net) explains £15.5K gap. Monday: year-end blockers (6 wks overdue), Dec queries, Pembee £6.8K.",
       "completed_phases": [
         {"name": "Phase 1: Data Collection & Analysis", "summary": "Xero P&L, Stripe data, Airtable staff/class data, school/camp tracking categories, 4-year comparison"},
-        {"name": "Phase 2: Revenue Reconciliation", "summary": "~£18K gap (revised from £29K). Ladies Fitness verified via TeamUp at 70-75% margin."},
-        {"name": "Phase 3: Marketing & Cost Deep Dive", "summary": "Marketing down 23% YoY after correcting £6,230 miscategorised items (Outsourced Doers + Upwork)"}
+        {"name": "Phase 2: Revenue Reconciliation", "summary": "~£15.5K gap (revised from £29K → £18K → £15.5K). Ladies Fitness verified via TeamUp at 70-75% margin."},
+        {"name": "Phase 3: Marketing & Cost Deep Dive", "summary": "Marketing down 23% YoY after correcting £6,230 miscategorised items (Outsourced Doers + Upwork)"},
+        {"name": "Phase 4: Bookkeeper Communication", "summary": "Email sent 29 Jan. Mel replied 30 Jan with answers to all 9 questions."}
       ],
       "next_phase": {
-        "name": "Phase 4: Bookkeeper Communication",
-        "detail": "Rob to send 9-question email to bookkeeper. Upload spreadsheet + analysis doc to Google Drive.",
+        "name": "Phase 5: Bookkeeper Response & Fixes",
+        "detail": "VAT + timing explains most gaps. Urgent Monday actions: year-end blockers (8 bank statements + accountant papers), December queries (£6,935 uncategorised), Pembee £6.8K investigation.",
         "status": "in_progress",
         "tasks": [
-          "Rob sends bookkeeper email (9 questions)",
-          "Upload spreadsheet + analysis doc to Google Drive",
-          "Chase failed LF payments (£1,240 uncollected)"
+          "Year-end blockers (6+ wks overdue) — 8 bank statements, accountant papers, £43.9K travel split",
+          "December queries — resend Ildiko invoices, chase Hasmonean, categorise 16 transactions",
+          "Investigate Pembee £6.8K platform-to-Xero mismatch",
+          "Reply to Mel — acknowledge emails + Sukkahmart recategorisation",
+          "Decide on regular scheduled call with bookkeeper"
         ]
       },
       "remaining_phases": [
-        "Phase 5: Bookkeeper Response & Data Fixes",
         "Phase 6: Final Analysis & Close-Out (hands off to Financial Intelligence)"
       ],
       "key_outputs": [
         "MOUVE-Financial-Health-Check-Jan2026.xlsx (7-tab spreadsheet)",
         "CLASS-PROFITABILITY-ANALYSIS-JAN2026.md (comprehensive analysis)",
-        "BOOKKEEPER-RECONCILIATION-QUESTIONS.md (9 questions)"
+        "BOOKKEEPER-RECONCILIATION-QUESTIONS.md (9 questions answered)"
       ],
-      "key_finding": "All streams profitable. Revenue gap ~£15.5K (11%). Marketing well-controlled (down 23% YoY). Ladies Fitness: 161 customers, £24K annualised, 70-75% margin. DSP LTV supplement added (29 Jan): Economic LTV £2,692, 16.6 months avg retention."
+      "key_finding": "VAT (gross vs net) explains revenue gap. All streams profitable. Marketing well-controlled (down 23% YoY). Ladies Fitness: 161 customers, £24K annualised, 70-75% margin. URGENT: Year-end 31 Aug 2025 blocked 6+ weeks, £43.9K international travel HMRC risk."
     },
     {
       "name": "12-Month Operational Budget",
