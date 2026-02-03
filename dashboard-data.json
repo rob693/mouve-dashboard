@@ -49,28 +49,34 @@
       "context": "Financial Health Check — Phase 4. Uploaded 29 Jan 2026."
     },
     {
-      "title": "URGENT: Gather 8 bank statements + previous accountant working papers for year-end",
-      "due": "2026-02-03",
-      "status": "pending",
-      "context": "Financial Health Check — Phase 5. Year-end 31 Aug 2025 blocked 6+ weeks. Mel needs these to complete. Also split £43.9K international travel (business vs personal) with Louise."
+      "title": "Bank statements for year-end — 7/8 sent, query on 4838",
+      "due": "2026-02-07",
+      "status": "waiting",
+      "context": "Financial Health Check — Phase 5. 7 statements sent (6 Barclays + Amex). Barclays 4838 (main current) only shows 4 months — Aug 2025 missing. Query raised with Mel. Previous accountant papers received."
     },
     {
-      "title": "URGENT: December queries — resend Ildiko invoices to Ivanka, chase Hasmonean",
-      "due": "2026-02-03",
+      "title": "December queries — 4 items remaining (3× Amazon, 1× Anouska)",
+      "due": "2026-02-07",
       "status": "pending",
-      "context": "Financial Health Check — Phase 5. 16 uncategorised transactions (£6,935.56) blocking December management accounts. Google Sheet: 1KgC-rT2SeKjJs5XaZmMYGq6q-rZK63GHgJHHxb2bmt4"
+      "context": "Financial Health Check — Phase 5. Majority answered in Google Sheet. Remaining: 3 Amazon transactions (hunting down), 1 Anouska Elmkies payment."
+    },
+    {
+      "title": "Travel categorisation with Louise — £32.6K remaining",
+      "due": "2026-02-07",
+      "status": "pending",
+      "context": "Financial Health Check — Phase 5. £11.3K confirmed business (BA Retreat £2.2K, DSOA £3.1K, Greece £6.1K). Remaining ~£32.6K needs Louise review to split business vs personal."
     },
     {
       "title": "Investigate Pembee £6.8K platform-to-Xero mismatch",
-      "due": "2026-02-03",
+      "due": "2026-02-07",
       "status": "pending",
       "context": "Financial Health Check — Phase 5. Mel confirmed all other revenue gaps are VAT (gross vs net). Pembee is the only real unresolved discrepancy."
     },
     {
       "title": "Reply to Mel — acknowledge both emails + Sukkahmart £1,227 recategorisation",
       "due": "2026-02-03",
-      "status": "pending",
-      "context": "Financial Health Check — Phase 5. Mel replied 30 Jan with reconciliation answers + year-end blockers. Also mention Sukkahmart Oct 2025 miscategorised as Venue Rental (Account 301)."
+      "status": "done",
+      "context": "Financial Health Check — Phase 5. Sent 3 Feb 2026. Covered: 7/8 bank statements sent, 4838 query raised, Dec queries mostly answered (4 remaining), travel categorisation in progress (~£11.3K business confirmed)."
     },
     {
       "title": "Write 1-page budget summary (achievable? fragile? what breaks first?)",
@@ -274,24 +280,23 @@
       "implementation_plan": "FINANCIAL-HEALTH-CHECK-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "One-time diagnostic deep dive: stream profitability, class economics, marketing analysis, revenue reconciliation, bookkeeper questions",
       "status": "in_progress",
-      "status_label": "v1.2 | Phase 5/6 🔧 — URGENT: £14,540 Stripe reconciliation (target 7 Feb). Bank deposits not allocated to revenue accounts. Also: year-end blockers, Dec queries, Pembee £6.8K.",
+      "status_label": "v1.3 | Phase 5/6 🔧 — Year-end unblocked (7/8 statements sent). Travel split + 4 Dec queries remaining.",
       "completed_phases": [
         {"name": "Phase 1: Data Collection & Analysis", "summary": "Xero P&L, Stripe data, Airtable staff/class data, school/camp tracking categories, 4-year comparison"},
         {"name": "Phase 2: Revenue Reconciliation", "summary": "CRITICAL: £14,540 missing (1 Feb analysis). Stripe £63,982 vs Xero £49,442. School Clubs -£8K, Camps -£3.4K, Ladies Fitness -£3.1K. 6-part reconciliation checklist sent to bookkeeper."},
         {"name": "Phase 3: Marketing & Cost Deep Dive", "summary": "Marketing down 23% YoY after correcting £6,230 miscategorised items (Outsourced Doers + Upwork)"},
-        {"name": "Phase 4: Bookkeeper Communication", "summary": "Email sent 29 Jan. Mel replied 30 Jan with answers to all 9 questions."}
+        {"name": "Phase 4: Bookkeeper Communication", "summary": "Email sent 29 Jan. Mel replied 30 Jan. Follow-up sent 3 Feb with 7/8 statements + Dec answers."}
       ],
       "next_phase": {
         "name": "Phase 5: Bookkeeper Response & Fixes",
-        "detail": "URGENT (7 Feb): £14,540 Stripe reconciliation. Stripe deposits sitting unallocated in bank accounts. Expected: Xero Total Income £140,713 → £155,253 after reconciliation. Also: year-end blockers, December queries, Pembee £6.8K.",
+        "detail": "Year-end largely unblocked. Remaining: 4838 statement query, travel categorisation with Louise (~£32.6K), 4 Dec queries (Amazon/Anouska), Pembee £6.8K investigation.",
         "status": "in_progress",
         "tasks": [
-          "URGENT: £14,540 Stripe reconciliation — School Clubs +£8K, Camps +£3.4K, Ladies Fitness +£3.1K (target 7 Feb)",
-          "Year-end blockers (6+ wks overdue) — 8 bank statements, accountant papers, £43.9K travel split",
-          "December queries — resend Ildiko invoices, chase Hasmonean, categorise 16 transactions",
+          "Resolve 4838 statement query (only 4 months showing)",
+          "Travel categorisation with Louise — £32.6K remaining (£11.3K business confirmed)",
+          "December queries — 4 items (3× Amazon, 1× Anouska)",
           "Investigate Pembee £6.8K platform-to-Xero mismatch",
-          "Reply to Mel — acknowledge emails + Sukkahmart recategorisation",
-          "Decide on regular scheduled call with bookkeeper"
+          "Schedule regular bookkeeper call (Mel offered)"
         ]
       },
       "remaining_phases": [
@@ -808,8 +813,8 @@
     },
     {
       "category": "ACTION",
-      "action": "Bookkeeper Monday actions — year-end blockers, December queries, Pembee £6.8K",
-      "detail": "Mel replied 30 Jan. URGENT: 8 bank statements + accountant papers for year-end (blocked 6+ wks). Split £43.9K travel with Louise. Resend Ildiko invoices, chase Hasmonean. Investigate Pembee £6.8K. Reply acknowledging both emails + Sukkahmart recategorisation."
+      "action": "Financial Health Check — Travel split with Louise + 4 Dec queries",
+      "detail": "Year-end unblocked (7/8 statements sent, accountant papers received). Remaining: categorise £32.6K travel with Louise, answer 4 Dec queries (3× Amazon, 1× Anouska), resolve 4838 statement issue."
     },
     {
       "category": "ACTION",
