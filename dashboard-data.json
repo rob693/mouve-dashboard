@@ -37,18 +37,6 @@
       "context": "Budget project paused 1 Feb. Data quality issues: Xero understated ~12%, admin costs unrealistic, bookkeeper queries outstanding. Resume after: Dec/Jan mgmt accounts complete, revenue reconciliation fixed, monthly close cycle established."
     },
     {
-      "title": "Send bookkeeper 9-question email (reconciliation, tracking categories, recategorisation)",
-      "due": "2026-01-31",
-      "status": "done",
-      "context": "Financial Health Check — Phase 4. Sent 29 Jan 2026."
-    },
-    {
-      "title": "Upload Financial Health Check spreadsheet + analysis doc to Google Drive",
-      "due": "2026-01-31",
-      "status": "done",
-      "context": "Financial Health Check — Phase 4. Uploaded 29 Jan 2026."
-    },
-    {
       "title": "Bank statements for year-end — 7/8 sent, query on 4838",
       "due": "2026-02-07",
       "status": "waiting",
@@ -95,18 +83,6 @@
       "due": "2026-02-07",
       "status": "pending",
       "context": "Party Landing Page — need kids dancing, party activities, happy parents."
-    },
-    {
-      "title": "Supabase nightly sync — check ops.system_health for 02:00 sync entry",
-      "due": "2026-01-30",
-      "status": "pending",
-      "context": "Phase 4 verification: SELECT * FROM ops.system_health WHERE check_name='airtable_sync' ORDER BY checked_at DESC LIMIT 10; — should show entries from ~02:00 today."
-    },
-    {
-      "title": "Supabase nightly sync — verify 3 consecutive status='pass' entries",
-      "due": "2026-02-01",
-      "status": "pending",
-      "context": "Phase 4 final verification: 3 consecutive nights of successful syncs. Query: SELECT checked_at, status, details->>'table' FROM ops.system_health WHERE check_name='airtable_sync' AND check_type='sync' ORDER BY checked_at DESC LIMIT 15;"
     },
     {
       "title": "Chase DSP (Pamela Means) if no reply to API access email",
