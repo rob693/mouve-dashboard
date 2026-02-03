@@ -1,593 +1,254 @@
 {
-  "generated_at": "2026-02-03T03:00:00Z",
-  "generated_by": "SYS-DASHBOARD v2",
-  "version": "3.0",
+  "generated_at": "2026-02-03T14:00:00Z",
+  "generated_by": "SYS-DASHBOARD v1",
+  "version": "1.1",
 
   "health_summary": {
-    "complete": 34,
-    "in_progress": 7,
+    "complete": 32,
+    "in_progress": 3,
     "waiting": 1,
-    "planned": 3,
     "blocked": 1
   },
 
-  "tasks": [
-    {
-      "title": "URGENT: £14,540 Stripe reconciliation — Verify School Clubs +£8K, Camps +£3.4K, Ladies Fitness +£3.1K",
-      "due": "2026-02-07",
-      "status": "pending",
-      "context": "Financial Health Check — CRITICAL. Revenue analysis (1 Feb) found £14,540 missing revenue. Bank reconciliation incomplete: Stripe deposits not allocated to revenue accounts. Bookkeeper briefing sent. Target: Xero Total Income £140,713 → £155,253 after reconciliation."
-    },
-    {
-      "title": "Add opportunity_abandoned tag check to Follow Ups workflow",
-      "due": "2026-02-07",
-      "status": "done",
-      "context": "StudioHub granted edit access 29 Jan. Rob added tag + Follow Ups If/Else. All 5/5 SMS cleanup tasks complete."
-    },
-    {
-      "title": "Check GHL SMS numbers vs January baseline (2,668)",
-      "due": "2026-03-01",
-      "status": "pending",
-      "context": "Target ~2,250 after cleanup. See UNIT-ECONOMICS-REFERENCE.md Section 14"
-    },
-    {
-      "title": "12-Month Budget PAUSED — Fix Xero data quality first",
-      "due": "2026-03-01",
-      "status": "blocked",
-      "context": "Budget project paused 1 Feb. Data quality issues: Xero understated ~12%, admin costs unrealistic, bookkeeper queries outstanding. Resume after: Dec/Jan mgmt accounts complete, revenue reconciliation fixed, monthly close cycle established."
-    },
-    {
-      "title": "Send bookkeeper 9-question email (reconciliation, tracking categories, recategorisation)",
-      "due": "2026-01-31",
-      "status": "done",
-      "context": "Financial Health Check — Phase 4. Sent 29 Jan 2026."
-    },
-    {
-      "title": "Upload Financial Health Check spreadsheet + analysis doc to Google Drive",
-      "due": "2026-01-31",
-      "status": "done",
-      "context": "Financial Health Check — Phase 4. Uploaded 29 Jan 2026."
-    },
-    {
-      "title": "URGENT: Gather 8 bank statements + previous accountant working papers for year-end",
-      "due": "2026-02-03",
-      "status": "pending",
-      "context": "Financial Health Check — Phase 5. Year-end 31 Aug 2025 blocked 6+ weeks. Mel needs these to complete. Also split £43.9K international travel (business vs personal) with Louise."
-    },
-    {
-      "title": "URGENT: December queries — resend Ildiko invoices to Ivanka, chase Hasmonean",
-      "due": "2026-02-03",
-      "status": "pending",
-      "context": "Financial Health Check — Phase 5. 16 uncategorised transactions (£6,935.56) blocking December management accounts. Google Sheet: 1KgC-rT2SeKjJs5XaZmMYGq6q-rZK63GHgJHHxb2bmt4"
-    },
-    {
-      "title": "Investigate Pembee £6.8K platform-to-Xero mismatch",
-      "due": "2026-02-03",
-      "status": "pending",
-      "context": "Financial Health Check — Phase 5. Mel confirmed all other revenue gaps are VAT (gross vs net). Pembee is the only real unresolved discrepancy."
-    },
-    {
-      "title": "Reply to Mel — acknowledge both emails + Sukkahmart £1,227 recategorisation",
-      "due": "2026-02-03",
-      "status": "pending",
-      "context": "Financial Health Check — Phase 5. Mel replied 30 Jan with reconciliation answers + year-end blockers. Also mention Sukkahmart Oct 2025 miscategorised as Venue Rental (Account 301)."
-    },
-    {
-      "title": "Write 1-page budget summary (achievable? fragile? what breaks first?)",
-      "due": "2026-02-07",
-      "status": "pending",
-      "context": "12-Month Budget — Phase 4. After Rob reviews spreadsheet."
-    },
-    {
-      "title": "Party Landing Page — Fix critical images (Sydney map, stock photos)",
-      "due": "2026-02-03",
-      "status": "pending",
-      "context": "Party Landing Page — Phase 1. Map shows Sydney, all images show adults not kids."
-    },
-    {
-      "title": "Party Landing Page — Source real MOUVE party photos from Louise",
-      "due": "2026-02-07",
-      "status": "pending",
-      "context": "Party Landing Page — need kids dancing, party activities, happy parents."
-    },
-    {
-      "title": "Supabase nightly sync — check ops.system_health for 02:00 sync entry",
-      "due": "2026-01-30",
-      "status": "pending",
-      "context": "Phase 4 verification: SELECT * FROM ops.system_health WHERE check_name='airtable_sync' ORDER BY checked_at DESC LIMIT 10; — should show entries from ~02:00 today."
-    },
-    {
-      "title": "Supabase nightly sync — verify 3 consecutive status='pass' entries",
-      "due": "2026-02-01",
-      "status": "pending",
-      "context": "Phase 4 final verification: 3 consecutive nights of successful syncs. Query: SELECT checked_at, status, details->>'table' FROM ops.system_health WHERE check_name='airtable_sync' AND check_type='sync' ORDER BY checked_at DESC LIMIT 15;"
-    },
-    {
-      "title": "Chase DSP (Pamela Means) if no reply to API access email",
-      "due": "2026-02-06",
-      "status": "pending",
-      "context": "Email sent 30 Jan 2026 to pmeans@gostudiopro.com. Met Pamela at DSOA Scottsdale. Previous requests: Dec 2025 (viaSocket), Jan 2026 (Amanda F.) — no dev team response yet."
-    },
-    {
-      "title": "Louise: Review staff rates spreadsheet (MOUVE-Staff-Rates-Final-Review.xlsx)",
-      "due": "2026-02-07",
-      "status": "pending",
-      "context": "22-tab Excel workbook cross-referencing 4 sources (Louise's v2+v3 spreadsheets, invoices, Airtable). Each teacher tab has yellow column for Louise to tick or correct. URGENT: Alexandra (21 sessions £0) + Evie (6 sessions £0). Once returned, create STAFF_CLASS_RATES records for all confirmed rates."
-    }
-  ],
-
-  "weekly_tasks": [
-    {
-      "name": "Prepare Sunday's Trial List",
-      "frequency": "Weekly (before Sunday)",
-      "command": "python3 scripts/weekly-trials-generator.py",
-      "location": "MOUVE-Customer-Engine repo",
-      "description": "Generate trials spreadsheet from GHL appointments with teachers, rooms, and existing customer checks",
-      "sop": "docs/sops/SOP-A-020-WEEKLY-TRIALS-SPREADSHEET.md",
-      "output": "~/Downloads/Trials Sunday [Date] 2026.xlsx",
-      "time": "2 minutes"
-    }
-  ],
-
-  "primary_projects": [
+  "projects": [
     {
       "name": "Ladies Fitness Funnel",
-      "phase_current": 3,
-      "phase_total": 7,
-      "implementation_plan": "LADIES-FITNESS-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Automate lead-to-member journey (lead capture, instant response, trials, attendance, retention)",
       "status": "in_progress",
-      "status_label": "Phase 3/7 Complete ✅ | Health Check: EXCELLENT (16 Jan)",
-      "health_check": {
-        "timestamp": "2026-01-16T07:43:00Z",
-        "status": "excellent"
-      },
-      "completed_phases": [
-        {"name": "Phase 1: Foundation", "summary": "LF_MEMBERSHIPS table, lf_state field, TeamUp sync"},
-        {"name": "Phase 2A: Lead Response", "summary": "Instant SMS + Email, team alerts, Airtable logging"},
-        {"name": "Phase 2B: Lead Nurture", "summary": "LF-02 v7 + GHL nurture + Calendar integration"},
-        {"name": "Phase 2C: Calendar Sync", "summary": "LF-10 (daily sync) + LF-11 (trial events) live"},
-        {"name": "Phase 3: Trial & Attendance", "summary": "10 workflows active, per-membership tracking"}
-      ],
-      "next_phase": {
-        "name": "Phase 4: Member Engagement",
-        "detail": "Weekly scans, at-risk alerts, onboarding sequence",
-        "status": "planned",
-        "tasks": [
-          "Weekly member scan automation",
-          "At-risk member detection",
-          "Onboarding email sequence"
-        ]
-      },
-      "remaining_phases": [
-        "Phase 5: Retention & Growth",
-        "Phase 6-7: Advanced Features"
-      ]
-    },
-    {
-      "name": "Children's Dance Onboarding",
-      "phase_current": 4,
-      "phase_total": 7,
-      "implementation_plan": "CHILDRENS-ONBOARDING-IMPLEMENTATION-PLAN-JAN2026-UPDATE.md",
-      "purpose": "Automated 10-email onboarding sequence — reduces anxious parents, stops repetitive staff questions",
-      "status": "in_progress",
-      "status_label": "Phase 4/7 Ready 📋 (v6.3 - Emails v2.0 Final)",
-      "completed_phases": [
-        {"name": "Phase 1: Schema Foundation", "summary": "6 fields created (5 ENROLLMENTS, 1 CONTACTS) in 25 min"},
-        {"name": "Phase 2: n8n Enrollment Handler Update", "summary": "v4.8 Final - Traffic control + parent upsert + 8 bugs fixed"},
-        {"name": "Phase 3: n8n Progression Engine", "summary": "30-min schedule, timing logic, traffic control, AC tags 122-130, error handling"},
-        {"name": "Phase 5 (Partial): Email Content", "summary": "25 HTML files tone-amended (E1-E10 × 3 age variants) — 18 Jan 2026"}
-      ],
-      "next_phase": {
-        "name": "Phase 4: ActiveCampaign Micro-Automations",
-        "detail": "10 simple automations (tag → send email) + upload 25 email HTMLs • Est: 60 min",
-        "status": "planned",
-        "key_reference": "docs/email-templates/onboarding-sequence-v2-final-18jan2026/",
-        "tasks": [
-          "Upload 25 email HTMLs from onboarding-sequence-v2-final-18jan2026/",
-          "Create 20 tags (10 trigger + 10 confirmation)",
-          "Create 10 automations (Email 1-10)",
-          "Test each automation with test contact"
-        ]
-      },
-      "remaining_phases": [
-        "Phase 6: Testing & Validation",
-        "Phase 7: Soft Launch & Rollout"
-      ]
-    },
-    {
-      "name": "Student Progress Reports",
-      "phase_current": 3,
-      "phase_total": 5,
-      "implementation_plan": "STUDENT-PROGRESS-REPORTS-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Structured phrase-bank reports (<60s per student, zero admin editing, sibling differentiation)",
-      "status": "in_progress",
-      "status_label": "v1.16 | Phase 3 ✅ Complete | Phase 4: Report Generation 📋",
-      "completed_phases": [
-        {"name": "Phase 1: Foundation", "summary": "PROGRESS_ASSESSMENTS + PHRASE_BANK tables created"},
-        {"name": "Phase 2: Phrase Bank", "summary": "282 phrases imported (132 generic + 75 Ballet + 75 Gymnastics)"},
-        {"name": "Phase 3: Teacher Input Form", "summary": "Custom Portal assessment form with 5 cascading dropdown pairs — fully working"}
-      ],
-      "next_phase": {
-        "name": "Phase 4: Report Generation (n8n + PDF)",
-        "detail": "n8n workflow to fetch completed assessments, substitute phrases, generate parent-facing PDF reports",
-        "status": "planned",
-        "tasks": [
-          "Design n8n workflow PR-01",
-          "Build PDF template with [Name] substitution",
-          "Batch generation for all Ready assessments",
-          "Parent email delivery integration"
-        ]
-      },
-      "remaining_phases": [
-        "Phase 5: Unified Delivery"
-      ]
-    },
-    {
-      "name": "Financial Intelligence System",
-      "phase_current": 1,
-      "phase_total": 10,
-      "implementation_plan": "FINANCIAL-INTELLIGENCE-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Unified financial reporting — reads Xero (P&L, balance sheet, bank) + Stripe (4 payment accounts, real-time revenue truth) + enriches with Airtable ops data. Dashboard + Google Sheet + email digests.",
-      "status": "in_progress",
-      "status_label": "v2.0 | Phase 1 Core Complete (FIN-01 live, 16 nodes) | Airtable + GitHub push pending",
-      "completed_phases": [
-        {"name": "Phase 0: Xero Credential Setup", "summary": "Built-in + generic OAuth2 credential (reports scope fix). Organisation: Radar Dance Ltd."},
-        {"name": "Phase 0.5b: Stripe Credentials", "summary": "4 read-only Header Auth credentials (Class4Kids, DSP, Pembee, TeamUp)"}
-      ],
-      "next_phase": {
-        "name": "Phase 1 Remaining + Phase 2: Dashboard",
-        "detail": "Complete FIN-01 (Airtable queries + GitHub push), then build financial dashboard on GitHub Pages with MVP 10 numbers",
-        "status": "in_progress",
-        "tasks": [
-          "Add Airtable queries (ENROLLMENTS, CLASSES, CONTACTS) to FIN-01",
-          "Add GitHub push node to FIN-01",
-          "Build financial dashboard HTML (MVP 10 numbers)",
-          "Add Data Confidence badge + dual-bar revenue chart (Xero vs enriched)"
-        ]
-      },
-      "remaining_phases": [
-        "Phase 2: Financial Dashboard (GitHub Pages)",
-        "Phase 3: Google Sheet (8 tabs + Reconciliation)",
-        "Phase 4: Email Digests (weekly + monthly + recon alerts)",
-        "Phase 5: Historical Snapshots + Trends",
-        "Phase 6: Class Profitability + Capacity",
-        "Phase 7: 13-Week Cash Flow Forecast",
-        "Phase 8: Retention Intelligence",
-        "Phase 9: Pricing & Payment Health",
-        "Phase 10: Marketing Funnel Quality"
-      ],
-      "key_finding": "Xero understates revenue by ~12% (~£18K gap, revised from £29K after TeamUp correction). Stripe enrichment provides real-time truth. Bookkeeper questions prepared."
-    },
-    {
-      "name": "Financial Health Check",
-      "phase_current": 5,
-      "phase_total": 6,
-      "implementation_plan": "FINANCIAL-HEALTH-CHECK-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "One-time diagnostic deep dive: stream profitability, class economics, marketing analysis, revenue reconciliation, bookkeeper questions",
-      "status": "in_progress",
-      "status_label": "v1.2 | Phase 5/6 🔧 — URGENT: £14,540 Stripe reconciliation (target 7 Feb). Bank deposits not allocated to revenue accounts. Also: year-end blockers, Dec queries, Pembee £6.8K.",
-      "completed_phases": [
-        {"name": "Phase 1: Data Collection & Analysis", "summary": "Xero P&L, Stripe data, Airtable staff/class data, school/camp tracking categories, 4-year comparison"},
-        {"name": "Phase 2: Revenue Reconciliation", "summary": "CRITICAL: £14,540 missing (1 Feb analysis). Stripe £63,982 vs Xero £49,442. School Clubs -£8K, Camps -£3.4K, Ladies Fitness -£3.1K. 6-part reconciliation checklist sent to bookkeeper."},
-        {"name": "Phase 3: Marketing & Cost Deep Dive", "summary": "Marketing down 23% YoY after correcting £6,230 miscategorised items (Outsourced Doers + Upwork)"},
-        {"name": "Phase 4: Bookkeeper Communication", "summary": "Email sent 29 Jan. Mel replied 30 Jan with answers to all 9 questions."}
-      ],
-      "next_phase": {
-        "name": "Phase 5: Bookkeeper Response & Fixes",
-        "detail": "URGENT (7 Feb): £14,540 Stripe reconciliation. Stripe deposits sitting unallocated in bank accounts. Expected: Xero Total Income £140,713 → £155,253 after reconciliation. Also: year-end blockers, December queries, Pembee £6.8K.",
-        "status": "in_progress",
-        "tasks": [
-          "URGENT: £14,540 Stripe reconciliation — School Clubs +£8K, Camps +£3.4K, Ladies Fitness +£3.1K (target 7 Feb)",
-          "Year-end blockers (6+ wks overdue) — 8 bank statements, accountant papers, £43.9K travel split",
-          "December queries — resend Ildiko invoices, chase Hasmonean, categorise 16 transactions",
-          "Investigate Pembee £6.8K platform-to-Xero mismatch",
-          "Reply to Mel — acknowledge emails + Sukkahmart recategorisation",
-          "Decide on regular scheduled call with bookkeeper"
-        ]
-      },
-      "remaining_phases": [
-        "Phase 6: Final Analysis & Close-Out (hands off to Financial Intelligence)"
-      ],
-      "key_outputs": [
-        "MOUVE-Financial-Health-Check-Jan2026.xlsx (7-tab spreadsheet)",
-        "CLASS-PROFITABILITY-ANALYSIS-JAN2026.md (comprehensive analysis)",
-        "BOOKKEEPER-RECONCILIATION-QUESTIONS.md (9 questions answered)",
-        "XERO-STRIPE-RECONCILIATION-CHECKLIST.md (6-part guide, 1 Feb 2026)",
-        "BOOKKEEPER-BRIEFING-STRIPE-RECONCILIATION.md (executive summary, 1 Feb 2026)"
-      ],
-      "key_finding": "CRITICAL: £14,540 missing revenue identified (1 Feb). Stripe £63,982 vs Xero £49,442 (24% understatement). Root cause: Bank reconciliation incomplete - Stripe payout deposits not allocated to revenue accounts. Updated FY2025-26 forecast: £401,349 (+11.0% vs last year). All streams profitable. URGENT: Year-end 31 Aug 2025 blocked 6+ weeks, £43.9K international travel HMRC risk."
-    },
-    {
-      "name": "12-Month Operational Budget",
-      "phase_current": 3,
-      "phase_total": 5,
-      "implementation_plan": "12-MONTH-BUDGET-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Decision-grade budget testing feasibility of £750K annual revenue — units-based, seasonal, autopay-aware cash flow, growth bridge",
-      "status": "paused",
-      "status_label": "v2.3 | ⏸️ PAUSED — Data Quality Issues | Pending Xero Reconciliation",
-      "completed_phases": [
-        {"name": "Phase 1: Specification & Inputs", "summary": "Virtual CFO critique (10 issues). Revised spec. Rob answered all 8 questions with Xero screenshots + DSP class data."},
-        {"name": "Phase 2: Spreadsheet Build", "summary": "6-tab spreadsheet built: Revenue (£418,996), Direct Costs, Marketing, Overheads (£141,696), Cash Flow (min £116K Sep), Growth Bridge (corrected with DSP pricing £196.40 avg)."}
-      ],
-      "next_phase": {
-        "name": "Phase 3: Review & Refine",
-        "detail": "PROJECT PAUSED (1 Feb). Xero upload revealed data quality issues: revenue understated ~12%, admin costs 47% over budget (£183K pace vs £125K budget). Need clean Xero data before budgeting is useful.",
-        "status": "paused",
-        "tasks": [
-          "BLOCKED: Answer Dec/Jan bookkeeper queries (16 uncategorised transactions)",
-          "BLOCKED: Complete year-end 31 Aug 2025 (8 bank statements, 6+ weeks overdue)",
-          "BLOCKED: Revenue reconciliation (£15.5K gap)",
-          "BLOCKED: Establish monthly Xero close cycle"
-        ]
-      },
-      "remaining_phases": [
-        "Phase 4: Written Summary",
-        "Phase 5: Finalise & Deliver"
-      ],
-      "key_finding": "PAUSED: Budget built on unreliable Xero data. Sep-Jan revenue tracking perfectly (£141K actual vs £141K budget), but admin costs 47% over. Decision: Fix Xero data quality first (bookkeeper queries, reconciliation), THEN rebuild budget from clean data."
-    },
-    {
-      "name": "Supabase Shadow Database",
-      "phase_current": 4,
-      "phase_total": 6,
-      "implementation_plan": "SUPABASE-SHADOW-DATABASE-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Clean relational database (27 tables, 7 schemas) replacing 42+ Airtable tables. Shadow sync first, then new features write directly to Supabase.",
-      "status": "in_progress",
-      "status_label": "v1.5 | Phase 4 Complete ✅ (nightly sync + monitoring live) | Phase 5: New Features 📋",
-      "completed_phases": [
-        {"name": "Phase 1: Schema Design", "summary": "27 tables across 7 Postgres schemas (core, programme, enrollment, finance, staff, crm, ops). DDL, triggers, RLS, 5 views."},
-        {"name": "Phase 2: Deploy & Seed", "summary": "Schema deployed to Supabase Pro. 5 programmes, 17 venues, 10 terms seeded."},
-        {"name": "Phase 3: Shadow Sync", "summary": "5 tables synced: contacts (2,972), classes (91), staff (19), enrollments (1,399), delivered_sessions (9). Multi-source enrichment + Airtable backfill complete. 0 FK orphans."},
-        {"name": "Phase 4: Verify + Reconcile", "summary": "Views verified (4/5 returning data). Record counts within tolerance. Nightly launchd sync at 02:00 + n8n monitor at 07:00 + ops.system_health logging + reconciliation + operational runbook."}
-      ],
-      "next_phase": {
-        "name": "Phase 5: New Features Direct",
-        "detail": "Start writing new data directly to Supabase (camps, parties, financial snapshots).",
-        "status": "planned",
-        "tasks": [
-          "Camp registers write to Supabase",
-          "Party bookings write to Supabase",
-          "Staff Portal v2 reads from Supabase",
-          "FIN-01 writes to finance.financial_snapshots"
-        ]
-      },
-      "remaining_phases": [
-        "Phase 5: New Features on Supabase (camps, parties write directly)",
-        "Phase 6: Dashboard Migration"
-      ],
-      "data_quality": {
-        "contacts": 2972,
-        "classes": 91,
-        "staff": 19,
-        "enrollments": 1399,
-        "delivered_sessions": 9,
-        "households": 609,
-        "household_members": 1367,
-        "orphans_remaining": 18,
-        "fk_orphans": 0,
-        "airtable_backfill": "complete",
-        "sync_script": "scripts/sync-airtable-to-supabase.py",
-        "nightly_sync": "launchd 02:00 GMT",
-        "monitoring": "n8n NMTobx1NCtluuOtG2kgrp (07:00 GMT)"
-      }
-    },
-    {
-      "name": "Business Diagnostic & Scale Readiness",
-      "phase_current": 1,
-      "phase_total": 5,
-      "implementation_plan": "BUSINESS-DIAGNOSTIC-SCALE-READINESS-IMPLEMENTATION-PLAN-FEB2026.md",
-      "purpose": "Strategic diagnostic consolidating 6 months of financial/operational data. Evaluates readiness for three growth paths: second location, franchise, or Dance School in a Box coaching product.",
-      "status": "planned",
-      "status_label": "v1.0 | Phase 1: Data Consolidation 📋",
-      "completed_phases": [],
-      "next_phase": {
-        "name": "Phase 1: Data Consolidation",
-        "detail": "Consolidate all existing metrics from Health Check, DSP Unit Economics, Budget, Supabase, Cross-Sell into single diagnostic data sheet.",
-        "status": "planned",
-        "tasks": [
-          "Extract revenue, cost, LTV, retention from existing docs",
-          "Reconcile LTV figures (£4,110 projected vs £2,692 observed)",
-          "Create Diagnostic Data Sheet with source attribution",
-          "Flag data gaps with owner and priority"
-        ]
-      },
-      "remaining_phases": [
-        "Phase 2: Operational Assessment (Rob/Louise questionnaire)",
-        "Phase 3: Growth Path Modelling (scale, franchise, DSIAB)",
-        "Phase 4: IP & Systems Inventory",
-        "Phase 5: Decision Framework & Final Document"
-      ],
-      "key_data": {
-        "growth_paths": ["Second Location", "Franchise", "Dance School in a Box (DSIAB)"],
-        "economic_ltv": "£2,692 (observed) / £4,110 (projected)",
-        "avg_retention": "16.6 months",
-        "cac_ltv_ratio": "1:22 (fully loaded)",
-        "data_sources_consolidated": 8
-      }
-    },
-    {
-      "name": "Website SEO Improvement",
-      "phase_current": 1,
-      "phase_total": 9,
-      "implementation_plan": "WEBSITE-SEO-IMPLEMENTATION-PLAN-FEB2026.md",
-      "purpose": "Comprehensive SEO overhaul: technical audit fixes, schema optimisation, meta descriptions, Google Business Profile, local landing pages, security hardening, E-E-A-T authority signals",
-      "status": "in_progress",
-      "status_label": "v1.1 | Phase 1/9 🔧 Partial (title, noindex, slug done) | Phase 2-3 next",
-      "completed_phases": [
-        {"name": "Phase 1 (Partial): Quick Technical Wins", "summary": "Holiday Camps title 2025→2026, noindex on 2 utility pages, blog slug fixed, focus keyword set. Author name + redirect need admin."}
-      ],
-      "next_phase": {
-        "name": "Phase 1 Remaining + Phase 2: Schema Optimisation",
-        "detail": "Admin tasks (author name, redirect). Then delete BlogPosting schema from 5 non-blog pages. Validate via Rich Results Test.",
-        "status": "in_progress",
-        "tasks": [
-          "Rob: Change author display name Admin → Louise (WP Admin)",
-          "Rob: Set up 301 redirect for old blog slug (Rank Math Redirections)",
-          "Delete BlogPosting from Dance Classes, Holiday Camps, Get a Quote, Matinee Gallery, Junior Mouvers",
-          "Validate all pages via Google Rich Results Test"
-        ]
-      },
-      "remaining_phases": [
-        "Phase 3: On-Page SEO & Meta (descriptions already set, OG images pending)",
-        "Phase 4: URL Cleanup & Redirects",
-        "Phase 5: Google Business Profile Optimisation",
-        "Phase 6: Security & Compliance",
-        "Phase 7: Crawl, Indexing & Performance",
-        "Phase 8: Local Content Strategy (5 landing pages + 6 blog posts)",
-        "Phase 9: E-E-A-T & Authority Building"
-      ]
-    },
-    {
-      "name": "Lead Scoring & Attribution Tracking",
-      "phase_current": 1,
-      "phase_total": 2,
-      "implementation_plan": "LEAD-SCORING-IMPLEMENTATION-PLAN-FEB2026.md",
-      "purpose": "Automated lead cost tracking and quality scoring for Google Ads vs Meta campaigns. Calculate true cost per acquisition and optimize ad spend allocation.",
-      "status": "waiting",
-      "status_label": "Phase 1 Complete ✅ | Waiting 7-14 days for Google conversion data",
-      "completed_phases": [
-        {"name": "Phase 1: Tracking Infrastructure", "summary": "Fixed Google Ads UTM tracking, updated n8n workflow (last-touch attribution), paused expensive Facebook campaign (£17.59/lead). Saved £299/month."}
-      ],
-      "next_phase": {
-        "name": "Phase 2: ML Lead Scoring (Optional)",
-        "detail": "Predictive enrollment likelihood using XGBoost (75-85% accuracy vs 65% rule-based). Only pursue if Phase 1 proves valuable.",
-        "status": "planned",
-        "tasks": [
-          "Monitor Google Ads leads for 7-14 days",
-          "Calculate true Google CPA (Cost Per Acquisition)",
-          "Compare Google vs Facebook performance",
-          "Decide: optimize further or add ML scoring"
-        ]
-      },
-      "key_data": {
-        "google_ads": "£493/month, £12.65/conversion (needs verification)",
-        "facebook_ads": "£666/month (was £965), £71.25/enrollment",
-        "website_organic": "22% conversion rate (best)",
-        "monthly_savings": "£299 (Facebook optimization)",
-        "tracking_status": "Fixed (1 Feb 2026)"
-      }
-    }
-  ],
-
-  "secondary_projects": [
-    {
-      "name": "Party Booking Landing Page",
-      "phase_current": 1,
-      "phase_total": 3,
-      "implementation_plan": "PARTY-LANDING-PAGE-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "High-converting SEO landing page for MOUVE children's birthday parties. Relume → Webflow → parties.makeamouve.com",
-      "status": "in_progress",
-      "status_label": "v1.0 | Phase 1: Section Review 🔧 (15 tasks created)",
-      "target_url": "parties.makeamouve.com",
-      "next_phase": {
-        "name": "Phase 1: Section Review",
-        "detail": "Review each section for wording, images, colours. Fix critical issues (Sydney map, stock photos of adults)",
-        "status": "in_progress",
-        "tasks": [
-          "Fix critical images (Sydney map → NW London)",
-          "Update global colours in Style Guide",
-          "Work through 12 sections top to bottom",
-          "Source real MOUVE party photos from Louise"
-        ]
-      },
-      "remaining_phases": [
-        "Phase 2: Export to Webflow + Form Backend",
-        "Phase 3: DNS Setup + Go Live"
-      ]
-    },
-    {
-      "name": "Dance Studio SaaS (New Product)",
-      "phase_current": 0,
-      "phase_total": 9,
-      "implementation_plan": "DANCE-STUDIO-SAAS-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Multi-tenant dance studio management platform — replaces DSP + ClassForKids + Pembee. Sellable SaaS product.",
-      "status": "planned",
-      "status_label": "PARKED — Start Feb/March 2026",
-      "start_date": "February/March 2026",
-      "target_completion": "June 2027 (15 months)",
-      "systems_replaced": ["Dance Studio Pro", "ClassForKids", "Pembee"],
-      "monthly_savings": "~£90/month + 30-50% payment fees",
-      "tech_stack": ["Next.js 15", "Supabase/Postgres", "GoCardless", "Stripe", "Vercel"],
+      "status_label": "Phase 3 Complete (5/7 phases)",
       "phases": [
-        "Phase 0: Foundation (auth, multi-tenant)",
-        "Phase 1-2: Core Data + Enrollment",
-        "Phase 3: Payments (GoCardless + Stripe)",
-        "Phase 4: Parent Portal",
-        "Phase 5: Reporting",
-        "Phase 6: GHL Integration",
-        "Phase 7: Email Communication",
-        "Phase 8: School Clubs + Camps",
-        "Phase 9: API + Polish"
-      ],
-      "pre_start_actions": [
-        "Louise: Decide product name",
-        "Rob: Research GoCardless API",
-        "Both: Identify 2-3 beta studios",
-        "Rob: Document DSP features used daily"
-      ],
-      "next_action": "PARKED until Q1 2026 stabilises. When ready: 'Start Dance Studio SaaS project - Phase 0'"
+        {
+          "name": "Phase 1: Foundation",
+          "status": "complete",
+          "detail": "LF_MEMBERSHIPS table, lf_state field, TeamUp sync",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 2A: Lead Response",
+          "status": "complete",
+          "detail": "Instant SMS + Email, team alerts, Airtable logging",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 2B: Lead Nurture",
+          "status": "complete",
+          "detail": "LF-02 v7 + GHL nurture + Calendar integration",
+          "sub_phases": [
+            {"name": "LF-02 v7 workflow deployed", "status": "complete"},
+            {"name": "GHL \"LF Lead Nurture\" workflow (Day 1/3/7 SMS)", "status": "complete"},
+            {"name": "Google Calendar integration (15-min call blocks)", "status": "complete"},
+            {"name": "Enhanced email with talking points", "status": "complete"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 2C: Calendar Sync",
+          "status": "complete",
+          "detail": "LF-10 (daily sync) + LF-11 (trial events) live",
+          "sub_phases": [
+            {"name": "LF-10 workflow deployed (daily 5am)", "status": "complete"},
+            {"name": "LF-11 workflow deployed (real-time trials)", "status": "complete"},
+            {"name": "Staff calendar shared with LF team", "status": "complete"},
+            {"name": "SOP-G-010 & PB-LF-005 documented", "status": "complete"}
+          ],
+          "blocker": null
+        },
+        {
+          "name": "Phase 3: Trial & Attendance",
+          "status": "complete",
+          "detail": "10 workflows active, per-membership tracking",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 4: Member Engagement",
+          "status": "planned",
+          "detail": "Weekly scans, at-risk alerts, onboarding sequence",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 5: Retention & Growth",
+          "status": "planned",
+          "detail": "Win-back, referrals, 5-day challenge",
+          "sub_phases": [],
+          "blocker": null
+        }
+      ]
+    },
+    {
+      "name": "Children's Dance Onboarding (GHL v2.0)",
+      "status": "planned",
+      "status_label": "Ready to Start (9 phases)",
+      "phases": [
+        {
+          "name": "Phase 0: Backup & Preparation",
+          "status": "planned",
+          "detail": "Archive n8n workflows, HTML templates, AC tags; rotate GHL token",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 1: Kit Pages",
+          "status": "planned",
+          "detail": "Create 10 WordPress pages (/kit/[category]) with uniform requirements",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 2: GHL Contact Setup",
+          "status": "planned",
+          "detail": "Enable multi-contact emails, create custom fields (child_name, age_group, kit_page_url, etc.)",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 3: Email Templates",
+          "status": "planned",
+          "detail": "28 GHL templates (3 age tracks × 10 emails, reduced from 52)",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 4: GHL Workflows",
+          "status": "planned",
+          "detail": "3 linear workflows (Tots/Children/Teens) - no class branching",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 5: n8n Refactoring",
+          "status": "planned",
+          "detail": "Enrollment Handler v5.0 with validation, idempotency, kit URL lookup",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 6: Airtable Schema",
+          "status": "planned",
+          "detail": "Add ghl_contact_id, workflow tracking; create ONBOARDING_SEND_LOG table",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 7: Testing",
+          "status": "planned",
+          "detail": "7 test cases: data pipe, validation, idempotency, multi-child, content, timing",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 8: Go Live",
+          "status": "planned",
+          "detail": "Activate workflows, monitor first 5 enrollments",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 9: Backfill",
+          "status": "planned",
+          "detail": "Throttled rollout (25→50/day over 3 weeks) for 326 existing contacts",
+          "sub_phases": [],
+          "blocker": null
+        }
+      ]
     },
     {
       "name": "Back Office: Staff Costs",
-      "phase_current": 6,
-      "phase_total": 7,
-      "implementation_plan": "STAFF-ADMIN-COSTS-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Automate monthly staff statements (replace inconsistent invoices, save 3-4 hours/month)",
-      "status": "in_progress",
-      "status_label": "Phase 6A 🔧 Unblocked — Ready for Yael pilot",
-      "next_action": "Yael pilot: log 1 week of sessions via Custom Portal → verify n8n statement generation"
+      "status": "waiting",
+      "status_label": "Phase 4 Blocked",
+      "phases": [
+        {
+          "name": "Phase 1: Table Setup",
+          "status": "complete",
+          "detail": "6 Airtable tables created",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 2: Staff Data",
+          "status": "complete",
+          "detail": "17 staff, bank details, 12/17 rates",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 3: Data Entry",
+          "status": "complete",
+          "detail": "Timesheet form + Venue field for Xero",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 4: Statement Generation",
+          "status": "waiting",
+          "detail": "n8n workflow to aggregate by venue",
+          "sub_phases": [
+            {"name": "5 staff rates missing (Louise)", "status": "pending"},
+            {"name": "Xero format confirmed", "status": "complete"},
+            {"name": "Build n8n workflow", "status": "pending"}
+          ],
+          "blocker": "Blocked: Waiting for Louise to confirm exact rates"
+        },
+        {
+          "name": "Phase 5: Approval & Delivery",
+          "status": "planned",
+          "detail": "Louise approval → PDF → Email",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 6: Validation",
+          "status": "planned",
+          "detail": "Jan 2026 vs manual process",
+          "sub_phases": [],
+          "blocker": null
+        }
+      ]
     },
     {
-      "name": "Staff Portal: Monitoring & Feature Backlog",
-      "phase_current": 9,
-      "phase_total": 9,
-      "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Post-launch monitoring + feature backlog (Incident Reports, My Pay Summary, Student Notes, Sub Request, Announcements)",
-      "status": "in_progress",
-      "status_label": "Phase 9/9 — Rate Review Spreadsheet sent to Louise",
-      "updated": "2026-02-01",
-      "summary": "v3.0 — LIVE to all 22 staff. Phase 9: Per-class rates system built (35 STAFF_CLASS_RATES, 77 sessions backfilled). Full 22-tab rate review spreadsheet cross-referencing 4 sources sent to Louise for tick/correct.",
-      "blocker": "Louise reviewing MOUVE-Staff-Rates-Final-Review.xlsx (21 teachers). Alexandra (£0) + Evie (£0) URGENT.",
-      "next_action": "Louise reviews spreadsheet and ticks/corrects rates. Then create STAFF_CLASS_RATES records for all confirmed rates."
-    },
-    {
-      "name": "Pocket Assistant (OpenClaw)",
-      "phase_current": 3,
-      "phase_total": 5,
-      "implementation_plan": "POCKET-ASSISTANT-IMPLEMENTATION-PLAN-FEB2026.md",
-      "purpose": "Personal AI assistant via Telegram (@OpenClaw_Rob_bot) with MOUVE read-only context, web search, cron briefings",
-      "status": "in_progress",
-      "status_label": "v2.0 | Phase 3/5 ✅ LIVE on Telegram (31 Jan) | Phase 4: Refinement 📋",
-      "next_action": "Use for 1 week, tune SOUL.md, add skills based on real usage"
-    },
-    {
-      "name": "Weekly Auto-Blog System",
-      "phase_current": 0,
-      "phase_total": 6,
-      "implementation_plan": "WEEKLY-AUTO-BLOG-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Auto-generate 4-5 weekly camp blogs with GPT-4o (long-tail SEO, saves 8-10h/month)",
-      "status": "planned",
-      "status_label": "v1.0 Planning Complete",
-      "target_date": "31 Jan 2026",
-      "next_action": "Phase 1: Create BLOG_POSTS table + update Data Dictionary"
+      "name": "Custom Staff Portal (Softr)",
+      "status": "complete",
+      "status_label": "LIVE - All 22 Staff Deployed",
+      "phases": [
+        {
+          "name": "Phase 1-8: Core Build",
+          "status": "complete",
+          "detail": "Softr setup, Airtable connect, user auth, timesheets, class reports",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 9: Per-Class Session Rates",
+          "status": "complete",
+          "detail": "34 class records corrected, rates built",
+          "sub_phases": [],
+          "blocker": null
+        },
+        {
+          "name": "Phase 10: Staff Rollout",
+          "status": "complete",
+          "detail": "22 staff deployed (29 Jan 2026)",
+          "sub_phases": [],
+          "blocker": null
+        }
+      ]
     }
   ],
 
   "completed_projects": {
     "multi_phase": [
+      {"name": "Custom Staff Portal", "result": "LIVE - 22 staff deployed (29 Jan 2026)"},
       {"name": "Data Integrity System", "result": "Production (DATA_HEALTH + SYS-01 reconciliation)"},
       {"name": "MOUVE Ops Library", "result": "Production (4 SOPs + 1 Playbook live)"},
       {"name": "Ladies Fitness Calendar Sync", "result": "LF-10 + LF-11 deployed"},
       {"name": "Ops Priority Engine", "result": "Complete"},
       {"name": "Term Renewal Engine", "result": "Complete"},
       {"name": "Teacher Culture Programme", "result": "12 campaigns live"},
-      {"name": "Operational Dashboard", "result": "Vercel + n8n pipeline + 7 KPI cards (27 Jan 2026)"},
-      {"name": "GHL SMS Audit & Cleanup", "result": "5/5 tasks done, ~410 SMS/month saved. All complete 29 Jan 2026"},
-      {"name": "Custom Staff Portal (Next.js)", "result": "8/8 phases, 6 features, 22 staff live (29 Jan 2026). Post-launch: 28 records fixed, 16 venue options added, monthly session view deployed (30 Jan)."}
+      {"name": "DSP Sync (Children's)", "result": "402 active students synced to Airtable"}
     ],
     "simple": [
-      {"name": "Children's Onboarding Email Refinement", "result": "10 emails × 3 age tracks, all pass Email Deliverability Checklist v1.1"},
       {"name": "Ops Library Notion → Docs Export", "result": "37 docs exported"},
       {"name": "Ops Library Drive (Phase 2B)", "result": "28 folders created"},
       {"name": "Drive Archive (Phase 3)", "result": "10 drives archived"},
@@ -601,17 +262,14 @@
       {"name": "Spring Term 2026 Welcome", "result": "Complete"},
       {"name": "Trials Tracker System", "result": "Complete"},
       {"name": "LF Trial Email Clarity Fix", "result": "3 workflows deployed"},
-      {"name": "Historical Camp Data Migration", "result": "1,301 contacts + 11-tag taxonomy imported to AC"},
       {"name": "School Clubs Migration", "result": "Closed (not viable)", "closed": true},
-      {"name": "Amex Recon", "result": "Retired (30 Jan 2026) — M365 filters causing staff invoice loss, manual process sufficient", "closed": true},
-      {"name": "Attendance Tracker (Children's Dance)", "result": "Staff Portal /attendance page (25 Jan 2026)"}
+      {"name": "Amex Reconciliation", "result": "Retired (manual process sufficient)", "closed": true}
     ],
     "active_campaigns": [
       {"name": "Lapsed Parent Win-Back", "status": "Active (4 emails)"},
       {"name": "Ladies Fitness Win-Back", "status": "Active (4 campaigns)"},
       {"name": "Teacher Culture Tuesdays", "status": "Week 2 of 12"},
-      {"name": "February Camp 2026", "status": "18 enrolled (16-20 Feb)"},
-      {"name": "February WICKED Camp Email Campaign", "status": "Scheduled (7 emails, 1,726 recipients, launches 15 Jan)"}
+      {"name": "February Camp 2026", "status": "18 enrolled (16-20 Feb)"}
     ]
   },
 
@@ -637,7 +295,7 @@
     ],
     "booking_systems": [
       {"name": "TeamUp (LF)", "status": "active"},
-      {"name": "DSP (Dance)", "status": "blocked"}
+      {"name": "DSP (Dance)", "status": "active", "note": "402 students synced via MCP"}
     ]
   },
 
@@ -682,146 +340,29 @@
     {"id": "LF-08", "name": "Trial Expiry Handler v1", "trigger": "Daily", "status": "active"},
     {"id": "LF-09", "name": "Daily Trial Alert v1", "trigger": "Daily 8am", "status": "active"},
     {"id": "LF-10", "name": "TeamUp Calendar Sync v1", "trigger": "Daily 5am", "status": "active"},
-    {"id": "LF-11", "name": "Trial Event Creator v1", "trigger": "Real-time webhook", "status": "active"},
-    {"id": "FIN-01", "name": "Weekly Financial Snapshot v2.1", "trigger": "Sat 07:00 + Manual", "status": "active"}
-  ],
-
-  "weekly_review": {
-    "week_commencing": "27 January 2026",
-    "built": [
-      "Staff Portal live to all 22 staff",
-      "Per-class session rates system (STAFF_CLASS_RATES table, 35 records, 77 sessions backfilled)",
-      "22-tab staff rates review spreadsheet cross-referencing 4 data sources",
-      "FIN-01 weekly financial snapshot",
-      "Newsletter template for ActiveCampaign"
-    ],
-    "improved": [
-      "SMS costs: ~410/month saved (5 cleanup tasks)",
-      "Venue rental accuracy: +40% correction applied",
-      "Staff Portal: 16 venue options added, timesheet bug fixed (30 Jan)",
-      "Google Ads tracking fixed (UTM + last-touch attribution), Facebook Campaign 1 paused",
-      "£14,540 missing Stripe revenue identified and reconciliation sent to bookkeeper"
-    ],
-    "decisions": [
-      "Venue rental correction accepted (£23K\u2192£32K)",
-      "Stripe load abandoned (90% unattributable)",
-      "Budget PAUSED until Xero data quality improved",
-      "Georgia rate changes accepted as pay increases (Tinies Ballet, Sinai Drama)"
-    ],
-    "risks": [
-      "Bookkeeper: £14,540 Stripe reconciliation (target 7 Feb)",
-      "Louise: Staff rates review spreadsheet (21 teachers, Alexandra + Evie URGENT)",
-      "AC onboarding upload (25 HTMLs pending)",
-      "Year-end 31 Aug 2025 blocked 6+ weeks (bank statements needed)"
-    ]
-  },
-
-  "recent_decisions": [
-    "Accepted corrected venue rental (+£9,230)",
-    "Locked Supabase as future write source",
-    "Deferred Dance Studio SaaS to Q2",
-    "Stripe load abandoned (90% unattributable)",
-    "Budget cash runway revised to 5.0 months",
-    "Staff Portal: custom Next.js over Softr"
-  ],
-
-  "financial_summary": {
-    "revenue": 418996,
-    "direct_costs": 90589,
-    "contribution_margin_pct": 78.4,
-    "overheads": 124709,
-    "marketing": 32316,
-    "net_profit": 171382,
-    "closing_cash_aug": 268992,
-    "cash_runway_months": 5.0,
-    "lowest_cash_month": "Sep (£111K)",
-    "venue_corrected": true,
-    "source": "12-Month Budget v2.1 (29 Jan 2026)"
-  },
-
-  "system_health": {
-    "supabase_sync": { "status": "healthy", "last_run": "2026-01-30T02:00:00Z", "records": 4486 },
-    "n8n_workflows": { "status": "healthy", "active": 14, "failed_24h": 0 },
-    "data_quality": { "status": "healthy", "contacts": 2972, "orphans": 18 }
-  },
-
-  "governing_documents": [
-    {
-      "name": "Compaction Recovery Protocol",
-      "path": "docs/protocols/COMPACTION-RECOVERY-PROTOCOL.md",
-      "description": "Meta instructions + template for implementation plans. Defines verification workflow, Claude rules, and n8n patterns.",
-      "applies_to": "All projects with 3+ phases"
-    },
-    {
-      "name": "Dashboard Schema & Update Instructions",
-      "path": "mouve-dashboard/DASHBOARD-STRUCTURE-V2.md",
-      "description": "Complete JSON schema for all 16 dashboard sections. Update patterns, session wrap-up checklist, do/don't rules.",
-      "applies_to": "All dashboard updates"
-    },
-    {
-      "name": "Project MODE System",
-      "path": "~/.claude/CLAUDE.md",
-      "description": "BUILD / REVIEW / SUMMARISE / IDLE mode governance. Post-compaction rules. Controlled execution over helpful autonomy.",
-      "applies_to": "All Claude Code sessions"
-    },
-    {
-      "name": "Implementation Plan Protocol",
-      "path": "CLAUDE.md (Implementation Plan Protocol section)",
-      "description": "Required format, phase status icons, mandatory sections. Every project with 3+ phases must have an implementation plan.",
-      "applies_to": "All multi-phase projects"
-    }
+    {"id": "LF-11", "name": "Trial Event Creator v1", "trigger": "Real-time webhook", "status": "active"}
   ],
 
   "priority_actions": [
     {
-      "category": "COMPLETE",
-      "action": "Custom Staff Portal — COMPLETE ✅ (Post-Launch Monitoring)",
-      "detail": "All 8 phases done, 6 features live, 22 staff onboarded (29 Jan). Full data audit completed: 28 class records corrected, 5 TEST records cleaned up. Remaining: monitor staff feedback, Feb Camp instructor assignment when staffed."
+      "category": "BUILD",
+      "action": "Children's Onboarding GHL v2.0: Phase 0-1",
+      "detail": "Backup existing work, create 10 kit pages on WordPress"
+    },
+    {
+      "category": "ROB",
+      "action": "Website SEO: 3 manual WordPress tasks",
+      "detail": "Author name change, 301 redirect, schema removal from 5 pages"
+    },
+    {
+      "category": "FINANCE",
+      "action": "Financial Health Check: Travel categorisation",
+      "detail": "Review travel expenses + respond to bookkeeper 4838 query"
     },
     {
       "category": "BUILD",
-      "action": "Staff Costs — Monitor Timesheet Usage via Portal",
-      "detail": "Portal live to all staff (29 Jan). Monitor that staff log sessions via portal timesheet form, then verify n8n statement generation works with portal-created records."
-    },
-    {
-      "category": "BUILD",
-      "action": "Weekly Auto-Blog System - Phase 1 Ready",
-      "detail": "Automated camp blog generation (GPT-4o + n8n + WordPress). Create BLOG_POSTS table, JSON clusters, 11-node workflow. Replaces manual content workflow. Target: 31 Jan 2026 for Feb camp. Estimate: 8-10 hours."
-    },
-    {
-      "category": "BUILD",
-      "action": "Children's Onboarding - Phase 4 Ready (Emails v2.0 Final)",
-      "detail": "Upload 25 email HTMLs from onboarding-sequence-v2-final-18jan2026/ + create 10 AC automations. All tone amendments complete. Estimate: 60 minutes."
-    },
-    {
-      "category": "BUILD",
-      "action": "Financial Intelligence — FIN-01 Core Live, Phase 2 Next",
-      "detail": "FIN-01 workflow live (16 nodes, Sat 07:00). Xero P&L + Bank Health + 4 Stripe accounts + Reconciliation Engine + Cash Health. Found: Xero understates revenue by ~20%. Next: Add Airtable queries, GitHub push, then build financial dashboard (MVP 10 numbers)."
-    },
-    {
-      "category": "ACTION",
-      "action": "Bookkeeper Monday actions — year-end blockers, December queries, Pembee £6.8K",
-      "detail": "Mel replied 30 Jan. URGENT: 8 bank statements + accountant papers for year-end (blocked 6+ wks). Split £43.9K travel with Louise. Resend Ildiko invoices, chase Hasmonean. Investigate Pembee £6.8K. Reply acknowledging both emails + Sukkahmart recategorisation."
-    },
-    {
-      "category": "ACTION",
-      "action": "12-Month Budget — Upload Corrected Spreadsheet to Google Sheets",
-      "detail": "Venue rental corrected: £22,997→£32,227 (+40%). SMSJ invoices + price increase (Jan 2026) applied. Tab 2 shows accrual (when sessions happen), Tab 5 shows cash flow (termly lumps). Contribution margin now 78.4%. Next: upload .xlsx to Google Sheets, create assumptions register, write 1-page summary."
-    },
-    {
-      "category": "OPS",
-      "action": "GHL SMS Audit — Complete ✅ (Measure 1 Mar)",
-      "detail": "5/5 cleanup tasks done. opportunity_abandoned tag added to Abandoned workflow + Follow Ups If/Else updated (29 Jan). Measure SMS on 1 Mar vs 2,668 baseline (target ~2,250). See UNIT-ECONOMICS-REFERENCE.md Section 14."
-    },
-    {
-      "category": "BUILD",
-      "action": "Business Diagnostic — Phase 1 Ready (Data Consolidation)",
-      "detail": "New strategic project: consolidate all existing financial/operational data into single diagnostic, then evaluate 3 growth paths (scale, franchise, DSIAB). Phase 1 is Claude-led (no Rob input needed). Phase 2 needs Rob/Louise questionnaire (~60-90 min). DSP Unit Economics reference doc created (29 Jan)."
-    },
-    {
-      "category": "OPS",
-      "action": "Ops Library Phase 6: Governance",
-      "detail": "Establish SOP update process and quarterly review cycle"
+      "action": "Staff Costs: Custom Portal timesheet form",
+      "detail": "Yael pilot - unblocks Phase 6 statement generation"
     }
   ]
 }
