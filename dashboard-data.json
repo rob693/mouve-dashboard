@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-02-03T16:30:00Z",
+  "generated_at": "2026-02-03T21:10:00Z",
   "generated_by": "SYS-DASHBOARD v2",
-  "version": "3.1",
+  "version": "3.2",
 
   "health_summary": {
     "complete": 34,
-    "in_progress": 7,
+    "in_progress": 8,
     "waiting": 1,
-    "planned": 3,
+    "planned": 2,
     "blocked": 1
   },
 
@@ -148,26 +148,31 @@
     },
     {
       "name": "Children's Dance Onboarding (GHL v2.0)",
-      "phase_current": 0,
+      "phase_current": 1,
       "phase_total": 10,
       "implementation_plan": "CHILDRENS-ONBOARDING-GHL-IMPLEMENTATION-PLAN-FEB2026.md",
       "purpose": "GHL-native 10-email onboarding with age personalization + kit pages. Replaces AC approach (28 templates, down from 52).",
-      "status": "planned",
-      "status_label": "v2.0 | Ready to Start 📋 (Council-reviewed architecture)",
-      "completed_phases": [],
+      "status": "in_progress",
+      "status_label": "v2.0 | Phase 1 In Progress 🔧 (4/10 kit pages complete)",
+      "completed_phases": [
+        {"name": "Phase 0: Backup & Preparation", "summary": "n8n workflows archived (13 files), HTML templates archived (27 files), AC tags documented (63-90), backup reference created"}
+      ],
       "next_phase": {
-        "name": "Phase 0: Backup & Preparation",
-        "detail": "Archive n8n workflows, HTML templates, AC tags; rotate GHL token (security fix)",
-        "status": "planned",
+        "name": "Phase 1: Kit Pages",
+        "detail": "4/10 kit pages complete with product images + buy links. Remaining: Jazz/Contemporary/Elite (awaiting shop products), Drama/Broadway/First Mouves (no uniform pages), then upload to WordPress",
+        "status": "in_progress",
         "tasks": [
-          "Archive current n8n workflows (export JSON)",
-          "Archive v2-final HTML templates",
-          "Document current AC tag IDs for rollback",
-          "Rotate GHL API token (exposed in docs)"
+          "✅ Ballet kit page (9 levels, 30+ products)",
+          "✅ Tap kit page (3 products)",
+          "✅ Hip Hop kit page (2 products + bring from home)",
+          "✅ Dance Gymnastics kit page (1 product, bare feet)",
+          "Jazz, Contemporary, Elite (awaiting shop products)",
+          "Drama, Broadway, First Mouves (simple 'no uniform' pages)",
+          "Upload all pages to WordPress",
+          "Create Airtable URL lookup table"
         ]
       },
       "remaining_phases": [
-        "Phase 1: Kit Pages (10 WordPress pages)",
         "Phase 2: GHL Contact Setup",
         "Phase 3: Email Templates (28 total)",
         "Phase 4: GHL Workflows (3 linear)",
@@ -180,7 +185,7 @@
       "key_data": {
         "templates": "28 (down from 52)",
         "age_tracks": 3,
-        "kit_pages": 10,
+        "kit_pages": "4/10 complete",
         "backfill_contacts": 326,
         "council_reviewed": true
       }
@@ -779,8 +784,8 @@
     },
     {
       "category": "BUILD",
-      "action": "Children's Onboarding GHL v2.0 - Phase 0-1 Ready",
-      "detail": "New GHL-native approach (council-reviewed). Phase 0: backup + security. Phase 1: create 10 kit pages on WordPress. Estimate: 2-3 hours."
+      "action": "Children's Onboarding GHL v2.0 - Phase 1 In Progress (4/10 kit pages)",
+      "detail": "Phase 0 complete (backup done). 4 kit pages built: Ballet (9 levels), Tap, Hip Hop, Gymnastics. Remaining: Jazz/Contemporary/Elite need shop products; Drama/Broadway/First Mouves need 'no uniform' pages; then upload to WordPress."
     },
     {
       "category": "BUILD",
