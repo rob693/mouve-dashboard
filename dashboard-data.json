@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-02-03T03:00:00Z",
+  "generated_at": "2026-02-03T16:30:00Z",
   "generated_by": "SYS-DASHBOARD v2",
-  "version": "3.0",
+  "version": "3.1",
 
   "health_summary": {
     "complete": 34,
@@ -165,35 +165,43 @@
       ]
     },
     {
-      "name": "Children's Dance Onboarding",
-      "phase_current": 4,
-      "phase_total": 7,
-      "implementation_plan": "CHILDRENS-ONBOARDING-IMPLEMENTATION-PLAN-JAN2026-UPDATE.md",
-      "purpose": "Automated 10-email onboarding sequence — reduces anxious parents, stops repetitive staff questions",
-      "status": "in_progress",
-      "status_label": "Phase 4/7 Ready 📋 (v6.3 - Emails v2.0 Final)",
-      "completed_phases": [
-        {"name": "Phase 1: Schema Foundation", "summary": "6 fields created (5 ENROLLMENTS, 1 CONTACTS) in 25 min"},
-        {"name": "Phase 2: n8n Enrollment Handler Update", "summary": "v4.8 Final - Traffic control + parent upsert + 8 bugs fixed"},
-        {"name": "Phase 3: n8n Progression Engine", "summary": "30-min schedule, timing logic, traffic control, AC tags 122-130, error handling"},
-        {"name": "Phase 5 (Partial): Email Content", "summary": "25 HTML files tone-amended (E1-E10 × 3 age variants) — 18 Jan 2026"}
-      ],
+      "name": "Children's Dance Onboarding (GHL v2.0)",
+      "phase_current": 0,
+      "phase_total": 10,
+      "implementation_plan": "CHILDRENS-ONBOARDING-GHL-IMPLEMENTATION-PLAN-FEB2026.md",
+      "purpose": "GHL-native 10-email onboarding with age personalization + kit pages. Replaces AC approach (28 templates, down from 52).",
+      "status": "planned",
+      "status_label": "v2.0 | Ready to Start 📋 (Council-reviewed architecture)",
+      "completed_phases": [],
       "next_phase": {
-        "name": "Phase 4: ActiveCampaign Micro-Automations",
-        "detail": "10 simple automations (tag → send email) + upload 25 email HTMLs • Est: 60 min",
+        "name": "Phase 0: Backup & Preparation",
+        "detail": "Archive n8n workflows, HTML templates, AC tags; rotate GHL token (security fix)",
         "status": "planned",
-        "key_reference": "docs/email-templates/onboarding-sequence-v2-final-18jan2026/",
         "tasks": [
-          "Upload 25 email HTMLs from onboarding-sequence-v2-final-18jan2026/",
-          "Create 20 tags (10 trigger + 10 confirmation)",
-          "Create 10 automations (Email 1-10)",
-          "Test each automation with test contact"
+          "Archive current n8n workflows (export JSON)",
+          "Archive v2-final HTML templates",
+          "Document current AC tag IDs for rollback",
+          "Rotate GHL API token (exposed in docs)"
         ]
       },
       "remaining_phases": [
-        "Phase 6: Testing & Validation",
-        "Phase 7: Soft Launch & Rollout"
-      ]
+        "Phase 1: Kit Pages (10 WordPress pages)",
+        "Phase 2: GHL Contact Setup",
+        "Phase 3: Email Templates (28 total)",
+        "Phase 4: GHL Workflows (3 linear)",
+        "Phase 5: n8n Refactoring (Handler v5.0)",
+        "Phase 6: Airtable Schema Updates",
+        "Phase 7: Testing (7 test cases)",
+        "Phase 8: Go Live",
+        "Phase 9: Backfill (throttled 3 weeks)"
+      ],
+      "key_data": {
+        "templates": "28 (down from 52)",
+        "age_tracks": 3,
+        "kit_pages": 10,
+        "backfill_contacts": 326,
+        "council_reviewed": true
+      }
     },
     {
       "name": "Student Progress Reports",
@@ -790,8 +798,8 @@
     },
     {
       "category": "BUILD",
-      "action": "Children's Onboarding - Phase 4 Ready (Emails v2.0 Final)",
-      "detail": "Upload 25 email HTMLs from onboarding-sequence-v2-final-18jan2026/ + create 10 AC automations. All tone amendments complete. Estimate: 60 minutes."
+      "action": "Children's Onboarding GHL v2.0 - Phase 0-1 Ready",
+      "detail": "New GHL-native approach (council-reviewed). Phase 0: backup + security. Phase 1: create 10 kit pages on WordPress. Estimate: 2-3 hours."
     },
     {
       "category": "BUILD",
