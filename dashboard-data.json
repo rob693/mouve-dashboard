@@ -191,34 +191,6 @@
       }
     },
     {
-      "name": "Student Progress Reports",
-      "phase_current": 3,
-      "phase_total": 5,
-      "implementation_plan": "STUDENT-PROGRESS-REPORTS-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Structured phrase-bank reports (<60s per student, zero admin editing, sibling differentiation)",
-      "status": "in_progress",
-      "status_label": "v1.16 | Phase 3 ✅ Complete | Phase 4: Report Generation 📋",
-      "completed_phases": [
-        {"name": "Phase 1: Foundation", "summary": "PROGRESS_ASSESSMENTS + PHRASE_BANK tables created"},
-        {"name": "Phase 2: Phrase Bank", "summary": "282 phrases imported (132 generic + 75 Ballet + 75 Gymnastics)"},
-        {"name": "Phase 3: Teacher Input Form", "summary": "Custom Portal assessment form with 5 cascading dropdown pairs — fully working"}
-      ],
-      "next_phase": {
-        "name": "Phase 4: Report Generation (n8n + PDF)",
-        "detail": "n8n workflow to fetch completed assessments, substitute phrases, generate parent-facing PDF reports",
-        "status": "planned",
-        "tasks": [
-          "Design n8n workflow PR-01",
-          "Build PDF template with [Name] substitution",
-          "Batch generation for all Ready assessments",
-          "Parent email delivery integration"
-        ]
-      },
-      "remaining_phases": [
-        "Phase 5: Unified Delivery"
-      ]
-    },
-    {
       "name": "Financial Intelligence System",
       "phase_current": 1,
       "phase_total": 10,
@@ -465,6 +437,16 @@
   ],
 
   "secondary_projects": [
+    {
+      "name": "Student Progress Reports",
+      "phase_current": 3,
+      "phase_total": 5,
+      "implementation_plan": "STUDENT-PROGRESS-REPORTS-IMPLEMENTATION-PLAN-JAN2026.md",
+      "purpose": "Structured phrase-bank reports (<60s per student, zero admin editing, sibling differentiation)",
+      "status": "in_progress",
+      "status_label": "v1.16 | Phase 3 ✅ Complete | Phase 4: Report Generation 📋",
+      "next_action": "Phase 4: n8n workflow to generate parent-facing PDF reports from completed assessments"
+    },
     {
       "name": "Party Booking Landing Page",
       "phase_current": 1,
