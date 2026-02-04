@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-03T21:10:00Z",
+  "generated_at": "2026-02-04T22:30:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "3.2",
 
@@ -681,32 +681,27 @@
   ],
 
   "weekly_review": {
-    "week_commencing": "27 January 2026",
+    "week_commencing": "3 February 2026",
     "built": [
-      "Staff Portal live to all 22 staff",
-      "Per-class session rates system (STAFF_CLASS_RATES table, 35 records, 77 sessions backfilled)",
-      "22-tab staff rates review spreadsheet cross-referencing 4 data sources",
-      "FIN-01 weekly financial snapshot",
-      "Newsletter template for ActiveCampaign"
+      "Jennifer Field: 7 STAFF_CLASS_RATES records (all regular classes)",
+      "Georgia Thomas: Naima Musical Theatre class + £30 rate",
+      "Staff Portal date bug fix (sessionStorage persistence)",
+      "Caroline Pakter: 2 HTML email templates"
     ],
     "improved": [
-      "SMS costs: ~410/month saved (5 cleanup tasks)",
-      "Venue rental accuracy: +40% correction applied",
-      "Staff Portal: 16 venue options added, timesheet bug fixed (30 Jan)",
-      "Google Ads tracking fixed (UTM + last-touch attribution), Facebook Campaign 1 paused",
-      "£14,540 missing Stripe revenue identified and reconciliation sent to bookkeeper"
+      "Georgia Thomas rates corrected: Tinies Ballet £22.50→£20, Sinai Drama £27.50→£30",
+      "STAFF_CLASS_RATES coverage: 62 records total (was 54)",
+      "Staff with full rates: Yael, Georgia, Sherry, Jennifer (was 3, now 4)"
     ],
     "decisions": [
-      "Venue rental correction accepted (£23K\u2192£32K)",
-      "Stripe load abandoned (90% unattributable)",
-      "Budget PAUSED until Xero data quality improved",
-      "Georgia rate changes accepted as pay increases (Tinies Ballet, Sinai Drama)"
+      "Georgia rate changes confirmed by Louise",
+      "Jennifer Field per-class rates confirmed: £25 Grade 1-4, £30 Grade 5/Pointe, £22.50 Grade 3, £20 Tap"
     ],
     "risks": [
       "Bookkeeper: £14,540 Stripe reconciliation (target 7 Feb)",
       "Louise: Staff rates review spreadsheet (21 teachers, Alexandra + Evie URGENT)",
-      "AC onboarding upload (25 HTMLs pending)",
-      "Year-end 31 Aug 2025 blocked 6+ weeks (bank statements needed)"
+      "Racheli: 2 cover classes need rate confirmation (Lyrical Jazz, Kerem Dance Gym)",
+      "Kayla: 2 classes using default £25 — confirm if correct"
     ]
   },
 
