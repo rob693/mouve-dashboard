@@ -374,23 +374,24 @@
     },
     {
       "name": "Website SEO Improvement",
-      "phase_current": 1,
+      "phase_current": 2,
       "phase_total": 9,
       "implementation_plan": "WEBSITE-SEO-IMPLEMENTATION-PLAN-FEB2026.md",
       "purpose": "Comprehensive SEO overhaul: technical audit fixes, schema optimisation, meta descriptions, Google Business Profile, local landing pages, security hardening, E-E-A-T authority signals",
       "status": "in_progress",
-      "status_label": "v1.1 | Phase 1/9 🔧 Partial (title, noindex, slug done) | Phase 2-3 next",
+      "status_label": "v1.2 | Phase 2/9 🔧 Schema Optimisation",
       "completed_phases": [
-        {"name": "Phase 1 (Partial): Quick Technical Wins", "summary": "Holiday Camps title 2025→2026, noindex on 2 utility pages, blog slug fixed, focus keyword set. Author name + redirect need admin."}
+        {"name": "Phase 1: Quick Technical Wins", "summary": "Holiday Camps title 2025→2026, noindex on 2 utility pages, blog slug fixed, author → Louise, focus keyword set."}
       ],
       "next_phase": {
-        "name": "Phase 1 Remaining + Phase 2: Schema Optimisation",
-        "detail": "Admin tasks (author name, redirect). Then delete BlogPosting schema from 5 non-blog pages. Validate via Rich Results Test.",
+        "name": "Phase 2: Schema Optimisation",
+        "detail": "Delete BlogPosting schema from 5-6 non-blog pages. Validate via Rich Results Test.",
         "status": "in_progress",
         "tasks": [
-          "Rob: Change author display name Admin → Louise (WP Admin)",
-          "Rob: Set up 301 redirect for old blog slug (Rank Math Redirections)",
-          "Delete BlogPosting from Dance Classes, Holiday Camps, Get a Quote, Matinee Gallery, Junior Mouvers",
+          "Delete BlogPosting from Dance Classes (ID 59)",
+          "Delete BlogPosting from About Us (ID 50)",
+          "Delete BlogPosting from Holiday Camps (ID 162)",
+          "Delete BlogPosting from Get a Quote, Matinee Gallery, Junior Mouvers",
           "Validate all pages via Google Rich Results Test"
         ]
       },
