@@ -374,25 +374,26 @@
     },
     {
       "name": "Website SEO Improvement",
-      "phase_current": 2,
+      "phase_current": 3,
       "phase_total": 9,
       "implementation_plan": "WEBSITE-SEO-IMPLEMENTATION-PLAN-FEB2026.md",
       "purpose": "Comprehensive SEO overhaul: technical audit fixes, schema optimisation, meta descriptions, Google Business Profile, local landing pages, security hardening, E-E-A-T authority signals",
       "status": "in_progress",
-      "status_label": "v1.2 | Phase 2/9 🔧 Schema Optimisation",
+      "status_label": "v1.3 | Phase 3/9 📋 On-Page SEO & Meta",
       "completed_phases": [
-        {"name": "Phase 1: Quick Technical Wins", "summary": "Holiday Camps title 2025→2026, noindex on 2 utility pages, blog slug fixed, author → Louise, focus keyword set."}
+        {"name": "Phase 1: Quick Technical Wins", "summary": "Holiday Camps title 2025→2026, noindex on 2 utility pages, blog slug fixed, author → Louise, focus keyword set."},
+        {"name": "Phase 2: Schema Optimisation", "summary": "BlogPosting removed from Get a Quote + Matinee Gallery. All 7 key pages verified clean via curl."}
       ],
       "next_phase": {
-        "name": "Phase 2: Schema Optimisation",
-        "detail": "Delete BlogPosting schema from 5-6 non-blog pages. Validate via Rich Results Test.",
-        "status": "in_progress",
+        "name": "Phase 3: On-Page SEO & Meta",
+        "detail": "Improve meta descriptions on 5 key pages, set OG images, set focus keywords.",
+        "status": "planned",
         "tasks": [
-          "Delete BlogPosting from Dance Classes (ID 59)",
-          "Delete BlogPosting from About Us (ID 50)",
-          "Delete BlogPosting from Holiday Camps (ID 162)",
-          "Delete BlogPosting from Get a Quote, Matinee Gallery, Junior Mouvers",
-          "Validate all pages via Google Rich Results Test"
+          "Improve Dance Classes meta (broaden to all ages/styles + NW London)",
+          "Improve About Us meta (business-focused)",
+          "Improve Holiday Camps meta (location-specific, 2026)",
+          "Improve Contact Us meta (keyword-rich + phone)",
+          "Set OG images on 5 key pages"
         ]
       },
       "remaining_phases": [
