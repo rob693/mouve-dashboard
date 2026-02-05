@@ -687,17 +687,19 @@
   "weekly_review": {
     "week_commencing": "3 February 2026",
     "built": [
+      "Fix My Dance School audit product: intake questionnaire, report template, implementation plan",
       "Jennifer Field: 7 STAFF_CLASS_RATES records (all regular classes)",
       "Georgia Thomas: Naima Musical Theatre class + £30 rate",
-      "Staff Portal date bug fix (sessionStorage persistence)",
-      "Caroline Pakter: 2 HTML email templates"
+      "SEO Phases 1-4 complete (technical wins, schema, meta, URL cleanup)"
     ],
     "improved": [
+      "OpenClaw quick start guide added to SYSTEM-URLS-REFERENCE.md",
+      "Dropbox API access configured (.env + MCP reference)",
       "Georgia Thomas rates corrected: Tinies Ballet £22.50→£20, Sinai Drama £27.50→£30",
-      "STAFF_CLASS_RATES coverage: 62 records total (was 54)",
-      "Staff with full rates: Yael, Georgia, Sherry, Jennifer (was 3, now 4)"
+      "Supabase sync: 3,024 contacts, 1,600 enrollments synced"
     ],
     "decisions": [
+      "New product: £750-2,500 dance school diagnostic audits (uses existing MOUVE frameworks)",
       "Georgia rate changes confirmed by Louise",
       "Jennifer Field per-class rates confirmed: £25 Grade 1-4, £30 Grade 5/Pointe, £22.50 Grade 3, £20 Tap"
     ],
