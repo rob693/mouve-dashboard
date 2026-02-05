@@ -374,26 +374,25 @@
     },
     {
       "name": "Website SEO Improvement",
-      "phase_current": 3,
+      "phase_current": 4,
       "phase_total": 9,
       "implementation_plan": "WEBSITE-SEO-IMPLEMENTATION-PLAN-FEB2026.md",
       "purpose": "Comprehensive SEO overhaul: technical audit fixes, schema optimisation, meta descriptions, Google Business Profile, local landing pages, security hardening, E-E-A-T authority signals",
       "status": "in_progress",
-      "status_label": "v1.3 | Phase 3/9 📋 On-Page SEO & Meta",
+      "status_label": "v1.4 | Phase 4/9 📋 URL Cleanup & Redirects",
       "completed_phases": [
         {"name": "Phase 1: Quick Technical Wins", "summary": "Holiday Camps title 2025→2026, noindex on 2 utility pages, blog slug fixed, author → Louise, focus keyword set."},
-        {"name": "Phase 2: Schema Optimisation", "summary": "BlogPosting removed from Get a Quote + Matinee Gallery. All 7 key pages verified clean via curl."}
+        {"name": "Phase 2: Schema Optimisation", "summary": "BlogPosting removed from Get a Quote + Matinee Gallery. All 7 key pages verified clean via curl."},
+        {"name": "Phase 3: On-Page SEO & Meta", "summary": "All 5 key pages have optimised meta + OG images. /holiday-camps/ redirect fixed."}
       ],
       "next_phase": {
-        "name": "Phase 3: On-Page SEO & Meta",
-        "detail": "Improve meta descriptions on 5 key pages, set OG images, set focus keywords.",
+        "name": "Phase 4: URL Cleanup & Redirects",
+        "detail": "Clean up messy auto-generated slugs (home-3-2, etc.) with 301 redirects.",
         "status": "planned",
         "tasks": [
-          "Improve Dance Classes meta (broaden to all ages/styles + NW London)",
-          "Improve About Us meta (business-focused)",
-          "Improve Holiday Camps meta (location-specific, 2026)",
-          "Improve Contact Us meta (keyword-rich + phone)",
-          "Set OG images on 5 key pages"
+          "Redirect /home-3-2/ → /get-a-quote/",
+          "Redirect /home-3-2-2-2-2-3/ → /parties-and-events/",
+          "Update internal links to new slugs"
         ]
       },
       "remaining_phases": [
