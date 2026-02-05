@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-04T22:30:00Z",
+  "generated_at": "2026-02-05T16:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "3.2",
 
@@ -550,6 +550,25 @@
       "status_label": "v1.0 Planning Complete",
       "target_date": "31 Jan 2026",
       "next_action": "Phase 1: Create BLOG_POSTS table + update Data Dictionary"
+    },
+    {
+      "name": "Fix My Dance School (Audit Product)",
+      "phase_current": 0,
+      "phase_total": 5,
+      "implementation_plan": "FIX-MY-DANCE-SCHOOL-IMPLEMENTATION-PLAN-FEB2026.md",
+      "purpose": "Productised diagnostic service for other dance schools. £750-2,500 per audit using MOUVE's operational frameworks.",
+      "status": "planned",
+      "status_label": "v1.0 | Phase 0 Planning Complete 📋",
+      "revenue_model": "£750-2,500 per audit (10-15 hrs = £50-170/hr)",
+      "phases": [
+        "Phase 0: Planning (DONE)",
+        "Phase 1: Build Core Assets (~15 hrs)",
+        "Phase 2: Pilot Audit",
+        "Phase 3: Refine & Launch",
+        "Phase 4: Scale & Automate",
+        "Phase 5: Productise Further"
+      ],
+      "next_action": "Phase 1: Build analysis spreadsheet template, report template, intake questionnaire"
     }
   ],
 
