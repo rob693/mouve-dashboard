@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-05T16:00:00Z",
+  "generated_at": "2026-02-08T18:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "3.2",
 
@@ -608,8 +608,9 @@
       {"name": "Lapsed Parent Win-Back", "status": "Active (4 emails)"},
       {"name": "Ladies Fitness Win-Back", "status": "Active (4 campaigns)"},
       {"name": "Teacher Culture Tuesdays", "status": "Week 2 of 12"},
-      {"name": "February Camp 2026", "status": "18 enrolled (16-20 Feb)"},
-      {"name": "February WICKED Camp Email Campaign", "status": "Scheduled (7 emails, 1,726 recipients, launches 15 Jan)"}
+      {"name": "February Camp 2026", "status": "42 families booked (16-20 Feb). Racheli welcome video email sent 8 Feb."},
+      {"name": "February WICKED Camp Email Campaign", "status": "Scheduled (7 emails, 1,726 recipients, launches 15 Jan)"},
+      {"name": "LF Weekly Newsletter", "status": "Phase 1 Foundation — prompt file done, 5 tasks remaining"}
     ]
   },
 
