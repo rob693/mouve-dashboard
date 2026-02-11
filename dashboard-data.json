@@ -726,17 +726,24 @@
   ],
 
   "financial_summary": {
-    "revenue": 418996,
-    "direct_costs": 90589,
-    "contribution_margin_pct": 78.4,
-    "overheads": 124709,
-    "marketing": 32316,
-    "net_profit": 171382,
-    "closing_cash_aug": 268992,
-    "cash_runway_months": 5.0,
-    "lowest_cash_month": "Sep (£111K)",
-    "venue_corrected": true,
-    "source": "12-Month Budget v2.1 (29 Jan 2026)"
+    "period": "Sep-Dec 2025 (4 months YTD)",
+    "revenue": 138895,
+    "revenue_annualised": 416686,
+    "revenue_full_year_estimate": "£480K-520K (428 students, spring billing not yet captured)",
+    "cost_of_sales": 41751,
+    "gross_profit": 97144,
+    "gross_margin_pct": 69.9,
+    "admin_costs": 73672,
+    "operating_profit": 23473,
+    "operating_profit_annualised": 70419,
+    "cash_at_bank": 180031,
+    "tide_savings": 134680,
+    "vat_liability": 20278,
+    "amex_balance": 33336,
+    "cash_runway_months": 6.5,
+    "cash_runway_excl_tide": 1.6,
+    "lowest_cash_month": "Oct (£137K — directors' loan + VAT payment)",
+    "source": "Bookkeeper management accounts (11 Feb 2026)"
   },
 
   "system_health": {
