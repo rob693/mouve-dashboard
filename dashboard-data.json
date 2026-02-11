@@ -728,22 +728,24 @@
   "financial_summary": {
     "period": "Sep-Dec 2025 (4 months YTD)",
     "revenue": 138895,
-    "revenue_annualised": 416686,
-    "revenue_full_year_estimate": "£480K-520K (428 students, spring billing not yet captured)",
-    "cost_of_sales": 41751,
-    "gross_profit": 97144,
-    "gross_margin_pct": 69.9,
-    "admin_costs": 73672,
-    "operating_profit": 23473,
-    "operating_profit_annualised": 70419,
-    "cash_at_bank": 180031,
-    "tide_savings": 134680,
-    "vat_liability": 20278,
-    "amex_balance": 33336,
+    "direct_costs": 41751,
+    "marketing": 15572,
+    "overheads": 58100,
+    "net_profit": 23473,
+    "contribution_margin_pct": 69.9,
+    "closing_cash_aug": 180031,
     "cash_runway_months": 6.5,
-    "cash_runway_excl_tide": 1.6,
-    "lowest_cash_month": "Oct (£137K — directors' loan + VAT payment)",
-    "source": "Bookkeeper management accounts (11 Feb 2026)"
+    "lowest_cash_month": "Oct (£137K)",
+    "source": "Bookkeeper management accounts — 4 months YTD (11 Feb 2026)",
+    "_notes": {
+      "revenue": "4 months only (Sep-Dec 2025). Full-year estimate £480-520K.",
+      "overheads": "Admin £73,672 minus marketing £15,572 shown separately",
+      "net_profit": "Operating profit (before tax). Annualised ~£70K.",
+      "closing_cash_aug": "Cash at bank Dec 2025 (incl £135K Tide savings, £20K is HMRC VAT)",
+      "amex_balance": 33336,
+      "tide_savings": 134680,
+      "vat_liability": 20278
+    }
   },
 
   "system_health": {
