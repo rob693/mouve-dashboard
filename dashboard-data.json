@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-08T18:00:00Z",
+  "generated_at": "2026-02-11T18:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "3.2",
 
@@ -233,7 +233,7 @@
       "implementation_plan": "FINANCIAL-HEALTH-CHECK-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "One-time diagnostic deep dive: stream profitability, class economics, marketing analysis, revenue reconciliation, bookkeeper questions",
       "status": "in_progress",
-      "status_label": "v1.3 | Phase 5/6 🔧 — Year-end unblocked (7/8 statements sent). Travel split + 4 Dec queries remaining.",
+      "status_label": "v1.4 | Phase 5/6 🔧 — Management accounts analysed (Sep–Dec 2025). 3 CFO analysis docs created. Pembee AR corrected (reconciliation gap, not missing cash).",
       "completed_phases": [
         {"name": "Phase 1: Data Collection & Analysis", "summary": "Xero P&L, Stripe data, Airtable staff/class data, school/camp tracking categories, 4-year comparison"},
         {"name": "Phase 2: Revenue Reconciliation", "summary": "CRITICAL: £14,540 missing (1 Feb analysis). Stripe £63,982 vs Xero £49,442. School Clubs -£8K, Camps -£3.4K, Ladies Fitness -£3.1K. 6-part reconciliation checklist sent to bookkeeper."},
@@ -242,13 +242,14 @@
       ],
       "next_phase": {
         "name": "Phase 5: Bookkeeper Response & Fixes",
-        "detail": "Year-end largely unblocked. Remaining: 4838 statement query, travel categorisation with Louise (~£32.6K), 4 Dec queries (Amazon/Anouska), Pembee £6.8K investigation.",
+        "detail": "Management accounts (Sep–Dec 2025) analysed. 3 CFO docs created. Pembee AR corrected — £23.6K confirmed received via Stripe (reconciliation gap). Remaining: travel categorisation with Louise (~£32.6K), 4 Dec queries, Mel to reconcile Pembee AR.",
         "status": "in_progress",
         "tasks": [
-          "Resolve 4838 statement query (only 4 months showing)",
+          "✅ Management accounts parsed and analysed (11 Feb 2026)",
+          "✅ Pembee AR corrected — £23.6K Stripe payouts confirmed arriving (reconciliation gap)",
           "Travel categorisation with Louise — £32.6K remaining (£11.3K business confirmed)",
           "December queries — 4 items (3× Amazon, 1× Anouska)",
-          "Investigate Pembee £6.8K platform-to-Xero mismatch",
+          "Ask Mel to reconcile Pembee AR (matching Stripe payouts vs invoices)",
           "Schedule regular bookkeeper call (Mel offered)"
         ]
       },
@@ -260,9 +261,12 @@
         "CLASS-PROFITABILITY-ANALYSIS-JAN2026.md (comprehensive analysis)",
         "BOOKKEEPER-RECONCILIATION-QUESTIONS.md (9 questions answered)",
         "XERO-STRIPE-RECONCILIATION-CHECKLIST.md (6-part guide, 1 Feb 2026)",
-        "BOOKKEEPER-BRIEFING-STRIPE-RECONCILIATION.md (executive summary, 1 Feb 2026)"
+        "BOOKKEEPER-BRIEFING-STRIPE-RECONCILIATION.md (executive summary, 1 Feb 2026)",
+        "MANAGEMENT-ACCOUNTS-FY26-YTD-FEB2026.md (raw data analysis, 11 Feb 2026)",
+        "CFO-EXECUTIVE-REVIEW-FY26-FEB2026.md (executive summary, 11 Feb 2026)",
+        "CFO-DEEP-DIVE-GAPS-FY26-FEB2026.md (stress test + cross-subsidy, 11 Feb 2026)"
       ],
-      "key_finding": "CRITICAL: £14,540 missing revenue identified (1 Feb). Stripe £63,982 vs Xero £49,442 (24% understatement). Root cause: Bank reconciliation incomplete - Stripe payout deposits not allocated to revenue accounts. Updated FY2025-26 forecast: £401,349 (+11.0% vs last year). All streams profitable. URGENT: Year-end 31 Aug 2025 blocked 6+ weeks, £43.9K international travel HMRC risk."
+      "key_finding": "Management accounts (Sep–Dec 2025): Operating profit £23,473 (2.2× full FY25 in 4 months). Gross margin 69.9% (+3.8pp). Cash £180K. Amex £33K at ~20% APR — clear from Tide savings (saves £6.6K/yr). Pembee £7,764 AR CORRECTED: Stripe payouts confirmed (£23.6K), reconciliation gap only. MMK school losing £2,135. 428 unique students — full-year estimate £480–520K."
     },
     {
       "name": "12-Month Operational Budget",
