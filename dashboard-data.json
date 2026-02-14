@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-02-11T18:00:00Z",
+  "generated_at": "2026-02-14T19:30:00Z",
   "generated_by": "SYS-DASHBOARD v2",
-  "version": "3.2",
+  "version": "3.3",
 
   "health_summary": {
     "complete": 34,
@@ -413,32 +413,47 @@
     },
     {
       "name": "Lead Scoring & Attribution Tracking",
-      "phase_current": 1,
-      "phase_total": 2,
+      "phase_current": 2,
+      "phase_total": 4,
       "implementation_plan": "LEAD-SCORING-IMPLEMENTATION-PLAN-FEB2026.md",
       "purpose": "Automated lead cost tracking and quality scoring for Google Ads vs Meta campaigns. Calculate true cost per acquisition and optimize ad spend allocation.",
-      "status": "waiting",
-      "status_label": "Phase 1 Complete ✅ | Waiting 7-14 days for Google conversion data",
+      "status": "in_progress",
+      "status_label": "v1.3 | 14-Day Audit Complete ✅ | GHL→AT Sync Built ✅ | Attribution Fixes Pending",
       "completed_phases": [
-        {"name": "Phase 1: Tracking Infrastructure", "summary": "Fixed Google Ads UTM tracking, updated n8n workflow (last-touch attribution), paused expensive Facebook campaign (£17.59/lead). Saved £299/month."}
+        {"name": "Phase 1: Tracking Infrastructure", "summary": "Fixed Google Ads UTM tracking, updated n8n workflow (last-touch attribution), paused expensive Facebook campaign (£17.59/lead). Saved £299/month."},
+        {"name": "Phase 2: 14-Day Lead Audit (14 Feb)", "summary": "68 leads analysed. True channel split: Meta 70.6% (48), Organic 19.1% (13), Google 10.3% (7). Google UTM working (campaign ID captured, utm_content missing). GHL cross-check found 7 actual conversions vs 1 in Airtable. Built ghl_opp_status_to_airtable.py sync script — 75 records updated (14-day window). 5 recommendations (R1-R5)."}
       ],
       "next_phase": {
-        "name": "Phase 2: ML Lead Scoring (Optional)",
-        "detail": "Predictive enrollment likelihood using XGBoost (75-85% accuracy vs 65% rule-based). Only pursue if Phase 1 proves valuable.",
+        "name": "Phase 3: Attribution Fixes (R1-R4)",
+        "detail": "Fix data quality issues identified in the 14-day audit before lead scoring can produce reliable CPA numbers.",
         "status": "planned",
         "tasks": [
-          "Monitor Google Ads leads for 7-14 days",
-          "Calculate true Google CPA (Cost Per Acquisition)",
-          "Compare Google vs Facebook performance",
-          "Decide: optimize further or add ML scoring"
+          "R1: Add utm_content to Google Ads tracking template (10 min, Google Ads UI)",
+          "R2: Map Google campaign ID 23002379206 to human-readable name (5 min)",
+          "R3: Fix Meta click-through misattribution — 7 leads tagged 'Website' are actually Meta (30 min, n8n update)",
+          "R4: Default organic source for leads with no UTM attribution (1 hr)",
+          "R5 remaining: Full historical backfill (~3,000 records, 20-30 min background run)"
         ]
       },
+      "remaining_phases": [
+        "Phase 4: ML Lead Scoring (optional — only if rule-based proves insufficient after 30 days)"
+      ],
       "key_data": {
-        "google_ads": "£493/month, £12.65/conversion (needs verification)",
-        "facebook_ads": "£666/month (was £965), £71.25/enrollment",
-        "website_organic": "22% conversion rate (best)",
-        "monthly_savings": "£299 (Facebook optimization)",
-        "tracking_status": "Fixed (1 Feb 2026)"
+        "audit_period": "1-14 February 2026",
+        "total_leads": 68,
+        "meta_leads": 48,
+        "meta_pct": "70.6%",
+        "google_leads": 7,
+        "google_pct": "10.3%",
+        "organic_leads": 13,
+        "organic_pct": "19.1%",
+        "google_appointment_rate": "57% (4/7 booked trials — vs 20% overall)",
+        "ghl_conversions": 7,
+        "ghl_revenue": "£758",
+        "airtable_records_updated": 75,
+        "sync_script": "scripts/sync/ghl_opp_status_to_airtable.py",
+        "tracking_status": "Google UTM working (campaign ✅, content ❌)",
+        "monthly_savings": "£299 (Facebook optimization)"
       }
     }
   ],
@@ -621,6 +636,7 @@
   "dependencies": {
     "lead_capture": [
       {"name": "Facebook Ads", "status": "active"},
+      {"name": "Google Ads", "status": "active", "note": "UTM tracking confirmed working (7 leads in 14 days, 57% trial booking rate)"},
       {"name": "Website Forms", "status": "active"},
       {"name": "TeamUp Trials", "status": "active"}
     ],
@@ -669,6 +685,11 @@
       "name": "Trial Event Flow",
       "steps": ["TeamUp Trial Booking", "n8n LF-11 (real-time)", "Google Calendar Event", "Staff Notification"],
       "active": true
+    },
+    {
+      "name": "GHL Opp Status Sync",
+      "steps": ["GHL Opportunities (won/lost)", "Python script (StudioHub ID/email match)", "Airtable LEADS (Converted/Dead)"],
+      "active": true
     }
   ],
 
@@ -690,38 +711,40 @@
   ],
 
   "weekly_review": {
-    "week_commencing": "3 February 2026",
+    "week_commencing": "10 February 2026",
     "built": [
-      "Fix My Dance School audit product: intake questionnaire, report template, implementation plan",
-      "Jennifer Field: 7 STAFF_CLASS_RATES records (all regular classes)",
-      "Georgia Thomas: Naima Musical Theatre class + £30 rate",
-      "SEO Phases 1-4 complete (technical wins, schema, meta, URL cleanup)"
+      "14-day lead audit: analysed 68 leads across Airtable + GHL pipelines, validated Google Ads UTM tracking",
+      "GHL→Airtable status sync script (ghl_opp_status_to_airtable.py) — 75 records updated, 8 conversions now in Airtable",
+      "5 attribution recommendations (R1-R5) documented in implementation plan v1.3",
+      "Weekly trials generator: CLI args (--date, --file) for non-interactive use"
     ],
     "improved": [
-      "OpenClaw quick start guide added to SYSTEM-URLS-REFERENCE.md",
-      "Dropbox API access configured (.env + MCP reference)",
-      "Georgia Thomas rates corrected: Tinies Ballet £22.50→£20, Sinai Drama £27.50→£30",
-      "Supabase sync: 3,024 contacts, 1,600 enrollments synced"
+      "Lead data accuracy: Airtable LEADS now reflects actual GHL pipeline outcomes (was 1 conversion, now 8)",
+      "Google Ads tracking confirmed working — 7 leads captured with campaign ID in 14 days",
+      "True channel attribution established: Meta 70.6%, Organic 19.1%, Google 10.3%",
+      "Google leads showing 57% trial booking rate (vs 20% average) — strongest intent signal"
     ],
     "decisions": [
-      "New product: £750-2,500 dance school diagnostic audits (uses existing MOUVE frameworks)",
-      "Georgia rate changes confirmed by Louise",
-      "Jennifer Field per-class rates confirmed: £25 Grade 1-4, £30 Grade 5/Pointe, £22.50 Grade 3, £20 Tap"
+      "Google UTM tracking confirmed working — campaign IDs captured, but utm_content missing (R1 fix needed)",
+      "7 'Website' leads are actually Meta click-throughs — misattribution needs n8n fix (R3)",
+      "Airtable LEADS table does NOT auto-sync status from GHL — built Python script to bridge the gap (R5)",
+      "Full historical backfill deferred — run in background when convenient (~20-30 min)"
     ],
     "risks": [
-      "Bookkeeper: £14,540 Stripe reconciliation (target 7 Feb)",
-      "Louise: Staff rates review spreadsheet (21 teachers, Alexandra + Evie URGENT)",
-      "Racheli: 2 cover classes need rate confirmation (Lyrical Jazz, Kerem Dance Gym)",
-      "Kayla: 2 classes using default £25 — confirm if correct"
+      "Attribution gap: 4/5 won deals have unknown source — CPA by channel unreliable until R4 fixed",
+      "Airtable LEADS still missing ~2,900 historical status updates (full backfill not yet run)",
+      "Bookkeeper: £14,540 Stripe reconciliation still pending",
+      "Louise: Staff rates review spreadsheet (21 teachers, Alexandra + Evie URGENT)"
     ]
   },
 
   "recent_decisions": [
+    "Lead audit: Google UTM tracking working — keep running, add utm_content (14 Feb)",
+    "Built GHL→Airtable sync script — Airtable LEADS now reflects real pipeline outcomes (14 Feb)",
+    "7 Meta click-throughs misattributed as Website — fix via n8n lead sync (14 Feb)",
     "Accepted corrected venue rental (+£9,230)",
     "Locked Supabase as future write source",
     "Deferred Dance Studio SaaS to Q2",
-    "Stripe load abandoned (90% unattributable)",
-    "Budget cash runway revised to 5.0 months",
     "Staff Portal: custom Next.js over Softr"
   ],
 
@@ -794,8 +817,8 @@
     },
     {
       "category": "BUILD",
-      "action": "Weekly Auto-Blog System - Phase 1 Ready",
-      "detail": "Automated camp blog generation (GPT-4o + n8n + WordPress). Create BLOG_POSTS table, JSON clusters, 11-node workflow. Replaces manual content workflow. Target: 31 Jan 2026 for Feb camp. Estimate: 8-10 hours."
+      "action": "Lead Scoring: Full historical backfill + attribution fixes (R1-R4)",
+      "detail": "14-day sync done (75 records). Remaining: run --all --execute in background (20-30 min). Then R1: add utm_content to Google Ads (10 min), R3: fix Meta misattribution in n8n (30 min), R4: default organic source (1 hr)."
     },
     {
       "category": "BUILD",
