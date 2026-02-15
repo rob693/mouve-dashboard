@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-02-14T19:30:00Z",
+  "generated_at": "2026-02-15T16:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
-  "version": "3.3",
+  "version": "3.4",
 
   "health_summary": {
     "complete": 34,
@@ -533,8 +533,31 @@
       "implementation_plan": "STAFF-ADMIN-COSTS-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Automate monthly staff statements (replace inconsistent invoices, save 3-4 hours/month)",
       "status": "in_progress",
-      "status_label": "Phase 6A 🔧 Unblocked — Ready for Yael pilot",
-      "next_action": "Yael pilot: log 1 week of sessions via Custom Portal → verify n8n statement generation"
+      "status_label": "Phase 6A 🔧 January payments — Louise reviewing",
+      "updated": "2026-02-15",
+      "summary": "v3.0 — January 2026 parallel validation in progress. 10 staff Ready to Pay (£5,459.92), 7 staff Needs Review/Blocked. Spreadsheet-based review process replaces HTML summary. Scripts saved for monthly reuse. Calculated Cost formula fixed (3-tier priority). Georgia (£1,472.75) and Sari (£155) invoices processed and matched to classes.",
+      "completed_phases": [
+        { "name": "Phase 1: Table Setup", "summary": "6 Airtable tables created" },
+        { "name": "Phase 2: Staff Data", "summary": "20/20 permanent staff with rates and bank details" },
+        { "name": "Phase 3: Data Entry", "summary": "Forms live, HTML templates created" },
+        { "name": "Phase 4: Data Prep", "summary": "Xero format confirmed, 15 venue tracking categories" },
+        { "name": "Phase 4.5: Workflows", "summary": "3 n8n workflows built and tested (Statement Generator, Approval+PDF, Bookkeeper Batch)" },
+        { "name": "Phase 5: Approval", "summary": "Louise approval flow, PDF generation, email delivery working" },
+        { "name": "Phase 5.5: Bookkeeper", "summary": "48h batch dispatch with idempotency" }
+      ],
+      "next_phase": {
+        "name": "Phase 6A: January Validation",
+        "detail": "Louise reviewing two spreadsheets: Ready to Pay (10 staff, £5,459.92) and Needs Review (3 staff need rates, 4 blocked). After approval → individual PDFs emailed to staff.",
+        "status": "in_progress",
+        "tasks": [
+          "Louise: Review 2026-01_Staff-Ready-To-Pay.xlsx",
+          "Louise: Review 2026-01_Staff-Review-Spreadsheet.xlsx",
+          "Resolve 7 Needs Review/Blocked staff (missing rates)",
+          "Set approved statements → generate PDFs → email to staff"
+        ]
+      },
+      "remaining_phases": ["Phase 7: Adoption & Rollout (5 sub-phases: Training, Parallel Run, Self-Review, Grace Period, Cutover)"],
+      "next_action": "Louise reviewing January spreadsheets → approve Ready staff → resolve Blocked staff rates"
     },
     {
       "name": "Staff Portal: Monitoring & Feature Backlog",
