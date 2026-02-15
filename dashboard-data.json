@@ -5,7 +5,7 @@
 
   "health_summary": {
     "complete": 34,
-    "in_progress": 8,
+    "in_progress": 9,
     "waiting": 1,
     "planned": 2,
     "blocked": 1
@@ -412,6 +412,47 @@
       ]
     },
     {
+      "name": "Staff Admin Costs",
+      "phase_current": 6,
+      "phase_total": 8,
+      "implementation_plan": "STAFF-ADMIN-COSTS-IMPLEMENTATION-PLAN-JAN2026.md",
+      "purpose": "Per-class rate system, automated statement generation, monthly invoice review workflow with spreadsheet-based Louise approval",
+      "status": "in_progress",
+      "status_label": "v1.0 | Phase 6A 🔧 January Payment Processing (10/17 staff ready, 7 review/blocked)",
+      "completed_phases": [
+        {"name": "Phase 1: Rate Architecture", "summary": "STAFF_CLASS_RATES table, 3-tier cost formula, per-class rates for all active staff"},
+        {"name": "Phase 2: Session Logging", "summary": "DELIVERED_SESSIONS table linked to classes, staff, and rates"},
+        {"name": "Phase 3: Statement Generation", "summary": "n8n workflow generates monthly statements per staff member"},
+        {"name": "Phase 4: Staff Portal Integration", "summary": "Timesheet form in portal, session view for staff"},
+        {"name": "Phase 5: Rate Review", "summary": "22-tab cross-reference spreadsheet sent to Louise. 35 STAFF_CLASS_RATES records, 77 sessions backfilled."}
+      ],
+      "next_phase": {
+        "name": "Phase 6A: January Payment Processing",
+        "detail": "Processing January 2026 invoices. Two-spreadsheet review: Ready to Pay (green, 10 staff, £5,459.92) + Needs Review (orange/red, 7 staff). Louise approves via spreadsheet tabs.",
+        "status": "in_progress",
+        "tasks": [
+          "✅ 10 staff Ready to Pay (£5,459.92) — spreadsheet generated",
+          "✅ Georgia Thomas: 52 sessions added, admin corrected to £13/hr (£1,472.75)",
+          "✅ Sari Mozes: 8 January sessions logged (£155)",
+          "Louise: Review both spreadsheets and approve",
+          "7 staff Needs Review/Blocked (missing rates, verification needed)",
+          "After approval: set statements to Approved, generate PDFs, email staff"
+        ]
+      },
+      "remaining_phases": [
+        "Phase 6B: February Payment Processing",
+        "Phase 7: Automated Monthly Pipeline",
+        "Phase 8: Self-Service Staff Invoicing"
+      ],
+      "key_data": {
+        "ready_staff": 10,
+        "ready_total": "£5,459.92",
+        "review_staff": 7,
+        "scripts": ["generate_ready_to_pay_spreadsheet.py", "generate_review_spreadsheet.py"],
+        "process_doc": "STAFF-PAYMENT-REVIEW-PROCESS.md"
+      }
+    },
+    {
       "name": "Lead Scoring & Attribution Tracking",
       "phase_current": 2,
       "phase_total": 4,
@@ -525,39 +566,6 @@
         "Rob: Document DSP features used daily"
       ],
       "next_action": "PARKED until Q1 2026 stabilises. When ready: 'Start Dance Studio SaaS project - Phase 0'"
-    },
-    {
-      "name": "Back Office: Staff Costs",
-      "phase_current": 6,
-      "phase_total": 7,
-      "implementation_plan": "STAFF-ADMIN-COSTS-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Automate monthly staff statements (replace inconsistent invoices, save 3-4 hours/month)",
-      "status": "in_progress",
-      "status_label": "Phase 6A 🔧 January payments — Louise reviewing",
-      "updated": "2026-02-15",
-      "summary": "v3.0 — January 2026 parallel validation in progress. 10 staff Ready to Pay (£5,459.92), 7 staff Needs Review/Blocked. Spreadsheet-based review process replaces HTML summary. Scripts saved for monthly reuse. Calculated Cost formula fixed (3-tier priority). Georgia (£1,472.75) and Sari (£155) invoices processed and matched to classes.",
-      "completed_phases": [
-        { "name": "Phase 1: Table Setup", "summary": "6 Airtable tables created" },
-        { "name": "Phase 2: Staff Data", "summary": "20/20 permanent staff with rates and bank details" },
-        { "name": "Phase 3: Data Entry", "summary": "Forms live, HTML templates created" },
-        { "name": "Phase 4: Data Prep", "summary": "Xero format confirmed, 15 venue tracking categories" },
-        { "name": "Phase 4.5: Workflows", "summary": "3 n8n workflows built and tested (Statement Generator, Approval+PDF, Bookkeeper Batch)" },
-        { "name": "Phase 5: Approval", "summary": "Louise approval flow, PDF generation, email delivery working" },
-        { "name": "Phase 5.5: Bookkeeper", "summary": "48h batch dispatch with idempotency" }
-      ],
-      "next_phase": {
-        "name": "Phase 6A: January Validation",
-        "detail": "Louise reviewing two spreadsheets: Ready to Pay (10 staff, £5,459.92) and Needs Review (3 staff need rates, 4 blocked). After approval → individual PDFs emailed to staff.",
-        "status": "in_progress",
-        "tasks": [
-          "Louise: Review 2026-01_Staff-Ready-To-Pay.xlsx",
-          "Louise: Review 2026-01_Staff-Review-Spreadsheet.xlsx",
-          "Resolve 7 Needs Review/Blocked staff (missing rates)",
-          "Set approved statements → generate PDFs → email to staff"
-        ]
-      },
-      "remaining_phases": ["Phase 7: Adoption & Rollout (5 sub-phases: Training, Parallel Run, Self-Review, Grace Period, Cutover)"],
-      "next_action": "Louise reviewing January spreadsheets → approve Ready staff → resolve Blocked staff rates"
     },
     {
       "name": "Staff Portal: Monitoring & Feature Backlog",
