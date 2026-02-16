@@ -1016,7 +1016,9 @@
         const n8n = sh.n8n_workflows || {};
         const dq = sh.data_quality || {};
 
-        const syncTime = sb.last_run ? new Date(sb.last_run).toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'}) : '?';
+        const syncDate = sb.last_run ? new Date(sb.last_run) : null;
+        const syncTime = syncDate ? syncDate.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'}) : '?';
+        const syncDay = syncDate ? syncDate.toLocaleDateString('en-GB',{day:'numeric',month:'short'}) : '';
 
         el.innerHTML = `
             <div class="health-indicator">
@@ -1027,7 +1029,7 @@
             <div class="health-indicator">
                 <span class="health-dot ${sb.status || 'healthy'}"></span>
                 <span><strong>Supabase</strong></span>
-                <span class="detail">Synced ${syncTime} \u2022 ${(sb.records||0).toLocaleString()} records</span>
+                <span class="detail">Synced ${syncDay} ${syncTime} \u2022 ${(sb.records||0).toLocaleString()} records</span>
             </div>
             <div class="health-indicator">
                 <span class="health-dot ${dq.status || 'healthy'}"></span>
