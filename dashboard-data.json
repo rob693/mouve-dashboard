@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-15T16:00:00Z",
+  "generated_at": "2026-02-16T18:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "3.4",
 
@@ -378,34 +378,38 @@
     },
     {
       "name": "SEO & Geo Implementation",
-      "phase_current": 5,
+      "phase_current": 8,
       "phase_total": 14,
       "implementation_plan": "SEO-GEO-IMPLEMENTATION-PLAN.md",
       "purpose": "Comprehensive SEO, geo-targeting, paid ads, and AI discoverability (AEO) strategy. Built from 3-AI research (Claude, Gemini, ChatGPT). Covers measurement, GBP, security, schemas, content, E-E-A-T, AEO, Google/Meta ads, and ongoing operations.",
       "status": "in_progress",
-      "status_label": "v2.0 | Phases 1-4 ✅ | Phase 5: Measurement 📋",
+      "status_label": "v2.0 | Phases 1-5, 7-8 ✅ | Phase 6 (GBP) + 9-14 remaining",
       "completed_phases": [
         {"name": "Phase 1: Quick Technical Wins", "summary": "Holiday Camps title 2025→2026, noindex on 2 utility pages, blog slug fixed, author → Louise, focus keyword set."},
         {"name": "Phase 2: Schema Optimisation", "summary": "BlogPosting removed from Get a Quote + Matinee Gallery. All 7 key pages verified clean via curl."},
         {"name": "Phase 3: On-Page SEO & Meta", "summary": "All 5 key pages have optimised meta + OG images. /holiday-camps/ redirect fixed."},
-        {"name": "Phase 4: URL Cleanup & Redirects", "summary": "Messy slug pages made draft. No auto-generated URLs remain in sitemap."}
+        {"name": "Phase 4: URL Cleanup & Redirects", "summary": "Messy slug pages made draft. No auto-generated URLs remain in sitemap."},
+        {"name": "Phase 5: Measurement & Reporting", "summary": "GA4 6 key events configured. Meta Pixel + CAPI active (7 custom conversions). 5 Supabase reporting tables deployed. Baseline metrics captured (2/13 keywords page 1, 112 GBP reviews, mobile 56/100). Competitive baseline: 6 direct + 4 entertainment competitors profiled. Call tracking pending (budget decision)."},
+        {"name": "Phase 7: Security & Compliance", "summary": "XML-RPC disabled (mu-plugin, 403). Privacy Policy rewritten (14 sections, DUA 2025). Google Maps API key restricted (new key, Maps Embed + makeamouve.com only). AC diffuser consent-gated (CookieYes listener)."},
+        {"name": "Phase 8: Crawl, Indexing & AI Policy", "summary": "robots.txt deployed (admin disallows, 7 AI training bots blocked, 3 AI search bots allowed). IndexNow active (Rank Math Pro). 404 fixed (was 301→homepage, now proper 404). PageSpeed 45→72/100, LCP 16s→4.2s, TBT 770ms→270ms. GTM cleanup (3 duplicate tags removed). Social links verified."}
       ],
       "next_phase": {
-        "name": "Phase 5: Measurement & Reporting",
-        "detail": "Establish tracking and reporting infrastructure before growth work begins. GA4 events, call tracking, Meta Pixel + CAPI, 5 reporting sheets, baseline metrics.",
+        "name": "Phase 6: Google Business Profile Optimisation",
+        "detail": "Optimise GBP listing: update description, list all services, verify categories, seed Q&A, upload photos, set up weekly posts, review generation strategy.",
         "status": "planned",
         "tasks": [
-          "GA4 conversion events (forms, calls, WhatsApp, bookings)",
-          "Meta Pixel + CAPI with deduplication",
-          "Create 5 reporting sheets (SEO Scoreboard, Rank Tracking, AI Audit, Ads, Funnel)",
-          "Capture baseline metrics (organic sessions, GBP actions, 13 keyword ranks)",
-          "Competitive baseline documentation"
+          "Update GBP description",
+          "List all services",
+          "Verify categories",
+          "Seed Q&A section (10+ entries)",
+          "Upload photos (20+)",
+          "Set up weekly posts",
+          "Review generation strategy",
+          "Review response protocol"
         ]
       },
       "remaining_phases": [
         "Phase 6: Google Business Profile (services, Q&A, reviews, photos, posts)",
-        "Phase 7: Security & Compliance (XML-RPC, privacy, API keys)",
-        "Phase 8: Crawl, Indexing & AI Crawler Policy (robots.txt, IndexNow, CWV)",
         "Phase 9: Structured Data & Schema (DanceGroup genre, sameAs, FAQ schema ×4)",
         "Phase 10: Local Content Strategy (synopses, 5 landing pages, 6 blog posts, FAQs)",
         "Phase 11: E-E-A-T & Authority (staff bios, About Louise, directories, partnerships)",
@@ -421,7 +425,12 @@
         "ad_campaigns_planned": 9,
         "ai_test_queries": 7,
         "target_roas_6mo": "5:1",
-        "target_ai_score_6mo": "3.0/5"
+        "target_ai_score_6mo": "3.0/5",
+        "mobile_pagespeed": "72/100 (was 45)",
+        "lcp": "4.2s (was 16s)",
+        "tbt": "270ms (was 770ms)",
+        "gbp_reviews": 112,
+        "keywords_page1": "2/13"
       }
     },
     {
