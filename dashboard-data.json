@@ -377,13 +377,13 @@
       }
     },
     {
-      "name": "Website SEO Improvement",
+      "name": "SEO & Geo Implementation",
       "phase_current": 5,
-      "phase_total": 9,
-      "implementation_plan": "WEBSITE-SEO-IMPLEMENTATION-PLAN-FEB2026.md",
-      "purpose": "Comprehensive SEO overhaul: technical audit fixes, schema optimisation, meta descriptions, Google Business Profile, local landing pages, security hardening, E-E-A-T authority signals",
+      "phase_total": 14,
+      "implementation_plan": "SEO-GEO-IMPLEMENTATION-PLAN.md",
+      "purpose": "Comprehensive SEO, geo-targeting, paid ads, and AI discoverability (AEO) strategy. Built from 3-AI research (Claude, Gemini, ChatGPT). Covers measurement, GBP, security, schemas, content, E-E-A-T, AEO, Google/Meta ads, and ongoing operations.",
       "status": "in_progress",
-      "status_label": "v1.5 | Phase 5/9 📋 Google Business Profile",
+      "status_label": "v2.0 | Phases 1-4 ✅ | Phase 5: Measurement 📋",
       "completed_phases": [
         {"name": "Phase 1: Quick Technical Wins", "summary": "Holiday Camps title 2025→2026, noindex on 2 utility pages, blog slug fixed, author → Louise, focus keyword set."},
         {"name": "Phase 2: Schema Optimisation", "summary": "BlogPosting removed from Get a Quote + Matinee Gallery. All 7 key pages verified clean via curl."},
@@ -391,25 +391,38 @@
         {"name": "Phase 4: URL Cleanup & Redirects", "summary": "Messy slug pages made draft. No auto-generated URLs remain in sitemap."}
       ],
       "next_phase": {
-        "name": "Phase 5: Google Business Profile",
-        "detail": "Optimise GBP for Local 3-Pack: services, description, review strategy.",
+        "name": "Phase 5: Measurement & Reporting",
+        "detail": "Establish tracking and reporting infrastructure before growth work begins. GA4 events, call tracking, Meta Pixel + CAPI, 5 reporting sheets, baseline metrics.",
         "status": "planned",
         "tasks": [
-          "Update GBP description with target areas (Hendon, Mill Hill, Finchley)",
-          "List all class types as GBP Services",
-          "Verify GBP categories",
-          "Set up review generation strategy"
+          "GA4 conversion events (forms, calls, WhatsApp, bookings)",
+          "Meta Pixel + CAPI with deduplication",
+          "Create 5 reporting sheets (SEO Scoreboard, Rank Tracking, AI Audit, Ads, Funnel)",
+          "Capture baseline metrics (organic sessions, GBP actions, 13 keyword ranks)",
+          "Competitive baseline documentation"
         ]
       },
       "remaining_phases": [
-        "Phase 3: On-Page SEO & Meta (descriptions already set, OG images pending)",
-        "Phase 4: URL Cleanup & Redirects",
-        "Phase 5: Google Business Profile Optimisation",
-        "Phase 6: Security & Compliance",
-        "Phase 7: Crawl, Indexing & Performance",
-        "Phase 8: Local Content Strategy (5 landing pages + 6 blog posts)",
-        "Phase 9: E-E-A-T & Authority Building"
-      ]
+        "Phase 6: Google Business Profile (services, Q&A, reviews, photos, posts)",
+        "Phase 7: Security & Compliance (XML-RPC, privacy, API keys)",
+        "Phase 8: Crawl, Indexing & AI Crawler Policy (robots.txt, IndexNow, CWV)",
+        "Phase 9: Structured Data & Schema (DanceGroup genre, sameAs, FAQ schema ×4)",
+        "Phase 10: Local Content Strategy (synopses, 5 landing pages, 6 blog posts, FAQs)",
+        "Phase 11: E-E-A-T & Authority (staff bios, About Louise, directories, partnerships)",
+        "Phase 12: AI Discoverability / AEO (7 test queries, scoring, iterative fixes)",
+        "Phase 13: Paid Advertising (4 Google + 5 Meta campaigns, seasonal budgets)",
+        "Phase 14: Operations & Monitoring (weekly/monthly/quarterly cadence)"
+      ],
+      "key_data": {
+        "research_sources": "Claude 92/120, Gemini 86/120, ChatGPT 84/120",
+        "skill": "seo-marketing (super skill, 10 files, 1,853 lines)",
+        "target_keywords": 13,
+        "local_landing_pages": 5,
+        "ad_campaigns_planned": 9,
+        "ai_test_queries": 7,
+        "target_roas_6mo": "5:1",
+        "target_ai_score_6mo": "3.0/5"
+      }
     },
     {
       "name": "Staff Admin Costs",
