@@ -764,12 +764,14 @@
     {"id": "LF-09", "name": "Daily Trial Alert v1", "trigger": "Daily 8am", "status": "active"},
     {"id": "LF-10", "name": "TeamUp Calendar Sync v1", "trigger": "Daily 5am", "status": "active"},
     {"id": "LF-11", "name": "Trial Event Creator v1", "trigger": "Real-time webhook", "status": "active"},
-    {"id": "FIN-01", "name": "Weekly Financial Snapshot v2.1", "trigger": "Sat 07:00 + Manual", "status": "active"}
+    {"id": "FIN-01", "name": "Weekly Financial Snapshot v2.1", "trigger": "Sat 07:00 + Manual", "status": "active"},
+    {"id": "CP-01", "name": "Channel Performance Weekly v1", "trigger": "Mon 08:00", "status": "active", "n8n_id": "rwwlKHsk1zhIhFjn"}
   ],
 
   "weekly_review": {
     "week_commencing": "10 February 2026",
     "built": [
+      "Weekly Channel Performance Report deployed (Mon 08:00 GMT, n8n ID: rwwlKHsk1zhIhFjn) — fetches all GHL pipeline data, classifies by source, emails Rob + Louise",
       "14-day lead audit: analysed 68 leads across Airtable + GHL pipelines, validated Google Ads UTM tracking",
       "GHL→Airtable status sync script (ghl_opp_status_to_airtable.py) — 75 records updated, 8 conversions now in Airtable",
       "5 attribution recommendations (R1-R5) documented in implementation plan v1.3",
@@ -902,7 +904,7 @@
 
   "system_health": {
     "supabase_sync": { "status": "healthy", "last_run": "2026-02-16T00:26:00Z", "records": 5137 },
-    "n8n_workflows": { "status": "healthy", "active": 14, "failed_24h": 0 },
+    "n8n_workflows": { "status": "healthy", "active": 15, "failed_24h": 0 },
     "data_quality": { "status": "healthy", "contacts": 3045, "orphans": 18 }
   },
 
