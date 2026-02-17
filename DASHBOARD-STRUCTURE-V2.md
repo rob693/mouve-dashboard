@@ -43,6 +43,7 @@ dashboard-data.json
 ├── dependencies           (system integrations map)
 ├── data_flows             (data pipeline diagrams)
 ├── workflows              (n8n workflow table)
+├── renewal_comms           ★ NEW — term renewal comms tracker
 ├── governing_documents    ★ NEW v2 — policy register
 └── priority_actions       (categorised action items)
 ```
@@ -207,6 +208,50 @@ Infrastructure status for the three key systems.
 - Supabase: `SELECT * FROM ops.system_health WHERE check_name='airtable_sync' ORDER BY checked_at DESC LIMIT 1;`
 - n8n: `n8n MCP search_workflows` tool → count active, check execution history for failures
 - Data quality: Supabase contacts count + orphan check from reconciliation
+
+---
+
+### 5b. `renewal_comms` ★ NEW
+
+Term renewal communications tracker. Positioned prominently (after Financial Snapshot) when active. Shows countdown to AutoPay, progress bar, and status of each touchpoint.
+
+```json
+"renewal_comms": {
+  "term": "Spring 2026",
+  "autopay_date": "2026-03-19",
+  "term_ends": "2026-03-29",
+  "plan_doc": "docs/operations/SPRING-2026-RENEWAL-COMMS-PLAN.md",
+  "touchpoints": [
+    {
+      "code": "PRE-01",
+      "date": "2026-02-22",
+      "description": "Scholarship family outreach",
+      "audience": "~10 scholarship families",
+      "channel": "Personal (phone/email)",
+      "owner": "Louise",
+      "status": "pending"
+    }
+  ]
+}
+```
+
+**Touchpoint status values:** `"pending"` | `"scheduled"` | `"sent"` | `"done"`
+
+**When to update:** As each communication is scheduled in DSP or sent manually. Update `status` field for each touchpoint.
+
+**Update pattern — marking a comm as sent:**
+1. Change touchpoint `status` from `"pending"` → `"scheduled"` (when queued in DSP)
+2. Change from `"scheduled"` → `"sent"` (after confirmed delivery)
+3. Progress bar auto-calculates from sent/done count
+
+**Lifecycle:** Remove the entire `renewal_comms` object after AutoPay reconciliation is complete (or replace with next term's data).
+
+**Rendered as:**
+- Amber left-border card (operational urgency)
+- Countdown to AutoPay date (colour-coded: blue >30d, amber 14-30d, red <14d)
+- Progress bar (% of touchpoints sent/done)
+- Table: date | code | description | audience | channel | owner | status pill
+- Rows due within 7 days highlighted amber, within 2 days highlighted red
 
 ---
 
@@ -464,6 +509,7 @@ When Claude is asked to update the dashboard (or during session wrap-up), follow
 | Budget updated | `financial_summary` |
 | Blocker added/cleared | Project's `blocker` field + `status` |
 | New governing doc created | `governing_documents` (append) |
+| Renewal comm sent/scheduled | `renewal_comms.touchpoints` (status update) |
 
 ### 2. Update `weekly_review` (if Monday or significant progress)
 
