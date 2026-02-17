@@ -742,6 +742,109 @@
         .flow-chip.dest { background: var(--green-bg); color: var(--green); }
         .flow-arrow-v2 { color: #ccc; font-size: 0.9rem; }
 
+        /* ── Renewal Comms Tracker ── */
+        .renewal-tracker {
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            margin-bottom: 1.25rem;
+            border-left: 3px solid var(--amber);
+        }
+        .renewal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+        .renewal-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .renewal-countdown {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+        .renewal-countdown .rc-item {
+            font-size: 0.7rem;
+            color: var(--gray);
+        }
+        .renewal-countdown .rc-item strong {
+            color: var(--dark);
+            font-size: 0.85rem;
+        }
+        .renewal-progress-bar {
+            height: 6px;
+            background: var(--gray-bg);
+            border-radius: 3px;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+        }
+        .renewal-progress-fill {
+            height: 100%;
+            border-radius: 3px;
+            background: linear-gradient(90deg, var(--green) 0%, var(--blue) 100%);
+            transition: width 0.3s;
+        }
+        .renewal-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.78rem;
+        }
+        .renewal-table th {
+            text-align: left;
+            padding: 0.4rem 0.5rem;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--gray);
+            border-bottom: 2px solid var(--border);
+        }
+        .renewal-table td {
+            padding: 0.45rem 0.5rem;
+            border-bottom: 1px solid var(--bg);
+            vertical-align: middle;
+        }
+        .renewal-table tr:last-child td { border-bottom: none; }
+        .renewal-table tr.rt-urgent { background: #fffbeb; }
+        .renewal-table tr.rt-past { opacity: 0.5; }
+        .rt-code {
+            font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+            font-weight: 600;
+            font-size: 0.72rem;
+            color: var(--blue);
+        }
+        .rt-date {
+            white-space: nowrap;
+            font-weight: 500;
+        }
+        .rt-date.urgent { color: var(--amber); font-weight: 700; }
+        .rt-date.imminent { color: var(--red); font-weight: 700; }
+        .rt-owner {
+            font-size: 0.7rem;
+            color: var(--gray);
+        }
+        .rt-status {
+            font-size: 0.65rem;
+            padding: 0.15rem 0.45rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .rt-status.pending { background: var(--gray-bg); color: var(--gray); }
+        .rt-status.scheduled { background: var(--blue-bg); color: var(--blue); }
+        .rt-status.sent { background: var(--green-bg); color: var(--green); }
+        .rt-status.done { background: var(--green-bg); color: var(--green); }
+
+        @media (max-width: 768px) {
+            .renewal-table th:nth-child(4),
+            .renewal-table td:nth-child(4),
+            .renewal-table th:nth-child(5),
+            .renewal-table td:nth-child(5) { display: none; }
+            .renewal-countdown { flex-wrap: wrap; gap: 0.4rem; }
+        }
+
         /* ── Footer ── */
         footer {
             text-align: center;
@@ -810,6 +913,9 @@
 
         <!-- 4. Financial Snapshot -->
         <div class="fin-snapshot" id="fin-snapshot"></div>
+
+        <!-- 4b. Renewal Comms Tracker -->
+        <div class="renewal-tracker" id="renewal-tracker" style="display:none;"></div>
 
         <!-- 5. Weekly Review -->
         <div class="weekly-review" id="weekly-review" style="display:none;"></div>
@@ -937,6 +1043,9 @@
         // Financial Snapshot
         renderFinancial(fin);
 
+        // Renewal Comms Tracker
+        renderRenewalComms(d.renewal_comms);
+
         // Weekly Review + Recent Decisions
         renderWeeklyReview(d.weekly_review);
         renderRecentDecisions(d.recent_decisions);
@@ -960,6 +1069,75 @@
         renderDeps(d.dependencies || {});
         renderFlows(d.data_flows || []);
         renderWorkflows(d.workflows || []);
+    }
+
+    function renderRenewalComms(rc) {
+        const el = document.getElementById('renewal-tracker');
+        if (!rc || !rc.touchpoints || !rc.touchpoints.length) return;
+        el.style.display = 'block';
+
+        const today = new Date(); today.setHours(0,0,0,0);
+        const autopay = new Date(rc.autopay_date + 'T00:00:00');
+        const daysToAutopay = Math.ceil((autopay - today) / 86400000);
+
+        const done = rc.touchpoints.filter(t => t.status === 'done' || t.status === 'sent').length;
+        const total = rc.touchpoints.length;
+        const pct = Math.round((done / total) * 100);
+
+        const statusLabels = { pending: 'Pending', scheduled: 'Scheduled', sent: 'Sent', done: 'Done' };
+
+        const rows = rc.touchpoints.map(t => {
+            const tDate = new Date(t.date + 'T00:00:00');
+            const days = Math.ceil((tDate - today) / 86400000);
+            let rowCls = '';
+            let dateCls = '';
+            if (t.status === 'done' || t.status === 'sent') { rowCls = ''; }
+            else if (days < 0) { rowCls = 'rt-past'; }
+            else if (days <= 2) { dateCls = 'imminent'; rowCls = 'rt-urgent'; }
+            else if (days <= 7) { dateCls = 'urgent'; rowCls = 'rt-urgent'; }
+
+            const dateStr = tDate.toLocaleDateString('en-GB', {weekday:'short', day:'numeric', month:'short'});
+
+            return `<tr class="${rowCls}">
+                <td class="rt-date ${dateCls}">${dateStr}</td>
+                <td class="rt-code">${t.code}</td>
+                <td>${t.description}</td>
+                <td style="font-size:0.72rem;color:var(--gray);">${t.audience}</td>
+                <td style="font-size:0.72rem;color:var(--gray);">${t.channel}</td>
+                <td class="rt-owner">${t.owner}</td>
+                <td><span class="rt-status ${t.status}">${statusLabels[t.status] || t.status}</span></td>
+            </tr>`;
+        }).join('');
+
+        const autopayStr = autopay.toLocaleDateString('en-GB', {day:'numeric', month:'short'});
+        const urgencyColor = daysToAutopay <= 14 ? 'var(--red)' : daysToAutopay <= 30 ? 'var(--amber)' : 'var(--blue)';
+
+        el.innerHTML = `
+            <div class="renewal-header">
+                <span class="renewal-title">Renewal Comms — ${rc.term}</span>
+                <div class="renewal-countdown">
+                    <span class="rc-item"><strong style="color:${urgencyColor}">${daysToAutopay}</strong> days to AutoPay (${autopayStr})</span>
+                    <span class="rc-item">${done}/${total} sent</span>
+                </div>
+            </div>
+            <div class="renewal-progress-bar">
+                <div class="renewal-progress-fill" style="width:${pct}%"></div>
+            </div>
+            <table class="renewal-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Code</th>
+                        <th>Comm</th>
+                        <th>Audience</th>
+                        <th>Channel</th>
+                        <th>Owner</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>${rows}</tbody>
+            </table>
+        `;
     }
 
     function renderWeeklyReview(wr) {

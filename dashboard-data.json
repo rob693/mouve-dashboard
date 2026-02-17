@@ -484,16 +484,17 @@
       "implementation_plan": "LEAD-SCORING-IMPLEMENTATION-PLAN-FEB2026.md",
       "purpose": "Automated lead cost tracking and quality scoring for Google Ads vs Meta campaigns. Calculate true cost per acquisition and optimize ad spend allocation.",
       "status": "in_progress",
-      "status_label": "v1.3 | 14-Day Audit Complete ✅ | GHL→AT Sync Built ✅ | Attribution Fixes Pending",
+      "status_label": "v1.4 | Weekly Channel Report LIVE ✅ (Mon 08:00) | GHL→AT Sync Built ✅ | Attribution Fixes Pending",
       "completed_phases": [
         {"name": "Phase 1: Tracking Infrastructure", "summary": "Fixed Google Ads UTM tracking, updated n8n workflow (last-touch attribution), paused expensive Facebook campaign (£17.59/lead). Saved £299/month."},
         {"name": "Phase 2: 14-Day Lead Audit (14 Feb)", "summary": "68 leads analysed. True channel split: Meta 70.6% (48), Organic 19.1% (13), Google 10.3% (7). Google UTM working (campaign ID captured, utm_content missing). GHL cross-check found 7 actual conversions vs 1 in Airtable. Built ghl_opp_status_to_airtable.py sync script — 75 records updated (14-day window). 5 recommendations (R1-R5)."}
       ],
       "next_phase": {
         "name": "Phase 3: Attribution Fixes (R1-R4)",
-        "detail": "Fix data quality issues identified in the 14-day audit before lead scoring can produce reliable CPA numbers.",
-        "status": "planned",
+        "detail": "Fix data quality issues identified in the 14-day audit before lead scoring can produce reliable CPA numbers. Weekly Channel Performance Report now live (Mon 08:00, n8n ID: rwwlKHsk1zhIhFjn).",
+        "status": "in_progress",
         "tasks": [
+          "✅ 1.6: Weekly Channel Performance Report deployed (channel-performance-weekly-v1.json)",
           "R1: Add utm_content to Google Ads tracking template (10 min, Google Ads UI)",
           "R2: Map Google campaign ID 23002379206 to human-readable name (5 min)",
           "R3: Fix Meta click-through misattribution — 7 leads tagged 'Website' are actually Meta (30 min, n8n update)",
@@ -825,6 +826,78 @@
       "tide_savings": 134680,
       "vat_liability": 20278
     }
+  },
+
+  "renewal_comms": {
+    "term": "Spring 2026",
+    "autopay_date": "2026-03-19",
+    "term_ends": "2026-03-29",
+    "plan_doc": "docs/operations/SPRING-2026-RENEWAL-COMMS-PLAN.md",
+    "touchpoints": [
+      {
+        "code": "PRE-01",
+        "date": "2026-02-22",
+        "description": "Scholarship family outreach",
+        "audience": "~10 scholarship families",
+        "channel": "Personal (phone/email)",
+        "owner": "Louise",
+        "status": "pending"
+      },
+      {
+        "code": "PRE-02",
+        "date": "2026-02-22",
+        "description": "No-card family outreach",
+        "audience": "~24 no-card families",
+        "channel": "Personal (phone/email)",
+        "owner": "Louise",
+        "status": "pending"
+      },
+      {
+        "code": "R-001a",
+        "date": "2026-02-23",
+        "description": "Reassurance email (standard)",
+        "audience": "All families (excl PP & scholarship)",
+        "channel": "DSP email",
+        "owner": "Rob",
+        "status": "pending"
+      },
+      {
+        "code": "R-001b",
+        "date": "2026-02-23",
+        "description": "Reassurance email (payment plan)",
+        "audience": "Payment plan families",
+        "channel": "DSP email",
+        "owner": "Rob",
+        "status": "pending"
+      },
+      {
+        "code": "SMS-01",
+        "date": "2026-02-25",
+        "description": "Reminder nudge SMS",
+        "audience": "All families",
+        "channel": "DSP SMS",
+        "owner": "Rob",
+        "status": "pending"
+      },
+      {
+        "code": "R-002a",
+        "date": "2026-03-02",
+        "description": "Final courtesy email (standard)",
+        "audience": "All families (excl PP & scholarship)",
+        "channel": "DSP email",
+        "owner": "Rob",
+        "status": "pending"
+      },
+      {
+        "code": "R-002b",
+        "date": "2026-03-02",
+        "description": "Final courtesy email (payment plan)",
+        "audience": "Payment plan families",
+        "channel": "DSP email",
+        "owner": "Rob",
+        "status": "pending"
+      }
+    ]
   },
 
   "system_health": {
