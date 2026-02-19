@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-16T19:00:00Z",
+  "generated_at": "2026-02-19T20:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "3.4",
 
@@ -832,72 +832,91 @@
 
   "renewal_comms": {
     "term": "Spring 2026",
-    "autopay_date": "2026-03-19",
+    "renewing_into": "Summer 2026 (14 Apr – 19 Jul 2026)",
+    "autopay_date": "2026-03-05",
     "term_ends": "2026-03-29",
     "plan_doc": "docs/operations/SPRING-2026-RENEWAL-COMMS-PLAN.md",
+    "plan_version": "1.4",
     "touchpoints": [
       {
         "code": "PRE-01",
         "date": "2026-02-22",
-        "description": "Scholarship family outreach",
+        "description": "Scholarship family outreach — personal call/email before mass comms",
         "audience": "~10 scholarship families",
         "channel": "Personal (phone/email)",
         "owner": "Louise",
-        "status": "pending"
-      },
-      {
-        "code": "PRE-02",
-        "date": "2026-02-22",
-        "description": "No-card family outreach",
-        "audience": "~24 no-card families",
-        "channel": "Personal (phone/email)",
-        "owner": "Louise",
-        "status": "pending"
+        "status": "pending",
+        "copy_status": "draft"
       },
       {
         "code": "R-001a",
         "date": "2026-02-23",
-        "description": "Reassurance email (standard)",
-        "audience": "All families (excl PP & scholarship)",
+        "description": "Reassurance email + statement (standard)",
+        "audience": "All families (excl PP & scholarship) — DSP Group 2",
         "channel": "DSP email",
         "owner": "Rob",
-        "status": "pending"
+        "status": "pending",
+        "copy_status": "approved"
       },
       {
         "code": "R-001b",
         "date": "2026-02-23",
-        "description": "Reassurance email (payment plan)",
-        "audience": "Payment plan families",
+        "description": "Reassurance email + statement (payment plan)",
+        "audience": "Payment plan families — DSP Group 1",
         "channel": "DSP email",
         "owner": "Rob",
-        "status": "pending"
+        "status": "pending",
+        "copy_status": "approved"
+      },
+      {
+        "code": "PRE-02",
+        "date": "2026-02-25",
+        "description": "No card text — add payment details before autopay",
+        "audience": "~24 no-card families ('no card autopay' tag in Studio Hub)",
+        "channel": "SMS (DSP)",
+        "owner": "Louise",
+        "status": "pending",
+        "copy_status": "approved"
+      },
+      {
+        "code": "STMT-R",
+        "date": "2026-02-25",
+        "description": "Statements resend (both standard + PP)",
+        "audience": "All families",
+        "channel": "DSP (second send)",
+        "owner": "Rob",
+        "status": "pending",
+        "copy_status": "ready"
       },
       {
         "code": "SMS-01",
         "date": "2026-02-25",
-        "description": "Reminder nudge SMS",
+        "description": "Reminder nudge — renews 5th March",
         "audience": "All families",
         "channel": "DSP SMS",
         "owner": "Rob",
-        "status": "pending"
+        "status": "pending",
+        "copy_status": "approved"
       },
       {
         "code": "R-002a",
         "date": "2026-03-02",
         "description": "Final courtesy email (standard)",
-        "audience": "All families (excl PP & scholarship)",
+        "audience": "All families (excl PP & scholarship) — DSP Group 2",
         "channel": "DSP email",
         "owner": "Rob",
-        "status": "pending"
+        "status": "pending",
+        "copy_status": "draft"
       },
       {
         "code": "R-002b",
         "date": "2026-03-02",
         "description": "Final courtesy email (payment plan)",
-        "audience": "Payment plan families",
+        "audience": "Payment plan families — DSP Group 1",
         "channel": "DSP email",
         "owner": "Rob",
-        "status": "pending"
+        "status": "pending",
+        "copy_status": "draft"
       }
     ]
   },
