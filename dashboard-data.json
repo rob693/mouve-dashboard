@@ -73,16 +73,10 @@
       "context": "12-Month Budget — Phase 4. After Rob reviews spreadsheet."
     },
     {
-      "title": "Party Landing Page — Fix critical images (Sydney map, stock photos)",
-      "due": "2026-02-03",
+      "title": "Party Landing Page — Phase 6 remaining: WhatsApp, trending themes, gallery, vendor section",
+      "due": "2026-03-01",
       "status": "pending",
-      "context": "Party Landing Page — Phase 1. Map shows Sydney, all images show adults not kids."
-    },
-    {
-      "title": "Party Landing Page — Source real MOUVE party photos from Louise",
-      "due": "2026-02-07",
-      "status": "pending",
-      "context": "Party Landing Page — need kids dancing, party activities, happy parents."
+      "context": "parties.makeamouve.com LIVE. Phase 6 is 5/8 done (form, pricing, favicon, privacy, terms ✅). Remaining: WhatsApp button, trending theme names, photo gallery, vendor section."
     },
     {
       "title": "Chase DSP (Pamela Means) if no reply to API access email",
@@ -538,27 +532,26 @@
     },
     {
       "name": "Party Booking Landing Page",
-      "phase_current": 1,
-      "phase_total": 3,
-      "implementation_plan": "PARTY-LANDING-PAGE-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "High-converting SEO landing page for MOUVE children's birthday parties. Relume → Webflow → parties.makeamouve.com",
+      "phase_current": 6,
+      "phase_total": 7,
+      "implementation_plan": "dazzling-seeking-naur.md (plan file)",
+      "purpose": "High-converting SEO landing page for MOUVE children's birthday parties. Custom HTML/Tailwind → Vercel → parties.makeamouve.com",
       "status": "in_progress",
-      "status_label": "v1.0 | Phase 1: Section Review 🔧 (15 tasks created)",
+      "status_label": "v2.2 | Phase 5 ✅ LIVE | Phase 6: Competitive Edge 🔧 (5/8 done)",
       "target_url": "parties.makeamouve.com",
       "next_phase": {
-        "name": "Phase 1: Section Review",
-        "detail": "Review each section for wording, images, colours. Fix critical issues (Sydney map, stock photos of adults)",
+        "name": "Phase 6: Competitive Edge & Conversion",
+        "detail": "WhatsApp button, trending theme names, photo gallery, vendor/extras section",
         "status": "in_progress",
         "tasks": [
-          "Fix critical images (Sydney map → NW London)",
-          "Update global colours in Style Guide",
-          "Work through 12 sections top to bottom",
-          "Source real MOUVE party photos from Louise"
+          "Add WhatsApp floating button",
+          "Add trending theme names (Frozen, Taylor Swift etc.)",
+          "Add real party photo gallery/carousel",
+          "Add 'We can also help with' vendor section"
         ]
       },
       "remaining_phases": [
-        "Phase 2: Export to Webflow + Form Backend",
-        "Phase 3: DNS Setup + Go Live"
+        "Phase 7: Final Polish (accessibility, performance, SEO, mobile responsive)"
       ]
     },
     {
