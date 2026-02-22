@@ -537,18 +537,21 @@
       "implementation_plan": "dazzling-seeking-naur.md (plan file)",
       "purpose": "High-converting SEO landing page for MOUVE children's birthday parties. Custom HTML/Tailwind → Vercel → parties.makeamouve.com",
       "status": "in_progress",
-      "status_label": "v2.2 | Phase 5 ✅ LIVE | Google Ads conversion tracking LIVE | Phase 6: Competitive Edge 🔧 (5/8 done)",
+      "status_label": "v2.2 | Phase 5 ✅ LIVE | Google Ads + Meta conversion tracking LIVE (GTM v33) | Phase 6: Competitive Edge 🔧 (5/8 done)",
       "target_url": "parties.makeamouve.com",
       "next_phase": {
         "name": "Phase 6: Competitive Edge & Conversion",
-        "detail": "WhatsApp button, trending theme names, photo gallery, vendor/extras section. Google Ads conversion tracking now live (GTM v32, party_enquiry_submit event → AW-970158612).",
+        "detail": "WhatsApp button, trending theme names, photo gallery, vendor/extras section. Both Google Ads + Meta Pixel conversion tracking now live (GTM v33). Campaign deployment guide created for Rob to build both campaigns.",
         "status": "in_progress",
         "tasks": [
-          "✅ GTM container + Google Ads conversion tracking added (22 Feb)",
+          "✅ GTM container + Google Ads conversion tracking (22 Feb, GTM v32)",
+          "✅ Meta Pixel Lead event tracking (22 Feb, GTM v33)",
+          "✅ Campaign deployment guide created (Google Ads 13.10 + Meta 13.11)",
+          "Rob: Build Google Ads campaign (£5/day, Hendon +8km)",
+          "Rob: Source creative assets + build Meta campaign (£3-5/day)",
           "Add WhatsApp floating button",
           "Add trending theme names (Frozen, Taylor Swift etc.)",
-          "Add real party photo gallery/carousel",
-          "Add 'We can also help with' vendor section"
+          "Add real party photo gallery/carousel"
         ]
       },
       "remaining_phases": [
@@ -792,6 +795,7 @@
   },
 
   "recent_decisions": [
+    "Parties: Meta Pixel Lead tracking live (GTM v33) + campaign deployment guide for Google Ads + Meta (22 Feb)",
     "Launch Parties Google Ads campaign first — no competitors running ads in NW London (22 Feb)",
     "Lead audit: Google UTM tracking working — keep running, add utm_content (14 Feb)",
     "Built GHL→Airtable sync script — Airtable LEADS now reflects real pipeline outcomes (14 Feb)",
