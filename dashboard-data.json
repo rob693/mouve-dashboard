@@ -377,7 +377,7 @@
       "implementation_plan": "SEO-GEO/SEO-GEO-IMPLEMENTATION-PLAN.md",
       "purpose": "Comprehensive SEO, geo-targeting, paid ads, and AI discoverability (AEO) strategy. Built from 3-AI research (Claude, Gemini, ChatGPT). Covers measurement, GBP, security, schemas, content, E-E-A-T, AEO, Google/Meta ads, and ongoing operations.",
       "status": "in_progress",
-      "status_label": "v2.0 | Phases 1-5, 7-8 ✅ | Homepage audit COMPLETE (9/9 items fixed) | Phase 9: Schema 🔧 (4/11) | 6, 10-14 remaining",
+      "status_label": "v2.2 | Phases 1-5, 7-9 ✅ | Phase 9: Schema COMPLETE (10/11, 1 deferred) | All 6 pages pass Rich Results Test | Phase 6 GBP next",
       "completed_phases": [
         {"name": "Phase 1: Quick Technical Wins", "summary": "Holiday Camps title 2025→2026, noindex on 2 utility pages, blog slug fixed, author → Louise, focus keyword set."},
         {"name": "Phase 2: Schema Optimisation", "summary": "BlogPosting removed from Get a Quote + Matinee Gallery. All 7 key pages verified clean via curl."},
@@ -385,24 +385,22 @@
         {"name": "Phase 4: URL Cleanup & Redirects", "summary": "Messy slug pages made draft. No auto-generated URLs remain in sitemap."},
         {"name": "Phase 5: Measurement & Reporting", "summary": "GA4 6 key events configured. Meta Pixel + CAPI active (7 custom conversions). 5 Supabase reporting tables deployed. Baseline metrics captured (2/13 keywords page 1, 112 GBP reviews, mobile PSI 56→75/100). Competitive baseline: 6 direct + 4 entertainment competitors profiled. Call tracking pending (budget decision)."},
         {"name": "Phase 7: Security & Compliance", "summary": "XML-RPC disabled (mu-plugin, 403). Privacy Policy rewritten (14 sections, DUA 2025). Google Maps API key restricted (new key, Maps Embed + makeamouve.com only). AC diffuser consent-gated (CookieYes listener)."},
-        {"name": "Phase 8: Crawl, Indexing & AI Policy", "summary": "robots.txt deployed (admin disallows, 7 AI training bots blocked, 3 AI search bots allowed). IndexNow active (Rank Math Pro). 404 fixed. PageSpeed 45→72→75/100, LCP 16s→4.2s, TBT 770ms→210ms. GTM cleanup. 23 Feb homepage audit: Site Kit deactivated (triple GA4), Perfmatters installed, preconnects added, headings restructured (14 fixes), og:image added, alt text fixed, GBP review link added, content 444→818 words. All 9 audit items addressed."}
+        {"name": "Phase 8: Crawl, Indexing & AI Policy", "summary": "robots.txt deployed (admin disallows, 7 AI training bots blocked, 3 AI search bots allowed). IndexNow active (Rank Math Pro). 404 fixed. PageSpeed 45→72→75/100, LCP 16s→4.2s, TBT 770ms→210ms. GTM cleanup. 23 Feb homepage audit: Site Kit deactivated (triple GA4), Perfmatters installed, preconnects added, headings restructured (14 fixes), og:image added, alt text fixed, GBP review link added, content 444→818 words. All 9 audit items addressed."},
+        {"name": "Phase 9: Structured Data & Schema", "summary": "10/11 tasks complete (1 deferred — no events page). FAQ schemas on 4 pages (Classes, Camps, Fitness, Contact). 6 Course schemas on /dance-classes/. Event schema (Easter 2026) on /holiday-camps/. Service schema on parties.makeamouve.com. Rich Results Test: 0 errors on all 6 pages. Total 59 valid structured data items across site."}
       ],
       "next_phase": {
-        "name": "Phase 9: Structured Data & Schema (in progress)",
-        "detail": "4/11 tasks complete. Genre added to DanceGroup, sameAs fixed, FAQ schemas on Dance Classes + Holiday Camps. Next: FAQ on Ladies Fitness + Contact (Q&As drafted), then Course/Event/Service schemas + validation.",
-        "status": "in_progress",
+        "name": "Phase 6: Google Business Profile Optimisation",
+        "detail": "Update GBP description, list all services, verify categories, seed Q&A (10+), upload photos (20+), set up weekly posts, review generation + response strategy.",
+        "status": "planned",
         "tasks": [
-          "✅ 9.1 Genre added to DanceGroup (8 genres)",
-          "✅ 9.2 sameAs fixed (broken URL removed, YouTube + X added)",
-          "✅ 9.3 FAQ schema — Dance Classes (5 Q&As)",
-          "✅ 9.4 FAQ schema — Holiday Camps (5 Q&As)",
-          "9.5 FAQ schema — Ladies Fitness (Q&As drafted)",
-          "9.6 FAQ schema — Contact (Q&As drafted)",
-          "9.7 Course schema — class pages",
-          "9.8 Event schema — camp pages",
-          "9.9 Service schema — parties page",
-          "9.10 Service schema — event dancers page",
-          "9.11 Validate all schemas"
+          "6.1 Update GBP description",
+          "6.2 List all services",
+          "6.3 Verify categories",
+          "6.4 Seed Q&A section (10+ entries)",
+          "6.5 Upload photos (20+)",
+          "6.6 Set up weekly posts",
+          "6.7 Review generation strategy",
+          "6.8 Review response protocol"
         ]
       },
       "remaining_phases": [
@@ -833,6 +831,7 @@
   },
 
   "recent_decisions": [
+    "SEO: Phase 9 Schema COMPLETE — 10/11 tasks done. 6 Course, 1 Event, 4 FAQ, 1 Service schemas deployed. Rich Results Test: 0 errors all 6 pages (23 Feb)",
     "SEO: Homepage audit complete — 9/9 items addressed, mobile PSI 56→75, LCP 11.9→4.2s, content 444→818 words (23 Feb)",
     "SEO: Google Site Kit deactivated — was triple-loading GA4, GTM handles all tracking now (23 Feb)",
     "SEO: Perfmatters installed for script management — disabled emojis, embeds, jQuery Migrate (23 Feb)",
