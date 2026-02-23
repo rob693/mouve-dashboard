@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-22T13:00:00Z",
+  "generated_at": "2026-02-23T13:30:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "3.4",
 
@@ -374,18 +374,18 @@
       "name": "SEO & Geo Implementation",
       "phase_current": 9,
       "phase_total": 14,
-      "implementation_plan": "SEO-GEO-IMPLEMENTATION-PLAN.md",
+      "implementation_plan": "SEO-GEO/SEO-GEO-IMPLEMENTATION-PLAN.md",
       "purpose": "Comprehensive SEO, geo-targeting, paid ads, and AI discoverability (AEO) strategy. Built from 3-AI research (Claude, Gemini, ChatGPT). Covers measurement, GBP, security, schemas, content, E-E-A-T, AEO, Google/Meta ads, and ongoing operations.",
       "status": "in_progress",
-      "status_label": "v2.0 | Phases 1-5, 7-8 ✅ | Phase 9: Schema 🔧 (4/11 done) | 6, 10-14 remaining",
+      "status_label": "v2.0 | Phases 1-5, 7-8 ✅ | Homepage audit COMPLETE (9/9 items fixed) | Phase 9: Schema 🔧 (4/11) | 6, 10-14 remaining",
       "completed_phases": [
         {"name": "Phase 1: Quick Technical Wins", "summary": "Holiday Camps title 2025→2026, noindex on 2 utility pages, blog slug fixed, author → Louise, focus keyword set."},
         {"name": "Phase 2: Schema Optimisation", "summary": "BlogPosting removed from Get a Quote + Matinee Gallery. All 7 key pages verified clean via curl."},
         {"name": "Phase 3: On-Page SEO & Meta", "summary": "All 5 key pages have optimised meta + OG images. /holiday-camps/ redirect fixed."},
         {"name": "Phase 4: URL Cleanup & Redirects", "summary": "Messy slug pages made draft. No auto-generated URLs remain in sitemap."},
-        {"name": "Phase 5: Measurement & Reporting", "summary": "GA4 6 key events configured. Meta Pixel + CAPI active (7 custom conversions). 5 Supabase reporting tables deployed. Baseline metrics captured (2/13 keywords page 1, 112 GBP reviews, mobile 56/100). Competitive baseline: 6 direct + 4 entertainment competitors profiled. Call tracking pending (budget decision)."},
+        {"name": "Phase 5: Measurement & Reporting", "summary": "GA4 6 key events configured. Meta Pixel + CAPI active (7 custom conversions). 5 Supabase reporting tables deployed. Baseline metrics captured (2/13 keywords page 1, 112 GBP reviews, mobile PSI 56→75/100). Competitive baseline: 6 direct + 4 entertainment competitors profiled. Call tracking pending (budget decision)."},
         {"name": "Phase 7: Security & Compliance", "summary": "XML-RPC disabled (mu-plugin, 403). Privacy Policy rewritten (14 sections, DUA 2025). Google Maps API key restricted (new key, Maps Embed + makeamouve.com only). AC diffuser consent-gated (CookieYes listener)."},
-        {"name": "Phase 8: Crawl, Indexing & AI Policy", "summary": "robots.txt deployed (admin disallows, 7 AI training bots blocked, 3 AI search bots allowed). IndexNow active (Rank Math Pro). 404 fixed (was 301→homepage, now proper 404). PageSpeed 45→72/100, LCP 16s→4.2s, TBT 770ms→270ms. GTM cleanup (3 duplicate tags removed). Social links verified."}
+        {"name": "Phase 8: Crawl, Indexing & AI Policy", "summary": "robots.txt deployed (admin disallows, 7 AI training bots blocked, 3 AI search bots allowed). IndexNow active (Rank Math Pro). 404 fixed. PageSpeed 45→72→75/100, LCP 16s→4.2s, TBT 770ms→210ms. GTM cleanup. 23 Feb homepage audit: Site Kit deactivated (triple GA4), Perfmatters installed, preconnects added, headings restructured (14 fixes), og:image added, alt text fixed, GBP review link added, content 444→818 words. All 9 audit items addressed."}
       ],
       "next_phase": {
         "name": "Phase 9: Structured Data & Schema (in progress)",
@@ -423,9 +423,9 @@
         "ai_test_queries": 7,
         "target_roas_6mo": "5:1",
         "target_ai_score_6mo": "3.0/5",
-        "mobile_pagespeed": "72/100 (was 45)",
+        "mobile_pagespeed": "75/100 (was 56, originally 45)",
         "lcp": "4.2s (was 16s)",
-        "tbt": "270ms (was 770ms)",
+        "tbt": "210ms (was 770ms)",
         "gbp_reviews": 112,
         "keywords_page1": "2/13"
       }
@@ -833,6 +833,9 @@
   },
 
   "recent_decisions": [
+    "SEO: Homepage audit complete — 9/9 items addressed, mobile PSI 56→75, LCP 11.9→4.2s, content 444→818 words (23 Feb)",
+    "SEO: Google Site Kit deactivated — was triple-loading GA4, GTM handles all tracking now (23 Feb)",
+    "SEO: Perfmatters installed for script management — disabled emojis, embeds, jQuery Migrate (23 Feb)",
     "Parties: Meta Pixel Lead tracking live (GTM v33) + campaign deployment guide for Google Ads + Meta (22 Feb)",
     "Launch Parties Google Ads campaign first — no competitors running ads in NW London (22 Feb)",
     "Lead audit: Google UTM tracking working — keep running, add utm_content (14 Feb)",
