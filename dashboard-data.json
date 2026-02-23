@@ -7,7 +7,7 @@
     "complete": 34,
     "in_progress": 9,
     "waiting": 1,
-    "planned": 2,
+    "planned": 3,
     "blocked": 1
   },
 
@@ -428,6 +428,44 @@
         "tbt": "270ms (was 770ms)",
         "gbp_reviews": 112,
         "keywords_page1": "2/13"
+      }
+    },
+    {
+      "name": "Events Landing Page",
+      "phase_current": 1,
+      "phase_total": 6,
+      "implementation_plan": "EVENTS-LP-IMPLEMENTATION-PLAN-FEB2026.md",
+      "purpose": "High-converting landing page for MOUVE event entertainment — Bar/Bat Mitzvah dancers, corporate events, weddings. Includes enquiry form, conversion tracking, and paid campaigns.",
+      "status": "planned",
+      "status_label": "v1.0 | Phase 1/6 📋 Foundation (plan complete, brand direction confirmed)",
+      "target_url": "events.makeamouve.com",
+      "next_phase": {
+        "name": "Phase 1: Foundation",
+        "detail": "Create repo, init index.html with Tailwind + MOUVE brand palette (pastels on black), Adobe Fonts (Dharma Gothic E + Roboto Condensed), Vercel deploy, DNS setup.",
+        "status": "planned",
+        "tasks": [
+          "✅ CLAUDE.md created (brand palette, typography, guardrails, screenshot workflow)",
+          "✅ Brand assets copied (logos, brand book PDF)",
+          "Create mouve-events repo on GitHub",
+          "Init index.html with Tailwind CDN + brand config",
+          "Add Adobe Fonts (Typekit hiw2mip)",
+          "Push to GitHub + Vercel deploy",
+          "Configure events.makeamouve.com DNS"
+        ]
+      },
+      "remaining_phases": [
+        "Phase 2: Landing Page Build (11 sections, iterative screenshot loop)",
+        "Phase 3: Form Backend (n8n → Supabase → Gmail)",
+        "Phase 4: Conversion Tracking (GTM + Google Ads + Meta Pixel)",
+        "Phase 5: SEO + Schema (LocalBusiness, FAQPage, Service)",
+        "Phase 6: Paid Campaigns (Google Ads Search + Meta Leads)"
+      ],
+      "key_data": {
+        "brand_palette": "MOUVE Brand Book v1 (Rose, Lilac, Mint, Peach, Sky on Black)",
+        "typography": "Dharma Gothic E + Roboto Condensed (Adobe Fonts hiw2mip)",
+        "form_backend": "n8n → Supabase crm.leads → Gmail (same as parties)",
+        "gtm_container": "GTM-KDP6SXHZ",
+        "target_market": "NW London + Hertfordshire (Bar/Bat Mitzvah parents, corporate planners)"
       }
     },
     {
