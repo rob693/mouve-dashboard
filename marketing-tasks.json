@@ -1,0 +1,261 @@
+{
+  "generated_at": "2026-02-24T21:00:00Z",
+  "plan_version": "1.1",
+  "plan_file": "docs/projects/active/MOUVE-MARKETING-CONVERSION-PLAN.md",
+
+  "summary": {
+    "total_tasks": 48,
+    "completed": 9,
+    "in_progress": 3,
+    "awaiting_approval": 2,
+    "planned": 34,
+    "target_complete": "End May 2026"
+  },
+
+  "sub_projects": [
+    {
+      "id": "infra",
+      "name": "Infrastructure",
+      "color": "#3b82f6",
+      "icon": "&#9881;",
+      "status": "in_progress",
+      "target": "End March 2026",
+      "phases_done": 0,
+      "phases_total": 1,
+      "current_phase": "Attribution & Measurement"
+    },
+    {
+      "id": "kids",
+      "name": "Children's Dance",
+      "color": "#ec4899",
+      "icon": "&#9829;",
+      "status": "in_progress",
+      "target": "End April 2026",
+      "phases_done": 0,
+      "phases_total": 5,
+      "current_phase": "Google Ads Optimisation"
+    },
+    {
+      "id": "parties",
+      "name": "Parties",
+      "color": "#f59e0b",
+      "icon": "&#127881;",
+      "status": "planned",
+      "target": "End March 2026",
+      "phases_done": 0,
+      "phases_total": 3,
+      "current_phase": "LP Optimisation"
+    },
+    {
+      "id": "lf",
+      "name": "Ladies Fitness",
+      "color": "#8b5cf6",
+      "icon": "&#9733;",
+      "status": "planned",
+      "target": "End May 2026",
+      "phases_done": 0,
+      "phases_total": 4,
+      "current_phase": "Campaign LP Build"
+    },
+    {
+      "id": "events",
+      "name": "Events",
+      "color": "#10b981",
+      "icon": "&#127926;",
+      "status": "planned",
+      "target": "End May 2026",
+      "phases_done": 0,
+      "phases_total": 5,
+      "current_phase": "Landing Page Build"
+    },
+    {
+      "id": "retention",
+      "name": "Retention & Referral",
+      "color": "#ef4444",
+      "icon": "&#128170;",
+      "status": "planned",
+      "target": "End May 2026",
+      "phases_done": 0,
+      "phases_total": 1,
+      "current_phase": "Setup"
+    }
+  ],
+
+  "weeks": [
+    {
+      "week_of": "2026-02-24",
+      "label": "24 Feb – 2 Mar",
+      "sprint": "Sprint 1",
+      "focus": "Quick Wins + Infrastructure",
+      "tasks": [
+        { "id": "qw-1", "task": "Rob: Approve budget shift 80/20 Meta-heavy", "sub_project": "infra", "priority": "high", "status": "awaiting_approval", "notes": "Recommended: £310 Meta / £80 Google" },
+        { "id": "qw-2", "task": "Rob: Reduce retargeting budget 50% in Meta Ads Manager", "sub_project": "kids", "priority": "high", "status": "awaiting_approval", "notes": "Worst performer at £29.55/lead" },
+        { "id": "qw-3", "task": "R1: Add utm_content to Google Ads tracking template", "sub_project": "infra", "priority": "high", "status": "todo" },
+        { "id": "qw-4", "task": "R2: Map Google campaign ID to human-readable name", "sub_project": "infra", "priority": "high", "status": "todo" },
+        { "id": "qw-5", "task": "R3: Fix Meta click-through misattribution", "sub_project": "infra", "priority": "high", "status": "todo" }
+      ]
+    },
+    {
+      "week_of": "2026-03-03",
+      "label": "3–9 Mar",
+      "sprint": "Sprint 2",
+      "focus": "Infrastructure Complete + CRO Start",
+      "tasks": [
+        { "id": "r4", "task": "R4: Default organic source for leads with no UTM", "sub_project": "infra", "priority": "high", "status": "todo" },
+        { "id": "rpt-1", "task": "Add per-business-line breakdown to weekly report", "sub_project": "infra", "priority": "medium", "status": "todo" },
+        { "id": "rpt-2", "task": "Add CPA column to weekly report", "sub_project": "infra", "priority": "medium", "status": "todo" },
+        { "id": "cro-1", "task": "Add sticky mobile CTA bar to makeamouve.com", "sub_project": "kids", "priority": "high", "status": "todo", "notes": "\"Book a Free Trial\" fixed to bottom on mobile" },
+        { "id": "cro-2", "task": "Add click-to-call on mobile header", "sub_project": "kids", "priority": "high", "status": "todo" }
+      ]
+    },
+    {
+      "week_of": "2026-03-10",
+      "label": "10–16 Mar",
+      "sprint": "Sprint 3",
+      "focus": "Website CRO + Google Ads Decision",
+      "tasks": [
+        { "id": "cro-3", "task": "Add trust signals above the fold (reviews badge, DBS, years)", "sub_project": "kids", "priority": "high", "status": "todo" },
+        { "id": "cro-4", "task": "Expand homepage from 444 to 800+ words", "sub_project": "kids", "priority": "high", "status": "todo", "notes": "Why MOUVE section, class overview, embedded reviews" },
+        { "id": "cro-5", "task": "Make CTAs benefit-driven (\"Book Your Child's Free Trial\")", "sub_project": "kids", "priority": "medium", "status": "todo" },
+        { "id": "gads-1", "task": "Pause Google ad groups except Brand + Kids Dance", "sub_project": "kids", "priority": "medium", "status": "todo", "notes": "Budget too thin across 6 ad groups" },
+        { "id": "gads-2", "task": "Switch Google campaign objective to conversions", "sub_project": "kids", "priority": "medium", "status": "todo" }
+      ]
+    },
+    {
+      "week_of": "2026-03-17",
+      "label": "17–23 Mar",
+      "sprint": "Sprint 4",
+      "focus": "Meta Audit + Parties CRO",
+      "tasks": [
+        { "id": "meta-1", "task": "Pull Meta campaign performance via API (90 days)", "sub_project": "kids", "priority": "high", "status": "todo" },
+        { "id": "meta-2", "task": "Calculate CPA per Meta campaign/ad set", "sub_project": "kids", "priority": "high", "status": "todo" },
+        { "id": "meta-3", "task": "Pause underperforming Meta ad sets (CPA > £150)", "sub_project": "kids", "priority": "high", "status": "todo" },
+        { "id": "party-1", "task": "Complete parties LP remaining items (WhatsApp, gallery)", "sub_project": "parties", "priority": "medium", "status": "todo" },
+        { "id": "party-2", "task": "Set up parties conversion tracking baseline", "sub_project": "parties", "priority": "medium", "status": "todo" }
+      ]
+    },
+    {
+      "week_of": "2026-03-24",
+      "label": "24–30 Mar",
+      "sprint": "Sprint 5",
+      "focus": "Parties Campaign + Content Start",
+      "tasks": [
+        { "id": "party-3", "task": "Write 3 party ad creative variants", "sub_project": "parties", "priority": "high", "status": "todo" },
+        { "id": "party-4", "task": "Launch parties Meta campaign (£5-10/day test)", "sub_project": "parties", "priority": "high", "status": "todo" },
+        { "id": "content-1", "task": "Pillar blog post: \"Kids Dance Classes Hendon\"", "sub_project": "kids", "priority": "medium", "status": "todo" },
+        { "id": "cro-6", "task": "Add visual pathways (kids vs LF split-panel)", "sub_project": "kids", "priority": "medium", "status": "todo" },
+        { "id": "cro-7", "task": "Add social proof section (parent testimonials)", "sub_project": "kids", "priority": "medium", "status": "todo" }
+      ]
+    },
+    {
+      "week_of": "2026-03-31",
+      "label": "31 Mar – 6 Apr",
+      "sprint": "Sprint 6",
+      "focus": "Content + GBP Completion",
+      "tasks": [
+        { "id": "content-2", "task": "Pillar post: \"Why 112 Families Give MOUVE 5 Stars\"", "sub_project": "kids", "priority": "medium", "status": "todo" },
+        { "id": "content-3", "task": "Pillar post: \"Best Kids Activities in Hendon NW4\"", "sub_project": "kids", "priority": "medium", "status": "todo" },
+        { "id": "gbp-1", "task": "Seed 12 Q&As on GBP (via Google Search)", "sub_project": "kids", "priority": "medium", "status": "todo" },
+        { "id": "gbp-2", "task": "Upload 20+ photos to GBP (needs Louise)", "sub_project": "kids", "priority": "medium", "status": "todo", "notes": "Blocked until Louise provides photos" },
+        { "id": "gbp-3", "task": "Set up weekly GBP posts (review quote images ready)", "sub_project": "kids", "priority": "low", "status": "todo" }
+      ]
+    },
+    {
+      "week_of": "2026-04-07",
+      "label": "7–13 Apr",
+      "sprint": "Sprint 7",
+      "focus": "Location Pages + LF LP Design",
+      "tasks": [
+        { "id": "loc-1", "task": "Build 3 location pages (Hendon, Mill Hill, Finchley)", "sub_project": "kids", "priority": "medium", "status": "todo" },
+        { "id": "loc-2", "task": "Build 2 location pages (Golders Green, Edgware)", "sub_project": "kids", "priority": "medium", "status": "todo" },
+        { "id": "lf-1", "task": "Design LF campaign landing page", "sub_project": "lf", "priority": "high", "status": "todo", "notes": "Separate from member-facing site" },
+        { "id": "eat-1", "task": "Create Louise bio page (E-E-A-T)", "sub_project": "kids", "priority": "medium", "status": "todo" }
+      ]
+    },
+    {
+      "week_of": "2026-04-14",
+      "label": "14–20 Apr",
+      "sprint": "Sprint 8",
+      "focus": "LF LP Build + Referral Soft Launch",
+      "tasks": [
+        { "id": "lf-2", "task": "Build LF LP (Tailwind + MOUVE palette)", "sub_project": "lf", "priority": "high", "status": "todo" },
+        { "id": "lf-3", "task": "Deploy LF LP to Vercel + DNS setup", "sub_project": "lf", "priority": "high", "status": "todo" },
+        { "id": "lf-4", "task": "Configure GTM tracking on LF LP", "sub_project": "lf", "priority": "medium", "status": "todo" },
+        { "id": "ref-1", "task": "Soft launch referral to top 20 engaged families", "sub_project": "retention", "priority": "medium", "status": "todo" },
+        { "id": "ref-2", "task": "Add \"Referred by\" field to GHL forms", "sub_project": "retention", "priority": "medium", "status": "todo" }
+      ]
+    },
+    {
+      "week_of": "2026-04-21",
+      "label": "21–27 Apr",
+      "sprint": "Sprint 9",
+      "focus": "LF Campaign + Retention Automations",
+      "tasks": [
+        { "id": "lf-5", "task": "Launch LF Meta campaign (women 25-55, NW London)", "sub_project": "lf", "priority": "high", "status": "todo" },
+        { "id": "ret-1", "task": "Build attendance-triggered check-in automation (AC)", "sub_project": "retention", "priority": "medium", "status": "todo" },
+        { "id": "ret-2", "task": "Build 4-email win-back sequence (AC)", "sub_project": "retention", "priority": "medium", "status": "todo" },
+        { "id": "ret-3", "task": "Implement LF pause/freeze option in TeamUp", "sub_project": "lf", "priority": "medium", "status": "todo" }
+      ]
+    },
+    {
+      "week_of": "2026-04-28",
+      "label": "28 Apr – 4 May",
+      "sprint": "Sprint 10",
+      "focus": "Events LP + LF Site Update",
+      "tasks": [
+        { "id": "ev-1", "task": "Create mouve-events repo + scaffold LP", "sub_project": "events", "priority": "high", "status": "todo" },
+        { "id": "ev-2", "task": "Build events LP (hero, services, form, FAQ)", "sub_project": "events", "priority": "high", "status": "todo" },
+        { "id": "lf-6", "task": "Update LF section copy on main site", "sub_project": "lf", "priority": "medium", "status": "todo" },
+        { "id": "lf-7", "task": "Add LF member testimonials to main site", "sub_project": "lf", "priority": "low", "status": "todo" }
+      ]
+    },
+    {
+      "week_of": "2026-05-05",
+      "label": "5–11 May",
+      "sprint": "Sprint 11",
+      "focus": "Events Tracking + Campaigns",
+      "tasks": [
+        { "id": "ev-3", "task": "Deploy events LP to Vercel + DNS", "sub_project": "events", "priority": "high", "status": "todo" },
+        { "id": "ev-4", "task": "Configure events GTM + conversion tracking", "sub_project": "events", "priority": "high", "status": "todo" },
+        { "id": "ev-5", "task": "Add events schema (LocalBusiness, Service, FAQ)", "sub_project": "events", "priority": "medium", "status": "todo" },
+        { "id": "ev-6", "task": "Create GHL pipeline for event enquiries", "sub_project": "events", "priority": "medium", "status": "todo" }
+      ]
+    },
+    {
+      "week_of": "2026-05-12",
+      "label": "12–18 May",
+      "sprint": "Sprint 12",
+      "focus": "Events Campaigns + Referral Full Launch",
+      "tasks": [
+        { "id": "ev-7", "task": "Launch events Meta campaign (NW London/Herts)", "sub_project": "events", "priority": "high", "status": "todo" },
+        { "id": "ref-3", "task": "Full referral programme launch (all families)", "sub_project": "retention", "priority": "medium", "status": "todo" },
+        { "id": "ref-4", "task": "Add referral reminder to term renewal emails", "sub_project": "retention", "priority": "low", "status": "todo" },
+        { "id": "ret-4", "task": "Birthday/milestone automations in AC", "sub_project": "retention", "priority": "low", "status": "todo" }
+      ]
+    },
+    {
+      "week_of": "2026-05-19",
+      "label": "19–25 May",
+      "sprint": "Sprint 13",
+      "focus": "Review & Optimise",
+      "tasks": [
+        { "id": "review-1", "task": "First full cross-channel ROI review", "sub_project": "infra", "priority": "high", "status": "todo", "notes": "All channels should have CPA data by now" },
+        { "id": "review-2", "task": "Budget reallocation based on 3 months data", "sub_project": "infra", "priority": "high", "status": "todo" },
+        { "id": "review-3", "task": "Content pipeline health check", "sub_project": "kids", "priority": "medium", "status": "todo" },
+        { "id": "review-4", "task": "Retention metrics review (referral rate, renewal rate)", "sub_project": "retention", "priority": "medium", "status": "todo" }
+      ]
+    }
+  ],
+
+  "completed": [
+    { "id": "done-1", "task": "Fix classifySource attribution logic", "sub_project": "infra", "completed": "2026-02-24" },
+    { "id": "done-2", "task": "Add medium-based categories to channel report", "sub_project": "infra", "completed": "2026-02-24" },
+    { "id": "done-3", "task": "Fix Google Ads conversion tracking (demote junk goals)", "sub_project": "infra", "completed": "2026-02-24" },
+    { "id": "done-4", "task": "Set up Google Ads API access (Claude Code direct)", "sub_project": "infra", "completed": "2026-02-24" },
+    { "id": "done-5", "task": "Document Meta Marketing API access", "sub_project": "infra", "completed": "2026-02-24" },
+    { "id": "done-6", "task": "Deploy negative keyword list (5 terms)", "sub_project": "kids", "completed": "2026-02-24" },
+    { "id": "done-7", "task": "Clean up typo/duplicate keywords (9 removed)", "sub_project": "kids", "completed": "2026-02-24" },
+    { "id": "done-8", "task": "Add competitor conquest keywords (10 keywords)", "sub_project": "kids", "completed": "2026-02-24" },
+    { "id": "done-9", "task": "Remove 3 dormant Google Ads campaigns", "sub_project": "kids", "completed": "2026-02-24" }
+  ]
+}

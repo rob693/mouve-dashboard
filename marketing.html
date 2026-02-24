@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOUVE Marketing — Sprint Board</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --green: #10b981;
+            --green-bg: #d1fae5;
+            --amber: #f59e0b;
+            --amber-bg: #fef3c7;
+            --red: #ef4444;
+            --red-bg: #fee2e2;
+            --blue: #3b82f6;
+            --blue-bg: #dbeafe;
+            --gray: #6b7280;
+            --gray-bg: #f3f4f6;
+            --dark: #1f2937;
+            --purple: #8b5cf6;
+            --purple-bg: #ede9fe;
+            --pink: #ec4899;
+            --pink-bg: #fce7f3;
+            --surface: #ffffff;
+            --border: #e5e7eb;
+            --bg: #f8fafc;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--dark);
+            line-height: 1.5;
+        }
+
+        .header-bar {
+            background: var(--dark);
+            color: white;
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-bar h1 { font-size: 1.1rem; font-weight: 600; }
+        .header-bar .meta { font-size: 0.75rem; opacity: 0.7; }
+        .header-bar a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.75rem; }
+        .header-bar a:hover { color: white; }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 1.5rem 2rem; }
+
+        /* KPI row */
+        .kpi-row {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+        .kpi-card {
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            text-align: center;
+        }
+        .kpi-card .value { font-size: 1.75rem; font-weight: 700; line-height: 1.1; }
+        .kpi-card .label {
+            font-size: 0.7rem; text-transform: uppercase;
+            letter-spacing: 0.04em; color: var(--gray); margin-top: 0.35rem;
+        }
+        .kpi-card .sub { font-size: 0.7rem; color: var(--gray); margin-top: 0.15rem; }
+
+        /* Sub-project pills row */
+        .sub-projects-row {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
+        }
+        .sp-pill {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--surface);
+            border-radius: 8px;
+            padding: 0.5rem 0.75rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: default;
+            border-left: 3px solid transparent;
+        }
+        .sp-pill .sp-icon { font-size: 0.9rem; }
+        .sp-pill .sp-status {
+            font-size: 0.65rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 9999px;
+            font-weight: 500;
+        }
+        .sp-pill .sp-target { font-size: 0.65rem; color: var(--gray); }
+
+        /* This Week section */
+        .this-week {
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 1.25rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            margin-bottom: 1.25rem;
+            border-left: 4px solid var(--blue);
+        }
+        .tw-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+        .tw-title { font-size: 1rem; font-weight: 700; }
+        .tw-focus {
+            font-size: 0.75rem;
+            color: var(--blue);
+            font-weight: 500;
+        }
+        .tw-sprint {
+            font-size: 0.7rem;
+            color: var(--gray);
+            background: var(--gray-bg);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+        }
+        .task-list { list-style: none; }
+        .task-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.85rem;
+        }
+        .task-item:last-child { border-bottom: none; }
+        .task-check {
+            width: 18px; height: 18px;
+            border-radius: 4px;
+            border: 2px solid var(--border);
+            flex-shrink: 0;
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+        }
+        .task-check.done { background: var(--green); border-color: var(--green); color: white; }
+        .task-check.awaiting { background: var(--amber-bg); border-color: var(--amber); }
+        .task-check.blocked { background: var(--red-bg); border-color: var(--red); }
+        .task-body { flex: 1; }
+        .task-text { font-weight: 500; }
+        .task-text.done { text-decoration: line-through; color: var(--gray); }
+        .task-notes { font-size: 0.75rem; color: var(--gray); margin-top: 0.15rem; }
+        .task-sp-tag {
+            font-size: 0.6rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .task-priority {
+            font-size: 0.6rem;
+            padding: 0.1rem 0.35rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .priority-high { background: var(--red-bg); color: var(--red); }
+        .priority-medium { background: var(--amber-bg); color: var(--amber); }
+        .priority-low { background: var(--gray-bg); color: var(--gray); }
+
+        /* Timeline */
+        .section-head {
+            font-size: 0.8rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 0.04em; color: var(--gray);
+            margin: 1.5rem 0 0.75rem;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .section-head .count {
+            background: var(--gray-bg); padding: 0.15rem 0.5rem;
+            border-radius: 9999px; font-size: 0.7rem;
+        }
+
+        .timeline-swim {
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            margin-bottom: 1.25rem;
+            overflow-x: auto;
+        }
+        .swim-grid {
+            display: grid;
+            grid-template-columns: 140px repeat(var(--weeks), 1fr);
+            gap: 2px;
+            min-width: 900px;
+        }
+        .swim-header {
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: var(--gray);
+            padding: 0.4rem 0.3rem;
+            text-align: center;
+            border-bottom: 2px solid var(--border);
+        }
+        .swim-header.label-col { text-align: left; }
+        .swim-header.current-week { background: var(--blue-bg); border-radius: 4px 4px 0 0; }
+        .swim-row-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.5rem 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .swim-cell {
+            padding: 0.35rem 0.2rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 36px;
+        }
+        .swim-cell.current-week { background: rgba(59, 130, 246, 0.04); }
+        .swim-dot {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            position: relative;
+        }
+        .swim-dot.has-tasks { width: auto; height: auto; border-radius: 4px; padding: 0.15rem 0.35rem; font-size: 0.6rem; font-weight: 700; color: white; }
+        .swim-dot.empty { background: var(--gray-bg); width: 8px; height: 8px; }
+
+        /* Upcoming sprints */
+        .upcoming-sprints {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+        .sprint-card {
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            border-top: 3px solid var(--gray-bg);
+        }
+        .sprint-card.next { border-top-color: var(--blue); }
+        .sprint-card .sc-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        .sprint-card .sc-week { font-size: 0.8rem; font-weight: 600; }
+        .sprint-card .sc-focus { font-size: 0.7rem; color: var(--blue); font-weight: 500; }
+        .sprint-card .sc-tasks { list-style: none; }
+        .sprint-card .sc-task {
+            font-size: 0.75rem;
+            padding: 0.2rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.3rem;
+        }
+        .sprint-card .sc-task::before { content: '\2022'; flex-shrink: 0; color: var(--gray); }
+
+        /* Completed section */
+        .completed-list {
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            margin-bottom: 1.25rem;
+        }
+        .completed-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.3rem 0;
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        .completed-item .check-mark { color: var(--green); font-weight: 700; }
+        .completed-item .comp-date { font-size: 0.65rem; margin-left: auto; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .kpi-row { grid-template-columns: repeat(3, 1fr); }
+            .upcoming-sprints { grid-template-columns: 1fr; }
+            .header-bar { padding: 0.75rem 1rem; flex-direction: column; gap: 0.3rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <div>
+            <h1>MOUVE Marketing — Sprint Board</h1>
+            <div class="meta" id="lastUpdated">Loading...</div>
+        </div>
+        <a href="index.html">&larr; Back to Main Dashboard</a>
+    </div>
+
+    <div class="container">
+        <!-- KPI Cards -->
+        <div class="kpi-row" id="kpiRow"></div>
+
+        <!-- Sub-project pills -->
+        <div class="sub-projects-row" id="subProjects"></div>
+
+        <!-- This Week -->
+        <div class="this-week" id="thisWeek"></div>
+
+        <!-- Swim Lane Timeline -->
+        <div class="section-head">Timeline <span class="count" id="weekCount"></span></div>
+        <div class="timeline-swim" id="swimTimeline"></div>
+
+        <!-- Upcoming Sprints -->
+        <div class="section-head">Upcoming Sprints</div>
+        <div class="upcoming-sprints" id="upcomingSprints"></div>
+
+        <!-- Completed -->
+        <div class="section-head">Completed <span class="count" id="doneCount"></span></div>
+        <div class="completed-list" id="completedList"></div>
+    </div>
+
+    <script>
+    fetch('marketing-tasks.json')
+        .then(r => r.json())
+        .then(data => render(data))
+        .catch(e => {
+            document.querySelector('.container').innerHTML =
+                `<p style="color:var(--red);padding:2rem;">Error loading data: ${e.message}</p>`;
+        });
+
+    function render(data) {
+        const spMap = {};
+        data.sub_projects.forEach(sp => { spMap[sp.id] = sp; });
+
+        // Last updated
+        const d = new Date(data.generated_at);
+        document.getElementById('lastUpdated').textContent =
+            `Plan v${data.plan_version} · Updated ${d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}`;
+
+        // Find current week
+        const today = new Date();
+        let currentWeekIdx = 0;
+        data.weeks.forEach((w, i) => {
+            const wDate = new Date(w.week_of);
+            if (today >= wDate) currentWeekIdx = i;
+        });
+
+        // KPIs
+        const allTasks = data.weeks.flatMap(w => w.tasks);
+        const totalTasks = allTasks.length + data.completed.length;
+        const doneTasks = data.completed.length + allTasks.filter(t => t.status === 'done').length;
+        const thisWeekTasks = data.weeks[currentWeekIdx] ? data.weeks[currentWeekIdx].tasks.length : 0;
+        const pct = Math.round((doneTasks / totalTasks) * 100);
+        const weeksLeft = data.weeks.length - currentWeekIdx;
+
+        document.getElementById('kpiRow').innerHTML = `
+            <div class="kpi-card"><div class="value" style="color:var(--green)">${doneTasks}</div><div class="label">Completed</div><div class="sub">of ${totalTasks} total</div></div>
+            <div class="kpi-card"><div class="value" style="color:var(--blue)">${thisWeekTasks}</div><div class="label">This Week</div><div class="sub">${data.weeks[currentWeekIdx] ? data.weeks[currentWeekIdx].sprint : ''}</div></div>
+            <div class="kpi-card"><div class="value" style="color:var(--purple)">${pct}%</div><div class="label">Progress</div><div class="sub">${totalTasks - doneTasks} remaining</div></div>
+            <div class="kpi-card"><div class="value" style="color:var(--amber)">${weeksLeft}</div><div class="label">Weeks Left</div><div class="sub">${data.summary.target_complete}</div></div>
+            <div class="kpi-card"><div class="value">${data.summary.awaiting_approval}</div><div class="label">Awaiting Rob</div><div class="sub">Decisions needed</div></div>
+        `;
+
+        // Sub-project pills
+        document.getElementById('subProjects').innerHTML = data.sub_projects.map(sp => {
+            const statusColors = {
+                'in_progress': { bg: 'var(--blue-bg)', color: 'var(--blue)', label: 'Active' },
+                'planned': { bg: 'var(--gray-bg)', color: 'var(--gray)', label: 'Planned' },
+                'complete': { bg: 'var(--green-bg)', color: 'var(--green)', label: 'Done' }
+            };
+            const sc = statusColors[sp.status] || statusColors.planned;
+            return `<div class="sp-pill" style="border-left-color:${sp.color}">
+                <span class="sp-icon">${sp.icon}</span>
+                <span>${sp.name}</span>
+                <span class="sp-status" style="background:${sc.bg};color:${sc.color}">${sc.label}</span>
+                <span class="sp-target">${sp.target}</span>
+            </div>`;
+        }).join('');
+
+        // This Week
+        const cw = data.weeks[currentWeekIdx];
+        if (cw) {
+            document.getElementById('thisWeek').innerHTML = `
+                <div class="tw-header">
+                    <div>
+                        <div class="tw-title">This Week: ${cw.label}</div>
+                        <div class="tw-focus">${cw.focus}</div>
+                    </div>
+                    <span class="tw-sprint">${cw.sprint}</span>
+                </div>
+                <ul class="task-list">
+                    ${cw.tasks.map(t => {
+                        const sp = spMap[t.sub_project];
+                        const checkClass = t.status === 'done' ? 'done' :
+                                           t.status === 'awaiting_approval' ? 'awaiting' :
+                                           t.status === 'blocked' ? 'blocked' : '';
+                        const checkContent = t.status === 'done' ? '&#10003;' :
+                                             t.status === 'awaiting_approval' ? '!' : '';
+                        const textClass = t.status === 'done' ? 'done' : '';
+                        return `<li class="task-item">
+                            <div class="task-check ${checkClass}">${checkContent}</div>
+                            <div class="task-body">
+                                <div class="task-text ${textClass}">${t.task}</div>
+                                ${t.notes ? `<div class="task-notes">${t.notes}</div>` : ''}
+                            </div>
+                            <span class="task-sp-tag" style="background:${sp.color}15;color:${sp.color}">${sp.name}</span>
+                            <span class="task-priority priority-${t.priority}">${t.priority}</span>
+                        </li>`;
+                    }).join('')}
+                </ul>
+            `;
+        }
+
+        // Swim lane timeline
+        const weekCount = data.weeks.length;
+        document.getElementById('weekCount').textContent = `${weekCount} weeks`;
+        document.getElementById('swimTimeline').style.setProperty('--weeks', weekCount);
+
+        let swimHTML = '<div class="swim-grid">';
+        // Header row
+        swimHTML += '<div class="swim-header label-col"></div>';
+        data.weeks.forEach((w, i) => {
+            const isCurrent = i === currentWeekIdx;
+            const shortLabel = w.label.split('–')[0].split(' ').slice(0, 2).join(' ');
+            swimHTML += `<div class="swim-header ${isCurrent ? 'current-week' : ''}">${shortLabel}</div>`;
+        });
+
+        // One row per sub-project
+        data.sub_projects.forEach(sp => {
+            swimHTML += `<div class="swim-row-label" style="color:${sp.color}">${sp.icon} ${sp.name}</div>`;
+            data.weeks.forEach((w, i) => {
+                const isCurrent = i === currentWeekIdx;
+                const taskCount = w.tasks.filter(t => t.sub_project === sp.id).length;
+                if (taskCount > 0) {
+                    swimHTML += `<div class="swim-cell ${isCurrent ? 'current-week' : ''}">
+                        <div class="swim-dot has-tasks" style="background:${sp.color}">${taskCount}</div>
+                    </div>`;
+                } else {
+                    swimHTML += `<div class="swim-cell ${isCurrent ? 'current-week' : ''}">
+                        <div class="swim-dot empty"></div>
+                    </div>`;
+                }
+            });
+        });
+
+        swimHTML += '</div>';
+        document.getElementById('swimTimeline').innerHTML = swimHTML;
+
+        // Upcoming sprints (next 4 after current)
+        const upcoming = data.weeks.slice(currentWeekIdx + 1, currentWeekIdx + 5);
+        document.getElementById('upcomingSprints').innerHTML = upcoming.map((w, i) => {
+            return `<div class="sprint-card ${i === 0 ? 'next' : ''}">
+                <div class="sc-header">
+                    <span class="sc-week">${w.label}</span>
+                    <span class="tw-sprint">${w.sprint}</span>
+                </div>
+                <div class="sc-focus">${w.focus}</div>
+                <ul class="sc-tasks">
+                    ${w.tasks.map(t => {
+                        const sp = spMap[t.sub_project];
+                        return `<li class="sc-task"><span style="color:${sp.color}">${t.task}</span></li>`;
+                    }).join('')}
+                </ul>
+            </div>`;
+        }).join('');
+
+        // Completed
+        document.getElementById('doneCount').textContent = data.completed.length;
+        document.getElementById('completedList').innerHTML = data.completed.map(t => {
+            const sp = spMap[t.sub_project];
+            return `<div class="completed-item">
+                <span class="check-mark">&#10003;</span>
+                <span>${t.task}</span>
+                <span class="task-sp-tag" style="background:${sp.color}15;color:${sp.color}">${sp.name}</span>
+                <span class="comp-date">${t.completed}</span>
+            </div>`;
+        }).join('');
+    }
+    </script>
+</body>
+</html>
