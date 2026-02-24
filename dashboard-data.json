@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-23T22:00:00Z",
+  "generated_at": "2026-02-24T18:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "3.5",
 
@@ -371,13 +371,13 @@
       }
     },
     {
-      "name": "SEO & Geo Implementation",
+      "name": "SEO & Geo (Technical Foundation)",
       "phase_current": 9,
-      "phase_total": 14,
+      "phase_total": 9,
       "implementation_plan": "SEO-GEO/SEO-GEO-IMPLEMENTATION-PLAN.md",
-      "purpose": "Comprehensive SEO, geo-targeting, paid ads, and AI discoverability (AEO) strategy. Built from 3-AI research (Claude, Gemini, ChatGPT). Covers measurement, GBP, security, schemas, content, E-E-A-T, AEO, Google/Meta ads, and ongoing operations.",
+      "purpose": "Technical SEO foundation — measurement, GBP API, security, crawl/indexing, schema markup. Phases 10-14 (content, E-E-A-T, paid ads, ops) absorbed into Marketing & Conversions plan.",
       "status": "in_progress",
-      "status_label": "v2.3 | Phases 1-5, 7-9 ✅ | Phase 6 GBP 🔧 (3/8 API tasks done) | 112 reviews fetched, 8 quote posts generated",
+      "status_label": "v2.3 | Phases 1-5, 7-9 ✅ | Phase 6 GBP 🔧 (manual tasks pending Louise's photos) | Phases 10-14 → Marketing & Conversions",
       "completed_phases": [
         {"name": "Phase 1: Quick Technical Wins", "summary": "Holiday Camps title 2025→2026, noindex on 2 utility pages, blog slug fixed, author → Louise, focus keyword set."},
         {"name": "Phase 2: Schema Optimisation", "summary": "BlogPosting removed from Get a Quote + Matinee Gallery. All 7 key pages verified clean via curl."},
@@ -430,41 +430,56 @@
       }
     },
     {
-      "name": "Events Landing Page",
+      "name": "Marketing & Conversions (Unified)",
       "phase_current": 1,
-      "phase_total": 6,
-      "implementation_plan": "EVENTS-LP-IMPLEMENTATION-PLAN-FEB2026.md",
-      "purpose": "High-converting landing page for MOUVE event entertainment — Bar/Bat Mitzvah dancers, corporate events, weddings. Includes enquiry form, conversion tracking, and paid campaigns.",
-      "status": "planned",
-      "status_label": "v1.0 | Phase 1/6 📋 Foundation (plan complete, brand direction confirmed)",
-      "target_url": "events.makeamouve.com",
+      "phase_total": 7,
+      "implementation_plan": "MOUVE-MARKETING-CONVERSION-PLAN.md",
+      "purpose": "Unified marketing system across all 4 MOUVE business lines — drive conversions, maximise ROI on ~£1,050/month ad spend. Absorbs SEO-GEO phases 10-14, Paid Ads Attribution, Lead Scoring, Events LP plans.",
+      "status": "in_progress",
+      "status_label": "v1.0 | Phase 1: Infrastructure 🔧 (attribution + conversion tracking fixed, R1-R4 pending)",
+      "completed_phases": [
+        {"name": "Infrastructure (partial)", "summary": "Google Ads conversion tracking fixed (37→12 real). Channel attribution fixed (classifySource). Google Ads + Meta API access established. Weekly channel report live."}
+      ],
       "next_phase": {
-        "name": "Phase 1: Foundation",
-        "detail": "Create repo, init index.html with Tailwind + MOUVE brand palette (pastels on black), Adobe Fonts (Dharma Gothic E + Roboto Condensed), Vercel deploy, DNS setup.",
-        "status": "planned",
+        "name": "Phase 1: Infrastructure & Measurement",
+        "detail": "Complete attribution fixes (R1-R4), add per-business-line reporting, add CPA tracking.",
+        "status": "in_progress",
         "tasks": [
-          "✅ CLAUDE.md created (brand palette, typography, guardrails, screenshot workflow)",
-          "✅ Brand assets copied (logos, brand book PDF)",
-          "Create mouve-events repo on GitHub",
-          "Init index.html with Tailwind CDN + brand config",
-          "Add Adobe Fonts (Typekit hiw2mip)",
-          "Push to GitHub + Vercel deploy",
-          "Configure events.makeamouve.com DNS"
+          "✅ Fix classifySource attribution logic (24 Feb)",
+          "✅ Fix Google Ads conversion tracking (24 Feb)",
+          "✅ Set up Google Ads + Meta API access (24 Feb)",
+          "R1: Add utm_content to Google Ads tracking template",
+          "R2: Map Google campaign ID to human-readable name",
+          "R3: Fix Meta click-through misattribution",
+          "R4: Default organic source for leads with no UTM",
+          "Add per-business-line breakdown to weekly report",
+          "Add CPA column (cost per booked customer)"
         ]
       },
       "remaining_phases": [
-        "Phase 2: Landing Page Build (11 sections, iterative screenshot loop)",
-        "Phase 3: Form Backend (n8n → Supabase → Gmail)",
-        "Phase 4: Conversion Tracking (GTM + Google Ads + Meta Pixel)",
-        "Phase 5: SEO + Schema (LocalBusiness, FAQPage, Service)",
-        "Phase 6: Paid Campaigns (Google Ads Search + Meta Leads)"
+        "Phase 2: Children's Dance (Google Ads + Meta + CRO + SEO)",
+        "Phase 3: Parties (LP CRO + Meta campaign launch)",
+        "Phase 4: Ladies Fitness (campaign LP + Meta strategy)",
+        "Phase 5: Events (LP build + tracking + campaigns)",
+        "Phase 6: Content & Creative Pipeline",
+        "Phase 7: Ongoing Monitoring & Optimisation"
+      ],
+      "sub_projects": [
+        {"name": "Children's Dance Marketing", "file": "marketing/childrens-dance-marketing.md", "status": "planned"},
+        {"name": "Parties Marketing", "file": "marketing/parties-marketing.md", "status": "planned"},
+        {"name": "Ladies Fitness Marketing", "file": "marketing/ladies-fitness-marketing.md", "status": "planned"},
+        {"name": "Events Marketing", "file": "marketing/events-marketing.md", "status": "planned"}
       ],
       "key_data": {
-        "brand_palette": "MOUVE Brand Book v1 (Rose, Lilac, Mint, Peach, Sky on Black)",
-        "typography": "Dharma Gothic E + Roboto Condensed (Adobe Fonts hiw2mip)",
-        "form_backend": "n8n → Supabase crm.leads → Gmail (same as parties)",
-        "gtm_container": "GTM-KDP6SXHZ",
-        "target_market": "NW London + Hertfordshire (Bar/Bat Mitzvah parents, corporate planners)"
+        "monthly_spend": "£1,046 (Google £191 + Meta £855)",
+        "ytd_leads": 344,
+        "ytd_won": 47,
+        "blended_win_rate": "19%",
+        "top_channel": "Organic/Website (38% win rate, £0 CPA)",
+        "google_leads_ytd": 12,
+        "meta_leads_ytd": 190,
+        "organic_leads_ytd": 105,
+        "business_lines": ["Children's Dance (priority 1)", "Parties (priority 2)", "Ladies Fitness (priority 3)", "Events (priority 4)"]
       }
     },
     {
@@ -513,46 +528,20 @@
       "phase_current": 2,
       "phase_total": 4,
       "implementation_plan": "LEAD-SCORING-IMPLEMENTATION-PLAN-FEB2026.md",
-      "purpose": "Automated lead cost tracking and quality scoring for Google Ads vs Meta campaigns. Calculate true cost per acquisition and optimize ad spend allocation.",
+      "purpose": "ABSORBED into Marketing & Conversions plan (Infrastructure layer). Weekly Channel Report LIVE. Attribution fixes (R1-R4) continue under unified plan.",
       "status": "in_progress",
-      "status_label": "v1.4 | Weekly Channel Report LIVE ✅ (Mon 08:00) | GHL→AT Sync Built ✅ | Attribution Fixes Pending",
+      "status_label": "⤴️ ABSORBED → Marketing & Conversions | Weekly Report LIVE ✅ | R1-R4 continue under unified plan",
       "completed_phases": [
-        {"name": "Phase 1: Tracking Infrastructure", "summary": "Fixed Google Ads UTM tracking, updated n8n workflow (last-touch attribution), paused expensive Facebook campaign (£17.59/lead). Saved £299/month."},
-        {"name": "Phase 2: 14-Day Lead Audit (14 Feb)", "summary": "68 leads analysed. True channel split: Meta 70.6% (48), Organic 19.1% (13), Google 10.3% (7). Google UTM working (campaign ID captured, utm_content missing). GHL cross-check found 7 actual conversions vs 1 in Airtable. Built ghl_opp_status_to_airtable.py sync script — 75 records updated (14-day window). 5 recommendations (R1-R5)."}
+        {"name": "Phase 1: Tracking Infrastructure", "summary": "Fixed Google Ads UTM tracking, paused expensive Facebook campaign. Saved £299/month."},
+        {"name": "Phase 2: 14-Day Lead Audit", "summary": "68 leads analysed. 5 recommendations. GHL sync script built."}
       ],
       "next_phase": {
-        "name": "Phase 3: Attribution Fixes (R1-R4)",
-        "detail": "Fix data quality issues identified in the 14-day audit before lead scoring can produce reliable CPA numbers. Weekly Channel Performance Report now live (Mon 08:00, n8n ID: rwwlKHsk1zhIhFjn).",
+        "name": "Continues under Marketing & Conversions",
+        "detail": "R1-R4 attribution fixes and lead scoring engine now tracked in MOUVE-MARKETING-CONVERSION-PLAN.md Phase 1.",
         "status": "in_progress",
-        "tasks": [
-          "✅ 1.6: Weekly Channel Performance Report deployed (channel-performance-weekly-v1.json)",
-          "R1: Add utm_content to Google Ads tracking template (10 min, Google Ads UI)",
-          "R2: Map Google campaign ID 23002379206 to human-readable name (5 min)",
-          "R3: Fix Meta click-through misattribution — 7 leads tagged 'Website' are actually Meta (30 min, n8n update)",
-          "R4: Default organic source for leads with no UTM attribution (1 hr)",
-          "R5 remaining: Full historical backfill (~3,000 records, 20-30 min background run)"
-        ]
+        "tasks": ["See Marketing & Conversions plan — Phase 1: Infrastructure & Measurement"]
       },
-      "remaining_phases": [
-        "Phase 4: ML Lead Scoring (optional — only if rule-based proves insufficient after 30 days)"
-      ],
-      "key_data": {
-        "audit_period": "1-14 February 2026",
-        "total_leads": 68,
-        "meta_leads": 48,
-        "meta_pct": "70.6%",
-        "google_leads": 7,
-        "google_pct": "10.3%",
-        "organic_leads": 13,
-        "organic_pct": "19.1%",
-        "google_appointment_rate": "57% (4/7 booked trials — vs 20% overall)",
-        "ghl_conversions": 7,
-        "ghl_revenue": "£758",
-        "airtable_records_updated": 75,
-        "sync_script": "scripts/sync/ghl_opp_status_to_airtable.py",
-        "tracking_status": "Google UTM working (campaign ✅, content ❌)",
-        "monthly_savings": "£299 (Facebook optimization)"
-      }
+      "remaining_phases": []
     }
   ],
 
