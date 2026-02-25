@@ -5,10 +5,10 @@
 
   "summary": {
     "total_tasks": 48,
-    "completed": 9,
+    "completed": 14,
     "in_progress": 3,
-    "awaiting_approval": 2,
-    "planned": 34,
+    "awaiting_approval": 0,
+    "planned": 31,
     "target_complete": "End May 2026"
   },
 
@@ -87,13 +87,7 @@
       "label": "24 Feb – 2 Mar",
       "sprint": "Sprint 1",
       "focus": "Quick Wins + Infrastructure",
-      "tasks": [
-        { "id": "qw-1", "task": "Rob: Approve budget shift 80/20 Meta-heavy", "sub_project": "infra", "priority": "high", "status": "awaiting_approval", "notes": "Recommended: £310 Meta / £80 Google" },
-        { "id": "qw-2", "task": "Rob: Reduce retargeting budget 50% in Meta Ads Manager", "sub_project": "kids", "priority": "high", "status": "awaiting_approval", "notes": "Worst performer at £29.55/lead" },
-        { "id": "qw-3", "task": "R1: Add utm_content to Google Ads tracking template", "sub_project": "infra", "priority": "high", "status": "todo" },
-        { "id": "qw-4", "task": "R2: Map Google campaign ID to human-readable name", "sub_project": "infra", "priority": "high", "status": "todo" },
-        { "id": "qw-5", "task": "R3: Fix Meta click-through misattribution", "sub_project": "infra", "priority": "high", "status": "todo" }
-      ]
+      "tasks": []
     },
     {
       "week_of": "2026-03-03",
@@ -256,6 +250,11 @@
     { "id": "done-6", "task": "Deploy negative keyword list (5 terms)", "sub_project": "kids", "completed": "2026-02-24" },
     { "id": "done-7", "task": "Clean up typo/duplicate keywords (9 removed)", "sub_project": "kids", "completed": "2026-02-24" },
     { "id": "done-8", "task": "Add competitor conquest keywords (10 keywords)", "sub_project": "kids", "completed": "2026-02-24" },
-    { "id": "done-9", "task": "Remove 3 dormant Google Ads campaigns", "sub_project": "kids", "completed": "2026-02-24" }
+    { "id": "done-9", "task": "Remove 3 dormant Google Ads campaigns", "sub_project": "kids", "completed": "2026-02-24" },
+    { "id": "done-10", "task": "Budget shift 80/20 Meta-heavy — REJECTED (monitoring Google)", "sub_project": "infra", "completed": "2026-02-25" },
+    { "id": "done-11", "task": "Reduce retargeting budget 50% (£10→£5/day)", "sub_project": "kids", "completed": "2026-02-25" },
+    { "id": "done-12", "task": "R1: Add utm_content to Google Ads tracking template", "sub_project": "infra", "completed": "2026-02-25" },
+    { "id": "done-13", "task": "R2: Map Google campaign ID to human-readable name", "sub_project": "infra", "completed": "2026-02-25" },
+    { "id": "done-14", "task": "R3: Fix Meta click-through misattribution (fbp/fbc detection)", "sub_project": "infra", "completed": "2026-02-25" }
   ]
 }
