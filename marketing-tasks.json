@@ -5,7 +5,7 @@
 
   "summary": {
     "total_tasks": 48,
-    "completed": 22,
+    "completed": 23,
     "in_progress": 3,
     "awaiting_approval": 0,
     "planned": 28,
@@ -95,7 +95,6 @@
       "sprint": "Sprint 2",
       "focus": "Infrastructure Complete + CRO Start",
       "tasks": [
-        { "id": "cro-1", "task": "Add sticky mobile CTA bar to makeamouve.com", "sub_project": "kids", "priority": "high", "status": "todo", "notes": "\"Book a Free Trial\" fixed to bottom on mobile" },
         { "id": "cro-2", "task": "Add click-to-call on mobile header", "sub_project": "kids", "priority": "high", "status": "todo" }
       ]
     },
@@ -258,6 +257,7 @@
     { "id": "done-19", "task": "Add CPA trend tracking (this week / 4-week / YTD with arrows)", "sub_project": "infra", "completed": "2026-02-25" },
     { "id": "done-20", "task": "MOUVE brand purple email theme (replaced hot pink)", "sub_project": "infra", "completed": "2026-02-25" },
     { "id": "done-21", "task": "Pull Meta campaign performance via API (90 days)", "sub_project": "kids", "completed": "2026-02-24", "notes": "Full 90-day audit: per-campaign spend, CPL, leads. Retargeting worst at £29.55/lead." },
-    { "id": "done-22", "task": "Calculate CPA per Meta campaign/ad set", "sub_project": "kids", "completed": "2026-02-25", "notes": "CPA now in weekly report. YTD: Facebook £53 CPA, Google TBD (0 won so far)." }
+    { "id": "done-22", "task": "Calculate CPA per Meta campaign/ad set", "sub_project": "kids", "completed": "2026-02-25", "notes": "CPA now in weekly report. YTD: Facebook £53 CPA, Google TBD (0 won so far)." },
+    { "id": "done-23", "task": "Add sticky mobile CTA bar to makeamouve.com", "sub_project": "kids", "completed": "2026-02-25", "notes": "Already exists — sticky header with 'Book Free Trial' stays visible on scroll." }
   ]
 }
