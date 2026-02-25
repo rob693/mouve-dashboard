@@ -5,10 +5,10 @@
 
   "summary": {
     "total_tasks": 48,
-    "completed": 14,
+    "completed": 16,
     "in_progress": 3,
     "awaiting_approval": 0,
-    "planned": 31,
+    "planned": 29,
     "target_complete": "End May 2026"
   },
 
@@ -95,8 +95,6 @@
       "sprint": "Sprint 2",
       "focus": "Infrastructure Complete + CRO Start",
       "tasks": [
-        { "id": "r4", "task": "R4: Default organic source for leads with no UTM", "sub_project": "infra", "priority": "high", "status": "todo" },
-        { "id": "rpt-1", "task": "Add per-business-line breakdown to weekly report", "sub_project": "infra", "priority": "medium", "status": "todo" },
         { "id": "rpt-2", "task": "Add CPA column to weekly report", "sub_project": "infra", "priority": "medium", "status": "todo" },
         { "id": "cro-1", "task": "Add sticky mobile CTA bar to makeamouve.com", "sub_project": "kids", "priority": "high", "status": "todo", "notes": "\"Book a Free Trial\" fixed to bottom on mobile" },
         { "id": "cro-2", "task": "Add click-to-call on mobile header", "sub_project": "kids", "priority": "high", "status": "todo" }
@@ -255,6 +253,8 @@
     { "id": "done-11", "task": "Reduce retargeting budget 50% (£10→£5/day)", "sub_project": "kids", "completed": "2026-02-25" },
     { "id": "done-12", "task": "R1: Add utm_content to Google Ads tracking template", "sub_project": "infra", "completed": "2026-02-25" },
     { "id": "done-13", "task": "R2: Map Google campaign ID to human-readable name", "sub_project": "infra", "completed": "2026-02-25" },
-    { "id": "done-14", "task": "R3: Fix Meta click-through misattribution (fbp/fbc detection)", "sub_project": "infra", "completed": "2026-02-25" }
+    { "id": "done-14", "task": "R3: Fix Meta click-through misattribution (fbp/fbc detection)", "sub_project": "infra", "completed": "2026-02-25" },
+    { "id": "done-15", "task": "R4: Default 'Direct' for leads with no UTM (was Unknown/Other)", "sub_project": "infra", "completed": "2026-02-25" },
+    { "id": "done-16", "task": "Add per-business-line breakdown to weekly report", "sub_project": "infra", "completed": "2026-02-25" }
   ]
 }
