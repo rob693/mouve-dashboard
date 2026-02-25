@@ -436,24 +436,30 @@
       "implementation_plan": "MOUVE-MARKETING-CONVERSION-PLAN.md",
       "purpose": "Unified marketing system across all 4 MOUVE business lines — drive conversions, maximise ROI on ~£1,050/month ad spend. Absorbs SEO-GEO phases 10-14, Paid Ads Attribution, Lead Scoring, Events LP plans.",
       "status": "in_progress",
-      "status_label": "v1.0 | Phase 1: Infrastructure 🔧 (attribution + conversion tracking fixed, R1-R4 pending)",
+      "status_label": "v1.1 | Phase 1: Infrastructure 🔧 (R1-R4 ✅, weekly report upgraded, retargeting cut, remaining: lead scoring, GHL events, budget tracking)",
       "completed_phases": [
-        {"name": "Infrastructure (partial)", "summary": "Google Ads conversion tracking fixed (37→12 real). Channel attribution fixed (classifySource). Google Ads + Meta API access established. Weekly channel report live."}
+        {"name": "Infrastructure (partial)", "summary": "Google Ads conversion tracking fixed (37→12 real). Channel attribution fixed (classifySource). Google Ads + Meta API access established. R1-R4 attribution fixes deployed. Weekly channel report upgraded: per-business-line breakdown, CPA/CPL from live API data, unit economics (LTV:CPA ratio, CAC payback, headroom), CPA trend tracking. Meta retargeting cut to £5/day. MOUVE brand purple theme."}
       ],
       "next_phase": {
-        "name": "Phase 1: Infrastructure & Measurement",
-        "detail": "Complete attribution fixes (R1-R4), add per-business-line reporting, add CPA tracking.",
+        "name": "Phase 1: Infrastructure & Measurement (remaining)",
+        "detail": "Lead scoring engine, GHL events pipeline, monthly budget tracking.",
         "status": "in_progress",
         "tasks": [
           "✅ Fix classifySource attribution logic (24 Feb)",
           "✅ Fix Google Ads conversion tracking (24 Feb)",
           "✅ Set up Google Ads + Meta API access (24 Feb)",
-          "R1: Add utm_content to Google Ads tracking template",
-          "R2: Map Google campaign ID to human-readable name",
-          "R3: Fix Meta click-through misattribution",
-          "R4: Default organic source for leads with no UTM",
-          "Add per-business-line breakdown to weekly report",
-          "Add CPA column (cost per booked customer)"
+          "✅ R1: Add utm_content to Google Ads tracking template (25 Feb)",
+          "✅ R2: Map Google campaign ID to human-readable name (25 Feb)",
+          "✅ R3: Fix Meta click-through misattribution (25 Feb)",
+          "✅ R4: Default organic source for leads with no UTM (25 Feb)",
+          "✅ Per-business-line breakdown in weekly report (25 Feb)",
+          "✅ CPA column with Google Ads + Meta API spend (25 Feb)",
+          "✅ Unit economics section — LTV:CPA ratio, CAC payback, headroom (25 Feb)",
+          "✅ CPA trend tracking — this week / 4-week / YTD (25 Feb)",
+          "✅ Meta retargeting cut £10→£5/day (25 Feb)",
+          "Lead scoring engine",
+          "GHL pipeline for events",
+          "Monthly budget vs actual tracking"
         ]
       },
       "remaining_phases": [
@@ -788,7 +794,7 @@
     {"id": "LF-10", "name": "TeamUp Calendar Sync v1", "trigger": "Daily 5am", "status": "active"},
     {"id": "LF-11", "name": "Trial Event Creator v1", "trigger": "Real-time webhook", "status": "active"},
     {"id": "FIN-01", "name": "Weekly Financial Snapshot v2.1", "trigger": "Sat 07:00 + Manual", "status": "active"},
-    {"id": "CP-01", "name": "Channel Performance Weekly v1", "trigger": "Mon 08:00", "status": "active", "n8n_id": "rwwlKHsk1zhIhFjn"}
+    {"id": "CP-01", "name": "Channel Performance Weekly v7", "trigger": "Mon 08:00 + webhook", "status": "active", "n8n_id": "rwwlKHsk1zhIhFjn"}
   ],
 
   "weekly_review": {
@@ -821,6 +827,9 @@
   },
 
   "recent_decisions": [
+    "Weekly report v7: unit economics (LTV:CPA ratio, CAC payback, headroom) + CPA trend (this week/4-week/YTD) deployed. MOUVE brand purple theme (25 Feb)",
+    "R1-R4 attribution fixes all deployed: Google Ads UTM tracking, Meta click-through detection via fbp/fbc, Direct default (25 Feb)",
+    "Meta retargeting cut £10→£5/day — 0 conversions from £301 spend, keeping for brand awareness only (25 Feb)",
     "GBP Phase 6 started — API tasks done: description updated, 53→16 services, category added. 112 reviews fetched, 8 quote post images generated (23 Feb)",
     "SEO: Phase 9 Schema COMPLETE — 10/11 tasks done. 6 Course, 1 Event, 4 FAQ, 1 Service schemas deployed. Rich Results Test: 0 errors all 6 pages (23 Feb)",
     "SEO: Homepage audit complete — 9/9 items addressed, mobile PSI 56→75, LCP 11.9→4.2s, content 444→818 words (23 Feb)",
