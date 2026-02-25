@@ -5,7 +5,7 @@
 
   "summary": {
     "total_tasks": 48,
-    "completed": 20,
+    "completed": 22,
     "in_progress": 3,
     "awaiting_approval": 0,
     "planned": 28,
@@ -118,9 +118,7 @@
       "sprint": "Sprint 4",
       "focus": "Meta Audit + Parties CRO",
       "tasks": [
-        { "id": "meta-1", "task": "Pull Meta campaign performance via API (90 days)", "sub_project": "kids", "priority": "high", "status": "todo" },
-        { "id": "meta-2", "task": "Calculate CPA per Meta campaign/ad set", "sub_project": "kids", "priority": "high", "status": "todo" },
-        { "id": "meta-3", "task": "Pause underperforming Meta ad sets (CPA > £150)", "sub_project": "kids", "priority": "high", "status": "todo" },
+        { "id": "meta-3", "task": "Full Meta ad set audit — pause any remaining sets with CPA > £150", "sub_project": "kids", "priority": "high", "status": "partially_done", "notes": "Retargeting cut £10→£5. Still need full ad set level CPA review." },
         { "id": "party-1", "task": "Complete parties LP remaining items (WhatsApp, gallery)", "sub_project": "parties", "priority": "medium", "status": "todo" },
         { "id": "party-2", "task": "Set up parties conversion tracking baseline", "sub_project": "parties", "priority": "medium", "status": "todo" }
       ]
@@ -258,6 +256,8 @@
     { "id": "done-17", "task": "Add CPA column to weekly report (Google + Meta spend APIs)", "sub_project": "infra", "completed": "2026-02-25" },
     { "id": "done-18", "task": "Add unit economics section (LTV:CPA ratio, CAC payback, headroom)", "sub_project": "infra", "completed": "2026-02-25" },
     { "id": "done-19", "task": "Add CPA trend tracking (this week / 4-week / YTD with arrows)", "sub_project": "infra", "completed": "2026-02-25" },
-    { "id": "done-20", "task": "MOUVE brand purple email theme (replaced hot pink)", "sub_project": "infra", "completed": "2026-02-25" }
+    { "id": "done-20", "task": "MOUVE brand purple email theme (replaced hot pink)", "sub_project": "infra", "completed": "2026-02-25" },
+    { "id": "done-21", "task": "Pull Meta campaign performance via API (90 days)", "sub_project": "kids", "completed": "2026-02-24", "notes": "Full 90-day audit: per-campaign spend, CPL, leads. Retargeting worst at £29.55/lead." },
+    { "id": "done-22", "task": "Calculate CPA per Meta campaign/ad set", "sub_project": "kids", "completed": "2026-02-25", "notes": "CPA now in weekly report. YTD: Facebook £53 CPA, Google TBD (0 won so far)." }
   ]
 }
