@@ -7,7 +7,7 @@
     "complete": 34,
     "in_progress": 9,
     "waiting": 1,
-    "planned": 3,
+    "planned": 4,
     "blocked": 1
   },
 
@@ -530,6 +530,43 @@
       }
     },
     {
+      "name": "Premium Trial Pathway (FB Leads)",
+      "phase_current": 0,
+      "phase_total": 3,
+      "implementation_plan": "premium-trial-pathway/implementation-plan.md",
+      "purpose": "Louise's structured 9-stage GHL pipeline for Facebook leads — application form, £10 deposit, 48hr confirmation gate, automated post-trial conversion. Replaces effort with structure to fix 48% waste rate.",
+      "status": "planned",
+      "status_label": "v1.0 | Phase 0: Pre-Flight Probes 📋 (blocked: GHL MCP session restart)",
+      "completed_phases": [],
+      "next_phase": {
+        "name": "Phase 0: Pre-Flight Probes",
+        "detail": "4 mandatory probes before any build: GHL MCP audit, Payments check, workflow 2023.1 audit, custom fields audit",
+        "status": "planned",
+        "tasks": [
+          "Probe 1: Load GHL MCP and audit available tools",
+          "Probe 2: Confirm GHL Payments enabled (Rob to check)",
+          "Probe 3: Audit workflow '2023.1' trigger type",
+          "Probe 4: Audit existing custom fields in GHL"
+        ]
+      },
+      "remaining_phases": [
+        "Phase 1: Pipeline + forms + deposit + call task (Week 1)",
+        "Phase 2: 48hr confirmation gate + auto-cancel + refund (Week 2)",
+        "Phase 3: Post-trial sequence + nurture + reporting (Week 3)"
+      ],
+      "key_data": {
+        "baseline_show_rate": "22.41%",
+        "target_show_rate": "70-80%",
+        "baseline_cancel_rate": "73.79%",
+        "baseline_sunday_waste": "57%",
+        "deposit": "£10 refundable",
+        "pipeline_stages": 9,
+        "workflows_planned": 11,
+        "verification_tests": 12,
+        "source_doc": "Louise's Premium Trial Pathway (ChatGPT-assisted design)"
+      }
+    },
+    {
       "name": "Lead Scoring & Attribution Tracking",
       "phase_current": 2,
       "phase_total": 4,
@@ -827,6 +864,7 @@
   },
 
   "recent_decisions": [
+    "Premium Trial Pathway: Design approved + CRP v2.1 implementation plan written. 9-stage FB-only pipeline with £10 deposit, 48hr confirmation gate, idempotency guards. Pre-mortem completed (22 assumptions, 14 FMEA). Next: Phase 0 probes (26 Feb)",
     "Weekly report v7: unit economics (LTV:CPA ratio, CAC payback, headroom) + CPA trend (this week/4-week/YTD) deployed. MOUVE brand purple theme (25 Feb)",
     "R1-R4 attribution fixes all deployed: Google Ads UTM tracking, Meta click-through detection via fbp/fbc, Direct default (25 Feb)",
     "Meta retargeting cut £10→£5/day — 0 conversions from £301 spend, keeping for brand awareness only (25 Feb)",
