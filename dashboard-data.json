@@ -107,84 +107,6 @@
 
   "primary_projects": [
     {
-      "name": "Ladies Fitness Funnel",
-      "phase_current": 5,
-      "phase_total": 7,
-      "implementation_plan": "LADIES-FITNESS-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Automate lead-to-member journey (lead capture, instant response, trials, attendance, retention)",
-      "status": "in_progress",
-      "status_label": "Phase 5/7 Complete ✅ | Louise feedback received (3 Feb)",
-      "health_check": {
-        "timestamp": "2026-01-16T07:43:00Z",
-        "status": "excellent"
-      },
-      "completed_phases": [
-        {"name": "Phase 1: Foundation", "summary": "LF_MEMBERSHIPS table, lf_state field, TeamUp sync"},
-        {"name": "Phase 2A: Lead Response", "summary": "Instant SMS + Email, team alerts, Airtable logging"},
-        {"name": "Phase 2B: Lead Nurture", "summary": "LF-02 v7 + GHL nurture + Calendar integration"},
-        {"name": "Phase 2C: Calendar Sync", "summary": "LF-10 (daily sync) + LF-11 (trial events) live"},
-        {"name": "Phase 3: Trial & Attendance", "summary": "10 workflows active, per-membership tracking"}
-      ],
-      "next_phase": {
-        "name": "Phase 4: Member Engagement",
-        "detail": "Weekly scans, at-risk alerts, onboarding sequence",
-        "status": "planned",
-        "tasks": [
-          "Weekly member scan automation",
-          "At-risk member detection",
-          "Onboarding email sequence"
-        ]
-      },
-      "remaining_phases": [
-        "Phase 5: Retention & Growth",
-        "Phase 6-7: Advanced Features"
-      ]
-    },
-    {
-      "name": "Children's Dance Onboarding (GHL v2.0)",
-      "phase_current": 1,
-      "phase_total": 10,
-      "implementation_plan": "CHILDRENS-ONBOARDING-GHL-IMPLEMENTATION-PLAN-FEB2026.md",
-      "purpose": "GHL-native 10-email onboarding with age personalization + kit pages. Replaces AC approach (28 templates, down from 52).",
-      "status": "in_progress",
-      "status_label": "v2.0 | Phase 1 In Progress 🔧 (4/10 kit pages complete)",
-      "completed_phases": [
-        {"name": "Phase 0: Backup & Preparation", "summary": "n8n workflows archived (13 files), HTML templates archived (27 files), AC tags documented (63-90), backup reference created"}
-      ],
-      "next_phase": {
-        "name": "Phase 1: Kit Pages",
-        "detail": "4/10 kit pages complete with product images + buy links. Remaining: Jazz/Contemporary/Elite (awaiting shop products), Drama/Broadway/First Mouves (no uniform pages), then upload to WordPress",
-        "status": "in_progress",
-        "tasks": [
-          "✅ Ballet kit page (9 levels, 30+ products)",
-          "✅ Tap kit page (3 products)",
-          "✅ Hip Hop kit page (2 products + bring from home)",
-          "✅ Dance Gymnastics kit page (1 product, bare feet)",
-          "Jazz, Contemporary, Elite (awaiting shop products)",
-          "Drama, Broadway, First Mouves (simple 'no uniform' pages)",
-          "Upload all pages to WordPress",
-          "Create Airtable URL lookup table"
-        ]
-      },
-      "remaining_phases": [
-        "Phase 2: GHL Contact Setup",
-        "Phase 3: Email Templates (28 total)",
-        "Phase 4: GHL Workflows (3 linear)",
-        "Phase 5: n8n Refactoring (Handler v5.0)",
-        "Phase 6: Airtable Schema Updates",
-        "Phase 7: Testing (7 test cases)",
-        "Phase 8: Go Live",
-        "Phase 9: Backfill (throttled 3 weeks)"
-      ],
-      "key_data": {
-        "templates": "28 (down from 52)",
-        "age_tracks": 3,
-        "kit_pages": "4/10 complete",
-        "backfill_contacts": 326,
-        "council_reviewed": true
-      }
-    },
-    {
       "name": "Financial Intelligence System",
       "phase_current": 1,
       "phase_total": 10,
@@ -219,122 +141,6 @@
         "Phase 10: Marketing Funnel Quality"
       ],
       "key_finding": "Xero understates revenue by ~12% (~£18K gap, revised from £29K after TeamUp correction). Stripe enrichment provides real-time truth. Bookkeeper questions prepared."
-    },
-    {
-      "name": "Financial Health Check",
-      "phase_current": 5,
-      "phase_total": 6,
-      "implementation_plan": "FINANCIAL-HEALTH-CHECK-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "One-time diagnostic deep dive: stream profitability, class economics, marketing analysis, revenue reconciliation, bookkeeper questions",
-      "status": "in_progress",
-      "status_label": "v1.4 | Phase 5/6 🔧 — Management accounts analysed (Sep–Dec 2025). 3 CFO analysis docs created. Pembee AR corrected (reconciliation gap, not missing cash).",
-      "completed_phases": [
-        {"name": "Phase 1: Data Collection & Analysis", "summary": "Xero P&L, Stripe data, Airtable staff/class data, school/camp tracking categories, 4-year comparison"},
-        {"name": "Phase 2: Revenue Reconciliation", "summary": "CRITICAL: £14,540 missing (1 Feb analysis). Stripe £63,982 vs Xero £49,442. School Clubs -£8K, Camps -£3.4K, Ladies Fitness -£3.1K. 6-part reconciliation checklist sent to bookkeeper."},
-        {"name": "Phase 3: Marketing & Cost Deep Dive", "summary": "Marketing down 23% YoY after correcting £6,230 miscategorised items (Outsourced Doers + Upwork)"},
-        {"name": "Phase 4: Bookkeeper Communication", "summary": "Email sent 29 Jan. Mel replied 30 Jan. Follow-up sent 3 Feb with 7/8 statements + Dec answers."}
-      ],
-      "next_phase": {
-        "name": "Phase 5: Bookkeeper Response & Fixes",
-        "detail": "Management accounts (Sep–Dec 2025) analysed. 3 CFO docs created. Pembee AR corrected — £23.6K confirmed received via Stripe (reconciliation gap). Remaining: travel categorisation with Louise (~£32.6K), 4 Dec queries, Mel to reconcile Pembee AR.",
-        "status": "in_progress",
-        "tasks": [
-          "✅ Management accounts parsed and analysed (11 Feb 2026)",
-          "✅ Pembee AR corrected — £23.6K Stripe payouts confirmed arriving (reconciliation gap)",
-          "Travel categorisation with Louise — £32.6K remaining (£11.3K business confirmed)",
-          "December queries — 4 items (3× Amazon, 1× Anouska)",
-          "Ask Mel to reconcile Pembee AR (matching Stripe payouts vs invoices)",
-          "Schedule regular bookkeeper call (Mel offered)"
-        ]
-      },
-      "remaining_phases": [
-        "Phase 6: Final Analysis & Close-Out (hands off to Financial Intelligence)"
-      ],
-      "key_outputs": [
-        "MOUVE-Financial-Health-Check-Jan2026.xlsx (7-tab spreadsheet)",
-        "CLASS-PROFITABILITY-ANALYSIS-JAN2026.md (comprehensive analysis)",
-        "BOOKKEEPER-RECONCILIATION-QUESTIONS.md (9 questions answered)",
-        "XERO-STRIPE-RECONCILIATION-CHECKLIST.md (6-part guide, 1 Feb 2026)",
-        "BOOKKEEPER-BRIEFING-STRIPE-RECONCILIATION.md (executive summary, 1 Feb 2026)",
-        "MANAGEMENT-ACCOUNTS-FY26-YTD-FEB2026.md (raw data analysis, 11 Feb 2026)",
-        "CFO-EXECUTIVE-REVIEW-FY26-FEB2026.md (executive summary, 11 Feb 2026)",
-        "CFO-DEEP-DIVE-GAPS-FY26-FEB2026.md (stress test + cross-subsidy, 11 Feb 2026)"
-      ],
-      "key_finding": "Management accounts (Sep–Dec 2025): Operating profit £23,473 (2.2× full FY25 in 4 months). Gross margin 69.9% (+3.8pp). Cash £180K. Amex £33K at ~20% APR — clear from Tide savings (saves £6.6K/yr). Pembee £7,764 AR CORRECTED: Stripe payouts confirmed (£23.6K), reconciliation gap only. MMK school losing £2,135. 428 unique students — full-year estimate £480–520K."
-    },
-    {
-      "name": "12-Month Operational Budget",
-      "phase_current": 3,
-      "phase_total": 5,
-      "implementation_plan": "12-MONTH-BUDGET-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Decision-grade budget testing feasibility of £750K annual revenue — units-based, seasonal, autopay-aware cash flow, growth bridge",
-      "status": "paused",
-      "status_label": "v2.3 | ⏸️ PAUSED — Data Quality Issues | Pending Xero Reconciliation",
-      "completed_phases": [
-        {"name": "Phase 1: Specification & Inputs", "summary": "Virtual CFO critique (10 issues). Revised spec. Rob answered all 8 questions with Xero screenshots + DSP class data."},
-        {"name": "Phase 2: Spreadsheet Build", "summary": "6-tab spreadsheet built: Revenue (£418,996), Direct Costs, Marketing, Overheads (£141,696), Cash Flow (min £116K Sep), Growth Bridge (corrected with DSP pricing £196.40 avg)."}
-      ],
-      "next_phase": {
-        "name": "Phase 3: Review & Refine",
-        "detail": "PROJECT PAUSED (1 Feb). Xero upload revealed data quality issues: revenue understated ~12%, admin costs 47% over budget (£183K pace vs £125K budget). Need clean Xero data before budgeting is useful.",
-        "status": "paused",
-        "tasks": [
-          "BLOCKED: Answer Dec/Jan bookkeeper queries (16 uncategorised transactions)",
-          "BLOCKED: Complete year-end 31 Aug 2025 (8 bank statements, 6+ weeks overdue)",
-          "BLOCKED: Revenue reconciliation (£15.5K gap)",
-          "BLOCKED: Establish monthly Xero close cycle"
-        ]
-      },
-      "remaining_phases": [
-        "Phase 4: Written Summary",
-        "Phase 5: Finalise & Deliver"
-      ],
-      "key_finding": "PAUSED: Budget built on unreliable Xero data. Sep-Jan revenue tracking perfectly (£141K actual vs £141K budget), but admin costs 47% over. Decision: Fix Xero data quality first (bookkeeper queries, reconciliation), THEN rebuild budget from clean data."
-    },
-    {
-      "name": "Supabase Shadow Database",
-      "phase_current": 4,
-      "phase_total": 6,
-      "implementation_plan": "SUPABASE-SHADOW-DATABASE-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Clean relational database (27 tables, 7 schemas) replacing 42+ Airtable tables. Shadow sync first, then new features write directly to Supabase.",
-      "status": "in_progress",
-      "status_label": "v1.5 | Phase 4 Complete ✅ (nightly sync + monitoring live) | Phase 5: New Features 📋",
-      "completed_phases": [
-        {"name": "Phase 1: Schema Design", "summary": "27 tables across 7 Postgres schemas (core, programme, enrollment, finance, staff, crm, ops). DDL, triggers, RLS, 5 views."},
-        {"name": "Phase 2: Deploy & Seed", "summary": "Schema deployed to Supabase Pro. 5 programmes, 17 venues, 10 terms seeded."},
-        {"name": "Phase 3: Shadow Sync", "summary": "5 tables synced: contacts (2,972), classes (91), staff (19), enrollments (1,399), delivered_sessions (9). Multi-source enrichment + Airtable backfill complete. 0 FK orphans."},
-        {"name": "Phase 4: Verify + Reconcile", "summary": "Views verified (4/5 returning data). Record counts within tolerance. Nightly launchd sync at 02:00 + n8n monitor at 07:00 + ops.system_health logging + reconciliation + operational runbook."}
-      ],
-      "next_phase": {
-        "name": "Phase 5: New Features Direct",
-        "detail": "Start writing new data directly to Supabase (camps, parties, financial snapshots).",
-        "status": "planned",
-        "tasks": [
-          "Camp registers write to Supabase",
-          "Party bookings write to Supabase",
-          "Staff Portal v2 reads from Supabase",
-          "FIN-01 writes to finance.financial_snapshots"
-        ]
-      },
-      "remaining_phases": [
-        "Phase 5: New Features on Supabase (camps, parties write directly)",
-        "Phase 6: Dashboard Migration"
-      ],
-      "data_quality": {
-        "contacts": 2972,
-        "classes": 91,
-        "staff": 19,
-        "enrollments": 1399,
-        "delivered_sessions": 9,
-        "households": 609,
-        "household_members": 1367,
-        "orphans_remaining": 18,
-        "fk_orphans": 0,
-        "airtable_backfill": "complete",
-        "sync_script": "scripts/sync-airtable-to-supabase.py",
-        "nightly_sync": "launchd 02:00 GMT",
-        "monitoring": "n8n NMTobx1NCtluuOtG2kgrp (07:00 GMT)"
-      }
     },
     {
       "name": "Business Diagnostic & Scale Readiness",
@@ -531,26 +337,32 @@
     },
     {
       "name": "Premium Trial Pathway (FB Leads)",
-      "phase_current": 0,
+      "phase_current": 1,
       "phase_total": 3,
       "implementation_plan": "premium-trial-pathway/implementation-plan.md",
       "purpose": "Louise's structured 9-stage GHL pipeline for Facebook leads — application form, £10 deposit, 48hr confirmation gate, automated post-trial conversion. Replaces effort with structure to fix 48% waste rate.",
-      "status": "planned",
-      "status_label": "v1.0 | Phase 0: Pre-Flight Probes 📋 (blocked: GHL MCP session restart)",
-      "completed_phases": [],
+      "status": "in_progress",
+      "status_label": "v1.0 | Phase 0 ✅ Complete | Phase 1 🔧 In Progress (fields + tags created, pipeline pending)",
+      "completed_phases": [
+        {"name": "Phase 0: Pre-Flight Probes", "summary": "All 4 probes complete. HYBRID build (API for fields/tags/contacts/SMS, dashboard for pipeline/workflows). Stripe connected. FB workflow mapped (filter exclusion strategy). Timezone confirmed Europe/London."}
+      ],
       "next_phase": {
-        "name": "Phase 0: Pre-Flight Probes",
-        "detail": "4 mandatory probes before any build: GHL MCP audit, Payments check, workflow 2023.1 audit, custom fields audit",
-        "status": "planned",
+        "name": "Phase 1: Pipeline + Lead Capture",
+        "detail": "Custom fields + tags created via API. Rob to create pipeline (9 stages), application form (4 questions), £10 deposit payment link in GHL Dashboard. Then build PTP-01/02/03 workflows.",
+        "status": "in_progress",
         "tasks": [
-          "Probe 1: Load GHL MCP and audit available tools",
-          "Probe 2: Confirm GHL Payments enabled (Rob to check)",
-          "Probe 3: Audit workflow '2023.1' trigger type",
-          "Probe 4: Audit existing custom fields in GHL"
+          "✅ Create 8 custom fields via API (ptp_trial_date, ptp_trial_class, etc.)",
+          "✅ Create 17 tags via API (9 idempotency + 7 loss + 1 pipeline ID)",
+          "Rob: Create pipeline 'Premium Trial — FB Leads' (9 stages) in dashboard",
+          "Rob: Create application form (4 questions) in dashboard",
+          "Rob: Create £10 deposit payment link in dashboard",
+          "Build PTP-01 Intake workflow",
+          "Build PTP-02 Form Submitted workflow",
+          "Build PTP-03 Payment Received workflow",
+          "Route FB leads to new pipeline (filter exclusion on 2023.1)"
         ]
       },
       "remaining_phases": [
-        "Phase 1: Pipeline + forms + deposit + call task (Week 1)",
         "Phase 2: 48hr confirmation gate + auto-cancel + refund (Week 2)",
         "Phase 3: Post-trial sequence + nurture + reporting (Week 3)"
       ],
@@ -563,7 +375,10 @@
         "pipeline_stages": 9,
         "workflows_planned": 11,
         "verification_tests": 12,
-        "source_doc": "Louise's Premium Trial Pathway (ChatGPT-assisted design)"
+        "build_approach": "HYBRID — API + Dashboard",
+        "refund_approach": "Manual-refund-with-SLA",
+        "fb_routing": "Filter exclusion on 2023.1 workflow",
+        "reference_doc": "docs/core-reference/GHL-API-REFERENCE.md"
       }
     },
     {
@@ -632,6 +447,56 @@
   ],
 
   "secondary_projects": [
+    {
+      "name": "Ladies Fitness Funnel",
+      "phase_current": 5,
+      "phase_total": 7,
+      "implementation_plan": "LADIES-FITNESS-IMPLEMENTATION-PLAN-JAN2026.md",
+      "purpose": "Automate lead-to-member journey (lead capture, instant response, trials, attendance, retention)",
+      "status": "in_progress",
+      "status_label": "Phase 5/7 Complete ✅ | Louise feedback received (3 Feb)",
+      "next_action": "Phase 4: Weekly member scan, at-risk detection, onboarding email sequence"
+    },
+    {
+      "name": "Children's Dance Onboarding (GHL v2.0)",
+      "phase_current": 1,
+      "phase_total": 10,
+      "implementation_plan": "CHILDRENS-ONBOARDING-GHL-IMPLEMENTATION-PLAN-FEB2026.md",
+      "purpose": "GHL-native 10-email onboarding with age personalisation + kit pages. Replaces AC approach (28 templates, down from 52).",
+      "status": "in_progress",
+      "status_label": "v2.0 | Phase 1 In Progress 🔧 (4/10 kit pages complete)",
+      "next_action": "Phase 1: Complete remaining kit pages (Jazz, Contemporary, Elite, Drama, Broadway, First Mouves) + upload to WordPress"
+    },
+    {
+      "name": "Financial Health Check",
+      "phase_current": 5,
+      "phase_total": 6,
+      "implementation_plan": "FINANCIAL-HEALTH-CHECK-IMPLEMENTATION-PLAN-JAN2026.md",
+      "purpose": "One-time diagnostic deep dive: stream profitability, class economics, marketing analysis, revenue reconciliation, bookkeeper questions",
+      "status": "in_progress",
+      "status_label": "v1.4 | Phase 5/6 🔧 — Management accounts analysed. Pembee AR corrected.",
+      "next_action": "Travel categorisation with Louise (~£32.6K remaining), December queries (4 items), schedule regular bookkeeper call"
+    },
+    {
+      "name": "12-Month Operational Budget",
+      "phase_current": 3,
+      "phase_total": 5,
+      "implementation_plan": "12-MONTH-BUDGET-IMPLEMENTATION-PLAN-JAN2026.md",
+      "purpose": "Decision-grade budget testing feasibility of £750K annual revenue — units-based, seasonal, autopay-aware cash flow",
+      "status": "paused",
+      "status_label": "v2.3 | ⏸️ PAUSED — Data Quality Issues | Pending Xero Reconciliation",
+      "next_action": "BLOCKED: Fix Xero data quality first (bookkeeper queries, reconciliation), then rebuild budget from clean data"
+    },
+    {
+      "name": "Supabase Shadow Database",
+      "phase_current": 4,
+      "phase_total": 6,
+      "implementation_plan": "SUPABASE-SHADOW-DATABASE-IMPLEMENTATION-PLAN-JAN2026.md",
+      "purpose": "Clean relational database (27 tables, 7 schemas) replacing 42+ Airtable tables. Shadow sync first, then new features write directly.",
+      "status": "in_progress",
+      "status_label": "v1.5 | Phase 4 ✅ (nightly sync + monitoring live) | Phase 5: New Features 📋",
+      "next_action": "Phase 5: Camp registers, party bookings, Staff Portal v2, FIN-01 write directly to Supabase"
+    },
     {
       "name": "Student Progress Reports",
       "phase_current": 3,
