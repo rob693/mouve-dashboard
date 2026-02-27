@@ -383,40 +383,41 @@
     },
     {
       "name": "MOUVE Studio (DSP Replacement)",
-      "phase_current": 0,
+      "phase_current": 6,
       "phase_total": 6,
-      "implementation_plan": "2026-02-26-mouve-studio-dsp-replacement-design.md",
+      "implementation_plan": "active/MOUVE-STUDIO-IMPLEMENTATION-PLAN-FEB2026.md",
       "purpose": "Full DSP replacement — custom class management, enrolment, Stripe payments, parent portal, admin dashboard. Next.js + Supabase + Trigger.dev. Replaces DSP, n8n, and Airtable (for enrolment data) when live.",
-      "status": "planned",
-      "status_label": "v1.0 | Design Complete ✅ | Implementation Plan pending 📋",
+      "status": "in_progress",
+      "status_label": "v1.0 | All 6 Phases Code Complete ✅ | Admin UI redesigned (DSP/Arbor-inspired). Deployed to Vercel. Demo data seeded. Next: UI polish, login page, remaining page styling.",
       "completed_phases": [
-        {"name": "Design", "summary": "Full brainstorm (14 questions). Design doc covers: data model (15 tables), Stripe integration, parent portal (7 pages), admin dashboard (12 pages), GHL sync (7 event types), Trigger.dev orchestration, 6 build phases, migration strategy with card capture campaign."}
+        {"name": "Design", "summary": "Full brainstorm (14 questions). Design doc covers: data model (15 tables), Stripe integration, parent portal (7 pages), admin dashboard (12 pages), GHL sync (7 event types), Trigger.dev orchestration, 6 build phases, migration strategy with card capture campaign."},
+        {"name": "Phase 1: Foundation", "summary": "Supabase project + 15 tables + 37 RLS policies + auth (magic link) + Next.js scaffold + Stripe connection + Trigger.dev init."},
+        {"name": "Phase 2: Enrolment Engine", "summary": "CRUD for families/students/classes + atomic enrolment RPC + waitlist + portal views."},
+        {"name": "Phase 3: Payments", "summary": "Stripe integration + invoices + payment plans + chase automation + refunds."},
+        {"name": "Phase 4: GHL Integration", "summary": "Bidirectional sync + 7 event types + webhook handling."},
+        {"name": "Phase 5: Term Rollover + Billing", "summary": "Term rollover automation + billing cycle management."},
+        {"name": "Phase 6: Migration + Go-Live Prep", "summary": "DSP import script + Stripe customer matching + n8n conflict audit + deployment config."}
       ],
       "next_phase": {
-        "name": "Implementation Plan",
-        "detail": "Create detailed implementation plan with bite-sized tasks. Then begin Phase 1: Foundation (Supabase + auth + Next.js scaffold + Stripe + Trigger.dev setup).",
-        "status": "planned",
+        "name": "UI Polish & Go-Live",
+        "detail": "UI polish, login page styling, remaining page styling. Then: manual config (Stripe keys, Trigger.dev, Supabase Auth, GHL webhook), DSP data import dry-run, parallel run + cutover.",
+        "status": "in_progress",
         "tasks": [
-          "Create implementation plan (writing-plans skill)",
-          "Send DSP support ticket re: Stripe account structure",
-          "Phase 1: Supabase project + tables + RLS",
-          "Phase 1: Auth (magic link)",
-          "Phase 1: Next.js scaffold",
-          "Phase 1: Stripe connection (test mode)",
-          "Phase 1: Trigger.dev project init"
+          "UI polish — remaining page styling",
+          "Login page design",
+          "Manual config: Stripe test keys, Trigger.dev, Supabase Auth, GHL webhook",
+          "DSP data export + import dry-run",
+          "Stripe customer matching dry-run",
+          "n8n conflict audit (Task 6.4)",
+          "Deploy to portal.makeamouve.com",
+          "Parallel run + cutover"
         ]
       },
-      "remaining_phases": [
-        "Phase 1: Foundation (database + auth + skeleton)",
-        "Phase 2: Enrolment Engine (CRUD + waitlist + portal views)",
-        "Phase 3: Payments (Stripe + invoices + chase + refunds)",
-        "Phase 4: GHL Integration (bidirectional sync + comms)",
-        "Phase 5: Term Rollover + Billing Automation",
-        "Phase 6: Migration + Go-Live (data import + card capture + DSP/n8n shutdown)"
-      ],
+      "remaining_phases": [],
       "key_data": {
-        "tech_stack": "Next.js + Vercel + Supabase + Stripe + Trigger.dev",
+        "tech_stack": "Next.js 16.1.6 + Vercel + Supabase + Stripe + Trigger.dev + Tailwind v4 + shadcn/ui",
         "replaces": "DSP, n8n (at go-live), Airtable (for enrolment data)",
+        "build_stats": "33 routes (21 admin, 5 portal, 4 API, 3 auth/static), 14 tests, 0 build errors, 9 Trigger.dev jobs, 2 migration scripts",
         "stripe_parents_your_account": 107,
         "stripe_parents_dsp_merchant": "~200+ (card re-entry needed)",
         "target_launch": "Autumn 2026 (or when ready)",
