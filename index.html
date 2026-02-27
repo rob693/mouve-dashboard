@@ -21,6 +21,10 @@
             --dark: #1f2937;
             --purple: #8b5cf6;
             --purple-bg: #ede9fe;
+            --gold: #b8860b;
+            --gold-bg: #fdf6e3;
+            --gold-border: #d4a017;
+            --gold-shine: linear-gradient(135deg, #fdf6e3 0%, #fef9ef 50%, #fdf6e3 100%);
             --surface: #ffffff;
             --border: #e5e7eb;
             --bg: #f8fafc;
@@ -437,6 +441,34 @@
         .pill-planned { background: var(--gray-bg); color: var(--gray); }
         .pill-waiting { background: var(--amber-bg); color: var(--amber); }
         .pill-blocked { background: var(--red-bg); color: var(--red); }
+
+        /* ── Gold Tier ── */
+        .project-compact.gold-card {
+            background: var(--gold-shine);
+            border: 1.5px solid var(--gold-border);
+            box-shadow: 0 2px 8px rgba(184, 134, 11, 0.15);
+        }
+        .project-compact.gold-card .pc-name {
+            color: var(--gold);
+        }
+        .project-compact.gold-card .phase-badge {
+            background: rgba(184, 134, 11, 0.12);
+            color: var(--gold);
+        }
+        .gold-section-head {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--gold);
+            margin: 1.5rem 0 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .gold-section-head .gold-icon {
+            font-size: 1rem;
+        }
         .pill-paused { background: var(--amber-bg); color: var(--amber); }
         .pill-complete { background: var(--green-bg); color: var(--green); }
         .pc-next {
@@ -973,7 +1005,11 @@
         <div class="section-head">Project Timeline <span class="count" id="timeline-count">0</span></div>
         <div class="timeline-container" id="timeline-container"></div>
 
-        <!-- 6. Primary Projects -->
+        <!-- 6a. Gold Tier Projects -->
+        <div class="gold-section-head"><span class="gold-icon">★</span> Gold Tier Projects <span class="count" id="gold-count">0</span></div>
+        <div class="projects-compact" id="gold-compact"></div>
+
+        <!-- 6b. Primary Projects -->
         <div class="section-head">Primary Projects <span class="count" id="projects-count">0</span></div>
         <div class="projects-compact" id="projects-compact"></div>
 
@@ -1044,7 +1080,7 @@
             `v${d.version} \u2022 Updated ${gen.toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'})} ${gen.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'})}`;
 
         // Count active projects
-        const allProjects = [...(d.primary_projects||[]), ...(d.secondary_projects||[])];
+        const allProjects = [...(d.gold_projects||[]), ...(d.primary_projects||[]), ...(d.secondary_projects||[])];
         const activeCount = allProjects.filter(p => p.status === 'in_progress').length;
 
         // KPI row
@@ -1078,8 +1114,9 @@
         renderWeeklyReview(d.weekly_review);
         renderRecentDecisions(d.recent_decisions);
 
-        // Timeline + Projects (primary)
-        renderTimeline(d.primary_projects || []);
+        // Timeline + Projects (gold + primary)
+        renderTimeline([...(d.gold_projects || []), ...(d.primary_projects || [])]);
+        renderGold(d.gold_projects || []);
         renderProjects(d.primary_projects || []);
 
         // Tasks
@@ -1318,72 +1355,80 @@
         }).join('');
     }
 
+    function renderProjectCard(p, idx, prefix, extraClass) {
+        const pillClass = 'pill-' + (p.status || 'planned').replace('_','-');
+        const statusShort = {
+            'in_progress': 'In Progress',
+            'planned': 'Planned',
+            'waiting': 'Waiting',
+            'blocked': 'Blocked',
+            'complete': 'Complete'
+        }[p.status] || p.status;
+
+        const nextText = p.next_phase ? p.next_phase.name : '';
+
+        // Completed phases
+        let completedHtml = '';
+        if (p.completed_phases && p.completed_phases.length) {
+            completedHtml = p.completed_phases.map(cp =>
+                `<div class="pc-phase-row"><span class="pc-phase-dot done"></span><span class="pc-phase-name">${cp.name}</span> <span class="pc-phase-summary">\u2014 ${cp.summary}</span></div>`
+            ).join('');
+        }
+
+        // Next phase detail
+        let nextDetailHtml = '';
+        if (p.next_phase) {
+            const tasks = p.next_phase.tasks ? `<ul>${p.next_phase.tasks.map(t => `<li>${t}</li>`).join('')}</ul>` : '';
+            nextDetailHtml = `
+                <div class="pc-next-detail">
+                    <div class="nd-title">\u25B6 ${p.next_phase.name}</div>
+                    <div style="color:var(--gray);">${p.next_phase.detail || ''}</div>
+                    ${tasks}
+                </div>
+            `;
+        }
+
+        // Remaining phases
+        let remainingHtml = '';
+        if (p.remaining_phases && p.remaining_phases.length) {
+            remainingHtml = p.remaining_phases.map(rp =>
+                `<div class="pc-phase-row"><span class="pc-phase-dot remaining"></span><span style="color:var(--gray);">${rp}</span></div>`
+            ).join('');
+        }
+
+        const id = prefix + '-detail-' + idx;
+
+        return `
+            <div class="project-compact ${extraClass || ''}">
+                <div class="pc-top">
+                    <span class="pc-name">${p.name}</span>
+                    <div style="display:flex;gap:0.4rem;align-items:center;">
+                        <span class="phase-badge">${p.phase_current}/${p.phase_total}</span>
+                        <span class="status-pill ${pillClass}">${statusShort}</span>
+                    </div>
+                </div>
+                <div class="pc-next"><strong>Next:</strong> ${nextText}</div>
+                <button class="pc-expand" onclick="var d=document.getElementById('${id}');d.classList.toggle('open');this.textContent=d.classList.contains('open')?'\u25B4 Hide details':'\u25BE Show details';">\u25BE Show details</button>
+                <div class="pc-details" id="${id}">
+                    <div style="font-family:'Monaco','Courier New',monospace;font-size:0.7rem;color:var(--gray);margin-bottom:0.5rem;">${p.implementation_plan || ''}</div>
+                    ${completedHtml}
+                    ${nextDetailHtml}
+                    ${remainingHtml}
+                </div>
+            </div>
+        `;
+    }
+
+    function renderGold(projects) {
+        const el = document.getElementById('gold-compact');
+        document.getElementById('gold-count').textContent = projects.length;
+        el.innerHTML = projects.map((p, idx) => renderProjectCard(p, idx, 'gold', 'gold-card')).join('');
+    }
+
     function renderProjects(projects) {
         const el = document.getElementById('projects-compact');
         document.getElementById('projects-count').textContent = projects.length;
-        el.innerHTML = projects.map((p, idx) => {
-            const pillClass = 'pill-' + (p.status || 'planned').replace('_','-');
-            const statusShort = {
-                'in_progress': 'In Progress',
-                'planned': 'Planned',
-                'waiting': 'Waiting',
-                'blocked': 'Blocked',
-                'complete': 'Complete'
-            }[p.status] || p.status;
-
-            const nextText = p.next_phase ? p.next_phase.name : '';
-
-            // Completed phases
-            let completedHtml = '';
-            if (p.completed_phases && p.completed_phases.length) {
-                completedHtml = p.completed_phases.map(cp =>
-                    `<div class="pc-phase-row"><span class="pc-phase-dot done"></span><span class="pc-phase-name">${cp.name}</span> <span class="pc-phase-summary">\u2014 ${cp.summary}</span></div>`
-                ).join('');
-            }
-
-            // Next phase detail
-            let nextDetailHtml = '';
-            if (p.next_phase) {
-                const tasks = p.next_phase.tasks ? `<ul>${p.next_phase.tasks.map(t => `<li>${t}</li>`).join('')}</ul>` : '';
-                nextDetailHtml = `
-                    <div class="pc-next-detail">
-                        <div class="nd-title">\u25B6 ${p.next_phase.name}</div>
-                        <div style="color:var(--gray);">${p.next_phase.detail || ''}</div>
-                        ${tasks}
-                    </div>
-                `;
-            }
-
-            // Remaining phases
-            let remainingHtml = '';
-            if (p.remaining_phases && p.remaining_phases.length) {
-                remainingHtml = p.remaining_phases.map(rp =>
-                    `<div class="pc-phase-row"><span class="pc-phase-dot remaining"></span><span style="color:var(--gray);">${rp}</span></div>`
-                ).join('');
-            }
-
-            const id = 'proj-detail-' + idx;
-
-            return `
-                <div class="project-compact">
-                    <div class="pc-top">
-                        <span class="pc-name">${p.name}</span>
-                        <div style="display:flex;gap:0.4rem;align-items:center;">
-                            <span class="phase-badge">${p.phase_current}/${p.phase_total}</span>
-                            <span class="status-pill ${pillClass}">${statusShort}</span>
-                        </div>
-                    </div>
-                    <div class="pc-next"><strong>Next:</strong> ${nextText}</div>
-                    <button class="pc-expand" onclick="var d=document.getElementById('${id}');d.classList.toggle('open');this.textContent=d.classList.contains('open')?'\u25B4 Hide details':'\u25BE Show details';">\u25BE Show details</button>
-                    <div class="pc-details" id="${id}">
-                        <div style="font-family:'Monaco','Courier New',monospace;font-size:0.7rem;color:var(--gray);margin-bottom:0.5rem;">${p.implementation_plan || ''}</div>
-                        ${completedHtml}
-                        ${nextDetailHtml}
-                        ${remainingHtml}
-                    </div>
-                </div>
-            `;
-        }).join('');
+        el.innerHTML = projects.map((p, idx) => renderProjectCard(p, idx, 'proj', '')).join('');
     }
 
     function renderTasks(tasks) {

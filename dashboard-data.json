@@ -105,6 +105,99 @@
     }
   ],
 
+  "gold_projects": [
+    {
+      "name": "MOUVE Studio (DSP Replacement)",
+      "phase_current": 6,
+      "phase_total": 6,
+      "implementation_plan": "active/MOUVE-STUDIO-IMPLEMENTATION-PLAN-FEB2026.md",
+      "purpose": "Full DSP replacement — custom class management, enrolment, Stripe payments, parent portal, admin dashboard. Next.js + Supabase + Trigger.dev. Replaces DSP, n8n, and Airtable (for enrolment data) when live.",
+      "status": "in_progress",
+      "status_label": "v1.0 | All 6 Phases Code Complete ✅ | Admin UI redesigned (DSP/Arbor-inspired). Deployed to Vercel. Demo data seeded. Next: UI polish, login page, remaining page styling.",
+      "completed_phases": [
+        {"name": "Design", "summary": "Full brainstorm (14 questions). Design doc covers: data model (15 tables), Stripe integration, parent portal (7 pages), admin dashboard (12 pages), GHL sync (7 event types), Trigger.dev orchestration, 6 build phases, migration strategy with card capture campaign."},
+        {"name": "Phase 1: Foundation", "summary": "Supabase project + 15 tables + 37 RLS policies + auth (magic link) + Next.js scaffold + Stripe connection + Trigger.dev init."},
+        {"name": "Phase 2: Enrolment Engine", "summary": "CRUD for families/students/classes + atomic enrolment RPC + waitlist + portal views."},
+        {"name": "Phase 3: Payments", "summary": "Stripe integration + invoices + payment plans + chase automation + refunds."},
+        {"name": "Phase 4: GHL Integration", "summary": "Bidirectional sync + 7 event types + webhook handling."},
+        {"name": "Phase 5: Term Rollover + Billing", "summary": "Term rollover automation + billing cycle management."},
+        {"name": "Phase 6: Migration + Go-Live Prep", "summary": "DSP import script + Stripe customer matching + n8n conflict audit + deployment config."}
+      ],
+      "next_phase": {
+        "name": "UI Polish & Go-Live",
+        "detail": "UI polish, login page styling, remaining page styling. Then: manual config (Stripe keys, Trigger.dev, Supabase Auth, GHL webhook), DSP data import dry-run, parallel run + cutover.",
+        "status": "in_progress",
+        "tasks": [
+          "UI polish — remaining page styling",
+          "Login page design",
+          "Manual config: Stripe test keys, Trigger.dev, Supabase Auth, GHL webhook",
+          "DSP data export + import dry-run",
+          "Stripe customer matching dry-run",
+          "n8n conflict audit (Task 6.4)",
+          "Deploy to portal.makeamouve.com",
+          "Parallel run + cutover"
+        ]
+      },
+      "remaining_phases": [],
+      "key_data": {
+        "tech_stack": "Next.js 16.1.6 + Vercel + Supabase + Stripe + Trigger.dev + Tailwind v4 + shadcn/ui",
+        "replaces": "DSP, n8n (at go-live), Airtable (for enrolment data)",
+        "build_stats": "33 routes (21 admin, 5 portal, 4 API, 3 auth/static), 14 tests, 0 build errors, 9 Trigger.dev jobs, 2 migration scripts",
+        "stripe_parents_your_account": 107,
+        "stripe_parents_dsp_merchant": "~200+ (card re-entry needed)",
+        "target_launch": "Autumn 2026 (or when ready)",
+        "design_doc": "docs/plans/2026-02-26-mouve-studio-dsp-replacement-design.md",
+        "go_nogo_threshold": "75% card capture before cutover"
+      }
+    },
+    {
+      "name": "Premium Trial Pathway (FB Leads)",
+      "phase_current": 1,
+      "phase_total": 3,
+      "implementation_plan": "premium-trial-pathway/implementation-plan.md",
+      "purpose": "Louise's structured 9-stage GHL pipeline for Facebook leads — application form, £10 deposit, 48hr confirmation gate, automated post-trial conversion. Replaces effort with structure to fix 48% waste rate.",
+      "status": "in_progress",
+      "status_label": "v1.0 | Phase 0 ✅ Complete | Phase 1 🔧 In Progress (fields + tags created, pipeline pending)",
+      "completed_phases": [
+        {"name": "Phase 0: Pre-Flight Probes", "summary": "All 4 probes complete. HYBRID build (API for fields/tags/contacts/SMS, dashboard for pipeline/workflows). Stripe connected. FB workflow mapped (filter exclusion strategy). Timezone confirmed Europe/London."}
+      ],
+      "next_phase": {
+        "name": "Phase 1: Pipeline + Lead Capture",
+        "detail": "Custom fields + tags created via API. Rob to create pipeline (9 stages), application form (4 questions), £10 deposit payment link in GHL Dashboard. Then build PTP-01/02/03 workflows.",
+        "status": "in_progress",
+        "tasks": [
+          "✅ Create 8 custom fields via API (ptp_trial_date, ptp_trial_class, etc.)",
+          "✅ Create 17 tags via API (9 idempotency + 7 loss + 1 pipeline ID)",
+          "Rob: Create pipeline 'Premium Trial — FB Leads' (9 stages) in dashboard",
+          "Rob: Create application form (4 questions) in dashboard",
+          "Rob: Create £10 deposit payment link in dashboard",
+          "Build PTP-01 Intake workflow",
+          "Build PTP-02 Form Submitted workflow",
+          "Build PTP-03 Payment Received workflow",
+          "Route FB leads to new pipeline (filter exclusion on 2023.1)"
+        ]
+      },
+      "remaining_phases": [
+        "Phase 2: 48hr confirmation gate + auto-cancel + refund (Week 2)",
+        "Phase 3: Post-trial sequence + nurture + reporting (Week 3)"
+      ],
+      "key_data": {
+        "baseline_show_rate": "22.41%",
+        "target_show_rate": "70-80%",
+        "baseline_cancel_rate": "73.79%",
+        "baseline_sunday_waste": "57%",
+        "deposit": "£10 refundable",
+        "pipeline_stages": 9,
+        "workflows_planned": 11,
+        "verification_tests": 12,
+        "build_approach": "HYBRID — API + Dashboard",
+        "refund_approach": "Manual-refund-with-SLA",
+        "fb_routing": "Filter exclusion on 2023.1 workflow",
+        "reference_doc": "docs/core-reference/GHL-API-REFERENCE.md"
+      }
+    }
+  ],
+
   "primary_projects": [
     {
       "name": "Financial Intelligence System",
@@ -333,96 +426,6 @@
         "review_staff": 7,
         "scripts": ["generate_ready_to_pay_spreadsheet.py", "generate_review_spreadsheet.py"],
         "process_doc": "STAFF-PAYMENT-REVIEW-PROCESS.md"
-      }
-    },
-    {
-      "name": "Premium Trial Pathway (FB Leads)",
-      "phase_current": 1,
-      "phase_total": 3,
-      "implementation_plan": "premium-trial-pathway/implementation-plan.md",
-      "purpose": "Louise's structured 9-stage GHL pipeline for Facebook leads — application form, £10 deposit, 48hr confirmation gate, automated post-trial conversion. Replaces effort with structure to fix 48% waste rate.",
-      "status": "in_progress",
-      "status_label": "v1.0 | Phase 0 ✅ Complete | Phase 1 🔧 In Progress (fields + tags created, pipeline pending)",
-      "completed_phases": [
-        {"name": "Phase 0: Pre-Flight Probes", "summary": "All 4 probes complete. HYBRID build (API for fields/tags/contacts/SMS, dashboard for pipeline/workflows). Stripe connected. FB workflow mapped (filter exclusion strategy). Timezone confirmed Europe/London."}
-      ],
-      "next_phase": {
-        "name": "Phase 1: Pipeline + Lead Capture",
-        "detail": "Custom fields + tags created via API. Rob to create pipeline (9 stages), application form (4 questions), £10 deposit payment link in GHL Dashboard. Then build PTP-01/02/03 workflows.",
-        "status": "in_progress",
-        "tasks": [
-          "✅ Create 8 custom fields via API (ptp_trial_date, ptp_trial_class, etc.)",
-          "✅ Create 17 tags via API (9 idempotency + 7 loss + 1 pipeline ID)",
-          "Rob: Create pipeline 'Premium Trial — FB Leads' (9 stages) in dashboard",
-          "Rob: Create application form (4 questions) in dashboard",
-          "Rob: Create £10 deposit payment link in dashboard",
-          "Build PTP-01 Intake workflow",
-          "Build PTP-02 Form Submitted workflow",
-          "Build PTP-03 Payment Received workflow",
-          "Route FB leads to new pipeline (filter exclusion on 2023.1)"
-        ]
-      },
-      "remaining_phases": [
-        "Phase 2: 48hr confirmation gate + auto-cancel + refund (Week 2)",
-        "Phase 3: Post-trial sequence + nurture + reporting (Week 3)"
-      ],
-      "key_data": {
-        "baseline_show_rate": "22.41%",
-        "target_show_rate": "70-80%",
-        "baseline_cancel_rate": "73.79%",
-        "baseline_sunday_waste": "57%",
-        "deposit": "£10 refundable",
-        "pipeline_stages": 9,
-        "workflows_planned": 11,
-        "verification_tests": 12,
-        "build_approach": "HYBRID — API + Dashboard",
-        "refund_approach": "Manual-refund-with-SLA",
-        "fb_routing": "Filter exclusion on 2023.1 workflow",
-        "reference_doc": "docs/core-reference/GHL-API-REFERENCE.md"
-      }
-    },
-    {
-      "name": "MOUVE Studio (DSP Replacement)",
-      "phase_current": 6,
-      "phase_total": 6,
-      "implementation_plan": "active/MOUVE-STUDIO-IMPLEMENTATION-PLAN-FEB2026.md",
-      "purpose": "Full DSP replacement — custom class management, enrolment, Stripe payments, parent portal, admin dashboard. Next.js + Supabase + Trigger.dev. Replaces DSP, n8n, and Airtable (for enrolment data) when live.",
-      "status": "in_progress",
-      "status_label": "v1.0 | All 6 Phases Code Complete ✅ | Admin UI redesigned (DSP/Arbor-inspired). Deployed to Vercel. Demo data seeded. Next: UI polish, login page, remaining page styling.",
-      "completed_phases": [
-        {"name": "Design", "summary": "Full brainstorm (14 questions). Design doc covers: data model (15 tables), Stripe integration, parent portal (7 pages), admin dashboard (12 pages), GHL sync (7 event types), Trigger.dev orchestration, 6 build phases, migration strategy with card capture campaign."},
-        {"name": "Phase 1: Foundation", "summary": "Supabase project + 15 tables + 37 RLS policies + auth (magic link) + Next.js scaffold + Stripe connection + Trigger.dev init."},
-        {"name": "Phase 2: Enrolment Engine", "summary": "CRUD for families/students/classes + atomic enrolment RPC + waitlist + portal views."},
-        {"name": "Phase 3: Payments", "summary": "Stripe integration + invoices + payment plans + chase automation + refunds."},
-        {"name": "Phase 4: GHL Integration", "summary": "Bidirectional sync + 7 event types + webhook handling."},
-        {"name": "Phase 5: Term Rollover + Billing", "summary": "Term rollover automation + billing cycle management."},
-        {"name": "Phase 6: Migration + Go-Live Prep", "summary": "DSP import script + Stripe customer matching + n8n conflict audit + deployment config."}
-      ],
-      "next_phase": {
-        "name": "UI Polish & Go-Live",
-        "detail": "UI polish, login page styling, remaining page styling. Then: manual config (Stripe keys, Trigger.dev, Supabase Auth, GHL webhook), DSP data import dry-run, parallel run + cutover.",
-        "status": "in_progress",
-        "tasks": [
-          "UI polish — remaining page styling",
-          "Login page design",
-          "Manual config: Stripe test keys, Trigger.dev, Supabase Auth, GHL webhook",
-          "DSP data export + import dry-run",
-          "Stripe customer matching dry-run",
-          "n8n conflict audit (Task 6.4)",
-          "Deploy to portal.makeamouve.com",
-          "Parallel run + cutover"
-        ]
-      },
-      "remaining_phases": [],
-      "key_data": {
-        "tech_stack": "Next.js 16.1.6 + Vercel + Supabase + Stripe + Trigger.dev + Tailwind v4 + shadcn/ui",
-        "replaces": "DSP, n8n (at go-live), Airtable (for enrolment data)",
-        "build_stats": "33 routes (21 admin, 5 portal, 4 API, 3 auth/static), 14 tests, 0 build errors, 9 Trigger.dev jobs, 2 migration scripts",
-        "stripe_parents_your_account": 107,
-        "stripe_parents_dsp_merchant": "~200+ (card re-entry needed)",
-        "target_launch": "Autumn 2026 (or when ready)",
-        "design_doc": "docs/plans/2026-02-26-mouve-studio-dsp-replacement-design.md",
-        "go_nogo_threshold": "75% card capture before cutover"
       }
     },
     {
