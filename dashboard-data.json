@@ -1,94 +1,40 @@
 {
-  "generated_at": "2026-02-27T22:00:00Z",
+  "generated_at": "2026-03-04T21:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
-  "version": "3.6",
+  "version": "4.0",
 
   "health_summary": {
-    "complete": 36,
-    "in_progress": 8,
-    "waiting": 1,
-    "planned": 6,
+    "complete": 40,
+    "in_progress": 6,
+    "waiting": 0,
+    "planned": 4,
     "blocked": 1
   },
 
   "tasks": [
     {
-      "title": "URGENT: £14,540 Stripe reconciliation — Verify School Clubs +£8K, Camps +£3.4K, Ladies Fitness +£3.1K",
-      "due": "2026-02-07",
+      "title": "Build Meta A/B Experiment in Ads Manager UI",
+      "due": "2026-03-07",
       "status": "pending",
-      "context": "Financial Health Check — CRITICAL. Revenue analysis (1 Feb) found £14,540 missing revenue. Bank reconciliation incomplete: Stripe deposits not allocated to revenue accounts. Bookkeeper briefing sent. Target: Xero Total Income £140,713 → £155,253 after reconciliation."
-    },
-    {
-      "title": "Add opportunity_abandoned tag check to Follow Ups workflow",
-      "due": "2026-02-07",
-      "status": "done",
-      "context": "StudioHub granted edit access 29 Jan. Rob added tag + Follow Ups If/Else. All 5/5 SMS cleanup tasks complete."
+      "context": "Paid Ads Optimisation — Phase 3. Follow META-AB-EXPERIMENT-GUIDE.md step by step. Pause PROSPECTING original + copy at launch. 14-day test, review ~18 March."
     },
     {
       "title": "Check GHL SMS numbers vs January baseline (2,668)",
-      "due": "2026-03-01",
+      "due": "2026-03-15",
       "status": "pending",
       "context": "Target ~2,250 after cleanup. See UNIT-ECONOMICS-REFERENCE.md Section 14"
     },
     {
       "title": "12-Month Budget PAUSED — Fix Xero data quality first",
-      "due": "2026-03-01",
+      "due": "2026-03-15",
       "status": "blocked",
       "context": "Budget project paused 1 Feb. Data quality issues: Xero understated ~12%, admin costs unrealistic, bookkeeper queries outstanding. Resume after: Dec/Jan mgmt accounts complete, revenue reconciliation fixed, monthly close cycle established."
     },
     {
-      "title": "Bank statements for year-end — 7/8 sent, query on 4838",
-      "due": "2026-02-07",
-      "status": "waiting",
-      "context": "Financial Health Check — Phase 5. 7 statements sent (6 Barclays + Amex). Barclays 4838 (main current) only shows 4 months — Aug 2025 missing. Query raised with Mel. Previous accountant papers received."
-    },
-    {
-      "title": "December queries — 4 items remaining (3× Amazon, 1× Anouska)",
-      "due": "2026-02-07",
+      "title": "Review Meta A/B experiment results — compare cost per qualified lead",
+      "due": "2026-03-18",
       "status": "pending",
-      "context": "Financial Health Check — Phase 5. Majority answered in Google Sheet. Remaining: 3 Amazon transactions (hunting down), 1 Anouska Elmkies payment."
-    },
-    {
-      "title": "Travel categorisation with Louise — £32.6K remaining",
-      "due": "2026-02-07",
-      "status": "pending",
-      "context": "Financial Health Check — Phase 5. £11.3K confirmed business (BA Retreat £2.2K, DSOA £3.1K, Greece £6.1K). Remaining ~£32.6K needs Louise review to split business vs personal."
-    },
-    {
-      "title": "Investigate Pembee £6.8K platform-to-Xero mismatch",
-      "due": "2026-02-07",
-      "status": "pending",
-      "context": "Financial Health Check — Phase 5. Mel confirmed all other revenue gaps are VAT (gross vs net). Pembee is the only real unresolved discrepancy."
-    },
-    {
-      "title": "Reply to Mel — acknowledge both emails + Sukkahmart £1,227 recategorisation",
-      "due": "2026-02-03",
-      "status": "done",
-      "context": "Financial Health Check — Phase 5. Sent 3 Feb 2026. Covered: 7/8 bank statements sent, 4838 query raised, Dec queries mostly answered (4 remaining), travel categorisation in progress (~£11.3K business confirmed)."
-    },
-    {
-      "title": "Write 1-page budget summary (achievable? fragile? what breaks first?)",
-      "due": "2026-02-07",
-      "status": "pending",
-      "context": "12-Month Budget — Phase 4. After Rob reviews spreadsheet."
-    },
-    {
-      "title": "Party Landing Page — Phase 6 remaining: WhatsApp, trending themes, gallery, vendor section",
-      "due": "2026-03-01",
-      "status": "pending",
-      "context": "parties.makeamouve.com LIVE. Phase 6 is 5/8 done (form, pricing, favicon, privacy, terms ✅). Remaining: WhatsApp button, trending theme names, photo gallery, vendor section."
-    },
-    {
-      "title": "Chase DSP (Pamela Means) if no reply to API access email",
-      "due": "2026-02-06",
-      "status": "pending",
-      "context": "Email sent 30 Jan 2026 to pmeans@gostudiopro.com. Met Pamela at DSOA Scottsdale. Previous requests: Dec 2025 (viaSocket), Jan 2026 (Amanda F.) — no dev team response yet."
-    },
-    {
-      "title": "Louise: Review staff rates spreadsheet (MOUVE-Staff-Rates-Final-Review.xlsx)",
-      "due": "2026-02-07",
-      "status": "pending",
-      "context": "22-tab Excel workbook cross-referencing 4 sources (Louise's v2+v3 spreadsheets, invoices, Airtable). Each teacher tab has yellow column for Louise to tick or correct. URGENT: Alexandra (21 sessions £0) + Evie (6 sessions £0). Once returned, create STAFF_CLASS_RATES records for all confirmed rates."
+      "context": "Paid Ads Optimisation — Pull data from Meta + GHL. Compare website vs form lead quality. Decide which destination to keep."
     }
   ],
 
@@ -459,7 +405,7 @@
       "purpose": "GHL-native 10-email onboarding with age personalisation + kit pages. Replaces AC approach (28 templates, down from 52).",
       "status": "in_progress",
       "status_label": "v2.0 | Phase 1 In Progress 🔧 (4/10 kit pages complete)",
-      "next_action": "Phase 1: Complete remaining kit pages (Jazz, Contemporary, Elite, Drama, Broadway, First Mouves) + upload to WordPress"
+      "next_action": "Phase 1: Complete remaining kit pages (Jazz, Contemporary, Elite, Drama, Broadway, First Mouves) + add to Next.js site"
     },
     {
       "name": "Financial Health Check",
@@ -502,77 +448,16 @@
       "next_action": "Phase 4: n8n workflow to generate parent-facing PDF reports from completed assessments"
     },
     {
-      "name": "Party Booking Landing Page",
-      "phase_current": 6,
-      "phase_total": 7,
-      "implementation_plan": "dazzling-seeking-naur.md (plan file)",
-      "purpose": "High-converting SEO landing page for MOUVE children's birthday parties. Custom HTML/Tailwind → Vercel → parties.makeamouve.com",
-      "status": "in_progress",
-      "status_label": "v2.2 | Phase 5 ✅ LIVE | Google Ads + Meta conversion tracking LIVE (GTM v33) | Phase 6: Competitive Edge 🔧 (5/8 done)",
-      "target_url": "parties.makeamouve.com",
-      "next_phase": {
-        "name": "Phase 6: Competitive Edge & Conversion",
-        "detail": "WhatsApp button, trending theme names, photo gallery, vendor/extras section. Both Google Ads + Meta Pixel conversion tracking now live (GTM v33). Campaign deployment guide created for Rob to build both campaigns.",
-        "status": "in_progress",
-        "tasks": [
-          "✅ GTM container + Google Ads conversion tracking (22 Feb, GTM v32)",
-          "✅ Meta Pixel Lead event tracking — verified end-to-end (22 Feb, GTM v33)",
-          "✅ Campaign deployment guide created (Google Ads 13.10 + Meta 13.11)",
-          "Rob: Build Google Ads campaign (£5/day, Hendon +8km)",
-          "Rob: Source creative assets + build Meta campaign (£3-5/day)",
-          "Add WhatsApp floating button",
-          "Add trending theme names (Frozen, Taylor Swift etc.)",
-          "Add real party photo gallery/carousel"
-        ]
-      },
-      "remaining_phases": [
-        "Phase 7: Final Polish (accessibility, performance, SEO, mobile responsive)"
-      ]
-    },
-    {
-      "name": "Dance Studio SaaS (New Product)",
-      "phase_current": 0,
-      "phase_total": 9,
-      "implementation_plan": "DANCE-STUDIO-SAAS-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Multi-tenant dance studio management platform — replaces DSP + ClassForKids + Pembee. Sellable SaaS product.",
-      "status": "planned",
-      "status_label": "PARKED — Start Feb/March 2026",
-      "start_date": "February/March 2026",
-      "target_completion": "June 2027 (15 months)",
-      "systems_replaced": ["Dance Studio Pro", "ClassForKids", "Pembee"],
-      "monthly_savings": "~£90/month + 30-50% payment fees",
-      "tech_stack": ["Next.js 15", "Supabase/Postgres", "GoCardless", "Stripe", "Vercel"],
-      "phases": [
-        "Phase 0: Foundation (auth, multi-tenant)",
-        "Phase 1-2: Core Data + Enrollment",
-        "Phase 3: Payments (GoCardless + Stripe)",
-        "Phase 4: Parent Portal",
-        "Phase 5: Reporting",
-        "Phase 6: GHL Integration",
-        "Phase 7: Email Communication",
-        "Phase 8: School Clubs + Camps",
-        "Phase 9: API + Polish"
-      ],
-      "pre_start_actions": [
-        "Louise: Decide product name",
-        "Rob: Research GoCardless API",
-        "Both: Identify 2-3 beta studios",
-        "Rob: Document DSP features used daily"
-      ],
-      "next_action": "PARKED until Q1 2026 stabilises. When ready: 'Start Dance Studio SaaS project - Phase 0'"
-    },
-    {
       "name": "Staff Portal: Monitoring & Feature Backlog",
       "phase_current": 9,
       "phase_total": 9,
       "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Post-launch monitoring + feature backlog (Incident Reports, My Pay Summary, Student Notes, Sub Request, Announcements)",
-      "status": "in_progress",
-      "status_label": "Phase 9/9 — Rate Review Spreadsheet sent to Louise",
-      "updated": "2026-02-01",
-      "summary": "v3.0 — LIVE to all 22 staff. Phase 9: Per-class rates system built (35 STAFF_CLASS_RATES, 77 sessions backfilled). Full 22-tab rate review spreadsheet cross-referencing 4 sources sent to Louise for tick/correct.",
-      "blocker": "Louise reviewing MOUVE-Staff-Rates-Final-Review.xlsx (21 teachers). Alexandra (£0) + Evie (£0) URGENT.",
-      "next_action": "Louise reviews spreadsheet and ticks/corrects rates. Then create STAFF_CLASS_RATES records for all confirmed rates."
+      "status": "complete",
+      "status_label": "✅ COMPLETE | LIVE to all 22 staff. Rates reviewed. Feature backlog documented.",
+      "updated": "2026-03-04",
+      "summary": "v3.0 — LIVE to all 22 staff. Per-class rates system built (35 STAFF_CLASS_RATES, 77 sessions backfilled). Rate review complete.",
+      "next_action": "Feature backlog only — no active work"
     },
     {
       "name": "Pocket Assistant (OpenClaw)",
@@ -583,17 +468,6 @@
       "status": "in_progress",
       "status_label": "v2.0 | Phase 3/5 ✅ LIVE on Telegram (31 Jan) | Phase 4: Refinement 📋",
       "next_action": "Use for 1 week, tune SOUL.md, add skills based on real usage"
-    },
-    {
-      "name": "Weekly Auto-Blog System",
-      "phase_current": 0,
-      "phase_total": 6,
-      "implementation_plan": "WEEKLY-AUTO-BLOG-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Auto-generate 4-5 weekly camp blogs with GPT-4o (long-tail SEO, saves 8-10h/month)",
-      "status": "planned",
-      "status_label": "v1.0 Planning Complete",
-      "target_date": "31 Jan 2026",
-      "next_action": "Phase 1: Create BLOG_POSTS table + update Data Dictionary"
     },
     {
       "name": "Fix My Dance School (Audit Product)",
@@ -626,7 +500,11 @@
       {"name": "Teacher Culture Programme", "result": "12 campaigns live"},
       {"name": "Operational Dashboard", "result": "Vercel + n8n pipeline + 7 KPI cards (27 Jan 2026)"},
       {"name": "GHL SMS Audit & Cleanup", "result": "5/5 tasks done, ~410 SMS/month saved. All complete 29 Jan 2026"},
-      {"name": "Custom Staff Portal (Next.js)", "result": "8/8 phases, 6 features, 22 staff live (29 Jan 2026). Post-launch: 28 records fixed, 16 venue options added, monthly session view deployed (30 Jan)."}
+      {"name": "Custom Staff Portal (Next.js)", "result": "8/8 phases, 6 features, 22 staff live (29 Jan 2026). Post-launch: 28 records fixed, 16 venue options added, monthly session view deployed (30 Jan)."},
+      {"name": "SEO & Geo (Technical Foundation)", "result": "9/9 phases complete on WordPress. New Next.js site rebuilt fresh (3 March 2026). GBP API tasks done."},
+      {"name": "Marketing & Conversions (Infrastructure)", "result": "Attribution fixed, conversion tracking live, weekly channel report with CPA/unit economics (25 Feb 2026). Unstarted phases → Marketing Backlog."},
+      {"name": "Party Booking Landing Page", "result": "parties.makeamouve.com launched. Absorbed into main makeamouve.com/parties (3 March 2026)."},
+      {"name": "MOUVE Website (Next.js)", "result": "22-route Next.js site live at makeamouve.com (3 March 2026). Replaced WordPress/Elementor."}
     ],
     "simple": [
       {"name": "Children's Onboarding Email Refinement", "result": "10 emails × 3 age tracks, all pass Email Deliverability Checklist v1.1"},
@@ -649,20 +527,17 @@
       {"name": "Attendance Tracker (Children's Dance)", "result": "Staff Portal /attendance page (25 Jan 2026)"}
     ],
     "active_campaigns": [
-      {"name": "Lapsed Parent Win-Back", "status": "Active (4 emails)"},
-      {"name": "Ladies Fitness Win-Back", "status": "Active (4 campaigns)"},
-      {"name": "Teacher Culture Tuesdays", "status": "Week 2 of 12"},
-      {"name": "February Camp 2026", "status": "42 families booked (16-20 Feb). Racheli welcome video email sent 8 Feb."},
-      {"name": "February WICKED Camp Email Campaign", "status": "Scheduled (7 emails, 1,726 recipients, launches 15 Jan)"},
-      {"name": "LF Weekly Newsletter", "status": "Phase 1 Foundation — prompt file done, 5 tasks remaining"}
+      {"name": "Meta A/B Experiment (Form vs Website)", "status": "Ready to launch — guide built, awaiting Ads Manager build"},
+      {"name": "Google Ads (7 ad groups)", "status": "Active — phrase/exact keywords, RSAs, sitelinks (4 March 2026)"},
+      {"name": "Meta PROSPECTING (Zumba Video)", "status": "Active — £12/day, 102 leads at £3.51/lead baseline"}
     ]
   },
 
   "dependencies": {
     "lead_capture": [
-      {"name": "Facebook Ads", "status": "active"},
-      {"name": "Google Ads", "status": "active", "note": "UTM tracking confirmed working (7 leads in 14 days, 57% trial booking rate)"},
-      {"name": "Website Forms", "status": "active"},
+      {"name": "Meta Ads", "status": "active", "note": "A/B experiment ready (form vs website). 3 campaigns currently active."},
+      {"name": "Google Ads", "status": "active", "note": "7 ad groups restructured 4 March 2026. Phrase/exact keywords, RSAs, sitelinks."},
+      {"name": "Website Forms (Next.js)", "status": "active", "note": "4 forms with dataLayer.push → GTM → GA4 + Google Ads + Meta Pixel"},
       {"name": "TeamUp Trials", "status": "active"}
     ],
     "crm_leads": [
@@ -670,18 +545,17 @@
       {"name": "GHL Workflows", "status": "partial"}
     ],
     "automation": [
-      {"name": "n8n (25 workflows)", "status": "active"},
+      {"name": "n8n (29 workflows)", "status": "active"},
       {"name": "Webhooks", "status": "active"}
     ],
     "data_email": [
       {"name": "Airtable", "status": "active"},
       {"name": "ActiveCampaign", "status": "active"},
-      {"name": "M365 Email", "status": "active"},
-      {"name": "📋 Email Deliverability Checklist v1.1", "status": "reference", "note": "UK Primary Inbox optimization - mandatory pre-send check"}
+      {"name": "M365 Email", "status": "active"}
     ],
     "booking_systems": [
       {"name": "TeamUp (LF)", "status": "active"},
-      {"name": "DSP (Dance)", "status": "blocked"}
+      {"name": "DSP (Dance)", "status": "active", "note": "MOUVE Studio (replacement) code complete, pending go-live config"}
     ]
   },
 
