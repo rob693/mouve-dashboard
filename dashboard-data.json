@@ -4,10 +4,10 @@
   "version": "3.6",
 
   "health_summary": {
-    "complete": 35,
-    "in_progress": 9,
+    "complete": 36,
+    "in_progress": 8,
     "waiting": 1,
-    "planned": 5,
+    "planned": 6,
     "blocked": 1
   },
 
@@ -305,60 +305,25 @@
     {
       "name": "Marketing & Conversions (Unified)",
       "phase_current": 1,
-      "phase_total": 7,
+      "phase_total": 1,
       "implementation_plan": "MOUVE-MARKETING-CONVERSION-PLAN.md",
-      "purpose": "Unified marketing system across all 4 MOUVE business lines — drive conversions, maximise ROI on ~£1,050/month ad spend. Absorbs SEO-GEO phases 10-14, Paid Ads Attribution, Lead Scoring, Events LP plans.",
-      "status": "in_progress",
-      "status_label": "v1.1 | Phase 1: Infrastructure 🔧 (R1-R4 ✅, weekly report upgraded, retargeting cut, remaining: lead scoring, GHL events, budget tracking)",
+      "purpose": "Unified marketing infrastructure — attribution fixes, conversion tracking, weekly channel report with CPA/unit economics. Infrastructure phase complete. Paid ads → own project. Unstarted phases → MARKETING-BACKLOG.md.",
+      "status": "complete",
+      "status_label": "✅ COMPLETE | Infrastructure done (attribution, tracking, weekly report). Paid ads → Paid Ads Optimisation. Unstarted phases → Marketing Backlog.",
       "completed_phases": [
-        {"name": "Infrastructure (partial)", "summary": "Google Ads conversion tracking fixed (37→12 real). Channel attribution fixed (classifySource). Google Ads + Meta API access established. R1-R4 attribution fixes deployed. Weekly channel report upgraded: per-business-line breakdown, CPA/CPL from live API data, unit economics (LTV:CPA ratio, CAC payback, headroom), CPA trend tracking. Meta retargeting cut to £5/day. MOUVE brand purple theme."}
+        {"name": "Phase 1: Infrastructure & Measurement", "summary": "Google Ads conversion tracking fixed (37→12 real). Channel attribution fixed (classifySource). R1-R4 deployed. Weekly channel report: per-business-line breakdown, CPA from live API data, unit economics (LTV:CPA, CAC payback), CPA trend tracking. Meta retargeting cut £10→£5/day."}
       ],
       "next_phase": {
-        "name": "Phase 1: Infrastructure & Measurement (remaining)",
-        "detail": "Lead scoring engine, GHL events pipeline, monthly budget tracking.",
-        "status": "in_progress",
-        "tasks": [
-          "✅ Fix classifySource attribution logic (24 Feb)",
-          "✅ Fix Google Ads conversion tracking (24 Feb)",
-          "✅ Set up Google Ads + Meta API access (24 Feb)",
-          "✅ R1: Add utm_content to Google Ads tracking template (25 Feb)",
-          "✅ R2: Map Google campaign ID to human-readable name (25 Feb)",
-          "✅ R3: Fix Meta click-through misattribution (25 Feb)",
-          "✅ R4: Default organic source for leads with no UTM (25 Feb)",
-          "✅ Per-business-line breakdown in weekly report (25 Feb)",
-          "✅ CPA column with Google Ads + Meta API spend (25 Feb)",
-          "✅ Unit economics section — LTV:CPA ratio, CAC payback, headroom (25 Feb)",
-          "✅ CPA trend tracking — this week / 4-week / YTD (25 Feb)",
-          "✅ Meta retargeting cut £10→£5/day (25 Feb)",
-          "Lead scoring engine",
-          "GHL pipeline for events",
-          "Monthly budget vs actual tracking"
-        ]
+        "name": "Complete — unstarted work moved to backlog",
+        "detail": "Retention & referral, content pipeline, lead scoring, GHL events pipeline, monthly budget tracking all preserved in MARKETING-BACKLOG.md. Pick up when ready.",
+        "status": "complete",
+        "tasks": []
       },
-      "remaining_phases": [
-        "Phase 2: Children's Dance (Google Ads + Meta + CRO + SEO)",
-        "Phase 3: Parties (LP CRO + Meta campaign launch)",
-        "Phase 4: Ladies Fitness (campaign LP + Meta strategy)",
-        "Phase 5: Events (LP build + tracking + campaigns)",
-        "Phase 6: Content & Creative Pipeline",
-        "Phase 7: Ongoing Monitoring & Optimisation"
-      ],
-      "sub_projects": [
-        {"name": "Children's Dance Marketing", "file": "marketing/childrens-dance-marketing.md", "status": "planned"},
-        {"name": "Parties Marketing", "file": "marketing/parties-marketing.md", "status": "planned"},
-        {"name": "Ladies Fitness Marketing", "file": "marketing/ladies-fitness-marketing.md", "status": "planned"},
-        {"name": "Events Marketing", "file": "marketing/events-marketing.md", "status": "planned"}
-      ],
+      "remaining_phases": [],
       "key_data": {
-        "monthly_spend": "£1,046 (Google £191 + Meta £855)",
-        "ytd_leads": 344,
-        "ytd_won": 47,
-        "blended_win_rate": "19%",
-        "top_channel": "Organic/Website (38% win rate, £0 CPA)",
-        "google_leads_ytd": 12,
-        "meta_leads_ytd": 190,
-        "organic_leads_ytd": 105,
-        "business_lines": ["Children's Dance (priority 1)", "Parties (priority 2)", "Ladies Fitness (priority 3)", "Events (priority 4)"]
+        "backlog_file": "MARKETING-BACKLOG.md",
+        "paid_ads_project": "Paid Ads Optimisation (separate primary project)",
+        "infrastructure_delivered": "Attribution, conversion tracking, weekly report, CPA trends, unit economics"
       }
     },
     {
@@ -466,6 +431,16 @@
   ],
 
   "secondary_projects": [
+    {
+      "name": "Marketing Backlog",
+      "phase_current": 0,
+      "phase_total": 3,
+      "implementation_plan": "MARKETING-BACKLOG.md",
+      "purpose": "Unstarted marketing work preserved from archived Marketing & Conversions plan. 3 streams: infrastructure (lead scoring, GHL events, budget tracking), retention & referral (£20/£20 programme, churn prevention), content pipeline (4 pillars, cadence, repurposing).",
+      "status": "planned",
+      "status_label": "📋 BACKLOG | Pick up when ready. Not active.",
+      "next_action": "Choose which stream to activate first — retention/referral likely highest ROI"
+    },
     {
       "name": "Ladies Fitness Funnel",
       "phase_current": 5,
