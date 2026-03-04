@@ -5,7 +5,7 @@
 
   "health_summary": {
     "complete": 34,
-    "in_progress": 9,
+    "in_progress": 10,
     "waiting": 1,
     "planned": 5,
     "blocked": 1
@@ -447,6 +447,47 @@
         "tasks": ["See Marketing & Conversions plan — Phase 1: Infrastructure & Measurement"]
       },
       "remaining_phases": []
+    },
+    {
+      "name": "Paid Ads Optimisation",
+      "phase_current": 3,
+      "phase_total": 5,
+      "implementation_plan": "SEO-GEO/paid-ads/PAID-ADS-OPTIMISATION-PLAN.md",
+      "purpose": "Restructure Google Ads and Meta Ads — cut waste, fix targeting, test website vs form leads. Target: £1,127→£730/mo spend, better lead quality.",
+      "status": "in_progress",
+      "status_label": "v1.0 | Phase 3: Meta A/B Experiment 🔧 (guide built, ready to launch in Ads Manager)",
+      "completed_phases": [
+        {"name": "Phase 1: Emergency Cleanup", "summary": "25+ negative keywords, brand ad group paused (£142/mo saved), catch-all paused (£133/mo saved), all URLs → makeamouve.com."},
+        {"name": "Phase 2: Google Ads Restructure", "summary": "7 ad groups with phrase/exact keywords, RSA copy deployed, sitelink extensions added. Zero BROAD match keywords remain."},
+        {"name": "Phase 5.1: Conversion Tracking", "summary": "dataLayer.push on all 4 website forms, GTM tags (GA4 + Google Ads + Meta Pixel), 8 dead tags cleaned, v36 published."}
+      ],
+      "next_phase": {
+        "name": "Phase 3: Meta A/B Experiment — Form vs Website",
+        "detail": "Clean destination test using Meta Experiments. Same Zumba video, same copy, same targeting, 50/50 audience split. £6/day per arm. 14-day test.",
+        "status": "in_progress",
+        "tasks": [
+          "✅ Full API audit of PROSPECTING campaign (META-ADS-BUILD-SPEC.md)",
+          "✅ Experiment guide built (META-AB-EXPERIMENT-GUIDE.md) with locked creative copy",
+          "✅ WEBSITE campaign paused",
+          "⬅️ Build experiment in Ads Manager UI following guide",
+          "⬅️ Pause PROSPECTING original + copy at launch",
+          "📋 ~18 March: Pull results, compare cost per qualified lead"
+        ]
+      },
+      "remaining_phases": [
+        "Phase 4: New Verticals Launch (Bar Mitzvah, Ballet, seasonal camps)",
+        "Phase 5: Measurement & Monitoring (weekly CPA, creative refresh)"
+      ],
+      "key_data": {
+        "current_spend": "£1,127/mo",
+        "target_spend": "£730/mo",
+        "savings_target": "£397/mo (£4,764/yr)",
+        "meta_benchmark": "102 leads at £3.51/lead (30-day, original PROSPECTING)",
+        "hypothesis": "Website leads convert at 38% vs form leads at 6% — website arm should produce cheaper bookings",
+        "experiment_review_date": "~18 March 2026",
+        "guide_file": "META-AB-EXPERIMENT-GUIDE.md",
+        "spec_file": "META-ADS-BUILD-SPEC.md"
+      }
     }
   ],
 
