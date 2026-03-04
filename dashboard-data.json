@@ -611,41 +611,41 @@
   ],
 
   "weekly_review": {
-    "week_commencing": "24 February 2026",
+    "week_commencing": "3 March 2026",
     "built": [
-      "MOUVE Studio (DSP Replacement) — Phases 1-6 code complete: 15 Supabase tables, Stripe payments, GHL integration, term rollover, migration scripts. 33 routes, 14 tests, 9 Trigger.dev jobs",
-      "Premium Trial Pathway — Phase 0 probes complete + Phase 1 started: 8 custom fields + 17 tags created in GHL via API",
-      "LF-12 Newsletter SmartList Sync — n8n workflow syncs 335 TeamUp customers to GHL, consolidated 10 legacy SmartLists into one",
-      "Bulk SMS term renewal — 303 personalised SMS sent to spring→summer parents, 19 parent names corrected in GHL",
-      "Weekly Channel Performance Report v7 — unit economics (LTV:CPA, CAC payback, headroom) + CPA trend, MOUVE purple theme"
+      "MOUVE Website (Next.js) — 22-route site launched at makeamouve.com, replacing WordPress/Elementor. All pages, forms, schema, tracking live.",
+      "Google Ads restructure — 7 ad groups with phrase/exact keywords, RSA copy (15 headlines + 4 descriptions each), sitelink extensions. Zero BROAD match keywords.",
+      "Meta WEBSITE campaign — 4 ad sets by vertical (Children's £8, Ladies £5, Parties £2, Camps £2), website conversion objective, Meta Pixel Lead optimisation.",
+      "Meta A/B Experiment guide — step-by-step Ads Manager build spec for destination test (form vs website). Locked creative (10 bodies, 5 headlines, 2 descriptions pulled via API). API verification step.",
+      "META-ADS-BUILD-SPEC.md — full API audit of source PROSPECTING campaign (4 ad sets, 4 ads, 30-day performance, creative classification)."
     ],
     "improved": [
-      "R1-R4 attribution fixes all deployed: Google Ads UTM tracking, Meta click-through detection via fbp/fbc, Direct default",
-      "Google Ads conversion audit — demoted junk 'Contact (Page load)' conversion, 7 Local actions set non-biddable",
-      "Channel performance report — Google lead misclassification fixed (0→12), Unknown leads reduced (32→8)",
-      "MOUVE Studio admin UI — all 10 pages restyled (DSP/Arbor-inspired), Lucide icons, PageBanner, STYLE-GUIDE.md created",
-      "Dashboard demoted 5 stale projects to secondary, removed inaccurate KPI boxes"
+      "Google Ads emergency cleanup — 25+ negative keywords, brand ad group paused (£142/mo saved), catch-all paused (£133/mo saved), all URLs → makeamouve.com",
+      "GTM cleanup — 8 dead WordPress-era tags removed, phone call tag with wrong number deleted, remaining 8 tags renamed. Published v36.",
+      "GA4 conversion tracking fixed — dataLayer.push on all 4 Next.js forms, GTM triggers updated, 3 new tags (GA4, Google Ads, Meta Pixel). Live tested.",
+      "Dashboard v4.0 — full refresh: 9 stale tasks cleared, 4 projects marked complete, Dance Studio SaaS + Weekly Auto-Blog removed, dependencies updated."
     ],
     "decisions": [
-      "MOUVE Studio: full custom build (Next.js + Vercel + Supabase + Stripe + Trigger.dev) — replaces DSP, n8n, Airtable",
-      "Premium Trial Pathway: hybrid build (API for fields/tags/contacts/SMS, dashboard for pipeline/workflows/forms/payments)",
-      "Meta retargeting cut £10→£5/day — 0 conversions from £301 spend, brand awareness only",
-      "Supabase Shadow DB retired — MOUVE Studio replaces it entirely"
+      "Meta A/B experiment: clean destination test (form vs website) using Meta Experiments with randomised audience split. Same creative, same targeting, £6/day per arm, 14 days. Review ~18 March.",
+      "Pause all competing campaigns at experiment launch — PROSPECTING original + copy must stop to prevent auction overlap.",
+      "SEO & Geo project marked complete — WordPress-era fixes superseded by Next.js rebuild. GBP manual tasks are Louise's action items.",
+      "Marketing & Conversions marked complete — infrastructure done. Unstarted phases (retention, content, lead scoring) preserved in MARKETING-BACKLOG.md.",
+      "Party LP absorbed into main makeamouve.com/parties. Dance Studio SaaS removed (redundant with MOUVE Studio)."
     ],
     "risks": [
-      "MOUVE Studio needs manual config before launch: Stripe keys, Trigger.dev, Supabase Auth",
-      "DSP Merchant Services holds ~200+ parent cards (Stripe Connect model) — card re-entry needed at migration",
-      "£14,540 Stripe reconciliation still pending with bookkeeper",
-      "Budget project still paused — waiting on Xero data quality fixes"
+      "Meta app in development mode — cannot create new ad creative via API. Must use Ads Manager UI for experiment build.",
+      "3 Meta campaigns targeting same audience simultaneously until experiment launches — auction overlap contaminating results.",
+      "MOUVE Studio still needs manual config before launch: Stripe keys, Trigger.dev, Supabase Auth, GHL webhook.",
+      "Budget project still paused — waiting on Xero data quality fixes."
     ]
   },
 
   "recent_decisions": [
-    "MOUVE Studio: full custom build chosen (Next.js + Vercel + Supabase + Stripe + Trigger.dev) — replaces DSP, n8n, Airtable for enrolment data. Phases 1-6 code complete (26 Feb)",
-    "Premium Trial Pathway: Design approved + CRP v2.1 plan. 9-stage FB-only pipeline with £10 deposit, 48hr confirmation gate, hybrid build (API + dashboard). Phase 0 complete, Phase 1 started (26 Feb)",
-    "Weekly report v7: unit economics (LTV:CPA ratio, CAC payback, headroom) + CPA trend deployed. MOUVE brand purple theme (25 Feb)",
-    "R1-R4 attribution fixes all deployed: Google Ads UTM tracking, Meta click-through detection via fbp/fbc, Direct default (25 Feb)",
-    "Meta retargeting cut £10→£5/day — 0 conversions from £301 spend, keeping for brand awareness only (25 Feb)"
+    "Meta A/B experiment designed: form vs website destination test with locked Zumba video creative. META-AB-EXPERIMENT-GUIDE.md built with API-verified copy. Ready to launch in Ads Manager (4 March)",
+    "Google Ads fully restructured: 7 ad groups, phrase/exact keywords, RSAs deployed, sitelinks added, brand + catch-all paused. Saving ~£275/mo (4 March)",
+    "GA4 conversion tracking fixed on Next.js: dataLayer.push on all 4 forms + GTM tags for GA4, Google Ads, Meta Pixel (4 March)",
+    "SEO & Geo, Marketing & Conversions, Party LP all marked complete. Dashboard cleaned up to v4.0 (4 March)",
+    "MOUVE Website launched: 22-route Next.js site at makeamouve.com replacing WordPress/Elementor (3 March)"
   ],
 
   "financial_summary": {
