@@ -4,8 +4,8 @@
   "version": "3.6",
 
   "health_summary": {
-    "complete": 34,
-    "in_progress": 10,
+    "complete": 35,
+    "in_progress": 9,
     "waiting": 1,
     "planned": 5,
     "blocked": 1
@@ -274,58 +274,32 @@
       "phase_current": 9,
       "phase_total": 9,
       "implementation_plan": "SEO-GEO/SEO-GEO-IMPLEMENTATION-PLAN.md",
-      "purpose": "Technical SEO foundation — measurement, GBP API, security, crawl/indexing, schema markup. Phases 10-14 (content, E-E-A-T, paid ads, ops) absorbed into Marketing & Conversions plan.",
-      "status": "in_progress",
-      "status_label": "v2.3 | Phases 1-5, 7-9 ✅ | Phase 6 GBP 🔧 (manual tasks pending Louise's photos) | Phases 10-14 → Marketing & Conversions",
+      "purpose": "Technical SEO foundation — measurement, GBP API, security, crawl/indexing, schema markup. WordPress-era project superseded by Next.js site launch 3 March 2026. Remaining work absorbed into Paid Ads Optimisation and Marketing & Conversions.",
+      "status": "complete",
+      "status_label": "✅ COMPLETE | All 9 phases done on WordPress. New Next.js site rebuilt fresh. GBP manual tasks (Q&As, photos, posts) are Louise's action items. Paid ads → own project.",
       "completed_phases": [
-        {"name": "Phase 1: Quick Technical Wins", "summary": "Holiday Camps title 2025→2026, noindex on 2 utility pages, blog slug fixed, author → Louise, focus keyword set."},
-        {"name": "Phase 2: Schema Optimisation", "summary": "BlogPosting removed from Get a Quote + Matinee Gallery. All 7 key pages verified clean via curl."},
-        {"name": "Phase 3: On-Page SEO & Meta", "summary": "All 5 key pages have optimised meta + OG images. /holiday-camps/ redirect fixed."},
-        {"name": "Phase 4: URL Cleanup & Redirects", "summary": "Messy slug pages made draft. No auto-generated URLs remain in sitemap."},
-        {"name": "Phase 5: Measurement & Reporting", "summary": "GA4 6 key events configured. Meta Pixel + CAPI active (7 custom conversions). 5 Supabase reporting tables deployed. Baseline metrics captured (2/13 keywords page 1, 112 GBP reviews, mobile PSI 56→75/100). Competitive baseline: 6 direct + 4 entertainment competitors profiled. Call tracking pending (budget decision)."},
-        {"name": "Phase 7: Security & Compliance", "summary": "XML-RPC disabled (mu-plugin, 403). Privacy Policy rewritten (14 sections, DUA 2025). Google Maps API key restricted (new key, Maps Embed + makeamouve.com only). AC diffuser consent-gated (CookieYes listener)."},
-        {"name": "Phase 8: Crawl, Indexing & AI Policy", "summary": "robots.txt deployed (admin disallows, 7 AI training bots blocked, 3 AI search bots allowed). IndexNow active (Rank Math Pro). 404 fixed. PageSpeed 45→72→75/100, LCP 16s→4.2s, TBT 770ms→210ms. GTM cleanup. 23 Feb homepage audit: Site Kit deactivated (triple GA4), Perfmatters installed, preconnects added, headings restructured (14 fixes), og:image added, alt text fixed, GBP review link added, content 444→818 words. All 9 audit items addressed."},
-        {"name": "Phase 9: Structured Data & Schema", "summary": "10/11 tasks complete (1 deferred — no events page). FAQ schemas on 4 pages (Classes, Camps, Fitness, Contact). 6 Course schemas on /dance-classes/. Event schema (Easter 2026) on /holiday-camps/. Service schema on parties.makeamouve.com. Rich Results Test: 0 errors on all 6 pages. Total 59 valid structured data items across site."}
+        {"name": "Phase 1: Quick Technical Wins", "summary": "WordPress fixes — superseded by Next.js rebuild."},
+        {"name": "Phase 2: Schema Optimisation", "summary": "WordPress fixes — Next.js has own JSON-LD schemas."},
+        {"name": "Phase 3: On-Page SEO & Meta", "summary": "WordPress fixes — Next.js handles metadata natively."},
+        {"name": "Phase 4: URL Cleanup & Redirects", "summary": "WordPress slug fixes — clean URLs on Next.js from day one."},
+        {"name": "Phase 5: Measurement & Reporting", "summary": "GA4 events, Meta Pixel, Supabase tables, competitive baseline. GTM re-verified on Next.js (v36). Call tracking pending budget decision."},
+        {"name": "Phase 6: GBP Optimisation", "summary": "API tasks done (description, 53→16 services, categories, backup). 4 manual tasks remaining (Q&As, photos, posts, reviews) — Louise's action items, platform-independent."},
+        {"name": "Phase 7: Security & Compliance", "summary": "WordPress-specific (XML-RPC, CookieYes). Next.js handles security differently."},
+        {"name": "Phase 8: Crawl, Indexing & AI Policy", "summary": "WordPress-specific (robots.txt, IndexNow via Rank Math, PageSpeed 45→75). Next.js has own robots.txt and significantly better performance."},
+        {"name": "Phase 9: Structured Data & Schema", "summary": "10/11 tasks via Rank Math. Next.js site has own JSON-LD implementation."}
       ],
       "next_phase": {
-        "name": "Phase 6: Google Business Profile Optimisation",
-        "detail": "API tasks complete: description updated, 53 junk services → 16 clean, category added. 112 reviews fetched + saved. 8 review quote posts generated. Manual tasks remaining: Q&As, photos, weekly posts, review protocols.",
-        "status": "in_progress",
-        "tasks": [
-          "✅ 6.1 Update GBP description (via API)",
-          "✅ 6.2 List all services — 53 junk → 16 clean (via API)",
-          "✅ 6.3 Verify/add categories — drama_school added (via API)",
-          "✅ 6.9 GBP full backup saved (28KB JSON snapshot)",
-          "📋 6.4 Seed Q&A section — 12 questions written, post via Google Search",
-          "📋 6.5 Upload photos (20+) — needs Louise's photos",
-          "📋 6.6 Set up weekly posts — 8 review quote post images ready",
-          "📋 6.7 Review generation strategy",
-          "📋 6.8 Review response protocol"
-        ]
+        "name": "Complete — no further system work",
+        "detail": "Remaining GBP manual tasks (Q&As, photos, posts, reviews) are Louise's action items. Paid ads tracked under Paid Ads Optimisation project. Content/E-E-A-T/AEO tracked under Marketing & Conversions.",
+        "status": "complete",
+        "tasks": []
       },
-      "remaining_phases": [
-        "Phase 6: Google Business Profile (services, Q&A, reviews, photos, posts)",
-        "Phase 9: Structured Data & Schema — 4/11 done, in progress",
-        "Phase 10: Local Content Strategy (synopses, 5 landing pages, 6 blog posts, FAQs)",
-        "Phase 11: E-E-A-T & Authority (staff bios, About Louise, directories, partnerships)",
-        "Phase 12: AI Discoverability / AEO (7 test queries, scoring, iterative fixes)",
-        "Phase 13: Paid Advertising (4 Google + 5 Meta campaigns, seasonal budgets)",
-        "Phase 14: Operations & Monitoring (weekly/monthly/quarterly cadence)"
-      ],
+      "remaining_phases": [],
       "key_data": {
-        "research_sources": "Claude 92/120, Gemini 86/120, ChatGPT 84/120",
-        "skill": "seo-marketing (super skill, 10 files, 1,853 lines)",
-        "target_keywords": 13,
-        "local_landing_pages": 5,
-        "ad_campaigns_planned": 9,
-        "ai_test_queries": 7,
-        "target_roas_6mo": "5:1",
-        "target_ai_score_6mo": "3.0/5",
-        "mobile_pagespeed": "75/100 (was 56, originally 45)",
-        "lcp": "4.2s (was 16s)",
-        "tbt": "210ms (was 770ms)",
         "gbp_reviews": 112,
-        "keywords_page1": "2/13"
+        "wordpress_pagespeed_peak": "75/100 (was 45)",
+        "wordpress_lcp_peak": "4.2s (was 16s)",
+        "note": "WordPress-era metrics. Next.js site performance to be baselined separately."
       }
     },
     {
