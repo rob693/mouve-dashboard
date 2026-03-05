@@ -8,7 +8,7 @@
     "in_progress": 6,
     "waiting": 0,
     "planned": 4,
-    "blocked": 1
+    "blocked": 2
   },
 
   "tasks": [
@@ -372,6 +372,42 @@
         "experiment_review_date": "~18 March 2026",
         "guide_file": "META-AB-EXPERIMENT-GUIDE.md",
         "spec_file": "META-ADS-BUILD-SPEC.md"
+      }
+    },
+    {
+      "name": "WhatsApp Integration (Ladies Fitness)",
+      "phase_current": 1,
+      "phase_total": 4,
+      "implementation_plan": "active/WHATSAPP-IMPLEMENTATION-PLAN-MAR2026.md",
+      "purpose": "Add WhatsApp messaging to GHL for Ladies Fitness — weekly class reminders to 326 members to drive regular attendance. Starting with LF as test before expanding to children's.",
+      "status": "blocked",
+      "status_label": "v1.0 | Phase 1: Setup & Configuration | Blocked: Rob to subscribe ($29.99/mo) + connect number",
+      "completed_phases": [],
+      "next_phase": {
+        "name": "Phase 1: Setup & Configuration",
+        "detail": "Subscribe to GHL WhatsApp add-on, connect business mobile number, submit templates to Meta for approval (24-48hr wait).",
+        "status": "blocked",
+        "tasks": [
+          "Subscribe to GHL WhatsApp add-on ($29.99/mo)",
+          "Connect WhatsApp Business number in GHL",
+          "Submit mouve_lf_class_reminder template to Meta",
+          "Submit mouve_lf_we_miss_you template to Meta",
+          "Send test message to Rob's number"
+        ]
+      },
+      "remaining_phases": [
+        "Phase 2: Build LF-13 n8n Workflow (TeamUp query, targeting, GHL send, Airtable logging)",
+        "Phase 3: Go Live & Measure (4 weeks, ROI analysis)",
+        "Phase 4: Expand (trial reminders, lapsed members, children's)"
+      ],
+      "key_data": {
+        "members": 326,
+        "active_members": 51,
+        "classes_per_week": 5,
+        "estimated_messages_per_week": "45-68",
+        "monthly_cost": "~£30 (sub + Meta fees)",
+        "target_metric": "Attendance uplift after 4 weeks",
+        "pipeline_id": "6XVKMHvUCuQlHl7yHXiu"
       }
     }
   ],
