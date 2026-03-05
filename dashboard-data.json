@@ -375,6 +375,40 @@
       }
     },
     {
+      "name": "Meta CAPI for CRM (Conversion Leads)",
+      "phase_current": 1,
+      "phase_total": 2,
+      "implementation_plan": "N/A (GHL workflows, no code repo)",
+      "purpose": "Send GHL pipeline stage events (Showed, Won) to Meta Conversions API so Facebook optimises for lead quality — people who actually show up and pay — not just form submissions. Expected 19% lower cost per quality lead.",
+      "status": "in_progress",
+      "status_label": "v1.0 | Showed + Won workflows LIVE ✅ | Pending: switch ad set to Conversion Leads after Sunday 9 March",
+      "completed_phases": [
+        {"name": "Phase 1: CAPI Event Workflows", "summary": "Two GHL workflows deployed: 'CAPI: Lead Showed' (Pipeline 1 → Showed stage → Meta Funnel Event) and 'CAPI: Won Sent' (Pipeline 1 → Won stage → Meta Funnel Event). Idempotency via capi-showed-sent / capi-won-sent tags. Verified with real lead (PaulinaTe) — event received in Meta Events Manager."}
+      ],
+      "next_phase": {
+        "name": "Phase 2: Switch Ad Set Goal",
+        "detail": "After verifying real Showed/Won events flow from Sunday 9 March trials, change Meta ad set goal from 'Maximise leads' to 'Maximise conversion leads', optimising on 'Showed' event (higher volume than Won).",
+        "status": "planned",
+        "tasks": [
+          "Wait for Sunday 9 March events to flow through",
+          "Check Events Manager for Showed/Won events with good EMQ scores",
+          "Switch ad set performance goal to 'Maximise conversion leads'",
+          "Select 'Showed' as optimisation event",
+          "Monitor for 2-4 weeks as Meta's algorithm learns"
+        ]
+      },
+      "remaining_phases": [],
+      "key_data": {
+        "pixel_id": "1293992134106966",
+        "existing_lead_event_emq": "6.9/10",
+        "showed_conversion_rate": "22.4% from Lead (in Meta's 1-40% sweet spot)",
+        "won_conversion_rate": "10.3% from Lead",
+        "meta_estimate": "19% lower cost per quality lead",
+        "workflows": ["CAPI: Lead Showed", "CAPI: Won Sent"],
+        "pre_existing_workflow": "2023.1 - Facebook Lead Form Submitted (sends Lead event)"
+      }
+    },
+    {
       "name": "WhatsApp Integration (Ladies Fitness)",
       "phase_current": 1,
       "phase_total": 4,
