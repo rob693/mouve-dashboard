@@ -1,11 +1,11 @@
 {
   "generated_at": "2026-03-08T15:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
-  "version": "5.0",
+  "version": "5.2",
 
   "health_summary": {
-    "complete": 53,
-    "in_progress": 4,
+    "complete": 54,
+    "in_progress": 3,
     "waiting": 0,
     "planned": 0,
     "blocked": 2
@@ -183,32 +183,33 @@
     },
     {
       "name": "Marketing Audit Q2 2026",
-      "phase_current": 2,
+      "phase_current": 3,
       "phase_total": 3,
       "implementation_plan": "MARKETING-AUDIT-Q2-2026/MARKETING-AUDIT-MASTER-PLAN.md",
       "purpose": "Data-backed State of MOUVE Marketing audit (8 phases), project file cleanup, and Q2 2026 prioritised action plans. Hub-and-spoke structure with parallel agent execution.",
-      "status": "in_progress",
-      "status_label": "v1.0 | Stage 1 ✅ Complete | Stage 2 🔧 Clean House (19 files archived) | Stage 3 Next",
+      "status": "complete",
+      "status_label": "✅ Complete | 3 execution plans ready: Infrastructure Fix, Automation & Nurture, Growth",
       "completed_phases": [
         {"name": "Stage 1: Full Audit (8 phases)", "summary": "All 8 audit phases complete with real API data. Phase 8 synthesis written with prioritised action list (P0-P5). P0 fixes deployed: Google Ads cleanup, competitor targeting, Facebook rebrand, reference docs."},
-        {"name": "Stage 2: Clean House", "summary": "Audited 35 items in docs/projects/active/. Archived 19 (complete/superseded/stale). Moved 1 to core-reference. 16 active items remain."}
+        {"name": "Stage 2: Clean House", "summary": "Audited 35 items in docs/projects/active/. Archived 23 (complete/superseded/stale/absorbed). Moved 1 to core-reference. 12 active items remain."},
+        {"name": "Stage 3: Build New Plans", "summary": "3 implementation plans created: Infrastructure Fix (SPF, email links, Google Ads, GTM, redirect), Automation & Nurture (AC onboarding, win-back, LF welcome, chase sequence), Growth (location pages, PTP £10, Meta optimisation, offline conversions)."}
       ],
       "next_phase": {
-        "name": "Stage 3: Build New Plans",
-        "detail": "Create implementation plans for P1-P3 priorities from Phase 8 synthesis. Ready for agent execution.",
+        "name": "Execute Plans",
+        "detail": "Infrastructure Fix first (urgent — stopping £11/day waste), then Automation & Nurture, then Growth.",
         "status": "planned",
         "tasks": [
-          "Draft P1 implementation plans",
-          "Draft P2 implementation plans",
-          "Draft P3 implementation plans",
-          "Update dashboard with new plans"
+          "Plan A: Fix SPF, email links, Google Ads conversions, GTM cleanup",
+          "Plan B: Activate AC onboarding, build win-back + chase sequences",
+          "Plan C: Location pages, PTP £10 intro, Meta + Google Ads optimisation"
         ]
       },
       "remaining_phases": [],
       "key_data": {
         "audit_phases": 8,
-        "files_archived": 19,
-        "files_remaining": 16,
+        "files_archived": 23,
+        "files_remaining": 12,
+        "execution_plans": 3,
         "reference_docs_created": ["GOOGLE-ADS-REFERENCE.md", "META-ADS-REFERENCE.md"],
         "p0_fixes": "Google Ads sitelinks, competitor ad groups, Facebook rebrand, GBP duplicate"
       }
@@ -571,13 +572,18 @@
   "priority_actions": [
     {
       "category": "BUILD",
-      "action": "Marketing Audit — Stage 3: Build New Plans",
-      "detail": "Create implementation plans for P1-P3 priorities from Phase 8 synthesis. Data-backed plans ready for agent execution."
+      "action": "Execute Infrastructure Fix Plan (P1)",
+      "detail": "Fix SPF, update email template links, fix Google Ads conversions, clean GTM, fix www redirect, resume ads. Target: 12 March."
     },
     {
-      "category": "ACTION",
-      "action": "Fix SPF record for makeamouve.com",
-      "detail": "P0 from marketing audit Phase 1. SPF record needs updating on Guru.net DNS."
+      "category": "BUILD",
+      "action": "Execute Automation & Nurture Plan (P2)",
+      "detail": "Activate AC onboarding sequence, build lapsed win-back, LF welcome, non-booker chase sequence. Target: 22 March."
+    },
+    {
+      "category": "BUILD",
+      "action": "Execute Growth Plan (P3)",
+      "detail": "Location landing pages, PTP £10 intro, Meta optimisation, Google Ads offline conversions. Target: 31 March."
     },
     {
       "category": "ACTION",
