@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-03-04T21:00:00Z",
+  "generated_at": "2026-03-08T15:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
-  "version": "4.0",
+  "version": "5.0",
 
   "health_summary": {
-    "complete": 40,
+    "complete": 46,
     "in_progress": 6,
     "waiting": 0,
-    "planned": 4,
+    "planned": 1,
     "blocked": 2
   },
 
@@ -182,37 +182,35 @@
       "key_finding": "Xero understates revenue by ~12% (~£18K gap, revised from £29K after TeamUp correction). Stripe enrichment provides real-time truth. Bookkeeper questions prepared."
     },
     {
-      "name": "Business Diagnostic & Scale Readiness",
-      "phase_current": 1,
-      "phase_total": 5,
-      "implementation_plan": "BUSINESS-DIAGNOSTIC-SCALE-READINESS-IMPLEMENTATION-PLAN-FEB2026.md",
-      "purpose": "Strategic diagnostic consolidating 6 months of financial/operational data. Evaluates readiness for three growth paths: second location, franchise, or Dance School in a Box coaching product.",
-      "status": "planned",
-      "status_label": "v1.0 | Phase 1: Data Consolidation 📋",
-      "completed_phases": [],
+      "name": "Marketing Audit Q2 2026",
+      "phase_current": 2,
+      "phase_total": 3,
+      "implementation_plan": "MARKETING-AUDIT-Q2-2026/MARKETING-AUDIT-MASTER-PLAN.md",
+      "purpose": "Data-backed State of MOUVE Marketing audit (8 phases), project file cleanup, and Q2 2026 prioritised action plans. Hub-and-spoke structure with parallel agent execution.",
+      "status": "in_progress",
+      "status_label": "v1.0 | Stage 1 ✅ Complete | Stage 2 🔧 Clean House (19 files archived) | Stage 3 Next",
+      "completed_phases": [
+        {"name": "Stage 1: Full Audit (8 phases)", "summary": "All 8 audit phases complete with real API data. Phase 8 synthesis written with prioritised action list (P0-P5). P0 fixes deployed: Google Ads cleanup, competitor targeting, Facebook rebrand, reference docs."},
+        {"name": "Stage 2: Clean House", "summary": "Audited 35 items in docs/projects/active/. Archived 19 (complete/superseded/stale). Moved 1 to core-reference. 16 active items remain."}
+      ],
       "next_phase": {
-        "name": "Phase 1: Data Consolidation",
-        "detail": "Consolidate all existing metrics from Health Check, DSP Unit Economics, Budget, Supabase, Cross-Sell into single diagnostic data sheet.",
+        "name": "Stage 3: Build New Plans",
+        "detail": "Create implementation plans for P1-P3 priorities from Phase 8 synthesis. Ready for agent execution.",
         "status": "planned",
         "tasks": [
-          "Extract revenue, cost, LTV, retention from existing docs",
-          "Reconcile LTV figures (£4,110 projected vs £2,692 observed)",
-          "Create Diagnostic Data Sheet with source attribution",
-          "Flag data gaps with owner and priority"
+          "Draft P1 implementation plans",
+          "Draft P2 implementation plans",
+          "Draft P3 implementation plans",
+          "Update dashboard with new plans"
         ]
       },
-      "remaining_phases": [
-        "Phase 2: Operational Assessment (Rob/Louise questionnaire)",
-        "Phase 3: Growth Path Modelling (scale, franchise, DSIAB)",
-        "Phase 4: IP & Systems Inventory",
-        "Phase 5: Decision Framework & Final Document"
-      ],
+      "remaining_phases": [],
       "key_data": {
-        "growth_paths": ["Second Location", "Franchise", "Dance School in a Box (DSIAB)"],
-        "economic_ltv": "£2,692 (observed) / £4,110 (projected)",
-        "avg_retention": "16.6 months",
-        "cac_ltv_ratio": "1:22 (fully loaded)",
-        "data_sources_consolidated": 8
+        "audit_phases": 8,
+        "files_archived": 19,
+        "files_remaining": 16,
+        "reference_docs_created": ["GOOGLE-ADS-REFERENCE.md", "META-ADS-REFERENCE.md"],
+        "p0_fixes": "Google Ads sitelinks, competitor ad groups, Facebook rebrand, GBP duplicate"
       }
     },
     {
@@ -448,16 +446,6 @@
 
   "secondary_projects": [
     {
-      "name": "Marketing Backlog",
-      "phase_current": 0,
-      "phase_total": 3,
-      "implementation_plan": "MARKETING-BACKLOG.md",
-      "purpose": "Unstarted marketing work preserved from archived Marketing & Conversions plan. 3 streams: infrastructure (lead scoring, GHL events, budget tracking), retention & referral (£20/£20 programme, churn prevention), content pipeline (4 pillars, cadence, repurposing).",
-      "status": "planned",
-      "status_label": "📋 BACKLOG | Pick up when ready. Not active.",
-      "next_action": "Choose which stream to activate first — retention/referral likely highest ROI"
-    },
-    {
       "name": "Ladies Fitness Funnel",
       "phase_current": 5,
       "phase_total": 7,
@@ -498,16 +486,6 @@
       "next_action": "BLOCKED: Fix Xero data quality first (bookkeeper queries, reconciliation), then rebuild budget from clean data"
     },
     {
-      "name": "Supabase Shadow Database",
-      "phase_current": 4,
-      "phase_total": 6,
-      "implementation_plan": "SUPABASE-SHADOW-DATABASE-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Clean relational database (27 tables, 7 schemas) replacing 42+ Airtable tables. Shadow sync first, then new features write directly.",
-      "status": "in_progress",
-      "status_label": "v1.5 | Phase 4 ✅ (nightly sync + monitoring live) | Phase 5: New Features 📋",
-      "next_action": "Phase 5: Camp registers, party bookings, Staff Portal v2, FIN-01 write directly to Supabase"
-    },
-    {
       "name": "Student Progress Reports",
       "phase_current": 3,
       "phase_total": 5,
@@ -518,45 +496,14 @@
       "next_action": "Phase 4: n8n workflow to generate parent-facing PDF reports from completed assessments"
     },
     {
-      "name": "Staff Portal: Monitoring & Feature Backlog",
-      "phase_current": 9,
-      "phase_total": 9,
-      "implementation_plan": "CUSTOM-STAFF-PORTAL-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Post-launch monitoring + feature backlog (Incident Reports, My Pay Summary, Student Notes, Sub Request, Announcements)",
-      "status": "complete",
-      "status_label": "✅ COMPLETE | LIVE to all 22 staff. Rates reviewed. Feature backlog documented.",
-      "updated": "2026-03-04",
-      "summary": "v3.0 — LIVE to all 22 staff. Per-class rates system built (35 STAFF_CLASS_RATES, 77 sessions backfilled). Rate review complete.",
-      "next_action": "Feature backlog only — no active work"
-    },
-    {
-      "name": "Pocket Assistant (OpenClaw)",
-      "phase_current": 3,
-      "phase_total": 5,
-      "implementation_plan": "POCKET-ASSISTANT-IMPLEMENTATION-PLAN-FEB2026.md",
-      "purpose": "Personal AI assistant via Telegram (@OpenClaw_Rob_bot) with MOUVE read-only context, web search, cron briefings",
+      "name": "Birthday Party Emails",
+      "phase_current": 1,
+      "phase_total": 2,
+      "implementation_plan": "birthday-party-emails/SCOPE.md",
+      "purpose": "Automated 3-email sequence targeting existing students' parents 4 weeks before child's birthday. Marketing upsell for MOUVE birthday parties.",
       "status": "in_progress",
-      "status_label": "v2.0 | Phase 3/5 ✅ LIVE on Telegram (31 Jan) | Phase 4: Refinement 📋",
-      "next_action": "Use for 1 week, tune SOUL.md, add skills based on real usage"
-    },
-    {
-      "name": "Fix My Dance School (Audit Product)",
-      "phase_current": 0,
-      "phase_total": 5,
-      "implementation_plan": "FIX-MY-DANCE-SCHOOL-IMPLEMENTATION-PLAN-FEB2026.md",
-      "purpose": "Productised diagnostic service for other dance schools. £750-2,500 per audit using MOUVE's operational frameworks.",
-      "status": "planned",
-      "status_label": "v1.0 | Phase 0 Planning Complete 📋",
-      "revenue_model": "£750-2,500 per audit (10-15 hrs = £50-170/hr)",
-      "phases": [
-        "Phase 0: Planning (DONE)",
-        "Phase 1: Build Core Assets (~15 hrs)",
-        "Phase 2: Pilot Audit",
-        "Phase 3: Refine & Launch",
-        "Phase 4: Scale & Automate",
-        "Phase 5: Productise Further"
-      ],
-      "next_action": "Phase 1: Build analysis spreadsheet template, report template, intake questionnaire"
+      "status_label": "v1.0 | Emails drafted ✅ | Awaiting ops setup (AC tag, n8n cron)",
+      "next_action": "Create AC tag, validate DOB data, configure n8n weekly cron"
     }
   ],
 
@@ -594,12 +541,15 @@
       {"name": "Historical Camp Data Migration", "result": "1,301 contacts + 11-tag taxonomy imported to AC"},
       {"name": "School Clubs Migration", "result": "Closed (not viable)", "closed": true},
       {"name": "Amex Recon", "result": "Retired (30 Jan 2026) — M365 filters causing staff invoice loss, manual process sufficient", "closed": true},
-      {"name": "Attendance Tracker (Children's Dance)", "result": "Staff Portal /attendance page (25 Jan 2026)"}
+      {"name": "Attendance Tracker (Children's Dance)", "result": "Staff Portal /attendance page (25 Jan 2026)"},
+      {"name": "Pocket Assistant (OpenClaw)", "result": "All 3 phases complete. Telegram bot live on VPS (31 Jan 2026)"},
+      {"name": "Supabase Shadow Database", "result": "Phase 4/6 complete. 27-table schema, nightly Airtable sync, monitoring live (29 Jan 2026)"},
+      {"name": "Website Rebuild Planning", "result": "Design specs + brand assets complete. Absorbed into Next.js site build (1 March 2026)"}
     ],
     "active_campaigns": [
-      {"name": "Meta A/B Experiment (Form vs Website)", "status": "Ready to launch — guide built, awaiting Ads Manager build"},
-      {"name": "Google Ads (7 ad groups)", "status": "Active — phrase/exact keywords, RSAs, sitelinks (4 March 2026)"},
-      {"name": "Meta PROSPECTING (Zumba Video)", "status": "Active — £12/day, 102 leads at £3.51/lead baseline"}
+      {"name": "Google Ads (10 ad groups)", "status": "Active — 7 service + 3 competitor ad groups. Sitelinks, RSAs, phrase/exact keywords (8 March 2026)"},
+      {"name": "Meta PROSPECTING (Zumba Video)", "status": "Active — £12/day, 102 leads at £3.51/lead baseline"},
+      {"name": "Meta WEBSITE (4 ad sets)", "status": "Active — £17/day. Learning phase. Children's £8, Ladies £5, Camps £2, Parties £2 (4 March 2026)"}
     ]
   },
 
@@ -681,41 +631,40 @@
   ],
 
   "weekly_review": {
-    "week_commencing": "3 March 2026",
+    "week_commencing": "8 March 2026",
     "built": [
-      "MOUVE Website (Next.js) — 22-route site launched at makeamouve.com, replacing WordPress/Elementor. All pages, forms, schema, tracking live.",
-      "Google Ads restructure — 7 ad groups with phrase/exact keywords, RSA copy (15 headlines + 4 descriptions each), sitelink extensions. Zero BROAD match keywords.",
-      "Meta WEBSITE campaign — 4 ad sets by vertical (Children's £8, Ladies £5, Parties £2, Camps £2), website conversion objective, Meta Pixel Lead optimisation.",
-      "Meta A/B Experiment guide — step-by-step Ads Manager build spec for destination test (form vs website). Locked creative (10 bodies, 5 headlines, 2 descriptions pulled via API). API verification step.",
-      "META-ADS-BUILD-SPEC.md — full API audit of source PROSPECTING campaign (4 ad sets, 4 ads, 30-day performance, creative classification)."
+      "Marketing Audit Q2 2026 — 8-phase data audit complete. Phase 8 synthesis with P0-P5 priorities written.",
+      "3 competitor ad groups in Google Ads — Vanessa Class (8 kw), Rising Stars (7 kw), Glittery Parties (11 kw) with RSA ads.",
+      "GOOGLE-ADS-REFERENCE.md — complete account reference (campaigns, ad groups, keywords, sitelinks, tracking, API).",
+      "META-ADS-REFERENCE.md — complete account reference (campaigns, pixel, CAPI, audiences, attribution).",
+      "Meta CAPI for CRM — Showed + Won pipeline events from GHL to Meta Conversions API."
     ],
     "improved": [
-      "Google Ads emergency cleanup — 25+ negative keywords, brand ad group paused (£142/mo saved), catch-all paused (£133/mo saved), all URLs → makeamouve.com",
-      "GTM cleanup — 8 dead WordPress-era tags removed, phone call tag with wrong number deleted, remaining 8 tags renamed. Published v36.",
-      "GA4 conversion tracking fixed — dataLayer.push on all 4 Next.js forms, GTM triggers updated, 3 new tags (GA4, Google Ads, Meta Pixel). Live tested.",
-      "Dashboard v4.0 — full refresh: 9 stale tasks cleared, 4 projects marked complete, Dance Studio SaaS + Weekly Auto-Blog removed, dependencies updated."
+      "Google Ads — fixed 11 broken sitelinks, added 4 correct ones, reduced conversion goals 5→3, added 6 campaign negatives, removed 7 duplicate keywords.",
+      "Facebook page rebranded — 'MOUVE by Dancing with Louise', username @MOUVEbyDWL, new professional bio.",
+      "Project file cleanup — 19 files archived from docs/projects/active/ (35→16 items). Dashboard v5.0.",
+      "Documentation — MARKETING-PLATFORMS-REFERENCE.md, DOCS-INDEX.md, mouve-website CLAUDE.md all updated."
     ],
     "decisions": [
-      "Meta A/B experiment: clean destination test (form vs website) using Meta Experiments with randomised audience split. Same creative, same targeting, £6/day per arm, 14 days. Review ~18 March.",
-      "Pause all competing campaigns at experiment launch — PROSPECTING original + copy must stop to prevent auction overlap.",
-      "SEO & Geo project marked complete — WordPress-era fixes superseded by Next.js rebuild. GBP manual tasks are Louise's action items.",
-      "Marketing & Conversions marked complete — infrastructure done. Unstarted phases (retention, content, lead scoring) preserved in MARKETING-BACKLOG.md.",
-      "Party LP absorbed into main makeamouve.com/parties. Dance Studio SaaS removed (redundant with MOUVE Studio)."
+      "Clean House: archived 19 stale/complete project files. Business Diagnostic, Fix My Dance School, Marketing Backlog, Spring Retention all archived.",
+      "Competitor targeting via Google Ads — positive brand bidding on 3 local competitors (no negative/dig copy, USP positioning only).",
+      "Meta WEBSITE campaign kept active (was flagged for killing but is brand new, started 4 March).",
+      "KIT-PAGES-REFERENCE.md moved to core-reference/ (was misplaced as a project file)."
     ],
     "risks": [
-      "Meta app in development mode — cannot create new ad creative via API. Must use Ads Manager UI for experiment build.",
-      "3 Meta campaigns targeting same audience simultaneously until experiment launches — auction overlap contaminating results.",
       "MOUVE Studio still needs manual config before launch: Stripe keys, Trigger.dev, Supabase Auth, GHL webhook.",
-      "Budget project still paused — waiting on Xero data quality fixes."
+      "Budget project still paused — waiting on Xero data quality fixes.",
+      "SPF record for makeamouve.com needs fixing (P0 from audit).",
+      "GBP duplicate listing removal re-submitted — check in a few days."
     ]
   },
 
   "recent_decisions": [
-    "Meta A/B experiment designed: form vs website destination test with locked Zumba video creative. META-AB-EXPERIMENT-GUIDE.md built with API-verified copy. Ready to launch in Ads Manager (4 March)",
-    "Google Ads fully restructured: 7 ad groups, phrase/exact keywords, RSAs deployed, sitelinks added, brand + catch-all paused. Saving ~£275/mo (4 March)",
-    "GA4 conversion tracking fixed on Next.js: dataLayer.push on all 4 forms + GTM tags for GA4, Google Ads, Meta Pixel (4 March)",
-    "SEO & Geo, Marketing & Conversions, Party LP all marked complete. Dashboard cleaned up to v4.0 (4 March)",
-    "MOUVE Website launched: 22-route Next.js site at makeamouve.com replacing WordPress/Elementor (3 March)"
+    "Clean House: 19 project files archived, 16 remain active. Dashboard v5.0 reflects current state (8 March)",
+    "3 competitor ad groups created: Vanessa Class (dance), Rising Stars (camps/parties), Glittery Parties (events). Phrase-match brand keywords + RSA ads (8 March)",
+    "Facebook page rebranded: 'MOUVE by Dancing with Louise', username @MOUVEbyDWL, new bio (8 March)",
+    "GOOGLE-ADS-REFERENCE.md + META-ADS-REFERENCE.md created as single source of truth for paid ads (8 March)",
+    "Meta WEBSITE campaign confirmed active (4 March) — 4 ad sets in Learning phase, £17/day total"
   ],
 
   "financial_summary": {
@@ -776,54 +725,44 @@
 
   "priority_actions": [
     {
-      "category": "COMPLETE",
-      "action": "Custom Staff Portal — COMPLETE ✅ (Post-Launch Monitoring)",
-      "detail": "All 8 phases done, 6 features live, 22 staff onboarded (29 Jan). Full data audit completed: 28 class records corrected, 5 TEST records cleaned up. Remaining: monitor staff feedback, Feb Camp instructor assignment when staffed."
-    },
-    {
       "category": "BUILD",
-      "action": "Staff Costs — Monitor Timesheet Usage via Portal",
-      "detail": "Portal live to all staff (29 Jan). Monitor that staff log sessions via portal timesheet form, then verify n8n statement generation works with portal-created records."
-    },
-    {
-      "category": "BUILD",
-      "action": "Lead Scoring: Full historical backfill + attribution fixes (R1-R4)",
-      "detail": "14-day sync done (75 records). Remaining: run --all --execute in background (20-30 min). Then R1: add utm_content to Google Ads (10 min), R3: fix Meta misattribution in n8n (30 min), R4: default organic source (1 hr)."
-    },
-    {
-      "category": "BUILD",
-      "action": "Children's Onboarding GHL v2.0 - Phase 1 In Progress (4/10 kit pages)",
-      "detail": "Phase 0 complete (backup done). 4 kit pages built: Ballet (9 levels), Tap, Hip Hop, Gymnastics. Remaining: Jazz/Contemporary/Elite need shop products; Drama/Broadway/First Mouves need 'no uniform' pages; then upload to WordPress."
-    },
-    {
-      "category": "BUILD",
-      "action": "Financial Intelligence — FIN-01 Core Live, Phase 2 Next",
-      "detail": "FIN-01 workflow live (16 nodes, Sat 07:00). Xero P&L + Bank Health + 4 Stripe accounts + Reconciliation Engine + Cash Health. Found: Xero understates revenue by ~20%. Next: Add Airtable queries, GitHub push, then build financial dashboard (MVP 10 numbers)."
+      "action": "Marketing Audit — Stage 3: Build New Plans",
+      "detail": "Create implementation plans for P1-P3 priorities from Phase 8 synthesis. Data-backed plans ready for agent execution."
     },
     {
       "category": "ACTION",
-      "action": "Financial Health Check — Travel split with Louise + 4 Dec queries",
-      "detail": "Year-end unblocked (7/8 statements sent, accountant papers received). Remaining: categorise £32.6K travel with Louise, answer 4 Dec queries (3× Amazon, 1× Anouska), resolve 4838 statement issue."
+      "action": "Fix SPF record for makeamouve.com",
+      "detail": "P0 from marketing audit Phase 1. SPF record needs updating on Guru.net DNS."
     },
     {
       "category": "ACTION",
-      "action": "12-Month Budget — Upload Corrected Spreadsheet to Google Sheets",
-      "detail": "Venue rental corrected: £22,997→£32,227 (+40%). SMSJ invoices + price increase (Jan 2026) applied. Tab 2 shows accrual (when sessions happen), Tab 5 shows cash flow (termly lumps). Contribution margin now 78.4%. Next: upload .xlsx to Google Sheets, create assumptions register, write 1-page summary."
+      "action": "Check Meta CAPI events after Sunday trials",
+      "detail": "Verify Showed/Won events flowing in Events Manager with good EMQ. Then switch ad set to Conversion Leads."
     },
     {
-      "category": "OPS",
-      "action": "GHL SMS Audit — Complete ✅ (Measure 1 Mar)",
-      "detail": "5/5 cleanup tasks done. opportunity_abandoned tag added to Abandoned workflow + Follow Ups If/Else updated (29 Jan). Measure SMS on 1 Mar vs 2,668 baseline (target ~2,250). See UNIT-ECONOMICS-REFERENCE.md Section 14."
+      "category": "ACTION",
+      "action": "Monitor competitor ad groups (1-2 weeks)",
+      "detail": "3 new competitor ad groups (Vanessa Class, Rising Stars, Glittery Parties) need performance check after 1-2 weeks."
     },
     {
       "category": "BUILD",
-      "action": "Business Diagnostic — Phase 1 Ready (Data Consolidation)",
-      "detail": "New strategic project: consolidate all existing financial/operational data into single diagnostic, then evaluate 3 growth paths (scale, franchise, DSIAB). Phase 1 is Claude-led (no Rob input needed). Phase 2 needs Rob/Louise questionnaire (~60-90 min). DSP Unit Economics reference doc created (29 Jan)."
+      "action": "Children's Onboarding GHL v2.0 - Phase 1 In Progress",
+      "detail": "4/10 kit pages complete. Remaining: Jazz/Contemporary/Elite, Drama/Broadway/First Mouves."
     },
     {
-      "category": "OPS",
-      "action": "Ops Library Phase 6: Governance",
-      "detail": "Establish SOP update process and quarterly review cycle"
+      "category": "BUILD",
+      "action": "Staff Admin Costs — Phase 6A January Payment Processing",
+      "detail": "10 staff Ready to Pay (£5,459.92). 7 staff Needs Review. Louise to approve spreadsheets."
+    },
+    {
+      "category": "BUILD",
+      "action": "MOUVE Studio — Manual Config Required",
+      "detail": "All code complete. Rob needs to: set up Stripe test keys, Trigger.dev project, Supabase Auth, GHL webhook."
+    },
+    {
+      "category": "ACTION",
+      "action": "WhatsApp Integration — Rob to subscribe",
+      "detail": "GHL WhatsApp add-on ($29.99/mo). Rob needs to subscribe + connect business number."
     }
   ]
 }
