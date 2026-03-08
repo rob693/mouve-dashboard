@@ -4,10 +4,10 @@
   "version": "5.0",
 
   "health_summary": {
-    "complete": 46,
-    "in_progress": 6,
+    "complete": 53,
+    "in_progress": 4,
     "waiting": 0,
-    "planned": 1,
+    "planned": 0,
     "blocked": 2
   },
 
@@ -214,63 +214,6 @@
       }
     },
     {
-      "name": "SEO & Geo (Technical Foundation)",
-      "phase_current": 9,
-      "phase_total": 9,
-      "implementation_plan": "SEO-GEO/SEO-GEO-IMPLEMENTATION-PLAN.md",
-      "purpose": "Technical SEO foundation — measurement, GBP API, security, crawl/indexing, schema markup. WordPress-era project superseded by Next.js site launch 3 March 2026. Remaining work absorbed into Paid Ads Optimisation and Marketing & Conversions.",
-      "status": "complete",
-      "status_label": "✅ COMPLETE | All 9 phases done on WordPress. New Next.js site rebuilt fresh. GBP manual tasks (Q&As, photos, posts) are Louise's action items. Paid ads → own project.",
-      "completed_phases": [
-        {"name": "Phase 1: Quick Technical Wins", "summary": "WordPress fixes — superseded by Next.js rebuild."},
-        {"name": "Phase 2: Schema Optimisation", "summary": "WordPress fixes — Next.js has own JSON-LD schemas."},
-        {"name": "Phase 3: On-Page SEO & Meta", "summary": "WordPress fixes — Next.js handles metadata natively."},
-        {"name": "Phase 4: URL Cleanup & Redirects", "summary": "WordPress slug fixes — clean URLs on Next.js from day one."},
-        {"name": "Phase 5: Measurement & Reporting", "summary": "GA4 events, Meta Pixel, Supabase tables, competitive baseline. GTM re-verified on Next.js (v36). Call tracking pending budget decision."},
-        {"name": "Phase 6: GBP Optimisation", "summary": "API tasks done (description, 53→16 services, categories, backup). 4 manual tasks remaining (Q&As, photos, posts, reviews) — Louise's action items, platform-independent."},
-        {"name": "Phase 7: Security & Compliance", "summary": "WordPress-specific (XML-RPC, CookieYes). Next.js handles security differently."},
-        {"name": "Phase 8: Crawl, Indexing & AI Policy", "summary": "WordPress-specific (robots.txt, IndexNow via Rank Math, PageSpeed 45→75). Next.js has own robots.txt and significantly better performance."},
-        {"name": "Phase 9: Structured Data & Schema", "summary": "10/11 tasks via Rank Math. Next.js site has own JSON-LD implementation."}
-      ],
-      "next_phase": {
-        "name": "Complete — no further system work",
-        "detail": "Remaining GBP manual tasks (Q&As, photos, posts, reviews) are Louise's action items. Paid ads tracked under Paid Ads Optimisation project. Content/E-E-A-T/AEO tracked under Marketing & Conversions.",
-        "status": "complete",
-        "tasks": []
-      },
-      "remaining_phases": [],
-      "key_data": {
-        "gbp_reviews": 112,
-        "wordpress_pagespeed_peak": "75/100 (was 45)",
-        "wordpress_lcp_peak": "4.2s (was 16s)",
-        "note": "WordPress-era metrics. Next.js site performance to be baselined separately."
-      }
-    },
-    {
-      "name": "Marketing & Conversions (Unified)",
-      "phase_current": 1,
-      "phase_total": 1,
-      "implementation_plan": "MOUVE-MARKETING-CONVERSION-PLAN.md",
-      "purpose": "Unified marketing infrastructure — attribution fixes, conversion tracking, weekly channel report with CPA/unit economics. Infrastructure phase complete. Paid ads → own project. Unstarted phases → MARKETING-BACKLOG.md.",
-      "status": "complete",
-      "status_label": "✅ COMPLETE | Infrastructure done (attribution, tracking, weekly report). Paid ads → Paid Ads Optimisation. Unstarted phases → Marketing Backlog.",
-      "completed_phases": [
-        {"name": "Phase 1: Infrastructure & Measurement", "summary": "Google Ads conversion tracking fixed (37→12 real). Channel attribution fixed (classifySource). R1-R4 deployed. Weekly channel report: per-business-line breakdown, CPA from live API data, unit economics (LTV:CPA, CAC payback), CPA trend tracking. Meta retargeting cut £10→£5/day."}
-      ],
-      "next_phase": {
-        "name": "Complete — unstarted work moved to backlog",
-        "detail": "Retention & referral, content pipeline, lead scoring, GHL events pipeline, monthly budget tracking all preserved in MARKETING-BACKLOG.md. Pick up when ready.",
-        "status": "complete",
-        "tasks": []
-      },
-      "remaining_phases": [],
-      "key_data": {
-        "backlog_file": "MARKETING-BACKLOG.md",
-        "paid_ads_project": "Paid Ads Optimisation (separate primary project)",
-        "infrastructure_delivered": "Attribution, conversion tracking, weekly report, CPA trends, unit economics"
-      }
-    },
-    {
       "name": "Staff Admin Costs",
       "phase_current": 6,
       "phase_total": 8,
@@ -309,101 +252,6 @@
         "review_staff": 7,
         "scripts": ["generate_ready_to_pay_spreadsheet.py", "generate_review_spreadsheet.py"],
         "process_doc": "STAFF-PAYMENT-REVIEW-PROCESS.md"
-      }
-    },
-    {
-      "name": "Lead Scoring & Attribution Tracking",
-      "phase_current": 2,
-      "phase_total": 4,
-      "implementation_plan": "LEAD-SCORING-IMPLEMENTATION-PLAN-FEB2026.md",
-      "purpose": "ABSORBED into Marketing & Conversions plan (Infrastructure layer). Weekly Channel Report LIVE. Attribution fixes (R1-R4) continue under unified plan.",
-      "status": "in_progress",
-      "status_label": "⤴️ ABSORBED → Marketing & Conversions | Weekly Report LIVE ✅ | R1-R4 continue under unified plan",
-      "completed_phases": [
-        {"name": "Phase 1: Tracking Infrastructure", "summary": "Fixed Google Ads UTM tracking, paused expensive Facebook campaign. Saved £299/month."},
-        {"name": "Phase 2: 14-Day Lead Audit", "summary": "68 leads analysed. 5 recommendations. GHL sync script built."}
-      ],
-      "next_phase": {
-        "name": "Continues under Marketing & Conversions",
-        "detail": "R1-R4 attribution fixes and lead scoring engine now tracked in MOUVE-MARKETING-CONVERSION-PLAN.md Phase 1.",
-        "status": "in_progress",
-        "tasks": ["See Marketing & Conversions plan — Phase 1: Infrastructure & Measurement"]
-      },
-      "remaining_phases": []
-    },
-    {
-      "name": "Paid Ads Optimisation",
-      "phase_current": 3,
-      "phase_total": 5,
-      "implementation_plan": "SEO-GEO/paid-ads/PAID-ADS-OPTIMISATION-PLAN.md",
-      "purpose": "Restructure Google Ads and Meta Ads — cut waste, fix targeting, test website vs form leads. Target: £1,127→£730/mo spend, better lead quality.",
-      "status": "in_progress",
-      "status_label": "v1.0 | Phase 3: Meta A/B Experiment 🔧 (guide built, ready to launch in Ads Manager)",
-      "completed_phases": [
-        {"name": "Phase 1: Emergency Cleanup", "summary": "25+ negative keywords, brand ad group paused (£142/mo saved), catch-all paused (£133/mo saved), all URLs → makeamouve.com."},
-        {"name": "Phase 2: Google Ads Restructure", "summary": "7 ad groups with phrase/exact keywords, RSA copy deployed, sitelink extensions added. Zero BROAD match keywords remain."},
-        {"name": "Phase 5.1: Conversion Tracking", "summary": "dataLayer.push on all 4 website forms, GTM tags (GA4 + Google Ads + Meta Pixel), 8 dead tags cleaned, v36 published."}
-      ],
-      "next_phase": {
-        "name": "Phase 3: Meta A/B Experiment — Form vs Website",
-        "detail": "Clean destination test using Meta Experiments. Same Zumba video, same copy, same targeting, 50/50 audience split. £6/day per arm. 14-day test.",
-        "status": "in_progress",
-        "tasks": [
-          "✅ Full API audit of PROSPECTING campaign (META-ADS-BUILD-SPEC.md)",
-          "✅ Experiment guide built (META-AB-EXPERIMENT-GUIDE.md) with locked creative copy",
-          "✅ WEBSITE campaign paused",
-          "⬅️ Build experiment in Ads Manager UI following guide",
-          "⬅️ Pause PROSPECTING original + copy at launch",
-          "📋 ~18 March: Pull results, compare cost per qualified lead"
-        ]
-      },
-      "remaining_phases": [
-        "Phase 4: New Verticals Launch (Bar Mitzvah, Ballet, seasonal camps)",
-        "Phase 5: Measurement & Monitoring (weekly CPA, creative refresh)"
-      ],
-      "key_data": {
-        "current_spend": "£1,127/mo",
-        "target_spend": "£730/mo",
-        "savings_target": "£397/mo (£4,764/yr)",
-        "meta_benchmark": "102 leads at £3.51/lead (30-day, original PROSPECTING)",
-        "hypothesis": "Website leads convert at 38% vs form leads at 6% — website arm should produce cheaper bookings",
-        "experiment_review_date": "~18 March 2026",
-        "guide_file": "META-AB-EXPERIMENT-GUIDE.md",
-        "spec_file": "META-ADS-BUILD-SPEC.md"
-      }
-    },
-    {
-      "name": "Meta CAPI for CRM (Conversion Leads)",
-      "phase_current": 1,
-      "phase_total": 2,
-      "implementation_plan": "N/A (GHL workflows, no code repo)",
-      "purpose": "Send GHL pipeline stage events (Showed, Won) to Meta Conversions API so Facebook optimises for lead quality — people who actually show up and pay — not just form submissions. Expected 19% lower cost per quality lead.",
-      "status": "in_progress",
-      "status_label": "v1.0 | Showed + Won workflows LIVE ✅ | Pending: switch ad set to Conversion Leads after Sunday 9 March",
-      "completed_phases": [
-        {"name": "Phase 1: CAPI Event Workflows", "summary": "Two GHL workflows deployed: 'CAPI: Lead Showed' (Pipeline 1 → Showed stage → Meta Funnel Event) and 'CAPI: Won Sent' (Pipeline 1 → Won stage → Meta Funnel Event). Idempotency via capi-showed-sent / capi-won-sent tags. Verified with real lead (PaulinaTe) — event received in Meta Events Manager."}
-      ],
-      "next_phase": {
-        "name": "Phase 2: Switch Ad Set Goal",
-        "detail": "After verifying real Showed/Won events flow from Sunday 9 March trials, change Meta ad set goal from 'Maximise leads' to 'Maximise conversion leads', optimising on 'Showed' event (higher volume than Won).",
-        "status": "planned",
-        "tasks": [
-          "Wait for Sunday 9 March events to flow through",
-          "Check Events Manager for Showed/Won events with good EMQ scores",
-          "Switch ad set performance goal to 'Maximise conversion leads'",
-          "Select 'Showed' as optimisation event",
-          "Monitor for 2-4 weeks as Meta's algorithm learns"
-        ]
-      },
-      "remaining_phases": [],
-      "key_data": {
-        "pixel_id": "1293992134106966",
-        "existing_lead_event_emq": "6.9/10",
-        "showed_conversion_rate": "22.4% from Lead (in Meta's 1-40% sweet spot)",
-        "won_conversion_rate": "10.3% from Lead",
-        "meta_estimate": "19% lower cost per quality lead",
-        "workflows": ["CAPI: Lead Showed", "CAPI: Won Sent"],
-        "pre_existing_workflow": "2023.1 - Facebook Lead Form Submitted (sends Lead event)"
       }
     },
     {
@@ -495,16 +343,6 @@
       "status_label": "v1.16 | Phase 3 ✅ Complete | Phase 4: Report Generation 📋",
       "next_action": "Phase 4: n8n workflow to generate parent-facing PDF reports from completed assessments"
     },
-    {
-      "name": "Birthday Party Emails",
-      "phase_current": 1,
-      "phase_total": 2,
-      "implementation_plan": "birthday-party-emails/SCOPE.md",
-      "purpose": "Automated 3-email sequence targeting existing students' parents 4 weeks before child's birthday. Marketing upsell for MOUVE birthday parties.",
-      "status": "in_progress",
-      "status_label": "v1.0 | Emails drafted ✅ | Awaiting ops setup (AC tag, n8n cron)",
-      "next_action": "Create AC tag, validate DOB data, configure n8n weekly cron"
-    }
   ],
 
   "completed_projects": {
@@ -544,7 +382,15 @@
       {"name": "Attendance Tracker (Children's Dance)", "result": "Staff Portal /attendance page (25 Jan 2026)"},
       {"name": "Pocket Assistant (OpenClaw)", "result": "All 3 phases complete. Telegram bot live on VPS (31 Jan 2026)"},
       {"name": "Supabase Shadow Database", "result": "Phase 4/6 complete. 27-table schema, nightly Airtable sync, monitoring live (29 Jan 2026)"},
-      {"name": "Website Rebuild Planning", "result": "Design specs + brand assets complete. Absorbed into Next.js site build (1 March 2026)"}
+      {"name": "Website Rebuild Planning", "result": "Design specs + brand assets complete. Absorbed into Next.js site build (1 March 2026)"},
+      {"name": "SEO & Geo (Technical Foundation)", "result": "9/9 phases complete on WordPress. Absorbed into Marketing Audit Q2 2026 (8 March 2026)"},
+      {"name": "Marketing & Conversions (Infrastructure)", "result": "Attribution fixed, tracking live, weekly report. Absorbed into Marketing Audit (8 March 2026)"},
+      {"name": "Paid Ads Optimisation", "result": "Google Ads restructured, Meta A/B guide built, conversion tracking live. Absorbed into Marketing Audit (8 March 2026)"},
+      {"name": "Lead Scoring & Attribution", "result": "68-lead audit, tracking fixes, weekly report. Absorbed into Marketing Audit (8 March 2026)"},
+      {"name": "Meta CAPI for CRM", "result": "Showed + Won GHL workflows live. CAPI events flowing to Meta (5 March 2026)"},
+      {"name": "Birthday Party Emails", "result": "3-email sequence drafted, 96% DOB coverage. Absorbed into Marketing Audit (8 March 2026)"},
+      {"name": "LF Newsletter", "result": "Prompt file done. Absorbed into Marketing Audit (8 March 2026)"}
+    ],
     ],
     "active_campaigns": [
       {"name": "Google Ads (10 ad groups)", "status": "Active — 7 service + 3 competitor ad groups. Sitelinks, RSAs, phrase/exact keywords (8 March 2026)"},
