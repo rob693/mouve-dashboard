@@ -342,7 +342,7 @@
       "status": "in_progress",
       "status_label": "v1.16 | Phase 3 ✅ Complete | Phase 4: Report Generation 📋",
       "next_action": "Phase 4: n8n workflow to generate parent-facing PDF reports from completed assessments"
-    },
+    }
   ],
 
   "completed_projects": {
@@ -390,7 +390,6 @@
       {"name": "Meta CAPI for CRM", "result": "Showed + Won GHL workflows live. CAPI events flowing to Meta (5 March 2026)"},
       {"name": "Birthday Party Emails", "result": "3-email sequence drafted, 96% DOB coverage. Absorbed into Marketing Audit (8 March 2026)"},
       {"name": "LF Newsletter", "result": "Prompt file done. Absorbed into Marketing Audit (8 March 2026)"}
-    ],
     ],
     "active_campaigns": [
       {"name": "Google Ads (10 ad groups)", "status": "Active — 7 service + 3 competitor ad groups. Sitelinks, RSAs, phrase/exact keywords (8 March 2026)"},
