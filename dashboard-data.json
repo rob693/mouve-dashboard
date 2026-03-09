@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-03-08T15:00:00Z",
+  "generated_at": "2026-03-09T18:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
-  "version": "5.3",
+  "version": "5.4",
 
   "health_summary": {
     "complete": 57,
@@ -479,27 +479,26 @@
   ],
 
   "weekly_review": {
-    "week_commencing": "8 March 2026",
+    "week_commencing": "9 March 2026",
     "built": [
-      "Marketing Audit Q2 2026 — 8-phase data audit complete. Phase 8 synthesis with P0-P5 priorities written.",
-      "3 competitor ad groups in Google Ads — Vanessa Class (8 kw), Rising Stars (7 kw), Glittery Parties (11 kw) with RSA ads.",
-      "GOOGLE-ADS-REFERENCE.md — complete account reference (campaigns, ad groups, keywords, sitelinks, tracking, API).",
-      "META-ADS-REFERENCE.md — complete account reference (campaigns, pixel, CAPI, audiences, attribution).",
-      "Meta CAPI for CRM — Showed + Won pipeline events from GHL to Meta Conversions API.",
-      "Daily Ad Health Check (ADH-01) — Mon-Sat 09:00, alerts on zero conversions, no spend, or high spend (>£20/day). Google Ads v20 + Meta Graph API v19.0.",
-      "Weekly Ad Performance Summary (ADH-02) — Monday 08:00, 7-day report with CPL, CTR, campaign breakdown, budget pacing vs £210/wk target, CAPI health."
+      "9-email branded onboarding sequence — designed in Paper (MOUVE brand system), Hormozi-informed copy, all 9 emails with real logos/footer. PDF preview generated for Louise.",
+      "Email 9 Hormozi rewrite — removed doubt-planting section, replaced with achievement anchoring + assumed sale ('Your child's spot is secured for next term').",
+      "Google Review ask added to Email 6 — purple callout box after social proof CTA.",
+      "Anti-spam audit across all 9 emails — 4 fixes applied (subject line !, 'special discount', 'free trial', hallucinated address).",
+      "EMAIL-DESIGN-REFERENCE.md — canonical design system for all MOUVE emails (header, footer, callout box, bullet dots, colour palette).",
+      "Marketing Audit Q2 2026 — 8-phase data audit complete. 3 execution plans ready (Infrastructure Fix ✅, Automation & Nurture 🔧, Growth 📋).",
+      "Daily Ad Health Check (ADH-01) + Weekly Ad Performance Summary (ADH-02) — n8n workflows live."
     ],
     "improved": [
-      "Google Ads — fixed 11 broken sitelinks, added 4 correct ones, reduced conversion goals 5→3, added 6 campaign negatives, removed 7 duplicate keywords.",
-      "Facebook page rebranded — 'MOUVE by Dancing with Louise', username @MOUVEbyDWL, new professional bio.",
-      "Project file cleanup — 19 files archived from docs/projects/active/ (35→16 items). Dashboard v5.0.",
-      "Documentation — MARKETING-PLATFORMS-REFERENCE.md, DOCS-INDEX.md, mouve-website CLAUDE.md all updated."
+      "Footer address corrected across all 9 emails + 2 reference docs — Bennett House, Campus, Sunningfields Rd, London NW4 4QR.",
+      "Google Ads — fixed 11 broken sitelinks, reduced conversion goals 5→3, added campaign negatives.",
+      "Facebook page rebranded — 'MOUVE by Dancing with Louise', username @MOUVEbyDWL."
     ],
     "decisions": [
-      "Clean House: archived 19 stale/complete project files. Business Diagnostic, Fix My Dance School, Marketing Backlog, Spring Retention all archived.",
-      "Competitor targeting via Google Ads — positive brand bidding on 3 local competitors (no negative/dig copy, USP positioning only).",
-      "Meta WEBSITE campaign kept active (was flagged for killing but is brand new, started 4 March).",
-      "KIT-PAGES-REFERENCE.md moved to core-reference/ (was misplaced as a project file)."
+      "Onboarding emails: Hormozi retention framework for Email 9 (achievement anchoring > doubt planting). Google review ask placed at Email 6 (post-social-proof, not too early). (9 March)",
+      "Clean House: 23 project files archived, 12 remain active. Dashboard v5.4 reflects current state (8-9 March)",
+      "3 competitor ad groups created in Google Ads — positive brand bidding, USP positioning only (8 March)",
+      "Infrastructure Fix Plan complete ✅ — SPF fixed, GTM clean, Google Ads conversions fixed (9 March)"
     ],
     "risks": [
       "MOUVE Studio still needs manual config before launch: Stripe keys, Trigger.dev, Supabase Auth, GHL webhook.",
@@ -510,11 +509,11 @@
   },
 
   "recent_decisions": [
-    "Clean House: 19 project files archived, 16 remain active. Dashboard v5.0 reflects current state (8 March)",
-    "3 competitor ad groups created: Vanessa Class (dance), Rising Stars (camps/parties), Glittery Parties (events). Phrase-match brand keywords + RSA ads (8 March)",
-    "Facebook page rebranded: 'MOUVE by Dancing with Louise', username @MOUVEbyDWL, new bio (8 March)",
-    "GOOGLE-ADS-REFERENCE.md + META-ADS-REFERENCE.md created as single source of truth for paid ads (8 March)",
-    "Meta WEBSITE campaign confirmed active (4 March) — 4 ad sets in Learning phase, £17/day total"
+    "Onboarding sequence Phase 1 design complete — 9 branded emails in Paper, PDF sent to Louise for review. Blocked until approved. (9 March)",
+    "Hormozi retention rewrite for Email 9 — achievement anchoring replaces doubt-planting. Google review ask placed at Email 6. (9 March)",
+    "Infrastructure Fix Plan ✅ complete — SPF, GTM, Google Ads conversions all resolved. (9 March)",
+    "Clean House: 23 project files archived, 12 remain active (8 March)",
+    "Meta CAPI for CRM live — Showed + Won GHL workflow events flowing to Meta Conversions API (5 March)"
   ],
 
   "financial_summary": {
@@ -581,8 +580,8 @@
     },
     {
       "category": "BUILD",
-      "action": "Execute Automation & Nurture Plan (P2)",
-      "detail": "Activate AC onboarding sequence, build lapsed win-back, LF welcome, non-booker chase sequence. Target: 22 March."
+      "action": "Automation & Nurture Plan — Phase 1 Design Complete, Awaiting Louise",
+      "detail": "9-email onboarding sequence designed in Paper. PDF preview sent. BLOCKED: Louise approval needed before GHL deployment. Next: win-back sequence, LF welcome, non-booker chase."
     },
     {
       "category": "BUILD",
