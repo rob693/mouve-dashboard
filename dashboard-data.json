@@ -479,63 +479,66 @@
   ],
 
   "weekly_review": {
-    "week_commencing": "9 March 2026",
+    "week_commencing": "10 March 2026",
     "built": [
-      "9-email branded onboarding sequence — designed in Paper (MOUVE brand system), Hormozi-informed copy, all 9 emails with real logos/footer. PDF preview generated for Louise.",
-      "Email 9 Hormozi rewrite — removed doubt-planting section, replaced with achievement anchoring + assumed sale ('Your child's spot is secured for next term').",
-      "Google Review ask added to Email 6 — purple callout box after social proof CTA.",
-      "Anti-spam audit across all 9 emails — 4 fixes applied (subject line !, 'special discount', 'free trial', hallucinated address).",
-      "EMAIL-DESIGN-REFERENCE.md — canonical design system for all MOUVE emails (header, footer, callout box, bullet dots, colour palette).",
-      "Marketing Audit Q2 2026 — 8-phase data audit complete. 3 execution plans ready (Infrastructure Fix ✅, Automation & Nurture 🔧, Growth 📋).",
-      "Daily Ad Health Check (ADH-01) + Weekly Ad Performance Summary (ADH-02) — n8n workflows live."
+      "Full financial deep dive — Stripe API pull (4 accounts, £81.9K net), Xero transaction analysis (386 ACCPAY invoices + ManualJournals), DSP revenue reconstruction.",
+      "Verified revenue: £290,984 (+45% YoY) vs Xero's misleading £166,860 (-17%). £124K Xero reconciliation gap explained.",
+      "YoY Variance Analysis — profit waterfall (-£8.3K → +£161K), 20+ driver narratives, gross margin bridge (58.2% → 84.5%).",
+      "Revenue Reconciliation — line-by-line Xero vs external sources, AR aging, failed payment analysis.",
+      "Health Scorecard — 6 green areas, 1 red (bookkeeping), 6 amber. Forward projection: ~£500K revenue / ~£275K net profit FY2026.",
+      "Excel spreadsheet (9 tabs) + Word doc summary with verified tables.",
+      "Staff cost analysis: 45 → 37 freelancers, 3 PAYE departures identified (Rachel Smith, Tamarind, Sherry). £25K genuine saving."
     ],
     "improved": [
-      "Footer address corrected across all 9 emails + 2 reference docs — Bennett House, Campus, Sunningfields Rd, London NW4 4QR.",
-      "Google Ads — fixed 11 broken sitelinks, reduced conversion goals 5→3, added campaign negatives.",
-      "Facebook page rebranded — 'MOUVE by Dancing with Louise', username @MOUVEbyDWL."
+      "Financial snapshot doc updated with verified revenue, Stripe breakdown, staff analysis, full health assessment.",
+      "Dashboard financial summary updated from 4-month bookkeeper figures to 6-month verified Stripe/DSP data."
     ],
     "decisions": [
-      "Onboarding emails: Hormozi retention framework for Email 9 (achievement anchoring > doubt planting). Google review ask placed at Email 6 (post-social-proof, not too early). (9 March)",
-      "Clean House: 23 project files archived, 12 remain active. Dashboard v5.4 reflects current state (8-9 March)",
-      "3 competitor ad groups created in Google Ads — positive brand bidding, USP positioning only (8 March)",
-      "Infrastructure Fix Plan complete ✅ — SPF fixed, GTM clean, Google Ads conversions fixed (9 March)"
+      "Revenue verification: DSP reports + Stripe API + bank used as source of truth over incomplete Xero P&L (10 March)",
+      "Staff cost saving confirmed as structural (permanent departures), not cyclical (10 March)",
+      "Operating leverage identified as dominant profit driver — revenue +45% while COGS -46% (10 March)"
     ],
     "risks": [
-      "MOUVE Studio still needs manual config before launch: Stripe keys, Trigger.dev, Supabase Auth, GHL webhook.",
-      "Budget project still paused — waiting on Xero data quality fixes.",
-      "SPF record for makeamouve.com needs fixing (P0 from audit).",
-      "GBP duplicate listing removal re-submitted — check in a few days."
+      "Bookkeeper lag critical — £124K+ unreconciled. P&L cannot be trusted for decision-making.",
+      "TeamUp 32% charge failure rate — ~£10K missed Ladies Fitness revenue from expired cards.",
+      "Amex balance £34K — needs verification (current spend vs accumulated debt).",
+      "School Clubs -20% — only genuinely declining revenue line. Root cause unknown.",
+      "Louise as single point of failure — absorbed work of 2-3 departed staff.",
+      "Subscriptions +497% unexplained (£370 → £2,206)."
     ]
   },
 
   "recent_decisions": [
-    "Onboarding sequence Phase 1 design complete — 9 branded emails in Paper, PDF sent to Louise for review. Blocked until approved. (9 March)",
-    "Hormozi retention rewrite for Email 9 — achievement anchoring replaces doubt-planting. Google review ask placed at Email 6. (9 March)",
-    "Infrastructure Fix Plan ✅ complete — SPF, GTM, Google Ads conversions all resolved. (9 March)",
-    "Clean House: 23 project files archived, 12 remain active (8 March)",
-    "Meta CAPI for CRM live — Showed + Won GHL workflow events flowing to Meta Conversions API (5 March)"
+    "Revenue verification: Stripe API + DSP + bank confirms £290,984 (+45% YoY). Xero's -17% is 100% bookkeeper lag. (10 March)",
+    "Staff cost saving is structural — 8 fewer freelancers + 3 PAYE departures = permanent £25K+ saving. (10 March)",
+    "Operating leverage confirmed — 45% revenue growth with 46% COGS reduction = 84.5% gross margin. (10 March)",
+    "Onboarding sequence Phase 1 design complete — 9 branded emails, PDF sent to Louise. Blocked until approved. (9 March)",
+    "Infrastructure Fix Plan ✅ complete — SPF, GTM, Google Ads conversions all resolved. (9 March)"
   ],
 
   "financial_summary": {
-    "period": "Sep-Dec 2025 (4 months YTD)",
-    "revenue": 138895,
-    "direct_costs": 41751,
-    "marketing": 15572,
-    "overheads": 58100,
-    "net_profit": 23473,
-    "contribution_margin_pct": 69.9,
-    "closing_cash_aug": 180031,
-    "cash_runway_months": 6.5,
-    "lowest_cash_month": "Oct (£137K)",
-    "source": "Bookkeeper management accounts — 4 months YTD (11 Feb 2026)",
+    "period": "Sep 2025 – 9 Mar 2026 (6 months, VERIFIED)",
+    "revenue": 290984,
+    "direct_costs": 45118,
+    "marketing": 18104,
+    "overheads": 82530,
+    "net_profit": 161336,
+    "contribution_margin_pct": 84.5,
+    "closing_cash_aug": 186000,
+    "cash_runway_months": 8,
+    "lowest_cash_month": "N/A — strong throughout",
+    "source": "Stripe API (4 accounts) + DSP reports + Xero P&L + bank statements (10 March 2026)",
     "_notes": {
-      "revenue": "4 months only (Sep-Dec 2025). Full-year estimate £480-520K.",
-      "overheads": "Admin £73,672 minus marketing £15,572 shown separately",
-      "net_profit": "Operating profit (before tax). Annualised ~£70K.",
-      "closing_cash_aug": "Cash at bank Dec 2025 (incl £135K Tide savings, £20K is HMRC VAT)",
-      "amex_balance": 33336,
-      "tide_savings": 134680,
-      "vat_liability": 20278
+      "revenue": "VERIFIED from Stripe + DSP + bank. Xero shows only £166,860 (bookkeeper 1mo behind). Real revenue £290,984 (+45% YoY).",
+      "overheads": "Total OpEx £82,530 (incl marketing £18,104). Down 34% YoY.",
+      "net_profit": "Estimated. Revenue £290,984 minus total costs £127,648. Xero shows only £39,211 due to reconciliation lag.",
+      "closing_cash_aug": "Cash at bank 9 Mar 2026 (incl £135K Tide savings, £27.8K VAT reserve)",
+      "amex_balance": 34021,
+      "tide_savings": 135000,
+      "vat_liability": 27800,
+      "yoy_comparison": "Last year same period: Revenue £200,172, Net Profit -£8,314. Swing: +£169,650.",
+      "students": "435 unique (all-time high), 552 enrolments, 258 on auto-pay",
+      "key_risks": "Bookkeeper lag (£124K unreconciled), TeamUp 32% fail rate, Amex £34K, School Clubs -20%"
     }
   },
 
