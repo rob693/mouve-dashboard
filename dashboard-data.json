@@ -390,7 +390,8 @@
       {"name": "Lead Scoring & Attribution", "result": "68-lead audit, tracking fixes, weekly report. Absorbed into Marketing Audit (8 March 2026)"},
       {"name": "Meta CAPI for CRM", "result": "Showed + Won GHL workflows live. CAPI events flowing to Meta (5 March 2026)"},
       {"name": "Birthday Party Emails", "result": "3-email sequence drafted, 96% DOB coverage. Absorbed into Marketing Audit (8 March 2026)"},
-      {"name": "LF Newsletter", "result": "Prompt file done. Absorbed into Marketing Audit (8 March 2026)"}
+      {"name": "LF Newsletter", "result": "Prompt file done. Absorbed into Marketing Audit (8 March 2026)"},
+      {"name": "Onboarding Email Sequence (9 Emails)", "result": "9 branded HTML emails LIVE in GHL workflow. Replaced 7 plain-text originals. Day 0–Week 10 sequence. (10 March 2026)"}
     ],
     "active_campaigns": [
       {"name": "Google Ads (10 ad groups)", "status": "Active — 7 service + 3 competitor ad groups. Sitelinks, RSAs, phrase/exact keywords (8 March 2026)"},
@@ -481,6 +482,7 @@
   "weekly_review": {
     "week_commencing": "10 March 2026",
     "built": [
+      "9 branded onboarding emails built and deployed LIVE to GHL workflow. Table-based HTML, mobile responsive, Paper mockup-matched. Replaced 7 plain-text originals with 9 (added Month Check-in + Renewal).",
       "Full financial deep dive — Stripe API pull (4 accounts, £81.9K net), Xero transaction analysis (386 ACCPAY invoices + ManualJournals), DSP revenue reconstruction.",
       "Verified revenue: £290,984 (+45% YoY) vs Xero's misleading £166,860 (-17%). £124K Xero reconciliation gap explained.",
       "YoY Variance Analysis — profit waterfall (-£8.3K → +£161K), 20+ driver narratives, gross margin bridge (58.2% → 84.5%).",
@@ -512,7 +514,7 @@
     "Revenue verification: Stripe API + DSP + bank confirms £290,984 (+45% YoY). Xero's -17% is 100% bookkeeper lag. (10 March)",
     "Staff cost saving is structural — 8 fewer freelancers + 3 PAYE departures = permanent £25K+ saving. (10 March)",
     "Operating leverage confirmed — 45% revenue growth with 46% COGS reduction = 84.5% gross margin. (10 March)",
-    "Onboarding sequence Phase 1 design complete — 9 branded emails, PDF sent to Louise. Blocked until approved. (9 March)",
+    "Onboarding sequence LIVE — 9 branded emails deployed to GHL workflow. Replaced 7 plain-text originals. (10 March)",
     "Infrastructure Fix Plan ✅ complete — SPF, GTM, Google Ads conversions all resolved. (9 March)"
   ],
 
@@ -583,8 +585,8 @@
     },
     {
       "category": "BUILD",
-      "action": "Automation & Nurture Plan — Phase 1 Design Complete, Awaiting Louise",
-      "detail": "9-email onboarding sequence designed in Paper. PDF preview sent. BLOCKED: Louise approval needed before GHL deployment. Next: win-back sequence, LF welcome, non-booker chase."
+      "action": "Automation & Nurture Plan — Onboarding Sequence LIVE",
+      "detail": "9 branded onboarding emails LIVE in GHL workflow (10 March). Next: win-back sequence, LF welcome, non-booker chase."
     },
     {
       "category": "BUILD",
