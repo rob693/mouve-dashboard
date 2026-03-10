@@ -257,27 +257,29 @@
     },
     {
       "name": "WhatsApp Integration (Ladies Fitness)",
-      "phase_current": 1,
+      "phase_current": 2,
       "phase_total": 4,
       "implementation_plan": "active/WHATSAPP-IMPLEMENTATION-PLAN-MAR2026.md",
       "purpose": "Add WhatsApp messaging to GHL for Ladies Fitness — weekly class reminders to 326 members to drive regular attendance. Starting with LF as test before expanding to children's.",
-      "status": "blocked",
-      "status_label": "v1.0 | Phase 1: Setup & Configuration | Blocked: Rob to subscribe ($29.99/mo) + connect number",
-      "completed_phases": [],
+      "status": "in_progress",
+      "status_label": "v1.0 | Phase 2 🔧 | eSIM connected, templates approved ✅, LF-13 workflow built, test message delivered. Next: deploy to n8n + live test.",
+      "completed_phases": [
+        {"name": "Phase 1: Setup & Configuration", "summary": "SecondSIM eSIM (07348955395), WhatsApp connected to GHL via Meta Business API, 2 templates approved (class_reminder + we_miss_you), test message delivered to Rob. Meta business verification pending (display name)."}
+      ],
       "next_phase": {
-        "name": "Phase 1: Setup & Configuration",
-        "detail": "Subscribe to GHL WhatsApp add-on, connect business mobile number, submit templates to Meta for approval (24-48hr wait).",
-        "status": "blocked",
+        "name": "Phase 2: Deploy & Test LF-13",
+        "detail": "Import LF-13 workflow JSON to n8n, configure Airtable credential, test with Tuesday Hip Hop class via manual trigger.",
+        "status": "in_progress",
         "tasks": [
-          "Subscribe to GHL WhatsApp add-on ($29.99/mo)",
-          "Connect WhatsApp Business number in GHL",
-          "Submit mouve_lf_class_reminder template to Meta",
-          "Submit mouve_lf_we_miss_you template to Meta",
-          "Send test message to Rob's number"
+          "✅ LF-13 workflow JSON built (15 nodes)",
+          "✅ LF_WHATSAPP_LOG Airtable table created (tblMFPLNE9M10yte4)",
+          "✅ GHL WhatsApp API payload verified + test message sent",
+          "Deploy LF-13 to n8n instance",
+          "Configure Airtable credential in n8n logging node",
+          "Test with Tuesday Hip Hop (manual trigger Monday evening)"
         ]
       },
       "remaining_phases": [
-        "Phase 2: Build LF-13 n8n Workflow (TeamUp query, targeting, GHL send, Airtable logging)",
         "Phase 3: Go Live & Measure (4 weeks, ROI analysis)",
         "Phase 4: Expand (trial reminders, lapsed members, children's)"
       ],
@@ -288,7 +290,8 @@
         "estimated_messages_per_week": "45-68",
         "monthly_cost": "~£30 (sub + Meta fees)",
         "target_metric": "Attendance uplift after 4 weeks",
-        "pipeline_id": "6XVKMHvUCuQlHl7yHXiu"
+        "whatsapp_number": "07348955395",
+        "esim_cost": "£5.99/mo"
       }
     }
   ],
@@ -482,6 +485,7 @@
   "weekly_review": {
     "week_commencing": "10 March 2026",
     "built": [
+      "WhatsApp Integration — eSIM purchased, number connected to GHL, 2 Meta templates approved, LF-13 n8n workflow built (15 nodes), test message delivered successfully to Rob's phone.",
       "9 branded onboarding emails built and deployed LIVE to GHL workflow. Table-based HTML, mobile responsive, Paper mockup-matched. Replaced 7 plain-text originals with 9 (added Month Check-in + Renewal).",
       "Full financial deep dive — Stripe API pull (4 accounts, £81.9K net), Xero transaction analysis (386 ACCPAY invoices + ManualJournals), DSP revenue reconstruction.",
       "Verified revenue: £290,984 (+45% YoY) vs Xero's misleading £166,860 (-17%). £124K Xero reconciliation gap explained.",
@@ -619,9 +623,9 @@
       "detail": "All code complete. Rob needs to: set up Stripe test keys, Trigger.dev project, Supabase Auth, GHL webhook."
     },
     {
-      "category": "ACTION",
-      "action": "WhatsApp Integration — Rob to subscribe",
-      "detail": "GHL WhatsApp add-on ($29.99/mo). Rob needs to subscribe + connect business number."
+      "category": "BUILD",
+      "action": "WhatsApp Integration — Deploy LF-13 to n8n",
+      "detail": "Workflow JSON ready. Deploy to n8n, configure Airtable credential, test with Tuesday Hip Hop manual trigger. Meta business verification pending for display name."
     }
   ]
 }
