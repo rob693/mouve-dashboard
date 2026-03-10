@@ -394,7 +394,8 @@
       {"name": "Meta CAPI for CRM", "result": "Showed + Won GHL workflows live. CAPI events flowing to Meta (5 March 2026)"},
       {"name": "Birthday Party Emails", "result": "3-email sequence drafted, 96% DOB coverage. Absorbed into Marketing Audit (8 March 2026)"},
       {"name": "LF Newsletter", "result": "Prompt file done. Absorbed into Marketing Audit (8 March 2026)"},
-      {"name": "Onboarding Email Sequence (9 Emails)", "result": "9 branded HTML emails LIVE in GHL workflow. Replaced 7 plain-text originals. Day 0–Week 10 sequence. (10 March 2026)"}
+      {"name": "Onboarding Email Sequence (9 Emails)", "result": "9 branded HTML emails LIVE in GHL workflow. Replaced 7 plain-text originals. Day 0–Week 10 sequence. (10 March 2026)"},
+      {"name": "Win-Back Email Design (7 Emails)", "result": "2 sequences designed in Paper + HTML for GHL. Seq A (4 emails, 134 recent families) + Seq B (3 emails, 820 cold). Awaiting Louise approval → GHL workflows. (10 March 2026)"}
     ],
     "active_campaigns": [
       {"name": "Google Ads (10 ad groups)", "status": "Active — 7 service + 3 competitor ad groups. Sitelinks, RSAs, phrase/exact keywords (8 March 2026)"},
@@ -485,6 +486,7 @@
   "weekly_review": {
     "week_commencing": "10 March 2026",
     "built": [
+      "Win-Back Emails COMPLETE — 7 emails designed in Paper + converted to production HTML for GHL. 2 sequences: A (4 emails, 134 recent families) + B (3 emails, 820 cold families). Annual show callout + photo in A2/B1. Copy fixed for safeguarding. Briefing emailed to Louise.",
       "WhatsApp Integration — eSIM purchased, number connected to GHL, 2 Meta templates approved, LF-13 n8n workflow built (15 nodes), test message delivered successfully to Rob's phone.",
       "9 branded onboarding emails built and deployed LIVE to GHL workflow. Table-based HTML, mobile responsive, Paper mockup-matched. Replaced 7 plain-text originals with 9 (added Month Check-in + Renewal).",
       "Full financial deep dive — Stripe API pull (4 accounts, £81.9K net), Xero transaction analysis (386 ACCPAY invoices + ManualJournals), DSP revenue reconstruction.",
@@ -518,6 +520,7 @@
     "Revenue verification: Stripe API + DSP + bank confirms £290,984 (+45% YoY). Xero's -17% is 100% bookkeeper lag. (10 March)",
     "Staff cost saving is structural — 8 fewer freelancers + 3 PAYE departures = permanent £25K+ saving. (10 March)",
     "Operating leverage confirmed — 45% revenue growth with 46% COGS reduction = 84.5% gross margin. (10 March)",
+    "Win-back emails ready — 7 emails (2 sequences) designed, HTML built, briefing sent to Louise. Awaiting approval to go live 17 March. (10 March)",
     "Onboarding sequence LIVE — 9 branded emails deployed to GHL workflow. Replaced 7 plain-text originals. (10 March)",
     "Infrastructure Fix Plan ✅ complete — SPF, GTM, Google Ads conversions all resolved. (9 March)"
   ],
@@ -589,8 +592,8 @@
     },
     {
       "category": "BUILD",
-      "action": "Automation & Nurture Plan — Onboarding Sequence LIVE",
-      "detail": "Onboarding (9 emails) + Non-Booker Chase (6 messages) LIVE. Lapsed students table built (984 records). Next: win-back sequences for 144 recent + 868 cold families."
+      "action": "Automation & Nurture Plan — Win-Back Emails Ready",
+      "detail": "Onboarding (9 emails) + Non-Booker Chase (6 messages) LIVE. Win-back 7 emails designed + HTML ready. Awaiting Louise approval → create 2 GHL workflows → go live week of 17 March."
     },
     {
       "category": "BUILD",
