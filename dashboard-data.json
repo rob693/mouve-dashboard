@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-03-11T19:30:00Z",
+  "generated_at": "2026-03-11T21:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
-  "version": "5.5",
+  "version": "5.6",
 
   "health_summary": {
     "complete": 57,
-    "in_progress": 3,
+    "in_progress": 4,
     "waiting": 0,
     "planned": 0,
     "blocked": 3
@@ -358,6 +358,46 @@
         "website_button": "Built (whatsapp-button.tsx), NOT deployed",
         "ghl_workflow_url": "https://app.getmorestudents.net/location/5PFvflgmZfCNaFmrkV5x/workflow/531df5d2-932b-487f-b606-91f1510a60d1"
       }
+    },
+    {
+      "name": "Party Lifecycle Engine",
+      "phase_current": 2,
+      "phase_total": 6,
+      "implementation_plan": "active/PARTY-LIFECYCLE-ENGINE-IMPLEMENTATION-PLAN-MAR2026.md",
+      "purpose": "Automate entire post-booking party experience — confirmation through post-party feedback. 6-touchpoint email/WhatsApp sequence triggered by internal booking form.",
+      "status": "in_progress",
+      "status_label": "v1.0 | Phase 2 ✅ Complete | Phase 1 nearly done (1 task left). 4 emails to design next.",
+      "completed_phases": [
+        {"name": "Phase 1 (partial): Feedback + Post-Party Email", "summary": "Post-party feedback email designed in Paper + HTML built. GHL feedback form live (6 fields). Email sent to Talia for Sienna's party. Remaining: feedback form workflow."},
+        {"name": "Phase 2: GHL Internal Booking Form", "summary": "14-field internal form built. 10 custom fields created. 'Party Booking — Tag + Notify' workflow LIVE (tag + email to info@). Tested with dummy booking — all fields verified."}
+      ],
+      "next_phase": {
+        "name": "Phase 3: Booking Confirmation Flow",
+        "detail": "Design + build booking confirmation email. Parent-facing 'Complete Your Details' form. Wire party_booked tag → Email 1.",
+        "status": "planned",
+        "tasks": [
+          "Task 1.3b: Feedback form workflow (party_feedback_received tag + notify)",
+          "Design booking confirmation email in Paper",
+          "Build production HTML email",
+          "Build parent-facing details form (5 fields)",
+          "Wire party_booked tag → Email 1 workflow"
+        ]
+      },
+      "remaining_phases": [
+        "Phase 4: Pre-Party Email Sequence (3 emails — checklist, upsell, excitement)",
+        "Phase 5: WhatsApp + n8n Orchestration (day-before reminder + date-based scheduling)",
+        "Phase 6: End-to-End Test + Documentation (Noah's party, 7 June)"
+      ],
+      "key_data": {
+        "booking_form_id": "rzyRGiXgjFTKBYWtUVsq",
+        "feedback_form_id": "hGlATe20sHNvQPQUck1j",
+        "workflow_id": "ff58699c-3e66-4fb0-842f-69fb957cdc14",
+        "touchpoints": 6,
+        "emails_designed": 1,
+        "emails_remaining": 4,
+        "first_real_booking": "Noah's party — Lauren Sandler, 7 June 2026",
+        "design_doc": "docs/plans/2026-03-11-party-lifecycle-engine-design.md"
+      }
     }
   ],
 
@@ -552,6 +592,7 @@
     "week_commencing": "10 March 2026",
     "built": [
       "Win-Back Emails COMPLETE — 7 emails designed in Paper + converted to production HTML for GHL. 2 sequences: A (4 emails, 134 recent families) + B (3 emails, 820 cold families). Annual show callout + photo in A2/B1. Copy fixed for safeguarding. Briefing emailed to Louise.",
+      "Party Lifecycle Engine — Full design doc + implementation plan. Phase 1: post-party feedback email designed in Paper + HTML + GHL form + sent to Talia. Phase 2: internal booking form (14 fields) + 10 custom fields + workflow LIVE + tested. (11 March)",
       "WhatsApp Integration — eSIM purchased, number connected to GHL, 2 Meta templates approved, LF-13 n8n workflow built (15 nodes), test message delivered successfully to Rob's phone.",
       "9 branded onboarding emails built and deployed LIVE to GHL workflow. Table-based HTML, mobile responsive, Paper mockup-matched. Replaced 7 plain-text originals with 9 (added Month Check-in + Renewal).",
       "Full financial deep dive — Stripe API pull (4 accounts, £81.9K net), Xero transaction analysis (386 ACCPAY invoices + ManualJournals), DSP revenue reconstruction.",
@@ -582,6 +623,7 @@
   },
 
   "recent_decisions": [
+    "Party Lifecycle Engine — 6-touchpoint automated sequence. Louise keeps the sale, automation starts at booking. Extras upsell is reply-based. No pipeline initially — form + tag trigger. (11 March)",
     "Revenue verification: Stripe API + DSP + bank confirms £290,984 (+45% YoY). Xero's -17% is 100% bookkeeper lag. (10 March)",
     "Staff cost saving is structural — 8 fewer freelancers + 3 PAYE departures = permanent £25K+ saving. (10 March)",
     "Operating leverage confirmed — 45% revenue growth with 46% COGS reduction = 84.5% gross margin. (10 March)",
@@ -692,8 +734,8 @@
     },
     {
       "category": "BUILD",
-      "action": "WhatsApp Integration — Deploy LF-13 to n8n",
-      "detail": "Workflow JSON ready. Deploy to n8n, configure Airtable credential, test with Tuesday Hip Hop manual trigger. Meta business verification pending for display name."
+      "action": "Party Lifecycle Engine — Design 4 remaining emails",
+      "detail": "Phase 2 complete. Next: Task 1.3b (feedback workflow), then design Emails 1-4 in Paper (confirmation, checklist, upsell, excitement). Target: all emails designed before Noah's party (7 June)."
     }
   ]
 }
