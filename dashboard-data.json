@@ -1,22 +1,52 @@
 {
-  "generated_at": "2026-03-09T18:00:00Z",
+  "generated_at": "2026-03-11T19:30:00Z",
   "generated_by": "SYS-DASHBOARD v2",
-  "version": "5.4",
+  "version": "5.5",
 
   "health_summary": {
     "complete": 57,
-    "in_progress": 2,
+    "in_progress": 3,
     "waiting": 0,
     "planned": 0,
-    "blocked": 2
+    "blocked": 3
   },
 
   "tasks": [
     {
-      "title": "Build Meta A/B Experiment in Ads Manager UI",
-      "due": "2026-03-07",
+      "title": "Add WhatsApp button to Ladies Fitness page",
+      "due": "2026-03-14",
       "status": "pending",
-      "context": "Paid Ads Optimisation — Phase 3. Follow META-AB-EXPERIMENT-GUIDE.md step by step. Pause PROSPECTING original + copy at launch. 14-day test, review ~18 March."
+      "context": "Component built (whatsapp-button.tsx), parameterised. Just add to /ladies-fitness page with LF pre-filled message. 2-minute job. Deploy after GHL workflow is live."
+    },
+    {
+      "title": "Complete WhatsApp Lead Greeting workflow in GHL",
+      "due": "2026-03-18",
+      "status": "blocked",
+      "context": "Draft started (trigger + tags + opportunity + notification). Blocked on Meta Business Verification — WhatsApp Send action locked until verified. Resume steps 2.8-2.17 once verified."
+    },
+    {
+      "title": "Review Request — swap SMS to WhatsApp in Won workflow",
+      "due": "2026-03-18",
+      "status": "blocked",
+      "context": "review_request template pending Meta approval. Once approved, swap 2x SMS actions in '2023.1 - Opportunity Marked as WON' workflow to WhatsApp (both pipelines)."
+    },
+    {
+      "title": "Win-back emails — awaiting Louise approval",
+      "due": "2026-03-17",
+      "status": "blocked",
+      "context": "7 emails designed + HTML ready (2 sequences: A=134 recent families, B=820 cold). Briefing sent to Louise. Create 2 GHL workflows once approved."
+    },
+    {
+      "title": "Meta Business Verification — check status / expedite",
+      "due": "2026-03-14",
+      "status": "pending",
+      "context": "Submitted for Radar Dance Ltd (Companies House #07060630). Blocks WhatsApp Send in GHL workflows + display name. Check Meta Business Suite for status."
+    },
+    {
+      "title": "WhatsApp review checkpoint — LF-13 + LF-14 performance",
+      "due": "2026-03-16",
+      "status": "pending",
+      "context": "Calendar set for Mon 16 March 09:30. Review class reminder + we-miss-you message delivery, response rates, attendance impact."
     },
     {
       "title": "Check GHL SMS numbers vs January baseline (2,668)",
@@ -257,30 +287,27 @@
     },
     {
       "name": "WhatsApp Integration (Ladies Fitness)",
-      "phase_current": 2,
+      "phase_current": 3,
       "phase_total": 4,
       "implementation_plan": "active/WHATSAPP-IMPLEMENTATION-PLAN-MAR2026.md",
-      "purpose": "Add WhatsApp messaging to GHL for Ladies Fitness — weekly class reminders to 326 members to drive regular attendance. Starting with LF as test before expanding to children's.",
+      "purpose": "Add WhatsApp messaging to GHL for Ladies Fitness — weekly class reminders to 326 members to drive regular attendance.",
       "status": "in_progress",
-      "status_label": "v1.0 | Phase 2 🔧 | eSIM connected, templates approved ✅, LF-13 workflow built, test message delivered. Next: deploy to n8n + live test.",
+      "status_label": "v2.0 | Phase 3 🔧 | LF-13 LIVE (daily 18:00) + LF-14 LIVE (Mon 09:00). Review: 16 March.",
       "completed_phases": [
-        {"name": "Phase 1: Setup & Configuration", "summary": "SecondSIM eSIM (07348955395), WhatsApp connected to GHL via Meta Business API, 2 templates approved (class_reminder + we_miss_you), test message delivered to Rob. Meta business verification pending (display name)."}
+        {"name": "Phase 1: Setup & Configuration", "summary": "SecondSIM eSIM (07348955395), WhatsApp connected to GHL via Meta Business API, 2 templates approved (class_reminder + we_miss_you), test message delivered to Rob."},
+        {"name": "Phase 2: Deploy & Test", "summary": "LF-13 class reminder (15 nodes) + LF-14 we-miss-you (18 nodes) deployed to n8n. Both LIVE. Airtable logging active."}
       ],
       "next_phase": {
-        "name": "Phase 2: Deploy & Test LF-13",
-        "detail": "Import LF-13 workflow JSON to n8n, configure Airtable credential, test with Tuesday Hip Hop class via manual trigger.",
+        "name": "Phase 3: Go Live & Measure",
+        "detail": "Both workflows live. Review checkpoint Monday 16 March 09:30 — compare attendance, delivery rates, response rates.",
         "status": "in_progress",
         "tasks": [
-          "✅ LF-13 workflow JSON built (15 nodes)",
-          "✅ LF_WHATSAPP_LOG Airtable table created (tblMFPLNE9M10yte4)",
-          "✅ GHL WhatsApp API payload verified + test message sent",
-          "Deploy LF-13 to n8n instance",
-          "Configure Airtable credential in n8n logging node",
-          "Test with Tuesday Hip Hop (manual trigger Monday evening)"
+          "✅ LF-13 LIVE (daily 18:00 cron)",
+          "✅ LF-14 LIVE (Monday 09:00 cron)",
+          "Review checkpoint: 16 March 09:30"
         ]
       },
       "remaining_phases": [
-        "Phase 3: Go Live & Measure (4 weeks, ROI analysis)",
         "Phase 4: Expand (trial reminders, lapsed members, children's)"
       ],
       "key_data": {
@@ -292,6 +319,44 @@
         "target_metric": "Attendance uplift after 4 weeks",
         "whatsapp_number": "07348955395",
         "esim_cost": "£5.99/mo"
+      }
+    },
+    {
+      "name": "WhatsApp Lead Response (Children's + LF)",
+      "phase_current": 2,
+      "phase_total": 6,
+      "implementation_plan": "active/WHATSAPP-LEAD-WORKFLOW-IMPLEMENTATION-PLAN-MAR2026.md",
+      "purpose": "Replace SMS lead greeting with WhatsApp for new leads — 3-message nurture sequence for children's classes and ladies fitness. Website WhatsApp button + GHL workflow.",
+      "status": "in_progress",
+      "status_label": "v1.0 | Phase 1 ✅ Templates submitted (7 active, 2 pending). Phase 2 🔧 GHL workflow draft started, blocked on Meta verification.",
+      "completed_phases": [
+        {"name": "Phase 1: Template Submission", "summary": "6 templates submitted to Meta (3 children's + 3 LF). 7/9 total templates Active. Copy refined: no variables (WhatsApp leads have no name), no em dashes, conversational tone."}
+      ],
+      "next_phase": {
+        "name": "Phase 2: GHL Workflow Build",
+        "detail": "Draft started — trigger, duplicate guard, tags, opportunity, notification configured. Blocked: WhatsApp Send action requires Meta Business Verification.",
+        "status": "in_progress",
+        "tasks": [
+          "✅ Trigger: Customer Replied, WhatsApp, 'find out about classes'",
+          "✅ Duplicate guard + tags + opportunity + notification",
+          "🔴 WhatsApp Send actions blocked (Meta verification pending)",
+          "🔴 Wait + follow-up logic blocked",
+          "Add WhatsApp button to /ladies-fitness page",
+          "Build LF workflow in GHL"
+        ]
+      },
+      "remaining_phases": [
+        "Phase 3: Wire In Sources (FB + website leads)",
+        "Phase 4: Test & Go Live",
+        "Phase 5: Measure & Optimise",
+        "Phase 6: Ladies Fitness WhatsApp Flow"
+      ],
+      "key_data": {
+        "templates_active": 7,
+        "templates_pending": 2,
+        "blocker": "Meta Business Verification",
+        "website_button": "Built (whatsapp-button.tsx), NOT deployed",
+        "ghl_workflow_url": "https://app.getmorestudents.net/location/5PFvflgmZfCNaFmrkV5x/workflow/531df5d2-932b-487f-b606-91f1510a60d1"
       }
     }
   ],
