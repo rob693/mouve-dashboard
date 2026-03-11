@@ -292,7 +292,7 @@
       "implementation_plan": "active/WHATSAPP-IMPLEMENTATION-PLAN-MAR2026.md",
       "purpose": "Add WhatsApp messaging to GHL for Ladies Fitness — weekly class reminders to 326 members to drive regular attendance.",
       "status": "in_progress",
-      "status_label": "v2.1 | Phase 3 🔧 | LF-13 filtering fixed + deployed. 24 GHL duplicates cleaned. class_reminder_sunday template pending Meta. Review: 16 March.",
+      "status_label": "v2.2 | Phase 3 🔧 | LF-13 restructured: multi-class support + Sunday Thursday reminder LIVE (19 nodes). class_reminder_sunday approved. Review: 16 March.",
       "completed_phases": [
         {"name": "Phase 1: Setup & Configuration", "summary": "SecondSIM eSIM (07348955395), WhatsApp connected to GHL via Meta Business API, 2 templates approved (class_reminder + we_miss_you), test message delivered to Rob."},
         {"name": "Phase 2: Deploy & Test", "summary": "LF-13 class reminder (15 nodes) + LF-14 we-miss-you (18 nodes) deployed to n8n. Both LIVE. Airtable logging active."}
@@ -302,10 +302,11 @@
         "detail": "Both workflows live. Review checkpoint Monday 16 March 09:30 — compare attendance, delivery rates, response rates.",
         "status": "in_progress",
         "tasks": [
-          "✅ LF-13 LIVE (daily 18:00 cron) — filtering fix deployed (day-of-week matching)",
+          "✅ LF-13 LIVE (daily 18:00 cron) — restructured: multi-class pipeline, day-of-week filtering, 19 nodes",
           "✅ LF-14 LIVE (Monday 09:00 cron)",
           "✅ 24 GHL duplicate contacts deleted (bulk dedup)",
-          "⏳ class_reminder_sunday template pending Meta approval",
+          "✅ class_reminder_sunday template approved + deployed (Thursday sends Sunday reminder)",
+          "✅ Thursday run sends both Friday + Sunday reminders via outer SplitInBatches loop",
           "Review checkpoint: 16 March 09:30"
         ]
       },
@@ -354,8 +355,8 @@
         "Phase 6: Ladies Fitness WhatsApp Flow"
       ],
       "key_data": {
-        "templates_active": 7,
-        "templates_pending": 3,
+        "templates_active": 8,
+        "templates_pending": 2,
         "blocker": "Meta Business Verification",
         "website_button": "Built (whatsapp-button.tsx), NOT deployed",
         "ghl_workflow_url": "https://app.getmorestudents.net/location/5PFvflgmZfCNaFmrkV5x/workflow/531df5d2-932b-487f-b606-91f1510a60d1"
@@ -613,7 +614,7 @@
       "Dashboard financial summary updated from 4-month bookkeeper figures to 6-month verified Stripe/DSP data."
     ],
     "decisions": [
-      "Sunday WhatsApp reminder moving to Thursday (pending class_reminder_sunday Meta approval). Saturday stays active until then. (11 March)",
+      "Sunday WhatsApp reminder now sent Thursday (class_reminder_sunday approved + deployed). Multi-class pipeline live. (11 March)",
       "LF-13 filtering: day-of-week matching replaces class name matching to prevent cross-class contamination. (11 March)",
       "Revenue verification: DSP reports + Stripe API + bank used as source of truth over incomplete Xero P&L (10 March)",
       "Staff cost saving confirmed as structural (permanent departures), not cyclical (10 March)",
