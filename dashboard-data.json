@@ -292,7 +292,7 @@
       "implementation_plan": "active/WHATSAPP-IMPLEMENTATION-PLAN-MAR2026.md",
       "purpose": "Add WhatsApp messaging to GHL for Ladies Fitness — weekly class reminders to 326 members to drive regular attendance.",
       "status": "in_progress",
-      "status_label": "v2.0 | Phase 3 🔧 | LF-13 LIVE (daily 18:00) + LF-14 LIVE (Mon 09:00). Review: 16 March.",
+      "status_label": "v2.1 | Phase 3 🔧 | LF-13 filtering fixed + deployed. 24 GHL duplicates cleaned. class_reminder_sunday template pending Meta. Review: 16 March.",
       "completed_phases": [
         {"name": "Phase 1: Setup & Configuration", "summary": "SecondSIM eSIM (07348955395), WhatsApp connected to GHL via Meta Business API, 2 templates approved (class_reminder + we_miss_you), test message delivered to Rob."},
         {"name": "Phase 2: Deploy & Test", "summary": "LF-13 class reminder (15 nodes) + LF-14 we-miss-you (18 nodes) deployed to n8n. Both LIVE. Airtable logging active."}
@@ -302,8 +302,10 @@
         "detail": "Both workflows live. Review checkpoint Monday 16 March 09:30 — compare attendance, delivery rates, response rates.",
         "status": "in_progress",
         "tasks": [
-          "✅ LF-13 LIVE (daily 18:00 cron)",
+          "✅ LF-13 LIVE (daily 18:00 cron) — filtering fix deployed (day-of-week matching)",
           "✅ LF-14 LIVE (Monday 09:00 cron)",
+          "✅ 24 GHL duplicate contacts deleted (bulk dedup)",
+          "⏳ class_reminder_sunday template pending Meta approval",
           "Review checkpoint: 16 March 09:30"
         ]
       },
@@ -353,7 +355,7 @@
       ],
       "key_data": {
         "templates_active": 7,
-        "templates_pending": 2,
+        "templates_pending": 3,
         "blocker": "Meta Business Verification",
         "website_button": "Built (whatsapp-button.tsx), NOT deployed",
         "ghl_workflow_url": "https://app.getmorestudents.net/location/5PFvflgmZfCNaFmrkV5x/workflow/531df5d2-932b-487f-b606-91f1510a60d1"
@@ -591,6 +593,9 @@
   "weekly_review": {
     "week_commencing": "10 March 2026",
     "built": [
+      "GHL Dedup — Bulk duplicate cleanup: 24 phoneless contacts deleted, keepers tagged, Airtable ghl_contact_id updated. Scripts: ghl-dedup-dry-run.py + ghl-dedup-execute.py. (11 March)",
+      "LF-13 Filtering Fix — Changed attendance matching from class name substring to event day-of-week. Prevents Thursday/Sunday online class cross-contamination. Deployed to n8n. (11 March)",
+      "class_reminder_sunday template — Submitted to Meta for Thursday→Sunday advance reminders. Variables: name, class, time, venue. (11 March)",
       "Win-Back Emails COMPLETE — 7 emails designed in Paper + converted to production HTML for GHL. 2 sequences: A (4 emails, 134 recent families) + B (3 emails, 820 cold families). Annual show callout + photo in A2/B1. Copy fixed for safeguarding. Briefing emailed to Louise.",
       "Party Lifecycle Engine — Full design doc + implementation plan. Phase 1: post-party feedback email designed in Paper + HTML + GHL form + sent to Talia. Phase 2: internal booking form (14 fields) + 10 custom fields + workflow LIVE + tested. (11 March)",
       "WhatsApp Integration — eSIM purchased, number connected to GHL, 2 Meta templates approved, LF-13 n8n workflow built (15 nodes), test message delivered successfully to Rob's phone.",
@@ -608,6 +613,8 @@
       "Dashboard financial summary updated from 4-month bookkeeper figures to 6-month verified Stripe/DSP data."
     ],
     "decisions": [
+      "Sunday WhatsApp reminder moving to Thursday (pending class_reminder_sunday Meta approval). Saturday stays active until then. (11 March)",
+      "LF-13 filtering: day-of-week matching replaces class name matching to prevent cross-class contamination. (11 March)",
       "Revenue verification: DSP reports + Stripe API + bank used as source of truth over incomplete Xero P&L (10 March)",
       "Staff cost saving confirmed as structural (permanent departures), not cyclical (10 March)",
       "Operating leverage identified as dominant profit driver — revenue +45% while COGS -46% (10 March)"
