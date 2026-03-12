@@ -471,7 +471,7 @@
       {"name": "SEO & Geo (Technical Foundation)", "result": "9/9 phases complete on WordPress. New Next.js site rebuilt fresh (3 March 2026). GBP API tasks done."},
       {"name": "Marketing & Conversions (Infrastructure)", "result": "Attribution fixed, conversion tracking live, weekly channel report with CPA/unit economics (25 Feb 2026). Unstarted phases → Marketing Backlog."},
       {"name": "Party Booking Landing Page", "result": "parties.makeamouve.com launched. Absorbed into main makeamouve.com/parties (3 March 2026)."},
-      {"name": "MOUVE Website (Next.js)", "result": "22-route Next.js site live at makeamouve.com (3 March 2026). Replaced WordPress/Elementor."}
+      {"name": "MOUVE Website (Next.js)", "result": "22-route Next.js site live at makeamouve.com (3 March 2026). Replaced WordPress/Elementor. Inline validation on all 6 forms (12 March)."}
     ],
     "simple": [
       {"name": "Children's Onboarding Email Refinement", "result": "10 emails × 3 age tracks, all pass Email Deliverability Checklist v1.1"},
@@ -516,7 +516,7 @@
     "lead_capture": [
       {"name": "Meta Ads", "status": "active", "note": "A/B experiment ready (form vs website). 3 campaigns currently active."},
       {"name": "Google Ads", "status": "active", "note": "7 ad groups restructured 4 March 2026. Phrase/exact keywords, RSAs, sitelinks."},
-      {"name": "Website Forms (Next.js)", "status": "active", "note": "4 forms with dataLayer.push → GTM → GA4 + Google Ads + Meta Pixel"},
+      {"name": "Website Forms (Next.js)", "status": "active", "note": "6 forms with inline validation micro-interactions + dataLayer.push → GTM → GA4 + Google Ads + Meta Pixel (12 March 2026)"},
       {"name": "TeamUp Trials", "status": "active"}
     ],
     "crm_leads": [
@@ -594,6 +594,8 @@
   "weekly_review": {
     "week_commencing": "10 March 2026",
     "built": [
+      "Website Inline Validation — Shared validated-field.tsx component + micro-interactions (shake, checkmark pop, focus glow) added to all 6 forms across makeamouve.com. Dark + light theme support. Deployed to Vercel. (12 March)",
+      "4 ACE Lifestyle Homepage Redesigns — Created in Paper with distinct visual directions: Sage & Cream, Deep Emerald, Natural Earth, Fresh Lime. (12 March)",
       "GHL Dedup — Bulk duplicate cleanup: 24 phoneless contacts deleted, keepers tagged, Airtable ghl_contact_id updated. Scripts: ghl-dedup-dry-run.py + ghl-dedup-execute.py. (11 March)",
       "LF-13 Filtering Fix — Changed attendance matching from class name substring to event day-of-week. Prevents Thursday/Sunday online class cross-contamination. Deployed to n8n. (11 March)",
       "class_reminder_sunday template — Submitted to Meta for Thursday→Sunday advance reminders. Variables: name, class, time, venue. (11 March)",
