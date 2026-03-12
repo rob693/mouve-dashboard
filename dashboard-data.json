@@ -355,8 +355,8 @@
         "Phase 6: Ladies Fitness WhatsApp Flow"
       ],
       "key_data": {
-        "templates_active": 8,
-        "templates_pending": 2,
+        "templates_active": 10,
+        "templates_pending": 0,
         "blocker": "Meta Business Verification",
         "website_button": "Built (whatsapp-button.tsx), NOT deployed",
         "ghl_workflow_url": "https://app.getmorestudents.net/location/5PFvflgmZfCNaFmrkV5x/workflow/531df5d2-932b-487f-b606-91f1510a60d1"
@@ -364,40 +364,40 @@
     },
     {
       "name": "Party Lifecycle Engine",
-      "phase_current": 2,
+      "phase_current": 5,
       "phase_total": 6,
       "implementation_plan": "active/PARTY-LIFECYCLE-ENGINE-IMPLEMENTATION-PLAN-MAR2026.md",
       "purpose": "Automate entire post-booking party experience — confirmation through post-party feedback. 6-touchpoint email/WhatsApp sequence triggered by internal booking form.",
       "status": "in_progress",
-      "status_label": "v1.0 | Phase 2 ✅ Complete | Phase 1 nearly done (1 task left). 4 emails to design next.",
+      "status_label": "v1.0 | Phases 1–4 ✅ Complete | Phase 5 🔧 In Progress (WhatsApp approved, 5 GHL workflows + n8n scheduling next)",
       "completed_phases": [
-        {"name": "Phase 1 (partial): Feedback + Post-Party Email", "summary": "Post-party feedback email designed in Paper + HTML built. GHL feedback form live (6 fields). Email sent to Talia for Sienna's party. Remaining: feedback form workflow."},
-        {"name": "Phase 2: GHL Internal Booking Form", "summary": "14-field internal form built. 10 custom fields created. 'Party Booking — Tag + Notify' workflow LIVE (tag + email to info@). Tested with dummy booking — all fields verified."}
+        {"name": "Phase 1: Feedback + Post-Party Email", "summary": "Post-party feedback email designed in Paper + HTML built. GHL feedback form live (6 fields). Feedback workflow LIVE. Email sent to Talia."},
+        {"name": "Phase 2: GHL Internal Booking Form", "summary": "14-field internal form built. 11 custom fields created (incl. Party — Child Name). 'Party Booking — Tag + Notify' workflow LIVE."},
+        {"name": "Phase 3: Booking Confirmation Flow", "summary": "Booking confirmation email designed + HTML built. Parent-facing 'Party Details' form (ID: Co4UKudsOdcJ9Z072yg6). party_booked tag → Email 1 workflow LIVE."},
+        {"name": "Phase 4: Pre-Party Email Sequence", "summary": "3 emails designed in Paper + HTML built (checklist, extras upsell, excitement builder). All merge fields fixed (double underscore)."}
       ],
       "next_phase": {
-        "name": "Phase 3: Booking Confirmation Flow",
-        "detail": "Design + build booking confirmation email. Parent-facing 'Complete Your Details' form. Wire party_booked tag → Email 1.",
-        "status": "planned",
+        "name": "Phase 5: WhatsApp + n8n Orchestration",
+        "detail": "WhatsApp template approved. Build 5 GHL send workflows (Rob), then n8n daily scheduling workflow (Claude).",
+        "status": "in_progress",
         "tasks": [
-          "Task 1.3b: Feedback form workflow (party_feedback_received tag + notify)",
-          "Design booking confirmation email in Paper",
-          "Build production HTML email",
-          "Build parent-facing details form (5 fields)",
-          "Wire party_booked tag → Email 1 workflow"
+          "✅ Task 5.1: WhatsApp template party_day_before_reminder APPROVED by Meta",
+          "Task 5.2 Step 1: Build 5 GHL workflows (Rob — each is Tag Added → Send Email/WhatsApp → Add sent tag)",
+          "Task 5.2 Step 2: Build n8n scheduling workflow (daily 09:00, date-based trigger tags)"
         ]
       },
       "remaining_phases": [
-        "Phase 4: Pre-Party Email Sequence (3 emails — checklist, upsell, excitement)",
-        "Phase 5: WhatsApp + n8n Orchestration (day-before reminder + date-based scheduling)",
         "Phase 6: End-to-End Test + Documentation (Noah's party, 7 June)"
       ],
       "key_data": {
         "booking_form_id": "rzyRGiXgjFTKBYWtUVsq",
+        "details_form_id": "Co4UKudsOdcJ9Z072yg6",
         "feedback_form_id": "hGlATe20sHNvQPQUck1j",
         "workflow_id": "ff58699c-3e66-4fb0-842f-69fb957cdc14",
         "touchpoints": 6,
-        "emails_designed": 1,
-        "emails_remaining": 4,
+        "emails_designed": 5,
+        "emails_remaining": 0,
+        "whatsapp_template": "party_day_before_reminder (APPROVED)",
         "first_real_booking": "Noah's party — Lauren Sandler, 7 June 2026",
         "design_doc": "docs/plans/2026-03-11-party-lifecycle-engine-design.md"
       }
@@ -600,7 +600,7 @@
       "LF-13 Filtering Fix — Changed attendance matching from class name substring to event day-of-week. Prevents Thursday/Sunday online class cross-contamination. Deployed to n8n. (11 March)",
       "class_reminder_sunday template — Submitted to Meta for Thursday→Sunday advance reminders. Variables: name, class, time, venue. (11 March)",
       "Win-Back Emails COMPLETE — 7 emails designed in Paper + converted to production HTML for GHL. 2 sequences: A (4 emails, 134 recent families) + B (3 emails, 820 cold families). Annual show callout + photo in A2/B1. Copy fixed for safeguarding. Briefing emailed to Louise.",
-      "Party Lifecycle Engine — Full design doc + implementation plan. Phase 1: post-party feedback email designed in Paper + HTML + GHL form + sent to Talia. Phase 2: internal booking form (14 fields) + 10 custom fields + workflow LIVE + tested. (11 March)",
+      "Party Lifecycle Engine — Phases 1-4 COMPLETE. 5 emails designed (Paper + HTML), 3 GHL workflows live, booking form + parent details form + feedback form all live. All merge fields fixed (double underscore). WhatsApp template approved. Task 5.2 architecture planned (n8n + 5 GHL workflows). Demoed to Louise. (12 March)",
       "WhatsApp Integration — eSIM purchased, number connected to GHL, 2 Meta templates approved, LF-13 n8n workflow built (15 nodes), test message delivered successfully to Rob's phone.",
       "9 branded onboarding emails built and deployed LIVE to GHL workflow. Table-based HTML, mobile responsive, Paper mockup-matched. Replaced 7 plain-text originals with 9 (added Month Check-in + Renewal).",
       "Full financial deep dive — Stripe API pull (4 accounts, £81.9K net), Xero transaction analysis (386 ACCPAY invoices + ManualJournals), DSP revenue reconstruction.",
@@ -744,8 +744,8 @@
     },
     {
       "category": "BUILD",
-      "action": "Party Lifecycle Engine — Design 4 remaining emails",
-      "detail": "Phase 2 complete. Next: Task 1.3b (feedback workflow), then design Emails 1-4 in Paper (confirmation, checklist, upsell, excitement). Target: all emails designed before Noah's party (7 June)."
+      "action": "Party Lifecycle Engine — Build 5 GHL workflows + n8n scheduler",
+      "detail": "Phases 1-4 complete (all 5 emails + forms + workflows). Next: Rob builds 5 GHL send workflows (Tag → Email/WhatsApp → Sent tag), then Claude builds n8n daily scheduling workflow. Target: live before Noah's party (7 June)."
     }
   ]
 }
