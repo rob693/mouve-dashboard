@@ -251,38 +251,44 @@
       "implementation_plan": "STAFF-ADMIN-COSTS-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Per-class rate system, automated statement generation, monthly invoice review workflow with spreadsheet-based Louise approval",
       "status": "in_progress",
-      "status_label": "v1.0 | Phase 6A 🔧 January Payment Processing (10/17 staff ready, 7 review/blocked)",
+      "status_label": "v1.1 | Phase 6B 🔧 February Payment Processing (3/14 approved, 9 pending Louise, 2 self-submitted)",
       "completed_phases": [
         {"name": "Phase 1: Rate Architecture", "summary": "STAFF_CLASS_RATES table, 3-tier cost formula, per-class rates for all active staff"},
         {"name": "Phase 2: Session Logging", "summary": "DELIVERED_SESSIONS table linked to classes, staff, and rates"},
         {"name": "Phase 3: Statement Generation", "summary": "n8n workflow generates monthly statements per staff member"},
         {"name": "Phase 4: Staff Portal Integration", "summary": "Timesheet form in portal, session view for staff"},
-        {"name": "Phase 5: Rate Review", "summary": "22-tab cross-reference spreadsheet sent to Louise. 35 STAFF_CLASS_RATES records, 77 sessions backfilled."}
+        {"name": "Phase 5: Rate Review", "summary": "22-tab cross-reference spreadsheet sent to Louise. 35 STAFF_CLASS_RATES records, 77 sessions backfilled."},
+        {"name": "Phase 6A: January Payment Processing", "summary": "21 staff statements generated. Spreadsheet review sent to Louise."}
       ],
       "next_phase": {
-        "name": "Phase 6A: January Payment Processing",
-        "detail": "Processing January 2026 invoices. Two-spreadsheet review: Ready to Pay (green, 10 staff, £5,459.92) + Needs Review (orange/red, 7 staff). Louise approves via spreadsheet tabs.",
+        "name": "Phase 6B: February Payment Processing",
+        "detail": "Processing February 2026 statements. 14 system-generated + 2 self-submitted invoices. Louise confirming payments progressively.",
         "status": "in_progress",
         "tasks": [
-          "✅ 10 staff Ready to Pay (£5,459.92) — spreadsheet generated",
-          "✅ Georgia Thomas: 52 sessions added, admin corrected to £13/hr (£1,472.75)",
-          "✅ Sari Mozes: 8 January sessions logged (£155)",
-          "Louise: Review both spreadsheets and approve",
-          "7 staff Needs Review/Blocked (missing rates, verification needed)",
-          "After approval: set statements to Approved, generate PDFs, email staff"
+          "✅ Evie Wong (£255) — approved + sent",
+          "✅ Racheli Nevies (£40) — approved + sent by Louise",
+          "✅ Alexandra Gibbons (£110) — approved, PDF ready",
+          "✅ Jennifer Field rate fixed (£22.50/session → £615)",
+          "✅ Tamarind Borrill statement rebuilt (£85 → £502.19, 14 records, 5 venues)",
+          "✅ Self-submitted invoices saved: Tamarind (£502.19), Racheli Leach (Feb £800.43 + Jan £908.10)",
+          "⏳ 9 staff pending Louise confirmation (£4,257.34)",
+          "⏳ Chloe Segel + Sivana Solomon at £0 — rates needed from Louise",
+          "⏳ Ivanka reply deferred until all statements approved"
         ]
       },
       "remaining_phases": [
-        "Phase 6B: February Payment Processing",
         "Phase 7: Automated Monthly Pipeline",
         "Phase 8: Self-Service Staff Invoicing"
       ],
       "key_data": {
-        "ready_staff": 10,
-        "ready_total": "£5,459.92",
-        "review_staff": 7,
-        "scripts": ["generate_ready_to_pay_spreadsheet.py", "generate_review_spreadsheet.py"],
-        "process_doc": "STAFF-PAYMENT-REVIEW-PROCESS.md"
+        "approved_staff": 3,
+        "approved_total": "£405.00",
+        "self_submitted": 2,
+        "self_submitted_total": "£1,302.62",
+        "pending_staff": 9,
+        "pending_total": "£4,257.34",
+        "feb_grand_total": "£4,662.34",
+        "process_doc": "STAFF-INVOICE-RUNBOOK.md"
       }
     },
     {
@@ -739,8 +745,8 @@
     },
     {
       "category": "BUILD",
-      "action": "Staff Admin Costs — Phase 6A January Payment Processing",
-      "detail": "10 staff Ready to Pay (£5,459.92). 7 staff Needs Review. Louise to approve spreadsheets."
+      "action": "Staff Admin Costs — Phase 6B February Payment Processing",
+      "detail": "3/14 approved (£405). 9 pending Louise. 2 self-submitted (Tamarind £502, Racheli Leach £800). Chloe + Sivana need rates."
     },
     {
       "category": "BUILD",
