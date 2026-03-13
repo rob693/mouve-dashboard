@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-03-11T21:00:00Z",
+  "generated_at": "2026-03-13T11:40:00Z",
   "generated_by": "SYS-DASHBOARD v2",
-  "version": "5.6",
+  "version": "5.7",
 
   "health_summary": {
     "complete": 57,
@@ -292,7 +292,7 @@
       "implementation_plan": "active/WHATSAPP-IMPLEMENTATION-PLAN-MAR2026.md",
       "purpose": "Add WhatsApp messaging to GHL for Ladies Fitness — weekly class reminders to 326 members to drive regular attendance.",
       "status": "in_progress",
-      "status_label": "v2.2 | Phase 3 🔧 | LF-13 restructured: multi-class support + Sunday Thursday reminder LIVE (19 nodes). class_reminder_sunday approved. Review: 16 March.",
+      "status_label": "v2.3 | Phase 3 🔧 | LF-13 SplitInBatches reset bug fixed + deployed. 12/14 Sunday reminders manually recovered. 3 GHL name fixes. Review: 16 March.",
       "completed_phases": [
         {"name": "Phase 1: Setup & Configuration", "summary": "SecondSIM eSIM (07348955395), WhatsApp connected to GHL via Meta Business API, 2 templates approved (class_reminder + we_miss_you), test message delivered to Rob."},
         {"name": "Phase 2: Deploy & Test", "summary": "LF-13 class reminder (15 nodes) + LF-14 we-miss-you (18 nodes) deployed to n8n. Both LIVE. Airtable logging active."}
@@ -307,6 +307,9 @@
           "✅ 24 GHL duplicate contacts deleted (bulk dedup)",
           "✅ class_reminder_sunday template approved + deployed (Thursday sends Sunday reminder)",
           "✅ Thursday run sends both Friday + Sunday reminders via outer SplitInBatches loop",
+          "✅ SplitInBatches reset bug fixed (inner loop wasn't resetting — 13 March)",
+          "✅ 12/14 Sunday reminders manually sent (2 no phone)",
+          "✅ 3 GHL name data quality fixes (TeamUp sync bug)",
           "Review checkpoint: 16 March 09:30"
         ]
       },
@@ -633,6 +636,8 @@
   },
 
   "recent_decisions": [
+    "LF-13 SplitInBatches reset bug — inner loop wasn't resetting between outer iterations, silently skipping Sunday reminders. Fixed + deployed. (13 March)",
+    "Facebook Lead Form missing postcode — 70% of Pipeline 1 leads have no postcode. Active form (Oct 2023) only collects name/phone/email. Rob to add postcode field. (13 March)",
     "Party Lifecycle Engine — 6-touchpoint automated sequence. Louise keeps the sale, automation starts at booking. Extras upsell is reply-based. No pipeline initially — form + tag trigger. (11 March)",
     "Revenue verification: Stripe API + DSP + bank confirms £290,984 (+45% YoY). Xero's -17% is 100% bookkeeper lag. (10 March)",
     "Staff cost saving is structural — 8 fewer freelancers + 3 PAYE departures = permanent £25K+ saving. (10 March)",
