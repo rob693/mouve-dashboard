@@ -1,8 +1,7 @@
 {
-  "generated_at": "2026-03-13T11:40:00Z",
+  "generated_at": "2026-03-14T19:45:00Z",
   "generated_by": "SYS-DASHBOARD v2",
-  "version": "5.7",
-
+  "version": "5.8",
   "health_summary": {
     "complete": 57,
     "in_progress": 4,
@@ -10,7 +9,6 @@
     "planned": 0,
     "blocked": 3
   },
-
   "tasks": [
     {
       "title": "Add WhatsApp button to Ladies Fitness page",
@@ -22,28 +20,28 @@
       "title": "Complete WhatsApp Lead Greeting workflow in GHL",
       "due": "2026-03-18",
       "status": "blocked",
-      "context": "Draft started (trigger + tags + opportunity + notification). Blocked on Meta Business Verification — WhatsApp Send action locked until verified. Resume steps 2.8-2.17 once verified."
+      "context": "Draft started (trigger + tags + opportunity + notification). Blocked on Meta Business Verification \u2014 WhatsApp Send action locked until verified. Resume steps 2.8-2.17 once verified."
     },
     {
-      "title": "Review Request — swap SMS to WhatsApp in Won workflow",
+      "title": "Review Request \u2014 swap SMS to WhatsApp in Won workflow",
       "due": "2026-03-18",
       "status": "blocked",
       "context": "review_request template pending Meta approval. Once approved, swap 2x SMS actions in '2023.1 - Opportunity Marked as WON' workflow to WhatsApp (both pipelines)."
     },
     {
-      "title": "Win-back emails — awaiting Louise approval",
+      "title": "Win-back emails \u2014 awaiting Louise approval",
       "due": "2026-03-17",
       "status": "blocked",
       "context": "7 emails designed + HTML ready (2 sequences: A=134 recent families, B=820 cold). Briefing sent to Louise. Create 2 GHL workflows once approved."
     },
     {
-      "title": "Meta Business Verification — check status / expedite",
+      "title": "Meta Business Verification \u2014 check status / expedite",
       "due": "2026-03-14",
       "status": "pending",
       "context": "Submitted for Radar Dance Ltd (Companies House #07060630). Blocks WhatsApp Send in GHL workflows + display name. Check Meta Business Suite for status."
     },
     {
-      "title": "WhatsApp review checkpoint — LF-13 + LF-14 performance",
+      "title": "WhatsApp review checkpoint \u2014 LF-13 + LF-14 performance",
       "due": "2026-03-16",
       "status": "pending",
       "context": "Calendar set for Mon 16 March 09:30. Review class reminder + we-miss-you message delivery, response rates, attendance impact."
@@ -55,19 +53,18 @@
       "context": "Target ~2,250 after cleanup. See UNIT-ECONOMICS-REFERENCE.md Section 14"
     },
     {
-      "title": "12-Month Budget PAUSED — Fix Xero data quality first",
+      "title": "12-Month Budget PAUSED \u2014 Fix Xero data quality first",
       "due": "2026-03-15",
       "status": "blocked",
       "context": "Budget project paused 1 Feb. Data quality issues: Xero understated ~12%, admin costs unrealistic, bookkeeper queries outstanding. Resume after: Dec/Jan mgmt accounts complete, revenue reconciliation fixed, monthly close cycle established."
     },
     {
-      "title": "Review Meta A/B experiment results — compare cost per qualified lead",
+      "title": "Review Meta A/B experiment results \u2014 compare cost per qualified lead",
       "due": "2026-03-18",
       "status": "pending",
-      "context": "Paid Ads Optimisation — Pull data from Meta + GHL. Compare website vs form lead quality. Decide which destination to keep."
+      "context": "Paid Ads Optimisation \u2014 Pull data from Meta + GHL. Compare website vs form lead quality. Decide which destination to keep."
     }
   ],
-
   "weekly_tasks": [
     {
       "name": "Prepare Sunday's Trial List",
@@ -80,31 +77,51 @@
       "time": "2 minutes"
     }
   ],
-
   "gold_projects": [
     {
       "name": "MOUVE Studio (DSP Replacement)",
       "phase_current": 6,
       "phase_total": 6,
       "implementation_plan": "active/MOUVE-STUDIO-IMPLEMENTATION-PLAN-FEB2026.md",
-      "purpose": "Full DSP replacement — custom class management, enrolment, Stripe payments, parent portal, admin dashboard. Next.js + Supabase + Trigger.dev. Replaces DSP, n8n, and Airtable (for enrolment data) when live.",
+      "purpose": "Full DSP replacement \u2014 custom class management, enrolment, Stripe payments, parent portal, admin dashboard. Next.js + Supabase + Trigger.dev. Replaces DSP, n8n, and Airtable (for enrolment data) when live.",
       "status": "in_progress",
-      "status_label": "v1.0 | All 6 Phases Code Complete ✅ | Admin UI redesigned (DSP/Arbor-inspired). Deployed to Vercel. Demo data seeded. Next: UI polish, login page, remaining page styling.",
+      "status_label": "v1.0 | All 6 Phases Code Complete \u2705 | Admin UI redesigned (DSP/Arbor-inspired). Deployed to Vercel. Demo data seeded. Next: UI polish, login page, remaining page styling.",
       "completed_phases": [
-        {"name": "Design", "summary": "Full brainstorm (14 questions). Design doc covers: data model (15 tables), Stripe integration, parent portal (7 pages), admin dashboard (12 pages), GHL sync (7 event types), Trigger.dev orchestration, 6 build phases, migration strategy with card capture campaign."},
-        {"name": "Phase 1: Foundation", "summary": "Supabase project + 15 tables + 37 RLS policies + auth (magic link) + Next.js scaffold + Stripe connection + Trigger.dev init."},
-        {"name": "Phase 2: Enrolment Engine", "summary": "CRUD for families/students/classes + atomic enrolment RPC + waitlist + portal views."},
-        {"name": "Phase 3: Payments", "summary": "Stripe integration + invoices + payment plans + chase automation + refunds."},
-        {"name": "Phase 4: GHL Integration", "summary": "Bidirectional sync + 7 event types + webhook handling."},
-        {"name": "Phase 5: Term Rollover + Billing", "summary": "Term rollover automation + billing cycle management."},
-        {"name": "Phase 6: Migration + Go-Live Prep", "summary": "DSP import script + Stripe customer matching + n8n conflict audit + deployment config."}
+        {
+          "name": "Design",
+          "summary": "Full brainstorm (14 questions). Design doc covers: data model (15 tables), Stripe integration, parent portal (7 pages), admin dashboard (12 pages), GHL sync (7 event types), Trigger.dev orchestration, 6 build phases, migration strategy with card capture campaign."
+        },
+        {
+          "name": "Phase 1: Foundation",
+          "summary": "Supabase project + 15 tables + 37 RLS policies + auth (magic link) + Next.js scaffold + Stripe connection + Trigger.dev init."
+        },
+        {
+          "name": "Phase 2: Enrolment Engine",
+          "summary": "CRUD for families/students/classes + atomic enrolment RPC + waitlist + portal views."
+        },
+        {
+          "name": "Phase 3: Payments",
+          "summary": "Stripe integration + invoices + payment plans + chase automation + refunds."
+        },
+        {
+          "name": "Phase 4: GHL Integration",
+          "summary": "Bidirectional sync + 7 event types + webhook handling."
+        },
+        {
+          "name": "Phase 5: Term Rollover + Billing",
+          "summary": "Term rollover automation + billing cycle management."
+        },
+        {
+          "name": "Phase 6: Migration + Go-Live Prep",
+          "summary": "DSP import script + Stripe customer matching + n8n conflict audit + deployment config."
+        }
       ],
       "next_phase": {
         "name": "UI Polish & Go-Live",
         "detail": "UI polish, login page styling, remaining page styling. Then: manual config (Stripe keys, Trigger.dev, Supabase Auth, GHL webhook), DSP data import dry-run, parallel run + cutover.",
         "status": "in_progress",
         "tasks": [
-          "UI polish — remaining page styling",
+          "UI polish \u2014 remaining page styling",
           "Login page design",
           "Manual config: Stripe test keys, Trigger.dev, Supabase Auth, GHL webhook",
           "DSP data export + import dry-run",
@@ -131,22 +148,25 @@
       "phase_current": 1,
       "phase_total": 3,
       "implementation_plan": "premium-trial-pathway/implementation-plan.md",
-      "purpose": "Louise's structured 9-stage GHL pipeline for Facebook leads — application form, £10 deposit, 48hr confirmation gate, automated post-trial conversion. Replaces effort with structure to fix 48% waste rate.",
+      "purpose": "Louise's structured 9-stage GHL pipeline for Facebook leads \u2014 application form, \u00a310 deposit, 48hr confirmation gate, automated post-trial conversion. Replaces effort with structure to fix 48% waste rate.",
       "status": "in_progress",
-      "status_label": "v1.0 | Phase 0 ✅ Complete | Phase 1 🔧 In Progress (fields + tags created, pipeline pending)",
+      "status_label": "v1.0 | Phase 0 \u2705 Complete | Phase 1 \ud83d\udd27 In Progress (fields + tags created, pipeline pending)",
       "completed_phases": [
-        {"name": "Phase 0: Pre-Flight Probes", "summary": "All 4 probes complete. HYBRID build (API for fields/tags/contacts/SMS, dashboard for pipeline/workflows). Stripe connected. FB workflow mapped (filter exclusion strategy). Timezone confirmed Europe/London."}
+        {
+          "name": "Phase 0: Pre-Flight Probes",
+          "summary": "All 4 probes complete. HYBRID build (API for fields/tags/contacts/SMS, dashboard for pipeline/workflows). Stripe connected. FB workflow mapped (filter exclusion strategy). Timezone confirmed Europe/London."
+        }
       ],
       "next_phase": {
         "name": "Phase 1: Pipeline + Lead Capture",
-        "detail": "Custom fields + tags created via API. Rob to create pipeline (9 stages), application form (4 questions), £10 deposit payment link in GHL Dashboard. Then build PTP-01/02/03 workflows.",
+        "detail": "Custom fields + tags created via API. Rob to create pipeline (9 stages), application form (4 questions), \u00a310 deposit payment link in GHL Dashboard. Then build PTP-01/02/03 workflows.",
         "status": "in_progress",
         "tasks": [
-          "✅ Create 8 custom fields via API (ptp_trial_date, ptp_trial_class, etc.)",
-          "✅ Create 17 tags via API (9 idempotency + 7 loss + 1 pipeline ID)",
-          "Rob: Create pipeline 'Premium Trial — FB Leads' (9 stages) in dashboard",
+          "\u2705 Create 8 custom fields via API (ptp_trial_date, ptp_trial_class, etc.)",
+          "\u2705 Create 17 tags via API (9 idempotency + 7 loss + 1 pipeline ID)",
+          "Rob: Create pipeline 'Premium Trial \u2014 FB Leads' (9 stages) in dashboard",
           "Rob: Create application form (4 questions) in dashboard",
-          "Rob: Create £10 deposit payment link in dashboard",
+          "Rob: Create \u00a310 deposit payment link in dashboard",
           "Build PTP-01 Intake workflow",
           "Build PTP-02 Form Submitted workflow",
           "Build PTP-03 Payment Received workflow",
@@ -162,30 +182,35 @@
         "target_show_rate": "70-80%",
         "baseline_cancel_rate": "73.79%",
         "baseline_sunday_waste": "57%",
-        "deposit": "£10 refundable",
+        "deposit": "\u00a310 refundable",
         "pipeline_stages": 9,
         "workflows_planned": 11,
         "verification_tests": 12,
-        "build_approach": "HYBRID — API + Dashboard",
+        "build_approach": "HYBRID \u2014 API + Dashboard",
         "refund_approach": "Manual-refund-with-SLA",
         "fb_routing": "Filter exclusion on 2023.1 workflow",
         "reference_doc": "docs/core-reference/GHL-API-REFERENCE.md"
       }
     }
   ],
-
   "primary_projects": [
     {
       "name": "Financial Intelligence System",
       "phase_current": 1,
       "phase_total": 10,
       "implementation_plan": "FINANCIAL-INTELLIGENCE-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Unified financial reporting — reads Xero (P&L, balance sheet, bank) + Stripe (4 payment accounts, real-time revenue truth) + enriches with Airtable ops data. Dashboard + Google Sheet + email digests.",
+      "purpose": "Unified financial reporting \u2014 reads Xero (P&L, balance sheet, bank) + Stripe (4 payment accounts, real-time revenue truth) + enriches with Airtable ops data. Dashboard + Google Sheet + email digests.",
       "status": "in_progress",
       "status_label": "v2.0 | Phase 1 Core Complete (FIN-01 live, 16 nodes) | Airtable + GitHub push pending",
       "completed_phases": [
-        {"name": "Phase 0: Xero Credential Setup", "summary": "Built-in + generic OAuth2 credential (reports scope fix). Organisation: Radar Dance Ltd."},
-        {"name": "Phase 0.5b: Stripe Credentials", "summary": "4 read-only Header Auth credentials (Class4Kids, DSP, Pembee, TeamUp)"}
+        {
+          "name": "Phase 0: Xero Credential Setup",
+          "summary": "Built-in + generic OAuth2 credential (reports scope fix). Organisation: Radar Dance Ltd."
+        },
+        {
+          "name": "Phase 0.5b: Stripe Credentials",
+          "summary": "4 read-only Header Auth credentials (Class4Kids, DSP, Pembee, TeamUp)"
+        }
       ],
       "next_phase": {
         "name": "Phase 1 Remaining + Phase 2: Dashboard",
@@ -209,7 +234,7 @@
         "Phase 9: Pricing & Payment Health",
         "Phase 10: Marketing Funnel Quality"
       ],
-      "key_finding": "Xero understates revenue by ~12% (~£18K gap, revised from £29K after TeamUp correction). Stripe enrichment provides real-time truth. Bookkeeper questions prepared."
+      "key_finding": "Xero understates revenue by ~12% (~\u00a318K gap, revised from \u00a329K after TeamUp correction). Stripe enrichment provides real-time truth. Bookkeeper questions prepared."
     },
     {
       "name": "Marketing Audit Q2 2026",
@@ -218,20 +243,29 @@
       "implementation_plan": "MARKETING-AUDIT-Q2-2026/MARKETING-AUDIT-MASTER-PLAN.md",
       "purpose": "Data-backed State of MOUVE Marketing audit (8 phases), project file cleanup, and Q2 2026 prioritised action plans. Hub-and-spoke structure with parallel agent execution.",
       "status": "complete",
-      "status_label": "✅ Complete | 3 execution plans ready: Infrastructure Fix, Automation & Nurture, Growth",
+      "status_label": "\u2705 Complete | 3 execution plans ready: Infrastructure Fix, Automation & Nurture, Growth",
       "completed_phases": [
-        {"name": "Stage 1: Full Audit (8 phases)", "summary": "All 8 audit phases complete with real API data. Phase 8 synthesis written with prioritised action list (P0-P5). P0 fixes deployed: Google Ads cleanup, competitor targeting, Facebook rebrand, reference docs."},
-        {"name": "Stage 2: Clean House", "summary": "Audited 35 items in docs/projects/active/. Archived 23 (complete/superseded/stale/absorbed). Moved 1 to core-reference. 12 active items remain."},
-        {"name": "Stage 3: Build New Plans", "summary": "3 implementation plans created: Infrastructure Fix (SPF, email links, Google Ads, GTM, redirect), Automation & Nurture (AC onboarding, win-back, LF welcome, chase sequence), Growth (location pages, PTP £10, Meta optimisation, offline conversions)."}
+        {
+          "name": "Stage 1: Full Audit (8 phases)",
+          "summary": "All 8 audit phases complete with real API data. Phase 8 synthesis written with prioritised action list (P0-P5). P0 fixes deployed: Google Ads cleanup, competitor targeting, Facebook rebrand, reference docs."
+        },
+        {
+          "name": "Stage 2: Clean House",
+          "summary": "Audited 35 items in docs/projects/active/. Archived 23 (complete/superseded/stale/absorbed). Moved 1 to core-reference. 12 active items remain."
+        },
+        {
+          "name": "Stage 3: Build New Plans",
+          "summary": "3 implementation plans created: Infrastructure Fix (SPF, email links, Google Ads, GTM, redirect), Automation & Nurture (AC onboarding, win-back, LF welcome, chase sequence), Growth (location pages, PTP \u00a310, Meta optimisation, offline conversions)."
+        }
       ],
       "next_phase": {
         "name": "Execute Plans",
-        "detail": "Infrastructure Fix first (urgent — stopping £11/day waste), then Automation & Nurture, then Growth.",
+        "detail": "Infrastructure Fix first (urgent \u2014 stopping \u00a311/day waste), then Automation & Nurture, then Growth.",
         "status": "planned",
         "tasks": [
           "Plan A: Fix SPF, email links, Google Ads conversions, GTM cleanup",
           "Plan B: Activate AC onboarding, build win-back + chase sequences",
-          "Plan C: Location pages, PTP £10 intro, Meta + Google Ads optimisation"
+          "Plan C: Location pages, PTP \u00a310 intro, Meta + Google Ads optimisation"
         ]
       },
       "remaining_phases": [],
@@ -240,7 +274,10 @@
         "files_archived": 23,
         "files_remaining": 12,
         "execution_plans": 3,
-        "reference_docs_created": ["GOOGLE-ADS-REFERENCE.md", "META-ADS-REFERENCE.md"],
+        "reference_docs_created": [
+          "GOOGLE-ADS-REFERENCE.md",
+          "META-ADS-REFERENCE.md"
+        ],
         "p0_fixes": "Google Ads sitelinks, competitor ad groups, Facebook rebrand, GBP duplicate"
       }
     },
@@ -251,29 +288,47 @@
       "implementation_plan": "STAFF-ADMIN-COSTS-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Per-class rate system, automated statement generation, monthly invoice review workflow with spreadsheet-based Louise approval",
       "status": "in_progress",
-      "status_label": "v1.1 | Phase 6B 🔧 February Payment Processing (3/14 approved, 9 pending Louise, 2 self-submitted)",
+      "status_label": "v1.1 | Phase 6B \ud83d\udd27 February Payment Processing (3/14 approved, 9 pending Louise, 2 self-submitted)",
       "completed_phases": [
-        {"name": "Phase 1: Rate Architecture", "summary": "STAFF_CLASS_RATES table, 3-tier cost formula, per-class rates for all active staff"},
-        {"name": "Phase 2: Session Logging", "summary": "DELIVERED_SESSIONS table linked to classes, staff, and rates"},
-        {"name": "Phase 3: Statement Generation", "summary": "n8n workflow generates monthly statements per staff member"},
-        {"name": "Phase 4: Staff Portal Integration", "summary": "Timesheet form in portal, session view for staff"},
-        {"name": "Phase 5: Rate Review", "summary": "22-tab cross-reference spreadsheet sent to Louise. 35 STAFF_CLASS_RATES records, 77 sessions backfilled."},
-        {"name": "Phase 6A: January Payment Processing", "summary": "21 staff statements generated. Spreadsheet review sent to Louise."}
+        {
+          "name": "Phase 1: Rate Architecture",
+          "summary": "STAFF_CLASS_RATES table, 3-tier cost formula, per-class rates for all active staff"
+        },
+        {
+          "name": "Phase 2: Session Logging",
+          "summary": "DELIVERED_SESSIONS table linked to classes, staff, and rates"
+        },
+        {
+          "name": "Phase 3: Statement Generation",
+          "summary": "n8n workflow generates monthly statements per staff member"
+        },
+        {
+          "name": "Phase 4: Staff Portal Integration",
+          "summary": "Timesheet form in portal, session view for staff"
+        },
+        {
+          "name": "Phase 5: Rate Review",
+          "summary": "22-tab cross-reference spreadsheet sent to Louise. 35 STAFF_CLASS_RATES records, 77 sessions backfilled."
+        },
+        {
+          "name": "Phase 6A: January Payment Processing",
+          "summary": "21 staff statements generated. Spreadsheet review sent to Louise."
+        }
       ],
       "next_phase": {
         "name": "Phase 6B: February Payment Processing",
         "detail": "Processing February 2026 statements. 14 system-generated + 2 self-submitted invoices. Louise confirming payments progressively.",
         "status": "in_progress",
         "tasks": [
-          "✅ Evie Wong (£255) — approved + sent",
-          "✅ Racheli Nevies (£40) — approved + sent by Louise",
-          "✅ Alexandra Gibbons (£110) — approved, PDF ready",
-          "✅ Jennifer Field rate fixed (£22.50/session → £615)",
-          "✅ Tamarind Borrill statement rebuilt (£85 → £502.19, 14 records, 5 venues)",
-          "✅ Self-submitted invoices saved: Tamarind (£502.19), Racheli Leach (Feb £800.43 + Jan £908.10)",
-          "⏳ 9 staff pending Louise confirmation (£4,257.34)",
-          "⏳ Chloe Segel + Sivana Solomon at £0 — rates needed from Louise",
-          "⏳ Ivanka reply deferred until all statements approved"
+          "\u2705 Evie Wong (\u00a3255) \u2014 approved + sent",
+          "\u2705 Racheli Nevies (\u00a340) \u2014 approved + sent by Louise",
+          "\u2705 Alexandra Gibbons (\u00a3110) \u2014 approved, PDF ready",
+          "\u2705 Jennifer Field rate fixed (\u00a322.50/session \u2192 \u00a3615)",
+          "\u2705 Tamarind Borrill statement rebuilt (\u00a385 \u2192 \u00a3502.19, 14 records, 5 venues)",
+          "\u2705 Self-submitted invoices saved: Tamarind (\u00a3502.19), Racheli Leach (Feb \u00a3800.43 + Jan \u00a3908.10)",
+          "\u23f3 9 staff pending Louise confirmation (\u00a34,257.34)",
+          "\u23f3 Chloe Segel + Sivana Solomon at \u00a30 \u2014 rates needed from Louise",
+          "\u23f3 Ivanka reply deferred until all statements approved"
         ]
       },
       "remaining_phases": [
@@ -282,12 +337,12 @@
       ],
       "key_data": {
         "approved_staff": 3,
-        "approved_total": "£405.00",
+        "approved_total": "\u00a3405.00",
         "self_submitted": 2,
-        "self_submitted_total": "£1,302.62",
+        "self_submitted_total": "\u00a31,302.62",
         "pending_staff": 9,
-        "pending_total": "£4,257.34",
-        "feb_grand_total": "£4,662.34",
+        "pending_total": "\u00a34,257.34",
+        "feb_grand_total": "\u00a34,662.34",
         "process_doc": "STAFF-INVOICE-RUNBOOK.md"
       }
     },
@@ -296,26 +351,32 @@
       "phase_current": 3,
       "phase_total": 4,
       "implementation_plan": "active/WHATSAPP-IMPLEMENTATION-PLAN-MAR2026.md",
-      "purpose": "Add WhatsApp messaging to GHL for Ladies Fitness — weekly class reminders to 326 members to drive regular attendance.",
+      "purpose": "Add WhatsApp messaging to GHL for Ladies Fitness \u2014 weekly class reminders to 326 members to drive regular attendance.",
       "status": "in_progress",
-      "status_label": "v2.3 | Phase 3 🔧 | LF-13 SplitInBatches reset bug fixed + deployed. 12/14 Sunday reminders manually recovered. 3 GHL name fixes. Review: 16 March.",
+      "status_label": "v2.3 | Phase 3 \ud83d\udd27 | LF-13 SplitInBatches reset bug fixed + deployed. 12/14 Sunday reminders manually recovered. 3 GHL name fixes. Review: 16 March.",
       "completed_phases": [
-        {"name": "Phase 1: Setup & Configuration", "summary": "SecondSIM eSIM (07348955395), WhatsApp connected to GHL via Meta Business API, 2 templates approved (class_reminder + we_miss_you), test message delivered to Rob."},
-        {"name": "Phase 2: Deploy & Test", "summary": "LF-13 class reminder (15 nodes) + LF-14 we-miss-you (18 nodes) deployed to n8n. Both LIVE. Airtable logging active."}
+        {
+          "name": "Phase 1: Setup & Configuration",
+          "summary": "SecondSIM eSIM (07348955395), WhatsApp connected to GHL via Meta Business API, 2 templates approved (class_reminder + we_miss_you), test message delivered to Rob."
+        },
+        {
+          "name": "Phase 2: Deploy & Test",
+          "summary": "LF-13 class reminder (15 nodes) + LF-14 we-miss-you (18 nodes) deployed to n8n. Both LIVE. Airtable logging active."
+        }
       ],
       "next_phase": {
         "name": "Phase 3: Go Live & Measure",
-        "detail": "Both workflows live. Review checkpoint Monday 16 March 09:30 — compare attendance, delivery rates, response rates.",
+        "detail": "Both workflows live. Review checkpoint Monday 16 March 09:30 \u2014 compare attendance, delivery rates, response rates.",
         "status": "in_progress",
         "tasks": [
-          "✅ LF-13 LIVE (daily 18:00 cron) — restructured: multi-class pipeline, day-of-week filtering, 19 nodes",
-          "✅ LF-14 LIVE (Monday 09:00 cron)",
-          "✅ 24 GHL duplicate contacts deleted (bulk dedup)",
-          "✅ class_reminder_sunday template approved + deployed (Thursday sends Sunday reminder)",
-          "✅ Thursday run sends both Friday + Sunday reminders via outer SplitInBatches loop",
-          "✅ SplitInBatches reset bug fixed (inner loop wasn't resetting — 13 March)",
-          "✅ 12/14 Sunday reminders manually sent (2 no phone)",
-          "✅ 3 GHL name data quality fixes (TeamUp sync bug)",
+          "\u2705 LF-13 LIVE (daily 18:00 cron) \u2014 restructured: multi-class pipeline, day-of-week filtering, 19 nodes",
+          "\u2705 LF-14 LIVE (Monday 09:00 cron)",
+          "\u2705 24 GHL duplicate contacts deleted (bulk dedup)",
+          "\u2705 class_reminder_sunday template approved + deployed (Thursday sends Sunday reminder)",
+          "\u2705 Thursday run sends both Friday + Sunday reminders via outer SplitInBatches loop",
+          "\u2705 SplitInBatches reset bug fixed (inner loop wasn't resetting \u2014 13 March)",
+          "\u2705 12/14 Sunday reminders manually sent (2 no phone)",
+          "\u2705 3 GHL name data quality fixes (TeamUp sync bug)",
           "Review checkpoint: 16 March 09:30"
         ]
       },
@@ -327,10 +388,10 @@
         "active_members": 51,
         "classes_per_week": 5,
         "estimated_messages_per_week": "45-68",
-        "monthly_cost": "~£30 (sub + Meta fees)",
+        "monthly_cost": "~\u00a330 (sub + Meta fees)",
         "target_metric": "Attendance uplift after 4 weeks",
         "whatsapp_number": "07348955395",
-        "esim_cost": "£5.99/mo"
+        "esim_cost": "\u00a35.99/mo"
       }
     },
     {
@@ -338,21 +399,24 @@
       "phase_current": 2,
       "phase_total": 6,
       "implementation_plan": "active/WHATSAPP-LEAD-WORKFLOW-IMPLEMENTATION-PLAN-MAR2026.md",
-      "purpose": "Replace SMS lead greeting with WhatsApp for new leads — 3-message nurture sequence for children's classes and ladies fitness. Website WhatsApp button + GHL workflow.",
+      "purpose": "Replace SMS lead greeting with WhatsApp for new leads \u2014 3-message nurture sequence for children's classes and ladies fitness. Website WhatsApp button + GHL workflow.",
       "status": "in_progress",
-      "status_label": "v1.0 | Phase 1 ✅ Templates submitted (7 active, 2 pending). Phase 2 🔧 GHL workflow draft started, blocked on Meta verification.",
+      "status_label": "v1.0 | Phase 1 \u2705 Templates submitted (7 active, 2 pending). Phase 2 \ud83d\udd27 GHL workflow draft started, blocked on Meta verification.",
       "completed_phases": [
-        {"name": "Phase 1: Template Submission", "summary": "6 templates submitted to Meta (3 children's + 3 LF). 7/9 total templates Active. Copy refined: no variables (WhatsApp leads have no name), no em dashes, conversational tone."}
+        {
+          "name": "Phase 1: Template Submission",
+          "summary": "6 templates submitted to Meta (3 children's + 3 LF). 7/9 total templates Active. Copy refined: no variables (WhatsApp leads have no name), no em dashes, conversational tone."
+        }
       ],
       "next_phase": {
         "name": "Phase 2: GHL Workflow Build",
-        "detail": "Draft started — trigger, duplicate guard, tags, opportunity, notification configured. Blocked: WhatsApp Send action requires Meta Business Verification.",
+        "detail": "Draft started \u2014 trigger, duplicate guard, tags, opportunity, notification configured. Blocked: WhatsApp Send action requires Meta Business Verification.",
         "status": "in_progress",
         "tasks": [
-          "✅ Trigger: Customer Replied, WhatsApp, 'find out about classes'",
-          "✅ Duplicate guard + tags + opportunity + notification",
-          "🔴 WhatsApp Send actions blocked (Meta verification pending)",
-          "🔴 Wait + follow-up logic blocked",
+          "\u2705 Trigger: Customer Replied, WhatsApp, 'find out about classes'",
+          "\u2705 Duplicate guard + tags + opportunity + notification",
+          "\ud83d\udd34 WhatsApp Send actions blocked (Meta verification pending)",
+          "\ud83d\udd34 Wait + follow-up logic blocked",
           "Add WhatsApp button to /ladies-fitness page",
           "Build LF workflow in GHL"
         ]
@@ -376,22 +440,34 @@
       "phase_current": 5,
       "phase_total": 6,
       "implementation_plan": "active/PARTY-LIFECYCLE-ENGINE-IMPLEMENTATION-PLAN-MAR2026.md",
-      "purpose": "Automate entire post-booking party experience — confirmation through post-party feedback. 6-touchpoint email/WhatsApp sequence triggered by internal booking form.",
+      "purpose": "Automate entire post-booking party experience \u2014 confirmation through post-party feedback. 6-touchpoint email/WhatsApp sequence triggered by internal booking form.",
       "status": "in_progress",
-      "status_label": "v1.0 | Phases 1–4 ✅ Complete | Phase 5 🔧 In Progress (WhatsApp approved, 5 GHL workflows + n8n scheduling next)",
+      "status_label": "v1.0 | Phases 1\u20134 \u2705 Complete | Phase 5 \ud83d\udd27 In Progress (WhatsApp approved, 5 GHL workflows + n8n scheduling next)",
       "completed_phases": [
-        {"name": "Phase 1: Feedback + Post-Party Email", "summary": "Post-party feedback email designed in Paper + HTML built. GHL feedback form live (6 fields). Feedback workflow LIVE. Email sent to Talia."},
-        {"name": "Phase 2: GHL Internal Booking Form", "summary": "14-field internal form built. 11 custom fields created (incl. Party — Child Name). 'Party Booking — Tag + Notify' workflow LIVE."},
-        {"name": "Phase 3: Booking Confirmation Flow", "summary": "Booking confirmation email designed + HTML built. Parent-facing 'Party Details' form (ID: Co4UKudsOdcJ9Z072yg6). party_booked tag → Email 1 workflow LIVE."},
-        {"name": "Phase 4: Pre-Party Email Sequence", "summary": "3 emails designed in Paper + HTML built (checklist, extras upsell, excitement builder). All merge fields fixed (double underscore)."}
+        {
+          "name": "Phase 1: Feedback + Post-Party Email",
+          "summary": "Post-party feedback email designed in Paper + HTML built. GHL feedback form live (6 fields). Feedback workflow LIVE. Email sent to Talia."
+        },
+        {
+          "name": "Phase 2: GHL Internal Booking Form",
+          "summary": "14-field internal form built. 11 custom fields created (incl. Party \u2014 Child Name). 'Party Booking \u2014 Tag + Notify' workflow LIVE."
+        },
+        {
+          "name": "Phase 3: Booking Confirmation Flow",
+          "summary": "Booking confirmation email designed + HTML built. Parent-facing 'Party Details' form (ID: Co4UKudsOdcJ9Z072yg6). party_booked tag \u2192 Email 1 workflow LIVE."
+        },
+        {
+          "name": "Phase 4: Pre-Party Email Sequence",
+          "summary": "3 emails designed in Paper + HTML built (checklist, extras upsell, excitement builder). All merge fields fixed (double underscore)."
+        }
       ],
       "next_phase": {
         "name": "Phase 5: WhatsApp + n8n Orchestration",
         "detail": "WhatsApp template approved. Build 5 GHL send workflows (Rob), then n8n daily scheduling workflow (Claude).",
         "status": "in_progress",
         "tasks": [
-          "✅ Task 5.1: WhatsApp template party_day_before_reminder APPROVED by Meta",
-          "Task 5.2 Step 1: Build 5 GHL workflows (Rob — each is Tag Added → Send Email/WhatsApp → Add sent tag)",
+          "\u2705 Task 5.1: WhatsApp template party_day_before_reminder APPROVED by Meta",
+          "Task 5.2 Step 1: Build 5 GHL workflows (Rob \u2014 each is Tag Added \u2192 Send Email/WhatsApp \u2192 Add sent tag)",
           "Task 5.2 Step 2: Build n8n scheduling workflow (daily 09:00, date-based trigger tags)"
         ]
       },
@@ -407,12 +483,20 @@
         "emails_designed": 5,
         "emails_remaining": 0,
         "whatsapp_template": "party_day_before_reminder (APPROVED)",
-        "first_real_booking": "Noah's party — Lauren Sandler, 7 June 2026",
+        "first_real_booking": "Noah's party \u2014 Lauren Sandler, 7 June 2026",
         "design_doc": "docs/plans/2026-03-11-party-lifecycle-engine-design.md"
       }
+    },
+    {
+      "name": "Studio Manager Hiring Funnel",
+      "status": "in_progress",
+      "phase": "Phase 1/6 \u2014 JD Finalisation",
+      "progress": 15,
+      "priority": "high",
+      "notes": "DSOA funnel adapted for 2026 UK. JD finalised, hiring@ email live. Post Mon 17 March. Close 4 April. Interviews w/c 21 April.",
+      "updated": "2026-03-14"
     }
   ],
-
   "secondary_projects": [
     {
       "name": "Ladies Fitness Funnel",
@@ -421,7 +505,7 @@
       "implementation_plan": "LADIES-FITNESS-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Automate lead-to-member journey (lead capture, instant response, trials, attendance, retention)",
       "status": "in_progress",
-      "status_label": "Phase 5/7 Complete ✅ | Louise feedback received (3 Feb)",
+      "status_label": "Phase 5/7 Complete \u2705 | Louise feedback received (3 Feb)",
       "next_action": "Phase 4: Weekly member scan, at-risk detection, onboarding email sequence"
     },
     {
@@ -431,7 +515,7 @@
       "implementation_plan": "CHILDRENS-ONBOARDING-GHL-IMPLEMENTATION-PLAN-FEB2026.md",
       "purpose": "GHL-native 10-email onboarding with age personalisation + kit pages. Replaces AC approach (28 templates, down from 52).",
       "status": "in_progress",
-      "status_label": "v2.0 | Phase 1 In Progress 🔧 (4/10 kit pages complete)",
+      "status_label": "v2.0 | Phase 1 In Progress \ud83d\udd27 (4/10 kit pages complete)",
       "next_action": "Phase 1: Complete remaining kit pages (Jazz, Contemporary, Elite, Drama, Broadway, First Mouves) + add to Next.js site"
     },
     {
@@ -441,17 +525,17 @@
       "implementation_plan": "FINANCIAL-HEALTH-CHECK-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "One-time diagnostic deep dive: stream profitability, class economics, marketing analysis, revenue reconciliation, bookkeeper questions",
       "status": "in_progress",
-      "status_label": "v1.4 | Phase 5/6 🔧 — Management accounts analysed. Pembee AR corrected.",
-      "next_action": "Travel categorisation with Louise (~£32.6K remaining), December queries (4 items), schedule regular bookkeeper call"
+      "status_label": "v1.4 | Phase 5/6 \ud83d\udd27 \u2014 Management accounts analysed. Pembee AR corrected.",
+      "next_action": "Travel categorisation with Louise (~\u00a332.6K remaining), December queries (4 items), schedule regular bookkeeper call"
     },
     {
       "name": "12-Month Operational Budget",
       "phase_current": 3,
       "phase_total": 5,
       "implementation_plan": "12-MONTH-BUDGET-IMPLEMENTATION-PLAN-JAN2026.md",
-      "purpose": "Decision-grade budget testing feasibility of £750K annual revenue — units-based, seasonal, autopay-aware cash flow",
+      "purpose": "Decision-grade budget testing feasibility of \u00a3750K annual revenue \u2014 units-based, seasonal, autopay-aware cash flow",
       "status": "paused",
-      "status_label": "v2.3 | ⏸️ PAUSED — Data Quality Issues | Pending Xero Reconciliation",
+      "status_label": "v2.3 | \u23f8\ufe0f PAUSED \u2014 Data Quality Issues | Pending Xero Reconciliation",
       "next_action": "BLOCKED: Fix Xero data quality first (bookkeeper queries, reconciliation), then rebuild budget from clean data"
     },
     {
@@ -461,164 +545,458 @@
       "implementation_plan": "STUDENT-PROGRESS-REPORTS-IMPLEMENTATION-PLAN-JAN2026.md",
       "purpose": "Structured phrase-bank reports (<60s per student, zero admin editing, sibling differentiation)",
       "status": "in_progress",
-      "status_label": "v1.16 | Phase 3 ✅ Complete | Phase 4: Report Generation 📋",
+      "status_label": "v1.16 | Phase 3 \u2705 Complete | Phase 4: Report Generation \ud83d\udccb",
       "next_action": "Phase 4: n8n workflow to generate parent-facing PDF reports from completed assessments"
     }
   ],
-
   "completed_projects": {
     "multi_phase": [
-      {"name": "Data Integrity System", "result": "Production (DATA_HEALTH + SYS-01 reconciliation)"},
-      {"name": "MOUVE Ops Library", "result": "Production (4 SOPs + 1 Playbook live)"},
-      {"name": "Ladies Fitness Calendar Sync", "result": "LF-10 + LF-11 deployed"},
-      {"name": "Ops Priority Engine", "result": "Complete"},
-      {"name": "Term Renewal Engine", "result": "Complete"},
-      {"name": "Teacher Culture Programme", "result": "12 campaigns live"},
-      {"name": "Operational Dashboard", "result": "Vercel + n8n pipeline + 7 KPI cards (27 Jan 2026)"},
-      {"name": "GHL SMS Audit & Cleanup", "result": "5/5 tasks done, ~410 SMS/month saved. All complete 29 Jan 2026"},
-      {"name": "Custom Staff Portal (Next.js)", "result": "8/8 phases, 6 features, 22 staff live (29 Jan 2026). Post-launch: 28 records fixed, 16 venue options added, monthly session view deployed (30 Jan)."},
-      {"name": "SEO & Geo (Technical Foundation)", "result": "9/9 phases complete on WordPress. New Next.js site rebuilt fresh (3 March 2026). GBP API tasks done."},
-      {"name": "Marketing & Conversions (Infrastructure)", "result": "Attribution fixed, conversion tracking live, weekly channel report with CPA/unit economics (25 Feb 2026). Unstarted phases → Marketing Backlog."},
-      {"name": "Party Booking Landing Page", "result": "parties.makeamouve.com launched. Absorbed into main makeamouve.com/parties (3 March 2026)."},
-      {"name": "MOUVE Website (Next.js)", "result": "22-route Next.js site live at makeamouve.com (3 March 2026). Replaced WordPress/Elementor. Inline validation on all 6 forms (12 March)."}
+      {
+        "name": "Data Integrity System",
+        "result": "Production (DATA_HEALTH + SYS-01 reconciliation)"
+      },
+      {
+        "name": "MOUVE Ops Library",
+        "result": "Production (4 SOPs + 1 Playbook live)"
+      },
+      {
+        "name": "Ladies Fitness Calendar Sync",
+        "result": "LF-10 + LF-11 deployed"
+      },
+      {
+        "name": "Ops Priority Engine",
+        "result": "Complete"
+      },
+      {
+        "name": "Term Renewal Engine",
+        "result": "Complete"
+      },
+      {
+        "name": "Teacher Culture Programme",
+        "result": "12 campaigns live"
+      },
+      {
+        "name": "Operational Dashboard",
+        "result": "Vercel + n8n pipeline + 7 KPI cards (27 Jan 2026)"
+      },
+      {
+        "name": "GHL SMS Audit & Cleanup",
+        "result": "5/5 tasks done, ~410 SMS/month saved. All complete 29 Jan 2026"
+      },
+      {
+        "name": "Custom Staff Portal (Next.js)",
+        "result": "8/8 phases, 6 features, 22 staff live (29 Jan 2026). Post-launch: 28 records fixed, 16 venue options added, monthly session view deployed (30 Jan)."
+      },
+      {
+        "name": "SEO & Geo (Technical Foundation)",
+        "result": "9/9 phases complete on WordPress. New Next.js site rebuilt fresh (3 March 2026). GBP API tasks done."
+      },
+      {
+        "name": "Marketing & Conversions (Infrastructure)",
+        "result": "Attribution fixed, conversion tracking live, weekly channel report with CPA/unit economics (25 Feb 2026). Unstarted phases \u2192 Marketing Backlog."
+      },
+      {
+        "name": "Party Booking Landing Page",
+        "result": "parties.makeamouve.com launched. Absorbed into main makeamouve.com/parties (3 March 2026)."
+      },
+      {
+        "name": "MOUVE Website (Next.js)",
+        "result": "22-route Next.js site live at makeamouve.com (3 March 2026). Replaced WordPress/Elementor. Inline validation on all 6 forms (12 March)."
+      }
     ],
     "simple": [
-      {"name": "Children's Onboarding Email Refinement", "result": "10 emails × 3 age tracks, all pass Email Deliverability Checklist v1.1"},
-      {"name": "Ops Library Notion → Docs Export", "result": "37 docs exported"},
-      {"name": "Ops Library Drive (Phase 2B)", "result": "28 folders created"},
-      {"name": "Drive Archive (Phase 3)", "result": "10 drives archived"},
-      {"name": "Media Archive Organization", "result": "24 folders by year"},
-      {"name": "February Camp 2026 Import", "result": "18 kids + 15 AC contacts"},
-      {"name": "SOP-CL-001 School Clubs", "result": "Unregistered attendee SOP"},
-      {"name": "MOUVE RAG Agent", "result": "Complete"},
-      {"name": "Per-Teacher Trial Emails", "result": "Complete"},
-      {"name": "Staff Communication System", "result": "Complete"},
-      {"name": "TeamUp API Access", "result": "Complete"},
-      {"name": "Spring Term 2026 Welcome", "result": "Complete"},
-      {"name": "Trials Tracker System", "result": "Complete"},
-      {"name": "LF Trial Email Clarity Fix", "result": "3 workflows deployed"},
-      {"name": "Historical Camp Data Migration", "result": "1,301 contacts + 11-tag taxonomy imported to AC"},
-      {"name": "School Clubs Migration", "result": "Closed (not viable)", "closed": true},
-      {"name": "Amex Recon", "result": "Retired (30 Jan 2026) — M365 filters causing staff invoice loss, manual process sufficient", "closed": true},
-      {"name": "Attendance Tracker (Children's Dance)", "result": "Staff Portal /attendance page (25 Jan 2026)"},
-      {"name": "Pocket Assistant (OpenClaw)", "result": "All 3 phases complete. Telegram bot live on VPS (31 Jan 2026)"},
-      {"name": "Supabase Shadow Database", "result": "Phase 4/6 complete. 27-table schema, nightly Airtable sync, monitoring live (29 Jan 2026)"},
-      {"name": "Website Rebuild Planning", "result": "Design specs + brand assets complete. Absorbed into Next.js site build (1 March 2026)"},
-      {"name": "SEO & Geo (Technical Foundation)", "result": "9/9 phases complete on WordPress. Absorbed into Marketing Audit Q2 2026 (8 March 2026)"},
-      {"name": "Marketing & Conversions (Infrastructure)", "result": "Attribution fixed, tracking live, weekly report. Absorbed into Marketing Audit (8 March 2026)"},
-      {"name": "Paid Ads Optimisation", "result": "Google Ads restructured, Meta A/B guide built, conversion tracking live. Absorbed into Marketing Audit (8 March 2026)"},
-      {"name": "Lead Scoring & Attribution", "result": "68-lead audit, tracking fixes, weekly report. Absorbed into Marketing Audit (8 March 2026)"},
-      {"name": "Meta CAPI for CRM", "result": "Showed + Won GHL workflows live. CAPI events flowing to Meta (5 March 2026)"},
-      {"name": "Birthday Party Emails", "result": "3-email sequence drafted, 96% DOB coverage. Absorbed into Marketing Audit (8 March 2026)"},
-      {"name": "LF Newsletter", "result": "Prompt file done. Absorbed into Marketing Audit (8 March 2026)"},
-      {"name": "Onboarding Email Sequence (9 Emails)", "result": "9 branded HTML emails LIVE in GHL workflow. Replaced 7 plain-text originals. Day 0–Week 10 sequence. (10 March 2026)"},
-      {"name": "Win-Back Email Design (7 Emails)", "result": "2 sequences designed in Paper + HTML for GHL. Seq A (4 emails, 134 recent families) + Seq B (3 emails, 820 cold). Awaiting Louise approval → GHL workflows. (10 March 2026)"}
+      {
+        "name": "Children's Onboarding Email Refinement",
+        "result": "10 emails \u00d7 3 age tracks, all pass Email Deliverability Checklist v1.1"
+      },
+      {
+        "name": "Ops Library Notion \u2192 Docs Export",
+        "result": "37 docs exported"
+      },
+      {
+        "name": "Ops Library Drive (Phase 2B)",
+        "result": "28 folders created"
+      },
+      {
+        "name": "Drive Archive (Phase 3)",
+        "result": "10 drives archived"
+      },
+      {
+        "name": "Media Archive Organization",
+        "result": "24 folders by year"
+      },
+      {
+        "name": "February Camp 2026 Import",
+        "result": "18 kids + 15 AC contacts"
+      },
+      {
+        "name": "SOP-CL-001 School Clubs",
+        "result": "Unregistered attendee SOP"
+      },
+      {
+        "name": "MOUVE RAG Agent",
+        "result": "Complete"
+      },
+      {
+        "name": "Per-Teacher Trial Emails",
+        "result": "Complete"
+      },
+      {
+        "name": "Staff Communication System",
+        "result": "Complete"
+      },
+      {
+        "name": "TeamUp API Access",
+        "result": "Complete"
+      },
+      {
+        "name": "Spring Term 2026 Welcome",
+        "result": "Complete"
+      },
+      {
+        "name": "Trials Tracker System",
+        "result": "Complete"
+      },
+      {
+        "name": "LF Trial Email Clarity Fix",
+        "result": "3 workflows deployed"
+      },
+      {
+        "name": "Historical Camp Data Migration",
+        "result": "1,301 contacts + 11-tag taxonomy imported to AC"
+      },
+      {
+        "name": "School Clubs Migration",
+        "result": "Closed (not viable)",
+        "closed": true
+      },
+      {
+        "name": "Amex Recon",
+        "result": "Retired (30 Jan 2026) \u2014 M365 filters causing staff invoice loss, manual process sufficient",
+        "closed": true
+      },
+      {
+        "name": "Attendance Tracker (Children's Dance)",
+        "result": "Staff Portal /attendance page (25 Jan 2026)"
+      },
+      {
+        "name": "Pocket Assistant (OpenClaw)",
+        "result": "All 3 phases complete. Telegram bot live on VPS (31 Jan 2026)"
+      },
+      {
+        "name": "Supabase Shadow Database",
+        "result": "Phase 4/6 complete. 27-table schema, nightly Airtable sync, monitoring live (29 Jan 2026)"
+      },
+      {
+        "name": "Website Rebuild Planning",
+        "result": "Design specs + brand assets complete. Absorbed into Next.js site build (1 March 2026)"
+      },
+      {
+        "name": "SEO & Geo (Technical Foundation)",
+        "result": "9/9 phases complete on WordPress. Absorbed into Marketing Audit Q2 2026 (8 March 2026)"
+      },
+      {
+        "name": "Marketing & Conversions (Infrastructure)",
+        "result": "Attribution fixed, tracking live, weekly report. Absorbed into Marketing Audit (8 March 2026)"
+      },
+      {
+        "name": "Paid Ads Optimisation",
+        "result": "Google Ads restructured, Meta A/B guide built, conversion tracking live. Absorbed into Marketing Audit (8 March 2026)"
+      },
+      {
+        "name": "Lead Scoring & Attribution",
+        "result": "68-lead audit, tracking fixes, weekly report. Absorbed into Marketing Audit (8 March 2026)"
+      },
+      {
+        "name": "Meta CAPI for CRM",
+        "result": "Showed + Won GHL workflows live. CAPI events flowing to Meta (5 March 2026)"
+      },
+      {
+        "name": "Birthday Party Emails",
+        "result": "3-email sequence drafted, 96% DOB coverage. Absorbed into Marketing Audit (8 March 2026)"
+      },
+      {
+        "name": "LF Newsletter",
+        "result": "Prompt file done. Absorbed into Marketing Audit (8 March 2026)"
+      },
+      {
+        "name": "Onboarding Email Sequence (9 Emails)",
+        "result": "9 branded HTML emails LIVE in GHL workflow. Replaced 7 plain-text originals. Day 0\u2013Week 10 sequence. (10 March 2026)"
+      },
+      {
+        "name": "Win-Back Email Design (7 Emails)",
+        "result": "2 sequences designed in Paper + HTML for GHL. Seq A (4 emails, 134 recent families) + Seq B (3 emails, 820 cold). Awaiting Louise approval \u2192 GHL workflows. (10 March 2026)"
+      }
     ],
     "active_campaigns": [
-      {"name": "Google Ads (10 ad groups)", "status": "Active — 7 service + 3 competitor ad groups. Sitelinks, RSAs, phrase/exact keywords (8 March 2026)"},
-      {"name": "Meta PROSPECTING (Zumba Video)", "status": "Active — £12/day, 102 leads at £3.51/lead baseline"},
-      {"name": "Meta WEBSITE (4 ad sets)", "status": "Active — £17/day. Learning phase. Children's £8, Ladies £5, Camps £2, Parties £2 (4 March 2026)"}
+      {
+        "name": "Google Ads (10 ad groups)",
+        "status": "Active \u2014 7 service + 3 competitor ad groups. Sitelinks, RSAs, phrase/exact keywords (8 March 2026)"
+      },
+      {
+        "name": "Meta PROSPECTING (Zumba Video)",
+        "status": "Active \u2014 \u00a312/day, 102 leads at \u00a33.51/lead baseline"
+      },
+      {
+        "name": "Meta WEBSITE (4 ad sets)",
+        "status": "Active \u2014 \u00a317/day. Learning phase. Children's \u00a38, Ladies \u00a35, Camps \u00a32, Parties \u00a32 (4 March 2026)"
+      }
     ]
   },
-
   "dependencies": {
     "lead_capture": [
-      {"name": "Meta Ads", "status": "active", "note": "A/B experiment ready (form vs website). 3 campaigns currently active."},
-      {"name": "Google Ads", "status": "active", "note": "7 ad groups restructured 4 March 2026. Phrase/exact keywords, RSAs, sitelinks."},
-      {"name": "Website Forms (Next.js)", "status": "active", "note": "6 forms with inline validation micro-interactions + dataLayer.push → GTM → GA4 + Google Ads + Meta Pixel (12 March 2026)"},
-      {"name": "TeamUp Trials", "status": "active"}
+      {
+        "name": "Meta Ads",
+        "status": "active",
+        "note": "A/B experiment ready (form vs website). 3 campaigns currently active."
+      },
+      {
+        "name": "Google Ads",
+        "status": "active",
+        "note": "7 ad groups restructured 4 March 2026. Phrase/exact keywords, RSAs, sitelinks."
+      },
+      {
+        "name": "Website Forms (Next.js)",
+        "status": "active",
+        "note": "6 forms with inline validation micro-interactions + dataLayer.push \u2192 GTM \u2192 GA4 + Google Ads + Meta Pixel (12 March 2026)"
+      },
+      {
+        "name": "TeamUp Trials",
+        "status": "active"
+      }
     ],
     "crm_leads": [
-      {"name": "GHL StudioHub", "status": "active"},
-      {"name": "GHL Workflows", "status": "partial"}
+      {
+        "name": "GHL StudioHub",
+        "status": "active"
+      },
+      {
+        "name": "GHL Workflows",
+        "status": "partial"
+      }
     ],
     "automation": [
-      {"name": "n8n (31 workflows)", "status": "active"},
-      {"name": "Webhooks", "status": "active"}
+      {
+        "name": "n8n (31 workflows)",
+        "status": "active"
+      },
+      {
+        "name": "Webhooks",
+        "status": "active"
+      }
     ],
     "data_email": [
-      {"name": "Airtable", "status": "active"},
-      {"name": "ActiveCampaign", "status": "active"},
-      {"name": "M365 Email", "status": "active"}
+      {
+        "name": "Airtable",
+        "status": "active"
+      },
+      {
+        "name": "ActiveCampaign",
+        "status": "active"
+      },
+      {
+        "name": "M365 Email",
+        "status": "active"
+      }
     ],
     "booking_systems": [
-      {"name": "TeamUp (LF)", "status": "active"},
-      {"name": "DSP (Dance)", "status": "active", "note": "MOUVE Studio (replacement) code complete, pending go-live config"}
+      {
+        "name": "TeamUp (LF)",
+        "status": "active"
+      },
+      {
+        "name": "DSP (Dance)",
+        "status": "active",
+        "note": "MOUVE Studio (replacement) code complete, pending go-live config"
+      }
     ]
   },
-
   "data_flows": [
     {
       "name": "Facebook Lead Flow",
-      "steps": ["Facebook Lead", "GHL Pipeline", "n8n LF-02", "SMS + Email + Airtable"],
+      "steps": [
+        "Facebook Lead",
+        "GHL Pipeline",
+        "n8n LF-02",
+        "SMS + Email + Airtable"
+      ],
       "active": true
     },
     {
       "name": "TeamUp Trial Flow",
-      "steps": ["TeamUp Trial", "n8n LF-01", "GHL Contact", "Welcome SMS + Email"],
+      "steps": [
+        "TeamUp Trial",
+        "n8n LF-01",
+        "GHL Contact",
+        "Welcome SMS + Email"
+      ],
       "active": true
     },
     {
       "name": "Attendance Flow",
-      "steps": ["TeamUp Attendance", "n8n LF-04 (hourly)", "Airtable LF_MEMBERSHIPS"],
+      "steps": [
+        "TeamUp Attendance",
+        "n8n LF-04 (hourly)",
+        "Airtable LF_MEMBERSHIPS"
+      ],
       "active": true
     },
     {
       "name": "Calendar Sync Flow",
-      "steps": ["TeamUp Events", "n8n LF-10 (daily 5am)", "Google Calendar", "LF Staff"],
+      "steps": [
+        "TeamUp Events",
+        "n8n LF-10 (daily 5am)",
+        "Google Calendar",
+        "LF Staff"
+      ],
       "active": true
     },
     {
       "name": "Trial Event Flow",
-      "steps": ["TeamUp Trial Booking", "n8n LF-11 (real-time)", "Google Calendar Event", "Staff Notification"],
+      "steps": [
+        "TeamUp Trial Booking",
+        "n8n LF-11 (real-time)",
+        "Google Calendar Event",
+        "Staff Notification"
+      ],
       "active": true
     },
     {
       "name": "GHL Opp Status Sync",
-      "steps": ["GHL Opportunities (won/lost)", "Python script (StudioHub ID/email match)", "Airtable LEADS (Converted/Dead)"],
+      "steps": [
+        "GHL Opportunities (won/lost)",
+        "Python script (StudioHub ID/email match)",
+        "Airtable LEADS (Converted/Dead)"
+      ],
       "active": true
     }
   ],
-
   "workflows": [
-    {"id": "SYS-01", "name": "Data Quality Reconciliation", "trigger": "Weekly", "status": "active"},
-    {"id": "LF-00", "name": "TeamUp → Airtable Sync v8.8", "trigger": "Daily 6am", "status": "active"},
-    {"id": "LF-01", "name": "Self-Serve Trial Capture v1.9", "trigger": "Every 5 min", "status": "active"},
-    {"id": "LF-02", "name": "Instant Lead Response v7 (Nurture + Calendar)", "trigger": "Webhook", "status": "active"},
-    {"id": "LF-03", "name": "Trial Welcome Email v2", "trigger": "On trigger", "status": "active"},
-    {"id": "LF-04", "name": "Attendance Tracker v9", "trigger": "Hourly", "status": "active"},
-    {"id": "LF-05", "name": "Post-Attendance Thank You v2", "trigger": "Daily 10am", "status": "active"},
-    {"id": "LF-06", "name": "Pass Expiry Reminder v1", "trigger": "Mon/Thu 10am", "status": "active"},
-    {"id": "LF-07", "name": "Trial Expiry Reminder v2", "trigger": "Daily", "status": "active"},
-    {"id": "LF-08", "name": "Trial Expiry Handler v1", "trigger": "Daily", "status": "active"},
-    {"id": "LF-09", "name": "Daily Trial Alert v1", "trigger": "Daily 8am", "status": "active"},
-    {"id": "LF-10", "name": "TeamUp Calendar Sync v1", "trigger": "Daily 5am", "status": "active"},
-    {"id": "LF-11", "name": "Trial Event Creator v1", "trigger": "Real-time webhook", "status": "active"},
-    {"id": "FIN-01", "name": "Weekly Financial Snapshot v2.1", "trigger": "Sat 07:00 + Manual", "status": "active"},
-    {"id": "CP-01", "name": "Channel Performance Weekly v7", "trigger": "Mon 08:00 + webhook", "status": "active", "n8n_id": "rwwlKHsk1zhIhFjn"},
-    {"id": "ADH-01", "name": "Daily Ad Health Check", "trigger": "Mon-Sat 09:00", "status": "active", "n8n_id": "2rlUH5FOgXGQW70K"},
-    {"id": "ADH-02", "name": "Weekly Ad Performance Summary", "trigger": "Mon 08:00", "status": "active", "n8n_id": "rXVFVjf6yXBW4qmZ"}
+    {
+      "id": "SYS-01",
+      "name": "Data Quality Reconciliation",
+      "trigger": "Weekly",
+      "status": "active"
+    },
+    {
+      "id": "LF-00",
+      "name": "TeamUp \u2192 Airtable Sync v8.8",
+      "trigger": "Daily 6am",
+      "status": "active"
+    },
+    {
+      "id": "LF-01",
+      "name": "Self-Serve Trial Capture v1.9",
+      "trigger": "Every 5 min",
+      "status": "active"
+    },
+    {
+      "id": "LF-02",
+      "name": "Instant Lead Response v7 (Nurture + Calendar)",
+      "trigger": "Webhook",
+      "status": "active"
+    },
+    {
+      "id": "LF-03",
+      "name": "Trial Welcome Email v2",
+      "trigger": "On trigger",
+      "status": "active"
+    },
+    {
+      "id": "LF-04",
+      "name": "Attendance Tracker v9",
+      "trigger": "Hourly",
+      "status": "active"
+    },
+    {
+      "id": "LF-05",
+      "name": "Post-Attendance Thank You v2",
+      "trigger": "Daily 10am",
+      "status": "active"
+    },
+    {
+      "id": "LF-06",
+      "name": "Pass Expiry Reminder v1",
+      "trigger": "Mon/Thu 10am",
+      "status": "active"
+    },
+    {
+      "id": "LF-07",
+      "name": "Trial Expiry Reminder v2",
+      "trigger": "Daily",
+      "status": "active"
+    },
+    {
+      "id": "LF-08",
+      "name": "Trial Expiry Handler v1",
+      "trigger": "Daily",
+      "status": "active"
+    },
+    {
+      "id": "LF-09",
+      "name": "Daily Trial Alert v1",
+      "trigger": "Daily 8am",
+      "status": "active"
+    },
+    {
+      "id": "LF-10",
+      "name": "TeamUp Calendar Sync v1",
+      "trigger": "Daily 5am",
+      "status": "active"
+    },
+    {
+      "id": "LF-11",
+      "name": "Trial Event Creator v1",
+      "trigger": "Real-time webhook",
+      "status": "active"
+    },
+    {
+      "id": "FIN-01",
+      "name": "Weekly Financial Snapshot v2.1",
+      "trigger": "Sat 07:00 + Manual",
+      "status": "active"
+    },
+    {
+      "id": "CP-01",
+      "name": "Channel Performance Weekly v7",
+      "trigger": "Mon 08:00 + webhook",
+      "status": "active",
+      "n8n_id": "rwwlKHsk1zhIhFjn"
+    },
+    {
+      "id": "ADH-01",
+      "name": "Daily Ad Health Check",
+      "trigger": "Mon-Sat 09:00",
+      "status": "active",
+      "n8n_id": "2rlUH5FOgXGQW70K"
+    },
+    {
+      "id": "ADH-02",
+      "name": "Weekly Ad Performance Summary",
+      "trigger": "Mon 08:00",
+      "status": "active",
+      "n8n_id": "rXVFVjf6yXBW4qmZ"
+    }
   ],
-
   "weekly_review": {
     "week_commencing": "10 March 2026",
     "built": [
-      "Website Inline Validation — Shared validated-field.tsx component + micro-interactions (shake, checkmark pop, focus glow) added to all 6 forms across makeamouve.com. Dark + light theme support. Deployed to Vercel. (12 March)",
-      "4 ACE Lifestyle Homepage Redesigns — Created in Paper with distinct visual directions: Sage & Cream, Deep Emerald, Natural Earth, Fresh Lime. (12 March)",
-      "GHL Dedup — Bulk duplicate cleanup: 24 phoneless contacts deleted, keepers tagged, Airtable ghl_contact_id updated. Scripts: ghl-dedup-dry-run.py + ghl-dedup-execute.py. (11 March)",
-      "LF-13 Filtering Fix — Changed attendance matching from class name substring to event day-of-week. Prevents Thursday/Sunday online class cross-contamination. Deployed to n8n. (11 March)",
-      "class_reminder_sunday template — Submitted to Meta for Thursday→Sunday advance reminders. Variables: name, class, time, venue. (11 March)",
-      "Win-Back Emails COMPLETE — 7 emails designed in Paper + converted to production HTML for GHL. 2 sequences: A (4 emails, 134 recent families) + B (3 emails, 820 cold families). Annual show callout + photo in A2/B1. Copy fixed for safeguarding. Briefing emailed to Louise.",
-      "Party Lifecycle Engine — Phases 1-4 COMPLETE. 5 emails designed (Paper + HTML), 3 GHL workflows live, booking form + parent details form + feedback form all live. All merge fields fixed (double underscore). WhatsApp template approved. Task 5.2 architecture planned (n8n + 5 GHL workflows). Demoed to Louise. (12 March)",
-      "WhatsApp Integration — eSIM purchased, number connected to GHL, 2 Meta templates approved, LF-13 n8n workflow built (15 nodes), test message delivered successfully to Rob's phone.",
+      "Website Inline Validation \u2014 Shared validated-field.tsx component + micro-interactions (shake, checkmark pop, focus glow) added to all 6 forms across makeamouve.com. Dark + light theme support. Deployed to Vercel. (12 March)",
+      "4 ACE Lifestyle Homepage Redesigns \u2014 Created in Paper with distinct visual directions: Sage & Cream, Deep Emerald, Natural Earth, Fresh Lime. (12 March)",
+      "GHL Dedup \u2014 Bulk duplicate cleanup: 24 phoneless contacts deleted, keepers tagged, Airtable ghl_contact_id updated. Scripts: ghl-dedup-dry-run.py + ghl-dedup-execute.py. (11 March)",
+      "LF-13 Filtering Fix \u2014 Changed attendance matching from class name substring to event day-of-week. Prevents Thursday/Sunday online class cross-contamination. Deployed to n8n. (11 March)",
+      "class_reminder_sunday template \u2014 Submitted to Meta for Thursday\u2192Sunday advance reminders. Variables: name, class, time, venue. (11 March)",
+      "Win-Back Emails COMPLETE \u2014 7 emails designed in Paper + converted to production HTML for GHL. 2 sequences: A (4 emails, 134 recent families) + B (3 emails, 820 cold families). Annual show callout + photo in A2/B1. Copy fixed for safeguarding. Briefing emailed to Louise.",
+      "Party Lifecycle Engine \u2014 Phases 1-4 COMPLETE. 5 emails designed (Paper + HTML), 3 GHL workflows live, booking form + parent details form + feedback form all live. All merge fields fixed (double underscore). WhatsApp template approved. Task 5.2 architecture planned (n8n + 5 GHL workflows). Demoed to Louise. (12 March)",
+      "WhatsApp Integration \u2014 eSIM purchased, number connected to GHL, 2 Meta templates approved, LF-13 n8n workflow built (15 nodes), test message delivered successfully to Rob's phone.",
       "9 branded onboarding emails built and deployed LIVE to GHL workflow. Table-based HTML, mobile responsive, Paper mockup-matched. Replaced 7 plain-text originals with 9 (added Month Check-in + Renewal).",
-      "Full financial deep dive — Stripe API pull (4 accounts, £81.9K net), Xero transaction analysis (386 ACCPAY invoices + ManualJournals), DSP revenue reconstruction.",
-      "Verified revenue: £290,984 (+45% YoY) vs Xero's misleading £166,860 (-17%). £124K Xero reconciliation gap explained.",
-      "YoY Variance Analysis — profit waterfall (-£8.3K → +£161K), 20+ driver narratives, gross margin bridge (58.2% → 84.5%).",
-      "Revenue Reconciliation — line-by-line Xero vs external sources, AR aging, failed payment analysis.",
-      "Health Scorecard — 6 green areas, 1 red (bookkeeping), 6 amber. Forward projection: ~£500K revenue / ~£275K net profit FY2026.",
+      "Full financial deep dive \u2014 Stripe API pull (4 accounts, \u00a381.9K net), Xero transaction analysis (386 ACCPAY invoices + ManualJournals), DSP revenue reconstruction.",
+      "Verified revenue: \u00a3290,984 (+45% YoY) vs Xero's misleading \u00a3166,860 (-17%). \u00a3124K Xero reconciliation gap explained.",
+      "YoY Variance Analysis \u2014 profit waterfall (-\u00a38.3K \u2192 +\u00a3161K), 20+ driver narratives, gross margin bridge (58.2% \u2192 84.5%).",
+      "Revenue Reconciliation \u2014 line-by-line Xero vs external sources, AR aging, failed payment analysis.",
+      "Health Scorecard \u2014 6 green areas, 1 red (bookkeeping), 6 amber. Forward projection: ~\u00a3500K revenue / ~\u00a3275K net profit FY2026.",
       "Excel spreadsheet (9 tabs) + Word doc summary with verified tables.",
-      "Staff cost analysis: 45 → 37 freelancers, 3 PAYE departures identified (Rachel Smith, Tamarind, Sherry). £25K genuine saving."
+      "Staff cost analysis: 45 \u2192 37 freelancers, 3 PAYE departures identified (Rachel Smith, Tamarind, Sherry). \u00a325K genuine saving."
     ],
     "improved": [
       "Financial snapshot doc updated with verified revenue, Stripe breakdown, staff analysis, full health assessment.",
@@ -629,32 +1007,30 @@
       "LF-13 filtering: day-of-week matching replaces class name matching to prevent cross-class contamination. (11 March)",
       "Revenue verification: DSP reports + Stripe API + bank used as source of truth over incomplete Xero P&L (10 March)",
       "Staff cost saving confirmed as structural (permanent departures), not cyclical (10 March)",
-      "Operating leverage identified as dominant profit driver — revenue +45% while COGS -46% (10 March)"
+      "Operating leverage identified as dominant profit driver \u2014 revenue +45% while COGS -46% (10 March)"
     ],
     "risks": [
-      "Bookkeeper lag critical — £124K+ unreconciled. P&L cannot be trusted for decision-making.",
-      "TeamUp 32% charge failure rate — ~£10K missed Ladies Fitness revenue from expired cards.",
-      "Amex balance £34K — needs verification (current spend vs accumulated debt).",
-      "School Clubs -20% — only genuinely declining revenue line. Root cause unknown.",
-      "Louise as single point of failure — absorbed work of 2-3 departed staff.",
-      "Subscriptions +497% unexplained (£370 → £2,206)."
+      "Bookkeeper lag critical \u2014 \u00a3124K+ unreconciled. P&L cannot be trusted for decision-making.",
+      "TeamUp 32% charge failure rate \u2014 ~\u00a310K missed Ladies Fitness revenue from expired cards.",
+      "Amex balance \u00a334K \u2014 needs verification (current spend vs accumulated debt).",
+      "School Clubs -20% \u2014 only genuinely declining revenue line. Root cause unknown.",
+      "Louise as single point of failure \u2014 absorbed work of 2-3 departed staff.",
+      "Subscriptions +497% unexplained (\u00a3370 \u2192 \u00a32,206)."
     ]
   },
-
   "recent_decisions": [
-    "LF-13 SplitInBatches reset bug — inner loop wasn't resetting between outer iterations, silently skipping Sunday reminders. Fixed + deployed. (13 March)",
-    "Facebook Lead Form missing postcode — 70% of Pipeline 1 leads have no postcode. Active form (Oct 2023) only collects name/phone/email. Rob to add postcode field. (13 March)",
-    "Party Lifecycle Engine — 6-touchpoint automated sequence. Louise keeps the sale, automation starts at booking. Extras upsell is reply-based. No pipeline initially — form + tag trigger. (11 March)",
-    "Revenue verification: Stripe API + DSP + bank confirms £290,984 (+45% YoY). Xero's -17% is 100% bookkeeper lag. (10 March)",
-    "Staff cost saving is structural — 8 fewer freelancers + 3 PAYE departures = permanent £25K+ saving. (10 March)",
-    "Operating leverage confirmed — 45% revenue growth with 46% COGS reduction = 84.5% gross margin. (10 March)",
-    "Win-back emails ready — 7 emails (2 sequences) designed, HTML built, briefing sent to Louise. Awaiting approval to go live 17 March. (10 March)",
-    "Onboarding sequence LIVE — 9 branded emails deployed to GHL workflow. Replaced 7 plain-text originals. (10 March)",
-    "Infrastructure Fix Plan ✅ complete — SPF, GTM, Google Ads conversions all resolved. (9 March)"
+    "LF-13 SplitInBatches reset bug \u2014 inner loop wasn't resetting between outer iterations, silently skipping Sunday reminders. Fixed + deployed. (13 March)",
+    "Facebook Lead Form missing postcode \u2014 70% of Pipeline 1 leads have no postcode. Active form (Oct 2023) only collects name/phone/email. Rob to add postcode field. (13 March)",
+    "Party Lifecycle Engine \u2014 6-touchpoint automated sequence. Louise keeps the sale, automation starts at booking. Extras upsell is reply-based. No pipeline initially \u2014 form + tag trigger. (11 March)",
+    "Revenue verification: Stripe API + DSP + bank confirms \u00a3290,984 (+45% YoY). Xero's -17% is 100% bookkeeper lag. (10 March)",
+    "Staff cost saving is structural \u2014 8 fewer freelancers + 3 PAYE departures = permanent \u00a325K+ saving. (10 March)",
+    "Operating leverage confirmed \u2014 45% revenue growth with 46% COGS reduction = 84.5% gross margin. (10 March)",
+    "Win-back emails ready \u2014 7 emails (2 sequences) designed, HTML built, briefing sent to Louise. Awaiting approval to go live 17 March. (10 March)",
+    "Onboarding sequence LIVE \u2014 9 branded emails deployed to GHL workflow. Replaced 7 plain-text originals. (10 March)",
+    "Infrastructure Fix Plan \u2705 complete \u2014 SPF, GTM, Google Ads conversions all resolved. (9 March)"
   ],
-
   "financial_summary": {
-    "period": "Sep 2025 – 9 Mar 2026 (6 months, VERIFIED)",
+    "period": "Sep 2025 \u2013 9 Mar 2026 (6 months, VERIFIED)",
     "revenue": 290984,
     "direct_costs": 45118,
     "marketing": 18104,
@@ -663,28 +1039,38 @@
     "contribution_margin_pct": 84.5,
     "closing_cash_aug": 186000,
     "cash_runway_months": 8,
-    "lowest_cash_month": "N/A — strong throughout",
+    "lowest_cash_month": "N/A \u2014 strong throughout",
     "source": "Stripe API (4 accounts) + DSP reports + Xero P&L + bank statements (10 March 2026)",
     "_notes": {
-      "revenue": "VERIFIED from Stripe + DSP + bank. Xero shows only £166,860 (bookkeeper 1mo behind). Real revenue £290,984 (+45% YoY).",
-      "overheads": "Total OpEx £82,530 (incl marketing £18,104). Down 34% YoY.",
-      "net_profit": "Estimated. Revenue £290,984 minus total costs £127,648. Xero shows only £39,211 due to reconciliation lag.",
-      "closing_cash_aug": "Cash at bank 9 Mar 2026 (incl £135K Tide savings, £27.8K VAT reserve)",
+      "revenue": "VERIFIED from Stripe + DSP + bank. Xero shows only \u00a3166,860 (bookkeeper 1mo behind). Real revenue \u00a3290,984 (+45% YoY).",
+      "overheads": "Total OpEx \u00a382,530 (incl marketing \u00a318,104). Down 34% YoY.",
+      "net_profit": "Estimated. Revenue \u00a3290,984 minus total costs \u00a3127,648. Xero shows only \u00a339,211 due to reconciliation lag.",
+      "closing_cash_aug": "Cash at bank 9 Mar 2026 (incl \u00a3135K Tide savings, \u00a327.8K VAT reserve)",
       "amex_balance": 34021,
       "tide_savings": 135000,
       "vat_liability": 27800,
-      "yoy_comparison": "Last year same period: Revenue £200,172, Net Profit -£8,314. Swing: +£169,650.",
+      "yoy_comparison": "Last year same period: Revenue \u00a3200,172, Net Profit -\u00a38,314. Swing: +\u00a3169,650.",
       "students": "435 unique (all-time high), 552 enrolments, 258 on auto-pay",
-      "key_risks": "Bookkeeper lag (£124K unreconciled), TeamUp 32% fail rate, Amex £34K, School Clubs -20%"
+      "key_risks": "Bookkeeper lag (\u00a3124K unreconciled), TeamUp 32% fail rate, Amex \u00a334K, School Clubs -20%"
     }
   },
-
   "system_health": {
-    "supabase_sync": { "status": "healthy", "last_run": "2026-02-16T00:26:00Z", "records": 5137 },
-    "n8n_workflows": { "status": "healthy", "active": 17, "failed_24h": 0 },
-    "data_quality": { "status": "healthy", "contacts": 3045, "orphans": 18 }
+    "supabase_sync": {
+      "status": "healthy",
+      "last_run": "2026-02-16T00:26:00Z",
+      "records": 5137
+    },
+    "n8n_workflows": {
+      "status": "healthy",
+      "active": 17,
+      "failed_24h": 0
+    },
+    "data_quality": {
+      "status": "healthy",
+      "contacts": 3045,
+      "orphans": 18
+    }
   },
-
   "governing_documents": [
     {
       "name": "Compaction Recovery Protocol",
@@ -711,22 +1097,21 @@
       "applies_to": "All multi-phase projects"
     }
   ],
-
   "priority_actions": [
     {
       "category": "BUILD",
-      "action": "Infrastructure Fix Plan ✅ Complete",
+      "action": "Infrastructure Fix Plan \u2705 Complete",
       "detail": "SPF fixed, GTM already clean (v38), Google Ads conversions fixed (P0), email links N/A, www redirect acceptable. All 6 phases done."
     },
     {
       "category": "BUILD",
-      "action": "Automation & Nurture Plan — Win-Back Emails Ready",
-      "detail": "Onboarding (9 emails) + Non-Booker Chase (6 messages) LIVE. Win-back 7 emails designed + HTML ready. Awaiting Louise approval → create 2 GHL workflows → go live week of 17 March."
+      "action": "Automation & Nurture Plan \u2014 Win-Back Emails Ready",
+      "detail": "Onboarding (9 emails) + Non-Booker Chase (6 messages) LIVE. Win-back 7 emails designed + HTML ready. Awaiting Louise approval \u2192 create 2 GHL workflows \u2192 go live week of 17 March."
     },
     {
       "category": "BUILD",
       "action": "Execute Growth Plan (P3)",
-      "detail": "Location landing pages, PTP £10 intro, Meta optimisation, Google Ads offline conversions. Target: 31 March."
+      "detail": "Location landing pages, PTP \u00a310 intro, Meta optimisation, Google Ads offline conversions. Target: 31 March."
     },
     {
       "category": "ACTION",
@@ -745,18 +1130,18 @@
     },
     {
       "category": "BUILD",
-      "action": "Staff Admin Costs — Phase 6B February Payment Processing",
-      "detail": "3/14 approved (£405). 9 pending Louise. 2 self-submitted (Tamarind £502, Racheli Leach £800). Chloe + Sivana need rates."
+      "action": "Staff Admin Costs \u2014 Phase 6B February Payment Processing",
+      "detail": "3/14 approved (\u00a3405). 9 pending Louise. 2 self-submitted (Tamarind \u00a3502, Racheli Leach \u00a3800). Chloe + Sivana need rates."
     },
     {
       "category": "BUILD",
-      "action": "MOUVE Studio — Manual Config Required",
+      "action": "MOUVE Studio \u2014 Manual Config Required",
       "detail": "All code complete. Rob needs to: set up Stripe test keys, Trigger.dev project, Supabase Auth, GHL webhook."
     },
     {
       "category": "BUILD",
-      "action": "Party Lifecycle Engine — Build 5 GHL workflows + n8n scheduler",
-      "detail": "Phases 1-4 complete (all 5 emails + forms + workflows). Next: Rob builds 5 GHL send workflows (Tag → Email/WhatsApp → Sent tag), then Claude builds n8n daily scheduling workflow. Target: live before Noah's party (7 June)."
+      "action": "Party Lifecycle Engine \u2014 Build 5 GHL workflows + n8n scheduler",
+      "detail": "Phases 1-4 complete (all 5 emails + forms + workflows). Next: Rob builds 5 GHL send workflows (Tag \u2192 Email/WhatsApp \u2192 Sent tag), then Claude builds n8n daily scheduling workflow. Target: live before Noah's party (7 June)."
     }
   ]
 }
