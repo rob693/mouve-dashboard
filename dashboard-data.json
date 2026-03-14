@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-03-14T19:45:00Z",
+  "generated_at": "2026-03-14T20:30:00Z",
   "generated_by": "SYS-DASHBOARD v2",
-  "version": "5.8",
+  "version": "5.9",
   "health_summary": {
     "complete": 57,
     "in_progress": 4,
@@ -353,7 +353,7 @@
       "implementation_plan": "active/WHATSAPP-IMPLEMENTATION-PLAN-MAR2026.md",
       "purpose": "Add WhatsApp messaging to GHL for Ladies Fitness \u2014 weekly class reminders to 326 members to drive regular attendance.",
       "status": "in_progress",
-      "status_label": "v2.3 | Phase 3 \ud83d\udd27 | LF-13 SplitInBatches reset bug fixed + deployed. 12/14 Sunday reminders manually recovered. 3 GHL name fixes. Review: 16 March.",
+      "status_label": "v2.4 | Phase 3 \u2705 Hardened | LF-13 + LF-14: 14-day recency filter + wa_opt_out tag check deployed. WhatsApp reference doc expanded. Review: 16 March.",
       "completed_phases": [
         {
           "name": "Phase 1: Setup & Configuration",
@@ -377,6 +377,9 @@
           "\u2705 SplitInBatches reset bug fixed (inner loop wasn't resetting \u2014 13 March)",
           "\u2705 12/14 Sunday reminders manually sent (2 no phone)",
           "\u2705 3 GHL name data quality fixes (TeamUp sync bug)",
+          "\u2705 14-day recency filter \u2014 only reminds drifting regulars (14 March)",
+          "\u2705 wa_opt_out tag check on LF-13 + LF-14 (14 March)",
+          "\u2705 WhatsApp reference doc expanded (send conditions, class schedule, manual send, LF-14 conditions)",
           "Review checkpoint: 16 March 09:30"
         ]
       },
