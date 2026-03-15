@@ -77,6 +77,24 @@
       "time": "2 minutes"
     }
   ],
+  "quick_commands": [
+    {
+      "name": "Run MOUVE SEO Pipeline",
+      "command": "cd /Volumes/NVME/Claude/Code/mouve-website/seo-pipeline && python3 run.py",
+      "location": "/Volumes/NVME/Claude/Code/mouve-website/seo-pipeline/",
+      "description": "13-step pipeline: seeds → volumes → SERP analysis → competitor scrape → PageSpeed → internal links → content plan. All MOUVE context baked in.",
+      "time": "~30 minutes",
+      "cost": "~$0.60"
+    },
+    {
+      "name": "Run New-Client SEO Pipeline",
+      "command": "cd /Volumes/NVME/Claude/Code/reputation-rise-seo-v2/seo-pipeline-new-client && SEO_CLIENT_CONFIG=clients/<client>.yaml python3 run.py",
+      "location": "/Volumes/NVME/Claude/Code/reputation-rise-seo-v2/seo-pipeline-new-client/",
+      "description": "Same 13 steps but YAML-configurable for any client. Existing configs: mouve.yaml, reputation-rise.yaml, synq-studios.yaml.",
+      "time": "~20 minutes",
+      "cost": "~$0.60"
+    }
+  ],
   "gold_projects": [
     {
       "name": "MOUVE Studio (DSP Replacement)",
