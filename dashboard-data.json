@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-20T21:00:00Z",
+  "generated_at": "2026-03-23T22:00:00Z",
   "generated_by": "SYS-DASHBOARD v2",
   "version": "6.0",
   "health_summary": {
@@ -19,8 +19,8 @@
     {
       "title": "Complete WhatsApp Lead Greeting workflow in GHL",
       "due": "2026-03-18",
-      "status": "blocked",
-      "context": "Draft started (trigger + tags + opportunity + notification). Blocked on Meta Business Verification \u2014 WhatsApp Send action locked until verified. Resume steps 2.8-2.17 once verified."
+      "status": "pending",
+      "context": "Meta verification complete \u2014 unblocked. Build A/B test: 50/50 SMS vs WhatsApp inside existing \"2024.1 - New Lead Greeting\" workflow. Fork after duplicate guard, phone last digit 0-4=SMS, 5-9=WhatsApp."
     },
     {
       "title": "Review Request \u2014 swap SMS to WhatsApp in Won workflow",
@@ -37,8 +37,8 @@
     {
       "title": "Meta Business Verification \u2014 check status / expedite",
       "due": "2026-03-14",
-      "status": "pending",
-      "context": "Submitted for Radar Dance Ltd (Companies House #07060630). Blocks WhatsApp Send in GHL workflows + display name. Check Meta Business Suite for status."
+      "status": "complete",
+      "context": "COMPLETE (23 March 2026). All 11 WhatsApp templates Active. Meta Business Verification approved for Radar Dance Ltd."
     },
     {
       "title": "WhatsApp review checkpoint \u2014 LF-13 + LF-14 performance",
@@ -422,39 +422,21 @@
       "implementation_plan": "active/WHATSAPP-LEAD-WORKFLOW-IMPLEMENTATION-PLAN-MAR2026.md",
       "purpose": "Replace SMS lead greeting with WhatsApp for new leads \u2014 3-message nurture sequence for children's classes and ladies fitness. Website WhatsApp button + GHL workflow.",
       "status": "in_progress",
-      "status_label": "v1.0 | Phase 1 \u2705 Templates submitted (7 active, 2 pending). Phase 2 \ud83d\udd27 GHL workflow draft started, blocked on Meta verification.",
+      "status_label": "Phase 1 \u2705 | A/B Test Ready to Build",
       "completed_phases": [
         {
           "name": "Phase 1: Template Submission",
           "summary": "6 templates submitted to Meta (3 children's + 3 LF). 7/9 total templates Active. Copy refined: no variables (WhatsApp leads have no name), no em dashes, conversational tone."
         }
       ],
-      "next_phase": {
-        "name": "Phase 2: GHL Workflow Build",
-        "detail": "Draft started \u2014 trigger, duplicate guard, tags, opportunity, notification configured. Blocked: WhatsApp Send action requires Meta Business Verification.",
-        "status": "in_progress",
-        "tasks": [
-          "\u2705 Trigger: Customer Replied, WhatsApp, 'find out about classes'",
-          "\u2705 Duplicate guard + tags + opportunity + notification",
-          "\ud83d\udd34 WhatsApp Send actions blocked (Meta verification pending)",
-          "\ud83d\udd34 Wait + follow-up logic blocked",
-          "Add WhatsApp button to /ladies-fitness page",
-          "Build LF workflow in GHL"
-        ]
-      },
+      "next_phase": "Build A/B test in GHL (SMS vs WhatsApp)",
       "remaining_phases": [
         "Phase 3: Wire In Sources (FB + website leads)",
         "Phase 4: Test & Go Live",
         "Phase 5: Measure & Optimise",
         "Phase 6: Ladies Fitness WhatsApp Flow"
       ],
-      "key_data": {
-        "templates_active": 10,
-        "templates_pending": 0,
-        "blocker": "Meta Business Verification",
-        "website_button": "Built (whatsapp-button.tsx), NOT deployed",
-        "ghl_workflow_url": "https://app.getmorestudents.net/location/5PFvflgmZfCNaFmrkV5x/workflow/531df5d2-932b-487f-b606-91f1510a60d1"
-      }
+      "key_data": "All 11 Meta templates Active. Meta Business Verification complete. 50/50 split inside existing 2024.1 workflow \u2014 no pipeline rewiring."
     },
     {
       "name": "Party Lifecycle Engine",
@@ -1049,15 +1031,13 @@
     ]
   },
   "recent_decisions": [
+    "Qyliq AI Operations \u2014 validation strategy: 10 discovery calls before building anything. Jaron is discovery call #1. 'Find the Buyer First' approach. Design doc saved. (23 March)",
+    "Centennial Urgent Care (Grant) \u2014 new client project set up. Family rates. Dual-audience: B2C patients + B2B hospital partnerships. Intake questionnaire sent. (23 March)",
+    "WhatsApp A/B Test design \u2014 50/50 SMS vs WhatsApp inside existing '2024.1 - New Lead Greeting' workflow. No pipeline rewiring. Meta verification complete, all 11 templates Active. (23 March)",
     "LF-13 SplitInBatches reset bug \u2014 inner loop wasn't resetting between outer iterations, silently skipping Sunday reminders. Fixed + deployed. (13 March)",
     "Facebook Lead Form missing postcode \u2014 70% of Pipeline 1 leads have no postcode. Active form (Oct 2023) only collects name/phone/email. Rob to add postcode field. (13 March)",
     "Party Lifecycle Engine \u2014 6-touchpoint automated sequence. Louise keeps the sale, automation starts at booking. Extras upsell is reply-based. No pipeline initially \u2014 form + tag trigger. (11 March)",
-    "Revenue verification: Stripe API + DSP + bank confirms \u00a3290,984 (+45% YoY). Xero's -17% is 100% bookkeeper lag. (10 March)",
-    "Staff cost saving is structural \u2014 8 fewer freelancers + 3 PAYE departures = permanent \u00a325K+ saving. (10 March)",
-    "Operating leverage confirmed \u2014 45% revenue growth with 46% COGS reduction = 84.5% gross margin. (10 March)",
-    "Win-back emails ready \u2014 7 emails (2 sequences) designed, HTML built, briefing sent to Louise. Awaiting approval to go live 17 March. (10 March)",
-    "Onboarding sequence LIVE \u2014 9 branded emails deployed to GHL workflow. Replaced 7 plain-text originals. (10 March)",
-    "Infrastructure Fix Plan \u2705 complete \u2014 SPF, GTM, Google Ads conversions all resolved. (9 March)"
+    "Revenue verification: Stripe API + DSP + bank confirms \u00a3290,984 (+45% YoY). Xero's -17% is 100% bookkeeper lag. (10 March)"
   ],
   "financial_summary": {
     "period": "Sep 2025 \u2013 9 Mar 2026 (6 months, VERIFIED)",
@@ -1129,6 +1109,31 @@
   ],
   "priority_actions": [
     {
+      "category": "ACTION",
+      "action": "Build WhatsApp A/B Test in GHL \u2014 Ready to Go",
+      "detail": "All 11 templates Active, Meta verified. 50/50 split inside '2024.1 - New Lead Greeting' workflow. ~45 min build. Rob's call on timing."
+    },
+    {
+      "category": "ACTION",
+      "action": "Reddit Phase 1 \u2014 Warm-Up Started 24 March",
+      "detail": "Account warming underway. Post templates still need drafting. Target: 5 posts/week in relevant subreddits."
+    },
+    {
+      "category": "ACTION",
+      "action": "Studio Manager \u2014 Post Before Pesach (2 April)",
+      "detail": "9 days away. Posting channels undecided. Job spec ready."
+    },
+    {
+      "category": "CLIENT",
+      "action": "Centennial Urgent Care \u2014 Questionnaire Sent to Grant",
+      "detail": "New client (Louise's brother-in-law). Website + SEO + AEO. Dual model: B2C patient care + B2B hospital partnerships. Intake questionnaire sent 23 March. Awaiting answers \u2192 then proposal."
+    },
+    {
+      "category": "CLIENT",
+      "action": "Ace Lifestyle \u2014 Awaiting Formal Go-Ahead",
+      "detail": "Costs email sent (\u00a33,500 build + \u00a3350/mo retainer). Anna + Charlotte keen. Awaiting formal yes. Design doc APPROVED."
+    },
+    {
       "category": "BUILD",
       "action": "Infrastructure Fix Plan \u2705 Complete",
       "detail": "SPF fixed, GTM already clean (v38), Google Ads conversions fixed (P0), email links N/A, www redirect acceptable. All 6 phases done."
@@ -1152,26 +1157,6 @@
       "category": "ACTION",
       "action": "Monitor competitor ad groups (1-2 weeks)",
       "detail": "3 new competitor ad groups (Vanessa Class, Rising Stars, Glittery Parties) need performance check after 1-2 weeks."
-    },
-    {
-      "category": "BUILD",
-      "action": "Children's Onboarding GHL v2.0 - Phase 1 In Progress",
-      "detail": "4/10 kit pages complete. Remaining: Jazz/Contemporary/Elite, Drama/Broadway/First Mouves."
-    },
-    {
-      "category": "BUILD",
-      "action": "Staff Admin Costs \u2014 Phase 6B February Payment Processing",
-      "detail": "3/14 approved (\u00a3405). 9 pending Louise. 2 self-submitted (Tamarind \u00a3502, Racheli Leach \u00a3800). Chloe + Sivana need rates."
-    },
-    {
-      "category": "BUILD",
-      "action": "MOUVE Studio \u2014 Manual Config Required",
-      "detail": "All code complete. Rob needs to: set up Stripe test keys, Trigger.dev project, Supabase Auth, GHL webhook."
-    },
-    {
-      "category": "BUILD",
-      "action": "Party Lifecycle Engine \u2014 Build 5 GHL workflows + n8n scheduler",
-      "detail": "Phases 1-4 complete (all 5 emails + forms + workflows). Next: Rob builds 5 GHL send workflows (Tag \u2192 Email/WhatsApp \u2192 Sent tag), then Claude builds n8n daily scheduling workflow. Target: live before Noah's party (7 June)."
     }
   ]
 }
