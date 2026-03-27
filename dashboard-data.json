@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-03-23T22:00:00Z",
+  "generated_at": "2026-03-27T13:45:00Z",
   "generated_by": "SYS-DASHBOARD v2",
-  "version": "6.0",
+  "version": "6.1",
   "health_summary": {
     "complete": 58,
     "in_progress": 4,
@@ -39,6 +39,12 @@
       "due": "2026-03-14",
       "status": "complete",
       "context": "COMPLETE (23 March 2026). All 11 WhatsApp templates Active. Meta Business Verification approved for Radar Dance Ltd."
+    },
+    {
+      "title": "SEO + Paid Ads Progress Check (24-day post-rebuild)",
+      "due": "2026-03-27",
+      "status": "complete",
+      "context": "COMPLETE (27 March 2026). Rankings doubled (7\u219214 keywords), Google Ads CPC -22%, conversions +158%, Meta 662 leads at \u00a32.13 CPL. GA4 consent mode gap identified \u2014 use platform APIs for paid metrics. Reports: MARKETING-AUDIT-Q2-2026/serp-progress-check-27-mar-2026.md + ga4-progress-check-27-mar-2026.md. Qyliq case study written."
     },
     {
       "title": "WhatsApp review checkpoint \u2014 LF-13 + LF-14 performance",
