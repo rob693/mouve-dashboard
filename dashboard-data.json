@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-03-27T13:45:00Z",
+  "generated_at": "2026-03-29T08:30:00Z",
   "generated_by": "SYS-DASHBOARD v2",
-  "version": "6.1",
+  "version": "6.2",
   "health_summary": {
     "complete": 58,
     "in_progress": 4,
@@ -10,6 +10,18 @@
     "blocked": 3
   },
   "tasks": [
+    {
+      "title": "Qyliq \u2014 US dance school landing page",
+      "due": "2026-04-15",
+      "status": "pending",
+      "context": "Copy written (psychology + CRO framework). Case study HTML ready. US pricing set ($5,500-6,500 builds, $750/mo retainers). Build at qyliq.com/dance-schools. Competitor analysis done \u2014 $5-10K bracket empty."
+    },
+    {
+      "title": "MOUVE Studio SaaS \u2014 /office-hours validation",
+      "due": "2026-04-10",
+      "status": "pending",
+      "context": "Run startup validation on MOUVE Studio as a SaaS product. 80% of DSP/Jackrabbit features built. ~20-30 days to MVP. Differentiator: built-in website + SEO. Two-track: Qyliq (services) + Studio (SaaS). Doc: clients/qyliq/docs/MOUVE-STUDIO-SAAS-OPPORTUNITY.md"
+    },
     {
       "title": "Add WhatsApp button to Ladies Fitness page",
       "due": "2026-03-14",
